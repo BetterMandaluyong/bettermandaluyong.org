@@ -207,6 +207,12 @@ export function runArchiveJob(deps: JobDeps): Promise<RunRow> {
           errorCode = "http_429";
           break;
         }
+        // A server error is transient: stop and leave the item pending for a retry.
+        const serverError = /^http (5\d\d)$/.exec(saved.status);
+        if (serverError) {
+          errorCode = `http_${serverError[1]}`;
+          break;
+        }
         await recordArchive(deps.db, id, {
           status: saved.status,
           captureUrl: saved.captureUrl,
