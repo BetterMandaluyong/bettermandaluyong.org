@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
+import { env } from "cloudflare:workers";
 import { ArrowLink } from "../components/ArrowLink.tsx";
 import { Button } from "../components/Button.tsx";
 import { Container } from "../components/Container.tsx";
 import { Flag } from "../components/Flag.tsx";
+import { NewsList } from "../components/NewsList.tsx";
 import { PageShell } from "../components/PageShell.tsx";
 import { PillarList } from "../components/PillarList.tsx";
 import { SectionHeader } from "../components/SectionHeader.tsx";
-import { HOME, SITE, mailto } from "../components/content.ts";
+import { HOME, NEWS, SITE, mailto } from "../components/content.ts";
+import { latestNews, safeRead } from "../utils/news/store.ts";
 
 export const metadata: Metadata = {
   title: HOME.metaTitle,
@@ -18,7 +21,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  // Reading searchParams opts the page into per-request rendering.
+  await searchParams;
+  const news = await safeRead(() => latestNews(env.DB, 3), []);
   return (
     <PageShell>
       <section className="border-b border-ed-rule bg-ed-paper-2">
@@ -42,6 +52,18 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      {news.length > 0 && (
+        <section className="border-b border-ed-rule">
+          <Container className="py-12 md:py-16">
+            <SectionHeader label={NEWS.latestHeading} />
+            <NewsList compact items={news} />
+            <div className="mt-6">
+              <ArrowLink href="/news">{NEWS.latestLink}</ArrowLink>
+            </div>
+          </Container>
+        </section>
+      )}
 
       <section>
         <Container className="py-12 md:py-16">
