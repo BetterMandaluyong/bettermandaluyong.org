@@ -62,8 +62,12 @@ The news feed keeps its data in a D1 database and fills it from scheduled runs
 (all UTC): the feed job at :07 past every third hour, the archive job at :37
 past every third hour, and the removal check daily at 02:37.
 
-1. Create the D1 database `bettermandaluyong-news`, or confirm the first deploy
-   created it.
+1. Confirm the D1 database `bettermandaluyong-news` exists after the first
+   deploy. If the deploy did not create it, a human creates it: Cloudflare
+   dashboard → Storage & databases → D1 → **Create database**, named
+   `bettermandaluyong-news`, or `npx cf d1 create bettermandaluyong-news`. Then
+   bind it to the Worker as `DB` (as `cloudflare.config.ts` declares) and
+   deploy again.
 2. Optionally set the Internet Archive keys (from
    <https://archive.org/account/s3.php>), once each. They raise the Save Page
    Now limits; without them archiving still works at the anonymous rate:
@@ -74,10 +78,19 @@ past every third hour, and the removal check daily at 02:37.
    ```
 
 3. After the deploy, wait for the next run at :07 past a 3-hour mark, then check
-   `/status`.
+   `/status`. The Free-plan CPU limit for these runs has not been measured, so
+   check `/status` again after the first few runs.
+4. To see what the jobs did, run this in the D1 console:
+
+   ```sql
+   SELECT job, started_at, ok, items_read, new_items, archive_requests, error_code FROM feed_runs ORDER BY id DESC LIMIT 20;
+   ```
 
 There is no schema or import step: the Worker creates its own tables and
-backfills about 698 post titles and links over about 7 feed runs.
+backfills the full history, about 100 posts per feed run.
+
+With Internet Archive keys, an archive run being "ok" means Save Page Now
+*accepted* the job, not that the capture has finished.
 
 ### Custom domain
 

@@ -40,6 +40,10 @@ export const REMOVAL_CHECKS_PER_RUN = 30;
 export const ARCHIVE_MAX_ATTEMPTS = 3;
 /** D1 queries one run may use; the free plan allows 50 per invocation. */
 export const D1_QUERIES_PER_RUN = 45;
+/** Time limit for the RSS, WordPress, availability and HEAD requests. */
+export const FETCH_TIMEOUT_MS = 15_000;
+/** Time limit for one Save Page Now request, which waits for the capture. */
+export const SAVE_TIMEOUT_MS = 60_000;
 /** How far back the removal check looks, in days. */
 export const REMOVAL_WINDOW_DAYS = 365;
 
@@ -75,7 +79,8 @@ async function runJob(
   try {
     await ensureSchema(deps.db);
     outcome = await body();
-  } catch {
+  } catch (error) {
+    console.error(`news ${job} job failed`, error);
     outcome = { ...EMPTY, errorCode: "exception" };
   }
   const run: RunRow = {
@@ -86,8 +91,9 @@ async function runJob(
   };
   try {
     await recordRun(deps.db, run);
-  } catch {
+  } catch (error) {
     // The run log is best effort; a broken database must not escape the job.
+    console.error(`news ${job} run log failed`, error);
   }
   return run;
 }
@@ -101,7 +107,9 @@ const fetchError = (e: unknown): string =>
 async function getText(deps: JobDeps, url: string): Promise<string> {
   let res: Response;
   try {
-    res = await deps.fetch(url);
+    res = await deps.fetch(url, {
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+    });
   } catch {
     throw new Error("fetch_failed");
   }
@@ -122,7 +130,9 @@ async function backfillOnce(deps: JobDeps, nowIso: string): Promise<number> {
   }
   let res: Response;
   try {
-    res = await deps.fetch(wpPostsUrl(page));
+    res = await deps.fetch(wpPostsUrl(page), {
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+    });
   } catch {
     throw new Error("fetch_failed");
   }
@@ -181,7 +191,9 @@ export function runArchiveJob(deps: JobDeps): Promise<RunRow> {
     for (const { id, url } of pending) {
       try {
         let existing: string | null = null;
-        const res = await deps.fetch(availabilityUrl(url));
+        const res = await deps.fetch(availabilityUrl(url), {
+          signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+        });
         if (res.status === 429) {
           errorCode = "http_429";
           break;
@@ -204,7 +216,9 @@ export function runArchiveJob(deps: JobDeps): Promise<RunRow> {
         if (saves >= ARCHIVE_SAVES_PER_RUN) continue;
         saves++;
         const saved = interpretSave(
-          await deps.fetch(saveRequest(url, deps.iaKeys)),
+          await deps.fetch(saveRequest(url, deps.iaKeys), {
+            signal: AbortSignal.timeout(SAVE_TIMEOUT_MS),
+          }),
         );
         if (saved.throttled) {
           errorCode = "http_429";
@@ -271,8 +285,13 @@ export function runRemovalJob(deps: JobDeps): Promise<RunRow> {
     for (const { id, url } of items) {
       let status: number;
       try {
-        status = (await deps.fetch(url, { method: "HEAD", redirect: "manual" }))
-          .status;
+        status = (
+          await deps.fetch(url, {
+            method: "HEAD",
+            redirect: "manual",
+            signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+          })
+        ).status;
       } catch {
         errors++;
         continue;

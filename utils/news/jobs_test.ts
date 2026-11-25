@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   ARCHIVE_SAVES_PER_RUN,
   AVAILABILITY_CHECKS_PER_RUN,
@@ -98,6 +98,60 @@ describe("news jobs", () => {
   beforeEach(async () => {
     db = openTestDb();
     await ensureSchema(db);
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    return () => vi.restoreAllMocks();
+  });
+
+  describe("outbound requests and logging", () => {
+    it("every fetch carries an abort signal", async () => {
+      await upsertItems(db, [item(1)], NOW_ISO);
+      const seen: { url: string; signal: unknown }[] = [];
+      const f = (async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = input instanceof Request ? input.url : String(input);
+        seen.push({ url, signal: init?.signal });
+        if (url === FEED_URL) return new Response(rss(1));
+        if (url.startsWith("https://archive.org/wayback"))
+          return json({ archived_snapshots: {} });
+        if (url.includes("/save/")) return new Response("", { status: 200 });
+        if (url.includes("wp-json")) return json([]);
+        return new Response("");
+      }) as typeof fetch;
+      await runFeedJob(deps(f));
+      await runArchiveJob(deps(f));
+      await runRemovalJob(deps(f));
+      expect(seen.length).toBeGreaterThanOrEqual(5);
+      for (const { signal } of seen) expect(signal).toBeInstanceOf(AbortSignal);
+    });
+
+    it("a timeout is a network error", async () => {
+      const f = (async () => {
+        throw new DOMException("timed out", "TimeoutError");
+      }) as unknown as typeof fetch;
+      await setState(db, "wp_backfill_done", "1");
+      expect(await runFeedJob(deps(f))).toMatchObject({
+        ok: false,
+        errorCode: "fetch_failed",
+      });
+    });
+
+    it("logs an escaped exception with the job name, not in the run row", async () => {
+      const f = (async () => {
+        throw new TypeError("secret detail");
+      }) as unknown as typeof fetch;
+      await upsertItems(db, [item(1)], NOW_ISO);
+      const run = await runArchiveJob(deps(f));
+      expect(JSON.stringify(run)).not.toContain("secret detail");
+      const broken = {
+        ...db,
+        prepare: () => {
+          throw new Error("d1 down");
+        },
+      } as unknown as SqlDb;
+      await runRemovalJob(deps(f, { db: broken }));
+      const logged = vi.mocked(console.error).mock.calls.flat().join(" ");
+      expect(logged).toContain("removal");
+      expect(logged).toContain("d1 down");
+    });
   });
 
   describe("feed", () => {
