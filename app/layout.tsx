@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: SITE.name,
-  description: "Unofficial community portal for Mandaluyong residents.",
+  description: SITE.description,
   icons: { icon: { url: "/logo-seal.svg", type: "image/svg+xml" } },
   openGraph: { siteName: SITE.name, type: "website", url: SITE.url },
 };

@@ -16,14 +16,14 @@ export function SiteFooter() {
           <a
             href={SITE.officialSiteUrl}
             rel="noreferrer"
-            className="inline-flex min-h-11 items-center font-medium text-ed-navy"
+            className="inline-flex min-h-11 items-center text-ed-navy"
           >
             {UNOFFICIAL.linkLabel}
           </a>
           <a
             href={SITE.followUrl}
             rel="noreferrer"
-            className="inline-flex min-h-11 items-center font-medium text-ed-navy"
+            className="inline-flex min-h-11 items-center text-ed-navy"
           >
             {FOOTER.followLabel}
           </a>

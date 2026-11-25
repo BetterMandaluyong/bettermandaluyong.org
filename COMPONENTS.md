@@ -48,8 +48,9 @@ for reading pages; default 1504px. Every band's content goes in one.
 `components/UnofficialBar.tsx`: full-width `bg-ed-paper-2` band above the header
 on every page (rendered by `PageShell`). Says the site is not run by the City
 Government and links (external, `rel="noreferrer"`) to the official site. Copy
-is `UNOFFICIAL` and `SITE.officialSiteUrl` in `content.ts`. Wraps onto two lines
-on narrow screens; the link is 44px tall.
+is `UNOFFICIAL` and `SITE.officialSiteUrl` in `content.ts`. Thin: notice and
+link flow inline (one line on desktop, wrapping in place on phones); the link's
+padding gives a 44px tap target without thickening the bar.
 
 ### `SiteHeader` / `SiteFooter`
 

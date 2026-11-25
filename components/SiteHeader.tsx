@@ -22,7 +22,7 @@ export function SiteHeader() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="inline-flex min-h-11 items-center font-sans text-base font-medium text-ed-navy"
+                  className="inline-flex min-h-11 items-center type-ui text-ed-navy"
                 >
                   {item.label}
                 </a>

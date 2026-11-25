@@ -8,6 +8,7 @@
 export const SITE = {
   name: "Better Mandaluyong",
   url: "https://bettermandaluyong.org/",
+  description: "Unofficial community portal for Mandaluyong residents.",
   location: "Mandaluyong City, Metro Manila",
   /** Placeholder inbox: confirm it exists before launch. */
   contactEmail: "hello@bettermandaluyong.org",
