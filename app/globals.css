@@ -162,3 +162,9 @@
     color: var(--color-ed-navy);
   }
 }
+
+/* OpenStreetMap tiles are busy and yellow; mute them and tint toward navy. */
+.map-tiles-blue {
+  filter: grayscale(1) contrast(0.8) brightness(1.12) sepia(0.6)
+    hue-rotate(185deg) saturate(2.2);
+}

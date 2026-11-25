@@ -238,18 +238,22 @@ set cookies; only after the tap does it render the Facebook page-plugin
 ### `BarangayMap`
 
 `islands/BarangayMap.tsx`: an interactive map of the barangay boundaries, drawn
-with Leaflet over OpenStreetMap tiles. Each barangay is shaded by council
-district (solid for District 1, dashed for District 2, so color isn't the only
-cue) and names itself on hover. Props: `geojsonUrl` (`BOUNDARIES_URL`),
-`barangays` (`MapBarangay[]`, `MAP_BARANGAYS`), `height` (`"short"`, `"tall"`,
-or `"fill"`: fixed on phones, the parent's height on large screens).
+with Leaflet over CARTO Voyager tiles when `VITE_CARTO_KEY` is set (see
+`.env.example`), else OpenStreetMap tiles muted and tinted blue. Each barangay
+is shaded by council district (solid for District 1, dashed for District 2, so
+color isn't the only cue) and names itself on hover. Props: `geojsonUrl`
+(`BOUNDARIES_URL`), `barangays` (`MapBarangay[]`, `MAP_BARANGAYS`), `height`
+(`"short"`, `"tall"`, or `"fill"`: fixed on phones, the parent's height on large
+screens).
 
 - Without `onSelect`, a click opens a popup (captain, phone, link to its page).
   With `onSelect(slug)`, a click calls it and the parent shows the details.
 - View props change what is shown without rebuilding the map: `selected` (a slug
   or `null`) zooms to one barangay and dims the rest; `focus` does the same for
   a fixed barangay; `focusDistrict` (`1 | 2`) zooms to and highlights one
-  council district; `matches` (slugs) dims everything else, for search results.
+  council district; `matches` (slugs) dims everything else, for search results;
+  `hovered` (a slug) highlights one barangay as if the pointer were over it (the
+  explorer sets it when you hover a card).
 - The scroll wheel doesn't zoom, so the map never traps page scrolling;
   animation is off under `prefers-reduced-motion`. Leaflet loads in the browser
   only. The page must also show the credits (`BARANGAYS.mapCredit` in a

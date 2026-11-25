@@ -1,24 +1,24 @@
 import { describe, expect, it } from "vitest";
-import { parsePhones, telHref } from "./phone.ts";
+import { displayPhone, parsePhones, telHref } from "./phone.ts";
 
 describe("parsePhones", () => {
   it("splits two landlines on a slash", () => {
     expect(parsePhones("8534-0503 / 8706-1738")).toEqual([
-      { text: "8534-0503", href: "tel:+63285340503" },
-      { text: "8706-1738", href: "tel:+63287061738" },
+      { text: "(02) 8534-0503", href: "tel:+63285340503" },
+      { text: "(02) 8706-1738", href: "tel:+63287061738" },
     ]);
   });
 
   it("splits without spaces around the slash", () => {
     expect(parsePhones("8722-4258/8238-0321 to 22").map((p) => p.text)).toEqual(
-      ["8722-4258", "8238-0321 to 22"],
+      ["(02) 8722-4258", "(02) 8238-0321 to 22"],
     );
   });
 
   it("splits a landline from a mobile on an ampersand", () => {
     expect(parsePhones("8516-4308 & 0945-577-0438")).toEqual([
-      { text: "8516-4308", href: "tel:+63285164308" },
-      { text: "0945-577-0438", href: "tel:+639455770438" },
+      { text: "(02) 8516-4308", href: "tel:+63285164308" },
+      { text: "+63-945-577-0438", href: "tel:+639455770438" },
     ]);
   });
 
@@ -30,7 +30,7 @@ describe("parsePhones", () => {
 
   it("reads a plain mobile number", () => {
     expect(parsePhones("09457644743")).toEqual([
-      { text: "09457644743", href: "tel:+639457644743" },
+      { text: "+63-945-764-4743", href: "tel:+639457644743" },
     ]);
   });
 
@@ -51,5 +51,24 @@ describe("telHref", () => {
 
   it("returns null when there is no readable number", () => {
     expect(telHref("local 847")).toBeNull();
+  });
+});
+
+describe("displayPhone", () => {
+  it("adds the area code to landlines that start with 8", () => {
+    expect(displayPhone("8534-0503")).toBe("(02) 8534-0503");
+    expect(displayPhone("8532-5001 local 847")).toBe(
+      "(02) 8532-5001 local 847",
+    );
+  });
+
+  it("leaves numbers that already have one alone", () => {
+    expect(displayPhone("(02) 8532-4362")).toBe("(02) 8532-4362");
+  });
+
+  it("formats mobile numbers as +63-9XX-XXX-XXXX", () => {
+    expect(displayPhone("09457644743")).toBe("+63-945-764-4743");
+    expect(displayPhone("0945-577-0438")).toBe("+63-945-577-0438");
+    expect(displayPhone("0916-652-0210")).toBe("+63-916-652-0210");
   });
 });

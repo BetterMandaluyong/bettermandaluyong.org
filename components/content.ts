@@ -162,6 +162,9 @@ export const BARANGAYS = {
   captainsHeading: "Barangay captains",
   captainsIntro:
     "The Punong Barangay of each of the 27 barangays. Open a barangay to see its whole council.",
+  skChairsHeading: "SK chairpersons",
+  skChairsIntro:
+    "The Sangguniang Kabataan chairperson of each barangay. Open a barangay to see its whole SK council.",
   cityHeading: "City officials",
   cityMeta: "Representative, mayor, vice mayor, and councilors",
   mapLabel:
@@ -202,7 +205,7 @@ export const BARANGAYS = {
   sourceLink: "City Government of Mandaluyong",
   lastUpdated: (date: string) => `Last updated by the city on ${date}.`,
   mapCredit:
-    "Barangay boundaries: NAMRIA and PSA, via OCHA COD-AB (CC BY-IGO). Map tiles: © OpenStreetMap contributors.",
+    "Barangay boundaries and map data: © OpenStreetMap contributors (ODbL). Map tiles: © CARTO. Barangay codes: PSA.",
 } as const;
 
 /** Copy for the people pages (`/people` and `/people/<name>`). */

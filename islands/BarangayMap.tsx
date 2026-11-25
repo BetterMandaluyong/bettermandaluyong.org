@@ -9,13 +9,21 @@ import type {
 } from "leaflet";
 import type { MapBarangay } from "../data/barangays.ts";
 import { BARANGAYS } from "../components/content.ts";
-import { telHref } from "../utils/barangays/phone.ts";
+import { displayPhone, telHref } from "../utils/barangays/phone.ts";
 
 type Status = "loading" | "ready" | "error";
 
-const TILES = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
-const OSM_CREDIT =
-  '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+// With a CARTO key (VITE_CARTO_KEY, see .env.example) the map uses CARTO's
+// Voyager basemap; without one it falls back to OpenStreetMap's own tiles,
+// muted and tinted blue. A key shipped to the browser is public, so restrict
+// it to our domains in the CARTO dashboard.
+const CARTO_KEY = import.meta.env.VITE_CARTO_KEY as string | undefined;
+const TILES = CARTO_KEY
+  ? `https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png?key=${CARTO_KEY}`
+  : "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+const OSM_CREDIT = `© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors${
+  CARTO_KEY ? ' © <a href="https://carto.com/attributions">CARTO</a>' : ""
+}`;
 
 /** Reads a design token (a `--color-ed-*` CSS variable) so the map uses it. */
 function token(name: string): string {
@@ -43,10 +51,10 @@ function popupContent(b: MapBarangay): HTMLElement {
     if (href) {
       const a = document.createElement("a");
       a.href = href;
-      a.textContent = phone;
+      a.textContent = displayPhone(phone);
       row.appendChild(a);
     } else {
-      row.textContent = phone;
+      row.textContent = displayPhone(phone);
     }
     root.appendChild(row);
   }
@@ -65,6 +73,7 @@ type View = {
   focus?: string;
   focusDistrict?: 1 | 2;
   matches?: readonly string[] | null;
+  hovered?: string | null;
   onSelect?: (slug: string) => void;
 };
 
@@ -72,7 +81,7 @@ type Api = { restyle: () => void; fit: (animate: boolean) => void };
 
 /**
  * An interactive map of Mandaluyong's barangay boundaries, drawn with Leaflet
- * over OpenStreetMap tiles. Boundaries are fetched from `geojsonUrl`; each is
+ * over CARTO Voyager tiles (OpenStreetMap tiles, tinted blue, without a key). Boundaries are fetched from `geojsonUrl`; each is
  * shaded by council district (solid for District 1, dashed for District 2, so
  * color isn't the only cue) and names itself on hover.
  *
@@ -97,6 +106,7 @@ export function BarangayMap({
   focusDistrict,
   selected,
   matches,
+  hovered,
   onSelect,
   height = "tall",
 }: {
@@ -106,6 +116,7 @@ export function BarangayMap({
   focusDistrict?: 1 | 2;
   selected?: string | null;
   matches?: readonly string[] | null;
+  hovered?: string | null;
   onSelect?: (slug: string) => void;
   height?: "short" | "tall" | "fill";
 }) {
@@ -113,7 +124,14 @@ export function BarangayMap({
   const [status, setStatus] = useState<Status>("loading");
   const api = useRef<Api | null>(null);
   const view = useRef<View>({});
-  view.current = { selected, focus, focusDistrict, matches, onSelect };
+  view.current = {
+    selected,
+    focus,
+    focusDistrict,
+    matches,
+    hovered,
+    onSelect,
+  };
   const matchKey = matches ? matches.join(",") : "";
 
   useEffect(() => {
@@ -139,9 +157,12 @@ export function BarangayMap({
           markerZoomAnimation: !reduceMotion,
         });
         map = created;
-        L.tileLayer(TILES, { maxZoom: 19, attribution: OSM_CREDIT }).addTo(
-          created,
-        );
+        L.tileLayer(TILES, {
+          maxZoom: 19,
+          // Without a CARTO key, mute and tint OSM's tiles (globals.css).
+          className: CARTO_KEY ? undefined : "map-tiles-blue",
+          attribution: OSM_CREDIT,
+        }).addTo(created);
 
         const bySlug = new Map(barangays.map((b) => [b.slug, b]));
         const layers = new Map<string, Polygon>();
@@ -151,8 +172,9 @@ export function BarangayMap({
           2: token("ed-sage"),
         };
 
-        const styleFor = (slug: string, hover = false) => {
+        const styleFor = (slug: string, pointer = false) => {
           const v = view.current;
+          const hover = pointer || v.hovered === slug;
           const b = bySlug.get(slug);
           const district = b?.district ?? 1;
           const chosen = v.selected ?? v.focus;
@@ -231,7 +253,7 @@ export function BarangayMap({
 
   useEffect(() => {
     if (status === "ready") api.current?.restyle();
-  }, [status, selected, focus, focusDistrict, matchKey]);
+  }, [status, selected, focus, focusDistrict, matchKey, hovered]);
 
   const first = useRef(true);
   useEffect(() => {

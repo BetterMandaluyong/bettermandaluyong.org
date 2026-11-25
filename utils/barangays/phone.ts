@@ -1,6 +1,6 @@
-/** One phone number as the city publishes it, with a dialable link if any. */
+/** One phone number as shown on the site, with a dialable link if any. */
 export type PhoneLink = {
-  /** The number exactly as published, e.g. "8534-0503" or "8532-5001 local 847". */
+  /** The number as published, with "(02) " added to landlines, e.g. "8534-0503" or "8532-5001 local 847". */
   text: string;
   /** A `tel:` href in international form, or `null` if no number could be read. */
   href: string | null;
@@ -8,6 +8,21 @@ export type PhoneLink = {
 
 /** Where a number ends and its extension begins: "to 28", "local 847", "loc. 858". */
 const EXTENSION = /\b(?:to|local|loc|ext)\b/i;
+
+/**
+ * A number as shown on the site. A Philippine mobile number ("09XX…", in any
+ * punctuation) becomes "+63-9XX-XXX-XXXX". A Metro Manila landline (starts
+ * with "8") gets the "(02) " area code in front. Anything else, such as a
+ * number that already has an area code, is unchanged.
+ */
+export function displayPhone(text: string): string {
+  const t = text.trim();
+  const digits = t.replace(/\D/g, "");
+  if (/^09\d{9}$/.test(digits)) {
+    return `+63-${digits.slice(1, 4)}-${digits.slice(4, 7)}-${digits.slice(7)}`;
+  }
+  return t.startsWith("8") ? `(02) ${t}` : t;
+}
 
 /**
  * Splits the city's phone text ("8534-0503 / 8706-1738", "8516-4308 & 0945-577-0438")
@@ -19,7 +34,7 @@ export function parsePhones(raw: string): PhoneLink[] {
     .split(/\s*(?:\/|&)\s*(?=\(?\d[\d-]{6,})/)
     .map((part) => part.trim())
     .filter(Boolean)
-    .map((text) => ({ text, href: telHref(text) }));
+    .map((text) => ({ text: displayPhone(text), href: telHref(text) }));
 }
 
 /**

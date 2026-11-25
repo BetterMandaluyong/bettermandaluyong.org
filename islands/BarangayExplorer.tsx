@@ -23,10 +23,7 @@ function PersonRow({
   return (
     <li className="flex flex-wrap items-baseline justify-between gap-x-4 border-b border-ed-rule py-2">
       {href ? (
-        <a
-          href={href}
-          className="type-ui inline-flex min-h-11 items-center text-ed-navy"
-        >
+        <a href={href} className="type-ui block py-1.5 text-ed-navy">
           {name}
         </a>
       ) : (
@@ -72,27 +69,27 @@ function BarangayDetail({
           <Flag variant="outline">{BARANGAYS.zip(b.zip)}</Flag>
         </div>
       </div>
-      <dl className="m-0 flex flex-col gap-1">
+      <dl className="m-0 flex flex-col gap-4">
         <div>
           <dt className="type-label text-ed-ink-3">{BARANGAYS.hallHeading}</dt>
-          <dd className="type-ui m-0 text-ed-ink-2">{b.address}</dd>
+          <dd className="type-ui m-0 mt-1 py-1.5 text-ed-ink-2">{b.address}</dd>
         </div>
         <div>
           <dt className="type-label text-ed-ink-3">{BARANGAYS.phone}</dt>
-          <dd className="m-0 flex flex-wrap gap-x-4">
+          <dd className="m-0 mt-1 flex flex-col">
             {phones.map((p) =>
               p.href ? (
                 <a
                   key={p.text}
                   href={p.href}
-                  className="type-ui inline-flex min-h-11 items-center text-ed-navy"
+                  className="type-ui block py-1.5 text-ed-navy"
                 >
                   {p.text}
                 </a>
               ) : (
                 <span
                   key={p.text}
-                  className="type-ui inline-flex min-h-11 items-center text-ed-ink-2"
+                  className="type-ui block py-1.5 text-ed-ink-2"
                 >
                   {p.text}
                 </span>
@@ -106,7 +103,7 @@ function BarangayDetail({
             <dd className="m-0">
               <a
                 href={mailto(b.email)}
-                className="type-ui inline-flex min-h-11 items-center text-ed-navy"
+                className="type-ui block py-1.5 text-ed-navy"
               >
                 {b.email}
               </a>
@@ -193,6 +190,7 @@ export function BarangayExplorer({
       ? initialSelected
       : null,
   );
+  const [hovered, setHovered] = useState<string | null>(null);
   const userPicked = useRef(false);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
@@ -221,6 +219,7 @@ export function BarangayExplorer({
 
   function select(slug: string | null) {
     userPicked.current = true;
+    setHovered(null);
     setSelected(slug);
     const url = new URL(window.location.href);
     if (slug) url.searchParams.set("barangay", slug);
@@ -243,6 +242,7 @@ export function BarangayExplorer({
           barangays={mapBarangays}
           selected={selected}
           matches={matches}
+          hovered={hovered}
           onSelect={select}
           height="fill"
         />
@@ -294,6 +294,10 @@ export function BarangayExplorer({
                     <li key={b.slug}>
                       <a
                         href={`/barangays/${b.slug}`}
+                        onMouseEnter={() => setHovered(b.slug)}
+                        onMouseLeave={() => setHovered(null)}
+                        onFocus={() => setHovered(b.slug)}
+                        onBlur={() => setHovered(null)}
                         onClick={(e) => {
                           if (
                             e.button !== 0 ||
