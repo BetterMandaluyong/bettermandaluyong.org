@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { decodeEntities, toManilaIso } from "./text.ts";
+import { decodeEntities, stripTrackingParams, toManilaIso } from "./text.ts";
 
 describe("toManilaIso", () => {
   it("renders a UTC instant in Manila time with a +08:00 offset", () => {
@@ -26,5 +26,37 @@ describe("decodeEntities", () => {
 
   it("does not double-decode", () => {
     expect(decodeEntities("&amp;lt;")).toBe("&lt;");
+  });
+});
+
+describe("stripTrackingParams", () => {
+  it("drops utm_ parameters and the ? when nothing else remains", () => {
+    expect(
+      stripTrackingParams(
+        "https://mandaluyong.gov.ph/x/?utm_source=rss&utm_medium=rss&utm_campaign=x",
+      ),
+    ).toBe("https://mandaluyong.gov.ph/x/");
+  });
+
+  it("keeps other parameters in their original order", () => {
+    expect(
+      stripTrackingParams("https://mandaluyong.gov.ph/?p=58001&utm_source=rss"),
+    ).toBe("https://mandaluyong.gov.ph/?p=58001");
+    expect(
+      stripTrackingParams(
+        "https://mandaluyong.gov.ph/x/?a=1&utm_source=rss&b=2",
+      ),
+    ).toBe("https://mandaluyong.gov.ph/x/?a=1&b=2");
+  });
+
+  it("returns a clean URL unchanged", () => {
+    expect(stripTrackingParams("https://mandaluyong.gov.ph/x/")).toBe(
+      "https://mandaluyong.gov.ph/x/",
+    );
+  });
+
+  it("returns null for non-http(s) and invalid input", () => {
+    expect(stripTrackingParams("javascript:alert(1)")).toBeNull();
+    expect(stripTrackingParams("not a url")).toBeNull();
   });
 });
