@@ -37,3 +37,6 @@ docs/
 Thumbs.db
 [Dd]esktop.ini
 *~
+
+# Local scrape cache for the site audit (docs/site-audit/, never committed)
+.cache/
