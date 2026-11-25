@@ -23,7 +23,7 @@ pnpm run setup      # one-time: deps + commit template + commit-msg hook
 pnpm dev            # dev server (URL printed in terminal, typically http://localhost:5173)
 pnpm build          # production build -> .cloudflare/output/ (Workers bundle + static assets)
 pnpm preview        # serve the production build locally in workerd
-pnpm check          # prettier --check + oxlint + tsc --noEmit  (run before claiming done)
+pnpm check          # prettier --check + oxlint + cf workers types + tsc --noEmit  (run before claiming done)
 pnpm test           # unit tests (vitest run) — run before claiming done
 pnpm deploy:preview # Worker Preview for the branch (human step — see DEPLOYMENT.md)
 ```

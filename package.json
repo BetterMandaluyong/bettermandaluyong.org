@@ -13,7 +13,7 @@
     "preview": "vite preview",
     "deploy": "vinext-cloudflare deploy",
     "deploy:preview": "vinext-cloudflare previews deploy",
-    "check": "prettier --check . && oxlint && tsc --noEmit",
+    "check": "prettier --check . && oxlint && cf workers types && tsc --noEmit",
     "test": "vitest run",
     "setup": "node scripts/setup.ts"
   },

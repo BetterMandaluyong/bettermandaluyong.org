@@ -43,7 +43,7 @@ New to code, or working through an AI agent? Start with
 | `pnpm dev`            | Start the Vite dev server with hot reload.                                     |
 | `pnpm build`          | Production build into `.cloudflare/output/`.                                   |
 | `pnpm preview`        | Serve the production build locally in workerd.                                 |
-| `pnpm check`          | Run `prettier --check`, `oxlint`, and `tsc --noEmit`.                          |
+| `pnpm check`          | Run `prettier --check`, `oxlint`, Worker type generation, and `tsc --noEmit`.  |
 | `pnpm test`           | Run the unit tests (`vitest run`).                                             |
 | `pnpm run deploy`     | Build, then deploy to Cloudflare Workers (see [DEPLOYMENT.md](DEPLOYMENT.md)). |
 | `pnpm deploy:preview` | Upload a Worker Preview for the current branch (Production untouched).         |
