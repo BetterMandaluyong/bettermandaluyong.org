@@ -26,7 +26,10 @@ export type NavItem = {
 };
 
 /** Main navigation, shown in the header. Hrefs are on-site paths. */
-export const NAV: NavItem[] = [{ label: "News", href: "/news" }];
+export const NAV: NavItem[] = [
+  { label: "Barangays", href: "/barangays" },
+  { label: "News", href: "/news" },
+];
 
 /** The notice that this is not the city government's site. */
 export const UNOFFICIAL = {
@@ -111,12 +114,6 @@ export type FooterColumn = {
   links: { label: string; href: string }[];
 };
 
-/** A focus area shown on the home page. */
-export type Pillar = {
-  title: string;
-  body: string;
-};
-
 /** Home (launching-soon) page copy. */
 export const HOME = {
   metaTitle: "Better Mandaluyong — Launching soon",
@@ -127,21 +124,63 @@ export const HOME = {
   lede: "We're building a home for residents who want safer streets, greener spaces, and a city that works for everyone. The full site is on its way.",
   primaryCta: "Get in touch",
   secondaryCta: "Follow updates",
-  pillarsLabel: "What we care about",
-  pillars: [
-    {
-      title: "Walkable streets",
-      body: "Sidewalks, crossings, and transit people can actually use.",
-    },
-    {
-      title: "Green spaces",
-      body: "Parks, trees, and shade in every barangay.",
-    },
-    {
-      title: "Open governance",
-      body: "Clear information and real ways to take part.",
-    },
-  ] satisfies Pillar[],
+} as const;
+
+/**
+ * Copy for the barangay map, list, and pages. The data itself lives in
+ * `data/`; everything here is wording. ZIP codes are approximate and the copy
+ * says so; never present them as official.
+ */
+export const BARANGAYS = {
+  metaTitle: "Barangays — Better Mandaluyong",
+  metaDescription:
+    "A map of Mandaluyong's 27 barangays, with their officials, contact details, and approximate ZIP codes, plus the councilors and House representative who serve each one.",
+  heading: "Barangays",
+  intro:
+    "Find your barangay, who leads it, and how to reach them. Everything here comes from the City Government's own pages, and each page links back to its source.",
+  homeMeta: "27 barangays · 2 council districts",
+  homeIntro:
+    "Mandaluyong has 27 barangays in two council districts. Tap one on the map or pick it from the list.",
+  homeLink: "All barangays and officials",
+  mapLabel:
+    "Map of Mandaluyong's barangays. The list of barangays has the same information.",
+  mapLoading: "Loading the map…",
+  mapError:
+    "The map couldn't load. The list of barangays has the same information.",
+  mapLegend: "Council district",
+  mapPopupLink: "View barangay page",
+  listHeading: "All barangays",
+  district: (n: number) => `District ${n}`,
+  zip: (zip: string) => `ZIP ${zip}`,
+  zipNote:
+    "ZIP codes are approximate. The post office assigns them to delivery areas, not barangays.",
+  zipLookup: "Look up a ZIP code at PHLPost",
+  districtNote:
+    "Mandaluyong has two council districts. The whole city is one congressional district, so every barangay has the same House representative.",
+  repsHeading: "Who represents you",
+  repsHouseHeading: "House representative",
+  repsCityHeading: "Mayor and Vice Mayor",
+  councilorsHeading: (n: number) => `District ${n} councilors`,
+  hallHeading: "Barangay hall",
+  hallAddress: "Address",
+  councilHeading: "Barangay council",
+  skHeading: "Sangguniang Kabataan",
+  captain: "Punong Barangay",
+  kagawad: "Barangay Kagawad",
+  skChair: "SK Chairperson",
+  skKagawad: "SK Kagawad",
+  office: "Office",
+  phone: "Phone",
+  email: "Email",
+  repsFor: (district: number) =>
+    `Your district councilors are in District ${district}.`,
+  backToAll: "All barangays",
+  notFoundTitle: "Barangay not found — Better Mandaluyong",
+  source: "Source:",
+  sourceLink: "City Government of Mandaluyong",
+  lastUpdated: (date: string) => `Last updated by the city on ${date}.`,
+  mapCredit:
+    "Barangay boundaries: NAMRIA and PSA, via OCHA COD-AB (CC BY-IGO). Map tiles: © OpenStreetMap contributors.",
 } as const;
 
 /** Copy for the city news page, the news list, and the Facebook island. */

@@ -3,12 +3,19 @@ import { env } from "cloudflare:workers";
 import { ArrowLink } from "../components/ArrowLink.tsx";
 import { Button } from "../components/Button.tsx";
 import { Container } from "../components/Container.tsx";
+import { BarangayList } from "../components/BarangayList.tsx";
 import { Flag } from "../components/Flag.tsx";
 import { NewsList } from "../components/NewsList.tsx";
 import { PageShell } from "../components/PageShell.tsx";
-import { PillarList } from "../components/PillarList.tsx";
 import { SectionHeader } from "../components/SectionHeader.tsx";
-import { HOME, NEWS, SITE, mailto } from "../components/content.ts";
+import { SourceNote } from "../components/SourceNote.tsx";
+import { BARANGAYS, HOME, NEWS, SITE, mailto } from "../components/content.ts";
+import {
+  BARANGAYS as ALL_BARANGAYS,
+  BOUNDARIES_URL,
+  MAP_BARANGAYS,
+} from "../data/barangays.ts";
+import { BarangayMap } from "../islands/BarangayMap.tsx";
 import { latestNews, readOrDefault } from "../utils/news/store.ts";
 
 export const metadata: Metadata = {
@@ -54,6 +61,30 @@ export default async function HomePage({
         </Container>
       </section>
 
+      <section className="border-b border-ed-rule">
+        <Container className="py-12 md:py-16">
+          <SectionHeader label={BARANGAYS.heading} meta={BARANGAYS.homeMeta} />
+          <p className="type-body m-0 mb-6 max-w-[65ch]">
+            {BARANGAYS.homeIntro}
+          </p>
+          <BarangayMap
+            geojsonUrl={BOUNDARIES_URL}
+            barangays={MAP_BARANGAYS}
+            height="short"
+          />
+          <SourceNote>{BARANGAYS.mapCredit}</SourceNote>
+          <div className="mt-8">
+            <BarangayList
+              barangays={ALL_BARANGAYS}
+              label={BARANGAYS.listHeading}
+            />
+          </div>
+          <div className="mt-6">
+            <ArrowLink href="/barangays">{BARANGAYS.homeLink}</ArrowLink>
+          </div>
+        </Container>
+      </section>
+
       {news.length > 0 && (
         <section className="border-b border-ed-rule">
           <Container className="py-12 md:py-16">
@@ -65,13 +96,6 @@ export default async function HomePage({
           </Container>
         </section>
       )}
-
-      <section>
-        <Container className="py-12 md:py-16">
-          <SectionHeader label={HOME.pillarsLabel} />
-          <PillarList pillars={HOME.pillars} label={HOME.pillarsLabel} />
-        </Container>
-      </section>
     </PageShell>
   );
 }

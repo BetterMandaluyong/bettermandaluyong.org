@@ -2,18 +2,26 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { ArrowLink } from "../../components/ArrowLink.tsx";
 import { Button } from "../../components/Button.tsx";
+import { BarangayList } from "../../components/BarangayList.tsx";
 import { Card } from "../../components/Card.tsx";
 import { Container } from "../../components/Container.tsx";
 import { Eyebrow } from "../../components/Eyebrow.tsx";
 import { Flag } from "../../components/Flag.tsx";
 import { NewsList } from "../../components/NewsList.tsx";
+import { OfficialList } from "../../components/OfficialList.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
-import { PillarList } from "../../components/PillarList.tsx";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
+import { SourceNote } from "../../components/SourceNote.tsx";
 import { StatusLine } from "../../components/StatusLine.tsx";
 import { SiteHeader } from "../../components/SiteHeader.tsx";
 import { UnofficialBar } from "../../components/UnofficialBar.tsx";
 import { HOME, SITE, mailto } from "../../components/content.ts";
+import {
+  BARANGAYS,
+  BOUNDARIES_URL,
+  MAP_BARANGAYS,
+} from "../../data/barangays.ts";
+import { BarangayMap } from "../../islands/BarangayMap.tsx";
 import { FacebookFeed } from "../../islands/FacebookFeed.tsx";
 import type { NewsRow } from "../../utils/news/store.ts";
 import { COLOR_TOKENS, TYPE_UTILITIES } from "../../components/tokens.ts";
@@ -241,8 +249,51 @@ export default function StorybookPage() {
         <Specimen name="FacebookFeed (island; loads nothing until tapped)">
           <FacebookFeed pageUrl={SITE.cityPioFacebookUrl} />
         </Specimen>
-        <Specimen name="PillarList">
-          <PillarList pillars={HOME.pillars} label={HOME.pillarsLabel} />
+        <Specimen name="BarangayList (first four; `groupByDistrict` on /barangays)">
+          <BarangayList
+            barangays={BARANGAYS.slice(0, 4)}
+            label="Sample barangays"
+          />
+        </Specimen>
+        <Specimen name="OfficialList (plain)">
+          <OfficialList
+            label="Sample council"
+            items={[
+              { name: "Sample Person One", role: "Punong Barangay" },
+              { name: "Sample Person Two", role: "Barangay Kagawad" },
+            ]}
+          />
+        </Specimen>
+        <Specimen name="OfficialList (card, with contacts; sample data only)">
+          <OfficialList
+            variant="card"
+            label="Sample official"
+            items={[
+              {
+                name: "Sample Person",
+                role: "Councilor · District 1",
+                office: "Sample office address",
+                phones: ["8000-0000", "(02) 8000-0001 local 123"],
+                emails: ["sample@example.com"],
+              },
+            ]}
+          />
+        </Specimen>
+        <Specimen name="SourceNote">
+          <SourceNote
+            href="https://example.com/"
+            label="Sample source"
+            updated="January 1, 2026"
+          >
+            Extra credit text goes here.
+          </SourceNote>
+        </Specimen>
+        <Specimen name="BarangayMap (island; Leaflet + OpenStreetMap tiles)">
+          <BarangayMap
+            geojsonUrl={BOUNDARIES_URL}
+            barangays={MAP_BARANGAYS}
+            height="short"
+          />
         </Specimen>
       </Band>
     </PageShell>
