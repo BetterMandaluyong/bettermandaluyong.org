@@ -50,3 +50,36 @@ export function openTestDb(): SqlDb {
     },
   };
 }
+
+/** Wraps a test database and counts every statement run, including each statement inside a batch. */
+export function countingDb(db: SqlDb): { db: SqlDb; count(): number } {
+  let n = 0;
+  type Wrapped = SqlStatement & { inner: SqlStatement };
+  const wrap = (stmt: SqlStatement): Wrapped => ({
+    inner: stmt,
+    bind: (...values) => wrap(stmt.bind(...values)),
+    run: () => {
+      n += 1;
+      return stmt.run();
+    },
+    all: <T>() => {
+      n += 1;
+      return stmt.all<T>();
+    },
+    first: <T>() => {
+      n += 1;
+      return stmt.first<T>();
+    },
+  });
+  // Batched statements stay unwrapped (the test db executes them directly) and are counted here.
+  return {
+    db: {
+      prepare: (sql) => wrap(db.prepare(sql)),
+      batch: (statements) => {
+        n += statements.length;
+        return db.batch(statements.map((s) => (s as Wrapped).inner));
+      },
+    },
+    count: () => n,
+  };
+}

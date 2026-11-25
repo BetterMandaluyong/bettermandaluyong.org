@@ -73,6 +73,8 @@ const countItems = async (db: SqlDb): Promise<number> =>
       .first<{ n: number }>()
   )?.n ?? 0;
 
+const UPSERT_ROWS = 14;
+
 /** Inserts new items and refreshes title, url and categories of known ones. */
 export async function upsertItems(
   db: SqlDb,
@@ -81,26 +83,34 @@ export async function upsertItems(
 ): Promise<{ newCount: number }> {
   if (items.length === 0) return { newCount: 0 };
   const before = await countItems(db);
-  await db.batch(
-    items.map((i) =>
+  // D1 allows 100 bound values per statement and 50 queries per invocation:
+  // 14 rows x 7 values per statement keeps both limits.
+  const statements = [];
+  for (let start = 0; start < items.length; start += UPSERT_ROWS) {
+    const chunk = items.slice(start, start + UPSERT_ROWS);
+    const rows = chunk.map(() => "(?, ?, ?, ?, ?, ?, ?)").join(", ");
+    statements.push(
       db
         .prepare(
           `INSERT INTO news_items (source, source_id, url, title, published_at, categories, first_seen_at)
-           VALUES (?, ?, ?, ?, ?, ?, ?)
+           VALUES ${rows}
            ON CONFLICT(source, source_id) DO UPDATE SET
              title = excluded.title, url = excluded.url, categories = excluded.categories`,
         )
         .bind(
-          i.source,
-          i.sourceId,
-          i.url,
-          i.title,
-          i.publishedAt,
-          JSON.stringify(i.categories),
-          nowIso,
+          ...chunk.flatMap((i) => [
+            i.source,
+            i.sourceId,
+            i.url,
+            i.title,
+            i.publishedAt,
+            JSON.stringify(i.categories),
+            nowIso,
+          ]),
         ),
-    ),
-  );
+    );
+  }
+  await db.batch(statements);
   return { newCount: (await countItems(db)) - before };
 }
 
