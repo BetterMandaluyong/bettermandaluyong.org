@@ -12,7 +12,7 @@ import {
   upsertItems,
   type RunRow,
 } from "./store.ts";
-import { toManilaIso } from "./text.ts";
+import { decodeEntities, toManilaIso } from "./text.ts";
 import type { JobName, SqlDb } from "./types.ts";
 import {
   availabilityUrl,
@@ -117,7 +117,7 @@ async function backfillOnce(deps: JobDeps, nowIso: string): Promise<number> {
   for (const c of Array.isArray(cats) ? cats : []) {
     const { id, name } = (c ?? {}) as { id?: unknown; name?: unknown };
     if (typeof id === "number" && typeof name === "string") {
-      categories.set(id, name);
+      categories.set(id, decodeEntities(name));
     }
   }
   let res: Response;
