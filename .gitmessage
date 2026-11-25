@@ -1,0 +1,12 @@
+# <type>(<scope>): imperative summary — 72 chars max
+#
+# type:    feat | fix | docs | chore | refactor | test | ci
+# scope:   the area touched, e.g. page, tokens, components, deploy, docs
+# subject: imperative mood, no trailing period
+#
+# Body (optional): explain WHY, wrapped at ~72 columns. End with a
+# verification line, e.g.:
+#     Verified: pnpm check clean; pnpm test 10 passed.
+#
+# NEVER add Co-Authored-By or "Generated with …" trailers — commits are
+# attributed to the human author only. The commit-msg hook rejects them.
