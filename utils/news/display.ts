@@ -40,6 +40,22 @@ export function formatNewsDate(iso: string): string {
   return dateFormat.format(new Date(iso));
 }
 
+const dateTimeFormat = new Intl.DateTimeFormat("en-PH", {
+  timeZone: "Asia/Manila",
+  dateStyle: "long",
+  timeStyle: "short",
+});
+
+/** Formats an ISO timestamp as date and time in Manila time, e.g. "November 25, 2026, 8:07 PM". */
+export function formatManilaDateTime(iso: string): string {
+  return dateTimeFormat
+    .format(new Date(iso))
+    .replace(" at ", ", ")
+    .replace(/\s/g, " ")
+    .replace(/\bam\b/i, "AM")
+    .replace(/\bpm\b/i, "PM");
+}
+
 /** The archived copy of an item, or null when there is none. */
 export function archiveLink(row: NewsRow): string | null {
   if (row.waybackUrl) return row.waybackUrl;

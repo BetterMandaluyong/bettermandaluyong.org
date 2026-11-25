@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   archiveLink,
+  formatManilaDateTime,
   formatNewsDate,
   itemLink,
   NEWS_PER_PAGE,
@@ -68,6 +69,20 @@ describe("formatNewsDate", () => {
   it("uses Manila time, not UTC", () => {
     expect(formatNewsDate("2026-10-31T23:30:00+08:00")).toBe(
       "October 31, 2026",
+    );
+  });
+});
+
+describe("formatManilaDateTime", () => {
+  it("formats date and time in Manila time", () => {
+    expect(formatManilaDateTime("2026-11-25T12:07:00Z")).toBe(
+      "November 25, 2026, 8:07 PM",
+    );
+  });
+
+  it("rolls the date over in Manila time", () => {
+    expect(formatManilaDateTime("2026-10-31T17:30:00Z")).toBe(
+      "November 1, 2026, 1:30 AM",
     );
   });
 });
