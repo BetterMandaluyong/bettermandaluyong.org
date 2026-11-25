@@ -179,7 +179,8 @@ app/          Pages (App Router). layout.tsx = root layout; page.tsx = home;
               globals.css = design tokens (ported from BetterGov.ph v2).
 components/   Reusable server components — see COMPONENTS.md for the catalog.
               Ported BetterGov files say so in their header.
-components/content.ts  All user-facing copy and links (SITE, HOME).
+components/content.ts  All user-facing copy and links (SITE, HOME, FOOTER, …).
+components/build.ts    Build commit SHA for the footer (set in vite.config.ts).
 components/tokens.ts   Token list for /storybook (and its test).
 islands/      Client-hydrated components ("use client") — none yet.
 public/       Assets served as-is: logo-seal.svg (logo + favicon),

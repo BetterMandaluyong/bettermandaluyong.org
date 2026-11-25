@@ -201,5 +201,15 @@ the errors and assumptions that seasoned contributors have glossed over.
 
 ## License
 
-[MIT](LICENSE). Copyright (c) 2026 Better Mandaluyong contributors. Work we
-reuse from other projects keeps its own license; see [NOTICE.md](NOTICE.md).
+Better Mandaluyong is dual-licensed, like BetterGov.ph. Copyright (c) 2026
+Better Mandaluyong contributors.
+
+- **Code** is released under the [MIT License](LICENSE).
+- **Content** (the site's text, images, and data) is published under
+  [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/); see
+  [LICENSE-CONTENT](LICENSE-CONTENT). You may share it unchanged, for
+  non-commercial purposes, with credit.
+
+Neither license covers the BetterGov.ph name and logo, which belong to
+BetterGov.ph. Work we reuse from other projects keeps its own license; see
+[NOTICE.md](NOTICE.md).

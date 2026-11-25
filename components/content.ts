@@ -15,6 +15,8 @@ export const SITE = {
   followUrl: "https://www.facebook.com/BetterMandaluyong",
   officialSiteUrl: "https://mandaluyong.gov.ph/",
   cityPioFacebookUrl: "https://www.facebook.com/MandaluyongPIO",
+  /** Public repository; the footer links to it, its issues, and commits. */
+  repoUrl: "https://github.com/BetterMandaluyong/bettermandaluyong.org",
 } as const;
 
 /** A link in the main site navigation. */
@@ -32,10 +34,82 @@ export const UNOFFICIAL = {
   linkLabel: "Official site: mandaluyong.gov.ph",
 } as const;
 
-/** Footer-only copy. */
-export const FOOTER = {
-  followLabel: "Follow Better Mandaluyong",
+/**
+ * The BetterGov.ph movement this site is part of. The logo is not ours: it is
+ * loaded unmodified from BetterGov's own asset CDN, as its logo guide asks
+ * (github.com/bettergovph/logo), and is not covered by our licenses.
+ */
+export const BETTERGOV = {
+  name: "BetterGov.ph",
+  url: "https://bettergov.ph/",
+  aboutUrl: "https://about.bettergov.ph/",
+  designUrl: "https://bettergov.ph/design",
+  lguUrl: "https://lgu.bettergov.ph/",
+  /**
+   * White horizontal logo for navy backgrounds (4:1). WebP, as the guide asks;
+   * the SVG sets its wordmark as live text, which an <img> can't render.
+   */
+  logoWhiteSrc: "https://assets.bettergov.ph/logos/webp/horizontal-white.webp",
 } as const;
+
+/** A license the site is published under, as named in the footer. */
+export type License = {
+  /** Short name shown in the footer, e.g. "MIT". */
+  name: string;
+  /** What it covers: "Code" or "Content". */
+  covers: string;
+  href: string;
+};
+
+/** Footer copy, links, and licenses. */
+export const FOOTER = {
+  description: "A community effort for a more livable Mandaluyong.",
+  partOf: "Part of the BetterGov.ph initiative",
+  openSourceFlag: "Open source",
+  columns: [
+    {
+      heading: "Get involved",
+      links: [
+        { label: "Email us", href: mailto(SITE.contactEmail) },
+        { label: "Follow Better Mandaluyong", href: SITE.followUrl },
+      ],
+    },
+    {
+      heading: "Open source",
+      links: [
+        { label: "Source code on GitHub", href: SITE.repoUrl },
+        { label: "Report a problem", href: `${SITE.repoUrl}/issues` },
+        { label: "Credits", href: `${SITE.repoUrl}/blob/main/NOTICE.md` },
+      ],
+    },
+    {
+      heading: "BetterGov.ph",
+      links: [
+        { label: "About BetterGov.ph", href: BETTERGOV.aboutUrl },
+        { label: "Design system", href: BETTERGOV.designUrl },
+        { label: "Other BetterLGU sites", href: BETTERGOV.lguUrl },
+      ],
+    },
+  ] satisfies FooterColumn[],
+  licenses: [
+    {
+      name: "CC BY-NC-ND 4.0",
+      covers: "Content",
+      href: "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    },
+    {
+      name: "MIT",
+      covers: "Code",
+      href: `${SITE.repoUrl}/blob/main/LICENSE`,
+    },
+  ] satisfies License[],
+} as const;
+
+/** A headed list of links in the footer. */
+export type FooterColumn = {
+  heading: string;
+  links: { label: string; href: string }[];
+};
 
 /** A focus area shown on the home page. */
 export type Pillar = {

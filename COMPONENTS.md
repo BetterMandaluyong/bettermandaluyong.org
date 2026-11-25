@@ -45,21 +45,31 @@ for reading pages; default 1504px. Every band's content goes in one.
 
 ### `UnofficialBar`
 
-`components/UnofficialBar.tsx`: full-width `bg-ed-paper-2` band above the header
-on every page (rendered by `PageShell`). Says the site is not run by the City
-Government and links (external, `rel="noreferrer"`) to the official site. Copy
-is `UNOFFICIAL` and `SITE.officialSiteUrl` in `content.ts`. Thin: notice and
-link flow inline (one line on desktop, wrapping in place on phones); the link's
-padding gives a 44px tap target without thickening the bar.
+`components/UnofficialBar.tsx`: thin `bg-ed-navy-2` band above the header on
+every page (rendered by `PageShell`), in the style of BetterGov's top banner.
+Says the site is not run by the City Government and links (external,
+`rel="noreferrer"`, white with `focus-visible:outline-white`) to the official
+site. Copy is `UNOFFICIAL` and `SITE.officialSiteUrl` in `content.ts`. Thin:
+notice and link flow inline (one line on desktop, wrapping in place on phones);
+the link's padding gives a 44px tap target without thickening the bar.
 
-### `SiteHeader` / `SiteFooter`
+### `SiteHeader` / `SiteFooter` (BetterGov)
 
-Rendered by `PageShell`; you don't use them directly. The header is the seal
-logo + site name linking home, plus a `<nav aria-label="Main">` listing `NAV`
-from `content.ts` (navy links, 44px tall). Add a nav item by adding to `NAV`.
-The footer shows the `UNOFFICIAL` notice with links to the official site and to
-follow Better Mandaluyong (`SITE.followUrl`), then `© <year> Better Mandaluyong`
-(year rendered on the server) and the city.
+Rendered by `PageShell`; you don't use them directly.
+
+- **`SiteHeader`**: the seal logo + site name linking home, plus a
+  `<nav aria-label="Main">` listing `NAV` from `content.ts` (navy links, 44px
+  tall). Add a nav item by adding to `NAV`.
+- **`SiteFooter`** (BetterGov's `Footer`): an `ed-navy-ink` band with the site
+  name and description, the `UNOFFICIAL` notice linking to the official site,
+  "Part of the BetterGov.ph initiative" with BetterGov's white logo (from its
+  CDN, unmodified), link columns (`FOOTER.columns`: contact and follow, GitHub,
+  BetterGov), and a bottom row with `© <year>` (rendered on the server), the
+  content and code licenses (`FOOTER.licenses`), and the short commit hash
+  linking to that commit on GitHub. The hash comes from `components/build.ts`,
+  which `vite.config.ts` fills at build time; it is hidden when unknown. On navy
+  surfaces, links set `focus-visible:outline-white` so the focus ring stays
+  visible.
 
 ## Actions and links
 
