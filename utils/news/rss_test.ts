@@ -106,4 +106,16 @@ describe("parseCityFeed", () => {
     expect(parseCityFeed("<rss><channel></channel></rss>")).toEqual([]);
     expect(parseCityFeed(xml.slice(0, 120))).toEqual([]);
   });
+
+  it("skips items whose link is not on the city site", () => {
+    const bad = (link: string) =>
+      item(
+        `<title>T</title><link>${link}</link><pubDate>Tue, 27 Oct 2026 03:08:46 +0000</pubDate>`,
+      );
+    expect(
+      parseCityFeed(
+        feed(bad("https://evil.example/x/"), bad("javascript:alert(1)")),
+      ),
+    ).toEqual([]);
+  });
 });

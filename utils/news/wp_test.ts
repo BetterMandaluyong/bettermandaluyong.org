@@ -75,4 +75,25 @@ describe("parseWpPosts", () => {
     );
     expect(items.map((i) => i.sourceId)).toEqual(["3"]);
   });
+
+  it("skips non-city and non-http links and strips utm params", () => {
+    const post = (id: number, link: string) => ({
+      id,
+      link,
+      title: { rendered: "T" },
+      date: "2026-07-28T10:52:54",
+      categories: [],
+    });
+    const items = parseWpPosts(
+      [
+        post(1, "https://evil.example/x/"),
+        post(2, "javascript:alert(1)"),
+        post(3, "https://mandaluyong.gov.ph/ok/?utm_source=a"),
+      ],
+      cats,
+    );
+    expect(items.map((i) => [i.sourceId, i.url])).toEqual([
+      ["3", "https://mandaluyong.gov.ph/ok/"],
+    ]);
+  });
 });

@@ -1,4 +1,4 @@
-import { decodeEntities, stripTrackingParams, toManilaIso } from "./text.ts";
+import { cityPostUrl, decodeEntities, toManilaIso } from "./text.ts";
 import type { FeedItem } from "./types.ts";
 
 const ITEM_RE = /<item\b[^>]*>([\s\S]*?)<\/item>/g;
@@ -23,7 +23,7 @@ function field(block: string, tag: string): string | undefined {
 /**
  * Parse the city's RSS feed into link-only items. Returns [] for anything that
  * is not a feed with complete items (HTML error page, empty channel, truncated
- * XML). Items missing a title, link or valid pubDate are skipped. Article text
+ * XML). Items missing a title, a link on the city site or a valid pubDate are skipped. Article text
  * (`content:encoded`, `description`) is stripped and never returned.
  */
 export function parseCityFeed(xml: string): FeedItem[] {
@@ -32,7 +32,7 @@ export function parseCityFeed(xml: string): FeedItem[] {
     const block = (match[1] ?? "").replace(BODY_RE, "");
     const title = field(block, "title");
     const link = field(block, "link");
-    const url = link === undefined ? null : stripTrackingParams(link);
+    const url = link === undefined ? null : cityPostUrl(link);
     const pubDate = field(block, "pubDate");
     if (!title || !url || !pubDate) continue;
     const published = new Date(pubDate);
