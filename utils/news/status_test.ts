@@ -64,4 +64,44 @@ describe("lineStatus", () => {
     const runs = [run(1, true), run(2, true), run(3, false)];
     expect(lineStatus(runs, NOW).lastSuccessAt).toBe(runs[0].finishedAt);
   });
+
+  describe("ignoreIdle", () => {
+    const idle = (hoursAgo: number): RunRow => ({
+      ...run(hoursAgo, true),
+      itemsRead: 0,
+    });
+    const busy = (hoursAgo: number, ok: boolean): RunRow => ({
+      ...run(hoursAgo, ok),
+      itemsRead: 5,
+    });
+
+    it("idle ok runs between two failures do not reset the count", () => {
+      const runs = [busy(1, false), idle(2), idle(3), busy(4, false)];
+      expect(lineStatus(runs, NOW).state).toBe("working");
+      expect(lineStatus(runs, NOW, { ignoreIdle: true }).state).toBe(
+        "not-working",
+      );
+    });
+
+    it("lastSuccessAt skips idle runs", () => {
+      const runs = [idle(1), busy(2, false), busy(3, true)];
+      expect(lineStatus(runs, NOW, { ignoreIdle: true }).lastSuccessAt).toBe(
+        runs[2].finishedAt,
+      );
+    });
+
+    it("staleness comes from the newest run of any kind", () => {
+      const runs = [idle(8), busy(9, false), busy(10, false)];
+      expect(lineStatus(runs, NOW, { ignoreIdle: true }).state).toBe(
+        "not-checked",
+      );
+    });
+
+    it("a fresh idle run keeps a stale failing line from going not-checked", () => {
+      const runs = [idle(1), busy(9, false), busy(10, false)];
+      expect(lineStatus(runs, NOW, { ignoreIdle: true }).state).toBe(
+        "not-working",
+      );
+    });
+  });
 });
