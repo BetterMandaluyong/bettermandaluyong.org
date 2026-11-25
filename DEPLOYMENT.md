@@ -66,8 +66,8 @@ past every third hour, and the removal check daily at 02:37.
    deploy. If the deploy did not create it, a human creates it: Cloudflare
    dashboard → Storage & databases → D1 → **Create database**, named
    `bettermandaluyong-news`, or `npx cf d1 create bettermandaluyong-news`. Then
-   bind it to the Worker as `DB` (as `cloudflare.config.ts` declares) and
-   deploy again.
+   bind it to the Worker as `DB` (as `cloudflare.config.ts` declares) and deploy
+   again.
 2. Optionally set the Internet Archive keys (from
    <https://archive.org/account/s3.php>), once each. They raise the Save Page
    Now limits; without them archiving still works at the anonymous rate:
@@ -90,7 +90,7 @@ There is no schema or import step: the Worker creates its own tables and
 backfills the full history, about 100 posts per feed run.
 
 With Internet Archive keys, an archive run being "ok" means Save Page Now
-*accepted* the job, not that the capture has finished.
+_accepted_ the job, not that the capture has finished.
 
 ### Custom domain
 
