@@ -1,6 +1,25 @@
 /** Internet Archive S3-style keys for the Save Page Now API. */
 export type IaKeys = { access: string; secret: string };
 
+/**
+ * Resolve a Wayback location (absolute or relative) and accept it only when it
+ * is on web.archive.org over http(s). Returns the https form, or null for any
+ * other host (including protocol-relative `//host/...`), port or scheme.
+ */
+export function archiveUrl(loc: string): string | null {
+  if (loc.trim() === "") return null;
+  let parsed: URL;
+  try {
+    parsed = new URL(loc, "https://web.archive.org");
+  } catch {
+    return null;
+  }
+  if (parsed.protocol !== "https:" && parsed.protocol !== "http:") return null;
+  if (parsed.host !== "web.archive.org") return null;
+  parsed.protocol = "https:";
+  return parsed.href;
+}
+
 /** Build the Wayback availability-check URL for a page. */
 export function availabilityUrl(url: string): string {
   return `https://archive.org/wayback/available?url=${encodeURIComponent(url)}`;
@@ -14,7 +33,7 @@ export function parseAvailability(json: unknown): string | null {
     } | null
   )?.archived_snapshots?.closest;
   return closest?.available === true && typeof closest.url === "string"
-    ? closest.url
+    ? archiveUrl(closest.url)
     : null;
 }
 
@@ -42,7 +61,7 @@ export function interpretSave(res: { status: number; headers: Headers }): {
     const location = res.headers.get("Content-Location");
     return {
       status: "ok",
-      captureUrl: location ? `https://web.archive.org${location}` : null,
+      captureUrl: location ? archiveUrl(location) : null,
       throttled: false,
     };
   }

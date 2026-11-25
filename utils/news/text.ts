@@ -45,3 +45,16 @@ export function stripTrackingParams(url: string): string | null {
   parsed.search = kept.toString();
   return parsed.href;
 }
+
+const CITY_HOSTS = new Set(["mandaluyong.gov.ph", "www.mandaluyong.gov.ph"]);
+
+/**
+ * Validate a link to a city post: tracking params are stripped and the host
+ * must be mandaluyong.gov.ph or www.mandaluyong.gov.ph. Returns null for any
+ * other host, for invalid URLs and for non-http(s) schemes.
+ */
+export function cityPostUrl(raw: string): string | null {
+  const url = stripTrackingParams(raw);
+  if (url === null) return null;
+  return CITY_HOSTS.has(new URL(url).host) ? url : null;
+}

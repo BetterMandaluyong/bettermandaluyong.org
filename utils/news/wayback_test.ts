@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  archiveUrl,
   availabilityUrl,
   interpretSave,
   parseAvailability,
@@ -27,7 +28,16 @@ describe("parseAvailability", () => {
           },
         },
       }),
-    ).toBe("http://web.archive.org/web/2026/https://mandaluyong.gov.ph/x/");
+    ).toBe("https://web.archive.org/web/2026/https://mandaluyong.gov.ph/x/");
+  });
+  it("rejects a snapshot url on another host", () => {
+    expect(
+      parseAvailability({
+        archived_snapshots: {
+          closest: { available: true, url: "https://evil.example/web/1/x" },
+        },
+      }),
+    ).toBeNull();
   });
   it("returns null when there is no snapshot", () => {
     expect(parseAvailability({ archived_snapshots: {} })).toBeNull();
@@ -85,5 +95,37 @@ describe("interpretSave", () => {
     expect(interpretSave({ status: 503, headers: new Headers() }).status).toBe(
       "http 503",
     );
+  });
+});
+
+describe("archiveUrl", () => {
+  it("resolves relative paths and upgrades http to https", () => {
+    expect(archiveUrl("/web/1/x")).toBe("https://web.archive.org/web/1/x");
+    expect(archiveUrl("https://web.archive.org/web/1/x")).toBe(
+      "https://web.archive.org/web/1/x",
+    );
+    expect(archiveUrl("http://web.archive.org/web/1/x")).toBe(
+      "https://web.archive.org/web/1/x",
+    );
+  });
+  it("rejects other hosts, protocol-relative values and odd schemes", () => {
+    expect(archiveUrl("//evil.example/x")).toBeNull();
+    expect(archiveUrl("https://evil.example/x")).toBeNull();
+    expect(archiveUrl("https://web.archive.org.evil.example/x")).toBeNull();
+    expect(archiveUrl("https://web.archive.org:8443/x")).toBeNull();
+    expect(archiveUrl("javascript:alert(1)")).toBeNull();
+    expect(archiveUrl("")).toBeNull();
+  });
+  it("interpretSave accepts absolute and relative Content-Location and drops a foreign one", () => {
+    const loc = (value: string) =>
+      interpretSave({
+        status: 200,
+        headers: new Headers({ "Content-Location": value }),
+      }).captureUrl;
+    expect(loc("/web/1/x")).toBe("https://web.archive.org/web/1/x");
+    expect(loc("http://web.archive.org/web/1/x")).toBe(
+      "https://web.archive.org/web/1/x",
+    );
+    expect(loc("//evil.example/x")).toBeNull();
   });
 });

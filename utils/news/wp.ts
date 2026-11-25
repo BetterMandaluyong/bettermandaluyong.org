@@ -1,4 +1,4 @@
-import { decodeEntities } from "./text.ts";
+import { cityPostUrl, decodeEntities } from "./text.ts";
 import type { FeedItem } from "./types.ts";
 
 const BASE = "https://mandaluyong.gov.ph/wp-json/wp/v2";
@@ -28,7 +28,7 @@ type WpPost = {
   categories?: unknown;
 };
 
-/** Map WordPress posts to link-only feed items. Dates are Manila local time without an offset. */
+/** Map WordPress posts to link-only feed items. Dates are Manila local time without an offset; posts with a bad date or a link off the city site are skipped. */
 export function parseWpPosts(
   json: unknown,
   categories: Map<number, string>,
@@ -45,13 +45,15 @@ export function parseWpPosts(
     ) {
       continue;
     }
+    const url = cityPostUrl(post.link);
+    if (url === null) continue;
     const publishedAt = `${post.date}+08:00`;
     if (Number.isNaN(Date.parse(publishedAt))) continue;
     const ids = Array.isArray(post.categories) ? post.categories : [];
     items.push({
       source: "city-website",
       sourceId: String(post.id),
-      url: post.link,
+      url,
       title: decodeEntities(title),
       publishedAt,
       categories: ids.flatMap((id) => {
