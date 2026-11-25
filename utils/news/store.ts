@@ -344,3 +344,20 @@ export async function safeRead<T>(
     throw error;
   }
 }
+
+/**
+ * Runs a read for an optional page section and returns the fallback on any
+ * error, after logging it. Unlike `safeRead` it never rethrows, so a broken
+ * database cannot take the page down.
+ */
+export async function readOrDefault<T>(
+  read: () => Promise<T>,
+  fallback: T,
+): Promise<T> {
+  try {
+    return await read();
+  } catch (error) {
+    console.error("news read failed", error);
+    return fallback;
+  }
+}

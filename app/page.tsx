@@ -9,7 +9,7 @@ import { PageShell } from "../components/PageShell.tsx";
 import { PillarList } from "../components/PillarList.tsx";
 import { SectionHeader } from "../components/SectionHeader.tsx";
 import { HOME, NEWS, SITE, mailto } from "../components/content.ts";
-import { latestNews, safeRead } from "../utils/news/store.ts";
+import { latestNews, readOrDefault } from "../utils/news/store.ts";
 
 export const metadata: Metadata = {
   title: HOME.metaTitle,
@@ -28,7 +28,8 @@ export default async function HomePage({
 }) {
   // Reading searchParams opts the page into per-request rendering.
   await searchParams;
-  const news = await safeRead(() => latestNews(env.DB, 3), []);
+  // Secondary block: any D1 failure hides it instead of failing the home page.
+  const news = await readOrDefault(() => latestNews(env.DB, 3), []);
   return (
     <PageShell>
       <section className="border-b border-ed-rule bg-ed-paper-2">
