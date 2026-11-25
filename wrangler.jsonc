@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bettermandaluyong-org",
+  "compatibility_date": "2026-11-01",
+  // Static-assets-only Worker: no script, Cloudflare serves ./public directly.
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "single-page-application"
+  }
+  // Once the domain is on Cloudflare, uncomment to serve it from this Worker:
+  // "routes": [
+  //   { "pattern": "bettermandaluyong.org", "custom_domain": true },
+  //   { "pattern": "www.bettermandaluyong.org", "custom_domain": true }
+  // ]
+}
