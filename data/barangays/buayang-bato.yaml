@@ -1,0 +1,33 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Buayang Bato
+psgc: "1380500008"
+district: 2
+zip: "1554"
+hall:
+  address: 109 Buayang Bato
+  phones:
+    - 8516-4308
+    - 0945-577-0438
+  email: null
+council:
+  captain: Reynaldo De Josep Nobela
+  kagawads:
+    - Michael M. Cabantug
+    - Ralph Ronald S. Nobela
+    - Frederick M. Tizon
+    - Gilbert S. Nacionales
+    - Jarey Osc S. Inosanto
+    - Rodel B. Fernandez
+    - Ramon P. Salugao
+sk:
+  chair: Alexandre S. Ampaya
+  kagawads:
+    - Czarina Alces G. Cerbito
+    - Rossed A. Salugao
+    - Hanze Angelo N. Teodosio
+    - Ron Jason L. Domingo
+    - Renzo N. Merendad
+    - John Winsec D. Quizon
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-buayang-bato/
+  updated: 2026-02-20

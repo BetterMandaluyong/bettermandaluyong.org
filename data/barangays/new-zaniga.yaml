@@ -1,0 +1,33 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: New Zañiga
+psgc: "1380500019"
+district: 1
+zip: "1550"
+hall:
+  address: 735 Ballesteros Street cor. I. Lopez Street
+  phones:
+    - 7276-2363
+  email: null
+council:
+  captain: Elizabeth Paler Cruz
+  kagawads:
+    - Chico Luis P. Cruz
+    - Ma. Gerlyn A. Lagleva
+    - Benjamin A. Orge
+    - Efren P. Reyes
+    - Doroteo S. Froilan
+    - Ronald V. Francisco
+    - Maria Socorro Q. De Castro
+sk:
+  chair: John Michael S. Refareal
+  kagawads:
+    - Patricia Angela D. Bernardo
+    - Fevee O. Rojas
+    - Renzo Luis Y. Duro
+    - Laurence Paul C. Bernardo
+    - Ryca Anais V. Gahol
+    - Giormacio A. Herrera
+    - Shiela L. Orge
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-new-zaniga/
+  updated: 2026-02-20

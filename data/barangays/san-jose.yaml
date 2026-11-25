@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: San Jose
+psgc: "1380500025"
+district: 2
+zip: "1550"
+hall:
+  address: Sitio 2 Bo. San Jose cor. Boni Avenue
+  phones:
+    - 8962-4251
+    - "09055358191"
+  email: null
+council:
+  captain: Joan S. Batan
+  kagawads:
+    - Harold C. Reyes
+    - Maria Teresa S. Camacho
+    - Joswa C. Cruz
+    - Ericson V. Banda
+    - Alexander M. Miranda
+    - Wilfredo R. Zapanta
+    - Juanito T. Raagas
+sk:
+  chair: Romark B. Orias
+  kagawads:
+    - Naomi B. Sabado
+    - Bea Mae M. Inocencio
+    - Julia Faith F. Dela Cruz
+    - Heiczel C. Esguerra
+    - Jacinto M. Maure
+    - Marian Joy S. Porquez
+    - Mary Grace C. Bartolaba
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-san-jose/
+  updated: 2026-02-20

@@ -1,6 +1,8 @@
 import type { CityOfficial } from "../data/city-officials.ts";
+import { personHref } from "../data/people.ts";
 import { parsePhones } from "../utils/barangays/phone.ts";
 import { BARANGAYS, mailto } from "./content.ts";
+import { cx } from "./cx.ts";
 
 /** One person in an `OfficialList`. */
 export type OfficialItem = {
@@ -12,13 +14,13 @@ export type OfficialItem = {
   /** Phone text as published; each number becomes a `tel:` link. */
   phones?: readonly string[];
   emails?: readonly string[];
-  /** A page for this person; the name links to it (external). */
+  /** A page for this person, e.g. `/people/hulo-captain`; the name links to it. */
   href?: string;
 };
 
 /**
- * A city official as an `OfficialList` card item, linking to their page on
- * the city's site. A councilor's position includes their council district.
+ * A city official as an `OfficialList` card item, linking to their
+ * `/people/…` page. A councilor's position includes their council district.
  */
 export function officialItem(o: CityOfficial): OfficialItem {
   return {
@@ -27,7 +29,7 @@ export function officialItem(o: CityOfficial): OfficialItem {
     office: o.office,
     phones: o.phones,
     emails: o.emails,
-    href: o.sourceUrl,
+    href: personHref(o.name, o.role),
   };
 }
 
@@ -86,30 +88,43 @@ function Contacts({ item }: { item: OfficialItem }) {
  * People and their positions. `plain` (default) is a ruled list, name on the
  * left and position on the right, for councils. `card` is a grid of square
  * cards that also show office, phone numbers (as `tel:` links) and emails
- * (as `mailto:` links), for officials residents may contact. `label` names
+ * (as `mailto:` links), for officials residents may contact. An item's `href`
+ * (a `/people/…` page) links its name. `label` names
  * the list for screen readers. Server component.
  */
 export function OfficialList({
   items,
   label,
   variant = "plain",
+  columns,
 }: {
   items: readonly OfficialItem[];
   label: string;
   variant?: "plain" | "card";
+  /** Plain variant only: flow the rows into two or three columns. */
+  columns?: boolean;
 }) {
   if (variant === "plain") {
     return (
       <ul
         aria-label={label}
-        className="m-0 list-none border-t border-ed-rule p-0"
+        className={cx(
+          "m-0 list-none border-t border-ed-rule p-0",
+          columns && "md:columns-2 md:gap-x-10 lg:columns-3",
+        )}
       >
         {items.map((item) => (
           <li
             key={`${item.role}-${item.name}`}
-            className="flex flex-wrap items-baseline justify-between gap-x-4 border-b border-ed-rule py-3"
+            className="flex break-inside-avoid flex-wrap items-baseline justify-between gap-x-4 border-b border-ed-rule py-3"
           >
-            <span className="type-body text-ed-ink">{item.name}</span>
+            {item.href ? (
+              <a href={item.href} className="type-body text-ed-navy">
+                {item.name}
+              </a>
+            ) : (
+              <span className="type-body text-ed-ink">{item.name}</span>
+            )}
             <span className="type-ui text-ed-ink-3">{item.role}</span>
           </li>
         ))}
@@ -129,7 +144,7 @@ export function OfficialList({
           <p className="type-label m-0 text-ed-ink-3">{item.role}</p>
           <h3 className="type-subheading m-0 mt-1">
             {item.href ? (
-              <a href={item.href} rel="noreferrer" className="text-ed-navy">
+              <a href={item.href} className="text-ed-navy">
                 {item.name}
               </a>
             ) : (

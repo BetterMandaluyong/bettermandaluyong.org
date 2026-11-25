@@ -1,0 +1,32 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Malamig
+psgc: "1380500016"
+district: 2
+zip: "1550"
+hall:
+  address: 555 Cresta Circle Makiling Street
+  phones:
+    - 8477-7955
+    - 8533-1319
+  email: null
+council:
+  captain: Cynthia M. Caluya
+  kagawads:
+    - Marwin R. Manalo
+    - Alvin De La Cruz Pabilonia
+    - Princess Lorena A. Callos
+    - Bobby Mar B. Peregrino
+    - Pedrito C. Catanyag Jr.
+    - Andrew Regalado S. Dacumos
+    - Rogelio Molina
+sk:
+  chair: Ivan Junneil J. Soriano
+  kagawads:
+    - Marienette Grace P. Cierva
+    - Keith Jofer S. Cordova
+    - Nathaniel T. Praxidio
+    - Jason D. De Paz
+    - Rodrigo Luis H. Negad
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-malamig/
+  updated: 2026-02-20

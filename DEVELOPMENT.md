@@ -164,3 +164,14 @@ To add one:
    discovers it too.
 3. Mention the new skill in [AGENTS.md](AGENTS.md) and in the Skills bullet
    above.
+
+## Editing site data
+
+Barangay and city-official data live in YAML under `data/`
+(`data/barangays/<slug>.yaml`, `data/city-officials.yaml`). Edit the file, then
+run `pnpm test`: `data/schema.ts` checks every field and the build fails with
+the file and field name if something is wrong. Phone numbers are lists, one
+entry per number, written as the city publishes them. Every person gets a
+`/people/<name>` page automatically (`data/people.ts`). To refresh all barangays
+from a new snapshot of mandaluyong.gov.ph, see `scripts/import_barangays.ts` (it
+overwrites the YAML files).

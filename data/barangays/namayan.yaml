@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Namayan
+psgc: "1380500018"
+district: 2
+zip: "1550"
+hall:
+  address: 394 J. Rizal Street
+  phones:
+    - 7255-9886
+    - 7006-0086
+  email: null
+council:
+  captain: Victor Emmanuel S. Francisco, Jr.
+  kagawads:
+    - Victor Emmanuel De Ocampo Francisco III
+    - Christian C. Flores
+    - Wilfrido U. Acer
+    - Victor A. Nery Jr.
+    - Nathaniel Dela Vega Raymundo
+    - Christian R. Malabanan
+    - Vener A. De Luna
+sk:
+  chair: Maverick Ross A. Solano
+  kagawads:
+    - Joshua Ortiz
+    - Charlene Kaye Haboc
+    - Daniele Giorgio C. Ramirez
+    - Lorenz Ray L. Pascual
+    - Luis C. Martinez
+    - Jorvin Brian C. Dometita
+    - Joven C. Camacho
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-namayan/
+  updated: 2026-02-20

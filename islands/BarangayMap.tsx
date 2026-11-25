@@ -2,10 +2,14 @@
 
 import "leaflet/dist/leaflet.css";
 import { useEffect, useRef, useState } from "react";
-import type { GeoJSON as LeafletGeoJSON, Map as LeafletMap } from "leaflet";
+import type {
+  GeoJSON as LeafletGeoJSON,
+  Map as LeafletMap,
+  Polygon,
+} from "leaflet";
 import type { MapBarangay } from "../data/barangays.ts";
 import { BARANGAYS } from "../components/content.ts";
-import { parsePhones } from "../utils/barangays/phone.ts";
+import { telHref } from "../utils/barangays/phone.ts";
 
 type Status = "loading" | "ready" | "error";
 
@@ -32,16 +36,17 @@ function popupContent(b: MapBarangay): HTMLElement {
   line(b.name, true);
   line(`${BARANGAYS.district(b.district)} · ${BARANGAYS.zip(b.zip)}`);
   line(`${BARANGAYS.captain}: ${b.captain}`);
-  const phone = parsePhones(b.phone)[0];
+  const phone = b.phones[0];
   if (phone) {
     const row = document.createElement("div");
-    if (phone.href) {
+    const href = telHref(phone);
+    if (href) {
       const a = document.createElement("a");
-      a.href = phone.href;
-      a.textContent = phone.text;
+      a.href = href;
+      a.textContent = phone;
       row.appendChild(a);
     } else {
-      row.textContent = phone.text;
+      row.textContent = phone;
     }
     root.appendChild(row);
   }
@@ -54,30 +59,62 @@ function popupContent(b: MapBarangay): HTMLElement {
   return root;
 }
 
+/** What the map is showing right now; read by Leaflet's event handlers. */
+type View = {
+  selected?: string | null;
+  focus?: string;
+  focusDistrict?: 1 | 2;
+  matches?: readonly string[] | null;
+  onSelect?: (slug: string) => void;
+};
+
+type Api = { restyle: () => void; fit: (animate: boolean) => void };
+
 /**
  * An interactive map of Mandaluyong's barangay boundaries, drawn with Leaflet
- * over OpenStreetMap tiles. Boundaries are fetched from `geojsonUrl`; each
- * is shaded by council district (solid for District 1, dashed for District 2,
- * so color isn't the only cue), shows its name on hover, and opens a popup
- * with the captain, phone, and a link to the barangay page on click. `focus`
- * (a slug) zooms to one barangay and dims the rest. The scroll wheel doesn't
- * zoom, so the map never traps page scrolling; animation is off under
- * `prefers-reduced-motion`. The barangay list on the page is the accessible
- * and no-JavaScript equivalent. `height` is "short" or "tall".
+ * over OpenStreetMap tiles. Boundaries are fetched from `geojsonUrl`; each is
+ * shaded by council district (solid for District 1, dashed for District 2, so
+ * color isn't the only cue) and names itself on hover.
+ *
+ * Two modes. Without `onSelect`, a click opens a popup (captain, phone, link
+ * to the barangay page). With `onSelect`, a click calls it with the slug and
+ * the parent shows the details (see `BarangayExplorer`).
+ *
+ * The view props change what is shown without rebuilding the map: `selected`
+ * (a slug, or null) zooms to one barangay and dims the rest; `focus` does the
+ * same for a fixed barangay; `focusDistrict` zooms to and highlights one
+ * council district; `matches` (slugs) dims everything else, for search
+ * results. The scroll wheel doesn't zoom, so the map never traps page
+ * scrolling; animation is off under `prefers-reduced-motion`. The barangay
+ * list on the page is the accessible and no-JavaScript equivalent. `height`:
+ * "short", "tall", or "fill" (a fixed height on phones, the parent's height on
+ * large screens).
  */
 export function BarangayMap({
   geojsonUrl,
   barangays,
   focus,
+  focusDistrict,
+  selected,
+  matches,
+  onSelect,
   height = "tall",
 }: {
   geojsonUrl: string;
   barangays: readonly MapBarangay[];
   focus?: string;
-  height?: "short" | "tall";
+  focusDistrict?: 1 | 2;
+  selected?: string | null;
+  matches?: readonly string[] | null;
+  onSelect?: (slug: string) => void;
+  height?: "short" | "tall" | "fill";
 }) {
   const container = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<Status>("loading");
+  const api = useRef<Api | null>(null);
+  const view = useRef<View>({});
+  view.current = { selected, focus, focusDistrict, matches, onSelect };
+  const matchKey = matches ? matches.join(",") : "";
 
   useEffect(() => {
     let cancelled = false;
@@ -107,22 +144,30 @@ export function BarangayMap({
         );
 
         const bySlug = new Map(barangays.map((b) => [b.slug, b]));
+        const layers = new Map<string, Polygon>();
         const ink = token("ed-ink");
         const fills: Record<number, string> = {
           1: token("ed-navy"),
           2: token("ed-sage"),
         };
+
         const styleFor = (slug: string, hover = false) => {
+          const v = view.current;
           const b = bySlug.get(slug);
           const district = b?.district ?? 1;
-          const dim = focus !== undefined && focus !== slug;
+          const chosen = v.selected ?? v.focus;
+          let dim = false;
+          if (chosen) dim = chosen !== slug;
+          else if (v.focusDistrict) dim = district !== v.focusDistrict;
+          else if (v.matches) dim = !v.matches.includes(slug);
+          const strong = slug === chosen;
           return {
             color: ink,
-            weight: hover || slug === focus ? 3 : 1,
+            weight: hover || strong ? 3 : 1,
             dashArray: district === 2 ? "5 4" : undefined,
             fillColor: fills[district],
-            fillOpacity: hover ? 0.45 : dim ? 0.08 : 0.25,
-            opacity: dim && !hover ? 0.5 : 1,
+            fillOpacity: hover ? 0.45 : strong ? 0.5 : dim ? 0.06 : 0.25,
+            opacity: dim && !hover ? 0.45 : 1,
           };
         };
 
@@ -131,26 +176,44 @@ export function BarangayMap({
           onEachFeature: (f, l) => {
             const b = bySlug.get(f.properties.slug);
             if (!b) return;
-            l.bindTooltip(b.name, { sticky: true });
-            l.bindPopup(popupContent(b));
-            l.on("mouseover", () =>
-              (l as L.Path).setStyle(styleFor(b.slug, true)),
-            );
-            l.on("mouseout", () => (l as L.Path).setStyle(styleFor(b.slug)));
+            const path = l as Polygon;
+            layers.set(b.slug, path);
+            path.bindTooltip(b.name, { sticky: true });
+            if (view.current.onSelect) {
+              path.on("click", () => view.current.onSelect?.(b.slug));
+            } else {
+              path.bindPopup(popupContent(b));
+            }
+            path.on("mouseover", () => path.setStyle(styleFor(b.slug, true)));
+            path.on("mouseout", () => path.setStyle(styleFor(b.slug)));
           },
         }).addTo(created);
 
-        let bounds = layer.getBounds();
-        if (focus) {
-          layer.eachLayer((l) => {
-            const f = (l as L.GeoJSON).feature as
-              { properties: { slug: string } } | undefined;
-            if (f?.properties.slug === focus) {
-              bounds = (l as L.Polygon).getBounds();
+        api.current = {
+          restyle: () => {
+            for (const [slug, path] of layers) path.setStyle(styleFor(slug));
+          },
+          fit: (animate) => {
+            const v = view.current;
+            const slug = v.selected ?? v.focus;
+            let bounds = slug ? layers.get(slug)?.getBounds() : undefined;
+            if (!bounds && v.focusDistrict) {
+              for (const [s, path] of layers) {
+                if (bySlug.get(s)?.district !== v.focusDistrict) continue;
+                const b = path.getBounds();
+                bounds = bounds
+                  ? bounds.extend(b)
+                  : L.latLngBounds(b.getSouthWest(), b.getNorthEast());
+              }
             }
-          });
-        }
-        created.fitBounds(bounds, { padding: [16, 16], animate: false });
+            created.fitBounds(bounds ?? layer.getBounds(), {
+              padding: [16, 16],
+              animate: animate && !reduceMotion,
+              maxZoom: 16,
+            });
+          },
+        };
+        api.current.fit(false);
         setStatus("ready");
       } catch {
         if (!cancelled) setStatus("error");
@@ -160,17 +223,38 @@ export function BarangayMap({
 
     return () => {
       cancelled = true;
+      api.current = null;
       map?.remove();
+      setStatus("loading");
     };
-  }, [geojsonUrl, barangays, focus]);
+  }, [geojsonUrl, barangays]);
 
-  const heights =
-    height === "short" ? "h-72 md:h-96" : "h-[26rem] md:h-[36rem]";
+  useEffect(() => {
+    if (status === "ready") api.current?.restyle();
+  }, [status, selected, focus, focusDistrict, matchKey]);
+
+  const first = useRef(true);
+  useEffect(() => {
+    if (status !== "ready") return;
+    // The first fit already happened when the map was built.
+    if (first.current) {
+      first.current = false;
+      return;
+    }
+    api.current?.fit(true);
+  }, [status, selected, focus, focusDistrict]);
+
+  const mapHeight =
+    height === "short"
+      ? "h-72 md:h-96"
+      : height === "fill"
+        ? "h-80 lg:h-auto lg:min-h-0 lg:flex-1"
+        : "h-[26rem] md:h-[36rem]";
 
   return (
-    <figure className="m-0">
+    <figure className={height === "fill" ? "m-0 flex h-full flex-col" : "m-0"}>
       <div
-        className={`relative isolate border border-ed-rule bg-ed-paper-2 ${heights}`}
+        className={`relative isolate border border-ed-rule bg-ed-paper-2 ${mapHeight}`}
       >
         <div
           ref={container}
@@ -183,7 +267,7 @@ export function BarangayMap({
             role="status"
             className="type-ui absolute inset-0 z-[1000] m-0 flex items-center justify-center bg-ed-paper-2 p-6 text-center text-ed-ink-2"
           >
-            {status === "loading" ? BARANGAYS.mapLoading : BARANGAYS.mapError}
+            {status === "error" ? BARANGAYS.mapError : BARANGAYS.mapLoading}
           </p>
         )}
       </div>

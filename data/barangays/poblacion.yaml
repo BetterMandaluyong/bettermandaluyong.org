@@ -1,0 +1,33 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Poblacion
+psgc: "1380500024"
+district: 1
+zip: "1550"
+hall:
+  address: Star Street
+  phones:
+    - 8535-0917
+  email: null
+council:
+  captain: Elmer Jose M. Malabanan
+  kagawads:
+    - Arturo P. Cruz
+    - Filemon S. Dankin
+    - Ben Hur J. Benedicto
+    - Bernabe L. Perez
+    - Carla Micaela G. Alvaran
+    - Angelito N. Laciste
+    - Gilbert B. Tolentino
+sk:
+  chair: Jia Louise M. Sayan
+  kagawads:
+    - Kyla Alyssa G. Bautista
+    - Arianna S. Cambe
+    - Roffi Angelo M. Cruz
+    - Angelika C. Lara
+    - Justin Ignacio
+    - Aaliyah Ashley Francesca G. Regis
+    - Gabriel R. Peras
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-poblacion/
+  updated: 2026-02-20

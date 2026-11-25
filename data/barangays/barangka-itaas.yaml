@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Barangka Itaas
+psgc: "1380500006"
+district: 2
+zip: "1550"
+hall:
+  address: P. Oliveros cor. Kapok Street
+  phones:
+    - 8533-7141
+    - 8522-3075
+  email: null
+council:
+  captain: Ronaldo Camacho
+  kagawads:
+    - Ernesto P. Ortega
+    - Mariel V. Novales
+    - Regino C. Castillo Jr.
+    - Ramon R. Riñoza
+    - Virmina J. Caralipio
+    - Jose Romulo N. Nario
+    - Robert A. Tendencia
+sk:
+  chair: Gerome A. Tuberlleha
+  kagawads:
+    - Ralzen U. Dela Cruz
+    - Rachelle Ann G. Fontanilla
+    - Sean Harvey G. Tobias
+    - Ronnica Mae A. Cantos
+    - Alli Zandra L. Bautista
+    - Sheila Marie T. Boncay
+    - Princess Ronella L. Quijano
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-barangka-itaas/
+  updated: 2026-02-20

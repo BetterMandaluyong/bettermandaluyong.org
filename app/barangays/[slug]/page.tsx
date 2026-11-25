@@ -19,12 +19,14 @@ import {
   getBarangay,
 } from "../../../data/barangays.ts";
 import {
+  CITY_DIRECTORY_URL,
   CITY_OFFICIALS_AS_OF,
   MAYOR,
   REPRESENTATIVE,
   VICE_MAYOR,
   councilorsFor,
 } from "../../../data/city-officials.ts";
+import { personHref } from "../../../data/people.ts";
 import { BarangayMap } from "../../../islands/BarangayMap.tsx";
 import { formatSourceDate } from "../../../utils/barangays/format.ts";
 
@@ -55,13 +57,18 @@ export default async function BarangayPage({ params }: Params) {
   const barangay = getBarangay((await params).slug);
   if (!barangay) notFound();
 
+  const person = (name: string, role: string) => ({
+    name,
+    role,
+    href: personHref(name, role, barangay.slug),
+  });
   const council = [
-    { name: barangay.captain, role: COPY.captain },
-    ...barangay.kagawads.map((m) => ({ name: m.name, role: COPY.kagawad })),
+    person(barangay.captain, COPY.captain),
+    ...barangay.kagawads.map((m) => person(m, COPY.kagawad)),
   ];
   const sk = [
-    { name: barangay.skChair, role: COPY.skChair },
-    ...barangay.skKagawads.map((m) => ({ name: m.name, role: COPY.skKagawad })),
+    person(barangay.skChair, COPY.skChair),
+    ...barangay.skKagawads.map((m) => person(m, COPY.skKagawad)),
   ];
 
   return (
@@ -74,7 +81,12 @@ export default async function BarangayPage({ params }: Params) {
               Barangay {barangay.name}
             </h1>
             <div className="mt-5 flex flex-wrap items-center gap-3">
-              <Flag variant="navy">{COPY.district(barangay.district)}</Flag>
+              <a
+                href={`/districts#district-${barangay.district}`}
+                className="no-underline"
+              >
+                <Flag variant="navy">{COPY.district(barangay.district)}</Flag>
+              </a>
               <Flag variant="outline">{COPY.zip(barangay.zip)}</Flag>
             </div>
             <p className="type-ui m-0 mt-3 max-w-[65ch] text-ed-ink-3">
@@ -114,7 +126,7 @@ export default async function BarangayPage({ params }: Params) {
               {
                 name: barangay.address,
                 role: COPY.hallAddress,
-                phones: [barangay.phone],
+                phones: barangay.phones,
                 emails: barangay.email ? [barangay.email] : [],
               },
             ]}
@@ -180,7 +192,7 @@ export default async function BarangayPage({ params }: Params) {
             </div>
           </div>
           <SourceNote
-            href="https://mandaluyong.gov.ph/government/elected-officials/"
+            href={CITY_DIRECTORY_URL}
             updated={formatSourceDate(CITY_OFFICIALS_AS_OF)}
           />
         </Container>

@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Addition Hills
+psgc: "1380500001"
+district: 1
+zip: "1552"
+hall:
+  address: Blk. 12 Welfareville Compound
+  phones:
+    - 8534-0503
+    - 8706-1738
+  email: null
+council:
+  captain: Carlito Tolibas Cernal
+  kagawads:
+    - Kent Gajo Faminial
+    - Angeline Llustre Pañoso
+    - Andrea Gail Mayuga Alim
+    - Linda Fabula Fabula
+    - Dionisio Garcia Buen
+    - Salvador Repoberbio Orolfo
+    - Isaias Lacaba Elbore Jr.
+sk:
+  chair: John Vincent A. Hoseña
+  kagawads:
+    - Jewel Lhaika E Andales
+    - Zach A. Andales
+    - Lester B. Nobleza
+    - Sophie Hermosa
+    - Rita Maria Frida B. Andrade
+    - Iris Nicole L. Zamira
+    - Aira Therese P. Asada
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-addition-hills/
+  updated: 2026-02-19

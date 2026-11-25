@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Barangka Ibaba
+psgc: "1380500004"
+district: 2
+zip: "1553"
+hall:
+  address: 55 P. Oliveros Street
+  phones:
+    - 8420-7457
+    - 8637-9343
+  email: null
+council:
+  captain: Edwin B. Sta. Maria
+  kagawads:
+    - Alvin John B. Mina
+    - Jolina C. Sosas
+    - Angelo P. Atienza
+    - Lawrence P. Valerio
+    - Per Angelo W. Sibal
+    - Glenn Vendell S. Sta. Maria
+    - Oscar M. Rodelas Jr.
+sk:
+  chair: Giemarie Jade C. Viray
+  kagawads:
+    - Maica Mae P. Andamo
+    - Charles Villanueva
+    - Aj S. Jamison
+    - Kc Joy T. Madrogaba
+    - Roel A. Batula
+    - Joey Andrew O. Brasas
+    - Carl Angelo R. Rillon
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-barangka-ibaba/
+  updated: 2026-02-20

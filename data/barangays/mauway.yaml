@@ -1,0 +1,33 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Mauway
+psgc: "1380500017"
+district: 1
+zip: "1553"
+hall:
+  address: 9 de Febrero Street
+  phones:
+    - 8429-9386
+  email: null
+council:
+  captain: Froilo Achilles Evangelista
+  kagawads:
+    - Bernardo M. Evangelista
+    - Michael Warlo L. Evangelista
+    - Alvin P. Adora
+    - Rodolfo B. Manalo Jr.
+    - Ma. Consuelo R. Rosal
+    - Nelson Aureo H. Barrion
+    - Napoleon Q. Llamas
+sk:
+  chair: Tatiana Gwyneth A. Rosales
+  kagawads:
+    - Mirakle A. Murillo
+    - Andrea Nichole F. Sorillano
+    - Shyne L. Torado
+    - Jhazmyn R. Dela Rosa
+    - Jhamilla R. Ramil
+    - Carla Anne A. Felicidario
+    - Angelie M. Sanier
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-mauway/
+  updated: 2026-02-20

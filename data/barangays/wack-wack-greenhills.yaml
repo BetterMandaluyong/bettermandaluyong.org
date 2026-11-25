@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Wack-wack Greenhills
+psgc: "1380500027"
+district: 1
+zip: "1555"
+hall:
+  address: 1507-1509 Princeton Street
+  phones:
+    - 8370-3512
+    - 8722-4258
+  email: null
+council:
+  captain: Margarita O. Tan Climaco
+  kagawads:
+    - Anna Lourdes P. Lacson
+    - Grace Cecilia Gamboa
+    - Mariane R. Orosa
+    - Mikael Raffael T. Abaya
+    - Ma. Teresa Y. Pajarito
+    - Philip B. Escolin
+    - Miguel Angelo S. Silverio
+sk:
+  chair: Anna Laura L. De Myer
+  kagawads:
+    - Chelsea May L. Tan
+    - Lauren Chua
+    - Kate Morgan T. Cham
+    - James Robert Yao
+    - Louis Anton Philippe S. Campos
+    - Aaron Jan M. Roña
+    - Juan Javier G. Cojuangco
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-wack-wack-greenhills-east/
+  updated: 2026-02-20

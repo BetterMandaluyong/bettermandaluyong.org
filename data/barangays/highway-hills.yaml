@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Highway Hills
+psgc: "1380500013"
+district: 1
+zip: "1552"
+hall:
+  address: 34 Marivelles Street
+  phones:
+    - 8533-6298
+    - 8531-9432
+  email: barangay.highwayhills@gmail.com
+council:
+  captain: Maria Corazon De Castro Abalos
+  kagawads:
+    - John Jeremy R. Delos Santos
+    - Antonio J. Aguilar Jr.
+    - Alvin G. Pacat
+    - Edrian A. Gonzaga
+    - Wilson T. Baser
+    - Clarize M. Lanza
+    - Ria Sherina B. Apuada
+sk:
+  chair: Sophia M. Brun
+  kagawads:
+    - Marie Alyssa M. Claricia
+    - Kier Vincent Borja
+    - Maxene G. Remanes
+    - Bienne Julia V. Sy
+    - Jomar O. Glino
+    - Rasti Joshua D. Alviar
+    - Rovic O. Bilan
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-highway-hills/
+  updated: 2026-02-26

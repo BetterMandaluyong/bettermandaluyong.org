@@ -1,0 +1,33 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Pag-asa
+psgc: "1380500021"
+district: 1
+zip: "1550"
+hall:
+  address: 658 Gen. Kalentong Street
+  phones:
+    - 8551-0592
+  email: null
+council:
+  captain: Conrado Uaje Angga, Jr.
+  kagawads:
+    - Niño Q. Cunanan
+    - David G. Vasquez
+    - Abegail G. Estoque
+    - Mary Julyne M. Angga
+    - Chlarina L. Corpuz
+    - Emmanuel C. Averilla
+    - Victorino D. Tutanes
+sk:
+  chair: Cherilyn Vicencio Mina
+  kagawads:
+    - Joyce Ann L. De Leon
+    - Ace V. Fernandez
+    - Janella Isabel T. Peñafiel
+    - Alyana M. Gonzales
+    - Christopher B. Reyes
+    - Kristen Anika B. Reyes
+    - Jan Dee M. Camba
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-pag-asa/
+  updated: 2026-02-20
