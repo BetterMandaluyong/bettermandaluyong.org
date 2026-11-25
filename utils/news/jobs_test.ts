@@ -315,6 +315,18 @@ describe("news jobs", () => {
       expect(await pendingArchive(db, 10)).toHaveLength(5);
     });
 
+    it("a 503 on save stops the run and leaves the item pending", async () => {
+      await seed(3);
+      const { fetch: f } = fakeFetch({
+        [availKey(1)]: json(hit),
+        [availKey(2)]: json(miss),
+        [saveKey(2)]: new Response("", { status: 503 }),
+      });
+      const run = await runArchiveJob(deps(f));
+      expect(run).toMatchObject({ ok: true, errorCode: "http_503" });
+      expect(await pendingArchive(db, 10)).toHaveLength(2);
+    });
+
     it("a network error stops the run like a 429", async () => {
       await seed(3);
       const { fetch: f, calls } = fakeFetch({
