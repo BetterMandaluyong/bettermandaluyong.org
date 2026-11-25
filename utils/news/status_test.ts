@@ -97,6 +97,17 @@ describe("lineStatus", () => {
       );
     });
 
+    it("runs that failed before reading anything still count as failures", () => {
+      const crashed = (hoursAgo: number): RunRow => ({
+        ...run(hoursAgo, false),
+        itemsRead: 0,
+      });
+      const runs = [crashed(1), crashed(2), busy(3, true)];
+      expect(lineStatus(runs, NOW, { ignoreIdle: true }).state).toBe(
+        "not-working",
+      );
+    });
+
     it("a fresh idle run keeps a stale failing line from going not-checked", () => {
       const runs = [idle(1), busy(9, false), busy(10, false)];
       expect(lineStatus(runs, NOW, { ignoreIdle: true }).state).toBe(

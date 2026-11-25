@@ -9,16 +9,20 @@ export const STALE_AFTER_HOURS = 7;
 /**
  * Works out the state of a pipeline line from its recent runs.
  * `runs` must be newest first. A stale newest run always wins. With
- * `ignoreIdle`, runs that read nothing (`itemsRead === 0`) say nothing about
- * whether the work succeeds, so they are skipped when counting failures and
- * finding the last success; staleness still uses the newest run of any kind.
+ * `ignoreIdle`, successful runs that read nothing (`ok && itemsRead === 0`)
+ * say nothing about whether the work succeeds, so they are skipped when
+ * counting failures and finding the last success. A run that failed before
+ * reading anything still counts as a failure. Staleness still uses the newest
+ * run of any kind.
  */
 export function lineStatus(
   runs: RunRow[],
   now: Date,
   opts: { ignoreIdle?: boolean } = {},
 ): { state: LineState; lastSuccessAt: string | null } {
-  const counted = opts.ignoreIdle ? runs.filter((r) => r.itemsRead > 0) : runs;
+  const counted = opts.ignoreIdle
+    ? runs.filter((r) => !(r.ok && r.itemsRead === 0))
+    : runs;
   const lastSuccessAt = counted.find((r) => r.ok)?.finishedAt ?? null;
   const newest = runs[0];
   if (!newest) return { state: "not-checked", lastSuccessAt };
