@@ -33,24 +33,26 @@ export function officialItem(o: CityOfficial): OfficialItem {
   };
 }
 
-const CONTACT_LINK = "type-ui inline-flex min-h-11 items-center text-ed-navy";
+const CONTACT_LINK = "type-ui block py-1.5 text-ed-navy";
 
 function Contacts({ item }: { item: OfficialItem }) {
   const phones = (item.phones ?? []).flatMap(parsePhones);
   const emails = item.emails ?? [];
   if (phones.length === 0 && emails.length === 0 && !item.office) return null;
   return (
-    <dl className="m-0 mt-3 flex flex-col gap-1 border-t border-ed-rule pt-3">
+    <dl className="m-0 mt-3 flex flex-col gap-4 border-t border-ed-rule pt-4">
       {item.office && (
         <div>
           <dt className="type-label text-ed-ink-3">{BARANGAYS.office}</dt>
-          <dd className="type-ui m-0 text-ed-ink-2">{item.office}</dd>
+          <dd className="type-ui m-0 mt-1 py-1.5 text-ed-ink-2">
+            {item.office}
+          </dd>
         </div>
       )}
       {phones.length > 0 && (
         <div>
           <dt className="type-label text-ed-ink-3">{BARANGAYS.phone}</dt>
-          <dd className="m-0 flex flex-wrap gap-x-4">
+          <dd className="m-0 mt-1 flex flex-col">
             {phones.map((p) =>
               p.href ? (
                 <a key={p.text} href={p.href} className={CONTACT_LINK}>
@@ -59,7 +61,7 @@ function Contacts({ item }: { item: OfficialItem }) {
               ) : (
                 <span
                   key={p.text}
-                  className="type-ui inline-flex min-h-11 items-center text-ed-ink-2"
+                  className="type-ui block py-1.5 text-ed-ink-2"
                 >
                   {p.text}
                 </span>
@@ -71,7 +73,7 @@ function Contacts({ item }: { item: OfficialItem }) {
       {emails.length > 0 && (
         <div>
           <dt className="type-label text-ed-ink-3">{BARANGAYS.email}</dt>
-          <dd className="m-0 flex flex-wrap gap-x-4">
+          <dd className="m-0 mt-1 flex flex-col">
             {emails.map((e) => (
               <a key={e} href={mailto(e)} className={CONTACT_LINK}>
                 {e}
@@ -97,12 +99,15 @@ export function OfficialList({
   label,
   variant = "plain",
   columns,
+  stacked,
 }: {
   items: readonly OfficialItem[];
   label: string;
   variant?: "plain" | "card";
   /** Plain variant only: flow the rows into two or three columns. */
   columns?: boolean;
+  /** Plain variant only: stack the position below the name, not at the far edge. */
+  stacked?: boolean;
 }) {
   if (variant === "plain") {
     return (
@@ -116,7 +121,12 @@ export function OfficialList({
         {items.map((item) => (
           <li
             key={`${item.role}-${item.name}`}
-            className="flex break-inside-avoid flex-wrap items-baseline justify-between gap-x-4 border-b border-ed-rule py-3"
+            className={cx(
+              "flex break-inside-avoid border-b border-ed-rule py-3",
+              stacked
+                ? "flex-col gap-0.5"
+                : "flex-wrap items-baseline justify-between gap-x-4",
+            )}
           >
             {item.href ? (
               <a href={item.href} className="type-body text-ed-navy">

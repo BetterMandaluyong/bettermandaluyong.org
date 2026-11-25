@@ -1,5 +1,7 @@
 // Builds data/barangays/<slug>.yaml (one per barangay) and
 // public/data/mandaluyong-barangays.geojson from the city's public pages.
+// The shapes written here are the government's simplified ones; run
+// scripts/import_boundaries_osm.ts afterwards to swap in detailed outlines.
 //
 //   node scripts/import_barangays.ts <scraped-data-dir> <faeldon-geojson>
 //

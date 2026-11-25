@@ -51,8 +51,13 @@ export default async function HomePage({
   const news = await readOrDefault(() => latestNews(env.DB, 3), []);
   const captains = BARANGAYS.map((b) => ({
     name: b.captain,
-    role: `${COPY.captain} · ${b.name}`,
+    role: b.name,
     href: personHref(b.captain, "Punong Barangay", b.slug),
+  }));
+  const skChairs = BARANGAYS.map((b) => ({
+    name: b.skChair,
+    role: b.name,
+    href: personHref(b.skChair, "SK Chairperson", b.slug),
   }));
   return (
     <PageShell>
@@ -115,11 +120,31 @@ export default async function HomePage({
           <p className="type-body m-0 mb-6 max-w-[65ch]">
             {COPY.captainsIntro}
           </p>
-          <OfficialList label={COPY.captainsHeading} items={captains} columns />
+          <OfficialList
+            label={COPY.captainsHeading}
+            items={captains}
+            columns
+            stacked
+          />
           <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
             <ArrowLink href="/barangays">{COPY.homeLink}</ArrowLink>
             <ArrowLink href="/people">{PEOPLE_COPY.allPeople}</ArrowLink>
           </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ed-rule">
+        <Container className="py-12 md:py-16">
+          <SectionHeader label={COPY.skChairsHeading} meta="27 barangays" />
+          <p className="type-body m-0 mb-6 max-w-[65ch]">
+            {COPY.skChairsIntro}
+          </p>
+          <OfficialList
+            label={COPY.skChairsHeading}
+            items={skChairs}
+            columns
+            stacked
+          />
         </Container>
       </section>
 
