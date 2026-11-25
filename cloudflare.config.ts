@@ -25,6 +25,10 @@ export default defineConfig({
     // www is not attached here: a Cloudflare Redirect Rule on the zone sends
     // it to the root domain.
     domains: ["bettermandaluyong.org"],
+    // Preview and version URLs live on workers.dev. Without this they follow
+    // workersDev, which stays off so production is only on our domain, and
+    // Worker Previews come up with "No Preview URL".
+    previewUrls: true,
     assets: {
       htmlHandling: "none",
       notFoundHandling: "none",
