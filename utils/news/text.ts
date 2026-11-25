@@ -1,0 +1,27 @@
+const NAMED: Record<string, string> = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+};
+
+/** Decode named (&amp; &lt; &gt; &quot; &apos;) and numeric (&#8211; &#x2013;) entities in one pass. */
+export function decodeEntities(s: string): string {
+  return s.replace(
+    /&(?:#(\d+)|#[xX]([0-9a-fA-F]+)|(\w+));/g,
+    (match, dec?: string, hex?: string, name?: string) => {
+      if (name !== undefined) return NAMED[name] ?? match;
+      const code = dec !== undefined ? Number(dec) : parseInt(hex ?? "", 16);
+      return Number.isInteger(code) && code >= 0 && code <= 0x10ffff
+        ? String.fromCodePoint(code)
+        : match;
+    },
+  );
+}
+
+/** Format an instant as an ISO 8601 string in Manila time (UTC+8, no DST), e.g. 2026-10-27T11:08:46+08:00. */
+export function toManilaIso(date: Date): string {
+  const shifted = new Date(date.getTime() + 8 * 60 * 60 * 1000);
+  return `${shifted.toISOString().slice(0, 19)}+08:00`;
+}
