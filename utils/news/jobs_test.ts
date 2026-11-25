@@ -207,6 +207,22 @@ describe("news jobs", () => {
       expect(await getState(db, "wp_backfill_done")).toBeNull();
     });
 
+    it("decodes entities in WordPress category names", async () => {
+      await db.prepare("DELETE FROM job_state").run();
+      const { fetch: f } = fakeFetch({
+        [FEED_URL]: new Response(rss(1, 900)),
+        [wpCategoriesUrl()]: json([{ id: 1, name: "Arts &amp; Culture" }]),
+        [wpPostsUrl(1)]: json([wpPost(7)]),
+      });
+      await runFeedJob(deps(f));
+      const { items } = await listNews(db, {
+        page: 1,
+        perPage: 20,
+        category: "Arts & Culture",
+      });
+      expect(items.map((i) => i.title)).toEqual(["Post 7"]);
+    });
+
     it("a post in both RSS and backfill stays one row", async () => {
       await db.prepare("DELETE FROM job_state").run();
       const { fetch: f } = fakeFetch({
