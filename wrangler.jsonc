@@ -8,10 +8,7 @@
     "not_found_handling": "single-page-application"
   },
   // Required by `wrangler preview`, which Workers Builds runs for non-production branches.
-  "previews": {}
-  // Once the domain is on Cloudflare, uncomment to serve it from this Worker:
-  // "routes": [
-  //   { "pattern": "bettermandaluyong.org", "custom_domain": true },
-  //   { "pattern": "www.bettermandaluyong.org", "custom_domain": true }
-  // ]
+  "previews": {},
+  // www is not attached here: a Cloudflare Redirect Rule sends it to the root domain.
+  "routes": [{ "pattern": "bettermandaluyong.org", "custom_domain": true }]
 }

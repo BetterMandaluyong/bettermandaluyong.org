@@ -26,9 +26,12 @@ pnpm wrangler login   # once
 pnpm deploy
 ```
 
-The first deploy publishes to `bettermandaluyong-org.<your-subdomain>.workers.dev`.
-To serve it on the real domain, add the domain to Cloudflare and uncomment the
-`routes` block in `wrangler.jsonc`.
+Pushes to `main` deploy automatically through Cloudflare Workers Builds; other
+branches upload a preview version.
+
+The Worker serves `bettermandaluyong.org` as a custom domain (see `routes` in
+`wrangler.jsonc`). `www.bettermandaluyong.org` is not attached to the Worker; a
+Cloudflare Redirect Rule on the zone sends it to the root domain.
 
 ## Placeholders to replace
 
