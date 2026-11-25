@@ -17,7 +17,8 @@ async function run(cron: string, env: Env): Promise<void> {
   const keys = env as OptionalKeys;
   const deps: JobDeps = {
     db: env.DB,
-    fetch,
+    // Not the bare global: called as deps.fetch(), workerd would see the wrong `this`.
+    fetch: (input, init) => fetch(input, init),
     now: () => new Date(),
     iaKeys:
       keys.IA_ACCESS_KEY && keys.IA_SECRET_KEY
@@ -27,7 +28,7 @@ async function run(cron: string, env: Env): Promise<void> {
   for (const job of jobsForCron(cron)) {
     if (job === "feed") await runFeedJob(deps);
     else if (job === "archive") await runArchiveJob(deps);
-    else await runRemovalJob(deps);
+    else if (job === "removal") await runRemovalJob(deps);
   }
 }
 
