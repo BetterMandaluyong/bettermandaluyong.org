@@ -152,6 +152,19 @@ categories (for the home page). Takes `items: NewsRow[]`. Copy is in `NEWS`
 <NewsList items={items} compact />
 ```
 
+### `StatusLine`
+
+`components/StatusLine.tsx`: server component for one row on `/status`: the
+label, a `Flag` with the state as words (`navy` "Working", `red` "Not working",
+`outline` "Not checked recently"), and a muted "Last successful:" line with the
+date and time in Asia/Manila, or "No successful run yet". Shows no error text or
+counts. Takes `label`, `state` (`LineState`) and `lastSuccessAt` (ISO string or
+`null`). Copy is in `STATUS` (`content.ts`).
+
+```tsx
+<StatusLine label="City news feed" state="working" lastSuccessAt={iso} />
+```
+
 ## Islands
 
 Interactive pieces live in `islands/` and start with `"use client"`; everything

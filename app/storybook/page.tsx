@@ -10,6 +10,7 @@ import { NewsList } from "../../components/NewsList.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import { PillarList } from "../../components/PillarList.tsx";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
+import { StatusLine } from "../../components/StatusLine.tsx";
 import { SiteHeader } from "../../components/SiteHeader.tsx";
 import { UnofficialBar } from "../../components/UnofficialBar.tsx";
 import { HOME, SITE, mailto } from "../../components/content.ts";
@@ -212,6 +213,30 @@ export default function StorybookPage() {
         </Specimen>
         <Specimen name="NewsList (compact)">
           <NewsList items={SAMPLE_NEWS} compact />
+        </Specimen>
+        <Specimen name="StatusLine (working, not working, not checked, never)">
+          <div className="border-t border-ed-rule">
+            <StatusLine
+              label="Sample line"
+              state="working"
+              lastSuccessAt="2026-01-15T12:07:00.000Z"
+            />
+            <StatusLine
+              label="Sample line"
+              state="not-working"
+              lastSuccessAt="2026-01-14T04:30:00.000Z"
+            />
+            <StatusLine
+              label="Sample line"
+              state="not-checked"
+              lastSuccessAt="2026-01-10T23:45:00.000Z"
+            />
+            <StatusLine
+              label="Sample line"
+              state="not-checked"
+              lastSuccessAt={null}
+            />
+          </div>
         </Specimen>
         <Specimen name="FacebookFeed (island; loads nothing until tapped)">
           <FacebookFeed pageUrl={SITE.cityPioFacebookUrl} />

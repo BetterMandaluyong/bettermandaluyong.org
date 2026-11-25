@@ -94,6 +94,21 @@ export const NEWS = {
   latestLink: "All city news",
 } as const;
 
+/** Copy for the status page and the StatusLine component. */
+export const STATUS = {
+  metaTitle: "Status — Better Mandaluyong",
+  heading: "Status",
+  intro: "Whether our automatic updates are working.",
+  lines: { feed: "City news feed", archive: "Archiving" },
+  states: {
+    working: "Working",
+    "not-working": "Not working",
+    "not-checked": "Not checked recently",
+  },
+  lastSuccess: "Last successful:",
+  never: "No successful run yet",
+} as const;
+
 /** Builds a `mailto:` href for an address. */
 export function mailto(address: string): string {
   return `mailto:${address}`;
