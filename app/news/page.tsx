@@ -9,7 +9,11 @@ import { NEWS, SITE } from "../../components/content.ts";
 import { cx } from "../../components/cx.ts";
 import { FacebookFeed } from "../../islands/FacebookFeed.tsx";
 import { NEWS_PER_PAGE, parseListParams } from "../../utils/news/display.ts";
-import { listCategories, listNews, safeRead } from "../../utils/news/store.ts";
+import {
+  listCategories,
+  listNews,
+  readOrDefault,
+} from "../../utils/news/store.ts";
 
 export const metadata: Metadata = {
   title: NEWS.metaTitle,
@@ -27,8 +31,9 @@ function newsHref(category: string | null, page: number): string {
 /**
  * The official city news page: a paged, category-filterable list of links to
  * the City Government's posts, read from D1, plus a tap-to-load Facebook
- * feed. Bad query strings fall back to defaults; an empty or missing table
- * shows the empty state.
+ * feed. Bad query strings fall back to defaults. An empty database, or any
+ * failed read (missing table, unbound or unavailable D1), shows the empty
+ * state instead of an error page; the failure is logged.
  */
 export default async function NewsPage({
   searchParams,
@@ -36,9 +41,9 @@ export default async function NewsPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const sp = await searchParams;
-  const categories = await safeRead(() => listCategories(env.DB), []);
+  const categories = await readOrDefault(() => listCategories(env.DB), []);
   const { page, category } = parseListParams(sp, categories);
-  const { items, total } = await safeRead(
+  const { items, total } = await readOrDefault(
     () => listNews(env.DB, { page, perPage: NEWS_PER_PAGE, category }),
     { items: [], total: 0 },
   );

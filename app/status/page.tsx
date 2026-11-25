@@ -5,7 +5,7 @@ import { PageShell } from "../../components/PageShell.tsx";
 import { StatusLine } from "../../components/StatusLine.tsx";
 import { STATUS } from "../../components/content.ts";
 import { lineStatus } from "../../utils/news/status.ts";
-import { recentRuns, safeRead } from "../../utils/news/store.ts";
+import { readOrDefault, recentRuns } from "../../utils/news/store.ts";
 
 export const metadata: Metadata = {
   title: STATUS.metaTitle,
@@ -17,8 +17,9 @@ const JOBS = ["feed", "archive"] as const;
 /**
  * The status page: whether the scheduled city news feed and archiving jobs
  * are working, from their recent runs in D1. Rendered per request, so it
- * never shows a stale "Working". A missing table reads as "Not checked
- * recently". Shows no error text or counts.
+ * never shows a stale "Working". Any failed read (missing table, unbound or
+ * unavailable D1) reads as "Not checked recently", never as "Working"; the
+ * failure is logged. Shows no error text or counts.
  */
 export default async function StatusPage({
   searchParams,
@@ -32,7 +33,7 @@ export default async function StatusPage({
     JOBS.map(async (job) => ({
       job,
       ...lineStatus(
-        await safeRead(() => recentRuns(env.DB, job, 50), []),
+        await readOrDefault(() => recentRuns(env.DB, job, 50), []),
         now,
         // An idle archive run proves nothing about saving, so it cannot hide failures.
         { ignoreIdle: job === "archive" },
