@@ -31,7 +31,12 @@ export default async function StatusPage({
   const lines = await Promise.all(
     JOBS.map(async (job) => ({
       job,
-      ...lineStatus(await safeRead(() => recentRuns(env.DB, job, 50), []), now),
+      ...lineStatus(
+        await safeRead(() => recentRuns(env.DB, job, 50), []),
+        now,
+        // An idle archive run proves nothing about saving, so it cannot hide failures.
+        { ignoreIdle: job === "archive" },
+      ),
     })),
   );
 

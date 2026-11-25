@@ -322,7 +322,7 @@ describe("news jobs", () => {
         [saveKey(5)]: status(429),
       });
       const run = await runArchiveJob(deps(f));
-      expect(run).toMatchObject({ errorCode: "http_429" });
+      expect(run).toMatchObject({ ok: false, errorCode: "http_429" });
       expect(await pendingArchive(db, 10)).toHaveLength(5);
       expect(await attemptsOf(5)).toBe(0);
     });
@@ -405,7 +405,7 @@ describe("news jobs", () => {
         [saveKey(2)]: status(200),
       });
       const run = await runArchiveJob(deps(f));
-      expect(run.errorCode).toBe("http_502");
+      expect(run).toMatchObject({ ok: false, errorCode: "http_502" });
       expect(calls.filter((c) => c.includes("/save/"))).toHaveLength(2);
       expect(await pendingArchive(db, 10)).toHaveLength(4);
       expect(await attemptsOf(3)).toBe(1);
@@ -438,6 +438,47 @@ describe("news jobs", () => {
       expect(counted.count()).toBeLessThanOrEqual(D1_QUERIES_PER_RUN);
     });
 
+    it("is not ok when saves were attempted and none succeeded", async () => {
+      await seed(1);
+      const { fetch: f } = fakeFetch({
+        [availKey(1)]: json(miss),
+        [saveKey(1)]: status(503),
+      });
+      const run = await runArchiveJob(deps(f));
+      expect(run).toMatchObject({ ok: false, archiveRequests: 1 });
+      expect(run.errorCode).not.toBeNull();
+    });
+
+    it("a terminal 404 with no success is not ok either", async () => {
+      await seed(1);
+      const { fetch: f } = fakeFetch({
+        [availKey(1)]: json(miss),
+        [saveKey(1)]: status(404),
+      });
+      expect(await runArchiveJob(deps(f))).toMatchObject({ ok: false });
+    });
+
+    it("is ok when availability hits needed no saves, and when one save succeeded", async () => {
+      await seed(1);
+      const hitOnly = fakeFetch({ [availKey(1)]: json(hit) });
+      expect(await runArchiveJob(deps(hitOnly.fetch))).toMatchObject({
+        ok: true,
+        errorCode: null,
+      });
+      await seed(0);
+      await upsertItems(db, [item(2)], NOW_ISO);
+      await upsertItems(db, [item(3)], NOW_ISO);
+      const mixed = fakeFetch({
+        [availKey(3)]: json(miss),
+        [saveKey(3)]: status(503),
+        [availKey(2)]: json(miss),
+        [saveKey(2)]: new Response("", { status: 200 }),
+      });
+      expect(await runArchiveJob(deps(mixed.fetch))).toMatchObject({
+        ok: true,
+      });
+    });
+
     it("a network error stops the run like a 429", async () => {
       await seed(3);
       const { fetch: f, calls } = fakeFetch({
@@ -445,7 +486,7 @@ describe("news jobs", () => {
         [availKey(2)]: new Error("down"),
       });
       const run = await runArchiveJob(deps(f));
-      expect(run).toMatchObject({ errorCode: "fetch_failed" });
+      expect(run).toMatchObject({ ok: false, errorCode: "fetch_failed" });
       expect(calls).toHaveLength(2);
       expect(await pendingArchive(db, 10)).toHaveLength(2);
     });

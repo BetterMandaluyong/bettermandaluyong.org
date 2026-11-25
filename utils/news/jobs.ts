@@ -175,7 +175,7 @@ export function runArchiveJob(deps: JobDeps): Promise<RunRow> {
     const pending = await pendingArchive(deps.db, AVAILABILITY_CHECKS_PER_RUN);
     const nowIso = toManilaIso(deps.now());
     let saves = 0;
-    let captured = 0;
+    let savedOk = 0;
     let transientStreak = 0;
     let errorCode: string | null = null;
     for (const { id, url } of pending) {
@@ -199,7 +199,6 @@ export function runArchiveJob(deps: JobDeps): Promise<RunRow> {
             captureUrl: existing,
             nowIso,
           });
-          captured++;
           continue;
         }
         if (saves >= ARCHIVE_SAVES_PER_RUN) continue;
@@ -236,13 +235,14 @@ export function runArchiveJob(deps: JobDeps): Promise<RunRow> {
           captureUrl: saved.captureUrl,
           nowIso,
         });
-        if (saved.status === "ok") captured++;
+        if (saved.status === "ok") savedOk++;
       } catch {
         errorCode = "fetch_failed";
         break;
       }
     }
-    const ok = pending.length === 0 || captured > 0;
+    // An availability hit proves nothing about Save Page Now, so only saves count.
+    const ok = errorCode === null && (saves === 0 || savedOk > 0);
     return {
       ok,
       itemsRead: pending.length,
