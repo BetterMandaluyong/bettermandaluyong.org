@@ -1,6 +1,6 @@
 import { bindings, defineConfig, defineWorker } from "cf/config";
 
-// Worker config for bettermandaluyong.org. Deployed by `pnpm deploy`
+// Worker config for bettermandaluyong.org. Deployed by `pnpm run deploy`
 // (vinext-cloudflare deploy) — see DEPLOYMENT.md. Keep accountId out of here.
 export default defineConfig({
   worker: defineWorker({

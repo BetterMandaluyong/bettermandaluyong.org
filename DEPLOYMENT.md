@@ -9,7 +9,7 @@ through `vinext-cloudflare deploy`.
 
 - `pnpm build` runs `vite build`: vinext + the Cloudflare Vite plugin emit the
   Worker bundle and the static assets into `.cloudflare/output/` (git-ignored).
-- `pnpm deploy` = `vinext-cloudflare deploy`: builds and uploads that output
+- `pnpm run deploy` = `vinext-cloudflare deploy`: builds and uploads that output
   with `cf`. It replaces the live (Production) deployment.
 - `pnpm deploy:preview` = `vinext-cloudflare previews deploy`: builds the same
   output and uploads a **Worker Preview** named after the Git branch, a non-live
@@ -32,12 +32,24 @@ The site used to be static files deployed with Wrangler. Before merging the
 vinext migration:
 
 1. In the Cloudflare dashboard (Workers → `bettermandaluyong-org` → Settings →
-   Builds), set **Build command** `pnpm install --frozen-lockfile`, **Deploy
-   command** `pnpm deploy`, and **Preview command** `pnpm deploy:preview`, with
-   **Builds for non-production branches** on.
+   Builds), set these, as
+   [vinext's deploy guide](https://github.com/cloudflare/vinext/blob/main/docs/deploying/cloudflare.mdx)
+   says:
+   - **Build command:** empty (clear it). Workers Builds installs dependencies
+     itself, and the deploy and preview commands each build the app; a separate
+     build would also skip the preview-specific build.
+   - **Deploy command:** `pnpm run deploy`. Not `pnpm deploy`: that runs pnpm's
+     own workspace-deploy command instead of our script.
+   - **Preview command:** `pnpm run deploy:preview`.
+   - **Builds for non-production branches:** on.
+
+   The default `npx wrangler deploy` / `npx wrangler preview` commands need a
+   `wrangler.jsonc`, which this project no longer has: its Worker settings live
+   in `cloudflare.config.ts`.
+
 2. Check that Workers Builds' injected credentials work for `cf` on the PR's
    preview build. **Fallback if they don't:** add a GitHub Action that runs
-   `pnpm deploy` with repo secrets `CLOUDFLARE_API_TOKEN` +
+   `pnpm run deploy` with repo secrets `CLOUDFLARE_API_TOKEN` +
    `CLOUDFLARE_ACCOUNT_ID` on push to `main`, and disconnect the Workers Builds
    trigger.
 3. Merge the PR, confirm the production deploy, and load the site.
