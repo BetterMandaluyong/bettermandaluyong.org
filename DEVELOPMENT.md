@@ -30,7 +30,10 @@ Open the URL printed in the terminal (typically <http://localhost:5173>).
 | Production build       | `pnpm build`                     |
 | Serve production build | `pnpm preview` (runs in workerd) |
 
-`pnpm check` runs `prettier --check . && oxlint && tsc --noEmit`. Run it, plus
+`pnpm check` runs
+`prettier --check . && oxlint && cf workers types && tsc --noEmit`
+(`cf workers types` writes the Worker binding types to `.cloudflare/types`, so a
+fresh checkout type-checks without running `pnpm dev` first). Run it, plus
 `pnpm test` and `pnpm build`, before considering any work done.
 
 ## Architecture
