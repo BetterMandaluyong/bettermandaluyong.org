@@ -12,6 +12,28 @@ export const SITE = {
   /** Placeholder inbox: confirm it exists before launch. */
   contactEmail: "hello@bettermandaluyong.org",
   followUrl: "https://www.facebook.com/BetterMandaluyong",
+  officialSiteUrl: "https://mandaluyong.gov.ph/",
+  cityPioFacebookUrl: "https://www.facebook.com/MandaluyongPIO",
+} as const;
+
+/** A link in the main site navigation. */
+export type NavItem = {
+  label: string;
+  href: string;
+};
+
+/** Main navigation, shown in the header. Hrefs are on-site paths. */
+export const NAV: NavItem[] = [{ label: "News", href: "/news" }];
+
+/** The notice that this is not the city government's site. */
+export const UNOFFICIAL = {
+  text: "Unofficial community site, not run by the City Government of Mandaluyong.",
+  linkLabel: "Official site: mandaluyong.gov.ph",
+} as const;
+
+/** Footer-only copy. */
+export const FOOTER = {
+  followLabel: "Follow Better Mandaluyong",
 } as const;
 
 /** A focus area shown on the home page. */
