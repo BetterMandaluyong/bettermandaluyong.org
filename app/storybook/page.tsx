@@ -6,12 +6,15 @@ import { Card } from "../../components/Card.tsx";
 import { Container } from "../../components/Container.tsx";
 import { Eyebrow } from "../../components/Eyebrow.tsx";
 import { Flag } from "../../components/Flag.tsx";
+import { NewsList } from "../../components/NewsList.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import { PillarList } from "../../components/PillarList.tsx";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { SiteHeader } from "../../components/SiteHeader.tsx";
 import { UnofficialBar } from "../../components/UnofficialBar.tsx";
 import { HOME, SITE, mailto } from "../../components/content.ts";
+import { FacebookFeed } from "../../islands/FacebookFeed.tsx";
+import type { NewsRow } from "../../utils/news/store.ts";
 import { COLOR_TOKENS, TYPE_UTILITIES } from "../../components/tokens.ts";
 
 export const metadata: Metadata = {
@@ -19,6 +22,40 @@ export const metadata: Metadata = {
   description: "Design tokens and components used on bettermandaluyong.org.",
   robots: { index: false, follow: false },
 };
+
+/** Obviously sample rows for the NewsList specimen; never real city posts. */
+const SAMPLE_NEWS: NewsRow[] = [
+  {
+    id: 1,
+    url: "https://example.com/sample-1",
+    title: "Sample: city announcement headline",
+    publishedAt: "2026-01-15T02:00:00.000Z",
+    categories: ["Sample category"],
+    removedAt: null,
+    waybackStatus: null,
+    waybackUrl: null,
+  },
+  {
+    id: 2,
+    url: "https://example.com/sample-2",
+    title: "Sample: city announcement headline (with an archived copy)",
+    publishedAt: "2026-01-10T02:00:00.000Z",
+    categories: ["Sample category", "Another sample"],
+    removedAt: null,
+    waybackStatus: "ok",
+    waybackUrl: "https://example.com/sample-archive",
+  },
+  {
+    id: 3,
+    url: "https://example.com/sample-3",
+    title: "Sample: city announcement headline (removed)",
+    publishedAt: "2026-01-05T02:00:00.000Z",
+    categories: ["Sample category"],
+    removedAt: "2026-01-20T02:00:00.000Z",
+    waybackStatus: "ok",
+    waybackUrl: "https://example.com/sample-archive-removed",
+  },
+];
 
 /** A titled band, hairline-separated like every BetterGov page section. */
 function Band({ title, children }: { title: string; children: ReactNode }) {
@@ -169,6 +206,15 @@ export default function StorybookPage() {
         </Specimen>
         <Specimen name="SiteHeader (logo + nav)">
           <SiteHeader />
+        </Specimen>
+        <Specimen name="NewsList (full)">
+          <NewsList items={SAMPLE_NEWS} />
+        </Specimen>
+        <Specimen name="NewsList (compact)">
+          <NewsList items={SAMPLE_NEWS} compact />
+        </Specimen>
+        <Specimen name="FacebookFeed (island; loads nothing until tapped)">
+          <FacebookFeed pageUrl={SITE.cityPioFacebookUrl} />
         </Specimen>
         <Specimen name="PillarList">
           <PillarList pillars={HOME.pillars} label={HOME.pillarsLabel} />

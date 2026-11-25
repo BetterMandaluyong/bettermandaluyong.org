@@ -138,6 +138,37 @@ hover. With `href`, the whole card is one link (put no other links inside).
 `Card`s; stacks on phones. Takes `pillars` (`Pillar[]` from `content.ts`) and an
 accessible `label`.
 
+### `NewsList`
+
+`components/NewsList.tsx`: server component listing city news, newest first, as
+an `<ol>` of rows: mono date, the post title as an external link
+(`rel="noreferrer"`) to the city's page (the archived copy once removed), the
+categories as `Flag`s, an "Archived copy" link when one exists, and a red `Flag`
+"Removed from the city site" when the city removed the post. `compact` hides the
+categories (for the home page). Takes `items: NewsRow[]`. Copy is in `NEWS`
+(`content.ts`).
+
+```tsx
+<NewsList items={items} compact />
+```
+
+## Islands
+
+Interactive pieces live in `islands/` and start with `"use client"`; everything
+else stays server-rendered. Islands take serializable props only.
+
+### `FacebookFeed`
+
+`islands/FacebookFeed.tsx`: the first island. Takes `pageUrl` (the Facebook
+page). Shows a ghost `Button` "Show Facebook posts" and a note that Facebook may
+set cookies; only after the tap does it render the Facebook page-plugin
+`<iframe>` (lazy). No Facebook iframe or script exists before the tap. The plain
+"See all posts on Facebook" link is always visible.
+
+```tsx
+<FacebookFeed pageUrl={SITE.cityPioFacebookUrl} />
+```
+
 ## Helpers
 
 - `cx(...classes)` (`components/cx.ts`): join class names, skipping falsy
