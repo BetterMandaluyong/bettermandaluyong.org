@@ -125,7 +125,7 @@ pills). `variant`: `default`, `navy`, `red` (urgency only), `outline`.
 optional `meta` (count or timestamp) on the right. `onDark` for navy bands.
 
 ```tsx
-<SectionHeader label="What we care about" meta="3 areas" />
+<SectionHeader label="Barangays" meta="27 barangays" />
 ```
 
 ## Content
@@ -142,11 +142,53 @@ hover. With `href`, the whole card is one link (put no other links inside).
 </Card>
 ```
 
-### `PillarList`
+### `BarangayList`
 
-`components/PillarList.tsx`: focus areas (title + one line each) as a grid of
-`Card`s; stacks on phones. Takes `pillars` (`Pillar[]` from `content.ts`) and an
-accessible `label`.
+`components/BarangayList.tsx`: the barangays as a grid of square link tiles
+(name, council district, approximate ZIP), each linking to `/barangays/<slug>`;
+stacks to one column on phones. Takes `barangays` (`Barangay[]` from
+`data/barangays.ts`) and an accessible `label`. `groupByDistrict` gives one
+headed list per council district (used on `/barangays`). It is also the keyboard
+and no-JavaScript way to reach everything the map shows. Copy is in `BARANGAYS`
+(`content.ts`).
+
+```tsx
+<BarangayList barangays={BARANGAYS} label="All barangays" groupByDistrict />
+```
+
+### `OfficialList`
+
+`components/OfficialList.tsx`: people and their positions. `variant="plain"`
+(default) is a ruled list, name on the left and position on the right, for
+councils. `variant="card"` is a grid of square cards that also show office,
+phone numbers (each a `tel:` link, via `parsePhones`) and emails (each a
+`mailto:` link); an optional `href` links the name (external) to the person's
+page on the city site. Takes `items` (`OfficialItem[]`) and a `label`.
+`officialItem(official)` turns a `CityOfficial` from `data/city-officials.ts`
+into a card item.
+
+```tsx
+<OfficialList
+  variant="card"
+  label="District 1 councilors"
+  items={councilorsFor(1).map(officialItem)}
+/>
+```
+
+### `SourceNote`
+
+`components/SourceNote.tsx`: the small credit line under third-party data:
+"Source: <link>. Last updated by the city on <date>." plus any `children` (the
+map's boundary and tile credits). All props are optional: `href`, `label`,
+`updated` (already formatted; see `formatSourceDate`). AGENTS.md requires a
+visible credit like this for third-party content.
+
+```tsx
+<SourceNote
+  href={barangay.sourceUrl}
+  updated={formatSourceDate(barangay.sourceModified)}
+/>
+```
 
 ### `NewsList`
 
@@ -192,10 +234,36 @@ set cookies; only after the tap does it render the Facebook page-plugin
 <FacebookFeed pageUrl={SITE.cityPioFacebookUrl} />
 ```
 
+### `BarangayMap`
+
+`islands/BarangayMap.tsx`: an interactive map of the barangay boundaries, drawn
+with Leaflet over OpenStreetMap tiles. Props: `geojsonUrl` (the boundaries,
+`BOUNDARIES_URL`), `barangays` (`MapBarangay[]`, `MAP_BARANGAYS`), optional
+`focus` (a slug: zooms to that barangay and dims the rest) and `height`
+(`"short"` or `"tall"`). Each barangay is shaded by council district (solid for
+District 1, dashed for District 2, so color isn't the only cue), names itself on
+hover, and opens a popup (captain, phone, link to its page) on click. The scroll
+wheel doesn't zoom, so the map never traps page scrolling; animation is off
+under `prefers-reduced-motion`. Leaflet loads in the browser only. The page must
+also show the credits (`BARANGAYS.mapCredit` in a `SourceNote`) and the barangay
+list, which is the accessible equivalent.
+
+```tsx
+<BarangayMap
+  geojsonUrl={BOUNDARIES_URL}
+  barangays={MAP_BARANGAYS}
+  focus="hulo"
+/>
+```
+
 ## Helpers
 
 - `cx(...classes)` (`components/cx.ts`): join class names, skipping falsy
   values.
 - `mailto(address)` (`components/content.ts`): build a `mailto:` href.
+- `parsePhones(text)`, `telHref(text)` (`utils/barangays/phone.ts`): split the
+  city's phone text into numbers with `tel:` links.
+- `formatSourceDate(isoDate)` (`utils/barangays/format.ts`): "February 20,
+  2026".
 - `COLOR_TOKENS`, `TYPE_UTILITIES` (`components/tokens.ts`): what `/storybook`
   shows; `tokens_test.ts` checks each exists in `globals.css`.
