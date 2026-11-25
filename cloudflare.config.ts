@@ -1,9 +1,12 @@
 import { bindings, defineConfig, defineWorker, triggers } from "cf/config";
-import {
-  ARCHIVE_CRON,
-  FEED_CRON,
-  REMOVAL_CRON,
-} from "./utils/news/schedule.ts";
+
+// Same strings as utils/news/schedule.ts, written out here on purpose: importing
+// that file from both this config and worker/index.ts breaks `pnpm dev` (the
+// Cloudflare Vite plugin cannot serve a module the config loader already
+// loaded). utils/news/schedule_test.ts fails if the two drift apart.
+const FEED_CRON = "7 */3 * * *";
+const ARCHIVE_CRON = "37 */3 * * *";
+const REMOVAL_CRON = "37 2 * * *";
 
 // Worker config for bettermandaluyong.org. Deployed by `pnpm run deploy`
 // (vinext-cloudflare deploy) — see DEPLOYMENT.md. Keep accountId out of here.
