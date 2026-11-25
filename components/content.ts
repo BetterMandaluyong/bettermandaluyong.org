@@ -70,6 +70,30 @@ export const HOME = {
   ] satisfies Pillar[],
 } as const;
 
+/** Copy for the city news page, the news list, and the Facebook island. */
+export const NEWS = {
+  metaTitle: "City news — Better Mandaluyong",
+  metaDescription:
+    "Official announcements from the City Government of Mandaluyong, linked from an unofficial community site.",
+  heading: "City news",
+  intro:
+    "Official announcements from the City Government of Mandaluyong. We link to the city's posts; we don't copy them.",
+  archived: "Archived copy",
+  removed: "Removed from the city site",
+  empty: "News will appear here after the first update.",
+  noPage: "No posts here.",
+  backToFirst: "Back to the latest news",
+  newer: "Newer",
+  older: "Older",
+  allCategories: "All",
+  facebookHeading: "City Public Information Office on Facebook",
+  facebookShow: "Show Facebook posts",
+  facebookNote: "Loads content from Facebook, which may set cookies.",
+  facebookLink: "See all posts on Facebook",
+  latestHeading: "Latest from the City",
+  latestLink: "All city news",
+} as const;
+
 /** Builds a `mailto:` href for an address. */
 export function mailto(address: string): string {
   return `mailto:${address}`;
