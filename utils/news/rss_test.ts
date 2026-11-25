@@ -65,6 +65,28 @@ describe("parseCityFeed", () => {
     expect(out[0]?.sourceId).toBe("https://mandaluyong.gov.ph/t/");
   });
 
+  it("strips utm_ tracking parameters from the link", () => {
+    const out = parseCityFeed(
+      feed(
+        item(
+          `<title>T</title><link>https://mandaluyong.gov.ph/x/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=x</link><pubDate>Tue, 27 Oct 2026 03:08:46 +0000</pubDate>`,
+        ),
+      ),
+    );
+    expect(out[0]?.url).toBe("https://mandaluyong.gov.ph/x/");
+  });
+
+  it("skips items whose link is not an http(s) URL", () => {
+    const out = parseCityFeed(
+      feed(
+        item(
+          `<title>T</title><link>javascript:alert(1)</link><pubDate>Tue, 27 Oct 2026 03:08:46 +0000</pubDate>`,
+        ),
+      ),
+    );
+    expect(out).toEqual([]);
+  });
+
   it("skips items without a title or link", () => {
     const out = parseCityFeed(
       feed(

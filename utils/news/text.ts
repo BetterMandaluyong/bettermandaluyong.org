@@ -25,3 +25,23 @@ export function toManilaIso(date: Date): string {
   const shifted = new Date(date.getTime() + 8 * 60 * 60 * 1000);
   return `${shifted.toISOString().slice(0, 19)}+08:00`;
 }
+
+/**
+ * Remove every `utm_*` query parameter from an http(s) URL, keeping the rest in
+ * their original order. Drops the `?` when no parameters remain. Returns null
+ * for invalid URLs and non-http(s) schemes (javascript:, mailto:, …).
+ */
+export function stripTrackingParams(url: string): string | null {
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    return null;
+  }
+  if (parsed.protocol !== "https:" && parsed.protocol !== "http:") return null;
+  const kept = new URLSearchParams(
+    [...parsed.searchParams].filter(([name]) => !name.startsWith("utm_")),
+  );
+  parsed.search = kept.toString();
+  return parsed.href;
+}

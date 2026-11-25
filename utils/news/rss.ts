@@ -1,4 +1,4 @@
-import { decodeEntities, toManilaIso } from "./text.ts";
+import { decodeEntities, stripTrackingParams, toManilaIso } from "./text.ts";
 import type { FeedItem } from "./types.ts";
 
 const ITEM_RE = /<item\b[^>]*>([\s\S]*?)<\/item>/g;
@@ -31,7 +31,8 @@ export function parseCityFeed(xml: string): FeedItem[] {
   for (const match of xml.matchAll(ITEM_RE)) {
     const block = (match[1] ?? "").replace(BODY_RE, "");
     const title = field(block, "title");
-    const url = field(block, "link");
+    const link = field(block, "link");
+    const url = link === undefined ? null : stripTrackingParams(link);
     const pubDate = field(block, "pubDate");
     if (!title || !url || !pubDate) continue;
     const published = new Date(pubDate);
