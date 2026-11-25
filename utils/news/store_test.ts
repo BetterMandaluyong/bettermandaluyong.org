@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   ensureSchema,
   getState,
@@ -11,6 +11,7 @@ import {
   recordArchive,
   recordArchiveAttempt,
   recordPresence,
+  readOrDefault,
   recordRun,
   safeRead,
   setState,
@@ -208,5 +209,16 @@ describe("news store", () => {
         throw new Error("boom");
       }, 1),
     ).rejects.toThrow("boom");
+  });
+
+  it("readOrDefault swallows every error, logs it and returns the fallback", async () => {
+    const log = vi.spyOn(console, "error").mockImplementation(() => {});
+    const failing = async (): Promise<string[]> => {
+      throw new Error("D1_ERROR: boom");
+    };
+    expect(await readOrDefault(failing, ["fallback"])).toEqual(["fallback"]);
+    expect(log).toHaveBeenCalledOnce();
+    expect(await readOrDefault(async () => ["ok"], [])).toEqual(["ok"]);
+    log.mockRestore();
   });
 });
