@@ -11,8 +11,7 @@ export const SITE = {
   location: "Mandaluyong City, Metro Manila",
   /** Placeholder inbox: confirm it exists before launch. */
   contactEmail: "hello@bettermandaluyong.org",
-  /** Placeholder: swap for the real Facebook page URL. */
-  followUrl: "https://www.facebook.com/",
+  followUrl: "https://www.facebook.com/BetterMandaluyong",
 } as const;
 
 /** A focus area shown on the home page. */
