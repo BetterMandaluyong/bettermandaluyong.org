@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { ArrowLink } from "../components/ArrowLink.tsx";
 import { Button } from "../components/Button.tsx";
-import { Eyebrow } from "../components/Eyebrow.tsx";
+import { Container } from "../components/Container.tsx";
+import { Flag } from "../components/Flag.tsx";
 import { PageShell } from "../components/PageShell.tsx";
 import { PillarList } from "../components/PillarList.tsx";
+import { SectionHeader } from "../components/SectionHeader.tsx";
 import { HOME, SITE, mailto } from "../components/content.ts";
 
 export const metadata: Metadata = {
@@ -18,23 +21,34 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <PageShell>
-      <section className="flex max-w-[44rem] flex-1 flex-col justify-center">
-        <Eyebrow live>{HOME.eyebrow}</Eyebrow>
-        <h1 className="m-0 font-display text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.02] font-bold tracking-[-0.02em] text-balance">
-          {HOME.headline}
-        </h1>
-        <p className="mt-6 max-w-xl text-[1.1875rem] text-pretty text-muted">
-          {HOME.lede}
-        </p>
-        <div className="mt-9 flex flex-wrap items-center gap-5">
-          <Button href={mailto(SITE.contactEmail)}>{HOME.primaryCta}</Button>
-          <Button href={SITE.followUrl} variant="link" rel="noopener">
-            {HOME.secondaryCta}
-          </Button>
-        </div>
+      <section className="border-b border-ed-rule bg-ed-paper-2">
+        <Container className="py-14 md:py-20">
+          <div className="max-w-3xl">
+            <Flag variant="navy">{HOME.eyebrow}</Flag>
+            <h1 className="type-display m-0 mt-5 text-balance">
+              {HOME.headline}
+            </h1>
+            <p className="type-lede m-0 mt-6 max-w-[65ch] text-pretty">
+              {HOME.lede}
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-6">
+              <Button href={mailto(SITE.contactEmail)}>
+                {HOME.primaryCta}
+              </Button>
+              <ArrowLink href={SITE.followUrl} external>
+                {HOME.secondaryCta}
+              </ArrowLink>
+            </div>
+          </div>
+        </Container>
       </section>
 
-      <PillarList pillars={HOME.pillars} label={HOME.pillarsLabel} />
+      <section>
+        <Container className="py-12 md:py-16">
+          <SectionHeader label={HOME.pillarsLabel} />
+          <PillarList pillars={HOME.pillars} label={HOME.pillarsLabel} />
+        </Container>
+      </section>
     </PageShell>
   );
 }

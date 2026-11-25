@@ -50,22 +50,25 @@ on Cloudflare Workers.
 - **Content** — user-facing copy and links live in
   [`components/content.ts`](components/content.ts), not in page markup.
 
-## Styling (Tailwind v4)
+## Styling (BetterGov.ph v2 + Tailwind v4)
 
-Tailwind v4 is configured entirely in CSS. **There is no `tailwind.config.js`.**
+The design follows the
+[**BetterGov.ph v2 design system**](https://bettergov.ph/design), ported into
+this repo (see [DESIGN.md](DESIGN.md) and [NOTICE.md](NOTICE.md)). Tailwind v4
+is configured entirely in CSS. **There is no `tailwind.config.js`.**
 
 - The Vite plugin is registered in [`vite.config.ts`](vite.config.ts)
   (`@tailwindcss/vite`).
 - Design tokens live in the `@theme` block of
-  [`app/globals.css`](app/globals.css), transcribed from
-  [**DESIGN.md**](DESIGN.md). They generate utilities like `bg-brand`,
-  `text-muted`, and `border-line`.
-- **Dark mode** follows the visitor's OS setting. The same token names are
-  redefined under `@media (prefers-color-scheme: dark)`, so components never
-  need `dark:` color classes.
+  [`app/globals.css`](app/globals.css): `ed-*` colors (`bg-ed-paper-2`,
+  `text-ed-ink-2`, `border-ed-rule`), fonts (`font-display`, `font-sans`,
+  `font-mono`), page widths, and the `type-*` utilities.
+- Pages are full-width bands, each with a `Container`. Square corners, hairline
+  rules, no shadows. Light only.
+- **`/storybook`** shows every token and component, live. Check it at desktop
+  and phone width after styling changes.
 
-To change a color or font, update the token in **DESIGN.md** first, then mirror
-it in `app/globals.css`.
+To change a token, update **DESIGN.md** first, then `app/globals.css`.
 
 ### Adding a page
 
@@ -89,13 +92,15 @@ A page file exports only `default`, `metadata`/`generateMetadata` and
 
 ### Adding a component / island
 
-- **First read [COMPONENTS.md](COMPONENTS.md)**: reuse before you build.
+- **First read [COMPONENTS.md](COMPONENTS.md)**: reuse before you build. If
+  BetterGov already has the component, port it (see the `new-component` skill).
 - **Server component** → `components/Foo.tsx` (imported by pages; no client JS).
   The class prop is `className`.
 - **Interactive component (island)** → `islands/Foo.tsx`, first line
   `"use client"`; use React hooks for state. Props must be serializable (plus
   server-rendered `children`).
-- New components get a COMPONENTS.md entry in the same change.
+- New components get a COMPONENTS.md entry and a `/storybook` specimen
+  (`app/storybook/page.tsx`) in the same change.
 
 ## Testing
 
@@ -106,7 +111,7 @@ live next to the code as `*_test.ts` (see
 - **Pure logic gets tests**: helpers, validation, content invariants. New or
   changed logic ships with passing tests in the same change.
 - **Server-rendered markup doesn't**: that's covered by `pnpm check` and a
-  visual check in the browser, in light and dark mode.
+  visual check in the browser, at desktop and phone width.
 
 ## Copy & content
 
