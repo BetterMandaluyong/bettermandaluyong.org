@@ -31,6 +31,10 @@ that changes, add a row above.
 - [BetterSolano/bettersolano](https://github.com/BetterSolano/bettersolano) (MIT
   for code, CC BY 4.0 for content: copying its text, images, or data requires
   credit, a link to the license, and a note of what changed).
+- [cloudflare/vinext `apps/web`](https://github.com/cloudflare/vinext/tree/main/apps/web)
+  (MIT): the worker-entry pattern in `worker/index.ts`.
+- [getcebby/cebby](https://github.com/getcebby/cebby) (no license; studied
+  only): the idea that a status line shows "working" only after a real read.
 
 ### npm dependencies
 

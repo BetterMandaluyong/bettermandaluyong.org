@@ -8,7 +8,9 @@ through `vinext-cloudflare deploy`.
 ## How it builds
 
 - `pnpm build` runs `vite build`: vinext + the Cloudflare Vite plugin emit the
-  Worker bundle and the static assets into `.cloudflare/output/` (git-ignored).
+  Worker bundle (entry: `worker/index.ts`, which serves vinext's fetch handler
+  and runs the news jobs on a schedule) and the static assets into
+  `.cloudflare/output/` (git-ignored).
 - `pnpm run deploy` = `vinext-cloudflare deploy`: builds and uploads that output
   with `cf`. It replaces the live (Production) deployment.
 - `pnpm deploy:preview` = `vinext-cloudflare previews deploy`: builds the same
@@ -54,6 +56,29 @@ vinext migration:
    trigger.
 3. Merge the PR, confirm the production deploy, and load the site.
 
+### One-time: news database
+
+The news feed keeps its data in a D1 database and fills it from scheduled runs
+(all UTC): the feed job at :07 past every third hour, the archive job at :37
+past every third hour, and the removal check daily at 02:37.
+
+1. Create the D1 database `bettermandaluyong-news`, or confirm the first deploy
+   created it.
+2. Optionally set the Internet Archive keys (from
+   <https://archive.org/account/s3.php>), once each. They raise the Save Page
+   Now limits; without them archiving still works at the anonymous rate:
+
+   ```sh
+   npx cf workers secrets update IA_ACCESS_KEY --worker bettermandaluyong-org --type secret_text
+   npx cf workers secrets update IA_SECRET_KEY --worker bettermandaluyong-org --type secret_text
+   ```
+
+3. After the deploy, wait for the next run at :07 past a 3-hour mark, then check
+   `/status`.
+
+There is no schema or import step: the Worker creates its own tables and
+backfills about 698 post titles and links over about 7 feed runs.
+
 ### Custom domain
 
 The Worker serves `bettermandaluyong.org` as a custom domain (`domains` in
@@ -76,8 +101,11 @@ pnpm preview     # serves the build in workerd
 
 ## Secrets
 
-There are none yet. When the site needs them (form backends, email), they go in
-the Cloudflare dashboard or via `cf` secrets, never in git.
+Two optional ones, `IA_ACCESS_KEY` and `IA_SECRET_KEY` (Internet Archive), set
+as in "One-time: news database". They are deliberately not declared in
+`cloudflare.config.ts`: a declared secret with no value fails the deploy, and
+the Worker reads them only if present. Any other secret (form backends, email)
+goes in the Cloudflare dashboard or via `cf` secrets, never in git.
 
 ## Reference
 
