@@ -198,3 +198,8 @@ the errors and assumptions that seasoned contributors have glossed over.
 
 (Impostor syndrome disclaimer adapted from
 [Adrienne Friend](https://github.com/adriennefriend/imposter-syndrome-disclaimer))
+
+## License
+
+[MIT](LICENSE). Copyright (c) 2026 Better Mandaluyong contributors. Work we
+reuse from other projects keeps its own license; see [NOTICE.md](NOTICE.md).
