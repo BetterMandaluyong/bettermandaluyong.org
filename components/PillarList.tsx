@@ -1,8 +1,10 @@
+import { Card } from "./Card.tsx";
 import type { Pillar } from "./content.ts";
 
 /**
- * A bordered grid of focus areas (title + one line each). Columns wrap at
- * 14rem, so it stacks on phones. `label` names the list for screen readers.
+ * Focus areas (title + one line each) as a grid of square cards; columns
+ * wrap at 16rem, so it stacks on phones. `label` names the list for screen
+ * readers.
  */
 export function PillarList({
   pillars,
@@ -14,14 +16,14 @@ export function PillarList({
   return (
     <ul
       aria-label={label}
-      className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(14rem,1fr))] gap-px overflow-hidden rounded-2xl border border-line bg-line p-0"
+      className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(16rem,1fr))] gap-4 p-0"
     >
       {pillars.map((pillar) => (
-        <li key={pillar.title} className="flex flex-col gap-1.5 bg-surface p-6">
-          <strong className="font-display text-xl font-medium">
-            {pillar.title}
-          </strong>
-          <span className="text-[0.9375rem] text-muted">{pillar.body}</span>
+        <li key={pillar.title} className="flex">
+          <Card className="w-full">
+            <h3 className="type-subheading m-0">{pillar.title}</h3>
+            <p className="type-body m-0 mt-2">{pillar.body}</p>
+          </Card>
         </li>
       ))}
     </ul>

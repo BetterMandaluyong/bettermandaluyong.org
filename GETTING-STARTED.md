@@ -141,6 +141,10 @@ a contribution. The undo reflex is your safety net for everything in Part 3.
 - [DESIGN.md](DESIGN.md) and [BRAND.md](BRAND.md) — how the site looks and
   sounds.
 - [AGENTS.md](AGENTS.md) — the standing instructions your agent already read.
+- [NOTICE.md](NOTICE.md) — whose work we build on. Copying something from
+  another project? Add it there.
+- `/storybook` on your local dev server — every color, font, and component,
+  live.
 
 Stuck at any step? Open an
 [issue](https://github.com/BetterMandaluyong/bettermandaluyong.org/issues) with

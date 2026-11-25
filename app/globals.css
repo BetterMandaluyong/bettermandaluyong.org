@@ -1,69 +1,164 @@
 @import "tailwindcss";
 
 /*
- * Design tokens. The single source of truth is DESIGN.md — change a value
- * there first, then mirror it here. Tailwind v4 reads these `@theme`
- * variables and generates utilities (e.g. `--color-brand` → `bg-brand`,
- * `text-brand`, `border-brand`).
+ * Design system for bettermandaluyong.org, based on the BetterGov.ph v2
+ * design system (https://bettergov.ph/design).
+ *
+ * Ported from bettergovph/bettergov, src/index.css and
+ * src/pages/design/styles.tsx at commit 5ead8c0 (2026-11-19), MIT License,
+ * Copyright (c) 2025-2026 BetterGov.ph contributors. See NOTICE.md.
+ *
+ * BetterGov is not a dependency: these values are ours to maintain.
+ * DESIGN.md documents every token, the names we changed, and where we
+ * deliberately differ. Change a token there first, then here.
  */
-@theme {
+
+@theme static {
+  /* ── Fonts: one job each (BetterGov's serif-ed/sans-ed/mono-ed) ────── */
+  --font-display: "Figtree", ui-sans-serif, system-ui, sans-serif;
   --font-sans:
-    "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: "Fraunces", Georgia, serif;
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Menlo, monospace;
 
-  /* Light palette (dark overrides below). */
-  --color-canvas: #f6f3ea;
-  --color-surface: #fffdf7;
-  --color-ink: #13231c;
-  --color-muted: #4c5d55;
-  --color-line: #dcd6c5;
-  --color-brand: #0f3d2e;
-  --color-on-brand: #f6f3ea;
-  --color-accent: #e8a317;
-  --color-glow: rgb(232 163 23 / 0.18);
+  /* ── Page widths: use through <Container>, never hardcode ──────────── */
+  --container-page: 94rem; /* 1504px: directories, tables, card grids */
+  --container-page-narrow: 65rem; /* 1040px: reading pages */
 
-  --animate-pulse-ring: pulse-ring 2.2s ease-out infinite;
+  /* ── Editorial colors (bg-ed-paper, text-ed-ink, border-ed-rule, …) ── */
+  --color-ed-ink: #0c1b33; /* headings, primary text */
+  --color-ed-ink-2: #2b3a55; /* body copy */
+  --color-ed-ink-3: #252629; /* secondary text, meta */
+  --color-ed-ink-4: #8a95aa; /* disabled + decorative only: fails AA */
+  --color-ed-rule: #dbe3ef; /* default borders, dividers */
+  --color-ed-rule-strong: #9fb2cc; /* emphasised borders */
+  --color-ed-paper: #ffffff; /* page background */
+  --color-ed-paper-2: #f4f7fc; /* tinted sections, mastheads */
+  --color-ed-paper-3: #e6ecf5; /* deeper tint, wells */
+  --color-ed-navy: #0b4fd9; /* links, primary buttons, active */
+  --color-ed-navy-2: #0a44bd; /* hero bands; navy hover */
+  --color-ed-navy-ink: #08286e; /* darkest navy: emphasis, hover surfaces */
+  --color-ed-navy-tint: #e8efff; /* subtle navy background */
+  --color-ed-red: #c8102e; /* urgency only */
+  --color-ed-red-ink: #8c0a20; /* red text on light backgrounds */
+  --color-ed-sage: #4a6b5a; /* sparing accent, never interactive */
+  --color-ed-gold: #b8893a; /* sparing accent, never interactive or text */
 
-  @keyframes pulse-ring {
-    0% {
-      box-shadow: 0 0 0 0
-        color-mix(in srgb, var(--color-accent) 60%, transparent);
-    }
-    70%,
-    100% {
-      box-shadow: 0 0 0 0.6rem transparent;
-    }
-  }
+  /* ── Status colors ─────────────────────────────────────────────────── */
+  --color-success-50: #e6f7ef;
+  --color-success-100: #ccefdf;
+  --color-success-200: #99dfbf;
+  --color-success-300: #66cf9f;
+  --color-success-400: #33bf7f;
+  --color-success-500: #00af5f;
+  --color-success-600: #008c4c;
+  --color-success-700: #006939; /* success states; safe under white text */
+  --color-success-800: #004626;
+  --color-success-900: #002313;
+
+  --color-warning-50: #fff8e6;
+  --color-warning-100: #fff1cc;
+  --color-warning-200: #ffe399;
+  --color-warning-300: #ffd566;
+  --color-warning-400: #ffc733;
+  --color-warning-500: #ffb900; /* warnings: dark text + an icon */
+  --color-warning-600: #cc9400;
+  --color-warning-700: #996f00;
+  --color-warning-800: #664a00;
+  --color-warning-900: #332500;
+
+  --color-error-50: #fceaea;
+  --color-error-100: #f9d5d5;
+  --color-error-200: #f3abab;
+  --color-error-300: #ed8282;
+  --color-error-400: #e75858;
+  --color-error-500: #e12e2e;
+  --color-error-600: #b42525; /* errors, destructive actions */
+  --color-error-700: #871c1c;
+  --color-error-800: #5a1212;
+  --color-error-900: #2d0909;
 }
 
-/* Dark mode follows the OS. Utilities read the variables, so overriding
-   them here re-themes every component with no `dark:` classes needed. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-canvas: #0c1813;
-    --color-surface: #12221b;
-    --color-ink: #eef1ea;
-    --color-muted: #a7b5ad;
-    --color-line: #24382f;
-    --color-brand: #f0b429;
-    --color-on-brand: #0c1813;
-    --color-accent: #f0b429;
-    --color-glow: rgb(240 180 41 / 0.12);
-  }
+/* ── Type scale (BetterGov's, named as utilities) ───────────────────── */
+/* Page title inside a masthead. One per page. */
+@utility type-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-ed-ink);
+}
+/* Section titles (what <SectionHeader> renders). */
+@utility type-section {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--color-ed-ink);
+}
+/* Sub-sections and card titles. */
+@utility type-subheading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.375;
+  color: var(--color-ed-ink);
+}
+/* Introductory paragraph under a page title. */
+@utility type-lede {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.625;
+  color: var(--color-ed-ink-2);
+}
+/* Long-form reading. */
+@utility type-body {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.625;
+  color: var(--color-ed-ink-2);
+}
+/* Interface copy: buttons, forms, navigation, dense listings. */
+@utility type-ui {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+/* Small structural labels (eyebrows, tags, metadata). Never sentences. */
+@utility type-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 @layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-ed-rule, currentcolor);
+  }
+
   body {
-    background:
-      radial-gradient(
-        60rem 40rem at 85% -10%,
-        var(--color-glow),
-        transparent 60%
-      ),
-      var(--color-canvas);
-    color: var(--color-ink);
+    background-color: var(--color-ed-paper);
+    color: var(--color-ed-ink-2);
     font-family: var(--font-sans);
     font-size: 1.0625rem;
-    line-height: 1.6;
+    line-height: 1.625;
+  }
+
+  /* One visible focus style everywhere. */
+  :focus-visible {
+    outline: 2px solid var(--color-ed-navy);
+    outline-offset: 2px;
+  }
+
+  a {
+    color: var(--color-ed-navy);
   }
 }

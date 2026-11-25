@@ -9,10 +9,12 @@ Claude Code sees them too.
 ## What this is
 
 The website for **Better Mandaluyong**, a community effort for a more livable
-Mandaluyong City, Metro Manila. Right now it is a single launching-soon page.
-Built with **vinext (Cloudflare's Vite reimplementation of the Next.js App
-Router) + React 19 + Tailwind CSS v4 + TypeScript**, on Node 24 + pnpm, deployed
-to Cloudflare Workers.
+Mandaluyong City, Metro Manila, and one of the BetterLGU sites. Right now it is
+a single launching-soon page. Built with **vinext (Cloudflare's Vite
+reimplementation of the Next.js App Router) + React 19 + Tailwind CSS v4 +
+TypeScript**, on Node 24 + pnpm, deployed to Cloudflare Workers. The design
+follows the **[BetterGov.ph v2 design system](https://bettergov.ph/design)**,
+ported into this repo (not installed).
 
 ## Commands
 
@@ -28,20 +30,49 @@ pnpm deploy:preview # Worker Preview for the branch (human step — see DEPLOYME
 
 ## Sources of truth — do not invent
 
-- **[COMPONENTS.md](COMPONENTS.md)** — the component catalog. **Read it before
-  creating or updating any page**: reuse `PageShell`, `Button`, `Eyebrow`,
-  `PillarList`, … instead of hand-rolling layouts, pills, or labels, so a visual
-  change stays a one-file edit. New UI is extracted into a component and added
-  to the catalog in the same change.
-- **[DESIGN.md](DESIGN.md)** — design tokens: colors (light + dark), fonts, and
-  the rules for using them. **Reuse tokens, don't hardcode hex.**
+- **[DESIGN.md](DESIGN.md)** — the BetterGov.ph v2 design system as this site
+  uses it: `ed-*` color tokens, `type-*` scale, layout, and accessibility rules.
+  **Use the tokens, never hardcode hex.** For anything DESIGN.md doesn't cover,
+  follow [bettergov.ph/design](https://bettergov.ph/design).
+- **[COMPONENTS.md](COMPONENTS.md)** — the component catalog, many ported from
+  BetterGov. **Read it before creating or updating any page**: reuse
+  `PageShell`, `Container`, `Button`, `ArrowLink`, `Card`, `Flag`,
+  `SectionHeader`, … instead of hand-rolling layouts, buttons, or labels, so a
+  visual change stays a one-file edit. Missing something? Port BetterGov's
+  version before inventing one. New UI gets a component, a `/storybook` specimen
+  (`app/storybook/page.tsx`), and a catalog entry in the same change.
 - **[BRAND.md](BRAND.md)** — voice and content rules. **Read it before writing
   any user-facing copy.** Copy lives in `components/content.ts` — never invent
   people, quotes, numbers, programs, or partnerships.
 
-When a token changes, update **DESIGN.md** first, then mirror it in
-`app/globals.css`. When a component changes, update **COMPONENTS.md** in the
+When a token changes, update **DESIGN.md** first, then `app/globals.css`. When a
+component changes, update **COMPONENTS.md** and its `/storybook` specimen in the
 same change.
+
+## Attribution — credit what we reuse
+
+Open source works because people credit each other. Before copying anything
+(code, text, images, icons, data) from another project:
+
+1. **Check its license.** No license file means all rights reserved: don't copy
+   it. Link to it, or ask the author.
+2. **Copyleft (GPL, AGPL, CC BY-SA) needs a maintainer's OK first**: it would
+   change the license terms of this repo.
+3. **In the same change, add a row to [NOTICE.md](NOTICE.md)**: the work, its
+   authors, its license, what we took, and where it lives here.
+4. **Meet the license's terms:**
+   - MIT / BSD / Apache-2.0: put the copyright and license text in NOTICE.md
+     (keep any existing header). At the top of each copied code file, say where
+     it came from (repo, path, commit), its license, and what you changed, like
+     the ported files in `components/`.
+   - CC BY: credit the author, link the license, and say what changed, both in
+     NOTICE.md and next to the content where people see it.
+   - CC0 / public domain: no legal duty, but credit it in NOTICE.md anyway.
+5. **Record the source precisely** (repo and commit) so the port can be compared
+   with upstream later.
+
+Third-party content on pages (photos, quotes, data) also needs a visible credit
+line on the page itself.
 
 ## Conventions
 
@@ -69,17 +100,20 @@ same change.
   `islands/` start with `"use client"` and ship client JS. Keep everything else
   server-rendered unless interactivity is required. Islands take serializable
   props (plus server-rendered `children`).
-- **Tailwind v4, CSS config — no `tailwind.config.js`.** Tokens live in the
-  `@theme` block of `app/globals.css` and produce utilities like `bg-brand`,
-  `text-muted`, `border-line`. Dark mode is automatic: the tokens are redefined
-  under `prefers-color-scheme: dark`, so don't add `dark:` classes for colors.
-  Prefer canonical v4 class names (e.g. `bg-linear-to-b`, not
+- **Tailwind v4, CSS config — no `tailwind.config.js`.** The design tokens live
+  in the `@theme` block of `app/globals.css`: colors as `bg-ed-paper-2`,
+  `text-ed-ink-2`, `border-ed-rule`, `bg-ed-navy`; text as the `type-*`
+  utilities (`type-display`, `type-section`, `type-body`, `type-label`, …);
+  fonts as `font-display` (Figtree), `font-sans` (Inter), `font-mono` (JetBrains
+  Mono). Prefer canonical v4 class names (e.g. `bg-linear-to-b`, not
   `bg-gradient-to-b`; `aspect-4/3`, not `aspect-[4/3]`).
-- **Fonts:** Inter (body) and Fraunces (`font-display`, headings) load via the
-  Google Fonts `<link>` in `app/layout.tsx`.
-- **Accessibility:** touch targets ≥ 48px (`min-h-12`), body text ≥ 16px with ≥
-  1.5 line-height, visible focus rings (`focus-visible:outline-accent`), and
-  every animation gets `motion-reduce:` handling. Check both light and dark.
+- **BetterGov look:** square corners, hairline rules, no shadows or gradients.
+  Pages are full-width bands with a `Container` inside. Navy is the only
+  interactive color; red means urgent; `ed-ink-4` and `ed-gold` are never text.
+- **Light only.** BetterGov v2 has no dark palette; don't add `dark:` classes.
+- **Accessibility:** controls 44px tall (`Button`), body text ≥ 16px, the global
+  navy focus outline stays, link text describes the destination, and every
+  animation gets `motion-reduce:` handling.
 - **Docstrings on exports.** Every exported component/function/type gets a brief
   JSDoc block: what it renders or returns and the props that matter (see
   `components/Button.tsx`).
@@ -116,7 +150,10 @@ install silently.
   `brew install …` on macOS), and wait for approval.
 - **MCP:** `.mcp.json` ships the project-scope `context7` server — use it for
   live docs instead of guessing APIs. Library IDs: `/cloudflare/vinext`,
-  `/vercel/next.js`, `/facebook/react`, `/tailwindlabs/tailwindcss`.
+  `/vercel/next.js`, `/facebook/react`, `/tailwindlabs/tailwindcss`. For the
+  design system, read [bettergov.ph/design](https://bettergov.ph/design) and its
+  source in [bettergovph/bettergov](https://github.com/bettergovph/bettergov)
+  (`src/pages/design/`, `src/components/v2/`).
 - **User-level skills/plugins** live outside this repo. If a task would benefit
   from one, propose the install command and wait — don't set them up unprompted.
 
@@ -125,19 +162,25 @@ install silently.
 - `pnpm test` runs `vitest run`. It must pass before claiming done.
 - Tests live next to the code as `*_test.ts` (e.g. `components/content_test.ts`)
   and run with `vitest.config.ts`, which skips the Cloudflare plugins.
+  `components/tokens_test.ts` fails if a token shown on `/storybook` is renamed
+  or deleted in `globals.css`.
 - **What needs tests:** pure logic — helpers, validation, content invariants,
   island state math. New or changed logic ships with passing tests in the same
   change.
 - **What doesn't:** server-rendered components and page markup. Those are
-  covered by `pnpm check` plus a visual pass in the browser (light and dark).
+  covered by `pnpm check` plus a visual pass on `/storybook` (desktop and phone
+  width).
 
 ## Where things live
 
 ```
 app/          Pages (App Router). layout.tsx = root layout; page.tsx = home;
-              not-found.tsx = 404; globals.css = Tailwind v4 @theme tokens.
+              not-found.tsx = 404; storybook/ = component catalog (noindex);
+              globals.css = design tokens (ported from BetterGov.ph v2).
 components/   Reusable server components — see COMPONENTS.md for the catalog.
+              Ported BetterGov files say so in their header.
 components/content.ts  All user-facing copy and links (SITE, HOME).
+components/tokens.ts   Token list for /storybook (and its test).
 islands/      Client-hydrated components ("use client") — none yet.
 public/       Assets served as-is: logo-seal.svg (logo + favicon),
               logo-mark.svg, png/. Generated by design/ — don't hand-edit.
@@ -150,6 +193,7 @@ vitest.config.ts      Unit test config (*_test.ts).
 .agents/skills/  Repo-level agent skills (real home); .claude/skills/ and
                 .opencode/skill symlink in for Claude Code / older OpenCode.
 .githooks/    commit-msg enforcement — activate with `pnpm setup`.
+NOTICE.md     Credits and license texts for everything we reuse.
 docs/         Untracked local scratch (agent plans, notes); never in git.
 ```
 
@@ -165,6 +209,10 @@ docs/         Untracked local scratch (agent plans, notes); never in git.
   `generateStaticParams` — put helpers in `components/` or `utils/`.
 - The dev server port is printed in the terminal — don't assume one. Test
   hydration against `pnpm preview`, not `pnpm dev`.
+- Tailwind only outputs a theme variable some class uses, unless the block is
+  `@theme static` (ours is). Keep it static so `var(--color-…)` always works.
+- New files' Tailwind classes sometimes don't appear in `pnpm dev` until the dev
+  server restarts. `pnpm build` always picks them up.
 - Previews are `vinext-cloudflare previews deploy` (`pnpm deploy:preview`).
   Never `deploy --preview`/`--env …` for a preview: it only picks a Vite mode
   and still overwrites Production.
@@ -173,6 +221,7 @@ docs/         Untracked local scratch (agent plans, notes); never in git.
 
 1. `pnpm check` passes (prettier + oxlint + typecheck).
 2. `pnpm test` passes (new/changed logic ships with tests).
-3. `pnpm build` succeeds, and `pnpm dev` renders the page with no console errors
-   in both light and dark mode.
-4. State any scope you deliberately left for later.
+3. `pnpm build` succeeds, and `pnpm dev` renders the page and `/storybook` with
+   no console errors, at desktop and phone width.
+4. Anything copied from elsewhere has its NOTICE.md entry.
+5. State any scope you deliberately left for later.

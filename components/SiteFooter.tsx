@@ -1,14 +1,17 @@
+import { Container } from "./Container.tsx";
 import { SITE } from "./content.ts";
 
-/** Copyright line (current year, rendered on the server) and location. */
+/** Bottom band: copyright (current year, rendered on the server) and city. */
 export function SiteFooter() {
   const year = new Date().getFullYear();
   return (
-    <footer className="flex flex-wrap justify-between gap-2 border-t border-line pt-6 text-sm text-muted">
-      <span>
-        &copy; {year} {SITE.name}
-      </span>
-      <span>{SITE.location}</span>
+    <footer className="border-t border-ed-rule bg-ed-paper-2">
+      <Container className="type-ui flex flex-wrap justify-between gap-2 py-6 text-ed-ink-3">
+        <span>
+          &copy; {year} {SITE.name}
+        </span>
+        <span>{SITE.location}</span>
+      </Container>
     </footer>
   );
 }

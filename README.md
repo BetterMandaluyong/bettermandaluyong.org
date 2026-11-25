@@ -8,7 +8,10 @@ it's a launching-soon page; the full site is being built here, in the open, by
 volunteers.
 
 Built with **vinext (Next.js App Router on Vite) · React 19 · Tailwind CSS v4 ·
-TypeScript**, on Node + pnpm, deployed to Cloudflare Workers.
+TypeScript**, on Node + pnpm, deployed to Cloudflare Workers. The design follows
+the [BetterGov.ph design system](https://bettergov.ph/design), the national
+standard the BetterLGU sites share. Run `pnpm dev` and open `/storybook` to see
+it.
 
 ## Quick start
 
@@ -48,7 +51,7 @@ New to code, or working through an AI agent? Start with
 ## Project structure
 
 ```
-app/            Pages (App Router): layout.tsx root, page.tsx home, globals.css = Tailwind v4 tokens
+app/            Pages (App Router): layout.tsx root, page.tsx home, storybook/ catalog, globals.css = design tokens
 components/     Reusable server components + content.ts (all site copy and links)
 public/         Static assets served as-is (logo-seal.svg, logo-mark.svg, png/)
 design/         Logo generator (make_logo.py) and PNG exporter
@@ -67,12 +70,14 @@ next.config.ts  Redirects
   conventions.
 - **[COMPONENTS.md](COMPONENTS.md)**: the component catalog. Reuse before you
   build.
-- **[DESIGN.md](DESIGN.md)**: design tokens (colors, fonts, light + dark).
+- **[DESIGN.md](DESIGN.md)**: the BetterGov.ph design system as we use it
+  (colors, type, layout, accessibility).
 - **[BRAND.md](BRAND.md)**: voice and content rules. How we write.
 - **[DEPLOYMENT.md](DEPLOYMENT.md)**: Cloudflare Workers deployment, previews,
   rollback.
 - **[AGENTS.md](AGENTS.md)**: guidance for AI coding agents (Claude Code,
   OpenCode, and others read it directly).
+- **[NOTICE.md](NOTICE.md)**: credits and license texts for everything we reuse.
 
 ## Logo
 
@@ -134,11 +139,32 @@ machine setup, your first agent edit, your first pull request.
 3. **Conventional commits.** `pnpm setup` installs the commit template and the
    commit-msg hook that enforce the format.
 4. **Docs travel with code.** Token changes update DESIGN.md first; component
-   changes update COMPONENTS.md in the same PR.
+   changes update COMPONENTS.md and `/storybook` in the same PR.
+5. **Credit what you reuse.** Copying code, text, images, or data from another
+   project? Check its license and add it to [NOTICE.md](NOTICE.md) in the same
+   PR (rules in [AGENTS.md](AGENTS.md#attribution--credit-what-we-reuse)).
 
 See [DEVELOPMENT.md](DEVELOPMENT.md) for the full workflow, and
 [AGENTS.md](AGENTS.md) for AI-coding-agent conventions (including: no AI
 attribution trailers in commits or PRs).
+
+## Credits
+
+This site stands on other people's open work:
+
+- **[BetterGov.ph design system](https://bettergov.ph/design)** by the
+  BetterGov.ph contributors (MIT): our design tokens, type scale, layout rules,
+  and several components are ported from
+  [bettergovph/bettergov](https://github.com/bettergovph/bettergov).
+- **[Imposter Syndrome Disclaimer](https://github.com/adriennefriend/imposter-syndrome-disclaimer)**
+  by Adrienne Lowe (MIT).
+- The [BetterLGU](https://lgu.bettergov.ph/) sites, including
+  [BetterLB](https://github.com/BetterLosBanos/betterlb),
+  [BetterSolano](https://github.com/BetterSolano/bettersolano), and
+  [betterlocalgov](https://github.com/iyanski/betterlocalgov), for showing the
+  way.
+
+Full details and license texts are in [NOTICE.md](NOTICE.md).
 
 ## Impostor Syndrome Disclaimer
 

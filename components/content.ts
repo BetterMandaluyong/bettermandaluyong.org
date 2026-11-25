@@ -30,7 +30,7 @@ export const HOME = {
   headline: "A better Mandaluyong starts with all of us.",
   lede: "We're building a home for residents who want safer streets, greener spaces, and a city that works for everyone. The full site is on its way.",
   primaryCta: "Get in touch",
-  secondaryCta: "Follow updates →",
+  secondaryCta: "Follow updates",
   pillarsLabel: "What we care about",
   pillars: [
     {
