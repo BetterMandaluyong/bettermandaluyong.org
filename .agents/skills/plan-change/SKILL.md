@@ -52,7 +52,7 @@ content — not the merge, and not unrelated edits.
   merge a PR.
 - Small, conventional commits: `type(scope): summary`, body ending with a
   `Verified: …` line. No AI attribution trailers — the commit-msg hook installed
-  by `pnpm setup` enforces this.
+  by `pnpm run setup` enforces this.
 - Keep obligations in the same change: new UI → shared component + COMPONENTS.md
   entry + `/storybook` specimen; new copy → `components/content.ts`; new logic →
   tests; copied work → NOTICE.md.

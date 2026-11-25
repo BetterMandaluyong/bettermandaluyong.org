@@ -21,7 +21,7 @@ it.
    commit-msg hook):
 
    ```sh
-   pnpm setup
+   pnpm run setup
    ```
 
 3. Start the dev server:
@@ -39,13 +39,13 @@ New to code, or working through an AI agent? Start with
 
 | Command               | Description                                                                    |
 | --------------------- | ------------------------------------------------------------------------------ |
-| `pnpm setup`          | One-time setup: deps, commit template, commit-msg hook.                        |
+| `pnpm run setup`      | One-time setup: deps, commit template, commit-msg hook.                        |
 | `pnpm dev`            | Start the Vite dev server with hot reload.                                     |
 | `pnpm build`          | Production build into `.cloudflare/output/`.                                   |
 | `pnpm preview`        | Serve the production build locally in workerd.                                 |
 | `pnpm check`          | Run `prettier --check`, `oxlint`, and `tsc --noEmit`.                          |
 | `pnpm test`           | Run the unit tests (`vitest run`).                                             |
-| `pnpm deploy`         | Build, then deploy to Cloudflare Workers (see [DEPLOYMENT.md](DEPLOYMENT.md)). |
+| `pnpm run deploy`     | Build, then deploy to Cloudflare Workers (see [DEPLOYMENT.md](DEPLOYMENT.md)). |
 | `pnpm deploy:preview` | Upload a Worker Preview for the current branch (Production untouched).         |
 
 ## Project structure
@@ -55,7 +55,7 @@ app/            Pages (App Router): layout.tsx root, page.tsx home, storybook/ c
 components/     Reusable server components + content.ts (all site copy and links)
 public/         Static assets served as-is (logo-seal.svg, logo-mark.svg, png/)
 design/         Logo generator (make_logo.py) and PNG exporter
-scripts/        setup.ts (pnpm setup)
+scripts/        setup.ts (pnpm run setup)
 .agents/skills/ Repo-level AI agent skills (plan-change, new-component, new-page)
 vite.config.ts  Build config: vinext + Tailwind + Cloudflare plugins
 cloudflare.config.ts  Cloudflare Workers config
@@ -136,8 +136,8 @@ machine setup, your first agent edit, your first pull request.
    to `main` directly.
 2. **Check before you push.** Run `pnpm check` and `pnpm test`; CI runs both
    plus `pnpm build` on every PR (`.github/workflows/check.yml`).
-3. **Conventional commits.** `pnpm setup` installs the commit template and the
-   commit-msg hook that enforce the format.
+3. **Conventional commits.** `pnpm run setup` installs the commit template and
+   the commit-msg hook that enforce the format.
 4. **Docs travel with code.** Token changes update DESIGN.md first; component
    changes update COMPONENTS.md and `/storybook` in the same PR.
 5. **Credit what you reuse.** Copying code, text, images, or data from another

@@ -11,7 +11,7 @@ Everything you need to run, build, and extend bettermandaluyong.org locally.
 ## Getting started
 
 ```sh
-pnpm setup  # deps + git hygiene (commit template, commit-msg hook)
+pnpm run setup  # deps + git hygiene (commit template, commit-msg hook)
 pnpm dev    # start the dev server
 ```
 
@@ -21,7 +21,7 @@ Open the URL printed in the terminal (typically <http://localhost:5173>).
 
 | Task                   | Command                          |
 | ---------------------- | -------------------------------- |
-| One-time setup         | `pnpm setup`                     |
+| One-time setup         | `pnpm run setup`                 |
 | Develop                | `pnpm dev`                       |
 | Format / lint / types  | `pnpm check`                     |
 | Unit tests             | `pnpm test`                      |
@@ -136,7 +136,7 @@ rollback) is in [**DEPLOYMENT.md**](DEPLOYMENT.md).
 - **Docs lookup** — `.mcp.json` provides the project-scope `context7` MCP server
   (live vinext/Next.js/React/Tailwind docs). Claude Code picks it up
   automatically; recent OpenCode versions read the same file.
-- **Commit hygiene** — `pnpm setup` wires the `.gitmessage` template and the
+- **Commit hygiene** — `pnpm run setup` wires the `.gitmessage` template and the
   `.githooks/commit-msg` hook (conventional subjects, no AI attribution
   trailers). Both are local to each clone.
 - **CI** — every PR runs `pnpm check`, `pnpm test` and `pnpm build`

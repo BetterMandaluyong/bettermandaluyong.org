@@ -43,14 +43,14 @@ mkdir -p ~/projects/github.com/BetterMandaluyong
 cd ~/projects/github.com/BetterMandaluyong
 git clone git@github.com:BetterMandaluyong/bettermandaluyong.org.git
 cd bettermandaluyong.org
-pnpm setup   # dependencies + git hygiene (commit template + hook)
+pnpm run setup  # dependencies + git hygiene (commit template + hook)
 pnpm dev     # starts the dev server
 ```
 
 Open the URL the terminal prints — usually <http://localhost:5173>. You're
-looking at the real site, running on your machine. `pnpm setup` also wires the
-commit-message hook that keeps this repo's history tidy (conventional subjects,
-no AI-attribution trailers).
+looking at the real site, running on your machine. `pnpm run setup` also wires
+the commit-message hook that keeps this repo's history tidy (conventional
+subjects, no AI-attribution trailers).
 
 > **When this goes wrong: `pnpm: command not found`** — the terminal predates
 > the Node install, or Corepack isn't enabled (`corepack enable pnpm`). Open a

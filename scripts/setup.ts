@@ -1,6 +1,6 @@
 // One-time local setup: dependencies + git hygiene.
 //
-//   pnpm setup
+//   pnpm run setup
 //
 // What it does:
 //   1. `pnpm install` — populate node_modules.
