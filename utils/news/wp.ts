@@ -45,13 +45,15 @@ export function parseWpPosts(
     ) {
       continue;
     }
+    const publishedAt = `${post.date}+08:00`;
+    if (Number.isNaN(Date.parse(publishedAt))) continue;
     const ids = Array.isArray(post.categories) ? post.categories : [];
     items.push({
       source: "city-website",
       sourceId: String(post.id),
       url: post.link,
       title: decodeEntities(title),
-      publishedAt: `${post.date}+08:00`,
+      publishedAt,
       categories: ids.flatMap((id) => {
         const name = typeof id === "number" ? categories.get(id) : undefined;
         return name ? [name] : [];

@@ -125,3 +125,11 @@ describe("archiveLink and itemLink", () => {
     ).toBe("https://mandaluyong.gov.ph/a");
   });
 });
+
+describe("invalid dates", () => {
+  it("format to an empty string instead of throwing", () => {
+    expect(formatNewsDate("garbage")).toBe("");
+    expect(formatNewsDate("")).toBe("");
+    expect(formatManilaDateTime("garbage")).toBe("");
+  });
+});
