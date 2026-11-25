@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Hulo
+psgc: "1380500014"
+district: 2
+zip: "1550"
+hall:
+  address: Coronado Street
+  phones:
+    - 8533-2505
+    - 7798-2024
+  email: null
+council:
+  captain: Joseph Parong Jose
+  kagawads:
+    - Samson Sta. Teresa Antiojo Jr
+    - Carlo De Leon De Guzman
+    - Donny Ref Castillo Gandoza
+    - Richard Sierrra Santdas
+    - Edna Mayores Gorobao
+    - Nikki Santos Amistoso
+    - Alex Laura Ignacio
+sk:
+  chair: Jermaine Clariz S. Perey
+  kagawads:
+    - Rhuby Rose O. Manlosa
+    - Eloisa Elize E. Ebro
+    - Edrian D. Crisostomo
+    - James Alfred P. Jose
+    - Mary Ann B. Advincula
+    - Ronaldo E. Victorino
+    - Rency S. Pamat
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-hulo/
+  updated: 2026-02-20

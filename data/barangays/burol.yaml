@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Burol
+psgc: "1380500007"
+district: 1
+zip: "1550"
+hall:
+  address: 1 Pag-Asa Street
+  phones:
+    - 8804-3858
+    - 8801-1437
+  email: null
+council:
+  captain: Dan Carl De Guzman
+  kagawads:
+    - Glen Alvarez Moreno
+    - Ronaldo Calpatura Calderon
+    - Adrian Santos Martinez
+    - Alexis Jarlego Dela Paz
+    - Charlie Ocampo De Guzman
+    - Jericho Encina Peralta
+    - Renato Martinez Cristobal
+sk:
+  chair: Gabriel A. Caleon
+  kagawads:
+    - Jham Byrell Go
+    - Eunice J. Ignacio
+    - Khryzhel Kei T. Bayola
+    - Charisse Nycole Philip A. Santos
+    - Marcuz John R. Trinidad
+    - Camille Joy L. Lunas
+    - Lourissa Sabina P. Ely
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-burol/
+  updated: 2026-02-20

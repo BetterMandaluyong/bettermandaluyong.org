@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Plainview
+psgc: "1380500022"
+district: 2
+zip: "1550"
+hall:
+  address: 40 Malaya Street
+  phones:
+    - 8534-1874
+    - "09457644743"
+  email: null
+council:
+  captain: Nerissa Y. Garcia
+  kagawads:
+    - Aris D. Bernardo
+    - Dindo T. Cristobal
+    - Maria Blanquita Romero-Peña
+    - Hubert DG. De Los Santos
+    - Lemuel P. Bonga
+    - Ma. Natasia Ysobel Bernardo-Din
+    - Jed Carlo C. Magrimbao
+sk:
+  chair: Danica M. Botor
+  kagawads:
+    - Louie B. Lagrimas
+    - John Carlos D. Dela Cruz
+    - Raine Juliana P. Yuson
+    - Tristan Jay C. Woodard
+    - Grace Ann R. Elejedo
+    - Ronald Vincent S. Cayobit
+    - Jonel B. Motita
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-plainview/
+  updated: 2026-02-20

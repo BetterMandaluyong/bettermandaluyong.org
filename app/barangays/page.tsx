@@ -13,6 +13,7 @@ import {
   ZIP_LOCATOR_URL,
 } from "../../data/barangays.ts";
 import {
+  CITY_DIRECTORY_URL,
   CITY_OFFICIALS_AS_OF,
   REPRESENTATIVE,
   councilorsFor,
@@ -99,7 +100,7 @@ export default function BarangaysPage() {
             ))}
           </div>
           <SourceNote
-            href="https://mandaluyong.gov.ph/government/elected-officials/"
+            href={CITY_DIRECTORY_URL}
             updated={formatSourceDate(CITY_OFFICIALS_AS_OF)}
           />
         </Container>

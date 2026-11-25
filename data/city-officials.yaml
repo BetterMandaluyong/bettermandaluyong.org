@@ -1,0 +1,172 @@
+# City officials, as published on mandaluyong.gov.ph (2025-2028 term).
+# Hand-kept: each person's own city page is the source. Mandaluyong is one
+# congressional district, so there is a single representative.
+# Councilors: the city's directory lists 6 per district, but BetterGov's
+# dynasties dataset (scripts/check_dynasties.ts) shows 8 seats per district,
+# so 4 councilors are probably missing here. Add them from the city's pages.
+as_of: 2026-03-12
+source_url: https://mandaluyong.gov.ph/government/elected-officials/
+representative:
+  name: Alexandria “Queenie” Pahati-Gonzales
+  role: Congresswoman
+  office: G/F Kaban ng Hiyas, City Government Complex, Maysilo Circle, Plainview
+  phones:
+    - (02) 8532-5001 local 758 to 787 and 790 to 795
+    - 8534-9907
+    - 8952-4056 local 7720 (House of Representatives)
+  emails:
+    - congressman@mandaluyong.gov.ph
+  source_url: https://mandaluyong.gov.ph/team/alexandria-queenie-pahati-gonzales/
+mayor:
+  name: Carmelita “Menchie” Aguilar Abalos
+  role: Mayor
+  office:
+    4/F Executive Building, City Government Complex, Maysilo Circle, Plainview
+  phones:
+    - (02) 8532-5001 local 752 to 756
+    - 8532-4492
+    - 8531-0194
+    - 8532-2224
+    - 8532-2332
+  emails:
+    - mayor@mandaluyong.gov.ph
+    - citymayor@mandaluyong.gov.ph
+    - mayorsoffice@mandaluyong.gov.ph
+    - menchieabalos702@gmail.com
+  source_url: https://mandaluyong.gov.ph/team/carmelita-menchie-aguilar-abalos-2/
+vice_mayor:
+  name: Antonio “Anthony” delos Santos Suva, Jr.
+  role: Vice Mayor
+  office: 4/F BOC Building, City Government Complex, Maysilo Circle, Plainview
+  phones:
+    - (02) 8532-1411
+    - (02) 8532-5001 local 618
+    - 8534-1299 local 864
+  emails:
+    - anthonysuva@gmail.com
+    - vicemayor.suva@mandaluyong.gov.ph
+  source_url: https://mandaluyong.gov.ph/team/antonio-delos-santos-suva-jr-2/
+councilors:
+  - name: Charisse Marie Abalos-Vargas
+    role: Councilor
+    district: 1
+    office: City Government Complex, Maysilo Circle, Plainview
+    phones:
+      - 8534-8927
+      - 8533-4304
+      - 8532-5001 to 28 local 577/578
+    emails:
+      - councilor.charisse@mandaluyong.gov.ph
+    source_url: https://mandaluyong.gov.ph/team/charisse-marie-abalos-vargas/
+  - name: Anjelo Elton P. Yap
+    role: Councilor
+    district: 1
+    office: City Government Complex, Maysilo Circle, Plainview
+    phones:
+      - 8532-4438
+      - 8532-5001 to 28 local 625
+    emails:
+      - councilor.eltonyap@mandaluyong.gov.ph
+    source_url: https://mandaluyong.gov.ph/team/anjelo-elton-p-yap/
+  - name: Danny L. de Guzman
+    role: Councilor
+    district: 1
+    office: City Government Complex, Maysilo Circle, Plainview
+    phones:
+      - 8534-0044
+      - 8532-5001 to 28 local 628
+    emails:
+      - councilor.deguzman@mandaluyong.gov.ph
+    source_url: https://mandaluyong.gov.ph/team/danny-de-guzman/
+  - name: Carissa Mariz S. Manalo
+    role: Councilor
+    district: 1
+    office: City Government Complex, Maysilo Circle, Plainview
+    phones:
+      - (02) 8641-1834
+      - (02) 8532-5000 local 843
+    emails:
+      - teammarizmanalo@gmail.com
+    source_url: https://mandaluyong.gov.ph/team/carissa-mariz-manalo/
+  - name: Grace Marie V. Antonio
+    role: Councilor
+    district: 1
+    office: City Government Complex, Maysilo Circle, Plainview
+    phones:
+      - (02) 8997-3612
+      - (02) 8532-5001 to 28 local 847
+    emails:
+      - grasyaparasamasa2025@gmail.com
+      - councilor.antonio@mandaluyong.gov.ph
+    source_url: https://mandaluyong.gov.ph/team/grace-marie-a-antonio-2/
+  - name: Estanislao “Junis” V. Alim III
+    role: Councilor
+    district: 1
+    office: City Government Complex, Maysilo Circle, Plainview
+    phones:
+      - 8534-0983
+    emails:
+      - councilor.junisalim@mandaluyong.gov.ph
+      - councilor.junisalim@yahoo.com
+    source_url: https://mandaluyong.gov.ph/team/estanislao-junis-villaraza-alim-iii/
+  - name: Benjamin “Benjie” A. Abalos III
+    role: Councilor
+    district: 2
+    office: City Government Complex, Maysilo Circle, Plainview
+    phones:
+      - 8533-3126
+      - 8532-5001 to 28 local 622
+    emails:
+      - councilor.benjieabalos@mandaluyong.gov.ph
+    source_url: https://mandaluyong.gov.ph/team/benjamin-benjie-abalos-iii/
+  - name: Alexander “Alex” C. Sta. Maria
+    role: Councilor
+    district: 2
+    office: City Government Complex, Maysilo Circle, Plainview
+    phones:
+      - (02) 8532-4362
+      - (02) 8532-5001 local 623
+    emails:
+      - docalexsm@yahoo.com.ph
+      - councilor.sta.maria@mandaluyong.gov.ph
+    source_url: https://mandaluyong.gov.ph/team/alexander-sta-maria/
+  - name: Reginald S. Antiojo
+    role: Councilor
+    district: 2
+    office: City Government Complex, Maysilo Circle, Plainview
+    phones:
+      - (02) 8532-5001 local 858
+      - (02) 8533-3126
+      - "09360297115"
+    emails:
+      - councilor.antiojo@mandaluyong.gov.ph
+    source_url: https://mandaluyong.gov.ph/team/reginald-antiojo/
+  - name: Leslie F. Cruz
+    role: Councilor
+    district: 2
+    office: City Government Complex, Maysilo Circle, Plainview
+    phones:
+      - (02) 8534-0982
+      - (02) 8532-5001 local 626
+    emails:
+      - cruz.leslief@gmail.com
+    source_url: https://mandaluyong.gov.ph/team/leslie-cruz/
+  - name: Fernando “Dong” S. Ocampo
+    role: Councilor
+    district: 2
+    office: City Government Complex, Maysilo Circle, Plainview
+    phones:
+      - (02) 8532-5001 local 849
+    emails:
+      - councilor.dongocampo@mandaluyong.gov.ph
+    source_url: https://mandaluyong.gov.ph/team/michael-ocampo/
+  - name: Michael Eric “Botong” G. Cuejilo
+    role: Councilor
+    district: 2
+    office: City Government Complex, Maysilo Circle, Plainview
+    phones:
+      - 0916-652-0210
+      - 8535-3603 local 631
+    emails:
+      - councilor.cuejilo@mandaluyong.gov.ph
+    source_url: https://mandaluyong.gov.ph/team/michael-eric-botong-gonzales-cuejilo/

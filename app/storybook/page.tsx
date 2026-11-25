@@ -21,6 +21,8 @@ import {
   BOUNDARIES_URL,
   MAP_BARANGAYS,
 } from "../../data/barangays.ts";
+import { BARANGAY_PERSON_HREFS } from "../../data/people.ts";
+import { BarangayExplorer } from "../../islands/BarangayExplorer.tsx";
 import { BarangayMap } from "../../islands/BarangayMap.tsx";
 import { FacebookFeed } from "../../islands/FacebookFeed.tsx";
 import type { NewsRow } from "../../utils/news/store.ts";
@@ -293,6 +295,13 @@ export default function StorybookPage() {
             geojsonUrl={BOUNDARIES_URL}
             barangays={MAP_BARANGAYS}
             height="short"
+          />
+        </Specimen>
+        <Specimen name="BarangayExplorer (island; the home page's map + search + cards)">
+          <BarangayExplorer
+            barangays={BARANGAYS}
+            hrefs={BARANGAY_PERSON_HREFS}
+            geojsonUrl={BOUNDARIES_URL}
           />
         </Specimen>
       </Band>

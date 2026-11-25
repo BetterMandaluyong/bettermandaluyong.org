@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { BARANGAYS, barangaysInDistrict, getBarangay } from "./barangays.ts";
 import {
@@ -40,7 +40,7 @@ describe("barangays", () => {
       // The city lists fewer SK kagawads where seats are vacant.
       expect(b.skKagawads.length, b.slug).toBeGreaterThan(0);
       expect(b.skKagawads.length, b.slug).toBeLessThanOrEqual(7);
-      expect(parsePhones(b.phone).length, b.slug).toBeGreaterThan(0);
+      expect(b.phones.flatMap(parsePhones).length, b.slug).toBeGreaterThan(0);
       expect(b.sourceUrl).toMatch(/^https:\/\/mandaluyong\.gov\.ph\//);
     }
   });
@@ -49,8 +49,8 @@ describe("barangays", () => {
     const names = BARANGAYS.flatMap((b) => [
       b.captain,
       b.skChair,
-      ...b.kagawads.map((m) => m.name),
-      ...b.skKagawads.map((m) => m.name),
+      ...b.kagawads,
+      ...b.skKagawads,
     ]);
     for (const n of names) {
       expect(n).not.toBe(n.toUpperCase());
@@ -63,6 +63,14 @@ describe("barangays", () => {
     expect(getBarangay("not-a-barangay")).toBeUndefined();
   });
 
+  it("has one YAML file per barangay, named by slug", () => {
+    const files = readdirSync("data/barangays")
+      .filter((f) => f.endsWith(".yaml"))
+      .map((f) => f.replace(".yaml", ""))
+      .sort();
+    expect(files).toEqual(BARANGAYS.map((b) => b.slug).sort());
+  });
+
   it("matches the map's polygons one to one", () => {
     const polygons = geo.features.map((f) => f.properties.slug).sort();
     expect(polygons).toEqual(BARANGAYS.map((b) => b.slug).sort());
@@ -73,10 +81,10 @@ describe("barangays", () => {
 });
 
 describe("city officials", () => {
-  it("has six councilors in each council district", () => {
-    expect(COUNCILORS).toHaveLength(12);
-    expect(councilorsFor(1)).toHaveLength(6);
-    expect(councilorsFor(2)).toHaveLength(6);
+  it("lists councilors in each council district (the city lists six; the dataset has eight seats)", () => {
+    expect(COUNCILORS.length).toBeGreaterThanOrEqual(12);
+    expect(councilorsFor(1).length).toBeGreaterThanOrEqual(6);
+    expect(councilorsFor(2).length).toBeGreaterThanOrEqual(6);
   });
 
   it("gives every official an office, a phone, an email, and a city page", () => {

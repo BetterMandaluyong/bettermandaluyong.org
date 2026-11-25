@@ -1,0 +1,35 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Pleasant Hills
+psgc: "1380500023"
+district: 1
+zip: "1552"
+hall:
+  address: 126 C. Fernando Street
+  phones:
+    - 8533-4794
+    - 8535-5431
+    - 8535-5437
+  email: null
+council:
+  captain: Renz Renniel Evangelista
+  kagawads:
+    - Ross Warren G. Evangelista
+    - Daisery B. Sincero
+    - Rosario G. Morales
+    - Wenceslao S. Villagracia
+    - Jesus Jaime R. Sudario
+    - Menandro A. Ariola
+    - Fernando Dv. Gavino Jr.
+sk:
+  chair: William Wallace G. Evangelista
+  kagawads:
+    - Heart E. Umbar
+    - Stephen Kirk E. Ferrer
+    - Jiro Lee R. Bueno
+    - Karla Mae V. Gonzales
+    - Stephen Seth E. Timoteo
+    - Jane Yvonne L. Casongsong
+    - Jasper Andrei V. Victoria
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-pleasant-hills/
+  updated: 2026-02-20

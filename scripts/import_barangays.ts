@@ -1,4 +1,5 @@
-// Builds data/barangays.json and public/data/mandaluyong-barangays.geojson.
+// Builds data/barangays/<slug>.yaml (one per barangay) and
+// public/data/mandaluyong-barangays.geojson from the city's public pages.
 //
 //   node scripts/import_barangays.ts <scraped-data-dir> <faeldon-geojson>
 //
@@ -8,12 +9,15 @@
 // github.com/faeldon/philippines-json-maps (the boundaries are NAMRIA/PSA
 // data from OCHA COD-AB, CC BY-IGO; see NOTICE.md).
 //
-// Rerun it when the city's pages change (new barangay officials: 2028, or a
-// court ruling). It prints every Punong Barangay that differs between the
+// The YAML files are the source of truth once written: edit them by hand for
+// small fixes. Rerunning this OVERWRITES them, so it is only for a bulk refresh
+// (new barangay officials: 2028, or a court ruling). It prints every Punong Barangay that differs between the
 // city's two pages so a person can settle it; it never guesses.
 
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { stringify } from "yaml";
+import { parsePhones } from "../utils/barangays/phone.ts";
 
 const [scrapedDir, geoPath] = process.argv.slice(2);
 if (!scrapedDir || !geoPath) {
@@ -124,6 +128,20 @@ function people(md: string): { role: string; name: string }[] {
   return out;
 }
 
+const duplicates: string[] = [];
+/** Drops repeated names within one council (the city's pages repeat some). */
+function unique(list: Member[], where: string): Member[] {
+  const seen = new Set<string>();
+  return list.filter((m) => {
+    if (seen.has(m.name)) {
+      duplicates.push(`${where}: "${m.name}" listed twice; kept once`);
+      return false;
+    }
+    seen.add(m.name);
+    return true;
+  });
+}
+
 // --- 1. The city's directory table: code, district, chair. -----------------
 const directory = readFileSync(join(govDir, "elected-officials.md"), "utf8");
 const dirRows = new Map<
@@ -232,9 +250,9 @@ for (const f of features) {
       ? { email: cell(page.md, "Email Address") }
       : {}),
     captain: captain.name,
-    kagawads,
+    kagawads: unique(kagawads, `${name} barangay council`),
     skChair: skChair?.name ?? "",
-    skKagawads,
+    skKagawads: unique(skKagawads, `${name} SK council`),
     sourceUrl: frontmatter(page.md, "url") || SOURCE_BASE,
     sourceModified: frontmatter(page.md, "modified").slice(0, 10),
   });
@@ -249,17 +267,41 @@ for (const f of features) {
 }
 
 barangays.sort((x, y) => x.name.localeCompare(y.name));
-mkdirSync("data", { recursive: true });
+mkdirSync("data/barangays", { recursive: true });
 mkdirSync("public/data", { recursive: true });
-writeFileSync("data/barangays.json", JSON.stringify(barangays, null, 2) + "\n");
+for (const b of barangays) {
+  const doc = {
+    name: b.name,
+    psgc: b.code,
+    district: b.district,
+    zip: b.zip,
+    hall: {
+      address: b.address,
+      phones: parsePhones(b.phone).map((p) => p.text),
+      email: (b as { email?: string }).email ?? null,
+    },
+    council: {
+      captain: b.captain,
+      kagawads: b.kagawads.map((m) => m.name),
+    },
+    sk: { chair: b.skChair, kagawads: b.skKagawads.map((m) => m.name) },
+    source: { url: b.sourceUrl, updated: b.sourceModified },
+  };
+  writeFileSync(
+    `data/barangays/${b.slug}.yaml`,
+    `# Written by scripts/import_barangays.ts; edit by hand if needed.\n` +
+      stringify(doc, { defaultStringType: "PLAIN", lineWidth: 0 }),
+  );
+}
 writeFileSync(
   "public/data/mandaluyong-barangays.geojson",
   JSON.stringify({ type: "FeatureCollection", features: outFeatures }) + "\n",
 );
 
 console.log(
-  `wrote ${barangays.length} barangays and ${outFeatures.length} polygons`,
+  `wrote ${barangays.length} barangay YAML files and ${outFeatures.length} polygons`,
 );
+for (const d of duplicates) console.log(" - " + d);
 if (mismatches.length) {
   console.log(
     "\nPunong Barangay differs between the city's pages (settle by hand):",

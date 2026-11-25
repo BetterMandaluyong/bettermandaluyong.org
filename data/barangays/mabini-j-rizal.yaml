@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Mabini-J. Rizal
+psgc: "1380500015"
+district: 2
+zip: "1550"
+hall:
+  address: Mabini J. Rizal Street
+  phones:
+    - 7728-9847
+    - 8531-0643
+  email: null
+council:
+  captain: Antonio L. Castaneda
+  kagawads:
+    - Sheryl B. Bigonia
+    - Myra C. Abella
+    - Elizando A. Alcala
+    - Luis M. Bernardo II
+    - Mark Erick G. Perez
+    - Carmen L. Vergara
+    - Rafael D. Pelayo
+sk:
+  chair: Jhomar M. Alvarez
+  kagawads:
+    - Gabriel Rivera
+    - Lyod F. Aquino
+    - Paul John P. Urma
+    - Mycko Anghello A. Alticen
+    - Denver D. Baloloy
+    - Kent Stuart T. Pahayupan
+    - Mc Jhonlyd P. Roque
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-mabini-j-rizal/
+  updated: 2026-02-20

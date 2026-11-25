@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Hagdang Bato Libis
+psgc: "1380500011"
+district: 1
+zip: "1550"
+hall:
+  address: A. Bonifacio Street cor. Pinagtipunan Street
+  phones:
+    - 8252-3681
+    - "09543741728"
+  email: null
+council:
+  captain: Danilo S. Torres
+  kagawads:
+    - Juan G. Labastida
+    - Celestine Evans D. Yalong
+    - Christopher M. Bueno
+    - Reynaldo S. Berwite
+    - Erizza Cate C. Sibug
+    - Ryan Ronald A. Mendoza
+    - Willand C. Torres
+sk:
+  chair: Maxine C. Sulayao
+  kagawads:
+    - Karla Angelo Villanueva
+    - Mary Anndrei Q. Bueno
+    - Janna Victoria V. Santos
+    - Dave T. Nuñez
+    - Aljon C. Dela Cruz
+    - Nala Cindrei P. Encabo
+    - Kevin Ambross Lacaba
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-hagdang-bato-libis2/
+  updated: 2026-02-20

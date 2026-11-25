@@ -1,0 +1,33 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Barangka Drive
+psgc: "1380500003"
+district: 2
+zip: "1550"
+hall:
+  address: 775 Barangka Drive cor. Sgt. Bumatay
+  phones:
+    - 8531-6544
+  email: null
+council:
+  captain: Darwin A. Fernandez
+  kagawads:
+    - Charity A. Fernandez
+    - Redan R. Faraon
+    - James F. Hugo
+    - Ofelia M. Lantin
+    - Clarissa Mhay G. Arias
+    - Kenneth L. Amante
+    - Maria Lourna B. Gulane
+sk:
+  chair: Jade Ashly M. Esquivel
+  kagawads:
+    - Jasmine S. Antalan
+    - Ivan V. Carlon
+    - France Asia Villarete
+    - Khate Razzel D. Magat
+    - Patricia Marie A. Owete
+    - Rochelle T. Balmores
+    - Darica E. Domondon
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-barangka-drive/
+  updated: 2024-06-06

@@ -1,0 +1,33 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Daang Bakal
+psgc: "1380500009"
+district: 1
+zip: "1550"
+hall:
+  address: Shaw Blvd. cor. Gen. Kalentong Street
+  phones:
+    - 8571-7732
+  email: null
+council:
+  captain: Richard B. Bassig
+  kagawads:
+    - Herminio Ochong Dela Cruz
+    - Angelo Cesar S. Barretto
+    - Aeron James C. Ingua
+    - John Paul A. Bulos
+    - Patrocinia E. Claudio
+    - Joseph S. Porcalla
+    - Redd Louise T. Abanes
+sk:
+  chair: Shaira Mae P. Gervacio
+  kagawads:
+    - Marcial S. Prudente
+    - Carl Adrian S. Narciso
+    - Krisna Hank D. Hornett
+    - Aldrick Crystal T. Ho
+    - Joan Ashley R. Santos
+    - Gerico Seludo
+    - Ernie Joseph G. Catalan
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-daang-bakal/
+  updated: 2026-02-20

@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Harapin Ang Bukas
+psgc: "1380500012"
+district: 1
+zip: "1550"
+hall:
+  address: 256 Daang Bakal Street
+  phones:
+    - 8533-6611
+    - "09759330200"
+  email: null
+council:
+  captain: Federico Y. Ogbac
+  kagawads:
+    - Joselito R. Eleazar
+    - Zenaida R. Candelaria
+    - Jerry C. Buenaventura
+    - Susana S. Lopez
+    - Marlowe E. Cruz
+    - Robin B. Buenaventura
+    - Raymundo N. Aquino
+sk:
+  chair: Juliana Marie Casiple
+  kagawads:
+    - Mary Joy C. Bolivar
+    - Angelo Baybayon
+    - Flordeliza C. Caceres
+    - Roland Kyle M. Casiano
+    - Penneloppy Anne C. Rodrigo
+    - Lean Alejandro M. Castillo
+    - Francine Keith Nale
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-harapin-ang-bukas-2/
+  updated: 2026-02-20

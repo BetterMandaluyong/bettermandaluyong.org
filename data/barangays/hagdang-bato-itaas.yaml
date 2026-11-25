@@ -1,0 +1,33 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Hagdang Bato Itaas
+psgc: "1380500010"
+district: 1
+zip: "1550"
+hall:
+  address: A. Bonifacio Street
+  phones:
+    - 8534-0345
+  email: null
+council:
+  captain: Merlyn Solano Espiritu
+  kagawads:
+    - J-IV Miguel Solano Espiritu
+    - Geronimo Clemente Cudia Jr.
+    - Henric Pulusan Esposo
+    - Fernando Mansujeto Molina
+    - Carmelita Delos Reyes Torres
+    - Ferdinand Reyes Fermin
+    - Landrix Navarra San Juan
+sk:
+  chair: John Matthew W. Yamzon
+  kagawads:
+    - Luz Clarisse Anne V. Molina
+    - Sahrin Lea B. Bendicio
+    - Jasmine Gwen D. Cudia
+    - Kathleen M. Mangilin
+    - John Paolo N. Guerrero
+    - Paul Martin M. Gildore
+    - John Paul C. Samson
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-hagdang-bato-itaas/
+  updated: 2025-10-08

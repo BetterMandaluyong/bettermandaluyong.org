@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Bagong Silang
+psgc: "1380500002"
+district: 1
+zip: "1550"
+hall:
+  address: cor. J. Luna Street
+  phones:
+    - 8995-3354
+    - "09052533125"
+  email: null
+council:
+  captain: Kristofer Dominguez
+  kagawads:
+    - John Christopher R. Magalong
+    - Dennis L. Laygo
+    - John Mark Sta. Maria Guzman
+    - Joel J. Quieta
+    - Lito P. Bautista
+    - Elvis Sta. Maria Salvo
+    - Matranelio T. Aloyon
+sk:
+  chair: Mark Junard P. Belerma
+  kagawads:
+    - Dennis R. Bautista
+    - Jerome G. Andot
+    - Francheska Mavielle Castillo
+    - Myr Jezreel D. Gaza
+    - Zan Arshel Marie C. Laygo
+    - Serg Bryan Padillo
+    - Khylene Gail Meniable
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-bagong-silang/
+  updated: 2026-02-19

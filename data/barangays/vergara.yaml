@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Vergara
+psgc: "1380500026"
+district: 2
+zip: "1551"
+hall:
+  address: 38 Elino Cruz Street
+  phones:
+    - 8531-9900
+    - "09761796945"
+  email: null
+council:
+  captain: Ernesto C. Mendiola
+  kagawads:
+    - Allan E. Segovia
+    - Alberto E. Macalanda
+    - Jonas R. Anchuelo
+    - Reynaldo A. Wigan
+    - Ma. Cecilia T. Castro
+    - Osias M. Panganiban
+    - Maria Nica Y. Magcaleng
+sk:
+  chair: Vetina S. Tarantan
+  kagawads:
+    - Jude Michael D. Cruz
+    - Marcos Jay O. Reyes
+    - Amiel Chester S. Magcaleng
+    - Justine M. Javier
+    - Nathaniel A. Cantos
+    - Franz Melexi Pascua
+    - Ryza Mae R. Clar
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-vergara/
+  updated: 2026-02-20

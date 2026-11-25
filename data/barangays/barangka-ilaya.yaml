@@ -1,0 +1,34 @@
+# Written by scripts/import_barangays.ts; edit by hand if needed.
+name: Barangka Ilaya
+psgc: "1380500005"
+district: 2
+zip: "1554"
+hall:
+  address: 2 Pinatubo Street cor. Ilaya Barangka
+  phones:
+    - 8531-0647
+    - "09621571317"
+  email: null
+council:
+  captain: Joselito C. Pangilinan
+  kagawads:
+    - Ronaldo Y. Intalan
+    - Celso C. Panglinan
+    - Rowena A. Costelo
+    - Armando S. Gonzaga
+    - Emelita San Jose Masilang
+    - Arnold S. Teodoro
+    - Alex Z. Santiago
+sk:
+  chair: Rizelyn L. Arrabis
+  kagawads:
+    - Jhana G. Coronado
+    - Nakeesha Abby Reyes
+    - Mark Gilbert Dublon
+    - Franco Lauren D. San Jose
+    - Christian Patricia O. Masilang
+    - Jayvie F. Agapito
+    - Justin Cedrick V. Garcia
+source:
+  url: https://mandaluyong.gov.ph/government/barangays/barangay-barangka-ilaya/
+  updated: 2026-02-20

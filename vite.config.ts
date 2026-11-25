@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import vinext from "vinext";
 import tailwindcss from "@tailwindcss/vite";
 import { cloudflare } from "@cloudflare/vite-plugin";
+import { yamlPlugin } from "./vite-plugins/yaml.ts";
 
 /**
  * The commit being built, shown in the footer. Workers Builds and GitHub
@@ -30,6 +31,7 @@ export default defineConfig({
     __COMMIT_SHA__: JSON.stringify(commitSha()),
   },
   plugins: [
+    yamlPlugin(),
     vinext(),
     tailwindcss(),
     cloudflare({

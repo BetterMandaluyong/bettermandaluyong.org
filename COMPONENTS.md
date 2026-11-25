@@ -160,12 +160,13 @@ and no-JavaScript way to reach everything the map shows. Copy is in `BARANGAYS`
 
 `components/OfficialList.tsx`: people and their positions. `variant="plain"`
 (default) is a ruled list, name on the left and position on the right, for
-councils. `variant="card"` is a grid of square cards that also show office,
-phone numbers (each a `tel:` link, via `parsePhones`) and emails (each a
-`mailto:` link); an optional `href` links the name (external) to the person's
-page on the city site. Takes `items` (`OfficialItem[]`) and a `label`.
-`officialItem(official)` turns a `CityOfficial` from `data/city-officials.ts`
-into a card item.
+councils. `columns` (plain only) flows the rows into 2–3 columns.
+`variant="card"` is a grid of square cards that also show office, phone numbers
+(each a `tel:` link, via `parsePhones`) and emails (each a `mailto:` link); an
+optional `href` links the name to the person's `/people/…` page. Takes `items`
+(`OfficialItem[]`) and a `label`. `officialItem(official)` turns a
+`CityOfficial` from `data/city-officials.ts` into a card item linking to their
+`/people/…` page.
 
 ```tsx
 <OfficialList
@@ -237,22 +238,52 @@ set cookies; only after the tap does it render the Facebook page-plugin
 ### `BarangayMap`
 
 `islands/BarangayMap.tsx`: an interactive map of the barangay boundaries, drawn
-with Leaflet over OpenStreetMap tiles. Props: `geojsonUrl` (the boundaries,
-`BOUNDARIES_URL`), `barangays` (`MapBarangay[]`, `MAP_BARANGAYS`), optional
-`focus` (a slug: zooms to that barangay and dims the rest) and `height`
-(`"short"` or `"tall"`). Each barangay is shaded by council district (solid for
-District 1, dashed for District 2, so color isn't the only cue), names itself on
-hover, and opens a popup (captain, phone, link to its page) on click. The scroll
-wheel doesn't zoom, so the map never traps page scrolling; animation is off
-under `prefers-reduced-motion`. Leaflet loads in the browser only. The page must
-also show the credits (`BARANGAYS.mapCredit` in a `SourceNote`) and the barangay
-list, which is the accessible equivalent.
+with Leaflet over OpenStreetMap tiles. Each barangay is shaded by council
+district (solid for District 1, dashed for District 2, so color isn't the only
+cue) and names itself on hover. Props: `geojsonUrl` (`BOUNDARIES_URL`),
+`barangays` (`MapBarangay[]`, `MAP_BARANGAYS`), `height` (`"short"`, `"tall"`,
+or `"fill"`: fixed on phones, the parent's height on large screens).
+
+- Without `onSelect`, a click opens a popup (captain, phone, link to its page).
+  With `onSelect(slug)`, a click calls it and the parent shows the details.
+- View props change what is shown without rebuilding the map: `selected` (a slug
+  or `null`) zooms to one barangay and dims the rest; `focus` does the same for
+  a fixed barangay; `focusDistrict` (`1 | 2`) zooms to and highlights one
+  council district; `matches` (slugs) dims everything else, for search results.
+- The scroll wheel doesn't zoom, so the map never traps page scrolling;
+  animation is off under `prefers-reduced-motion`. Leaflet loads in the browser
+  only. The page must also show the credits (`BARANGAYS.mapCredit` in a
+  `SourceNote`) and the barangay list, the accessible equivalent.
 
 ```tsx
 <BarangayMap
   geojsonUrl={BOUNDARIES_URL}
   barangays={MAP_BARANGAYS}
-  focus="hulo"
+  focusDistrict={2}
+/>
+```
+
+### `BarangayExplorer`
+
+`islands/BarangayExplorer.tsx`: the home page's main interface. A `BarangayMap`
+on the left (`lg:` two columns; stacked on phones) and on the right a search box
+over a scrolling list of barangay cards. Picking a card or a barangay on the map
+zooms to it and swaps the panel to its details: hall contacts and the whole
+barangay and SK council, each name linking to its `/people/…` page. Search
+(`searchBarangays`) matches barangay names, ZIPs, "district 1", and officials'
+names, and matching barangays stay bright on the map. The selection is kept in
+the address (`/?barangay=hulo`). Cards are ordinary links to
+`/barangays/<slug>`, so the list works without JavaScript; with it, a plain
+click selects. Props: `barangays`, `hrefs` (person links keyed by `hrefKey`; use
+`BARANGAY_PERSON_HREFS`), `geojsonUrl`, `initialSelected`. Built so future
+panels and map layers can be added beside the barangay view.
+
+```tsx
+<BarangayExplorer
+  barangays={BARANGAYS}
+  hrefs={BARANGAY_PERSON_HREFS}
+  geojsonUrl={BOUNDARIES_URL}
+  initialSelected="hulo"
 />
 ```
 
@@ -263,6 +294,10 @@ list, which is the accessible equivalent.
 - `mailto(address)` (`components/content.ts`): build a `mailto:` href.
 - `parsePhones(text)`, `telHref(text)` (`utils/barangays/phone.ts`): split the
   city's phone text into numbers with `tel:` links.
+- `searchBarangays(barangays, query)` (`utils/barangays/search.ts`): accent- and
+  case-insensitive search over names, ZIPs, districts, and officials.
+- `getPerson(slug)`, `personHref(name, role, barangaySlug?)`, `PEOPLE`
+  (`data/people.ts`): the `/people/<slug>` directory.
 - `formatSourceDate(isoDate)` (`utils/barangays/format.ts`): "February 20,
   2026".
 - `COLOR_TOKENS`, `TYPE_UTILITIES` (`components/tokens.ts`): what `/storybook`
