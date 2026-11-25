@@ -35,9 +35,10 @@ const dateFormat = new Intl.DateTimeFormat("en-PH", {
   dateStyle: "long",
 });
 
-/** Formats an ISO timestamp as a long date in Manila time, e.g. "October 27, 2026". */
+/** Formats an ISO timestamp as a long date in Manila time, e.g. "October 27, 2026". Returns "" for an invalid date. */
 export function formatNewsDate(iso: string): string {
-  return dateFormat.format(new Date(iso));
+  const date = new Date(iso);
+  return Number.isNaN(date.getTime()) ? "" : dateFormat.format(date);
 }
 
 const dateTimeFormat = new Intl.DateTimeFormat("en-PH", {
@@ -46,10 +47,12 @@ const dateTimeFormat = new Intl.DateTimeFormat("en-PH", {
   timeStyle: "short",
 });
 
-/** Formats an ISO timestamp as date and time in Manila time, e.g. "November 25, 2026, 8:07 PM". */
+/** Formats an ISO timestamp as date and time in Manila time, e.g. "November 25, 2026, 8:07 PM". Returns "" for an invalid date. */
 export function formatManilaDateTime(iso: string): string {
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return "";
   return dateTimeFormat
-    .format(new Date(iso))
+    .format(date)
     .replace(" at ", ", ")
     .replace(/\s/g, " ")
     .replace(/\bam\b/i, "AM")

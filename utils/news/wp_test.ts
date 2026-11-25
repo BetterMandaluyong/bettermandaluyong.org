@@ -56,4 +56,23 @@ describe("parseWpPosts", () => {
     expect(parseWpPosts([], cats)).toEqual([]);
     expect(parseWpPosts([{ id: 1 }], cats)).toEqual([]);
   });
+
+  it("skips posts whose date is not a valid date", () => {
+    const post = (id: number, date: string) => ({
+      id,
+      link: `https://mandaluyong.gov.ph/p-${id}/`,
+      title: { rendered: "T" },
+      date,
+      categories: [],
+    });
+    const items = parseWpPosts(
+      [
+        post(1, "not-a-date"),
+        post(2, "2026-13-45T99:00:00"),
+        post(3, "2026-07-28T10:52:54"),
+      ],
+      cats,
+    );
+    expect(items.map((i) => i.sourceId)).toEqual(["3"]);
+  });
 });
