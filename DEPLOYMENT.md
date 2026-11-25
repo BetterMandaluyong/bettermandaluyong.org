@@ -60,7 +60,9 @@ vinext migration:
 
 The news feed keeps its data in a D1 database and fills it from scheduled runs
 (all UTC): the feed job at :07 past every third hour, the archive job at :37
-past every third hour, and the removal check daily at 02:37.
+past every third hour, and the removal check daily at 02:37. Worker Previews get
+no schedules (Previews reject cron triggers), so the jobs only run in
+production; a Preview shows whatever the D1 database already holds.
 
 1. Confirm the D1 database `bettermandaluyong-news` exists after the first
    deploy. If the deploy did not create it, a human creates it: Cloudflare
