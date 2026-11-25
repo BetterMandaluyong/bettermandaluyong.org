@@ -24,7 +24,8 @@ spacing and layout; `cx` doesn't merge conflicting Tailwind classes.
 ### `PageShell`
 
 `components/PageShell.tsx`: the frame every page uses. Full-width bands:
-`SiteHeader`, `<main id="main-content">` (the skip link's target), `SiteFooter`.
+`UnofficialBar`, `SiteHeader`, `<main id="main-content">` (the skip link's
+target), `SiteFooter`.
 
 ```tsx
 <PageShell>
@@ -42,10 +43,21 @@ spacing and layout; `cx` doesn't merge conflicting Tailwind classes.
 `components/Container.tsx`: centred page width with gutters. `narrow` (1040px)
 for reading pages; default 1504px. Every band's content goes in one.
 
+### `UnofficialBar`
+
+`components/UnofficialBar.tsx`: full-width `bg-ed-paper-2` band above the header
+on every page (rendered by `PageShell`). Says the site is not run by the City
+Government and links (external, `rel="noreferrer"`) to the official site. Copy
+is `UNOFFICIAL` and `SITE.officialSiteUrl` in `content.ts`. Wraps onto two lines
+on narrow screens; the link is 44px tall.
+
 ### `SiteHeader` / `SiteFooter`
 
 Rendered by `PageShell`; you don't use them directly. The header is the seal
-logo + site name linking home. The footer shows `© <year> Better Mandaluyong`
+logo + site name linking home, plus a `<nav aria-label="Main">` listing `NAV`
+from `content.ts` (navy links, 44px tall). Add a nav item by adding to `NAV`.
+The footer shows the `UNOFFICIAL` notice with links to the official site and to
+follow Better Mandaluyong (`SITE.followUrl`), then `© <year> Better Mandaluyong`
 (year rendered on the server) and the city.
 
 ## Actions and links

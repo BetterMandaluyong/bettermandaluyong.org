@@ -9,6 +9,8 @@ import { Flag } from "../../components/Flag.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import { PillarList } from "../../components/PillarList.tsx";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
+import { SiteHeader } from "../../components/SiteHeader.tsx";
+import { UnofficialBar } from "../../components/UnofficialBar.tsx";
 import { HOME, SITE, mailto } from "../../components/content.ts";
 import { COLOR_TOKENS, TYPE_UTILITIES } from "../../components/tokens.ts";
 
@@ -161,6 +163,12 @@ export default function StorybookPage() {
               </p>
             </Card>
           </div>
+        </Specimen>
+        <Specimen name="UnofficialBar (also on top of every page)">
+          <UnofficialBar />
+        </Specimen>
+        <Specimen name="SiteHeader (logo + nav)">
+          <SiteHeader />
         </Specimen>
         <Specimen name="PillarList">
           <PillarList pillars={HOME.pillars} label={HOME.pillarsLabel} />
