@@ -1,5 +1,39 @@
+# Dependencies
 node_modules/
-.wrangler/
+
+# Build output + framework caches
+dist/
+.vite/
+.vinext/
+.cloudflare/
+.next/
+
+# Local env + Workers dev state (never commit)
+.env
+.env.local
+.env.*.local
 .dev.vars*
-.env*
+.wrangler/
+
+# .claude is ignored except the versioned agent skills (all AI tools share
+# them; .opencode/skill symlinks to .agents/skills) and the preview launcher.
+.claude/*
+!.claude/skills/
+!.claude/launch.json
+
+# docs/ is machine-local agent scratch (plans, specs, notes); the durable
+# record is PRs. Deliberately never committed.
+docs/
+
+# Per-machine agent-tool state
+.gstack/
+.superpowers/
+.firecrawl/
+.zcode/
+.kilo/
+
+# OS cruft
 .DS_Store
+Thumbs.db
+[Dd]esktop.ini
+*~

@@ -1,0 +1,9 @@
+node_modules
+dist
+.cloudflare
+.vinext
+.next
+.claude
+public
+pnpm-lock.yaml
+design

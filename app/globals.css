@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. The single source of truth is DESIGN.md — change a value
+ * there first, then mirror it here. Tailwind v4 reads these `@theme`
+ * variables and generates utilities (e.g. `--color-brand` → `bg-brand`,
+ * `text-brand`, `border-brand`).
+ */
+@theme {
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+
+  /* Light palette (dark overrides below). */
+  --color-canvas: #f6f3ea;
+  --color-surface: #fffdf7;
+  --color-ink: #13231c;
+  --color-muted: #4c5d55;
+  --color-line: #dcd6c5;
+  --color-brand: #0f3d2e;
+  --color-on-brand: #f6f3ea;
+  --color-accent: #e8a317;
+  --color-glow: rgb(232 163 23 / 0.18);
+
+  --animate-pulse-ring: pulse-ring 2.2s ease-out infinite;
+
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0
+        color-mix(in srgb, var(--color-accent) 60%, transparent);
+    }
+    70%,
+    100% {
+      box-shadow: 0 0 0 0.6rem transparent;
+    }
+  }
+}
+
+/* Dark mode follows the OS. Utilities read the variables, so overriding
+   them here re-themes every component with no `dark:` classes needed. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-canvas: #0c1813;
+    --color-surface: #12221b;
+    --color-ink: #eef1ea;
+    --color-muted: #a7b5ad;
+    --color-line: #24382f;
+    --color-brand: #f0b429;
+    --color-on-brand: #0c1813;
+    --color-accent: #f0b429;
+    --color-glow: rgb(240 180 41 / 0.12);
+  }
+}
+
+@layer base {
+  body {
+    background:
+      radial-gradient(
+        60rem 40rem at 85% -10%,
+        var(--color-glow),
+        transparent 60%
+      ),
+      var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+}
