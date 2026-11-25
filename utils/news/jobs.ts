@@ -5,6 +5,7 @@ import {
   itemsForRemovalCheck,
   pendingArchive,
   recordArchive,
+  recordArchiveAttempt,
   recordPresence,
   recordRun,
   setState,
@@ -35,6 +36,8 @@ export const ARCHIVE_SAVES_PER_RUN = 5;
 export const AVAILABILITY_CHECKS_PER_RUN = 20;
 /** Most pages one removal run checks. */
 export const REMOVAL_CHECKS_PER_RUN = 30;
+/** Transient Save Page Now failures an item may have before it is given up on. */
+export const ARCHIVE_MAX_ATTEMPTS = 3;
 /** D1 queries one run may use; the free plan allows 50 per invocation. */
 export const D1_QUERIES_PER_RUN = 45;
 /** How far back the removal check looks, in days. */
@@ -173,6 +176,7 @@ export function runArchiveJob(deps: JobDeps): Promise<RunRow> {
     const nowIso = toManilaIso(deps.now());
     let saves = 0;
     let captured = 0;
+    let transientStreak = 0;
     let errorCode: string | null = null;
     for (const { id, url } of pending) {
       try {
@@ -207,12 +211,26 @@ export function runArchiveJob(deps: JobDeps): Promise<RunRow> {
           errorCode = "http_429";
           break;
         }
-        // A server error is transient: stop and leave the item pending for a retry.
-        const serverError = /^http (5\d\d)$/.exec(saved.status);
-        if (serverError) {
-          errorCode = `http_${serverError[1]}`;
-          break;
+        // 4xx other than 400/404/410 (403, 408, 425, ...) and 5xx are transient.
+        const code = Number(/^http (\d+)$/.exec(saved.status)?.[1] ?? 0);
+        const transient =
+          saved.status !== "ok" &&
+          (code >= 500 || (code >= 400 && ![400, 404, 410].includes(code)));
+        if (transient) {
+          await recordArchiveAttempt(deps.db, id, {
+            status: saved.status,
+            nowIso,
+            maxAttempts: ARCHIVE_MAX_ATTEMPTS,
+          });
+          transientStreak++;
+          if (transientStreak >= 2) {
+            // Two in a row: Save Page Now is probably down. Try again next run.
+            errorCode = `http_${code}`;
+            break;
+          }
+          continue;
         }
+        transientStreak = 0;
         await recordArchive(deps.db, id, {
           status: saved.status,
           captureUrl: saved.captureUrl,

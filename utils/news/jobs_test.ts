@@ -304,37 +304,148 @@ describe("news jobs", () => {
       expect(counted.count()).toBeLessThanOrEqual(D1_QUERIES_PER_RUN);
     });
 
+    const status = (code: number) => new Response("", { status: code });
+    const attemptsOf = async (n: number): Promise<number> =>
+      (
+        await db
+          .prepare(
+            "SELECT wayback_attempts AS a FROM news_items WHERE source_id = ?",
+          )
+          .bind(String(n))
+          .first<{ a: number }>()
+      )?.a ?? -1;
+
     it("a 429 stops the run and leaves the rest queued", async () => {
       await seed(5);
       const { fetch: f } = fakeFetch({
-        [availKey(1)]: json(miss),
-        [saveKey(1)]: new Response("", { status: 429 }),
+        [availKey(5)]: json(miss),
+        [saveKey(5)]: status(429),
       });
       const run = await runArchiveJob(deps(f));
-      expect(run).toMatchObject({ ok: false, errorCode: "http_429" });
+      expect(run).toMatchObject({ errorCode: "http_429" });
       expect(await pendingArchive(db, 10)).toHaveLength(5);
+      expect(await attemptsOf(5)).toBe(0);
     });
 
-    it("a 503 on save stops the run and leaves the item pending", async () => {
+    it("works the queue newest first", async () => {
       await seed(3);
-      const { fetch: f } = fakeFetch({
+      const { fetch: f, calls: seen } = fakeFetch({
+        [availKey(3)]: json(hit),
+        [availKey(2)]: json(hit),
         [availKey(1)]: json(hit),
+      });
+      await runArchiveJob(deps(f));
+      expect(seen).toEqual([
+        `GET ${availKey(3)}`,
+        `GET ${availKey(2)}`,
+        `GET ${availKey(1)}`,
+      ]);
+    });
+
+    it("a failing item does not block the one behind it", async () => {
+      await seed(2);
+      const { fetch: f } = fakeFetch({
         [availKey(2)]: json(miss),
-        [saveKey(2)]: new Response("", { status: 503 }),
+        [saveKey(2)]: status(503),
+        [availKey(1)]: json(miss),
+        [saveKey(1)]: new Response("", {
+          status: 200,
+          headers: { "Content-Location": "/web/1/1" },
+        }),
       });
       const run = await runArchiveJob(deps(f));
-      expect(run).toMatchObject({ ok: true, errorCode: "http_503" });
-      expect(await pendingArchive(db, 10)).toHaveLength(2);
+      expect(run.archiveRequests).toBe(2);
+      expect(await attemptsOf(2)).toBe(1);
+      const queue = await pendingArchive(db, 10);
+      expect(queue.map((q) => q.url)).toEqual([
+        "https://mandaluyong.gov.ph/post-2/",
+      ]);
+    });
+
+    it("after 3 runs a persistently failing item is terminal", async () => {
+      await seed(1);
+      const { fetch: f } = fakeFetch({
+        [availKey(1)]: json(miss),
+        [saveKey(1)]: status(503),
+      });
+      await runArchiveJob(deps(f));
+      await runArchiveJob(deps(f));
+      expect(await pendingArchive(db, 10)).toHaveLength(1);
+      await runArchiveJob(deps(f));
+      expect(await attemptsOf(1)).toBe(3);
+      expect(await pendingArchive(db, 10)).toEqual([]);
+      const row = (await listNews(db, { page: 1, perPage: 5, category: null }))
+        .items[0];
+      expect(row.waybackStatus).toBe("http 503");
+    });
+
+    it("a 403 is transient, a 404 is terminal at once", async () => {
+      await seed(2);
+      const { fetch: f } = fakeFetch({
+        [availKey(2)]: json(miss),
+        [saveKey(2)]: status(403),
+        [availKey(1)]: json(miss),
+        [saveKey(1)]: status(404),
+      });
+      await runArchiveJob(deps(f));
+      expect(await attemptsOf(2)).toBe(1);
+      expect(await pendingArchive(db, 10)).toMatchObject([
+        { url: "https://mandaluyong.gov.ph/post-2/" },
+      ]);
+    });
+
+    it("two transient results in a row stop the run", async () => {
+      await seed(4);
+      const { fetch: f, calls } = fakeFetch({
+        [availKey(4)]: json(miss),
+        [saveKey(4)]: status(503),
+        [availKey(3)]: json(miss),
+        [saveKey(3)]: status(502),
+        [availKey(2)]: json(miss),
+        [saveKey(2)]: status(200),
+      });
+      const run = await runArchiveJob(deps(f));
+      expect(run.errorCode).toBe("http_502");
+      expect(calls.filter((c) => c.includes("/save/"))).toHaveLength(2);
+      expect(await pendingArchive(db, 10)).toHaveLength(4);
+      expect(await attemptsOf(3)).toBe(1);
+    });
+
+    it("a success between two transient results resets the streak", async () => {
+      await seed(3);
+      const { fetch: f, calls } = fakeFetch({
+        [availKey(3)]: json(miss),
+        [saveKey(3)]: status(503),
+        [availKey(2)]: json(miss),
+        [saveKey(2)]: status(200),
+        [availKey(1)]: json(miss),
+        [saveKey(1)]: status(503),
+      });
+      await runArchiveJob(deps(f));
+      expect(calls.filter((c) => c.includes("/save/"))).toHaveLength(3);
+    });
+
+    it("stays within the query budget when every save is rejected", async () => {
+      await seed(20);
+      const replies: Record<string, Reply> = {};
+      for (let n = 1; n <= 20; n++) {
+        replies[availKey(n)] = json(miss);
+        replies[saveKey(n)] = status(404);
+      }
+      const counted = countingDb(db);
+      const { fetch: f } = fakeFetch(replies);
+      await runArchiveJob(deps(f, { db: counted.db }));
+      expect(counted.count()).toBeLessThanOrEqual(D1_QUERIES_PER_RUN);
     });
 
     it("a network error stops the run like a 429", async () => {
       await seed(3);
       const { fetch: f, calls } = fakeFetch({
-        [availKey(1)]: json(hit),
+        [availKey(3)]: json(hit),
         [availKey(2)]: new Error("down"),
       });
       const run = await runArchiveJob(deps(f));
-      expect(run).toMatchObject({ ok: true, errorCode: "fetch_failed" });
+      expect(run).toMatchObject({ errorCode: "fetch_failed" });
       expect(calls).toHaveLength(2);
       expect(await pendingArchive(db, 10)).toHaveLength(2);
     });
