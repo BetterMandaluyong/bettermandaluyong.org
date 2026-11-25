@@ -161,7 +161,7 @@ export async function listCategories(db: SqlDb): Promise<string[]> {
   return results.map((r) => r.name);
 }
 
-/** Returns items not yet sent to the web archive, oldest published first. */
+/** Returns items not yet sent to the web archive, newest published first. */
 export async function pendingArchive(
   db: SqlDb,
   limit: number,
@@ -169,7 +169,7 @@ export async function pendingArchive(
   const { results } = await db
     .prepare(
       `SELECT id, url FROM news_items WHERE wayback_requested_at IS NULL
-       ORDER BY published_at ASC, id ASC LIMIT ?`,
+       ORDER BY published_at DESC, id DESC LIMIT ?`,
     )
     .bind(limit)
     .all<{ id: number; url: string }>();
@@ -189,6 +189,31 @@ export async function recordArchive(
     )
     .bind(r.nowIso, r.status, r.captureUrl, id)
     .run();
+}
+
+/**
+ * Records a transient archive failure for one item in a single query. The item
+ * stays queued until it has failed `maxAttempts` times; then the last status
+ * is recorded for good and it leaves the queue.
+ */
+export async function recordArchiveAttempt(
+  db: SqlDb,
+  id: number,
+  r: { status: string; nowIso: string; maxAttempts: number },
+): Promise<{ terminal: boolean }> {
+  const row = await db
+    .prepare(
+      `UPDATE news_items SET
+         wayback_attempts = wayback_attempts + 1,
+         wayback_status = ?,
+         wayback_requested_at = CASE
+           WHEN wayback_attempts + 1 >= ? THEN ? ELSE wayback_requested_at END
+       WHERE id = ?
+       RETURNING wayback_requested_at AS requested_at`,
+    )
+    .bind(r.status, r.maxAttempts, r.nowIso, id)
+    .first<{ requested_at: string | null }>();
+  return { terminal: row?.requested_at != null };
 }
 
 /** Returns recent items past a cursor id, for the removal check. */

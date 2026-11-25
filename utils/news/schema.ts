@@ -14,6 +14,7 @@ export const NEWS_SCHEMA: string[] = [
     wayback_status TEXT,
     wayback_url TEXT,
     missing_strikes INTEGER NOT NULL DEFAULT 0,
+    wayback_attempts INTEGER NOT NULL DEFAULT 0,
     UNIQUE(source, source_id)
   )`,
   `CREATE INDEX IF NOT EXISTS idx_news_items_published_at ON news_items (published_at DESC)`,

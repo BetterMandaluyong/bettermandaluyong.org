@@ -9,6 +9,7 @@ import {
   pendingArchive,
   recentRuns,
   recordArchive,
+  recordArchiveAttempt,
   recordPresence,
   recordRun,
   safeRead,
@@ -97,13 +98,13 @@ describe("news store", () => {
     expect(await listCategories(db)).toEqual(["Awards", "Health", "News"]);
   });
 
-  it("queues only items with no wayback_requested_at, oldest first", async () => {
+  it("queues only items with no wayback_requested_at, newest first", async () => {
     await upsertItems(db, [item(3), item(1), item(2)], now);
     let queue = await pendingArchive(db, 10);
     expect(queue.map((q) => q.url)).toEqual([
-      "https://mandaluyong.gov.ph/post-1/",
-      "https://mandaluyong.gov.ph/post-2/",
       "https://mandaluyong.gov.ph/post-3/",
+      "https://mandaluyong.gov.ph/post-2/",
+      "https://mandaluyong.gov.ph/post-1/",
     ]);
     await recordArchive(db, queue[0].id, {
       status: "ok",
@@ -113,14 +114,34 @@ describe("news store", () => {
     queue = await pendingArchive(db, 1);
     expect(queue).toHaveLength(1);
     expect(queue[0].url).toBe("https://mandaluyong.gov.ph/post-2/");
-    const row = (await latestNews(db, 10)).find((r) => r.title === "Post 1");
+    const row = (await latestNews(db, 10)).find((r) => r.title === "Post 3");
     expect(row?.waybackStatus).toBe("ok");
     expect(row?.waybackUrl).toBe("https://web.archive.org/web/1/x");
   });
 
+  it("recordArchiveAttempt keeps an item queued until maxAttempts, then makes it terminal", async () => {
+    await upsertItems(db, [item(1)], now);
+    const [{ id }] = await pendingArchive(db, 1);
+    const attempt = () =>
+      recordArchiveAttempt(db, id, {
+        status: "http 503",
+        nowIso: later,
+        maxAttempts: 3,
+      });
+    expect(await attempt()).toEqual({ terminal: false });
+    expect(await pendingArchive(db, 10)).toHaveLength(1);
+    expect(await attempt()).toEqual({ terminal: false });
+    expect(await attempt()).toEqual({ terminal: true });
+    expect(await pendingArchive(db, 10)).toEqual([]);
+    const row = (await latestNews(db, 1))[0];
+    expect(row.waybackStatus).toBe("http 503");
+  });
+
   it("selects items for the removal check by date and id", async () => {
     await upsertItems(db, [item(1), item(2), item(3)], now);
-    const ids = (await pendingArchive(db, 10)).map((r) => r.id);
+    const ids = (await pendingArchive(db, 10))
+      .map((r) => r.id)
+      .sort((a, b) => a - b);
     const got = await itemsForRemovalCheck(db, {
       sinceIso: "2026-10-02T00:00:00+08:00",
       afterId: ids[1],
