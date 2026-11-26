@@ -7,6 +7,7 @@ import {
   OfficialList,
   officialItem,
 } from "../../../components/OfficialList.tsx";
+import { PageMasthead } from "../../../components/PageMasthead.tsx";
 import { PageShell } from "../../../components/PageShell.tsx";
 import { SectionHeader } from "../../../components/SectionHeader.tsx";
 import { DilgNote } from "../../../components/DilgNote.tsx";
@@ -74,39 +75,30 @@ export default async function BarangayPage({ params }: Params) {
 
   return (
     <PageShell>
-      <section className="border-b border-ed-rule bg-ed-paper-2">
-        <Container className="py-14 md:py-20">
-          <div className="max-w-3xl">
-            <ArrowLink href="/barangays">{COPY.backToAll}</ArrowLink>
-            <h1 className="type-display m-0 mt-6 text-balance">
-              Barangay {barangay.name}
-            </h1>
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              <a
-                href={`/districts#district-${barangay.district}`}
-                className="no-underline"
-              >
-                <Flag variant="navy">{COPY.district(barangay.district)}</Flag>
-              </a>
-              <Flag variant="outline">{COPY.zip(barangay.zip)}</Flag>
-            </div>
-            <p className="type-ui m-0 mt-3 max-w-[65ch] text-ed-ink-3">
-              {COPY.zipNote}{" "}
-              <a
-                href={ZIP_LOCATOR_URL}
-                rel="noreferrer"
-                className="text-ed-navy"
-              >
-                {COPY.zipLookup}
-              </a>
-              .
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageMasthead
+        title={`Barangay ${barangay.name}`}
+        before={<ArrowLink href="/barangays">{COPY.backToAll}</ArrowLink>}
+      >
+        <div className="flex flex-wrap items-center gap-3">
+          <a
+            href={`/districts#district-${barangay.district}`}
+            className="no-underline"
+          >
+            <Flag variant="navy">{COPY.district(barangay.district)}</Flag>
+          </a>
+          <Flag variant="outline">{COPY.zip(barangay.zip)}</Flag>
+        </div>
+        <p className="type-ui m-0 mt-3 max-w-[65ch] text-ed-ink-3">
+          {COPY.zipNote}{" "}
+          <a href={ZIP_LOCATOR_URL} rel="noreferrer">
+            {COPY.zipLookup}
+          </a>
+          .
+        </p>
+      </PageMasthead>
 
       <section className="border-b border-ed-rule">
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <BarangayMap
             geojsonUrl={BOUNDARIES_URL}
             barangays={MAP_BARANGAYS}
@@ -118,7 +110,7 @@ export default async function BarangayPage({ params }: Params) {
       </section>
 
       <section className="border-b border-ed-rule">
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <SectionHeader label={COPY.hallHeading} />
           <OfficialList
             variant="card"
@@ -136,7 +128,7 @@ export default async function BarangayPage({ params }: Params) {
       </section>
 
       <section className="border-b border-ed-rule">
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <div className="grid gap-12 md:grid-cols-2">
             <div>
               <SectionHeader label={COPY.councilHeading} />
@@ -160,7 +152,7 @@ export default async function BarangayPage({ params }: Params) {
       </section>
 
       <section>
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <SectionHeader label={COPY.repsHeading} />
           <p className="type-body m-0 mb-8 max-w-[65ch]">
             {COPY.repsFor(barangay.district)} {COPY.districtNote}

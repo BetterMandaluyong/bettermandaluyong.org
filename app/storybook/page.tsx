@@ -11,6 +11,7 @@ import { NewsList } from "../../components/NewsList.tsx";
 import { OfficialList } from "../../components/OfficialList.tsx";
 import { OrgChart, type OrgNode } from "../../components/OrgChart.tsx";
 import { PersonCards } from "../../components/PersonCard.tsx";
+import { PageMasthead } from "../../components/PageMasthead.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { DilgNote } from "../../components/DilgNote.tsx";
@@ -140,7 +141,7 @@ const SAMPLE_NEWS: NewsItem[] = [
 function Band({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section className="border-t border-ed-rule">
-      <Container className="py-12">
+      <Container className="py-8 md:py-12">
         <SectionHeader label={title} />
         <div className="flex flex-col gap-8">{children}</div>
       </Container>
@@ -164,17 +165,17 @@ function Specimen({ name, children }: { name: string; children: ReactNode }) {
 export default function StorybookPage() {
   return (
     <PageShell>
-      <section className="bg-ed-paper-2">
-        <Container className="py-14">
-          <Eyebrow tone="navy">Design system</Eyebrow>
-          <h1 className="type-display m-0 mt-4">Storybook</h1>
-          <p className="type-lede m-0 mt-5 max-w-[65ch]">
+      <PageMasthead
+        title="Storybook"
+        eyebrow={<Eyebrow tone="navy">Design system</Eyebrow>}
+        lede={
+          <>
             The tokens and components this site is built from, based on the{" "}
             <a href="https://bettergov.ph/design">BetterGov.ph design system</a>
             . See DESIGN.md and COMPONENTS.md for the rules.
-          </p>
-        </Container>
-      </section>
+          </>
+        }
+      />
 
       <Band title="Logo">
         <div className="flex flex-wrap items-end gap-10">
@@ -242,6 +243,31 @@ export default function StorybookPage() {
             </Button>
             <Button size="sm">Small button</Button>
           </div>
+        </Specimen>
+        <Specimen name="PageMasthead (before, eyebrow, lede, children)">
+          <div className="border border-ed-rule">
+            <PageMasthead
+              titleAs="h2"
+              title="Barangay Sample"
+              before={<ArrowLink href="#">Back to the sample list</ArrowLink>}
+              eyebrow={<Eyebrow>Sample eyebrow</Eyebrow>}
+              lede="A sample lede: one or two sentences that say what the page is for."
+            >
+              <Flag variant="navy">Sample flag</Flag>
+            </PageMasthead>
+          </div>
+        </Specimen>
+        <Specimen name="Inline link vs standalone link">
+          <p className="type-body m-0 max-w-[65ch]">
+            A link inside a sentence, like <a href="#">this sample link</a>, is
+            underlined by default.
+          </p>
+          <a
+            href="#"
+            className="type-ui text-ed-navy no-underline hover:underline"
+          >
+            A standalone list link opts out with no-underline
+          </a>
         </Specimen>
         <Specimen name="ArrowLink">
           <ArrowLink href={SITE.followUrl} external>

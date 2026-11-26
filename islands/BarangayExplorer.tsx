@@ -24,7 +24,10 @@ function PersonRow({
   return (
     <li className="flex flex-wrap items-baseline justify-between gap-x-4 border-b border-ed-rule py-2">
       {href ? (
-        <a href={href} className="type-ui block py-1.5 text-ed-navy">
+        <a
+          href={href}
+          className="type-ui block py-1.5 text-ed-navy no-underline hover:underline"
+        >
           {name}
         </a>
       ) : (
@@ -83,7 +86,7 @@ function BarangayDetail({
                 <a
                   key={p.text}
                   href={p.href}
-                  className="type-ui block py-1.5 text-ed-navy"
+                  className="type-ui block py-1.5 text-ed-navy no-underline hover:underline"
                 >
                   {p.text}
                 </a>
@@ -104,7 +107,7 @@ function BarangayDetail({
             <dd className="m-0">
               <a
                 href={mailto(b.email)}
-                className="type-ui block py-1.5 text-ed-navy"
+                className="type-ui block py-1.5 text-ed-navy no-underline hover:underline"
               >
                 {b.email}
               </a>

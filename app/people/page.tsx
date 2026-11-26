@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "../../components/Container.tsx";
 import { OrgChart } from "../../components/OrgChart.tsx";
+import { PageMasthead } from "../../components/PageMasthead.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import {
   PersonCards,
@@ -68,7 +69,10 @@ function CategoryCards({ category }: { category: PositionCategory }) {
         return (
           <section key={b.slug} aria-label={`${heading}: ${label}`}>
             <h3 className="type-subheading m-0 mb-3">
-              <a href={`/barangays/${b.slug}`} className="text-ed-navy">
+              <a
+                href={`/barangays/${b.slug}`}
+                className="text-ed-navy no-underline hover:underline"
+              >
                 {PEOPLE_COPY.barangayHeading(b.name)}
               </a>
               <span className="type-ui text-ed-ink-3">
@@ -97,41 +101,31 @@ function CategoryCards({ category }: { category: PositionCategory }) {
 export default function PeoplePage() {
   return (
     <PageShell>
-      <section className="border-b border-ed-rule bg-ed-paper-2">
-        <Container className="py-14 md:py-20">
-          <div className="max-w-3xl">
-            <h1 className="type-display m-0 text-balance">
-              {PEOPLE_COPY.heading}
-            </h1>
-            <p className="type-lede m-0 mt-6 max-w-[65ch] text-pretty">
-              {PEOPLE_COPY.intro}
-            </p>
-          </div>
-          <nav aria-label={PEOPLE_COPY.jumpLabel} className="mt-8">
-            <ul className="m-0 flex list-none flex-wrap gap-x-6 gap-y-1 p-0">
-              {[
-                { id: ORG_ID, text: PEOPLE_COPY.orgHeading },
-                ...POSITION_CATEGORIES.map((c) => ({
-                  id: sectionId(c),
-                  text: PEOPLE_COPY.categories[c].heading,
-                })),
-              ].map((link) => (
-                <li key={link.id}>
-                  <a
-                    href={`#${link.id}`}
-                    className="type-ui inline-block py-2 text-ed-navy"
-                  >
-                    {link.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </Container>
-      </section>
+      <PageMasthead title={PEOPLE_COPY.heading} lede={PEOPLE_COPY.intro}>
+        <nav aria-label={PEOPLE_COPY.jumpLabel}>
+          <ul className="m-0 flex list-none flex-wrap gap-x-6 gap-y-1 p-0">
+            {[
+              { id: ORG_ID, text: PEOPLE_COPY.orgHeading },
+              ...POSITION_CATEGORIES.map((c) => ({
+                id: sectionId(c),
+                text: PEOPLE_COPY.categories[c].heading,
+              })),
+            ].map((link) => (
+              <li key={link.id}>
+                <a
+                  href={`#${link.id}`}
+                  className="type-ui inline-block py-2 text-ed-navy no-underline hover:underline"
+                >
+                  {link.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </PageMasthead>
 
       <section id={ORG_ID} className="scroll-mt-4 border-b border-ed-rule">
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <SectionHeader label={PEOPLE_COPY.orgHeading} />
           <p className="type-body m-0 mb-8 max-w-[65ch] text-pretty">
             {PEOPLE_COPY.orgIntro}
@@ -153,7 +147,7 @@ export default function PeoplePage() {
             id={sectionId(category)}
             className="scroll-mt-4 border-b border-ed-rule"
           >
-            <Container className="py-12 md:py-16">
+            <Container className="py-8 md:py-12">
               <SectionHeader label={heading} meta={PEOPLE_COPY.count(count)} />
               <p className="type-body m-0 mb-6 max-w-[65ch] text-pretty">
                 {intro}

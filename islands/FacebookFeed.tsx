@@ -37,7 +37,7 @@ export function FacebookFeed({ pageUrl }: { pageUrl: string }) {
       <a
         href={pageUrl}
         rel="noreferrer"
-        className="type-ui inline-flex min-h-11 items-center text-ed-navy"
+        className="type-ui inline-flex min-h-11 items-center text-ed-navy no-underline hover:underline"
       >
         {NEWS.facebookLink}
       </a>

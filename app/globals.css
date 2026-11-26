@@ -158,8 +158,15 @@
     outline-offset: 2px;
   }
 
+  /*
+   * Links are navy and underlined, so a link inside a sentence is visible
+   * without colour (Tailwind's preflight would otherwise remove the
+   * underline). Standalone links opt out with `no-underline`.
+   */
   a {
     color: var(--color-ed-navy);
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
   }
 }
 

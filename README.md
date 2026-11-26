@@ -151,9 +151,10 @@ attribution trailers in commits or PRs).
 This site stands on other people's open work:
 
 - **[BetterGov.ph design system](https://bettergov.ph/design)** by the
-  BetterGov.ph contributors (MIT): our design tokens, type scale, layout rules,
-  and several components are ported from
-  [bettergovph/bettergov](https://github.com/bettergovph/bettergov).
+  BetterGov.ph contributors: our design tokens, type scale, and several
+  components are ported from the MIT-licensed code in
+  [bettergovph/bettergov](https://github.com/bettergovph/bettergov). We follow
+  its written guidelines (CC BY-NC-ND 4.0) by linking to them, not copying them.
 - **[Imposter Syndrome Disclaimer](https://github.com/adriennefriend/imposter-syndrome-disclaimer)**
   by Adrienne Lowe (MIT).
 - The [BetterLGU](https://lgu.bettergov.ph/) sites, including

@@ -3,6 +3,7 @@ import { ArrowLink } from "../../components/ArrowLink.tsx";
 import { Button } from "../../components/Button.tsx";
 import { Container } from "../../components/Container.tsx";
 import { NewsList } from "../../components/NewsList.tsx";
+import { PageMasthead } from "../../components/PageMasthead.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { NEWS, NEWS_HISTORY_URL, SITE } from "../../components/content.ts";
@@ -57,23 +58,15 @@ export default async function NewsPage({
 
   return (
     <PageShell>
-      <section className="border-b border-ed-rule bg-ed-paper-2">
-        <Container className="py-14 md:py-20">
-          <div className="max-w-3xl">
-            <h1 className="type-display m-0 text-balance">{NEWS.heading}</h1>
-            <p className="type-lede m-0 mt-6 max-w-[65ch] text-pretty">
-              {NEWS.intro}
-            </p>
-            <p className="type-body m-0 mt-4 max-w-[65ch] text-pretty">
-              {NEWS.historyNote}{" "}
-              <ArrowLink href={NEWS_HISTORY_URL}>{NEWS.historyLink}</ArrowLink>
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageMasthead title={NEWS.heading} lede={NEWS.intro}>
+        <p className="type-body m-0 max-w-[65ch] text-pretty">
+          {NEWS.historyNote}{" "}
+          <ArrowLink href={NEWS_HISTORY_URL}>{NEWS.historyLink}</ArrowLink>
+        </p>
+      </PageMasthead>
 
       <section>
-        <Container narrow className="py-12 md:py-16">
+        <Container narrow className="py-8 md:py-12">
           {categories.length > 0 && (
             <nav aria-label="Categories" className="mb-8">
               <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
@@ -135,7 +128,7 @@ export default async function NewsPage({
       </section>
 
       <section className="border-t border-ed-rule bg-ed-paper-2">
-        <Container narrow className="py-12 md:py-16">
+        <Container narrow className="py-8 md:py-12">
           <SectionHeader label={NEWS.facebookHeading} />
           <FacebookFeed pageUrl={SITE.cityPioFacebookUrl} />
         </Container>

@@ -33,13 +33,16 @@ pnpm deploy:preview # Worker Preview for the branch (human step — see DEPLOYME
 - **[DESIGN.md](DESIGN.md)** — the BetterGov.ph v2 design system as this site
   uses it: `ed-*` color tokens, `type-*` scale, layout, and accessibility rules.
   **Use the tokens, never hardcode hex.** For anything DESIGN.md doesn't cover,
-  follow [bettergov.ph/design](https://bettergov.ph/design).
+  follow [bettergov.ph/design](https://bettergov.ph/design). Its written
+  guidelines are CC BY-NC-ND 4.0: link to them, never paste or reword them into
+  this repo (the code is MIT and may be ported).
 - **[COMPONENTS.md](COMPONENTS.md)** — the component catalog, many ported from
   BetterGov. **Read it before creating or updating any page**: reuse
   `PageShell`, `Container`, `Button`, `ArrowLink`, `Card`, `Flag`,
   `SectionHeader`, … instead of hand-rolling layouts, buttons, or labels, so a
-  visual change stays a one-file edit. Missing something? Port BetterGov's
-  version before inventing one. New UI gets a component, a `/storybook` specimen
+  visual change stays a one-file edit. Missing something? Follow "Extending the
+  system" in DESIGN.md: reuse, compose, port BetterGov's version, and only then
+  build our own. New UI gets a component, a `/storybook` specimen
   (`app/storybook/page.tsx`), and a catalog entry in the same change.
 - **[BRAND.md](BRAND.md)** — voice and content rules. **Read it before writing
   any user-facing copy.** Copy lives in `components/content.ts` — never invent

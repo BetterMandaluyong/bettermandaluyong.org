@@ -63,7 +63,10 @@ function Title({ node, label }: { node: OrgNode; label?: boolean }) {
   if (node.href) {
     return (
       <p className="type-subheading m-0">
-        <a href={node.href} className="text-ed-navy">
+        <a
+          href={node.href}
+          className="text-ed-navy no-underline hover:underline"
+        >
           {node.title}
         </a>
       </p>
@@ -103,7 +106,10 @@ function Box({ node, root }: { node: OrgNode; root?: boolean }) {
           {node.people.map((p) => (
             <li key={`${p.name}-${p.role ?? ""}`} className="type-ui">
               {p.href ? (
-                <a href={p.href} className="inline-block py-1 text-ed-navy">
+                <a
+                  href={p.href}
+                  className="inline-block py-1 text-ed-navy no-underline hover:underline"
+                >
                   {p.name}
                 </a>
               ) : (

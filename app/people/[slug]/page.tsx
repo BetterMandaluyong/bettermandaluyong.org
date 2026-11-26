@@ -4,6 +4,7 @@ import { ArrowLink } from "../../../components/ArrowLink.tsx";
 import { Container } from "../../../components/Container.tsx";
 import { Flag } from "../../../components/Flag.tsx";
 import { OfficialList } from "../../../components/OfficialList.tsx";
+import { PageMasthead } from "../../../components/PageMasthead.tsx";
 import { PageShell } from "../../../components/PageShell.tsx";
 import { SectionHeader } from "../../../components/SectionHeader.tsx";
 import { DilgNote } from "../../../components/DilgNote.tsx";
@@ -79,41 +80,35 @@ export default async function PersonPage({ params }: Params) {
 
   return (
     <PageShell>
-      <section className="border-b border-ed-rule bg-ed-paper-2">
-        <Container className="py-14 md:py-20">
-          <div className="max-w-3xl">
-            <ArrowLink href="/people">{PEOPLE_COPY.allPeople}</ArrowLink>
-            <p className="type-label m-0 mt-6 text-ed-ink-3">{roles(person)}</p>
-            <h1 className="type-display m-0 mt-2 text-balance">
-              {person.name}
-            </h1>
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              {position.district && (
-                <a
-                  href={`/districts#district-${position.district}`}
-                  className="no-underline"
-                >
-                  <Flag variant="navy">{COPY.district(position.district)}</Flag>
-                </a>
-              )}
-              {!position.district && (
-                <Flag variant="navy">{PEOPLE_COPY.wholeCity}</Flag>
-              )}
-              {barangay && (
-                <a
-                  href={`/barangays/${barangay.slug}`}
-                  className="no-underline"
-                >
-                  <Flag variant="outline">Barangay {barangay.name}</Flag>
-                </a>
-              )}
-            </div>
-          </div>
-        </Container>
-      </section>
+      <PageMasthead
+        title={person.name}
+        before={<ArrowLink href="/people">{PEOPLE_COPY.allPeople}</ArrowLink>}
+        eyebrow={
+          <p className="type-label m-0 text-ed-ink-3">{roles(person)}</p>
+        }
+      >
+        <div className="flex flex-wrap items-center gap-3">
+          {position.district && (
+            <a
+              href={`/districts#district-${position.district}`}
+              className="no-underline"
+            >
+              <Flag variant="navy">{COPY.district(position.district)}</Flag>
+            </a>
+          )}
+          {!position.district && (
+            <Flag variant="navy">{PEOPLE_COPY.wholeCity}</Flag>
+          )}
+          {barangay && (
+            <a href={`/barangays/${barangay.slug}`} className="no-underline">
+              <Flag variant="outline">Barangay {barangay.name}</Flag>
+            </a>
+          )}
+        </div>
+      </PageMasthead>
 
       <section className="border-b border-ed-rule">
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <SectionHeader
             label={
               official ? PEOPLE_COPY.contactHeading : PEOPLE_COPY.hallHeading
@@ -184,7 +179,7 @@ export default async function PersonPage({ params }: Params) {
 
       {external.length > 0 && (
         <section className="border-b border-ed-rule">
-          <Container className="py-12 md:py-16">
+          <Container className="py-8 md:py-12">
             <SectionHeader label={PEOPLE_COPY.externalHeading} />
             <p className="type-body m-0 mb-4 max-w-[65ch]">
               {PEOPLE_COPY.externalIntro}
@@ -216,7 +211,7 @@ export default async function PersonPage({ params }: Params) {
 
       {(barangay || position.district) && (
         <section>
-          <Container className="py-12 md:py-16">
+          <Container className="py-8 md:py-12">
             <BarangayMap
               geojsonUrl={BOUNDARIES_URL}
               barangays={MAP_BARANGAYS}

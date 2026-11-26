@@ -6,7 +6,6 @@ import {
 import type { NewsItem } from "../data/schema.ts";
 import { Flag } from "./Flag.tsx";
 import { NEWS } from "./content.ts";
-import { cx } from "./cx.ts";
 
 /**
  * A dated list of city news links, newest first. Each row shows the date,
@@ -40,7 +39,7 @@ export function NewsList({
             <a
               href={itemLink(row)}
               rel="noreferrer"
-              className="type-subheading text-ed-navy"
+              className="type-subheading text-ed-navy no-underline hover:underline"
             >
               {row.title}
             </a>
@@ -55,7 +54,7 @@ export function NewsList({
                   <a
                     href={archive}
                     rel="noreferrer"
-                    className={cx("type-ui text-ed-navy")}
+                    className="type-ui text-ed-navy no-underline hover:underline"
                   >
                     {NEWS.archived}
                   </a>
