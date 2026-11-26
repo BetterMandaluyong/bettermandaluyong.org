@@ -26,9 +26,24 @@ const good = () => ({
   source: { url: "https://mandaluyong.gov.ph/x/", updated: "2026-02-20" },
 });
 
+/** Name parts for a test person: the last word is the surname. */
+const parts = (name: string) => {
+  const words = name.split(" ");
+  return {
+    first_name: words.slice(0, -1).join(" ") || name,
+    last_name: words.at(-1)!,
+  };
+};
+
 /** The people `good()` lists: captain "A B", kagawads "1"–"7", SK "C D" and "8". */
 const PEOPLE = ["A B", "1", "2", "3", "4", "5", "6", "7", "C D", "8"].map(
-  (name, n) => ({ id: id(n), slug: `p-${n}`, name, ids: {} }),
+  (name, n) => ({
+    id: id(n),
+    slug: `p-${n}`,
+    name,
+    nameParts: parts(name),
+    ids: {},
+  }),
 );
 
 /** Parses and resolves a barangay file against `PEOPLE`. */
@@ -204,7 +219,15 @@ describe("parseCityOfficials", () => {
     const c = resolveCityOfficials(
       parseCityOfficials(doc(), "c.yaml"),
       "c.yaml",
-      nameLookup([{ id: id(1), slug: "x", name: "Juan", ids: {} }]),
+      nameLookup([
+        {
+          id: id(1),
+          slug: "x",
+          name: "Juan",
+          nameParts: parts("Juan"),
+          ids: {},
+        },
+      ]),
     );
     expect(c.mayor.name).toBe("Juan");
     expect(c.mayor.personId).toBe(id(1));
@@ -240,7 +263,7 @@ describe("parsePerson", () => {
   const person = (over: Record<string, unknown> = {}) => ({
     id: id(1),
     slug: "juan-dela-cruz",
-    name: "Juan dela Cruz",
+    name: { first_name: "Juan", last_name: "dela Cruz" },
     ...over,
   });
 
@@ -249,6 +272,7 @@ describe("parsePerson", () => {
       id: id(1),
       slug: "juan-dela-cruz",
       name: "Juan dela Cruz",
+      nameParts: { first_name: "Juan", last_name: "dela Cruz" },
       ids: {},
     });
     const ids = {
@@ -269,7 +293,28 @@ describe("parsePerson", () => {
       person({ slug: "Juan Dela Cruz" }),
       /slug must be lowercase words/,
     ],
-    ["no name", person({ name: "" }), /name must be a non-empty string/],
+    [
+      "a name as one string",
+      person({ name: "Juan dela Cruz" }),
+      /name must be a mapping: first_name/,
+    ],
+    [
+      "no last name",
+      person({ name: { first_name: "Juan" } }),
+      /name\.last_name must be a non-empty string/,
+    ],
+    [
+      "an unknown name part",
+      person({ name: { first_name: "Juan", last_name: "Cruz", given: "J" } }),
+      /name\.given is not a name part/,
+    ],
+    [
+      "quotes in a nickname",
+      person({
+        name: { first_name: "Juan", last_name: "Cruz", nickname: "“JJ”" },
+      }),
+      /nickname must not include quotes/,
+    ],
     [
       "an unknown field",
       person({ role: "Mayor" }),
@@ -310,7 +355,8 @@ describe("people checks", () => {
   const p = (n: number, slug: string) => ({
     id: id(n),
     slug,
-    name: "X",
+    name: "X Y",
+    nameParts: parts("X Y"),
     ids: {},
   });
 

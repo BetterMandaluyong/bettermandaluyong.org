@@ -200,13 +200,25 @@ Every elected official has one file, `data/people/<id>.yaml`, named by a
 [bettergovph/open-congress-data](https://github.com/bettergovph/open-congress-data):
 
 ```yaml
-id: 01M8AYCW7MHBKQ7069DPW4M70W # must match the file name; never changes
+id: 01M8AZPSSFYRFS7DG1J2MQTAHT # must match the file name; never changes
 slug: alexandria-queenie-pahati-gonzales # the /people/<slug> URL; never changes
-name: Alexandria “Queenie” Pahati-Gonzales
+name: # shown as: Alexandria “Queenie” Pahati-Gonzales
+  first_name: Alexandria
+  last_name: Pahati-Gonzales
+  nickname: Queenie # optional, like middle_name and suffix
 ids: # optional: the same person in other datasets
   open_congress: 01K5ST47FR57HGGQ3D5QR4HP2N
   wikidata: Q66827038
 ```
+
+The name is stored in parts, following the DILG directory's columns:
+`first_name`, `middle_name` (the full middle name, or an initial like `O.`),
+`last_name`, `suffix` (as written: `Jr.`, `Jr`, `III`), and `nickname` (no
+quotes). The site writes them out as first, “nickname”, middle, last, suffix
+(`displayName` in `utils/people/names.ts`). Parts come from DILG's columns where
+the person is in its list. Otherwise they come from the name's shape (a middle
+initial marks the middle name). Where neither decides, a YAML comment on `name:`
+records the evidence used.
 
 Offices point at people by id: a barangay file lists `captain: <id>`, and
 `city-officials.yaml` has `person: <id>`. Each id carries the person's name as a
@@ -215,11 +227,12 @@ comment is missing or stale. The build fails if an office lists an id with no
 file, if two people share a slug, or if a person file is listed by no office.
 
 - **Add a person:** make a ULID
-  (`node -e "import('./utils/people/ulid.ts').then(m => console.log(m.ulidFactory()()))"`),
+  (`node -e "import('./utils/people/ulid.ts').then(m => console.log(m.ulid()))"`),
   create `data/people/<ULID>.yaml` with a new slug (lowercase words joined by
-  hyphens), and list the id in their office with a `# Name` comment.
-- **Fix a name:** edit `name:` in the person file and the `# Name` comments.
-  Leave `slug:` alone so the URL keeps working.
+  hyphens) and the name in parts (check them against DILG's list for barangay
+  officials), and list the id in their office with a `# Name` comment.
+- **Fix a name:** edit the parts under `name:` in the person file and the
+  `# Name` comments. Leave `slug:` alone so the URL keeps working.
 - **Add an external id:** keys under `ids:` must be listed in
   `EXTERNAL_ID_KINDS` (`data/schema.ts`), which checks each value's format and
   builds the link shown under "Records Elsewhere" on the person's page. To

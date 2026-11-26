@@ -10,9 +10,12 @@ projects.
 ## A person file
 
 ```yaml
-id: 01M8AYCW7MHBKQ7069DPW4M70W # the ULID; must equal the file name
-slug: alexandria-queenie-pahati-gonzales # the /people/<slug> URL
-name: Alexandria “Queenie” Pahati-Gonzales
+id: 01M8AZPSSFYRFS7DG1J2MQTAHT # must match the file name; never changes
+slug: alexandria-queenie-pahati-gonzales # the /people/<slug> URL; never changes
+name: # shown as: Alexandria “Queenie” Pahati-Gonzales
+  first_name: Alexandria
+  last_name: Pahati-Gonzales
+  nickname: Queenie # optional, like middle_name and suffix
 ids: # optional: the same person in other datasets
   open_congress: 01K5ST47FR57HGGQ3D5QR4HP2N
   wikidata: Q66827038
@@ -27,13 +30,25 @@ them.
   base32, uppercase, with no I, L, O, or U. It is both the file name and `id:`.
   Never derive it from a name, and never reuse one.
 - **Make a ULID with the repo's generator** (no dependencies):
-  `node -e "import('./utils/people/ulid.ts').then(m => console.log(m.ulidFactory()()))"`.
-  Don't hand-type one or copy one from another file.
+  `node -e "import('./utils/people/ulid.ts').then(m => console.log(m.ulid()))"`.
+  Don't hand-type one or copy one from another file. Each ULID starts with 10
+  time characters, so ids made around the same time share a prefix. The other 16
+  are drawn fresh every time (no "monotonic" counting), so neighbours never look
+  like a counter.
+- **The name is stored in parts:** `first_name` and `last_name` (required),
+  `middle_name`, `suffix`, `nickname` (optional, without quotes). These match
+  DILG's directory columns (FIRSTNAME, MIDDLENAME, LASTNAME, SUFFIX), and
+  open-congress-data's `first_name`, `middle_name`, `last_name`, `name_suffix`,
+  `aliases`. Copy a barangay official's split from DILG where they appear there,
+  keeping the city's spelling. Where nothing decides which word is a middle name
+  ("Kent Gajo Faminial"), put the evidence you used in a comment on `name:`.
+  Never guess silently. `displayName` (`utils/people/names.ts`) writes the parts
+  out for the site.
 - **The slug is frozen too.** Pick it when you add the person: their name as
   lowercase words joined by hyphens (`slugifyName` in `utils/people/ids.ts`). If
   that's taken, add the barangay slug or `city`. Fixing a name's spelling
-  changes `name:` only, never `slug:`, so links keep working. Slugs must be
-  unique across all files.
+  changes the parts under `name:` only, never `slug:`, so links keep working.
+  Slugs must be unique across all files.
 - **Every file must hold an office.** The build fails on a person file that no
   barangay file or `city-officials.yaml` lists. Delete a person who left office
   (or move their `ids:` to the new file if they were re-added under a new id).
@@ -56,7 +71,9 @@ them.
 
 - People by hand, for city officials and fixes.
 - `scripts/import_barangays.ts` on a bulk refresh. It reuses an id when the same
-  name already holds an office in the same barangay, creates files for everyone
-  else, and prints new and unlisted people for a person to review.
+  name already holds an office in the same barangay, and creates files for
+  everyone else, splitting the name where its shape decides it (`splitName`). It
+  prints new people, splits to check, and unlisted people for a person to
+  review.
 
 See DEVELOPMENT.md, "People", for the step-by-step.

@@ -9,7 +9,7 @@
 as_of: 2026-03-12
 source_url: https://mandaluyong.gov.ph/government/elected-officials/
 representative:
-  person: 01M8AYCW7MHBKQ7069DPW4M70W # Alexandria “Queenie” Pahati-Gonzales
+  person: 01M8AZPSSFYRFS7DG1J2MQTAHT # Alexandria “Queenie” Pahati-Gonzales
   role: Congresswoman
   office: G/F Kaban ng Hiyas, City Government Complex, Maysilo Circle, Plainview
   phones:
@@ -20,7 +20,7 @@ representative:
     - congressman@mandaluyong.gov.ph
   source_url: https://mandaluyong.gov.ph/team/alexandria-queenie-pahati-gonzales/
 mayor:
-  person: 01M8AYCW7PSA6X5QWP33DV67AW # Carmelita “Menchie” Aguilar Abalos
+  person: 01M8AZPSSGWDXXRWZZY2NK6NXQ # Carmelita “Menchie” Aguilar Abalos
   role: Mayor
   office:
     4/F Executive Building, City Government Complex, Maysilo Circle, Plainview
@@ -37,7 +37,7 @@ mayor:
     - menchieabalos702@gmail.com
   source_url: https://mandaluyong.gov.ph/team/carmelita-menchie-aguilar-abalos-2/
 vice_mayor:
-  person: 01M8AYCW7PSA6X5QWP33DV67AX # Antonio “Anthony” delos Santos Suva, Jr.
+  person: 01M8AZPSSHSTK3X0K8X38BXRY5 # Antonio “Anthony” delos Santos Suva Jr.
   role: Vice Mayor
   office: 4/F BOC Building, City Government Complex, Maysilo Circle, Plainview
   phones:
@@ -49,7 +49,7 @@ vice_mayor:
     - vicemayor.suva@mandaluyong.gov.ph
   source_url: https://mandaluyong.gov.ph/team/antonio-delos-santos-suva-jr-2/
 councilors:
-  - person: 01M8AYCW7PSA6X5QWP33DV67AY # Charisse Marie Abalos-Vargas
+  - person: 01M8AZPSSJPP3GHC51AS0FANH1 # Charisse Marie Abalos-Vargas
     role: Councilor
     district: 1
     office: City Government Complex, Maysilo Circle, Plainview
@@ -60,7 +60,7 @@ councilors:
     emails:
       - councilor.charisse@mandaluyong.gov.ph
     source_url: https://mandaluyong.gov.ph/team/charisse-marie-abalos-vargas/
-  - person: 01M8AYCW7PSA6X5QWP33DV67AZ # Anjelo Elton P. Yap
+  - person: 01M8AZPSSK275D1CDNJV184MNE # Anjelo Elton P. Yap
     role: Councilor
     district: 1
     office: City Government Complex, Maysilo Circle, Plainview
@@ -70,7 +70,7 @@ councilors:
     emails:
       - councilor.eltonyap@mandaluyong.gov.ph
     source_url: https://mandaluyong.gov.ph/team/anjelo-elton-p-yap/
-  - person: 01M8AYCW7PSA6X5QWP33DV67B0 # Danny L. de Guzman
+  - person: 01M8AZPSSMGFBS8VM871PW6GW7 # Danny L. de Guzman
     role: Councilor
     district: 1
     office: City Government Complex, Maysilo Circle, Plainview
@@ -80,7 +80,7 @@ councilors:
     emails:
       - councilor.deguzman@mandaluyong.gov.ph
     source_url: https://mandaluyong.gov.ph/team/danny-de-guzman/
-  - person: 01M8AYCW7PSA6X5QWP33DV67B1 # Carissa Mariz S. Manalo
+  - person: 01M8AZPSSN95AV596402V0E1AV # Carissa Mariz S. Manalo
     role: Councilor
     district: 1
     office: City Government Complex, Maysilo Circle, Plainview
@@ -90,7 +90,7 @@ councilors:
     emails:
       - teammarizmanalo@gmail.com
     source_url: https://mandaluyong.gov.ph/team/carissa-mariz-manalo/
-  - person: 01M8AYCW7PSA6X5QWP33DV67B2 # Grace Marie V. Antonio
+  - person: 01M8AZPSSPAJDRZJ5V6WVWGVQ5 # Grace Marie V. Antonio
     role: Councilor
     district: 1
     office: City Government Complex, Maysilo Circle, Plainview
@@ -101,7 +101,7 @@ councilors:
       - grasyaparasamasa2025@gmail.com
       - councilor.antonio@mandaluyong.gov.ph
     source_url: https://mandaluyong.gov.ph/team/grace-marie-a-antonio-2/
-  - person: 01M8AYCW7PSA6X5QWP33DV67B3 # Estanislao “Junis” V. Alim III
+  - person: 01M8AZPSSQ2QC9T77C7A84FSZG # Estanislao “Junis” V. Alim III
     role: Councilor
     district: 1
     office: City Government Complex, Maysilo Circle, Plainview
@@ -111,7 +111,7 @@ councilors:
       - councilor.junisalim@mandaluyong.gov.ph
       - councilor.junisalim@yahoo.com
     source_url: https://mandaluyong.gov.ph/team/estanislao-junis-villaraza-alim-iii/
-  - person: 01M8AYCW7PSA6X5QWP33DV67B4 # Benjamin “Benjie” A. Abalos III
+  - person: 01M8AZPSSR6AMJZ9B3JVKDVE7Q # Benjamin “Benjie” A. Abalos III
     role: Councilor
     district: 2
     office: City Government Complex, Maysilo Circle, Plainview
@@ -121,7 +121,7 @@ councilors:
     emails:
       - councilor.benjieabalos@mandaluyong.gov.ph
     source_url: https://mandaluyong.gov.ph/team/benjamin-benjie-abalos-iii/
-  - person: 01M8AYCW7PSA6X5QWP33DV67B5 # Alexander “Alex” C. Sta. Maria
+  - person: 01M8AZPSSS5YQGKVCGRD5BSBAA # Alexander “Alex” C. Sta. Maria
     role: Councilor
     district: 2
     office: City Government Complex, Maysilo Circle, Plainview
@@ -132,7 +132,7 @@ councilors:
       - docalexsm@yahoo.com.ph
       - councilor.sta.maria@mandaluyong.gov.ph
     source_url: https://mandaluyong.gov.ph/team/alexander-sta-maria/
-  - person: 01M8AYCW7PSA6X5QWP33DV67B6 # Reginald S. Antiojo
+  - person: 01M8AZPSST3NX9HSPBGSX6XECE # Reginald S. Antiojo
     role: Councilor
     district: 2
     office: City Government Complex, Maysilo Circle, Plainview
@@ -143,7 +143,7 @@ councilors:
     emails:
       - councilor.antiojo@mandaluyong.gov.ph
     source_url: https://mandaluyong.gov.ph/team/reginald-antiojo/
-  - person: 01M8AYCW7PSA6X5QWP33DV67B7 # Leslie F. Cruz
+  - person: 01M8AZPSSV7X68QJT9VQPPS0Y1 # Leslie F. Cruz
     role: Councilor
     district: 2
     office: City Government Complex, Maysilo Circle, Plainview
@@ -153,7 +153,7 @@ councilors:
     emails:
       - cruz.leslief@gmail.com
     source_url: https://mandaluyong.gov.ph/team/leslie-cruz/
-  - person: 01M8AYCW7PSA6X5QWP33DV67B8 # Fernando “Dong” S. Ocampo
+  - person: 01M8AZPSSWHRY6KCY5SV4EF3E8 # Fernando “Dong” S. Ocampo
     role: Councilor
     district: 2
     office: City Government Complex, Maysilo Circle, Plainview
@@ -162,7 +162,7 @@ councilors:
     emails:
       - councilor.dongocampo@mandaluyong.gov.ph
     source_url: https://mandaluyong.gov.ph/team/michael-ocampo/
-  - person: 01M8AYCW7PSA6X5QWP33DV67B9 # Michael Eric “Botong” G. Cuejilo
+  - person: 01M8AZPSSXGGHDB78W231WF77W # Michael Eric “Botong” G. Cuejilo
     role: Councilor
     district: 2
     office: City Government Complex, Maysilo Circle, Plainview

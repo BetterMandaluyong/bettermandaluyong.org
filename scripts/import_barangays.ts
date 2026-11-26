@@ -18,7 +18,9 @@
 //
 // Officials are written as person ids (ULIDs, from data/people/). Someone with
 // exactly the same name who already holds an office in the same barangay keeps
-// their id and URL; everyone else gets a new data/people/<ULID>.yaml. It prints
+// their id and URL; everyone else gets a new data/people/<ULID>.yaml, with the
+// name split into parts where its shape decides it (splitName). It prints
+// names whose split needs checking, and
 // every new person and everyone who no longer holds an office, so a person can
 // merge renamed people by hand (the build fails until each person file is
 // listed by an office).
@@ -47,7 +49,8 @@ import { parsePhones } from "../utils/barangays/phone.ts";
 import { withNameComments } from "../utils/people/comments.ts";
 import { readCityOfficials, readPeople } from "../utils/people/files.ts";
 import { findPerson, newSlug, type KnownPerson } from "../utils/people/ids.ts";
-import { ulidFactory } from "../utils/people/ulid.ts";
+import { displayName, splitName } from "../utils/people/names.ts";
+import { ulid } from "../utils/people/ulid.ts";
 
 const [scrapedDir, geoPath] = process.argv.slice(2);
 if (!scrapedDir || !geoPath) {
@@ -331,8 +334,8 @@ const known: KnownPerson[] = peopleOnFile.map((p) => ({
 }));
 const names = new Map(peopleOnFile.map((p) => [p.id, p.name]));
 const slugsTaken = new Set(peopleOnFile.map((p) => p.slug));
-const newUlid = ulidFactory();
 const created: string[] = [];
+const checkSplit: string[] = [];
 const listed = new Set(cityIds);
 
 /** The person id for an official of barangay `scope`, creating one if new. */
@@ -344,13 +347,17 @@ function personFor(name: string, scope: string, usedHere: Set<string>): string {
   );
   let id = match?.id;
   if (!id) {
-    id = newUlid();
+    id = ulid();
     const slug = newSlug(name, scope, slugsTaken);
     slugsTaken.add(slug);
-    names.set(id, name);
+    const split = splitName(name);
+    names.set(id, displayName(split.name));
+    if (!split.certain) {
+      checkSplit.push(`${name}: data/people/${id}.yaml`);
+    }
     writeFileSync(
       `data/people/${id}.yaml`,
-      stringify({ id, slug, name }, { lineWidth: 0 }),
+      stringify({ id, slug, name: split.name }, { lineWidth: 0 }),
     );
     created.push(
       `${scope}: ${name} -> /people/${slug} (data/people/${id}.yaml)`,
@@ -421,6 +428,12 @@ for (const d of duplicates) console.log(" - " + d);
 if (created.length) {
   console.log(`\nNew people (${created.length}); merge any who were renamed:`);
   for (const c of created) console.log(" - " + c);
+}
+if (checkSplit.length) {
+  console.log(
+    "\nCheck these name splits (first, middle, last) against DILG's list:",
+  );
+  for (const c of checkSplit) console.log(" - " + c);
 }
 const unlisted = peopleOnFile.filter((p) => !listed.has(p.id));
 if (unlisted.length) {

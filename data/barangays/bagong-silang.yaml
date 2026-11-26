@@ -10,25 +10,25 @@ hall:
     - "09052533125"
   email: null
 council:
-  captain: 01M8AYCW7PSA6X5QWP33DV67BT # Kristofer Dominguez
+  captain: 01M8AZPSTEZKGSWX0ZF48NADWW # Kristofer Dominguez
   kagawads:
-    - 01M8AYCW7PSA6X5QWP33DV67BV # John Christopher R. Magalong
-    - 01M8AYCW7PSA6X5QWP33DV67BW # Dennis L. Laygo
-    - 01M8AYCW7PSA6X5QWP33DV67BX # John Mark Sta. Maria Guzman
-    - 01M8AYCW7PSA6X5QWP33DV67BY # Joel J. Quieta
-    - 01M8AYCW7PSA6X5QWP33DV67BZ # Lito P. Bautista
-    - 01M8AYCW7PSA6X5QWP33DV67C0 # Elvis Sta. Maria Salvo
-    - 01M8AYCW7PSA6X5QWP33DV67C1 # Matranelio T. Aloyon
+    - 01M8AZPSTFEH6RC0G7FW74CHNS # John Christopher R. Magalong
+    - 01M8AZPSTG633S8PWRBD5XW2Q3 # Dennis L. Laygo
+    - 01M8AZPSTHRDZ16H8Z5QA5XZ6Q # John Mark Sta. Maria Guzman
+    - 01M8AZPSTJ9D20ZQ5Q87JA05FY # Joel J. Quieta
+    - 01M8AZPSTKA0KFSDB5MZMWSYSA # Lito P. Bautista
+    - 01M8AZPSTMD7MF4H2TVYS7DWKG # Elvis Sta. Maria Salvo
+    - 01M8AZPSTNPK087GECPGYSFZXK # Matranelio T. Aloyon
 sk:
-  chair: 01M8AYCW7PSA6X5QWP33DV67C2 # Mark Junard P. Belerma
+  chair: 01M8AZPSTPZX5Y93NVQ5PFME10 # Mark Junard P. Belerma
   kagawads:
-    - 01M8AYCW7PSA6X5QWP33DV67C3 # Dennis R. Bautista
-    - 01M8AYCW7PSA6X5QWP33DV67C4 # Jerome G. Andot
-    - 01M8AYCW7PSA6X5QWP33DV67C5 # Francheska Mavielle Castillo
-    - 01M8AYCW7PSA6X5QWP33DV67C6 # Myr Jezreel D. Gaza
-    - 01M8AYCW7PSA6X5QWP33DV67C7 # Zan Arshel Marie C. Laygo
-    - 01M8AYCW7PSA6X5QWP33DV67C8 # Serg Bryan Padillo
-    - 01M8AYCW7PSA6X5QWP33DV67C9 # Khylene Gail Meniable
+    - 01M8AZPSTQQAHARK5H0BEE31R0 # Dennis R. Bautista
+    - 01M8AZPSTRBBSZ309PQY1XQ4EM # Jerome G. Andot
+    - 01M8AZPSTS8GWM7FHSSV8ZY0Y1 # Francheska Mavielle Castillo
+    - 01M8AZPSTT17467WWT83934QVY # Myr Jezreel D. Gaza
+    - 01M8AZPSTVWFSS030G01GXB1SX # Zan Arshel Marie C. Laygo
+    - 01M8AZPSTWY5J4J408PZNK1MT4 # Serg Bryan Padillo
+    - 01M8AZPSTXHH71MZPNHCGQ257F # Khylene Gail Meniable
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-bagong-silang/
   updated: 2026-02-19
