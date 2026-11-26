@@ -12,8 +12,8 @@ source of truth: edit it, never generated output.
   an office lists has a file in `people/`, no two people share a slug, and every
   person holds an office.
 - The modules pages import (`barangays.ts`, `city-officials.ts`, `people.ts`,
-  `places.ts`, `news.ts`, `org-chart.ts`, `budget.ts`, `pay.ts`, `stats.ts`)
-  expose typed data. Pages never import YAML directly.
+  `places.ts`, `news.ts`, `bids.ts`, `jobs.ts`, `org-chart.ts`, `budget.ts`,
+  `pay.ts`, `stats.ts`) expose typed data. Pages never import YAML directly.
 
 | Path                                    | What                                                      | Written by                        |
 | --------------------------------------- | --------------------------------------------------------- | --------------------------------- |
@@ -26,6 +26,8 @@ source of truth: edit it, never generated output.
 | `stats/poverty.yaml`                    | PSA poverty estimates: city, NCR, Philippines             | People                            |
 | `stats/finances.yaml`                   | The city's own income and spending for a year (BLGF)      | People                            |
 | `news/YYYY-MM.yaml`                     | City news links                                           | The news bot only                 |
+| `bids/YYYY.yaml`                        | City bid notices (links, kinds)                           | The notices bot only              |
+| `jobs/YYYY.yaml`                        | City Hall vacancies and PESO job posts (links)            | The notices bot only              |
 | `budget/scope.yaml`                     | Place, region, district, and lines left out by hand       | People                            |
 | `budget/fy2027.yaml`, `budget/gaa.yaml` | National budget snapshot from the BetterGov.ph Budget API | `budget_refresh.ts` only          |
 

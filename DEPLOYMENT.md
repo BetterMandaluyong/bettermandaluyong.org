@@ -129,6 +129,37 @@ Worker no longer reads. To keep that history:
 `node scripts/import_news.ts --backfill` rebuilds `data/news/` from the city's
 WordPress API; it only adds posts that are not in the files yet.
 
+### Bids and jobs bot
+
+The `notices-data` workflow
+([`.github/workflows/notices-data.yml`](.github/workflows/notices-data.yml))
+runs daily at 22:37 UTC (06:37 Manila). It reads the city's bid notices (the
+Download Manager categories behind `/bac/`), City Hall's bulletins of vacancies,
+and the PESO job posts (`/peso/`), and commits what changed to
+`data/bids/YYYY.yaml` and `data/jobs/YYYY.yaml` on the branch
+`bot/notices-data`, with one rolling PR. Links, titles, dates, and kinds only.
+Entries gone from the city's listings are marked missing, then removed on the
+next run; they are never deleted.
+
+It uses the news bot's GitHub App and `news-bot` environment, so it needs no
+setup of its own beyond what "News bot" lists (Workers Builds already skips
+`bot/*`). **It never merges its own PR**: review it and rebase-merge it. The
+`notices-data-guard` job in `check.yml` fails the PR if it changes anything
+outside `data/bids/` and `data/jobs/`. Letting it merge itself would take a
+human-reviewed change to the workflow, to AGENTS.md, and to that guard.
+
+A manual run (Actions → notices-data → Run workflow) with "backfill" ticked
+reads every category page instead of the first two: use it after the city
+recategorizes documents. To run it locally:
+
+```sh
+node scripts/notices_refresh.ts            # normal run
+node scripts/notices_refresh.ts --backfill # every page (~100 requests)
+```
+
+After two failed runs in a row it opens an issue named "notices-bot failing",
+and closes it on the next good run.
+
 ### Budget snapshot
 
 The `/budget` page reads `data/budget/fy2027.yaml` and `data/budget/gaa.yaml`, a

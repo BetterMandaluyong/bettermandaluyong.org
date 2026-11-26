@@ -1,0 +1,37 @@
+# City bid notices (links only). Written by scripts/notices_refresh.ts; see DEPLOYMENT.md.
+- id: 4720
+  url: https://mandaluyong.gov.ph/download/items-to-bid-2nd-quarter-2012/
+  title: Items to Bid 2nd Quarter 2012
+  kind: other
+  published_at: 2020-06-30T15:08:31+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 4719
+  url: https://mandaluyong.gov.ph/download/items-to-bid-3rd-quarter-2012/
+  title: Items to Bid 3rd Quarter 2012
+  kind: other
+  published_at: 2020-06-30T15:08:31+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 4718
+  url: https://mandaluyong.gov.ph/download/items-to-bid-1st-quarter-2012/
+  title: Items to Bid 1st Quarter 2012
+  kind: other
+  published_at: 2020-06-30T15:08:31+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 4717
+  url: https://mandaluyong.gov.ph/download/items-to-bid-2nd-quarter-2013/
+  title: Items to Bid 2nd Quarter 2013
+  kind: other
+  published_at: 2020-06-30T15:08:31+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 4716
+  url: https://mandaluyong.gov.ph/download/itb-december-2012/
+  title: ITB December 2012
+  kind: other
+  published_at: 2020-06-30T15:08:31+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 4715
+  url: https://mandaluyong.gov.ph/download/itb-4th-quarter-2013/
+  title: ITB 4th Quarter 2013
+  kind: other
+  published_at: 2020-06-30T15:08:31+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00

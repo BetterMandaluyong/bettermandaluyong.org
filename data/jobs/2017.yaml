@@ -1,0 +1,13 @@
+# City job posts (links only). Written by scripts/notices_refresh.ts; see DEPLOYMENT.md.
+- id: 4443
+  url: https://mandaluyong.gov.ph/download/july-1-2017-bulletin-of-vacancies/
+  title: July 1, 2017 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2017-07-01T20:30:29+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 4440
+  url: https://mandaluyong.gov.ph/download/march-1-2017-bulletin-of-vacancies/
+  title: March 1, 2017 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2017-03-01T20:29:15+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00

@@ -1,0 +1,79 @@
+# City job posts (links only). Written by scripts/notices_refresh.ts; see DEPLOYMENT.md.
+- id: 45516
+  url: https://mandaluyong.gov.ph/download/december-13-2024-to-december-28-2024-bulletin-of-vacancy/
+  title: December 13, 2024 to December 28, 2024 Bulletin of Vacancy
+  kind: vacancy
+  published_at: 2024-12-19T15:23:52+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 45514
+  url: https://mandaluyong.gov.ph/download/november-12-2024-to-november-27-2024-bulletin-of-vacancy/
+  title: November 12, 2024 to November 27, 2024 Bulletin of Vacancy
+  kind: vacancy
+  published_at: 2024-12-19T15:22:24+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 30399
+  url: https://mandaluyong.gov.ph/download/september-24-2024-to-october-9-2024-bulletin-of-vacancies/
+  title: September 24, 2024 to October 9, 2024 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2024-09-27T09:27:23+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 30397
+  url: https://mandaluyong.gov.ph/download/august-21-2024-to-september-5-2024-bulletin-of-vacancies/
+  title: August 21, 2024 to September 5, 2024 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2024-09-27T09:26:06+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 29019
+  url: https://mandaluyong.gov.ph/download/august-6-2024-to-august-21-2024-bulletin-of-vacancies-3/
+  title: August 6, 2024 to August 21, 2024 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2024-08-09T10:06:25+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 29017
+  url: https://mandaluyong.gov.ph/download/august-6-2024-to-august-21-2024-bulletin-of-vacancies-2/
+  title: August 6, 2024 to August 21, 2024 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2024-08-09T10:05:49+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 29015
+  url: https://mandaluyong.gov.ph/download/august-6-2024-to-august-21-2024-bulletin-of-vacancies/
+  title: August 6, 2024 to August 21, 2024 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2024-08-09T10:04:58+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 27726
+  url: https://mandaluyong.gov.ph/download/july-9-2024-to-july-24-2024-bulletin-of-vacancies/
+  title: July 9, 2024 to July 24, 2024 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2024-07-22T12:58:32+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 21448
+  url: https://mandaluyong.gov.ph/jobs-peso/auto-mechanic-majestic-press/
+  title: AUTO MECHANIC – MAJESTIC PRESS
+  kind: peso
+  published_at: 2024-07-08T10:55:37+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 19862
+  url: https://mandaluyong.gov.ph/download/may-7-2024-to-may-22-2024-bulletin-of-vacancies/
+  title: May 7, 2024 to May 22, 2024 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2024-06-03T10:08:45+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 19860
+  url: https://mandaluyong.gov.ph/download/may-6-2024-to-may-21-2024-bulletin-of-vacancies/
+  title: May 6, 2024 to May 21, 2024 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2024-06-03T10:07:44+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 19856
+  url: https://mandaluyong.gov.ph/download/march-20-2024-to-april-4-2024-bulletin-of-vacancies/
+  title: March 20, 2024 to April 4, 2024 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2024-06-03T10:05:47+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 19689
+  url: https://mandaluyong.gov.ph/jobs-peso/claims-processor-medasia-topserve/
+  title: CLAIMS PROCESSOR (MEDASIA) – TOPSERVE
+  kind: peso
+  published_at: 2024-02-07T09:16:29+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00

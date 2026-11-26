@@ -4,11 +4,13 @@ import {
   duplicateSlugs,
   nameLookup,
   parseBarangay,
+  parseBidsFile,
   parseBudget2027,
   parseBudgetGaa,
   parseBudgetScope,
   parseCityOfficials,
   parseFinances,
+  parseJobsFile,
   parseNewsFile,
   parsePay,
   parsePerson,
@@ -836,6 +838,69 @@ describe("parseFinances", () => {
     delete missing.income.lines["business-tax"];
     expect(() => parseFinances(missing, "finances.yaml")).toThrow(
       "income.lines.business-tax",
+    );
+  });
+});
+
+describe("parseBidsFile and parseJobsFile", () => {
+  const notice = (over: Record<string, unknown> = {}) => ({
+    id: 58965,
+    url: "https://mandaluyong.gov.ph/download/sbb-no-9/",
+    title: "SBB No. 9",
+    kind: "bulletin",
+    published_at: "2026-11-26T17:28:02+08:00",
+    first_seen_at: "2026-11-26T20:00:00+08:00",
+    ...over,
+  });
+  const bids = (raw: unknown, year = "2026") =>
+    parseBidsFile(raw, `data/bids/${year}.yaml`, year);
+
+  it("accepts a good file and fills the optional fields with null", () => {
+    expect(bids([notice()])).toEqual([
+      {
+        id: 58965,
+        url: "https://mandaluyong.gov.ph/download/sbb-no-9/",
+        title: "SBB No. 9",
+        kind: "bulletin",
+        publishedAt: "2026-11-26T17:28:02+08:00",
+        firstSeenAt: "2026-11-26T20:00:00+08:00",
+        missingSince: null,
+        removedAt: null,
+      },
+    ]);
+  });
+
+  it("reads the removal fields", () => {
+    const [n] = bids([
+      notice({
+        missing_since: "2026-11-27T06:00:00+08:00",
+        removed_at: "2026-11-28T06:00:00+08:00",
+      }),
+    ]);
+    expect(n?.removedAt).toBe("2026-11-28T06:00:00+08:00");
+  });
+
+  it("rejects a kind from the other list", () => {
+    expect(() => bids([notice({ kind: "peso" })])).toThrow(
+      "[0].kind must be one of",
+    );
+    expect(() =>
+      parseJobsFile([notice({ kind: "itb" })], "data/jobs/2026.yaml", "2026"),
+    ).toThrow("[0].kind must be one of vacancy, peso");
+    expect(
+      parseJobsFile([notice({ kind: "peso" })], "data/jobs/2026.yaml", "2026"),
+    ).toHaveLength(1);
+  });
+
+  it("rejects a date outside the file's year", () => {
+    expect(() => bids([notice()], "2025")).toThrow("is not in 2025");
+  });
+
+  it("rejects a bad file name, duplicate ids, and links off the city site", () => {
+    expect(() => bids([], "2026-11")).toThrow("must be YYYY.yaml");
+    expect(() => bids([notice(), notice()])).toThrow("58965 appears twice");
+    expect(() => bids([notice({ url: "https://example.com/x" })])).toThrow(
+      "must be a link on mandaluyong.gov.ph",
     );
   });
 });
