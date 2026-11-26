@@ -198,24 +198,11 @@ an `<ol>` of rows: mono date, the post title as an external link
 (`rel="noreferrer"`) to the city's page (the archived copy once removed), the
 categories as `Flag`s, an "Archived copy" link when one exists, and a red `Flag`
 "Removed from the city site" when the city removed the post. `compact` hides the
-categories (for the home page). Takes `items: NewsRow[]`. Copy is in `NEWS`
-(`content.ts`).
+categories (for the home page). Takes `items: NewsItem[]` (from
+`data/schema.ts`). Copy is in `NEWS` (`content.ts`).
 
 ```tsx
 <NewsList items={items} compact />
-```
-
-### `StatusLine`
-
-`components/StatusLine.tsx`: server component for one row on `/status`: the
-label, a `Flag` with the state as words (`navy` "Working", `red` "Not working",
-`outline` "Not checked recently"), and a muted "Last successful:" line with the
-date and time in Asia/Manila, or "No successful run yet". Shows no error text or
-counts. Takes `label`, `state` (`LineState`) and `lastSuccessAt` (ISO string or
-`null`). Copy is in `STATUS` (`content.ts`).
-
-```tsx
-<StatusLine label="City news feed" state="working" lastSuccessAt={iso} />
 ```
 
 ## Islands

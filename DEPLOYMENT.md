@@ -8,9 +8,8 @@ through `vinext-cloudflare deploy`.
 ## How it builds
 
 - `pnpm build` runs `vite build`: vinext + the Cloudflare Vite plugin emit the
-  Worker bundle (entry: `worker/index.ts`, which serves vinext's fetch handler
-  and runs the news jobs on a schedule) and the static assets into
-  `.cloudflare/output/` (git-ignored).
+  Worker bundle (entry: `worker/index.ts`, which serves vinext's fetch handler)
+  and the static assets into `.cloudflare/output/` (git-ignored).
 - `pnpm run deploy` = `vinext-cloudflare deploy`: builds and uploads that output
   with `cf`. It replaces the live (Production) deployment.
 - `pnpm deploy:preview` = `vinext-cloudflare previews deploy`: builds the same
@@ -56,43 +55,79 @@ vinext migration:
    trigger.
 3. Merge the PR, confirm the production deploy, and load the site.
 
-### One-time: news database
+### News bot
 
-The news feed keeps its data in a D1 database and fills it from scheduled runs
-(all UTC): the feed job at :07 past every third hour, the archive job at :37
-past every third hour, and the removal check daily at 02:37. Worker Previews get
-no schedules (Previews reject cron triggers), so the jobs only run in
-production; a Preview shows whatever the D1 database already holds.
+City news is data in the repo, not a database. The `news-data` workflow
+([`.github/workflows/news-data.yml`](.github/workflows/news-data.yml)) reads the
+city's feed, asks the Wayback Machine to save new posts, and checks whether
+recent posts are still live. It commits what changed to `data/news/YYYY-MM.yaml`
+on the branch `bot/news-data` and keeps one rolling PR open. One commit is one
+run, so `git log data/news` shows when each post appeared, was archived, or was
+taken down. The site reads those files at build time, so **a merge to `main`
+that changes `data/news/` deploys the new news**.
 
-1. Confirm the D1 database `bettermandaluyong-news` exists after the first
-   deploy. If the deploy did not create it, a human creates it: Cloudflare
-   dashboard → Storage & databases → D1 → **Create database**, named
-   `bettermandaluyong-news`, or `npx cf d1 create bettermandaluyong-news`. Then
-   bind it to the Worker as `DB` (as `cloudflare.config.ts` declares) and deploy
-   again.
-2. Optionally set the Internet Archive keys (from
-   <https://archive.org/account/s3.php>), once each. They raise the Save Page
-   Now limits; without them archiving still works at the anonymous rate:
+Schedule (UTC): every 3 hours at :07 gathers new posts and archive captures. At
+22:07 (06:07 Manila) the run also does the live check and, if `AUTO_MERGE` is
+on, merges the PR. A manual run (Actions → news-data → Run workflow) does the
+same as the daily run when you tick "daily".
+
+One-time setup (a human does these; none is in git):
+
+1. **GitHub App.** Org Settings → Developer settings → GitHub Apps → New. No
+   webhook. Repository permissions: Contents and Pull requests, read and write
+   (Metadata read-only is automatic). Installable on this account only. Create
+   it, generate a private key, and install it on this repository only. A bot
+   token is needed because pushes and PRs made with the workflow's own
+   `GITHUB_TOKEN` do not start the `check` workflow.
+2. **Environment `news-bot`** (repo Settings → Environments), limited to the
+   `main` branch, with four secrets: `NEWS_BOT_APP_ID`, `NEWS_BOT_PRIVATE_KEY`,
+   and the optional Internet Archive keys `IA_ACCESS_KEY` and `IA_SECRET_KEY`
+   (from <https://archive.org/account/s3.php>; without them archiving uses the
+   slower anonymous rate).
+3. **Workers Builds:** exclude `bot/*` from "Builds for non-production
+   branches", so the bot branch does not make a Worker Preview on every run.
+4. **Auto-merge** (optional; without it a person merges the bot PR). In the
+   ruleset "Protect main": require the `check` status check, and add the App to
+   the bypass list ("For pull requests only"). Then set the repository variable
+   `AUTO_MERGE` to `true` (Settings → Secrets and variables → Actions →
+   Variables). The workflow merges only when the PR is the bot's own, comes from
+   `bot/news-data`, changes nothing outside `data/news/`, and `check` passed;
+   the `data-only-guard` job in `check.yml` enforces the file rule. Set
+   `AUTO_MERGE` to anything else to stop it.
+
+If the feed can not be read, the run fails and GitHub emails the people who
+watch workflow failures. After two failed runs in a row it opens an issue named
+"news-bot failing", and closes it on the next good run.
+
+**Retire D1** (one time, after the first good bot runs). The old pipeline kept
+`first_seen_at` dates, takedowns and archive results in a D1 database that the
+Worker no longer reads. To keep that history:
+
+1. Export it. This only reads, and writes a file that stays out of git
+   (`d1-news.json` is in `.gitignore`):
 
    ```sh
-   npx cf workers secrets update IA_ACCESS_KEY --worker bettermandaluyong-org --type secret_text
-   npx cf workers secrets update IA_SECRET_KEY --worker bettermandaluyong-org --type secret_text
+   npx cf d1 list
+   npx cf d1 query <database-id> --sql "SELECT source_id, url, title, published_at, categories, first_seen_at, removed_at, missing_strikes, wayback_requested_at, wayback_status, wayback_url, wayback_attempts FROM news_items" > d1-news.json
    ```
 
-3. After the deploy, wait for the next run at :07 past a 3-hour mark, then check
-   `/status`. The Free-plan CPU limit for these runs has not been measured, so
-   check `/status` again after the first few runs.
-4. To see what the jobs did, run this in the D1 console:
+   `<database-id>` is the UUID of `bettermandaluyong-news` from the first
+   command. Open `d1-news.json` before the next step: it should be JSON only,
+   with one object per post. The importer accepts the usual shapes of D1
+   results, but a banner line printed by the CLI would need to be cut out. If
+   the export is empty or looks wrong, stop and ask; nothing else depends on it.
 
-   ```sql
-   SELECT job, started_at, ok, items_read, new_items, archive_requests, error_code FROM feed_runs ORDER BY id DESC LIMIT 20;
-   ```
+2. Merge it into the data: `node scripts/import_news.ts --from-d1 d1-news.json`,
+   look at the `git diff data/news`, and commit it on a branch as a PR
+   (`chore(data): merge D1 history`). D1 wins for first-seen dates, removals and
+   archive results; posts only D1 has are kept.
+3. A week later, when the bot is running well, delete the D1 database
+   `bettermandaluyong-news` and the two Worker secrets (`IA_ACCESS_KEY`,
+   `IA_SECRET_KEY`) in the Cloudflare dashboard. Keep the export file somewhere
+   private.
 
-There is no schema or import step: the Worker creates its own tables and
-backfills the full history, about 100 posts per feed run.
-
-With Internet Archive keys, an archive run being "ok" means Save Page Now
-_accepted_ the job, not that the capture has finished.
+`node scripts/import_news.ts --backfill` rebuilds `data/news/` from the city's
+WordPress API; it only adds posts that are not in the files yet.
 
 ### Custom domain
 
@@ -116,11 +151,10 @@ pnpm preview     # serves the build in workerd
 
 ## Secrets
 
-Two optional ones, `IA_ACCESS_KEY` and `IA_SECRET_KEY` (Internet Archive), set
-as in "One-time: news database". They are deliberately not declared in
-`cloudflare.config.ts`: a declared secret with no value fails the deploy, and
-the Worker reads them only if present. Any other secret (form backends, email)
-goes in the Cloudflare dashboard or via `cf` secrets, never in git.
+The Worker has none. The news bot's secrets (GitHub App credentials and the
+optional Internet Archive keys) live in the GitHub environment `news-bot`, as in
+"News bot". Any other secret (form backends, email) goes in the Cloudflare
+dashboard or via `cf` secrets, never in git.
 
 ## Reference
 
