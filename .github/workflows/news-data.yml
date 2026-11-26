@@ -1,0 +1,211 @@
+# Keeps data/news/*.yaml current: reads the city's news feed, asks the Wayback
+# Machine to save new posts, and checks whether recent posts are still live.
+# Changes go to one rolling PR from the `bot/news-data` branch, one commit per
+# run, so `git log data/news` is the audit trail. See DEPLOYMENT.md, "News bot".
+#
+# Every 3 hours: gather. At 22:07 UTC (06:07 Manila): also run the daily live
+# check and, when the AUTO_MERGE repo variable is "true", merge the PR if it is
+# safe to (see the "Merge" step).
+name: news-data
+
+on:
+  schedule:
+    - cron: "7 */3 * * *"
+    - cron: "7 22 * * *"
+  workflow_dispatch:
+    inputs:
+      daily:
+        description:
+          "Also run the live check and the merge step, as the daily run does"
+        type: boolean
+        default: false
+
+concurrency:
+  group: news-data
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    if: github.repository == 'BetterMandaluyong/bettermandaluyong.org'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    # Holds the App credentials and the Internet Archive keys; limited to main.
+    environment: news-bot
+    env:
+      EVENT: ${{ github.event_name }}
+      SCHEDULE: ${{ github.event.schedule }}
+      DAILY_INPUT: ${{ inputs.daily }}
+    steps:
+      # A token from the GitHub App, not GITHUB_TOKEN: pushes and PRs made with
+      # GITHUB_TOKEN do not start the `check` workflow.
+      - name: App token
+        id: app
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.NEWS_BOT_APP_ID }}
+          private-key: ${{ secrets.NEWS_BOT_PRIVATE_KEY }}
+
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ steps.app.outputs.token }}
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Is this the daily run?
+        id: mode
+        run: |
+          if { [ "$EVENT" = schedule ] && [ "$SCHEDULE" = "7 22 * * *" ]; } || [ "$DAILY_INPUT" = true ]; then
+            echo "daily=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "daily=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Git identity
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          SLUG: ${{ steps.app.outputs.app-slug }}
+        run: |
+          id=$(gh api "/users/${SLUG}[bot]" --jq .id)
+          git config user.name "${SLUG}[bot]"
+          git config user.email "${id}+${SLUG}[bot]@users.noreply.github.com"
+
+      # Continue the rolling branch if it exists, on top of the current main.
+      # Commits a human already merged drop out of the rebase (same patch).
+      - name: Prepare bot/news-data
+        run: |
+          if git fetch origin bot/news-data; then
+            git checkout -B bot/news-data origin/bot/news-data
+            git rebase origin/main || { git rebase --abort; git checkout -B bot/news-data origin/main; }
+          else
+            git checkout -B bot/news-data origin/main
+          fi
+
+      - name: Refresh data/news
+        id: refresh
+        env:
+          IA_ACCESS_KEY: ${{ secrets.IA_ACCESS_KEY }}
+          IA_SECRET_KEY: ${{ secrets.IA_SECRET_KEY }}
+          DAILY: ${{ steps.mode.outputs.daily }}
+        run: |
+          jobs="--feed --archive"
+          if [ "$DAILY" = true ]; then jobs="$jobs --removal"; fi
+          node scripts/news_refresh.ts $jobs --summary "$RUNNER_TEMP/summary.md"
+
+      - name: Commit and push
+        run: |
+          if [ -n "$(git status --porcelain data/news)" ]; then
+            git add data/news
+            title=$(head -n 1 "$RUNNER_TEMP/summary.md")
+            tail -n +3 "$RUNNER_TEMP/summary.md" > "$RUNNER_TEMP/body.md"
+            if [ -s "$RUNNER_TEMP/body.md" ]; then
+              git commit -m "chore(data): $title" -F "$RUNNER_TEMP/body.md"
+            else
+              git commit -m "chore(data): $title"
+            fi
+            git push --force-with-lease origin bot/news-data
+          else
+            echo "No change to data/news."
+          fi
+
+      - name: Open the PR
+        id: pr
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: |
+          ahead=$(git rev-list --count origin/main..HEAD)
+          echo "ahead=$ahead" >> "$GITHUB_OUTPUT"
+          if [ "$ahead" -gt 0 ] && [ -z "$(gh pr list --head bot/news-data --state open --json number --jq '.[0].number')" ]; then
+            gh pr create --base main --head bot/news-data \
+              --title "chore(data): refresh city news" \
+              --body "Automatic update of \`data/news/\` by the news-data workflow. It touches only that folder. Each commit is one run: what it found is in the commit message, and \`git log data/news\` is the history. Rebase-merge keeps the commits."
+          fi
+
+      # Merges only when every condition holds: the PR is the bot's own, from
+      # bot/news-data, changes nothing outside data/news/, and the check
+      # workflow passed. Anything else leaves the PR for a person. The App is
+      # on the "Protect main" bypass list, which is what lets it merge without
+      # a review; these conditions are what keep that safe.
+      - name: Merge
+        if:
+          steps.mode.outputs.daily == 'true' && steps.pr.outputs.ahead != '0' &&
+          vars.AUTO_MERGE == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          SLUG: ${{ steps.app.outputs.app-slug }}
+        run: |
+          hold() { echo "::warning::Not merging: $1"; exit 0; }
+          pr=$(gh pr list --head bot/news-data --state open --json number --jq '.[0].number')
+          [ -n "$pr" ] || hold "no open PR"
+          info=$(gh pr view "$pr" --json author,headRefName,headRefOid)
+          author=$(echo "$info" | jq -r .author.login)
+          [ "$author" = "app/$SLUG" ] || [ "$author" = "$SLUG[bot]" ] || hold "PR author is $author, not the bot"
+          [ "$(echo "$info" | jq -r .headRefName)" = bot/news-data ] || hold "wrong branch"
+          sha=$(echo "$info" | jq -r .headRefOid)
+          outside=$(gh pr diff "$pr" --name-only | grep -v '^data/news/' || true)
+          [ -z "$outside" ] || hold "files outside data/news/: $outside"
+          for i in $(seq 1 60); do
+            buckets=$(gh pr checks "$pr" --json name,bucket 2>/dev/null || echo '[]')
+            if echo "$buckets" | jq -e 'map(select(.bucket == "fail" or .bucket == "cancel")) | length > 0' >/dev/null; then
+              hold "a check failed"
+            fi
+            if echo "$buckets" | jq -e 'any(.name == "check" and .bucket == "pass") and all(.bucket == "pass" or .bucket == "skipping")' >/dev/null; then
+              gh pr merge "$pr" --rebase --match-head-commit "$sha"
+              exit 0
+            fi
+            sleep 30
+          done
+          hold "checks did not finish in 30 minutes"
+
+      # The run saved what it could; now say so if the city feed was unreadable.
+      - name: Fail if the feed could not be read
+        if: always() && steps.refresh.outputs.degraded == 'true'
+        run: |
+          echo "::error::The city news feed could not be read."
+          exit 1
+
+  # Opens one issue after two failed runs in a row; closes it on the next success.
+  report:
+    needs: refresh
+    if:
+      always() && needs.refresh.result != 'skipped' && needs.refresh.result !=
+      'cancelled'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      actions: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RESULT: ${{ needs.refresh.result }}
+      RUN_URL:
+        ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{
+        github.run_id }}
+    steps:
+      - name: Open or close the failure issue
+        run: |
+          open=$(gh issue list --state open --search '"news-bot failing" in:title' --json number --jq '.[0].number')
+          if [ "$RESULT" = success ]; then
+            [ -z "$open" ] || gh issue close "$open" --comment "The news-data workflow succeeded again: $RUN_URL"
+            exit 0
+          fi
+          previous=$(gh run list --workflow news-data.yml --status completed --limit 1 --json conclusion --jq '.[0].conclusion')
+          [ "$previous" = failure ] || exit 0
+          if [ -n "$open" ]; then
+            gh issue comment "$open" --body "Failed again: $RUN_URL"
+          else
+            gh issue create --title "news-bot failing" \
+              --body "The news-data workflow failed twice in a row, so city news on the site is going stale. Latest run: $RUN_URL. See DEPLOYMENT.md, \"News bot\"."
+          fi

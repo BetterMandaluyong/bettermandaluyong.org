@@ -31,3 +31,22 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+  # The news bot's PR may change data/news/ and nothing else. Auto-merge relies
+  # on this: a person pushing code to bot/news-data cannot get it merged.
+  data-only-guard:
+    if: github.head_ref == 'bot/news-data'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Only data/news/ may change
+        run: |
+          outside=$(git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" | grep -v '^data/news/' || true)
+          if [ -n "$outside" ]; then
+            echo "::error::bot/news-data may only change data/news/. Also changed:"
+            echo "$outside"
+            exit 1
+          fi
