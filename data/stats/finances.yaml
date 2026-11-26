@@ -1,0 +1,39 @@
+# The City Government's own money for one year: what it took in and what it
+# spent, from the Bureau of Local Government Finance's Statement of Receipts
+# and Expenditures by LGU (preliminary, extracted 2025-03-17). Read from the
+# xlsx row "Mandaluyong City" and rounded to whole pesos. BLGF asks to be
+# credited as the source. Hand-kept; see data/CONTEXT.md.
+year: 2024
+preliminary: true
+extracted: 2025-03-17
+source:
+  title: "BLGF: Statement of Receipts and Expenditures by LGU, FY 2024"
+  url: https://blgf.gov.ph/wp-content/uploads/2025/08/By-LGU-SRE-2024.xlsx
+page: https://blgf.gov.ph/lgu-fiscal-data/
+# Current operating income. Each list adds up to its total (schema.ts checks,
+# allowing a few pesos for rounding).
+income:
+  total: 7942871526
+  lines:
+    real-property-tax: 2256438108
+    business-tax: 3476022366
+    other-taxes: 340692331
+    fees-and-charges: 536622076 # regulatory fees, service charges, economic enterprises, other
+    national-tax-allotment: 1303925550
+    other-national: 29171094 # other shares of national taxes, and grants
+# Current operating expenditures, by sector.
+spending:
+  total: 7473193739
+  lines:
+    general-public-services: 2925914945
+    health: 1487168093
+    education: 1004336997
+    social-welfare: 876955704
+    housing: 496996318
+    labor: 5399999
+    economic-services: 527441654
+    interest: 148980029
+# Outside the operating budget.
+capital-outlay: 652738525 # buildings, roads, and equipment
+loan-principal: 228475082
+cash-end: 2095344238 # fund and cash balance at the end of the year

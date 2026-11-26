@@ -1,0 +1,41 @@
+# Poverty incidence among the population: the share of people whose family
+# income is below the poverty threshold. From the Philippine Statistics
+# Authority's updated 2018 estimates by region, province, and highly
+# urbanized city (released 2020-06-04), read from PSA's table as republished
+# by OCHA on HDX. Hand-kept; see data/CONTEXT.md.
+#
+# Mandaluyong's estimate is marked "a/" in PSA's table: its coefficient of
+# variation is above 20%, so PSA says to use it with caution. Newer estimates
+# (2021, 2023) are in PSA publications we couldn't download (PSA's site
+# blocks automated requests); add them here once someone has the files.
+year: 2018
+release:
+  title: Updated 2015 and 2018 Full Year Official Poverty Statistics (PSA)
+  url: https://psa.gov.ph/content/updated-2015-and-2018-full-year-official-poverty-statistics
+via:
+  title: "OCHA HDX: Philippines Poverty Statistics"
+  url: https://data.humdata.org/dataset/philippines-poverty-statistics
+# Pesos a person needs a year to meet basic food and non-food needs, in NCR.
+threshold: 28682
+# Percent of people below the threshold; cv is the coefficient of variation
+# (%), low/high the 90% confidence interval, poor the estimated number of poor
+# people. Rounded to two decimals from PSA's table.
+areas:
+  city:
+    incidence: 1.33
+    cv: 39.43
+    low: 0.47
+    high: 2.20
+    poor: 5618
+  ncr:
+    incidence: 2.25
+    cv: 11.39
+    low: 1.83
+    high: 2.67
+    poor: 302166
+  philippines:
+    incidence: 16.71
+    cv: 1.29
+    low: 16.35
+    high: 17.06
+    poor: 17670206

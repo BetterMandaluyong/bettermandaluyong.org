@@ -12,8 +12,8 @@ source of truth: edit it, never generated output.
   an office lists has a file in `people/`, no two people share a slug, and every
   person holds an office.
 - The modules pages import (`barangays.ts`, `city-officials.ts`, `people.ts`,
-  `places.ts`, `news.ts`, `org-chart.ts`, `budget.ts`, `pay.ts`) expose typed
-  data. Pages never import YAML directly.
+  `places.ts`, `news.ts`, `org-chart.ts`, `budget.ts`, `pay.ts`, `stats.ts`)
+  expose typed data. Pages never import YAML directly.
 
 | Path                                    | What                                                      | Written by                        |
 | --------------------------------------- | --------------------------------------------------------- | --------------------------------- |
@@ -22,6 +22,9 @@ source of truth: edit it, never generated output.
 | `city-officials.yaml`                   | Representative, mayor, vice mayor, councilors             | People, from the city's pages     |
 | `places.yaml`                           | Government places on the map (OSM or Google CID source)   | People                            |
 | `pay.yaml`                              | Salary schedule and each office's grade, from DBM         | People, from the circulars        |
+| `stats/population.yaml`                 | People in each barangay, by census (PSA)                  | People                            |
+| `stats/poverty.yaml`                    | PSA poverty estimates: city, NCR, Philippines             | People                            |
+| `stats/finances.yaml`                   | The city's own income and spending for a year (BLGF)      | People                            |
 | `news/YYYY-MM.yaml`                     | City news links                                           | The news bot only                 |
 | `budget/scope.yaml`                     | Place, region, district, and lines left out by hand       | People                            |
 | `budget/fy2027.yaml`, `budget/gaa.yaml` | National budget snapshot from the BetterGov.ph Budget API | `budget_refresh.ts` only          |
@@ -44,3 +47,9 @@ source of truth: edit it, never generated output.
   figure (`PAY_COPY`). Each January, add the new tranche from DBM's NBC and LBC
   and update `checked:`; `data/pay_test.ts` pins one year's figures; update it
   too.
+- **City statistics keep their checks.** `stats/population.yaml` must add up to
+  each census's official total, and `checked: false` marks counts still awaiting
+  a comparison with PSA's own file (the page says so). When PSA's site lets you
+  download the 2024 barangay table, compare every row, then set `checked: true`
+  and point `source:` at PSA. Add newer poverty estimates (2021, 2023) the same
+  way, from PSA's tables.

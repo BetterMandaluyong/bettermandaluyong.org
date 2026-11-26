@@ -281,6 +281,27 @@ amounts first (`formatPesoShort` in `utils/budget/format.ts`).
 />
 ```
 
+### `DataTable` (BetterGov)
+
+`components/DataTable.tsx`: a ruled table for figures people compare across
+rows, styled after BetterGov's directory list view: mono uppercase headers on
+paper between ink rules, hairline row rules, numeric columns right-aligned in
+tabular digits. The first cell of each row is its row header. Wide tables scroll
+sideways inside their own box, so the page never does (inside a grid, give the
+cell `min-w-0`). Takes `caption` (screen readers only), `columns`
+(`{ label, numeric? }`), `rows` (`{ key, cells }`) and optional `footer` rows
+for totals, set bold under a heavier rule. Format numbers first (`formatCount`,
+`formatChange` in `utils/stats/population.ts`; `formatPeso`).
+
+```tsx
+<DataTable
+  caption="People in each barangay, 2024 census"
+  columns={[{ label: "Barangay" }, { label: "2024", numeric: true }]}
+  rows={[{ key: "hulo", cells: ["Hulo", "47,757"] }]}
+  footer={[{ key: "city", cells: ["Whole city", "465,902"] }]}
+/>
+```
+
 ### `BudgetProjectList`
 
 `components/BudgetProjectList.tsx`: the 2027 budget lines as a ruled `<ol>`.

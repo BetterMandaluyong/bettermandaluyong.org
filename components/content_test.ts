@@ -7,6 +7,7 @@ import {
   FOOTER,
   NAV,
   NEWS,
+  NUMBERS,
   PAY_COPY,
   PEOPLE_COPY,
   SITE,
@@ -92,6 +93,14 @@ describe("content", () => {
       BUDGET.excludedHeading,
       PAY_COPY.homeHeading,
       PAY_COPY.personHeading,
+      NUMBERS.heading,
+      NUMBERS.glanceHeading,
+      NUMBERS.populationHeading,
+      NUMBERS.povertyHeading,
+      NUMBERS.moneyHeading,
+      NUMBERS.incomeHeading,
+      NUMBERS.spendingHeading,
+      NUMBERS.barangayHeading,
     ];
     for (const heading of headings)
       expect(isTitleCase(heading), heading).toBe(true);
