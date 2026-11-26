@@ -49,6 +49,11 @@ content — not the merge, and not unrelated edits.
 ## 4. Implement
 
 - Work on a branch (any name). Never commit to `main`; never merge a PR.
+- `main` requires a linear history and PRs land only by "Rebase and merge"
+  (never squash), so every commit must stand on its own. To catch up with `main`
+  or fix a conflict, `git rebase origin/main` (after `git fetch origin main`)
+  and `git push --force-with-lease`. Never merge `main` into the branch: GitHub
+  then can't "Rebase and merge" it. See "Linear history" in AGENTS.md.
 - Small, conventional commits: `type(scope): summary`, body ending with a
   `Verified: …` line. No AI attribution trailers — the commit-msg hook installed
   by `pnpm run setup` enforces this.
@@ -62,4 +67,6 @@ content — not the merge, and not unrelated edits.
 2. `pnpm test` — unit tests.
 3. `pnpm build`, then `pnpm dev` — the affected page and `/storybook` render
    cleanly at desktop and phone width, no console errors.
-4. Push the branch and open a PR with `gh` for a human to review and merge.
+4. Push the branch and open a PR with `gh` for a human to review and merge. If
+   `main` moves on or the PR shows a conflict, rebase it on `origin/main` (step
+   4), never merge `main` in.
