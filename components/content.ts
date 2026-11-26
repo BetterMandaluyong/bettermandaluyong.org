@@ -453,9 +453,10 @@ export const PAY_COPY = {
 /**
  * Copy for "Mandaluyong in Numbers" (`/numbers`) and the population band on
  * barangay pages. Figures live in `data/stats/`; each band credits its
- * source. Keep the caveats in the wording: the 2024 counts await a check
- * against PSA's file, the poverty estimate is old and imprecise, and the
- * money figures are BLGF's preliminary ones.
+ * source. Keep the caveats in the wording: the city's poverty estimates are
+ * imprecise and PSA finds none of their changes significant, a census marked
+ * `checked: false` awaits a check against PSA's file, and the money figures
+ * are BLGF's preliminary ones.
  */
 export const NUMBERS = {
   metaTitle: `Mandaluyong in Numbers — ${SITE.name}`,
@@ -506,15 +507,16 @@ export const NUMBERS = {
     ncr: "Metro Manila",
     philippines: "Philippines",
   },
-  povertyNote: (low: string, high: string, poor: string) =>
-    `Between ${low} and ${high}, at 90% confidence. About ${poor} people.`,
+  povertyNote: (low: string, high: string, confidence: number, poor: string) =>
+    `Between ${low} and ${high}, at ${confidence}% confidence. About ${poor} people.`,
   povertyCaution:
-    'PSA marks Mandaluyong\'s estimate "use with caution": its survey reached few households here, so the true share could be anywhere in the range shown.',
-  povertyOldTag: "Older figure",
-  povertyOldTitle: "Newer estimates exist",
-  povertyOld: (year: number) =>
-    `PSA has since published estimates for 2021 and 2023. Its website blocks automated downloads, so we show ${year} until we can read those files.`,
-  povertyVia: "Read from PSA's table as republished on",
+    "PSA marks each of Mandaluyong's estimates \"use with caution\": its survey reaches few households here, so the true share could be anywhere in the range shown. PSA also doesn't count any of the city's changes from one estimate to the next as significant.",
+  povertyTrendHeading: "Since 2018",
+  povertyTrendCaption: "Share of people below the poverty line, by year",
+  areaColumn: "Area",
+  significantNote:
+    "* PSA counts the change from the year before as significant (at 5%).",
+  povertyTables: "Tables 2a and 6a.",
 
   moneyHeading: "The City's Money",
   moneyMeta: (year: number, preliminary: boolean) =>

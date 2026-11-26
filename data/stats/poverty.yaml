@@ -1,41 +1,38 @@
 # Poverty incidence among the population: the share of people whose family
 # income is below the poverty threshold. From the Philippine Statistics
-# Authority's updated 2018 estimates by region, province, and highly
-# urbanized city (released 2020-06-04), read from PSA's table as republished
-# by OCHA on HDX. Hand-kept; see data/CONTEXT.md.
+# Authority's "2023 Full Year Official Poverty Statistics of the Philippines"
+# (released 2024-08-15): Table 2a (incidence, by highly urbanized city) and
+# Table 6a (number of poor people), read from the PDF downloaded by hand from
+# psa.gov.ph on 2026-11-26. Hand-kept; see data/CONTEXT.md.
 #
-# Mandaluyong's estimate is marked "a/" in PSA's table: its coefficient of
-# variation is above 20%, so PSA says to use it with caution. Newer estimates
-# (2021, 2023) are in PSA publications we couldn't download (PSA's site
-# blocks automated requests); add them here once someone has the files.
-year: 2018
+# PSA flags all three of Mandaluyong's estimates (a/, b/, c/): their
+# coefficients of variation are above 10%, so use them with caution. It marks
+# none of the city's changes as significant; it marks NCR's 2018-2021 and
+# 2021-2023 changes, and the country's all three.
+years: [2018, 2021, 2023]
 release:
-  title: Updated 2015 and 2018 Full Year Official Poverty Statistics (PSA)
-  url: https://psa.gov.ph/content/updated-2015-and-2018-full-year-official-poverty-statistics
-via:
-  title: "OCHA HDX: Philippines Poverty Statistics"
-  url: https://data.humdata.org/dataset/philippines-poverty-statistics
-# Pesos a person needs a year to meet basic food and non-food needs, in NCR.
-threshold: 28682
-# Percent of people below the threshold; cv is the coefficient of variation
-# (%), low/high the 90% confidence interval, poor the estimated number of poor
-# people. Rounded to two decimals from PSA's table.
+  title: 2023 Full Year Official Poverty Statistics of the Philippines (PSA)
+  url: https://psa.gov.ph/sites/default/files/phdsd/2023%20FY%20Official%20Poverty%20Statistics%20Publication_15August2024.pdf
+released: 2024-08-15
+# low/high below are PSA's 95% confidence interval.
+confidence: 95
+# Pesos a person needs a year for basic food and non-food needs, in NCR.
+threshold: { 2018: 28682, 2021: 32978, 2023: 37711 }
+# incidence, cv, low, high are percents as PSA prints them (one decimal);
+# poor is PSA's estimate in thousands, times 1,000.
 areas:
   city:
-    incidence: 1.33
-    cv: 39.43
-    low: 0.47
-    high: 2.20
-    poor: 5618
+    2018: { incidence: 1.3, cv: 39.4, low: 0.3, high: 2.4, poor: 5620 }
+    2021: { incidence: 0.7, cv: 51.7, low: 0.0, high: 1.4, poor: 3130 }
+    2023: { incidence: 0.5, cv: 53.4, low: 0.0, high: 1.0, poor: 2420 }
+    significant: []
   ncr:
-    incidence: 2.25
-    cv: 11.39
-    low: 1.83
-    high: 2.67
-    poor: 302166
+    2018: { incidence: 2.2, cv: 11.4, low: 1.7, high: 2.7, poor: 302170 }
+    2021: { incidence: 3.5, cv: 6.8, low: 3.0, high: 3.9, poor: 482480 }
+    2023: { incidence: 1.8, cv: 9.9, low: 1.5, high: 2.2, poor: 262240 }
+    significant: [2018-2021, 2021-2023]
   philippines:
-    incidence: 16.71
-    cv: 1.29
-    low: 16.35
-    high: 17.06
-    poor: 17670206
+    2018: { incidence: 16.7, cv: 1.3, low: 16.3, high: 17.1, poor: 17670210 }
+    2021: { incidence: 18.1, cv: 1.3, low: 17.6, high: 18.5, poor: 19902750 }
+    2023: { incidence: 15.5, cv: 1.4, low: 15.1, high: 16.0, poor: 17538860 }
+    significant: [2018-2021, 2021-2023, 2018-2023]
