@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  barangayOfficialIds,
   duplicateSlugs,
   nameLookup,
   parseBarangay,
@@ -374,6 +375,25 @@ describe("people checks", () => {
 
   it("finds people no office lists", () => {
     expect(unlistedPeople([p(1, "a"), p(2, "b")], [id(2)])).toEqual([id(1)]);
+  });
+
+  it("lists a barangay's ids: captain, kagawads, SK chair, SK kagawads", () => {
+    expect(
+      barangayOfficialIds({
+        captain: id(1),
+        kagawads: [id(2), id(3)],
+        skChair: id(4),
+        skKagawads: [id(5)],
+      }),
+    ).toEqual([id(1), id(2), id(3), id(4), id(5)]);
+  });
+
+  it("names the file and field when an id has no person", () => {
+    const nameOf = nameLookup([p(1, "a")]);
+    expect(nameOf(id(1), "f.yaml", "captain")).toBe("X Y");
+    expect(() => nameOf(id(9), "f.yaml", "kagawads[2]")).toThrow(
+      /f\.yaml.*kagawads\[2\].*has no file in data\/people/,
+    );
   });
 });
 
