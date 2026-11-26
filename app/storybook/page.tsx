@@ -21,6 +21,7 @@ import { DilgNote } from "../../components/DilgNote.tsx";
 import { SourceNote } from "../../components/SourceNote.tsx";
 import { SiteHeader } from "../../components/SiteHeader.tsx";
 import { StatList } from "../../components/StatList.tsx";
+import { DataTable } from "../../components/DataTable.tsx";
 import { UnofficialBar } from "../../components/UnofficialBar.tsx";
 import { VolunteerBand } from "../../components/VolunteerBand.tsx";
 import { HOME, SITE, mailto } from "../../components/content.ts";
@@ -466,6 +467,27 @@ export default function StorybookPage() {
               { label: "Sample amount", value: "₱234 million" },
               { label: "Another amount", value: "₱1.13 billion" },
               { label: "No such line", value: "—", note: "A dash, never ₱0." },
+            ]}
+          />
+        </Specimen>
+        <Specimen name="DataTable (sample rows and a total)">
+          <DataTable
+            caption="Sample table"
+            columns={[
+              { label: "Sample place" },
+              { label: "Before", numeric: true },
+              { label: "After", numeric: true },
+              { label: "Change", numeric: true },
+            ]}
+            rows={[
+              {
+                key: "a",
+                cells: ["Sample Place A", "1,200", "1,500", "+25.0%"],
+              },
+              { key: "b", cells: ["Sample Place B", "800", "760", "−5.0%"] },
+            ]}
+            footer={[
+              { key: "total", cells: ["Total", "2,000", "2,260", "+13.0%"] },
             ]}
           />
         </Specimen>

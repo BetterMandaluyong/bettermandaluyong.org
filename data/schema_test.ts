@@ -7,9 +7,12 @@ import {
   parseBudgetGaa,
   parseBudgetScope,
   parseCityOfficials,
+  parseFinances,
   parseNewsFile,
   parsePay,
   parsePerson,
+  parsePopulation,
+  parsePoverty,
   resolveBarangay,
   resolveCityOfficials,
   unlistedPeople,
@@ -630,5 +633,157 @@ describe("parsePay", () => {
     const note = pay();
     note.offices.mayor = { ...office(30), note: "maybe" };
     expect(() => parsePay(note, "pay.yaml")).toThrow("offices.mayor.note");
+  });
+});
+
+describe("parsePopulation", () => {
+  const cite = { title: "Source", url: "https://example.com/s" };
+  const census = (year: number, total: number) => ({
+    year,
+    date: `${year}-05-01`,
+    total,
+    proclamation: cite,
+    source: cite,
+    checked: true,
+  });
+  const pop = () => ({
+    censuses: [census(2020, 30), census(2024, 40)] as Record<string, unknown>[],
+    barangays: {
+      hulo: { 2020: 10, 2024: 15 },
+      burol: { 2020: 20, 2024: 25 },
+    } as Record<string, Record<string, number>>,
+  });
+
+  it("accepts a valid file", () => {
+    const p = parsePopulation(pop(), "population.yaml");
+    expect(p.barangays.hulo).toEqual({ 2020: 10, 2024: 15 });
+    expect(p.censuses[1]!.total).toBe(40);
+  });
+  it("needs the barangays to add up to the official total", () => {
+    const p = pop();
+    p.censuses[1]!.total = 41;
+    expect(() => parsePopulation(p, "population.yaml")).toThrow("add up to 40");
+  });
+  it("needs every barangay in every census, and no other years", () => {
+    const missing = pop();
+    missing.barangays.hulo = { 2020: 10 };
+    expect(() => parsePopulation(missing, "population.yaml")).toThrow(
+      "barangays.hulo.2024",
+    );
+    const extra = pop();
+    extra.barangays.hulo = { 2015: 5, 2020: 10, 2024: 15 };
+    expect(() => parsePopulation(extra, "population.yaml")).toThrow(
+      "barangays.hulo.2015",
+    );
+  });
+  it("needs censuses in order, each saying whether it was checked", () => {
+    const order = pop();
+    order.censuses.reverse();
+    expect(() => parsePopulation(order, "population.yaml")).toThrow(
+      "censuses[1].year",
+    );
+    const checked = pop();
+    delete checked.censuses[0]!.checked;
+    expect(() => parsePopulation(checked, "population.yaml")).toThrow(
+      "censuses[0].checked",
+    );
+  });
+});
+
+describe("parsePoverty", () => {
+  const cite = { title: "Source", url: "https://example.com/s" };
+  const est = (incidence: number) => ({
+    incidence,
+    cv: 10,
+    low: incidence - 1,
+    high: incidence + 1,
+    poor: 100,
+  });
+  const pov = () => ({
+    year: 2018,
+    release: cite,
+    via: cite,
+    threshold: 28682,
+    areas: { city: est(1.3), ncr: est(2.2), philippines: est(16.7) } as Record<
+      string,
+      Record<string, number>
+    >,
+  });
+
+  it("accepts a valid file", () => {
+    expect(parsePoverty(pov(), "poverty.yaml").areas.city.incidence).toBe(1.3);
+  });
+  it("needs each estimate inside its interval, and every area", () => {
+    const outside = pov();
+    outside.areas.city = { ...est(1.3), high: 1 };
+    expect(() => parsePoverty(outside, "poverty.yaml")).toThrow(
+      "areas.city.incidence",
+    );
+    const missing = pov();
+    delete missing.areas.ncr;
+    expect(() => parsePoverty(missing, "poverty.yaml")).toThrow("areas.ncr");
+  });
+});
+
+describe("parseFinances", () => {
+  const fin = () => ({
+    year: 2024,
+    preliminary: true,
+    extracted: "2025-03-17",
+    source: { title: "BLGF", url: "https://example.com/sre.xlsx" },
+    page: "https://example.com/",
+    income: {
+      total: 60,
+      lines: {
+        "real-property-tax": 10,
+        "business-tax": 10,
+        "other-taxes": 10,
+        "fees-and-charges": 10,
+        "national-tax-allotment": 10,
+        "other-national": 10,
+      } as Record<string, number>,
+    },
+    spending: {
+      total: 80,
+      lines: {
+        "general-public-services": 10,
+        health: 10,
+        education: 10,
+        "social-welfare": 10,
+        housing: 10,
+        labor: 10,
+        "economic-services": 10,
+        interest: 10,
+      } as Record<string, number>,
+    },
+    "capital-outlay": 5,
+    "loan-principal": 5,
+    "cash-end": 5,
+  });
+
+  it("accepts a valid file", () => {
+    const f = parseFinances(fin(), "finances.yaml");
+    expect(f.income.lines["business-tax"]).toBe(10);
+    expect(f.capitalOutlay).toBe(5);
+  });
+  it("allows a few pesos of rounding, not more", () => {
+    const close = fin();
+    close.income.total = 62;
+    expect(parseFinances(close, "finances.yaml").income.total).toBe(62);
+    const off = fin();
+    off.income.total = 100;
+    expect(() => parseFinances(off, "finances.yaml")).toThrow("income.total");
+  });
+  it("rejects unknown or missing lines", () => {
+    const unknown = fin();
+    unknown.spending.lines.parks = 1;
+    expect(() => parseFinances(unknown, "finances.yaml")).toThrow(
+      "spending.lines.parks",
+    );
+    const missing = fin();
+    delete missing.income.lines["business-tax"];
+    expect(() => parseFinances(missing, "finances.yaml")).toThrow(
+      "income.lines.business-tax",
+    );
   });
 });

@@ -37,6 +37,7 @@ export const NAV: NavItem[] = [
   { label: "Districts", href: "/districts" },
   { label: "News", href: "/news" },
   { label: "Budget", href: "/budget" },
+  { label: "Numbers", href: "/numbers" },
 ];
 
 /**
@@ -447,6 +448,123 @@ export const PAY_COPY = {
     "The national government's list of local positions gives city councilors two grades, 25 and 27, without saying which cities get which. We show grade 27, the one that matches the vice mayor's grade 28 in the city charter, until we can confirm it.",
   houseFrom: "The House representative's is from",
   checked: (date: string) => `Checked against the circulars on ${date}.`,
+} as const;
+
+/**
+ * Copy for "Mandaluyong in Numbers" (`/numbers`) and the population band on
+ * barangay pages. Figures live in `data/stats/`; each band credits its
+ * source. Keep the caveats in the wording: the 2024 counts await a check
+ * against PSA's file, the poverty estimate is old and imprecise, and the
+ * money figures are BLGF's preliminary ones.
+ */
+export const NUMBERS = {
+  metaTitle: `Mandaluyong in Numbers — ${SITE.name}`,
+  metaDescription:
+    "How many people live in each of Mandaluyong's 27 barangays, how many live below the poverty line, and what the City Government took in and spent, from the PSA and the Bureau of Local Government Finance.",
+  heading: "Mandaluyong in Numbers",
+  intro:
+    "Public figures about our city in one place: how many of us live in each barangay, how many live below the poverty line, and where the City Government's money comes from and goes. Every figure links to where it came from.",
+
+  glanceHeading: "At a Glance",
+  people: (year: number) => `People, ${year} census`,
+  peopleNote: (change: string, year: number) => `${change} since ${year}.`,
+  poverty: (year: number) => `Below the poverty line, ${year}`,
+  povertyGlanceNote: "PSA's estimate. Use with caution.",
+  income: (year: number) => `City income, ${year}`,
+  incomeNote: "Operating income, before borrowing.",
+  spending: (year: number) => `City spending, ${year}`,
+  spendingNote: "Operating expenses.",
+
+  populationHeading: "People in Each Barangay",
+  populationMeta: (year: number) => `${year} census`,
+  populationIntro:
+    "How many people the Philippine Statistics Authority counted in each barangay, most people first, with the change since the census before.",
+  columns: {
+    barangay: "Barangay",
+    district: "District",
+    year: (year: number) => String(year),
+    change: "Change",
+    share: "Share of city",
+  },
+  districtRow: (n: number) => `District ${n}`,
+  cityRow: "Whole city",
+  populationCaption: (year: number) =>
+    `People in each Mandaluyong barangay, ${year} census`,
+  uncheckedTag: "Still checking",
+  uncheckedTitle: (year: number) =>
+    `The ${year} barangay counts are from a secondary source`,
+  unchecked: (year: number) =>
+    `PSA's website blocks automated downloads, so the ${year} counts come from City Population, a site that compiles PSA's census tables. Its earlier counts match PSA's for every barangay, and its city total matches the official one. We'll compare each barangay with PSA's own file.`,
+  madeOfficial: "Made official by",
+
+  povertyHeading: "Poverty",
+  povertyMeta: (year: number) => `${year} estimates`,
+  povertyIntro: (threshold: string, year: number) =>
+    `The share of people whose family income was below the poverty line: ${threshold} a person for the whole of ${year} in Metro Manila, enough for basic food and other needs.`,
+  areas: {
+    city: "Mandaluyong",
+    ncr: "Metro Manila",
+    philippines: "Philippines",
+  },
+  povertyNote: (low: string, high: string, poor: string) =>
+    `Between ${low} and ${high}, at 90% confidence. About ${poor} people.`,
+  povertyCaution:
+    'PSA marks Mandaluyong\'s estimate "use with caution": its survey reached few households here, so the true share could be anywhere in the range shown.',
+  povertyOldTag: "Older figure",
+  povertyOldTitle: "Newer estimates exist",
+  povertyOld: (year: number) =>
+    `PSA has since published estimates for 2021 and 2023. Its website blocks automated downloads, so we show ${year} until we can read those files.`,
+  povertyVia: "Read from PSA's table as republished on",
+
+  moneyHeading: "The City's Money",
+  moneyMeta: (year: number, preliminary: boolean) =>
+    preliminary ? `${year}, preliminary` : String(year),
+  moneyIntro: (year: number) =>
+    `What the City Government took in and spent in ${year}, as the city's treasurer reported it to the Bureau of Local Government Finance. This is the city's own budget, not the national budget.`,
+  capital: "Capital outlay",
+  capitalNote: "Buildings, roads, and equipment.",
+  cash: "Cash at year end",
+  cashNote: "Funds and cash left over.",
+  incomeHeading: "Where It Came From",
+  spendingHeading: "Where It Went",
+  incomeCaption: (year: number) =>
+    `Where the City Government's ${year} operating income came from`,
+  spendingCaption: (year: number) =>
+    `Where the City Government's ${year} operating spending went`,
+  sourceColumn: "Source",
+  sectorColumn: "Sector",
+  amountColumn: "Amount",
+  shareColumn: "Share",
+  totalRow: "Total",
+  incomeLines: {
+    "real-property-tax": "Real property tax",
+    "business-tax": "Business tax",
+    "other-taxes": "Other local taxes",
+    "fees-and-charges": "Fees, charges, and city enterprises",
+    "national-tax-allotment": "National tax allotment",
+    "other-national": "Other national shares and grants",
+  },
+  spendingLines: {
+    "general-public-services": "General public services",
+    health: "Health, nutrition, and population",
+    education: "Education, culture, and sports",
+    "social-welfare": "Social welfare",
+    housing: "Housing and community development",
+    labor: "Labor and employment",
+    "economic-services": "Economic services",
+    interest: "Interest on loans",
+  },
+  preliminary: (date: string) =>
+    `Preliminary figures, extracted by BLGF on ${date}.`,
+
+  barangayHeading: "People",
+  barangayCount: (year: number) => `People, ${year} census`,
+  barangayChange: (year: number) => `Change since ${year}`,
+  barangayRank: "Rank in the city",
+  rankValue: (rank: number, of: number) => `${rank} of ${of}`,
+  rankNote: "By number of people.",
+  previousCount: (count: string, year: number) => `${count} in ${year}.`,
+  seeAll: "See every barangay's population",
 } as const;
 
 /** Copy for the districts page. */

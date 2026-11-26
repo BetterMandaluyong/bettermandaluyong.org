@@ -1,0 +1,63 @@
+# People living in each barangay, from the Philippine Statistics Authority's
+# censuses. Hand-kept; see data/CONTEXT.md. Each census lists its official
+# total, and the barangays must add up to it (schema.ts checks).
+#
+# 2020: PSA's barangay counts as republished by OCHA on HDX (CC BY), read
+# from the xlsx and matched by PSGC code.
+# 2024: PSA's site blocks automated downloads, so these come from City
+# Population (citypopulation.de), which compiles PSA's census tables. Its
+# 2020 column matches the OCHA file for all 27 barangays, and its city total
+# matches the DTI competitiveness index profile. `checked: false` until
+# someone compares them with PSA's own 2024 file.
+censuses:
+  - year: 2020
+    date: 2020-05-01
+    total: 425758
+    proclamation:
+      title: Proclamation No. 1179, s. 2021
+      url: https://lawphil.net/executive/proc/proc2021/proc_1179_2021.html
+    source:
+      title:
+        "OCHA HDX: Philippines Total Population by Barangay (2020 census, from
+        PSA)"
+      url: https://data.humdata.org/dataset/2020-census-total-population-by-barangay_admin4
+    checked: true
+  - year: 2024
+    date: 2024-07-01
+    total: 465902
+    proclamation:
+      title: Proclamation No. 973, s. 2025
+      url: https://lawphil.net/executive/proc/proc2025/proc_973_2025.html
+    source:
+      title: "City Population: Mandaluyong (2024 census, from PSA)"
+      url: https://www.citypopulation.de/en/philippines/mandaluyong/
+    checked: false
+# Barangay slug: people counted, by census year. Comments give the PSGC code.
+barangays:
+  addition-hills: { 2020: 108896, 2024: 110493 } # 1380500001 Addition Hills
+  bagong-silang: { 2020: 4939, 2024: 4349 } # 1380500002 Bagong Silang
+  barangka-drive: { 2020: 15474, 2024: 15782 } # 1380500003 Barangka Drive
+  barangka-ibaba: { 2020: 9040, 2024: 9473 } # 1380500004 Barangka Ibaba
+  barangka-ilaya: { 2020: 22334, 2024: 24467 } # 1380500005 Barangka Ilaya
+  barangka-itaas: { 2020: 11242, 2024: 11354 } # 1380500006 Barangka Itaas
+  buayang-bato: { 2020: 2913, 2024: 5086 } # 1380500008 Buayang Bato
+  burol: { 2020: 2650, 2024: 2543 } # 1380500007 Burol
+  daang-bakal: { 2020: 4529, 2024: 4648 } # 1380500009 Daang Bakal
+  hagdang-bato-itaas: { 2020: 10267, 2024: 10303 } # 1380500010 Hagdang Bato Itaas
+  hagdang-bato-libis: { 2020: 6715, 2024: 6870 } # 1380500011 Hagdang Bato Libis
+  harapin-ang-bukas: { 2020: 4244, 2024: 4021 } # 1380500012 Harapin Ang Bukas
+  highway-hills: { 2020: 43267, 2024: 49455 } # 1380500013 Highway Hills
+  hulo: { 2020: 31335, 2024: 47757 } # 1380500014 Hulo
+  mabini-j-rizal: { 2020: 7882, 2024: 8878 } # 1380500015 Mabini-J. Rizal
+  malamig: { 2020: 12054, 2024: 14489 } # 1380500016 Malamig
+  mauway: { 2020: 25800, 2024: 26570 } # 1380500017 Mauway
+  namayan: { 2020: 7670, 2024: 8185 } # 1380500018 Namayan
+  new-zaniga: { 2020: 8444, 2024: 8872 } # 1380500019 New Zañiga
+  old-zaniga: { 2020: 6636, 2024: 5435 } # 1380500020 Old Zañiga
+  pag-asa: { 2020: 4195, 2024: 4493 } # 1380500021 Pag-asa
+  plainview: { 2020: 29378, 2024: 33472 } # 1380500022 Plainview
+  pleasant-hills: { 2020: 6003, 2024: 6097 } # 1380500023 Pleasant Hills
+  poblacion: { 2020: 16333, 2024: 16407 } # 1380500024 Poblacion
+  san-jose: { 2020: 8483, 2024: 7888 } # 1380500025 San Jose
+  vergara: { 2020: 4357, 2024: 4740 } # 1380500026 Vergara
+  wack-wack-greenhills: { 2020: 10678, 2024: 13775 } # 1380500027 Wack-wack Greenhills

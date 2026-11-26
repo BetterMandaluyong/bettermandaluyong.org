@@ -7,6 +7,7 @@ import {
   HOME,
   LLMS,
   NEWS,
+  NUMBERS,
   PEOPLE_COPY,
   SHARE,
   SITE,
@@ -46,6 +47,11 @@ export const MAIN_PAGES: MainPage[] = [
     path: "/budget",
     label: BUDGET.heading,
     description: BUDGET.metaDescription,
+  },
+  {
+    path: "/numbers",
+    label: NUMBERS.heading,
+    description: NUMBERS.metaDescription,
   },
 ];
 

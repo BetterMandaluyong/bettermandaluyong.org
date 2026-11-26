@@ -13,7 +13,12 @@ import { pageMetadata } from "../../../components/metadata.ts";
 import { SectionHeader } from "../../../components/SectionHeader.tsx";
 import { DilgNote } from "../../../components/DilgNote.tsx";
 import { SourceNote } from "../../../components/SourceNote.tsx";
-import { BARANGAYS as COPY, SITE } from "../../../components/content.ts";
+import { StatList } from "../../../components/StatList.tsx";
+import {
+  BARANGAYS as COPY,
+  NUMBERS,
+  SITE,
+} from "../../../components/content.ts";
 import {
   BARANGAYS,
   BOUNDARIES_URL,
@@ -30,8 +35,15 @@ import {
   councilorsFor,
 } from "../../../data/city-officials.ts";
 import { personHref } from "../../../data/people.ts";
+import { POPULATION } from "../../../data/stats.ts";
 import { BarangayMap } from "../../../islands/BarangayMap.tsx";
 import { formatSourceDate } from "../../../utils/barangays/format.ts";
+import {
+  formatChange,
+  formatCount,
+  latestCensuses,
+  populationRows,
+} from "../../../utils/stats/population.ts";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -55,7 +67,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
  * phones, the barangay council and Sangguniang Kabataan, and the officials
  * who represent it citywide (House representative, mayor, vice mayor, and its
  * district's councilors), with a credit and date for the city page the data
- * came from. Unknown slugs 404.
+ * came from. A band gives its population in the latest census, the change
+ * since the one before, and its rank in the city. Unknown slugs 404.
  */
 export default async function BarangayPage({ params }: Params) {
   const barangay = getBarangay((await params).slug);
@@ -70,6 +83,10 @@ export default async function BarangayPage({ params }: Params) {
     person(barangay.captain, COPY.captain),
     ...barangay.kagawads.map((m) => person(m, COPY.kagawad)),
   ];
+  const censuses = latestCensuses(POPULATION);
+  const ranked = populationRows(POPULATION, BARANGAYS);
+  const rank = ranked.findIndex((r) => r.slug === barangay.slug);
+  const people = ranked[rank]!;
   const sk = [
     person(barangay.skChair, COPY.skChair),
     ...barangay.skKagawads.map((m) => person(m, COPY.skKagawad)),
@@ -108,6 +125,48 @@ export default async function BarangayPage({ params }: Params) {
             height="short"
           />
           <SourceNote>{COPY.mapCredit}</SourceNote>
+        </Container>
+      </section>
+
+      <section className="border-b border-ed-rule">
+        <Container className="py-8 md:py-12">
+          <SectionHeader label={NUMBERS.barangayHeading} />
+          <StatList
+            label={NUMBERS.barangayHeading}
+            items={[
+              {
+                label: NUMBERS.barangayCount(censuses.latest.year),
+                value: formatCount(people.latest),
+              },
+              ...(censuses.previous
+                ? [
+                    {
+                      label: NUMBERS.barangayChange(censuses.previous.year),
+                      value: formatChange(people.change),
+                      note: NUMBERS.previousCount(
+                        formatCount(people.previous ?? 0),
+                        censuses.previous.year,
+                      ),
+                    },
+                  ]
+                : []),
+              {
+                label: NUMBERS.barangayRank,
+                value: NUMBERS.rankValue(rank + 1, ranked.length),
+                note: NUMBERS.rankNote,
+              },
+            ]}
+          />
+          <div className="mt-6">
+            <ArrowLink href="/numbers#population">{NUMBERS.seeAll}</ArrowLink>
+          </div>
+          <SourceNote
+            href={censuses.latest.source.url}
+            label={censuses.latest.source.title}
+          >
+            {!censuses.latest.checked &&
+              NUMBERS.uncheckedTitle(censuses.latest.year) + "."}
+          </SourceNote>
         </Container>
       </section>
 

@@ -5,9 +5,12 @@ import {
   parseBudgetGaa,
   parseBudgetScope,
   parseCityOfficials,
+  parseFinances,
   parseNewsFile,
   parsePay,
   parsePerson,
+  parsePopulation,
+  parsePoverty,
 } from "../data/schema.ts";
 
 /** The budget files and their validators, by name under data/budget/. */
@@ -15,6 +18,13 @@ const BUDGET_FILES: Record<string, (data: unknown, file: string) => unknown> = {
   "scope.yaml": parseBudgetScope,
   "fy2027.yaml": parseBudget2027,
   "gaa.yaml": parseBudgetGaa,
+};
+
+/** The city statistics files and their validators, by name under data/stats/. */
+const STATS_FILES: Record<string, (data: unknown, file: string) => unknown> = {
+  "population.yaml": parsePopulation,
+  "poverty.yaml": parsePoverty,
+  "finances.yaml": parseFinances,
 };
 
 /**
@@ -60,6 +70,10 @@ export function validateData(path: string, data: unknown): void {
     const budget = path.match(/(?:^|\/)data\/budget\/([^/]+\.yaml)$/);
     if (budget && BUDGET_FILES[budget[1]]) {
       BUDGET_FILES[budget[1]](data, `data/budget/${budget[1]}`);
+    }
+    const stats = path.match(/(?:^|\/)data\/stats\/([^/]+\.yaml)$/);
+    if (stats && STATS_FILES[stats[1]]) {
+      STATS_FILES[stats[1]](data, `data/stats/${stats[1]}`);
     }
   }
 }

@@ -1547,3 +1547,263 @@ export function parsePay(raw: unknown, file: string): Pay {
     offices,
   };
 }
+
+// ── City statistics (data/stats/*.yaml) ─────────────────────────────────────
+
+function wholeCount(v: unknown, file: string, at: string): number {
+  if (typeof v !== "number" || !Number.isInteger(v) || v < 0) {
+    fail(file, at, "must be a whole number, 0 or more");
+  }
+  return v;
+}
+
+/** One census: when it counted, its official city total, and where we read it. */
+export type Census = {
+  year: number;
+  /** The census reference date (YYYY-MM-DD). */
+  date: string;
+  /** The city's official total. The barangays add up to it. */
+  total: number;
+  /** The proclamation that made the counts official. */
+  proclamation: Citation;
+  /** Where the barangay counts were read. */
+  source: Citation;
+  /** False while the counts come from a secondary source not yet compared with PSA's file. */
+  checked: boolean;
+};
+
+/** The whole `data/stats/population.yaml` file. */
+export type Population = {
+  /** Oldest first. */
+  censuses: Census[];
+  /** Barangay slug → census year → people counted. */
+  barangays: Record<string, Record<number, number>>;
+};
+
+/**
+ * Checks `data/stats/population.yaml`: censuses oldest first, every barangay
+ * counted in every census, and each census's barangays adding up to its
+ * official total.
+ */
+export function parsePopulation(raw: unknown, file: string): Population {
+  const o = obj(raw, file, "document");
+  let lastYear = 0;
+  const censuses = list(o, "censuses", file).map((entry, i): Census => {
+    const at = `censuses[${i}]`;
+    const c = obj(entry, file, at);
+    const year = c.year;
+    if (
+      typeof year !== "number" ||
+      !Number.isInteger(year) ||
+      year <= lastYear
+    ) {
+      fail(file, `${at}.year`, "must be a year after the one before");
+    }
+    lastYear = year;
+    if (typeof c.checked !== "boolean") {
+      fail(file, `${at}.checked`, "must be true or false");
+    }
+    return {
+      year,
+      date: isoDate(c, "date", file, `${at}.date`),
+      total: wholeCount(c.total, file, `${at}.total`),
+      proclamation: citation(c.proclamation, file, `${at}.proclamation`),
+      source: citation(c.source, file, `${at}.source`),
+      checked: c.checked,
+    };
+  });
+  if (censuses.length === 0) fail(file, "censuses", "must not be empty");
+  const raws = obj(o.barangays, file, "barangays");
+  const barangays: Record<string, Record<number, number>> = {};
+  const sums = new Map(censuses.map((c) => [c.year, 0]));
+  for (const [slug, counts] of Object.entries(raws)) {
+    const at = `barangays.${slug}`;
+    if (!PERSON_SLUG.test(slug)) fail(file, at, "must be a barangay slug");
+    const r = obj(counts, file, at);
+    const byYear: Record<number, number> = {};
+    for (const key of Object.keys(r)) {
+      if (!sums.has(Number(key)))
+        fail(file, `${at}.${key}`, "is not a census year");
+    }
+    for (const c of censuses) {
+      const n = wholeCount(r[c.year], file, `${at}.${c.year}`);
+      byYear[c.year] = n;
+      sums.set(c.year, sums.get(c.year)! + n);
+    }
+    barangays[slug] = byYear;
+  }
+  for (const [i, c] of censuses.entries()) {
+    const sum = sums.get(c.year)!;
+    if (sum !== c.total) {
+      fail(
+        file,
+        `censuses[${i}].total`,
+        `is ${c.total}, but the barangays add up to ${sum}`,
+      );
+    }
+  }
+  return { censuses, barangays };
+}
+
+/** One area's poverty estimate. */
+export type PovertyEstimate = {
+  /** Percent of people below the poverty threshold. */
+  incidence: number;
+  /** Coefficient of variation, percent. Over 20 means "use with caution". */
+  cv: number;
+  /** The 90% confidence interval, percent. */
+  low: number;
+  high: number;
+  /** Estimated number of poor people. */
+  poor: number;
+};
+
+/** The whole `data/stats/poverty.yaml` file. */
+export type Poverty = {
+  year: number;
+  release: Citation;
+  via: Citation;
+  /** Pesos a person needs a year, in NCR. */
+  threshold: number;
+  areas: Record<"city" | "ncr" | "philippines", PovertyEstimate>;
+};
+
+function percent(o: Obj, key: string, file: string, at: string): number {
+  const v = o[key];
+  if (typeof v !== "number" || !Number.isFinite(v) || v < 0 || v > 100) {
+    fail(file, `${at}.${key}`, "must be a percent from 0 to 100");
+  }
+  return v;
+}
+
+/** Checks `data/stats/poverty.yaml`: each area's estimate sits inside its own interval. */
+export function parsePoverty(raw: unknown, file: string): Poverty {
+  const o = obj(raw, file, "document");
+  const a = obj(o.areas, file, "areas");
+  const area = (key: "city" | "ncr" | "philippines"): PovertyEstimate => {
+    const at = `areas.${key}`;
+    const e = obj(a[key], file, at);
+    const est = {
+      incidence: percent(e, "incidence", file, at),
+      cv: percent(e, "cv", file, at),
+      low: percent(e, "low", file, at),
+      high: percent(e, "high", file, at),
+      poor: wholeCount(e.poor, file, `${at}.poor`),
+    };
+    if (est.low > est.incidence || est.incidence > est.high) {
+      fail(file, `${at}.incidence`, "must sit between low and high");
+    }
+    return est;
+  };
+  const year = o.year;
+  if (typeof year !== "number" || !Number.isInteger(year) || year < 2000) {
+    fail(file, "year", "must be a year");
+  }
+  return {
+    year,
+    release: citation(o.release, file, "release"),
+    via: citation(o.via, file, "via"),
+    threshold: wholeCount(o.threshold, file, "threshold"),
+    areas: {
+      city: area("city"),
+      ncr: area("ncr"),
+      philippines: area("philippines"),
+    },
+  };
+}
+
+/** Where the city's operating income comes from, as `finances.yaml` lists it. */
+export const INCOME_LINES = [
+  "real-property-tax",
+  "business-tax",
+  "other-taxes",
+  "fees-and-charges",
+  "national-tax-allotment",
+  "other-national",
+] as const;
+
+/** What the city spends its operating budget on, as `finances.yaml` lists it. */
+export const SPENDING_LINES = [
+  "general-public-services",
+  "health",
+  "education",
+  "social-welfare",
+  "housing",
+  "labor",
+  "economic-services",
+  "interest",
+] as const;
+
+export type IncomeLine = (typeof INCOME_LINES)[number];
+export type SpendingLine = (typeof SPENDING_LINES)[number];
+
+/** A total and the lines it is made of, in pesos. */
+export type Breakdown<K extends string> = {
+  total: number;
+  lines: Record<K, number>;
+};
+
+/** The whole `data/stats/finances.yaml` file. Amounts are whole pesos. */
+export type Finances = {
+  year: number;
+  preliminary: boolean;
+  /** When BLGF extracted the figures (YYYY-MM-DD). */
+  extracted: string;
+  source: Citation;
+  /** BLGF's page that lists its data files. */
+  page: string;
+  income: Breakdown<IncomeLine>;
+  spending: Breakdown<SpendingLine>;
+  capitalOutlay: number;
+  loanPrincipal: number;
+  cashEnd: number;
+};
+
+function breakdown<K extends string>(
+  raw: unknown,
+  keys: readonly K[],
+  file: string,
+  at: string,
+): Breakdown<K> {
+  const b = obj(raw, file, at);
+  const total = wholeCount(b.total, file, `${at}.total`);
+  const l = obj(b.lines, file, `${at}.lines`);
+  for (const key of Object.keys(l)) {
+    if (!keys.includes(key as K)) {
+      fail(file, `${at}.lines.${key}`, `is not one of ${keys.join(", ")}`);
+    }
+  }
+  const lines = Object.fromEntries(
+    keys.map((k) => [k, wholeCount(l[k], file, `${at}.lines.${k}`)]),
+  ) as Record<K, number>;
+  const sum = keys.reduce((s, k) => s + lines[k], 0);
+  // Each line was rounded to whole pesos on its own, so allow a few pesos.
+  if (Math.abs(sum - total) > keys.length) {
+    fail(file, `${at}.total`, `is ${total}, but the lines add up to ${sum}`);
+  }
+  return { total, lines };
+}
+
+/** Checks `data/stats/finances.yaml`: every line known, and each breakdown adding up to its total. */
+export function parseFinances(raw: unknown, file: string): Finances {
+  const o = obj(raw, file, "document");
+  const year = o.year;
+  if (typeof year !== "number" || !Number.isInteger(year) || year < 2000) {
+    fail(file, "year", "must be a year");
+  }
+  if (typeof o.preliminary !== "boolean") {
+    fail(file, "preliminary", "must be true or false");
+  }
+  return {
+    year,
+    preliminary: o.preliminary,
+    extracted: isoDate(o, "extracted", file, "extracted"),
+    source: citation(o.source, file, "source"),
+    page: url(o, "page", file),
+    income: breakdown(o.income, INCOME_LINES, file, "income"),
+    spending: breakdown(o.spending, SPENDING_LINES, file, "spending"),
+    capitalOutlay: wholeCount(o["capital-outlay"], file, "capital-outlay"),
+    loanPrincipal: wholeCount(o["loan-principal"], file, "loan-principal"),
+    cashEnd: wholeCount(o["cash-end"], file, "cash-end"),
+  };
+}
