@@ -23,7 +23,10 @@ page out with shared components.
   loses the site name and share image.
 - **New routes join the sitemap.** A new main section goes in `MAIN_PAGES`
   (`components/metadata.ts`), which feeds `sitemap.ts` and `/llms.txt`; new
-  dynamic routes are added to `sitemap.ts` directly.
+  dynamic routes are added to `sitemap.ts` directly. A page search engines
+  shouldn't index goes in `robots.ts`'s disallow list instead. `sitemap_test.ts`
+  fails until a new `page.tsx` is in one of these, and checks each dynamic route
+  lists exactly the pages `generateStaticParams` builds.
 - **Machine-readable files are route handlers here**, not files in `public/`:
   `robots.ts`, `sitemap.ts`, `llms.txt/route.ts`, `humans.txt/route.ts`, and
   `news/feed.xml/route.ts`. Their copy lives in `content.ts`; the formatting is
