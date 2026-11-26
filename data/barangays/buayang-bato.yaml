@@ -31,3 +31,14 @@ sk:
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-buayang-bato/
   updated: 2026-02-20
+dilg:
+  url: https://dilg.gov.ph/barangay-officials-directory
+  retrieved: 2026-11-26
+flags:
+  - field: sk.kagawads
+    status: name-differs
+    city: Hanze Angelo N. Teodosio
+    dilg: Hanze Angelo Naeglas Teodisio
+  - field: sk.kagawads
+    status: only-in-dilg
+    dilg: Nicole Agang

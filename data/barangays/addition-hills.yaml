@@ -32,3 +32,22 @@ sk:
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-addition-hills/
   updated: 2026-02-19
+dilg:
+  url: https://dilg.gov.ph/barangay-officials-directory
+  retrieved: 2026-11-26
+flags:
+  - field: council.kagawads
+    status: not-in-dilg
+    city: Kent Gajo Faminial
+  - field: sk.kagawads
+    status: name-differs
+    city: Jewel Lhaika E Andales
+    dilg: Jewel Laika E Alvarez
+  - field: sk.kagawads
+    status: name-differs
+    city: Zach A. Andales
+    dilg: Jacob A Andales
+  - field: sk.kagawads
+    status: name-differs
+    city: Iris Nicole L. Zamira
+    dilg: Irish Nicole Ladan Zamora

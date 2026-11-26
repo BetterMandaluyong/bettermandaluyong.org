@@ -191,7 +191,9 @@ components/build.ts    Build commit SHA for the footer (set in vite.config.ts).
 components/tokens.ts   Token list for /storybook (and its test).
 islands/      Client-hydrated components ("use client"): FacebookFeed, BarangayMap.
 data/         Site data as YAML, parsed at build time: barangays/<slug>.yaml
-              (27), city-officials.yaml, and news/YYYY-MM.yaml (city news
+              (27; officials checked against DILG, with `flags` where
+              they differ), city-officials.yaml, places.yaml (map pins),
+              and news/YYYY-MM.yaml (city news
               links, one file per month, written by the news bot on the
               bot/news-data branch; see DEPLOYMENT.md). Edit the YAML, never
               generated output (except by the bot's own scripts); schema.ts

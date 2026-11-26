@@ -98,7 +98,108 @@ export type Barangay = {
   /** The city page the data came from, and its last edit date (YYYY-MM-DD). */
   sourceUrl: string;
   sourceModified: string;
+  /**
+   * When the officials were last checked against the DILG Barangay Officials
+   * Directory, and where it lives. Absent if never checked.
+   */
+  dilg?: { url: string; retrieved: string };
+  /** Where the city and DILG disagree; see `BarangayFlag`. */
+  flags: BarangayFlag[];
 };
+
+/** The official lists a flag can point at, as written in the YAML. */
+export type FlagField =
+  "council.captain" | "council.kagawads" | "sk.chair" | "sk.kagawads";
+
+/**
+ * How a name in the city's list compares with DILG's:
+ * - `changed`: the site now shows DILG's name (`dilg`); the city's is `city`.
+ * - `name-differs`: probably the same person, spelled differently; the site
+ *   keeps the city's spelling.
+ * - `different-person`: the same seat has another person in DILG's list; the
+ *   site keeps the city's.
+ * - `not-in-dilg`: a name the city lists that DILG doesn't.
+ * - `only-in-dilg`: a name DILG lists that the site doesn't show.
+ */
+export type FlagStatus =
+  | "changed"
+  | "name-differs"
+  | "different-person"
+  | "not-in-dilg"
+  | "only-in-dilg";
+
+/** One disagreement between the city's officials list and DILG's, to review. */
+export type BarangayFlag = {
+  field: FlagField;
+  status: FlagStatus;
+  /** The name as the city lists it (absent for `only-in-dilg`). */
+  city?: string;
+  /** The name as DILG lists it (absent for `not-in-dilg`). */
+  dilg?: string;
+  note?: string;
+};
+
+const FLAG_FIELDS: readonly FlagField[] = [
+  "council.captain",
+  "council.kagawads",
+  "sk.chair",
+  "sk.kagawads",
+];
+const FLAG_STATUSES: readonly FlagStatus[] = [
+  "changed",
+  "name-differs",
+  "different-person",
+  "not-in-dilg",
+  "only-in-dilg",
+];
+
+function isoDate(o: Obj, key: string, file: string, path: string): string {
+  const v = str(o, key, file, path);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(v))
+    fail(file, path, "must be a YYYY-MM-DD date");
+  return v;
+}
+
+function parseFlags(raw: unknown, file: string): BarangayFlag[] {
+  if (raw === undefined || raw === null) return [];
+  if (!Array.isArray(raw)) fail(file, "flags", "must be a list");
+  return raw.map((entry, i): BarangayFlag => {
+    const at = `flags[${i}]`;
+    const o = obj(entry, file, at);
+    const field = str(o, "field", file, `${at}.field`) as FlagField;
+    if (!FLAG_FIELDS.includes(field)) {
+      fail(file, `${at}.field`, `must be one of ${FLAG_FIELDS.join(", ")}`);
+    }
+    const status = str(o, "status", file, `${at}.status`) as FlagStatus;
+    if (!FLAG_STATUSES.includes(status)) {
+      fail(file, `${at}.status`, `must be one of ${FLAG_STATUSES.join(", ")}`);
+    }
+    const city = optStr(o, "city", file, `${at}.city`);
+    const dilg = optStr(o, "dilg", file, `${at}.dilg`);
+    if (status !== "only-in-dilg" && !city) {
+      fail(file, `${at}.city`, `is needed when status is ${status}`);
+    }
+    if (status !== "not-in-dilg" && !dilg) {
+      fail(file, `${at}.dilg`, `is needed when status is ${status}`);
+    }
+    const note = optStr(o, "note", file, `${at}.note`);
+    return {
+      field,
+      status,
+      ...(city ? { city } : {}),
+      ...(dilg ? { dilg } : {}),
+      ...(note ? { note } : {}),
+    };
+  });
+}
+
+/** The names the site shows for one flag field. */
+function namesIn(b: Barangay, field: FlagField): string[] {
+  if (field === "council.captain") return [b.captain];
+  if (field === "council.kagawads") return b.kagawads;
+  if (field === "sk.chair") return [b.skChair];
+  return b.skKagawads;
+}
 
 /**
  * Checks one barangay YAML document and returns it as a `Barangay`. `file`
@@ -125,7 +226,16 @@ export function parseBarangay(
     fail(file, "source.updated", "must be a YYYY-MM-DD date");
   }
   const email = optStr(hall, "email", file, "hall.email");
-  return {
+  let dilg: Barangay["dilg"];
+  if (o.dilg !== undefined && o.dilg !== null) {
+    const d = obj(o.dilg, file, "dilg");
+    dilg = {
+      url: url(d, "url", file, "dilg.url"),
+      retrieved: isoDate(d, "retrieved", file, "dilg.retrieved"),
+    };
+  }
+  const flags = parseFlags(o.flags, file);
+  const barangay: Barangay = {
     slug,
     name: str(o, "name", file),
     code,
@@ -147,7 +257,25 @@ export function parseBarangay(
     }),
     sourceUrl: url(source, "url", file, "source.url"),
     sourceModified: updated,
+    ...(dilg ? { dilg } : {}),
+    flags,
   };
+  // A flag must describe what the site shows: a changed name is on the page,
+  // a kept city name is on the page, and a DILG-only name isn't.
+  for (const [i, f] of flags.entries()) {
+    const shown = namesIn(barangay, f.field);
+    const want = f.status === "changed" ? f.dilg : f.city;
+    if (want && !shown.includes(want)) {
+      fail(file, `flags[${i}]`, `"${want}" is not in ${f.field}`);
+    }
+    if (f.status === "changed" && f.city && shown.includes(f.city)) {
+      fail(file, `flags[${i}]`, `"${f.city}" is still in ${f.field}`);
+    }
+    if (f.status === "only-in-dilg" && f.dilg && shown.includes(f.dilg)) {
+      fail(file, `flags[${i}]`, `"${f.dilg}" is already in ${f.field}`);
+    }
+  }
+  return barangay;
 }
 
 /** A city-level elected official and how the city publishes their contacts. */

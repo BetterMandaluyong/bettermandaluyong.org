@@ -31,3 +31,22 @@ sk:
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-pag-asa/
   updated: 2026-02-20
+dilg:
+  url: https://dilg.gov.ph/barangay-officials-directory
+  retrieved: 2026-11-26
+flags:
+  - field: council.kagawads
+    status: name-differs
+    city: Mary Julyne M. Angga
+    dilg: Mary Julyne Madrid Angga-Evangelista
+  - field: council.kagawads
+    status: name-differs
+    city: Chlarina L. Corpuz
+    dilg: Chlarina Lorino Corpus-David
+  - field: council.kagawads
+    status: not-in-dilg
+    city: David G. Vasquez
+  - field: sk.kagawads
+    status: name-differs
+    city: Jan Dee M. Camba
+    dilg: Jandee Madrid Camba

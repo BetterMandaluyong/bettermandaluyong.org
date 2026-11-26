@@ -9,6 +9,7 @@ import {
 } from "../../../components/OfficialList.tsx";
 import { PageShell } from "../../../components/PageShell.tsx";
 import { SectionHeader } from "../../../components/SectionHeader.tsx";
+import { DilgNote } from "../../../components/DilgNote.tsx";
 import { SourceNote } from "../../../components/SourceNote.tsx";
 import { BARANGAYS as COPY, SITE } from "../../../components/content.ts";
 import {
@@ -149,7 +150,12 @@ export default async function BarangayPage({ params }: Params) {
           <SourceNote
             href={barangay.sourceUrl}
             updated={formatSourceDate(barangay.sourceModified)}
-          />
+          >
+            <DilgNote
+              dilg={barangay.dilg}
+              changed={barangay.flags.some((f) => f.status === "changed")}
+            />
+          </SourceNote>
         </Container>
       </section>
 

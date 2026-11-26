@@ -31,3 +31,22 @@ sk:
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-barangka-drive/
   updated: 2024-06-06
+dilg:
+  url: https://dilg.gov.ph/barangay-officials-directory
+  retrieved: 2026-11-26
+flags:
+  - field: council.kagawads
+    status: different-person
+    city: Redan R. Faraon
+    dilg: Mark Joseph Subibe Gravador
+    note:
+      Different person in the same seat; DILG lists them as elected (1st term).
+      Check which is current.
+  - field: council.kagawads
+    status: name-differs
+    city: Kenneth L. Amante
+    dilg: Keneth Lictawa Amante
+  - field: sk.kagawads
+    status: name-differs
+    city: Darica E. Domondon
+    dilg: Danica Elison Domondon

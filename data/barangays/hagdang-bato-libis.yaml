@@ -32,3 +32,15 @@ sk:
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-hagdang-bato-libis2/
   updated: 2026-02-20
+dilg:
+  url: https://dilg.gov.ph/barangay-officials-directory
+  retrieved: 2026-11-26
+flags:
+  - field: council.kagawads
+    status: name-differs
+    city: Erizza Cate C. Sibug
+    dilg: Erriza Cate Cruz Sibug
+  - field: sk.kagawads
+    status: name-differs
+    city: Karla Angelo Villanueva
+    dilg: Karl Angelo Mejia Villanueva

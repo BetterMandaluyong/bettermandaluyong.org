@@ -32,3 +32,15 @@ sk:
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-plainview/
   updated: 2026-02-20
+dilg:
+  url: https://dilg.gov.ph/barangay-officials-directory
+  retrieved: 2026-11-26
+flags:
+  - field: council.captain
+    status: name-differs
+    city: Nerissa Y. Garcia
+    dilg: Nerrisa Yuman Garcia
+  - field: sk.kagawads
+    status: name-differs
+    city: Tristan Jay C. Woodard
+    dilg: Tristan Jay Cardio Woordard

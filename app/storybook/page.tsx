@@ -11,6 +11,7 @@ import { NewsList } from "../../components/NewsList.tsx";
 import { OfficialList } from "../../components/OfficialList.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
+import { DilgNote } from "../../components/DilgNote.tsx";
 import { SourceNote } from "../../components/SourceNote.tsx";
 import { SiteHeader } from "../../components/SiteHeader.tsx";
 import { UnofficialBar } from "../../components/UnofficialBar.tsx";
@@ -277,6 +278,21 @@ export default function StorybookPage() {
             updated="January 1, 2026"
           >
             Extra credit text goes here.
+          </SourceNote>
+        </Specimen>
+        <Specimen name="DilgNote (inside SourceNote; changed)">
+          <SourceNote
+            href="https://example.com/"
+            label="Sample source"
+            updated="January 1, 2026"
+          >
+            <DilgNote
+              dilg={{
+                url: "https://dilg.gov.ph/barangay-officials-directory",
+                retrieved: "2026-11-26",
+              }}
+              changed
+            />
           </SourceNote>
         </Specimen>
         <Specimen name="BarangayMap (island; Leaflet + OpenStreetMap tiles; city mask, places with every kind shown)">

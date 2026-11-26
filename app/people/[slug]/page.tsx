@@ -6,6 +6,7 @@ import { Flag } from "../../../components/Flag.tsx";
 import { OfficialList } from "../../../components/OfficialList.tsx";
 import { PageShell } from "../../../components/PageShell.tsx";
 import { SectionHeader } from "../../../components/SectionHeader.tsx";
+import { DilgNote } from "../../../components/DilgNote.tsx";
 import { SourceNote } from "../../../components/SourceNote.tsx";
 import {
   BARANGAYS as COPY,
@@ -149,7 +150,14 @@ export default async function PersonPage({ params }: Params) {
               <SourceNote
                 href={barangay.sourceUrl}
                 updated={formatSourceDate(barangay.sourceModified)}
-              />
+              >
+                <DilgNote
+                  dilg={barangay.dilg}
+                  changed={barangay.flags.some(
+                    (f) => f.status === "changed" && f.dilg === person.name,
+                  )}
+                />
+              </SourceNote>
             )
           )}
         </Container>

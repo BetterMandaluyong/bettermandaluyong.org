@@ -174,4 +174,20 @@ the file and field name if something is wrong. Phone numbers are lists, one
 entry per number, written as the city publishes them. Every person gets a
 `/people/<name>` page automatically (`data/people.ts`). To refresh all barangays
 from a new snapshot of mandaluyong.gov.ph, see `scripts/import_barangays.ts` (it
-overwrites the YAML files).
+overwrites the YAML files, except their `dilg` and `flags` sections).
+
+Each barangay file also records when its officials were checked against the
+[DILG Barangay Officials Directory](https://dilg.gov.ph/barangay-officials-directory)
+(`dilg`) and every place the two lists disagree (`flags`). A flag names the list
+(`council.captain`, `council.kagawads`, `sk.chair`, `sk.kagawads`), a `status`,
+and the `city` and/or `dilg` spelling:
+
+- `changed`: the site shows DILG's name (used only where DILG marks the seat as
+  filled by appointment); the city's is kept for reference.
+- `different-person`: another person holds the seat in DILG's list.
+- `name-differs`: probably the same person, spelled differently.
+- `not-in-dilg` / `only-in-dilg`: a name only one list has.
+
+Except for `changed`, the site keeps the city's name. To settle a flag, fix the
+name if needed and delete the flag; `data/schema.ts` checks that each flag still
+matches the names shown.
