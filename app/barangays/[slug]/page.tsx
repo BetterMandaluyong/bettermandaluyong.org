@@ -9,6 +9,7 @@ import {
 } from "../../../components/OfficialList.tsx";
 import { PageMasthead } from "../../../components/PageMasthead.tsx";
 import { PageShell } from "../../../components/PageShell.tsx";
+import { pageMetadata } from "../../../components/metadata.ts";
 import { SectionHeader } from "../../../components/SectionHeader.tsx";
 import { DilgNote } from "../../../components/DilgNote.tsx";
 import { SourceNote } from "../../../components/SourceNote.tsx";
@@ -42,10 +43,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const barangay = getBarangay((await params).slug);
   if (!barangay) return { title: COPY.notFoundTitle };
-  return {
+  return pageMetadata({
     title: `Barangay ${barangay.name} — ${SITE.name}`,
     description: `Barangay ${barangay.name}, Mandaluyong: its officials, contact details, council district, and approximate ZIP code.`,
-  };
+    path: `/barangays/${barangay.slug}`,
+  });
 }
 
 /**

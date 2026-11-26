@@ -17,4 +17,15 @@ page out with shared components.
   specimen there in the same change, with obviously sample data, never real
   people.
 - `globals.css` holds the design tokens. Change DESIGN.md first, then here.
+- **Metadata goes through `pageMetadata()`** (`components/metadata.ts`): it sets
+  the title, description, canonical URL, and complete Open Graph and X/Twitter
+  tags. Metadata merges shallowly, so a page that writes its own `openGraph`
+  loses the site name and share image.
+- **New routes join the sitemap.** A new main section goes in `MAIN_PAGES`
+  (`components/metadata.ts`), which feeds `sitemap.ts` and `/llms.txt`; new
+  dynamic routes are added to `sitemap.ts` directly.
+- **Machine-readable files are route handlers here**, not files in `public/`:
+  `robots.ts`, `sitemap.ts`, `llms.txt/route.ts`, `humans.txt/route.ts`, and
+  `news/feed.xml/route.ts`. Their copy lives in `content.ts`; the formatting is
+  in `utils/site/`.
 - Redirects live in `next.config.ts`, not here.

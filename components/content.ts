@@ -475,6 +475,119 @@ export const BUDGET = {
   docsUrl: "https://budget.bettergov.ph/docs",
 } as const;
 
+/**
+ * Link previews (Open Graph and X/Twitter cards). The image is the square
+ * logo seal, so cards use the "summary" layout.
+ */
+export const SHARE = {
+  image: {
+    url: "/png/logo-seal-1024.png",
+    width: 1024,
+    height: 1024,
+    alt: "The Better Mandaluyong logo, a blue and gold seal",
+  },
+  locale: "en_PH",
+  twitterCard: "summary",
+} as const;
+
+/** The RSS feed of city news links, served at `path`. */
+export const FEED = {
+  path: "/news/feed.xml",
+  title: NEWS.metaTitle,
+  description: NEWS.metaDescription,
+  language: "en-ph",
+  /** How many of the newest posts the feed lists. */
+  size: 50,
+} as const;
+
+/** Copy for `/llms.txt`, a plain-text guide to the site for AI tools (llmstxt.org). */
+export const LLMS = {
+  details: [
+    `${UNOFFICIAL.text} ${SITE.officialSiteUrl}`,
+    "Officials' names and contacts come from the City Government's public pages, checked against the DILG Barangay Officials Directory. Each page links to its source and says when it was last updated. City news items link to the city's own posts; we don't copy them.",
+    "Code is MIT-licensed. Content is CC BY-NC-ND 4.0. Work reused from other projects keeps its own license: see NOTICE.md in the repository.",
+  ],
+  pagesHeading: "Pages",
+  homeLabel: "Home",
+  barangaysHeading: "Barangays",
+  barangayLabel: (name: string) => `Barangay ${name}`,
+  barangayNote: (district: number) => districtName(district),
+  dataHeading: "Data",
+  data: [
+    {
+      label: "City news feed (RSS)",
+      path: FEED.path,
+      note: `The ${FEED.size} newest city news links`,
+    },
+    {
+      label: "Sitemap",
+      path: "/sitemap.xml",
+      note: "Every page on the site",
+    },
+    {
+      label: "Barangay boundaries (GeoJSON)",
+      path: "/data/mandaluyong-barangays.geojson",
+      note: "© OpenStreetMap contributors, ODbL 1.0",
+    },
+  ],
+  optionalHeading: "Optional",
+  optional: [
+    {
+      label: "Site data (YAML)",
+      url: `${SITE.repoUrl}/tree/main/data`,
+      note: "Barangays, officials, map places, and city news links",
+    },
+    { label: "Source code", url: SITE.repoUrl },
+    {
+      label: "Credits and licenses",
+      url: `${SITE.repoUrl}/blob/main/NOTICE.md`,
+    },
+    { label: "BetterGov.ph design system", url: BETTERGOV.designUrl },
+  ],
+} as const;
+
+/** Copy for `/humans.txt` (humanstxt.org): who builds the site, and thanks. */
+export const HUMANS = {
+  team: {
+    heading: "Team",
+    lines: [
+      { value: `${SITE.groupName} contributors` },
+      { label: "Contributors", value: `${SITE.repoUrl}/graphs/contributors` },
+      { label: "Contact", value: SITE.contactEmail },
+      { label: "Facebook", value: SITE.followUrl },
+      { label: "From", value: `${SITE.location}, Philippines` },
+    ],
+  },
+  thanks: {
+    heading: "Thanks",
+    lines: [
+      { label: "BetterGov.ph", value: BETTERGOV.url },
+      { label: "The BetterLGU sites", value: BETTERGOV.lguUrl },
+      {
+        label: "OpenStreetMap contributors",
+        value: "https://www.openstreetmap.org/copyright",
+      },
+      {
+        label: "Everyone else we credit",
+        value: `${SITE.repoUrl}/blob/main/NOTICE.md`,
+      },
+    ],
+  },
+  site: {
+    heading: "Site",
+    lines: [
+      { label: "Language", value: "English" },
+      { label: "Standards", value: "HTML, CSS, RSS 2.0, Open Graph" },
+      { label: "Components", value: "vinext, React, Tailwind CSS, Leaflet" },
+      { label: "Software", value: "Cloudflare Workers, GitHub" },
+      { label: "Design", value: BETTERGOV.designUrl },
+      { label: "Source", value: SITE.repoUrl },
+    ],
+  },
+  /** Label for the build's commit link, added when the commit is known. */
+  buildLabel: "Build",
+} as const;
+
 /** Builds a `mailto:` href for an address. */
 export function mailto(address: string): string {
   return `mailto:${address}`;

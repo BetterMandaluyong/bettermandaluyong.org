@@ -50,16 +50,43 @@ New to code, or working through an AI agent? Start with
 ## Project structure
 
 ```
-app/            Pages (App Router): layout.tsx root, page.tsx home, storybook/ catalog, globals.css = design tokens
-components/     Reusable server components + content.ts (all site copy and links)
-public/         Static assets served as-is (logo-seal.svg, logo-mark.svg, png/)
+app/            Pages (App Router): layout.tsx root, page.tsx home, storybook/ catalog,
+                globals.css = design tokens; robots.ts, sitemap.ts, and the
+                llms.txt/, humans.txt/, news/feed.xml/ route handlers
+components/     Reusable server components, content.ts (all site copy and links),
+                metadata.ts (page titles, canonicals, link previews)
+islands/        Client components ("use client"): the map, the Facebook feed
+data/           Site data as YAML (barangays, people, city officials, places, news)
+utils/          Pure, tested logic shared by pages, islands, and scripts
+public/         Static assets served as-is (logo-seal.svg, logo-mark.svg, png/, data/)
 design/         Logo generator (make_logo.py) and PNG exporter
-scripts/        setup.ts (pnpm run setup)
+scripts/        setup.ts (pnpm run setup), data importers, the news refresh
+worker/         The Cloudflare Worker entry
 .agents/skills/ Repo-level AI agent skills (plan-change, new-component, new-page)
 vite.config.ts  Build config: vinext + Tailwind + Cloudflare plugins
 cloudflare.config.ts  Cloudflare Workers config
 next.config.ts  Redirects
 ```
+
+## Feeds, link previews, and files for machines
+
+Everything below is generated from `components/content.ts` and the YAML in
+`data/`, so it stays in step with the pages. Don't add hand-written copies to
+`public/`.
+
+| URL              | What it is                                                                                          | Built by                                       |
+| ---------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| `/sitemap.xml`   | Every page: the main sections, all 27 barangays, and every person                                   | `app/sitemap.ts`                               |
+| `/robots.txt`    | Lets all crawlers in except `/storybook`, and points to the sitemap                                 | `app/robots.ts`                                |
+| `/news/feed.xml` | RSS 2.0 feed of the 50 newest city news links (removed posts link to their archive)                 | `app/news/feed.xml/route.ts`, `utils/site/`    |
+| `/llms.txt`      | A plain-text guide to the site for AI tools ([llmstxt.org](https://llmstxt.org))                    | `app/llms.txt/route.ts`, `LLMS` in content     |
+| `/humans.txt`    | Who builds the site, who we thank, and this build's commit ([humanstxt.org](https://humanstxt.org)) | `app/humans.txt/route.ts`, `HUMANS` in content |
+
+Every page also gets a canonical URL, Open Graph and X/Twitter card tags, and a
+link to the RSS feed, through `pageMetadata()` in `components/metadata.ts`. The
+share image is the logo seal (`public/png/logo-seal-1024.png`, set in `SHARE`).
+New pages should use `pageMetadata()` and, if they're a new section, join
+`MAIN_PAGES` so the sitemap and llms.txt list them.
 
 ## Documentation
 

@@ -4,6 +4,7 @@ import { Container } from "../../components/Container.tsx";
 import { OfficialList, officialItem } from "../../components/OfficialList.tsx";
 import { PageMasthead } from "../../components/PageMasthead.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
+import { pageMetadata } from "../../components/metadata.ts";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { SourceNote } from "../../components/SourceNote.tsx";
 import { BARANGAYS as COPY } from "../../components/content.ts";
@@ -23,10 +24,11 @@ import { MAP_PLACES } from "../../data/places.ts";
 import { BarangayMap } from "../../islands/BarangayMap.tsx";
 import { formatSourceDate } from "../../utils/barangays/format.ts";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: COPY.metaTitle,
   description: COPY.metaDescription,
-};
+  path: "/barangays",
+});
 
 /**
  * All 27 barangays: a full-size interactive map, the list grouped by council

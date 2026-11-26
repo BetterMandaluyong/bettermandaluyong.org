@@ -6,6 +6,7 @@ import { Flag } from "../../../components/Flag.tsx";
 import { OfficialList } from "../../../components/OfficialList.tsx";
 import { PageMasthead } from "../../../components/PageMasthead.tsx";
 import { PageShell } from "../../../components/PageShell.tsx";
+import { pageMetadata } from "../../../components/metadata.ts";
 import { SectionHeader } from "../../../components/SectionHeader.tsx";
 import { DilgNote } from "../../../components/DilgNote.tsx";
 import { SourceNote } from "../../../components/SourceNote.tsx";
@@ -23,7 +24,7 @@ import {
   CITY_OFFICIALS,
   CITY_OFFICIALS_AS_OF,
 } from "../../../data/city-officials.ts";
-import { PEOPLE, getPerson } from "../../../data/people.ts";
+import { PEOPLE, getPerson, personPath } from "../../../data/people.ts";
 import { EXTERNAL_ID_KEYS, EXTERNAL_ID_KINDS } from "../../../data/schema.ts";
 import { BarangayMap } from "../../../islands/BarangayMap.tsx";
 import { formatSourceDate } from "../../../utils/barangays/format.ts";
@@ -43,10 +44,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const person = getPerson((await params).slug);
   if (!person) return { title: PEOPLE_COPY.notFoundTitle };
-  return {
+  return pageMetadata({
     title: `${person.name} — ${SITE.name}`,
     description: PEOPLE_COPY.metaFor(person.name, roles(person)),
-  };
+    path: personPath(person),
+  });
 }
 
 /**
