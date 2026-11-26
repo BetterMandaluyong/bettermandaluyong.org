@@ -6,7 +6,13 @@
 
 /** Organization-wide facts used in metadata, header, and footer. */
 export const SITE = {
-  name: "Better Mandaluyong",
+  /**
+   * The site's name: header and footer wordmark, page titles, link previews.
+   * Written as the domain, as BetterGov.ph does.
+   */
+  name: "BetterMandaluyong.org",
+  /** The community group behind it (and its Facebook page), used in sentences. */
+  groupName: "Better Mandaluyong",
   url: "https://bettermandaluyong.org/",
   description: "Unofficial community portal for Mandaluyong residents.",
   location: "Mandaluyong City, Metro Manila",
@@ -32,10 +38,13 @@ export const NAV: NavItem[] = [
   { label: "News", href: "/news" },
 ];
 
-/** The notice that this is not the city government's site. */
+/**
+ * The notice that this is not the city government's site, shown in the top
+ * bar and the footer. The text ends with the link, then a period.
+ */
 export const UNOFFICIAL = {
-  text: "Unofficial community site, not run by the City Government of Mandaluyong.",
-  linkLabel: "Official site: mandaluyong.gov.ph",
+  text: "This is an unofficial site, not run by the City Government. For official services, visit",
+  linkLabel: "mandaluyong.gov.ph",
 } as const;
 
 /**
@@ -68,24 +77,22 @@ export type License = {
 
 /** Footer copy, links, and licenses. */
 export const FOOTER = {
-  description: "A community effort for a more livable Mandaluyong.",
-  /** Footer version of the unofficial-site notice; ends with a link. */
-  unofficial: {
-    text: "This is an unofficial site, not run by the City Government. For official services, visit",
-    linkLabel: "mandaluyong.gov.ph",
-  },
+  description:
+    "A community-run portal for Mandaluyong: barangays, officials, and city news in one place.",
+  /** The unofficial-site notice, worded the same as the top bar. */
+  unofficial: UNOFFICIAL,
   partOf: "Part of the BetterGov.ph initiative",
   /** Shown after "© <year>" in the bottom row. */
-  copyright: "Better Mandaluyong City, Metro Manila, Philippines",
+  copyright: `${SITE.name} · ${SITE.location}, Philippines`,
   columns: [
     {
-      heading: "Better Mandaluyong",
+      heading: "Get in Touch",
       links: [
         { label: "Email us", href: mailto(SITE.contactEmail) },
         { label: "Follow us on Facebook", href: SITE.followUrl },
-        { label: "Source code on GitHub", href: SITE.repoUrl },
+        { label: "Contribute on GitHub", href: SITE.repoUrl },
         { label: "Report a problem", href: `${SITE.repoUrl}/issues` },
-        { label: "Credits", href: `${SITE.repoUrl}/blob/main/NOTICE.md` },
+        { label: "View credits", href: `${SITE.repoUrl}/blob/main/NOTICE.md` },
       ],
     },
     {
@@ -120,13 +127,15 @@ export type FooterColumn = {
   links: { label: string; href: string }[];
 };
 
-/** Home (launching-soon) page copy. */
+/** Home page copy. */
 export const HOME = {
-  metaTitle: "Better Mandaluyong — Launching soon",
+  metaTitle: SITE.name,
   metaDescription:
-    "Better Mandaluyong is a community effort for a more livable Mandaluyong. Our website is launching soon.",
-  eyebrow: "Launching soon",
-  headline: "A better Mandaluyong starts with all of us.",
+    "A community-run portal for Mandaluyong, by Better Mandaluyong. Find your barangay, see who represents you, and learn how to reach them.",
+  /** Open Graph description, for link previews. */
+  shareDescription:
+    "A community-run portal for Mandaluyong: barangays, officials, and city news in one place.",
+  headline: "The community-run portal for Mandaluyong.",
   lede: "Find your barangay, see who represents you, and learn how to reach them. We're adding more tools for Mandaluyong residents over time.",
   primaryCta: "Get in touch",
   secondaryCta: "Follow updates",
@@ -142,7 +151,7 @@ function districtName(n: number): string {
  * says so; never present them as official.
  */
 export const BARANGAYS = {
-  metaTitle: "Barangays — Better Mandaluyong",
+  metaTitle: `Barangays — ${SITE.name}`,
   metaDescription:
     "A map of Mandaluyong's 27 barangays, with their officials, contact details, and approximate ZIP codes, plus the councilors and House representative who serve each one.",
   heading: "Barangays",
@@ -164,13 +173,13 @@ export const BARANGAYS = {
   backToList: "All barangays",
   openPage: "Open barangay page",
   districtLink: (n: number) => `About ${districtName(n)}`,
-  captainsHeading: "Barangay captains",
+  captainsHeading: "Barangay Captains",
   captainsIntro:
-    "The Punong Barangay of each of the 27 barangays. Open a barangay to see its whole council.",
-  skChairsHeading: "SK chairpersons",
+    "The barangay captain of each of the 27 barangays. Open a barangay to see its whole council.",
+  skChairsHeading: "SK Chairpersons",
   skChairsIntro:
     "The Sangguniang Kabataan chairperson of each barangay. Open a barangay to see its whole SK council.",
-  cityHeading: "City officials",
+  cityHeading: "City Officials",
   cityMeta: "Representative, mayor, vice mayor, and councilors",
   mapLabel:
     "Map of Mandaluyong's barangays. The list of barangays has the same information.",
@@ -179,7 +188,41 @@ export const BARANGAYS = {
     "The map couldn't load. The list of barangays has the same information.",
   mapLegend: "Council district",
   mapPopupLink: "View barangay page",
-  listHeading: "All barangays",
+  /** The map's place filters: one checkbox per kind, with a count. */
+  placesLegend: "Show on map",
+  placeKinds: {
+    "barangay-hall": "Barangay halls",
+    city: "City offices",
+    national: "National government offices",
+    police: "Police stations",
+    fire: "Fire stations",
+    rail: "MRT and LRT stations",
+  },
+  /** One place's kind, in its popup. */
+  placeKind: {
+    "barangay-hall": "Barangay hall",
+    city: "City government office",
+    national: "National government office",
+    police: "Police station",
+    fire: "Fire station",
+    rail: "Train station",
+  },
+  /** The letter on each kind's map marker, so color isn't the only cue. */
+  placeLetter: {
+    "barangay-hall": "B",
+    city: "C",
+    national: "N",
+    police: "P",
+    fire: "F",
+    rail: "T",
+  },
+  placeCount: (label: string, n: number) => `${label} (${n})`,
+  hallName: (barangay: string) => `${barangay} Barangay Hall`,
+  placeOsmLink: "View on OpenStreetMap",
+  placeGoogleLink: "View on Google Maps",
+  /** Shown in a hall's popup when its location came from Google Maps. */
+  placeFromGoogle: "Location: Google Maps",
+  listHeading: "All Barangays",
   district: (n: number) => `District ${n}`,
   zip: (zip: string) => `ZIP ${zip}`,
   zipNote:
@@ -187,15 +230,15 @@ export const BARANGAYS = {
   zipLookup: "Look up a ZIP code at PHLPost",
   districtNote:
     "Mandaluyong has two council districts. The whole city is one congressional district, so every barangay has the same House representative.",
-  repsHeading: "Who represents you",
-  repsHouseHeading: "House representative",
+  repsHeading: "Who Represents You",
+  repsHouseHeading: "House Representative",
   repsCityHeading: "Mayor and Vice Mayor",
-  councilorsHeading: (n: number) => `District ${n} councilors`,
-  hallHeading: "Barangay hall",
+  councilorsHeading: (n: number) => `District ${n} Councilors`,
+  hallHeading: "Barangay Hall",
   hallAddress: "Address",
-  councilHeading: "Barangay council",
+  councilHeading: "Barangay Council",
   skHeading: "Sangguniang Kabataan",
-  captain: "Punong Barangay",
+  captain: "Barangay Captain",
   kagawad: "Barangay Kagawad",
   skChair: "SK Chairperson",
   skKagawad: "SK Kagawad",
@@ -205,50 +248,50 @@ export const BARANGAYS = {
   repsFor: (district: number) =>
     `Your district councilors are in District ${district}.`,
   backToAll: "All barangays",
-  notFoundTitle: "Barangay not found — Better Mandaluyong",
+  notFoundTitle: `Barangay not found — ${SITE.name}`,
   source: "Source:",
   sourceLink: "City Government of Mandaluyong",
   lastUpdated: (date: string) => `Last updated by the city on ${date}.`,
   mapCredit:
-    "Barangay boundaries and map data: © OpenStreetMap contributors (ODbL). Map tiles: © CARTO. Barangay codes: PSA.",
+    "Barangay boundaries, the city outline, and government places: © OpenStreetMap contributors (ODbL), except three barangay hall locations from Google Maps. Map tiles: © CARTO. Barangay codes: PSA.",
 } as const;
 
 /** Copy for the people pages (`/people` and `/people/<name>`). */
 export const PEOPLE_COPY = {
-  metaTitle: "People — Better Mandaluyong",
+  metaTitle: `People — ${SITE.name}`,
   metaDescription:
     "Mandaluyong's elected officials: the House representative, mayor, vice mayor, city councilors, and every barangay's officials, with contact details where the city publishes them.",
   heading: "People",
   intro:
     "The elected officials of Mandaluyong, from the House representative to each barangay's Sangguniang Kabataan. Contact details are the ones the City Government publishes.",
-  cityHeading: "City officials",
+  cityHeading: "City Officials",
   barangayHeading: (name: string) => `Barangay ${name}`,
-  notFoundTitle: "Person not found — Better Mandaluyong",
+  notFoundTitle: `Person not found — ${SITE.name}`,
   metaFor: (name: string, role: string) =>
     `${name}, ${role} in Mandaluyong: position, barangay or district, and how to reach them.`,
-  contactHeading: "How to reach them",
+  contactHeading: "How to Reach Them",
   position: "Position",
   barangay: "Barangay",
   district: "Council district",
   wholeCity: "Serves the whole city",
   hallNote:
     "These are the barangay hall's contacts. The City Government doesn't publish personal contacts for barangay officials.",
-  hallHeading: "Barangay hall",
+  hallHeading: "Barangay Hall",
   seeBarangay: (name: string) => `See all of Barangay ${name}`,
   allPeople: "All people",
 } as const;
 
 /** Copy for the districts page. */
 export const DISTRICTS_COPY = {
-  metaTitle: "Districts — Better Mandaluyong",
+  metaTitle: `Districts — ${SITE.name}`,
   metaDescription:
     "Mandaluyong's two council districts: which barangays are in each, and the city councilors who represent them. The whole city is one congressional district.",
   heading: "Districts",
   intro:
     "Mandaluyong has two council districts. Each elects city councilors to the Sangguniang Panlungsod. For Congress the whole city is a single district, so one representative serves everyone.",
-  houseHeading: "One congressional district",
+  houseHeading: "One Congressional District",
   barangays: (n: number, count: number) =>
-    `${districtName(n)} · ${count} barangays`,
+    `${districtName(n)} · ${count} Barangays`,
   mapLabel: (n: number) => `${districtName(n)} on the map`,
 } as const;
 
@@ -257,10 +300,10 @@ export const NEWS_HISTORY_URL = `${SITE.repoUrl}/commits/main/data/news`;
 
 /** Copy for the city news page, the news list, and the Facebook island. */
 export const NEWS = {
-  metaTitle: "City news — Better Mandaluyong",
+  metaTitle: `City News — ${SITE.name}`,
   metaDescription:
     "Official announcements from the City Government of Mandaluyong, linked from an unofficial community site.",
-  heading: "City news",
+  heading: "City News",
   intro:
     "Official announcements from the City Government of Mandaluyong. We link to the city's posts; we don't copy them.",
   archived: "Archived copy",
@@ -278,7 +321,7 @@ export const NEWS = {
   facebookShow: "Show Facebook posts",
   facebookNote: "Loads content from Facebook, which may set cookies.",
   facebookLink: "See all posts on Facebook",
-  latestHeading: "Latest from the City",
+  latestHeading: "News from the City Hall",
   latestLink: "All city news",
 } as const;
 

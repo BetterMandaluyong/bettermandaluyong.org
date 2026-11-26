@@ -6,6 +6,7 @@ import { Button } from "../components/Button.tsx";
 import { Flag } from "../components/Flag.tsx";
 import { BARANGAYS, mailto } from "../components/content.ts";
 import type { Barangay, MapBarangay } from "../data/barangays.ts";
+import type { MapPlace } from "../data/places.ts";
 import { parsePhones } from "../utils/barangays/phone.ts";
 import { hrefKey } from "../utils/barangays/keys.ts";
 import { searchBarangays } from "../utils/barangays/search.ts";
@@ -117,7 +118,7 @@ function BarangayDetail({
           <PersonRow
             name={b.captain}
             role={BARANGAYS.captain}
-            href={href("Punong Barangay", b.captain)}
+            href={href(BARANGAYS.captain, b.captain)}
           />
           {b.kagawads.map((name) => (
             <PersonRow
@@ -171,18 +172,22 @@ function BarangayDetail({
  * Cards are ordinary links to `/barangays/<slug>`, so the list works before
  * JavaScript loads and without it; with JavaScript a plain click selects
  * instead. Props: `barangays` (all of them), `hrefs` (person links, keyed by
- * `hrefKey` from utils/barangays/keys.ts), `geojsonUrl`, and `initialSelected` (a slug from the address).
+ * `hrefKey` from utils/barangays/keys.ts), `geojsonUrl`, `initialSelected` (a
+ * slug from the address), and `places` (government places for the map, with
+ * filters under it).
  */
 export function BarangayExplorer({
   barangays,
   hrefs,
   geojsonUrl,
   initialSelected,
+  places,
 }: {
   barangays: readonly Barangay[];
   hrefs: Record<string, string>;
   geojsonUrl: string;
   initialSelected?: string;
+  places?: readonly MapPlace[];
 }) {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<string | null>(
@@ -245,6 +250,7 @@ export function BarangayExplorer({
           hovered={hovered}
           onSelect={select}
           height="fill"
+          places={places}
         />
       </div>
       <div className="flex h-[32rem] min-h-0 flex-col border border-ed-rule bg-white lg:col-span-2 lg:h-full">

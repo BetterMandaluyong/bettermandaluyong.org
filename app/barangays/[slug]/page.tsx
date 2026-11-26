@@ -10,7 +10,7 @@ import {
 import { PageShell } from "../../../components/PageShell.tsx";
 import { SectionHeader } from "../../../components/SectionHeader.tsx";
 import { SourceNote } from "../../../components/SourceNote.tsx";
-import { BARANGAYS as COPY } from "../../../components/content.ts";
+import { BARANGAYS as COPY, SITE } from "../../../components/content.ts";
 import {
   BARANGAYS,
   BOUNDARIES_URL,
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const barangay = getBarangay((await params).slug);
   if (!barangay) return { title: COPY.notFoundTitle };
   return {
-    title: `Barangay ${barangay.name} — Better Mandaluyong`,
+    title: `Barangay ${barangay.name} — ${SITE.name}`,
     description: `Barangay ${barangay.name}, Mandaluyong: its officials, contact details, council district, and approximate ZIP code.`,
   };
 }

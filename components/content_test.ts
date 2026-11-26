@@ -1,7 +1,86 @@
 import { describe, expect, it } from "vitest";
-import { BETTERGOV, FOOTER, NAV, SITE, UNOFFICIAL, mailto } from "./content.ts";
+import {
+  BARANGAYS,
+  BETTERGOV,
+  DISTRICTS_COPY,
+  FOOTER,
+  NAV,
+  NEWS,
+  PEOPLE_COPY,
+  SITE,
+  UNOFFICIAL,
+  mailto,
+} from "./content.ts";
+
+/** Short words that stay lowercase inside a Title Case heading. */
+const SMALL_WORDS = new Set([
+  "a",
+  "an",
+  "and",
+  "as",
+  "at",
+  "by",
+  "for",
+  "from",
+  "in",
+  "of",
+  "on",
+  "or",
+  "the",
+  "to",
+]);
+
+/** True when every word is capitalized, except small words after the first. */
+function isTitleCase(heading: string): boolean {
+  return heading
+    .split(/\s+/)
+    .filter((word) => /^[a-z]/i.test(word))
+    .every(
+      (word, i) => /^[A-Z]/.test(word) || (i > 0 && SMALL_WORDS.has(word)),
+    );
+}
 
 describe("content", () => {
+  it("names the site after its domain", () => {
+    expect(SITE.url).toBe(`https://${SITE.name.toLowerCase()}/`);
+    expect(SITE.groupName).toBe("Better Mandaluyong");
+    expect(FOOTER.copyright.startsWith(SITE.name)).toBe(true);
+  });
+
+  it("writes every section heading in Title Case", () => {
+    const headings = [
+      ...FOOTER.columns.map((c) => c.heading),
+      BARANGAYS.heading,
+      BARANGAYS.exploreHeading,
+      BARANGAYS.captainsHeading,
+      BARANGAYS.skChairsHeading,
+      BARANGAYS.cityHeading,
+      BARANGAYS.listHeading,
+      BARANGAYS.repsHeading,
+      BARANGAYS.repsHouseHeading,
+      BARANGAYS.repsCityHeading,
+      BARANGAYS.councilorsHeading(1),
+      BARANGAYS.hallHeading,
+      BARANGAYS.councilHeading,
+      BARANGAYS.skHeading,
+      PEOPLE_COPY.heading,
+      PEOPLE_COPY.cityHeading,
+      PEOPLE_COPY.barangayHeading("Hulo"),
+      PEOPLE_COPY.contactHeading,
+      PEOPLE_COPY.hallHeading,
+      DISTRICTS_COPY.heading,
+      DISTRICTS_COPY.houseHeading,
+      DISTRICTS_COPY.barangays(1, 14),
+      NEWS.heading,
+      NEWS.facebookHeading,
+      NEWS.latestHeading,
+    ];
+    for (const heading of headings)
+      expect(isTitleCase(heading), heading).toBe(true);
+    expect(isTitleCase("Barangay captains")).toBe(false);
+    expect(isTitleCase("News from the City Hall")).toBe(true);
+  });
+
   it("builds a mailto href", () => {
     expect(mailto(SITE.contactEmail)).toBe(
       "mailto:hello@bettermandaluyong.org",
@@ -52,10 +131,12 @@ describe("content", () => {
   });
 
   it("says plainly that the site is unofficial", () => {
-    expect(UNOFFICIAL.text).toContain("Unofficial");
+    expect(UNOFFICIAL.text).toContain("unofficial");
     expect(UNOFFICIAL.linkLabel.trim()).not.toBe("");
-    expect(FOOTER.unofficial.text).toContain("unofficial");
-    expect(FOOTER.unofficial.linkLabel.trim()).not.toBe("");
+  });
+
+  it("words the top bar and the footer notice the same", () => {
+    expect(FOOTER.unofficial).toBe(UNOFFICIAL);
   });
 
   it("links the footer to the BetterGov.ph Discord and Facebook", () => {

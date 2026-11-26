@@ -21,6 +21,7 @@ import {
   MAP_BARANGAYS,
 } from "../../data/barangays.ts";
 import { BARANGAY_PERSON_HREFS } from "../../data/people.ts";
+import { MAP_PLACES, PLACE_KINDS } from "../../data/places.ts";
 import { BarangayExplorer } from "../../islands/BarangayExplorer.tsx";
 import { BarangayMap } from "../../islands/BarangayMap.tsx";
 import { FacebookFeed } from "../../islands/FacebookFeed.tsx";
@@ -28,7 +29,7 @@ import type { NewsItem } from "../../data/schema.ts";
 import { COLOR_TOKENS, TYPE_UTILITIES } from "../../components/tokens.ts";
 
 export const metadata: Metadata = {
-  title: "Storybook — Better Mandaluyong",
+  title: `Storybook — ${SITE.name}`,
   description: "Design tokens and components used on bettermandaluyong.org.",
   robots: { index: false, follow: false },
 };
@@ -169,8 +170,8 @@ export default function StorybookPage() {
           <Specimen key={utility.name} name={utility.name}>
             <p className={`${utility.name} m-0`}>
               {utility.name === "type-label"
-                ? "Launching soon"
-                : "A better Mandaluyong starts with all of us."}
+                ? "Explore Mandaluyong"
+                : HOME.headline}
             </p>
             <p className="type-ui m-0 mt-1 text-ed-ink-3">{utility.role}</p>
           </Specimen>
@@ -195,7 +196,7 @@ export default function StorybookPage() {
         <Specimen name="Flag (default, navy, red, outline)">
           <div className="flex flex-wrap gap-3">
             <Flag>Draft</Flag>
-            <Flag variant="navy">{HOME.eyebrow}</Flag>
+            <Flag variant="navy">New</Flag>
             <Flag variant="red">Advisory</Flag>
             <Flag variant="outline">Archived</Flag>
           </div>
@@ -208,7 +209,7 @@ export default function StorybookPage() {
           </div>
         </Specimen>
         <Specimen name="SectionHeader (with meta)">
-          <SectionHeader label="Barangay directory" meta="27 barangays" />
+          <SectionHeader label="Barangay Directory" meta="27 barangays" />
         </Specimen>
         <Specimen name="Card (plain, linked)">
           <div className="grid gap-4 md:grid-cols-2">
@@ -249,7 +250,7 @@ export default function StorybookPage() {
           <OfficialList
             label="Sample council"
             items={[
-              { name: "Sample Person One", role: "Punong Barangay" },
+              { name: "Sample Person One", role: "Barangay Captain" },
               { name: "Sample Person Two", role: "Barangay Kagawad" },
             ]}
           />
@@ -278,10 +279,12 @@ export default function StorybookPage() {
             Extra credit text goes here.
           </SourceNote>
         </Specimen>
-        <Specimen name="BarangayMap (island; Leaflet + OpenStreetMap tiles)">
+        <Specimen name="BarangayMap (island; Leaflet + OpenStreetMap tiles; city mask, places with every kind shown)">
           <BarangayMap
             geojsonUrl={BOUNDARIES_URL}
             barangays={MAP_BARANGAYS}
+            places={MAP_PLACES}
+            defaultPlaceKinds={PLACE_KINDS}
             height="short"
           />
         </Specimen>
@@ -290,6 +293,7 @@ export default function StorybookPage() {
             barangays={BARANGAYS}
             hrefs={BARANGAY_PERSON_HREFS}
             geojsonUrl={BOUNDARIES_URL}
+            places={MAP_PLACES}
           />
         </Specimen>
       </Band>

@@ -7,7 +7,11 @@ import { OfficialList } from "../../../components/OfficialList.tsx";
 import { PageShell } from "../../../components/PageShell.tsx";
 import { SectionHeader } from "../../../components/SectionHeader.tsx";
 import { SourceNote } from "../../../components/SourceNote.tsx";
-import { BARANGAYS as COPY, PEOPLE_COPY } from "../../../components/content.ts";
+import {
+  BARANGAYS as COPY,
+  PEOPLE_COPY,
+  SITE,
+} from "../../../components/content.ts";
 import {
   BOUNDARIES_URL,
   MAP_BARANGAYS,
@@ -32,7 +36,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const person = getPerson((await params).slug);
   if (!person) return { title: PEOPLE_COPY.notFoundTitle };
   return {
-    title: `${person.name} — Better Mandaluyong`,
+    title: `${person.name} — ${SITE.name}`,
     description: PEOPLE_COPY.metaFor(person.name, person.role),
   };
 }

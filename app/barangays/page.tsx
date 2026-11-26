@@ -18,6 +18,7 @@ import {
   REPRESENTATIVE,
   councilorsFor,
 } from "../../data/city-officials.ts";
+import { MAP_PLACES } from "../../data/places.ts";
 import { BarangayMap } from "../../islands/BarangayMap.tsx";
 import { formatSourceDate } from "../../utils/barangays/format.ts";
 
@@ -48,7 +49,11 @@ export default function BarangaysPage() {
 
       <section className="border-b border-ed-rule">
         <Container className="py-12 md:py-16">
-          <BarangayMap geojsonUrl={BOUNDARIES_URL} barangays={MAP_BARANGAYS} />
+          <BarangayMap
+            geojsonUrl={BOUNDARIES_URL}
+            barangays={MAP_BARANGAYS}
+            places={MAP_PLACES}
+          />
           <SourceNote>{COPY.mapCredit}</SourceNote>
         </Container>
       </section>

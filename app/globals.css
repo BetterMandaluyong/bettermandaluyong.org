@@ -163,8 +163,52 @@
   }
 }
 
-/* OpenStreetMap tiles are busy and yellow; mute them and tint toward navy. */
-.map-tiles-blue {
-  filter: grayscale(1) contrast(0.8) brightness(1.12) sepia(0.6)
-    hue-rotate(185deg) saturate(2.2);
+/*
+ * Government place markers on BarangayMap, also used as swatches in its
+ * filters: squares with a letter, so color isn't the only cue. The white
+ * border separates a marker from the map under it.
+ */
+.map-marker-icon {
+  background: none;
+  border: 0;
+}
+
+.map-marker {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--color-ed-paper);
+  background: var(--color-ed-navy);
+  color: var(--color-ed-paper);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.map-marker-city {
+  background: var(--color-ed-navy-ink);
+}
+
+.map-marker-national {
+  border-color: var(--color-ed-navy-ink);
+  background: var(--color-ed-paper);
+  color: var(--color-ed-navy-ink);
+}
+
+.map-marker-police {
+  background: var(--color-ed-ink);
+}
+
+/* Fire stations are emergency services: the one use of red here. */
+.map-marker-fire {
+  background: var(--color-ed-red);
+}
+
+.map-marker-rail {
+  background: var(--color-ed-ink-2);
 }

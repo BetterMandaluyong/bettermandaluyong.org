@@ -1,9 +1,12 @@
 import cityOfficialsRaw from "./city-officials.yaml";
+import placesRaw from "./places.yaml";
 import {
   parseBarangay,
   parseCityOfficials,
+  parsePlaces,
   type Barangay,
   type CityOfficials,
+  type Place,
 } from "./schema.ts";
 
 // Vite reads and parses every YAML file at build time (vite-plugins/yaml.ts).
@@ -25,4 +28,11 @@ export const LOADED_BARANGAYS: Barangay[] = Object.entries(barangayFiles)
 export const LOADED_CITY_OFFICIALS: CityOfficials = parseCityOfficials(
   cityOfficialsRaw,
   "data/city-officials.yaml",
+);
+
+/** `data/places.yaml`, validated against the barangay files. */
+export const LOADED_PLACES: Place[] = parsePlaces(
+  placesRaw,
+  "data/places.yaml",
+  new Set(LOADED_BARANGAYS.map((b) => b.slug)),
 );
