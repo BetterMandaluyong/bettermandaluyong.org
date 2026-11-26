@@ -40,3 +40,4 @@ Thumbs.db
 
 # Local scrape cache for the site audit (docs/site-audit/, never committed)
 .cache/
+d1-news.json

@@ -221,3 +221,150 @@ export function parseCityOfficials(raw: unknown, file: string): CityOfficials {
     councilors,
   };
 }
+
+/** Where a news post's archived copy stands. */
+export type NewsArchive = {
+  /** "ok", or "http <code>" for the last failed save request. */
+  status: string;
+  /** The Wayback Machine capture, once there is one. */
+  url: string | null;
+  /** When the item left the archive queue; null while it is still queued after a transient failure. */
+  requestedAt: string | null;
+  /** Transient save failures so far. */
+  attempts: number;
+};
+
+/**
+ * One City Government news post. Link-only: never carries article text.
+ * Loaded from `data/news/YYYY-MM.yaml`, where YYYY-MM is the Manila month of
+ * `publishedAt`. Written by `scripts/news_refresh.ts`.
+ */
+export type NewsItem = {
+  /** The post's WordPress ID. */
+  id: number;
+  url: string;
+  title: string;
+  /** ISO 8601 in Manila time (+08:00). */
+  publishedAt: string;
+  categories: string[];
+  /** When this site first saw the post (Manila time). */
+  firstSeenAt: string;
+  archive: NewsArchive | null;
+  /** First failed "is it still live?" check; null while the post is live. */
+  missingSince: string | null;
+  /** Set by the second failed check; null while the post is live. */
+  removedAt: string | null;
+};
+
+const MANILA_ISO = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+08:00$/;
+
+function manilaIso(o: Obj, key: string, file: string, path = key): string {
+  const v = str(o, key, file, path);
+  if (!MANILA_ISO.test(v) || Number.isNaN(Date.parse(v))) {
+    fail(
+      file,
+      path,
+      "must be a Manila-time ISO date like 2026-11-25T14:00:00+08:00",
+    );
+  }
+  return v;
+}
+
+function optManilaIso(
+  o: Obj,
+  key: string,
+  file: string,
+  path = key,
+): string | null {
+  return o[key] === undefined || o[key] === null
+    ? null
+    : manilaIso(o, key, file, path);
+}
+
+const CITY_URL = /^https:\/\/(www\.)?mandaluyong\.gov\.ph\//;
+
+/**
+ * Checks one `data/news/YYYY-MM.yaml` document (a list of posts) and returns
+ * the items. `month` is the file's name without `.yaml`; every post must have
+ * been published in that Manila month, and ids must be unique.
+ */
+export function parseNewsFile(
+  raw: unknown,
+  file: string,
+  month: string,
+): NewsItem[] {
+  if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(month)) {
+    fail(file, "file name", "must be YYYY-MM.yaml");
+  }
+  if (!Array.isArray(raw)) fail(file, "document", "must be a list of posts");
+  const seen = new Set<number>();
+  return raw.map((entry, i): NewsItem => {
+    const at = `[${i}]`;
+    const o = obj(entry, file, at);
+    const id = o.id;
+    if (typeof id !== "number" || !Number.isInteger(id) || id < 1) {
+      fail(file, `${at}.id`, "must be a positive whole number");
+    }
+    if (seen.has(id)) fail(file, `${at}.id`, `${id} appears twice`);
+    seen.add(id);
+    const link = str(o, "url", file, `${at}.url`);
+    if (!CITY_URL.test(link)) {
+      fail(file, `${at}.url`, "must be a link on mandaluyong.gov.ph");
+    }
+    const publishedAt = manilaIso(
+      o,
+      "published_at",
+      file,
+      `${at}.published_at`,
+    );
+    if (!publishedAt.startsWith(month)) {
+      fail(file, `${at}.published_at`, `is not in ${month}`);
+    }
+    let archive: NewsArchive | null = null;
+    if (o.archive !== undefined && o.archive !== null) {
+      const a = obj(o.archive, file, `${at}.archive`);
+      const archiveUrl = optStr(a, "url", file, `${at}.archive.url`) ?? null;
+      if (
+        archiveUrl !== null &&
+        !archiveUrl.startsWith("https://web.archive.org/")
+      ) {
+        fail(file, `${at}.archive.url`, "must be a web.archive.org link");
+      }
+      const attempts = a.attempts ?? 0;
+      if (
+        typeof attempts !== "number" ||
+        !Number.isInteger(attempts) ||
+        attempts < 0
+      ) {
+        fail(file, `${at}.archive.attempts`, "must be a whole number");
+      }
+      archive = {
+        status: str(a, "status", file, `${at}.archive.status`),
+        url: archiveUrl,
+        requestedAt: optManilaIso(
+          a,
+          "requested_at",
+          file,
+          `${at}.archive.requested_at`,
+        ),
+        attempts,
+      };
+    }
+    return {
+      id,
+      url: link,
+      title: str(o, "title", file, `${at}.title`),
+      publishedAt,
+      categories: strList(o, "categories", file, `${at}.categories`),
+      firstSeenAt: manilaIso(o, "first_seen_at", file, `${at}.first_seen_at`),
+      archive,
+      missingSince: optManilaIso(
+        o,
+        "missing_since",
+        file,
+        `${at}.missing_since`,
+      ),
+      removedAt: optManilaIso(o, "removed_at", file, `${at}.removed_at`),
+    };
+  });
+}

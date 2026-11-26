@@ -64,3 +64,8 @@ export function parseWpPosts(
   }
   return items;
 }
+
+/** Build the URL for the 100 most recently published posts, newest first, so a run can catch up on posts the RSS feed has already dropped. */
+export function wpRecentUrl(): string {
+  return `${BASE}/posts?per_page=100&page=1&orderby=date&order=desc&_fields=id,link,title,date,categories`;
+}

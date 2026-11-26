@@ -247,6 +247,9 @@ export const DISTRICTS_COPY = {
   mapLabel: (n: number) => `${districtName(n)} on the map`,
 } as const;
 
+/** Where the news record's change history lives: every bot commit to `data/news` is one run. */
+export const NEWS_HISTORY_URL = `${SITE.repoUrl}/commits/main/data/news`;
+
 /** Copy for the city news page, the news list, and the Facebook island. */
 export const NEWS = {
   metaTitle: "City news — Better Mandaluyong",
@@ -257,7 +260,10 @@ export const NEWS = {
     "Official announcements from the City Government of Mandaluyong. We link to the city's posts; we don't copy them.",
   archived: "Archived copy",
   removed: "Removed from the city site",
-  empty: "News will appear here after the first update.",
+  historyNote:
+    "We check the city's site every few hours. Every change we record, including posts the city later takes down, is kept in public history.",
+  historyLink: "See the history on GitHub",
+  empty: "No news has been recorded yet.",
   noPage: "No posts here.",
   backToFirst: "Back to the latest news",
   newer: "Newer",
@@ -269,21 +275,6 @@ export const NEWS = {
   facebookLink: "See all posts on Facebook",
   latestHeading: "Latest from the City",
   latestLink: "All city news",
-} as const;
-
-/** Copy for the status page and the StatusLine component. */
-export const STATUS = {
-  metaTitle: "Status — Better Mandaluyong",
-  heading: "Status",
-  intro: "Whether our automatic updates are working.",
-  lines: { feed: "City news feed", archive: "Archiving" },
-  states: {
-    working: "Working",
-    "not-working": "Not working",
-    "not-checked": "Not checked recently",
-  },
-  lastSuccess: "Last successful:",
-  never: "No successful run yet",
 } as const;
 
 /** Builds a `mailto:` href for an address. */

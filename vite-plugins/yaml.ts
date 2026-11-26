@@ -1,5 +1,9 @@
 import { parse } from "yaml";
-import { parseBarangay, parseCityOfficials } from "../data/schema.ts";
+import {
+  parseBarangay,
+  parseCityOfficials,
+  parseNewsFile,
+} from "../data/schema.ts";
 
 /**
  * Converts the source of a `.yaml` file into an ES module whose default
@@ -33,6 +37,9 @@ export function validateData(path: string, data: unknown): void {
     parseBarangay(data, `data/barangays/${barangay[1]}.yaml`, barangay[1]);
   } else if (/(?:^|\/)data\/city-officials\.yaml$/.test(path)) {
     parseCityOfficials(data, "data/city-officials.yaml");
+  } else {
+    const news = path.match(/(?:^|\/)data\/news\/([^/]+)\.yaml$/);
+    if (news) parseNewsFile(data, `data/news/${news[1]}.yaml`, news[1]);
   }
 }
 

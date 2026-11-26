@@ -1,23 +1,30 @@
 import { describe, expect, it } from "vitest";
 import {
   archiveLink,
-  formatManilaDateTime,
   formatNewsDate,
   itemLink,
   NEWS_PER_PAGE,
   parseListParams,
 } from "./display.ts";
-import type { NewsRow } from "./store.ts";
+import type { NewsItem } from "../../data/schema.ts";
 
-const row = (over: Partial<NewsRow> = {}): NewsRow => ({
+const archived = (url: string | null = null, status = "ok") => ({
+  status,
+  url,
+  requestedAt: "2026-10-28T08:00:00+08:00",
+  attempts: 0,
+});
+
+const row = (over: Partial<NewsItem> = {}): NewsItem => ({
   id: 1,
   url: "https://mandaluyong.gov.ph/a",
   title: "A",
   publishedAt: "2026-10-27T11:08:46+08:00",
   categories: [],
+  firstSeenAt: "2026-10-27T12:00:00+08:00",
+  archive: null,
+  missingSince: null,
   removedAt: null,
-  waybackStatus: null,
-  waybackUrl: null,
   ...over,
 });
 
@@ -73,42 +80,29 @@ describe("formatNewsDate", () => {
   });
 });
 
-describe("formatManilaDateTime", () => {
-  it("formats date and time in Manila time", () => {
-    expect(formatManilaDateTime("2026-11-25T12:07:00Z")).toBe(
-      "November 25, 2026, 8:07 PM",
-    );
-  });
-
-  it("rolls the date over in Manila time", () => {
-    expect(formatManilaDateTime("2026-10-31T17:30:00Z")).toBe(
-      "November 1, 2026, 1:30 AM",
-    );
-  });
-});
-
 describe("archiveLink and itemLink", () => {
   it("returns the stored wayback URL", () => {
-    const r = row({ waybackStatus: "ok", waybackUrl: "https://w/1" });
+    const r = row({ archive: archived("https://w/1") });
     expect(archiveLink(r)).toBe("https://w/1");
   });
 
   it("builds a wayback URL when ok but none is stored", () => {
-    expect(archiveLink(row({ waybackStatus: "ok" }))).toBe(
+    expect(archiveLink(row({ archive: archived() }))).toBe(
       "https://web.archive.org/web/https://mandaluyong.gov.ph/a",
     );
   });
 
   it("returns null without an archive", () => {
     expect(archiveLink(row())).toBeNull();
-    expect(archiveLink(row({ waybackStatus: "failed" }))).toBeNull();
+    expect(
+      archiveLink(row({ archive: archived(null, "http 403") })),
+    ).toBeNull();
   });
 
   it("links to the archive for removed items that have one", () => {
     const r = row({
       removedAt: "2026-11-01T00:00:00+08:00",
-      waybackStatus: "ok",
-      waybackUrl: "https://w/1",
+      archive: archived("https://w/1"),
     });
     expect(itemLink(r)).toBe("https://w/1");
   });
@@ -120,9 +114,9 @@ describe("archiveLink and itemLink", () => {
   });
 
   it("links to the original for normal items", () => {
-    expect(
-      itemLink(row({ waybackStatus: "ok", waybackUrl: "https://w/1" })),
-    ).toBe("https://mandaluyong.gov.ph/a");
+    expect(itemLink(row({ archive: archived("https://w/1") }))).toBe(
+      "https://mandaluyong.gov.ph/a",
+    );
   });
 });
 
@@ -130,6 +124,5 @@ describe("invalid dates", () => {
   it("format to an empty string instead of throwing", () => {
     expect(formatNewsDate("garbage")).toBe("");
     expect(formatNewsDate("")).toBe("");
-    expect(formatManilaDateTime("garbage")).toBe("");
   });
 });

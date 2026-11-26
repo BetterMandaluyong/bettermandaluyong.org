@@ -1,18 +1,4 @@
-import { bindings, defineConfig, defineWorker, triggers } from "cf/config";
-
-// Same strings as utils/news/schedule.ts, written out here on purpose: importing
-// that file from both this config and worker/index.ts breaks `pnpm dev` (the
-// Cloudflare Vite plugin cannot serve a module the config loader already
-// loaded). utils/news/schedule_test.ts fails if the two drift apart.
-const FEED_CRON = "7 */3 * * *";
-const ARCHIVE_CRON = "37 */3 * * *";
-const REMOVAL_CRON = "37 2 * * *";
-
-// `vinext-cloudflare previews deploy` sets this while it evaluates this config.
-// Worker Previews reject any `triggers` ("Preview uploads from Build Output
-// don't support the `triggers` field"), and a Preview never runs cron jobs
-// anyway, so only production deploys get the schedules.
-const isPreviewBuild = process.env.CLOUDFLARE_PREVIEW_BUILD === "true";
+import { bindings, defineConfig, defineWorker } from "cf/config";
 
 // Worker config for bettermandaluyong.org. Deployed by `pnpm run deploy`
 // (vinext-cloudflare deploy) — see DEPLOYMENT.md. Keep accountId out of here.
@@ -36,15 +22,6 @@ export default defineConfig({
     },
     env: {
       ASSETS: bindings.assets(),
-      DB: bindings.d1({ name: "bettermandaluyong-news" }),
     },
-    // News jobs (see worker/index.ts), all UTC. None on Preview builds.
-    triggers: isPreviewBuild
-      ? []
-      : [
-          triggers.scheduled({ schedule: FEED_CRON }),
-          triggers.scheduled({ schedule: ARCHIVE_CRON }),
-          triggers.scheduled({ schedule: REMOVAL_CRON }),
-        ],
   }),
 });

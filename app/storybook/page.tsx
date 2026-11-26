@@ -12,7 +12,6 @@ import { OfficialList } from "../../components/OfficialList.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { SourceNote } from "../../components/SourceNote.tsx";
-import { StatusLine } from "../../components/StatusLine.tsx";
 import { SiteHeader } from "../../components/SiteHeader.tsx";
 import { UnofficialBar } from "../../components/UnofficialBar.tsx";
 import { HOME, SITE, mailto } from "../../components/content.ts";
@@ -25,7 +24,7 @@ import { BARANGAY_PERSON_HREFS } from "../../data/people.ts";
 import { BarangayExplorer } from "../../islands/BarangayExplorer.tsx";
 import { BarangayMap } from "../../islands/BarangayMap.tsx";
 import { FacebookFeed } from "../../islands/FacebookFeed.tsx";
-import type { NewsRow } from "../../utils/news/store.ts";
+import type { NewsItem } from "../../data/schema.ts";
 import { COLOR_TOKENS, TYPE_UTILITIES } from "../../components/tokens.ts";
 
 export const metadata: Metadata = {
@@ -35,36 +34,49 @@ export const metadata: Metadata = {
 };
 
 /** Obviously sample rows for the NewsList specimen; never real city posts. */
-const SAMPLE_NEWS: NewsRow[] = [
+const SAMPLE_NEWS: NewsItem[] = [
   {
     id: 1,
     url: "https://example.com/sample-1",
     title: "Sample: city announcement headline",
-    publishedAt: "2026-01-15T02:00:00.000Z",
+    publishedAt: "2026-01-15T10:00:00+08:00",
     categories: ["Sample category"],
+    firstSeenAt: "2026-01-15T11:00:00+08:00",
+    archive: null,
+    missingSince: null,
     removedAt: null,
-    waybackStatus: null,
-    waybackUrl: null,
   },
   {
     id: 2,
     url: "https://example.com/sample-2",
     title: "Sample: city announcement headline (with an archived copy)",
-    publishedAt: "2026-01-10T02:00:00.000Z",
+    publishedAt: "2026-01-10T10:00:00+08:00",
     categories: ["Sample category", "Another sample"],
+    firstSeenAt: "2026-01-10T11:00:00+08:00",
+    archive: {
+      status: "ok",
+      url: "https://example.com/sample-archive",
+      requestedAt: "2026-01-16T10:00:00+08:00",
+      attempts: 0,
+    },
+    missingSince: null,
     removedAt: null,
-    waybackStatus: "ok",
-    waybackUrl: "https://example.com/sample-archive",
   },
   {
     id: 3,
     url: "https://example.com/sample-3",
     title: "Sample: city announcement headline (removed)",
-    publishedAt: "2026-01-05T02:00:00.000Z",
+    publishedAt: "2026-01-05T10:00:00+08:00",
     categories: ["Sample category"],
-    removedAt: "2026-01-20T02:00:00.000Z",
-    waybackStatus: "ok",
-    waybackUrl: "https://example.com/sample-archive-removed",
+    firstSeenAt: "2026-01-05T11:00:00+08:00",
+    archive: {
+      status: "ok",
+      url: "https://example.com/sample-archive-removed",
+      requestedAt: "2026-01-16T10:00:00+08:00",
+      attempts: 0,
+    },
+    missingSince: "2026-01-19T10:00:00+08:00",
+    removedAt: "2026-01-20T10:00:00+08:00",
   },
 ];
 
@@ -223,30 +235,6 @@ export default function StorybookPage() {
         </Specimen>
         <Specimen name="NewsList (compact)">
           <NewsList items={SAMPLE_NEWS} compact />
-        </Specimen>
-        <Specimen name="StatusLine (working, not working, not checked, never)">
-          <div className="border-t border-ed-rule">
-            <StatusLine
-              label="Sample line"
-              state="working"
-              lastSuccessAt="2026-01-15T12:07:00.000Z"
-            />
-            <StatusLine
-              label="Sample line"
-              state="not-working"
-              lastSuccessAt="2026-01-14T04:30:00.000Z"
-            />
-            <StatusLine
-              label="Sample line"
-              state="not-checked"
-              lastSuccessAt="2026-01-10T23:45:00.000Z"
-            />
-            <StatusLine
-              label="Sample line"
-              state="not-checked"
-              lastSuccessAt={null}
-            />
-          </div>
         </Specimen>
         <Specimen name="FacebookFeed (island; loads nothing until tapped)">
           <FacebookFeed pageUrl={SITE.cityPioFacebookUrl} />
