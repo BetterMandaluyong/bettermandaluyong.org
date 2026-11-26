@@ -11,6 +11,7 @@ import {
   PEOPLE_COPY,
   SITE,
   UNOFFICIAL,
+  VOLUNTEER,
   mailto,
 } from "./content.ts";
 
@@ -79,6 +80,7 @@ describe("content", () => {
       DISTRICTS_COPY.houseHeading,
       DISTRICTS_COPY.barangays(1, 14),
       NEWS.heading,
+      VOLUNTEER.heading,
       NEWS.facebookHeading,
       NEWS.latestHeading,
       BUDGET.heading,
@@ -165,6 +167,16 @@ describe("content", () => {
     const hrefs = FOOTER.columns.flatMap((c) => c.links.map((l) => l.href));
     expect(hrefs).toContain(BETTERGOV.discordUrl);
     expect(hrefs).toContain(BETTERGOV.facebookUrl);
+  });
+
+  it("sends volunteers to BetterGov.ph's volunteer page and Discord", () => {
+    expect(VOLUNTEER.primary.href).toBe(BETTERGOV.volunteerUrl);
+    expect(VOLUNTEER.secondary.href).toBe(BETTERGOV.discordUrl);
+    expect(VOLUNTEER.roles.length).toBeGreaterThan(0);
+    for (const { role, description } of VOLUNTEER.roles) {
+      expect(role.trim()).not.toBe("");
+      expect(description.trim()).not.toBe("");
+    }
   });
 
   it("labels every license link", () => {

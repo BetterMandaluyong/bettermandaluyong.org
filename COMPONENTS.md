@@ -25,7 +25,7 @@ spacing and layout; `cx` doesn't merge conflicting Tailwind classes.
 
 `components/PageShell.tsx`: the frame every page uses. Full-width bands:
 `UnofficialBar`, `SiteHeader`, `<main id="main-content">` (the skip link's
-target), `SiteFooter`.
+target), `VolunteerBand`, `SiteFooter`.
 
 ```tsx
 <PageShell>
@@ -72,6 +72,17 @@ site. Copy is `UNOFFICIAL` and `SITE.officialSiteUrl` in `content.ts`, the same
 wording the footer uses. Thin: notice and link flow inline (one line on desktop,
 wrapping in place on phones); the link's padding gives a 44px tap target without
 thickening the bar.
+
+### `VolunteerBand` (BetterGov)
+
+`components/VolunteerBand.tsx`: the volunteer call to action, rendered by
+`PageShell` above the footer on every page (adapted from BetterGov's home page
+`BetterGovMovement`). A light `ed-paper-2` band (BetterGov's is navy, which
+would merge into our footer): a navy `Eyebrow`, a display-face `<h2>`, a short
+paragraph, a solid `Button` to BetterGov.ph's volunteer page and a ghost one to
+its Discord, beside a hairline `<dl>` grid of the kinds of help wanted (two
+across from `sm`, stacked on phones). No props; copy and links are `VOLUNTEER`
+in `content.ts`, so adding a role is a one-line edit there.
 
 ### `SiteHeader` / `SiteFooter` (BetterGov)
 

@@ -61,6 +61,8 @@ export const BETTERGOV = {
   lguUrl: "https://lgu.bettergov.ph/",
   /** Community links, as listed on about.bettergov.ph. */
   discordUrl: "https://discord.gg/bettergovph",
+  /** Open volunteer tasks across BetterGov.ph projects, filtered by role. */
+  volunteerUrl: "https://about.bettergov.ph/volunteer/",
   facebookUrl: "https://www.facebook.com/bettergovph",
   /**
    * White horizontal logo for navy backgrounds (4:1). WebP, as the guide asks;
@@ -127,6 +129,60 @@ export type FooterColumn = {
   heading: string;
   links: { label: string; href: string }[];
 };
+
+/** A kind of help the volunteer band asks for. */
+export type VolunteerRole = {
+  /** Short role name, e.g. "Translators". */
+  role: string;
+  /** One line on what that help looks like. */
+  description: string;
+};
+
+/**
+ * The volunteer call to action shown above the footer on every page
+ * (`VolunteerBand`). Signing up happens on BetterGov.ph's volunteer page and
+ * Discord; we don't run a form of our own.
+ */
+export const VOLUNTEER = {
+  eyebrow: "Volunteers welcome",
+  heading: "Help Build a Better Mandaluyong",
+  body: `${SITE.name} is community-run and part of the BetterGov.ph movement. There's room for every skill, and you don't need to have worked in government.`,
+  primary: {
+    label: "Volunteer with BetterGov.ph",
+    href: BETTERGOV.volunteerUrl,
+  },
+  secondary: {
+    label: "Join the BetterGov.ph Discord",
+    href: BETTERGOV.discordUrl,
+  },
+  rolesLabel: "Ways to help",
+  roles: [
+    {
+      role: "Writers and content creators",
+      description: "Explain city news, budgets, and services in plain words.",
+    },
+    {
+      role: "Marketing and outreach",
+      description: "Help residents find the site and share what's on it.",
+    },
+    {
+      role: "Translators",
+      description: "Bring pages to readers in Filipino and other languages.",
+    },
+    {
+      role: "Developers",
+      description: "Build features and fix bugs in the open on GitHub.",
+    },
+    {
+      role: "Designers",
+      description: "Make pages clearer and easier to use on a phone.",
+    },
+    {
+      role: "Researchers",
+      description: "Check officials, contacts, and public records.",
+    },
+  ] satisfies VolunteerRole[],
+} as const;
 
 /** Home page copy. */
 export const HOME = {

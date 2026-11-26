@@ -22,6 +22,7 @@ import { SourceNote } from "../../components/SourceNote.tsx";
 import { SiteHeader } from "../../components/SiteHeader.tsx";
 import { StatList } from "../../components/StatList.tsx";
 import { UnofficialBar } from "../../components/UnofficialBar.tsx";
+import { VolunteerBand } from "../../components/VolunteerBand.tsx";
 import { HOME, SITE, mailto } from "../../components/content.ts";
 import {
   BARANGAYS,
@@ -383,6 +384,9 @@ export default function StorybookPage() {
         </Specimen>
         <Specimen name="SiteHeader (logo + nav)">
           <SiteHeader />
+        </Specimen>
+        <Specimen name="VolunteerBand (also above the footer on every page)">
+          <VolunteerBand />
         </Specimen>
         <Specimen name="NewsList (full)">
           <NewsList items={SAMPLE_NEWS} />
