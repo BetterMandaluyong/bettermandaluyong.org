@@ -24,6 +24,6 @@
 - [ ] New/changed logic ships with tests in this change
 - [ ] `pnpm check` passes
 - [ ] `pnpm test` passes
-- [ ] Branch is `feat/…` / `fix/…` / `chore/…` / `docs/…`; a human reviews and
-      merges — never push or merge `main` directly (`main` deploys)
+- [ ] Opened from a branch, not `main`; a human reviews and merges — never push
+      or merge `main` directly (`main` deploys)
 - [ ] Commits carry **no** `Co-Authored-By` / "Generated with …" AI trailers
