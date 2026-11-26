@@ -129,6 +129,26 @@ Worker no longer reads. To keep that history:
 `node scripts/import_news.ts --backfill` rebuilds `data/news/` from the city's
 WordPress API; it only adds posts that are not in the files yet.
 
+### Budget snapshot
+
+The `/budget` page reads `data/budget/fy2027.yaml` and `data/budget/gaa.yaml`, a
+snapshot of the [BetterGov.ph Budget API](https://budget.bettergov.ph/docs) for
+the place, region and district in `data/budget/scope.yaml`. There is no bot yet;
+refresh it by hand on a branch when the budget moves (the Senate version, the
+enacted 2027 GAA) or the API's data changes:
+
+```sh
+node scripts/budget_refresh.ts
+```
+
+It needs no keys. It exits non-zero, writing nothing, if a 2020–2026 search
+doesn't add up to the API's own total, if a list is suspiciously large, or if
+`scope.yaml` excludes a line the API no longer returns. An unchanged snapshot
+isn't rewritten. Review the diff (new or dropped lines, changed amounts) and
+open a PR like any other change. To leave out a line that isn't Mandaluyong's (a
+namesake), add it to `exclude` in `scope.yaml` with a reason, then rerun; the
+page publishes the reason.
+
 ### Custom domain
 
 The Worker serves `bettermandaluyong.org` as a custom domain (`domains` in

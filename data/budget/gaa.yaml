@@ -1,0 +1,2113 @@
+# Written by scripts/budget_refresh.ts from the BetterGov.ph Budget API
+# (https://budget.bettergov.ph/docs). Don't edit by hand: change
+# data/budget/scope.yaml and run the script. See DEPLOYMENT.md.
+fetched_at: 2026-11-26
+years:
+  - 2020
+  - 2021
+  - 2022
+  - 2023
+  - 2024
+  - 2025
+  - 2026
+departments:
+  "14": Department of the Interior and Local Government (DILG)
+  "18": Department of Public Works and Highways (DPWH)
+  "36": Allocations to Local Government Units (ALGU)
+  "08": State Universities and Colleges (SUCs)
+programs:
+  - key: 08-006|on  grid solar power installation at dr josefina estolas building rtu mandaluyong campus
+    department: "08"
+    name: On - Grid Solar Power Installation at Dr. Josefina Estolas Building, RTU Mandaluyong Campus
+    amounts:
+      "2023": 25000000
+  - key: 14-002|acquisition of fire trucks  mandaluyong city
+    department: "14"
+    name: Acquisition of Fire Trucks - Mandaluyong City
+    amounts:
+      "2022": 50000000
+  - key: 14-002|acquisition of firetrucks  mandaluyong city
+    department: "14"
+    name: Acquisition of Firetrucks - Mandaluyong City
+    amounts:
+      "2021": 120000000
+  - key: 18-001|completion of multi purpose building and other facilities at highway hills integrated school mandaluyong
+    department: "18"
+    name: Completion of Multi Purpose Building and other facilities at Highway Hills Integrated School, Mandaluyong
+    amounts:
+      "2020": 30000000
+  - key: 18-001|completion of multipurpose building sanctuary center welfareville compound brgy addition hills mandaluyong
+    department: "18"
+    name: Completion of Multi-Purpose Building (Sanctuary Center), Welfareville Compound, Brgy. Addition Hills, Mandaluyong
+    amounts:
+      "2020": 10000000
+  - key: 18-001|construcion completion of multipurpose building including facilities barangay bagong silang mandaluyong city phase 3
+    department: "18"
+    name: Construcion (Completion) of Multi-Purpose Building including facilities, Barangay Bagong Silang, Mandaluyong City, Phase 3
+    amounts:
+      "2025": 20000000
+  - key: 18-001|construction  completion  of academic building of mandaluyong college of science  technology addition hills mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Academic Building of Mandaluyong College of Science & Technology, Addition Hills, Mandaluyong City
+    amounts:
+      "2024": 20000000
+  - key: 18-001|construction  completion  of covered court at doh  ncr at barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Covered Court at DOH - NCR at Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2024": 20000000
+  - key: 18-001|construction  completion  of covered court at mandaluyong high school at barangay poblacion mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Covered Court at Mandaluyong High School at Barangay Poblacion, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction  completion  of multi  purpose building  10  storey library building with basement  at rizal technical university package 1 malamig mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi -  Purpose Building  ( 10 - storey Library Building, with basement )  at Rizal Technical University Package 1, Malamig, Mandaluyong City
+    amounts:
+      "2024": 100000000
+  - key: 18-001|construction  completion  of multi  purpose building  10  storey library building with basement  at rizal technical university package 2 malamig mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building  ( 10 - storey Library Building, with basement )  at Rizal Technical University Package 2, Malamig, Mandaluyong City
+    amounts:
+      "2024": 100000000
+  - key: 18-001|construction  completion  of multi  purpose building  als building   barangay mauway mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building  ( ALS Building ) , Barangay Mauway, Mandaluyong City
+    amounts:
+      "2024": 5000000
+  - key: 18-001|construction  completion  of multi  purpose building  cistern  including upgrading of electrical facilities at dona pilar gonzaga elementary school mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building  ( Cistern )  including Upgrading of Electrical Facilities at Dona Pilar Gonzaga Elementary School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction  completion  of multi  purpose building  cistern  including upgrading of electrical facilities at pedro p cruz elementary school mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building  ( Cistern )  including Upgrading of Electrical Facilities at Pedro P. Cruz Elementary School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction  completion  of multi  purpose building  emergency complex  at the national center for mental health mauway mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building  ( Emergency Complex )  at the National Center for Mental Health, Mauway, Mandaluyong City
+    amounts:
+      "2024": 25000000
+  - key: 18-001|construction  completion  of multi  purpose building  warehouse  at doh  ncr barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building  ( Warehouse )  at DOH - NCR, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2024": 25000000
+  - key: 18-001|construction  completion  of multi  purpose building at barangay wack wack package 5 mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building at Barangay Wack Wack package 5, Mandaluyong City
+    amounts:
+      "2024": 100000000
+  - key: 18-001|construction  completion  of multi  purpose building at barangka ilaya barangka ilaya mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building at Barangka Ilaya, Barangka Ilaya, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction  completion  of multi  purpose building at highway hills integrated school mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building at Highway Hills Integrated School, Mandaluyong City
+    amounts:
+      "2024": 20000000
+  - key: 18-001|construction  completion  of multi  purpose building at national center for mental health barangay mauway mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building at National Center for Mental Health, Barangay Mauway, Mandaluyong City
+    amounts:
+      "2024": 15000000
+  - key: 18-001|construction  completion  of multi  purpose building at soco at barangay mauway mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building at SOCO at Barangay Mauway, Mandaluyong City
+    amounts:
+      "2024": 15000000
+  - key: 18-001|construction  completion  of multi  purpose building including facilities mandaluyong city college mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building including Facilities, Mandaluyong City College, Mandaluyong City
+    amounts:
+      "2024": 25000000
+  - key: 18-001|construction  completion  of multi  purpose building including ground improvement and upgrading of electrical facilities at commision on population  popcom  at barangay addition hills mandaluyong city
+    department: "18"
+    name: "Construction  ( Completion )  of Multi - Purpose Building including Ground Improvement and Upgrading of Electrical Facilities at Commision on Population   ( POPCOM )  at Barangay Addition Hills, Mandaluyong City "
+    amounts:
+      "2024": 25000000
+  - key: 18-001|construction  completion  of multi  purpose building including site development at senate president neptali a gonzales integrated school mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi - Purpose Building including Site Development at Senate President Neptali A. Gonzales Integrated School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction  completion  of multi purpose building  sanitary and ducting works  at mandaluyong college of science and technology barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Multi Purpose Building  ( Sanitary and Ducting Works )  at Mandaluyong College of Science and Technology, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2024": 20000000
+  - key: 18-001|construction  completion  of multi purpose building at barangay plainview mandaluyong city  phase 3
+    department: "18"
+    name: Construction  ( Completion )  of Multi Purpose Building at Barangay Plainview, Mandaluyong City -  Phase 3
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction  completion  of philippine national police and bureau of fire department building at barangay plainview mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Philippine National Police and Bureau of Fire Department Building at Barangay Plainview, Mandaluyong City
+    amounts:
+      "2024": 50000000
+  - key: 18-001|construction  completion  of research and development building at the national center for mental health barangay mauway mandaluyong city
+    department: "18"
+    name: Construction  ( Completion )  of Research and Development Building at the National Center for Mental Health, Barangay Mauway, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction andor repairrehabilitation of multipurpose building brgy addition hills mandaluyong city
+    department: "18"
+    name: Construction and/or Repair/Rehabilitation of Multi-Purpose Building, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 5000000
+  - key: 18-001|construction completion mataas na paaralang neptali a gonzales building mandaluyong city
+    department: "18"
+    name: Construction (Completion) Mataas na Paaralang Neptali A. Gonzales Building, Mandaluyong City
+    amounts:
+      "2020": 30000000
+      "2021": 24900000
+  - key: 18-001|construction completion of 4storey multipurpose building front barangay hagdan bato itaas including site development mandaluyong city
+    department: "18"
+    name: Construction (Completion) of 4-Storey, Multi-purpose Building (Front), Barangay Hagdan Bato Itaas, including site development, Mandaluyong City
+    amounts:
+      "2020": 20000000
+      "2021": 6400000
+  - key: 18-001|construction completion of 4storey multipurpose building middle barangay hagdan bato itaas including site development mandaluyong city
+    department: "18"
+    name: Construction (Completion) of 4-Storey, Multi-purpose Building (Middle), Barangay Hagdan Bato Itaas, including site development, Mandaluyong City
+    amounts:
+      "2020": 5000000
+  - key: 18-001|construction completion of 6storey 18 classroom school building at mandaluyong high school barangay poblacion mandaluyong city
+    department: "18"
+    name: Construction (Completion) of 6-Storey, 18 Classroom School Building at Mandaluyong High School, Barangay Poblacion, Mandaluyong City
+    amounts:
+      "2020": 25000000
+      "2021": 8000000
+  - key: 18-001|construction completion of bureau of fire and pnp building at maysilo complex barangay plainview city of mandaluyong
+    department: "18"
+    name: Construction (Completion) of Bureau of Fire and PNP Building at Maysilo Complex Barangay Plainview, City of Mandaluyong
+    amounts:
+      "2026": 100000000
+  - key: 18-001|construction completion of bureau of fire protection and pnp building at city hall complex barangay plainview mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Bureau of Fire Protection and PNP Building at City Hall Complex Barangay Plainview, Mandaluyong City
+    amounts:
+      "2025": 70000000
+  - key: 18-001|construction completion of emergency complex at national center for mental health barangay mauway mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Emergency Complex at National Center for Mental Health, Barangay Mauway, Mandaluyong City
+    amounts:
+      "2025": 25000000
+  - key: 18-001|construction completion of four 4 storey twelve 12 classroom school building renato lopez elementary school sc id 136662 brgy mabini j rizal mandaluyong city
+    department: "18"
+    name: "Construction (Completion) of Four (4) Storey Twelve (12) Classroom School Building, Renato Lopez Elementary School, (SC ID: 136662), Brgy. Mabini J. Rizal, Mandaluyong City"
+    amounts:
+      "2026": 35000000
+  - key: 18-001|construction completion of justice hall annex at barangay plainview mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Justice Hall Annex at Barangay Plainview, Mandaluyong City
+    amounts:
+      "2020": 10000000
+  - key: 18-001|construction completion of mandaluyong city college barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Mandaluyong City College, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 10000000
+  - key: 18-001|construction completion of mandaluyong city college complex mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Mandaluyong City College Complex, Mandaluyong City
+    amounts:
+      "2020": 50000000
+      "2021": 42500000
+  - key: 18-001|construction completion of mandaluyong city college gymnasium at barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction  (Completion) of Mandaluyong City College Gymnasium at Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 25000000
+  - key: 18-001|construction completion of mandaluyong city college including upgrading of electrical facilities and site development mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Mandaluyong City College including Upgrading of Electrical Facilities and Site Development, Mandaluyong City
+    amounts:
+      "2022": 30000000
+  - key: 18-001|construction completion of mandaluyong city jail security  automation mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Mandaluyong City Jail (Security & Automation), Mandaluyong City
+    amounts:
+      "2020": 35000000
+      "2021": 29750000
+  - key: 18-001|construction completion of multi level building at andres bonifacio integrated school mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi Level Building at Andres Bonifacio Integrated School, Mandaluyong City
+    amounts:
+      "2025": 60000000
+  - key: 18-001|construction completion of multi purpose building at barangay mauway mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building at Barangay Mauway, Mandaluyong City
+    amounts:
+      "2022": 24000000
+  - key: 18-001|construction completion of multi purpose building at barangay vergara mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building at Barangay Vergara, Mandaluyong City
+    amounts:
+      "2022": 10000000
+  - key: 18-001|construction completion of multi purpose building at block 37 barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building at Block 37 Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2023": 3000000
+  - key: 18-001|construction completion of multi purpose building at brgy barangka ilaya mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building at Brgy. Barangka Ilaya, Mandaluyong City
+    amounts:
+      "2022": 20000000
+  - key: 18-001|construction completion of multi purpose building at mandaluyong high school mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building at Mandaluyong High School, Mandaluyong City
+    amounts:
+      "2023": 10000000
+  - key: 18-001|construction completion of multi purpose building at senate president neptali gonzales integrated school mauway mandaluyong
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building at Senate President Neptali Gonzales Integrated School, Mauway, Mandaluyong
+    amounts:
+      "2022": 12000000
+  - key: 18-001|construction completion of multi purpose building cottage near als building including site development at national center for mental health mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building (Cottage near ALS Building) including site development at National Center for Mental Health, Mandaluyong City
+    amounts:
+      "2023": 3000000
+  - key: 18-001|construction completion of multi purpose building including site development at barangay namayan mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building including Site development at Barangay Namayan, Mandaluyong City
+    amounts:
+      "2023": 3000000
+  - key: 18-001|construction completion of multi purpose building including upgrading of electrical facilities at andres bonifacio integrated school mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building including Upgrading of Electrical Facilities at Andres Bonifacio Integrated School, Mandaluyong City
+    amounts:
+      "2023": 10000000
+  - key: 18-001|construction completion of multi purpose building including upgrading of electrical facilities at sanctuary dswd ncr barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building including Upgrading of Electrical Facilities at Sanctuary DSWD NCR Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2023": 10000000
+  - key: 18-001|construction completion of multi purpose building mortuary at barangay mauway mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building (Mortuary) at Barangay Mauway, Mandaluyong City
+    amounts:
+      "2025": 15000000
+  - key: 18-001|construction completion of multi purpose building national center for mental health barangay mauway mandaluyong 14583272 121042015
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building, National Center for Mental Health Barangay Mauway, Mandaluyong, 14.583272, 121.042015
+    amounts:
+      "2026": 10000000
+  - key: 18-001|construction completion of multi purpose building pharmacy storage at national center for mental health barangay mauway package 2 mandaluyong 14582799 121043185
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building (Pharmacy Storage) at National Center for Mental Health Barangay Mauway Package 2, Mandaluyong, 14.582799, 121.043185
+    amounts:
+      "2026": 10000000
+  - key: 18-001|construction completion of multi purpose building sports complex  offices along nueve de febrero at barangay mauway mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi Purpose Building (Sports complex & Offices) along Nueve de Febrero at Barangay Mauway, Mandaluyong City
+    amounts:
+      "2025": 10000000
+  - key: 18-001|construction completion of multipurpose building  covered court near fabella road at barangay mauway city of mandaluyong 14579238 121039325
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building ( Covered Court) near Fabella Road at Barangay Mauway, City of Mandaluyong, 14.579238, 121.039325
+    amounts:
+      "2026": 10000000
+  - key: 18-001|construction completion of multipurpose building  division office deped barangay highway hills mandaluyong city 14581935 121049289
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building , Division Office (DEPED) Barangay Highway Hills, Mandaluyong City, 14.581935, 121.049289
+    amounts:
+      "2026": 10000000
+  - key: 18-001|construction completion of multipurpose building alternative learning systems mandaluyong city
+    department: "18"
+    name: Construction (Completion) of  Multi-Purpose Building (Alternative Learning Systems), Mandaluyong City
+    amounts:
+      "2023": 5956000
+  - key: 18-001|construction completion of multipurpose building and upgrading of electrical facilities at barangay mabinijrizal mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building and Upgrading of Electrical Facilities at Barangay Mabini-J.Rizal, Mandaluyong City
+    amounts:
+      "2025": 10000000
+  - key: 18-001|construction completion of multipurpose building and upgrading of electrical facilities at nayon ng kabataan dswd ncr at barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building and Upgrading of Electrical Facilities at Nayon ng Kabataan DSWD NCR at Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2025": 15000000
+  - key: 18-001|construction completion of multipurpose building at amado t reyes elementary school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Amado T. Reyes Elementary School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 10000000
+  - key: 18-001|construction completion of multipurpose building at andres bonifacio integrated school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Andres Bonifacio Integrated School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at ayala housing barangay barangka drive mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Ayala Housing, Barangay Barangka Drive, Mandaluyong City
+    amounts:
+      "2023": 5000000
+  - key: 18-001|construction completion of multipurpose building at barangay barangka ilaya mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Barangay Barangka Ilaya, Mandaluyong City
+    amounts:
+      "2023": 25000000
+  - key: 18-001|construction completion of multipurpose building at barangay mabini  j rizal mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Barangay Mabini - J. Rizal, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at barangay mauway mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Barangay Mauway, Mandaluyong City
+    amounts:
+      "2025": 25000000
+  - key: 18-001|construction completion of multipurpose building at barangay plainview mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Barangay Plainview, Mandaluyong City
+    amounts:
+      "2023": 20000000
+      "2025": 30000000
+  - key: 18-001|construction completion of multipurpose building at barangay wack wack package 4 mandaluyong city
+    department: "18"
+    name: "Construction (Completion) of Multi-Purpose Building at Barangay Wack Wack Package 4, Mandaluyong City "
+    amounts:
+      "2023": 100000000
+  - key: 18-001|construction completion of multipurpose building at barangay wackwack city of mandaluyong 14585639 121049063
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Barangay WackWack, City of Mandaluyong, 14.585639, 121.049063
+    amounts:
+      "2026": 70000000
+  - key: 18-001|construction completion of multipurpose building at barangay wackwack package 3 mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Barangay Wack-wack, Package 3, Mandaluyong City
+    amounts:
+      "2023": 100000000
+  - key: 18-001|construction completion of multipurpose building at barangay wackwack package 6 mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Barangay Wack-Wack, Package 6, Mandaluyong City
+    amounts:
+      "2025": 80000000
+  - key: 18-001|construction completion of multipurpose building at barangay wackwack package 7 mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Barangay WackWack Package 7, Mandaluyong City
+    amounts:
+      "2025": 100000000
+  - key: 18-001|construction completion of multipurpose building at barangka ilaya mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Barangka Ilaya, Mandaluyong City
+    amounts:
+      "2025": 10000000
+  - key: 18-001|construction completion of multipurpose building at bonifacio javier national high school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Bonifacio Javier National High School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at division of city schools at barangay highway hills mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Division of City Schools at Barangay Highway Hills, Mandaluyong City
+    amounts:
+      "2022": 30000000
+  - key: 18-001|construction completion of multipurpose building at doa basilisa yangco elementary school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Do±a Basilisa Yangco Elementary School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 10000000
+  - key: 18-001|construction completion of multipurpose building at doa pilar c gonzaga elementary school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Do±a Pilar C. Gonzaga Elementary School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 8000000
+  - key: 18-001|construction completion of multipurpose building at eulogio rodriguez integrated school including upgrading of electrical facilities and site development mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Eulogio Rodriguez Integrated School including upgrading of electrical facilities and site development, Mandaluyong City
+    amounts:
+      "2022": 20000000
+  - key: 18-001|construction completion of multipurpose building at highway hills integrated school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Highway Hills Integrated School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at hulo integrated school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Hulo Integrated School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at ilaya barangka integrated school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Ilaya Barangka Integrated School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 8000000
+  - key: 18-001|construction completion of multipurpose building at isaac lopez integrated school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Isaac Lopez Integrated School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at jose fabella memorial school barangay addition hills mandaluyong city
+    department: "18"
+    name: " Construction (Completion) of Multipurpose Building at Jose Fabella Memorial School Barangay Addition Hills, Mandaluyong City"
+    amounts:
+      "2022": 6000000
+  - key: 18-001|construction completion of multipurpose building at jose fabella memorial school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Jose Fabella Memorial School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at mandaluyong city college mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Mandaluyong City College, Mandaluyong City
+    amounts:
+      "2023": 50000000
+  - key: 18-001|construction completion of multipurpose building at mandaluyong city science high school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Mandaluyong City Science High School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at mandaluyong city science high school mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Mandaluyong City Science High School, Mandaluyong City
+    amounts:
+      "2025": 10000000
+  - key: 18-001|construction completion of multipurpose building at mandaluyong elementary school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Mandaluyong Elementary School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at mandaluyong high school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Mandaluyong High School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at mandaluyong high school mandaluyong city
+    department: "18"
+    name: "Construction (Completion) of Multi-Purpose Building at Mandaluyong High School, Mandaluyong City "
+    amounts:
+      "2023": 10000000
+  - key: 18-001|construction completion of multipurpose building at mataas na paaralang neptali a gonzales including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Mataas na Paaralang Neptali A. Gonzales including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 12000000
+  - key: 18-001|construction completion of multipurpose building at nueve de pebrero elementary school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Nueve de Pebrero Elementary School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 8000000
+  - key: 18-001|construction completion of multipurpose building at pedro p cruz elementary school mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Pedro P. Cruz Elementary School, Mandaluyong City
+    amounts:
+      "2022": 20000000
+  - key: 18-001|construction completion of multipurpose building at plainview elementary school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Plainview Elementary School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at pleasant hills elementary school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Pleasant Hills Elementary School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 10000000
+  - key: 18-001|construction completion of multipurpose building at renato lopez elementary school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Renato Lopez Elementary School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at rizal technological university mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Rizal Technological University, Mandaluyong City
+    amounts:
+      "2020": 5000000
+  - key: 18-001|construction completion of multipurpose building at sanctuary center dswd at welfareville compound barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Sanctuary Center DSWD at Welfareville Compound, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2025": 5000000
+  - key: 18-001|construction completion of multipurpose building at sanctuary dswdncr at barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Sanctuary DSWD-NCR at Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building at saniboy health center brgy hulo mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building at Saniboy Health Center, Brgy. Hulo, Mandaluyong City
+    amounts:
+      "2020": 7000000
+  - key: 18-001|construction completion of multipurpose building at senate president neptali a gonzalez integrated school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building at Senate President Neptali A. Gonzalez Integrated School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 20000000
+  - key: 18-001|construction completion of multipurpose building bahay pangarap tuluyan package 3 barangay mauway mandaluyong city 14580519 121038280
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building, Bahay Pangarap (Tuluyan), Package 3, Barangay Mauway, Mandaluyong City, 14.580519, 121.038280
+    amounts:
+      "2026": 10000000
+  - key: 18-001|construction completion of multipurpose building barangay hall and health center at barangay barangka ilaya mandaluyong city 14569212 121044819
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building (Barangay Hall and Health Center) at Barangay Barangka Ilaya, Mandaluyong City, 14.569212, 121.044819
+    amounts:
+      "2026": 15000000
+  - key: 18-001|construction completion of multipurpose building barangay mauway mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-purpose Building, Barangay Mauway, Mandaluyong City
+    amounts:
+      "2020": 25000000
+      "2021": 8000000
+  - key: 18-001|construction completion of multipurpose building bureau of jail management and penology bjmp at mandaluyong city including fencing and site development mandaluyong city
+    department: "18"
+    name: " Construction (Completion) of Multipurpose Building (Bureau of Jail Management and Penology, BJMP) at Mandaluyong City, including Fencing and Site Development, Mandaluyong City"
+    amounts:
+      "2022": 25000000
+  - key: 18-001|construction completion of multipurpose building city of mandaluyong science high school barangay hulo mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building, City of Mandaluyong Science High School, Barangay Hulo, Mandaluyong City
+    amounts:
+      "2020": 7000000
+  - key: 18-001|construction completion of multipurpose building covered court at barangay bagong silang package 4 city of mandaluyong 14591224 121030174
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building (Covered Court) at Barangay Bagong Silang Package 4, City of Mandaluyong, 14.591224, 121.030174
+    amounts:
+      "2026": 20000000
+  - key: 18-001|construction completion of multipurpose building covered court at block 5 barangay mauway mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building (Covered Court) at Block 5, Barangay Mauway, Mandaluyong City
+    amounts:
+      "2025": 12000000
+  - key: 18-001|construction completion of multipurpose building covered court at dohncr at barangay addition hills mandaluyong city
+    department: "18"
+    name: "Construction (Completion) of Multi-Purpose Building (Covered Court) at DOH-NCR at Barangay Addition Hills, Mandaluyong City "
+    amounts:
+      "2023": 50000000
+  - key: 18-001|construction completion of multipurpose building covered court at mandaluyong high school mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building (Covered Court) at Mandaluyong High School, Mandaluyong City
+    amounts:
+      "2023": 10000000
+  - key: 18-001|construction completion of multipurpose building covered court including site development senate president neptali gonzales integrated school sc id 502026 brgy mauway mandaluyong city
+    department: "18"
+    name: "Construction (Completion) of Multi-Purpose Building (Covered Court) including Site Development, Senate President Neptali Gonzales Integrated School, (SC ID: 502026), Brgy. Mauway, Mandaluyong City"
+    amounts:
+      "2026": 10000000
+  - key: 18-001|construction completion of multipurpose building evacuation center at barangay old zaniga including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building (Evacuation Center) at Barangay Old Zaniga including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 40000000
+  - key: 18-001|construction completion of multipurpose building evacuation center at block 12 barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building (Evacuation Center) at Block 12 Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2022": 10000000
+  - key: 18-001|construction completion of multipurpose building health facility area at department of health  ncr barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building (Health Facility Area) at Department of Health - NCR Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2022": 40000000
+  - key: 18-001|construction completion of multipurpose building health worker cottage at national center for mental healthmandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building (Health Worker Cottage) at National Center for Mental Health,Mandaluyong City
+    amounts:
+      "2022": 7000000
+  - key: 18-001|construction completion of multipurpose building including covered walkway stp and electrical facilities at mandaluyong college of science and technology mandaluyong city
+    department: "18"
+    name: Construction (Completion) of  Multi-Purpose Building including Covered Walkway, STP and Electrical Facilities at Mandaluyong College of Science and Technology, Mandaluyong City
+    amounts:
+      "2025": 15000000
+  - key: 18-001|construction completion of multipurpose building including upgrading of electrical facilities at doh ncr at barangay addition hills city of mandaluyong 14585298 121036208
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building including Upgrading of Electrical Facilities at DOH NCR at Barangay Addition Hills, City of Mandaluyong, 14.585298, 121.036208
+    amounts:
+      "2026": 15000000
+  - key: 18-001|construction completion of multipurpose building isaac lopez integrated school barangay isaac lopez mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building, Isaac Lopez Integrated School, Barangay Isaac Lopez, Mandaluyong City
+    amounts:
+      "2020": 5000000
+  - key: 18-001|construction completion of multipurpose building laboratory at rizal technological university including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building (Laboratory) at Rizal Technological University including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 15000000
+  - key: 18-001|construction completion of multipurpose building mandaluyong city college complex mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building, Mandaluyong City College Complex, Mandaluyong City
+    amounts:
+      "2022": 20000000
+  - key: 18-001|construction completion of multipurpose building mortuary at block 34 barangay addition hills city of mandaluyong 14585570 121034200
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building (Mortuary) at Block 34 Barangay Addition Hills, City of Mandaluyong, 14.585570, 121.034200
+    amounts:
+      "2026": 15000000
+  - key: 18-001|construction completion of multipurpose building national center for mental health at barangay mauway mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-purpose Building (National Center for Mental Health) at Barangay Mauway, Mandaluyong City
+    amounts:
+      "2020": 5000000
+  - key: 18-001|construction completion of multipurpose building of philippine national police pnp and bureau of fire protection bfp package 1 mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building of Philippine National Police (PNP) and Bureau of Fire Protection (BFP), Package 1, Mandaluyong City
+    amounts:
+      "2022": 60000000
+  - key: 18-001|construction completion of multipurpose building of philippine national police pnp and bureau of fire protection bfp package 2 mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building of Philippine National Police (PNP) and Bureau of Fire Protection (BFP), Package 2, Mandaluyong City
+    amounts:
+      "2022": 50000000
+  - key: 18-001|construction completion of multipurpose building phase ii highway hills integrated school calbayog street barangay highway hills city of mandaluyong
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building, Phase II, Highway Hills Integrated School, Calbayog Street, Barangay Highway Hills, City of Mandaluyong
+    amounts:
+      "2026": 15000000
+  - key: 18-001|construction completion of multipurpose building public order  safety facility at department of health  ncr barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multipurpose Building (Public Order & Safety Facility) at Department of Health - NCR Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2022": 20000000
+  - key: 18-001|construction completion of multipurpose building research and development including ground improvement at barangay mauway mandaluyong city
+    department: "18"
+    name: "Construction (Completion) of Multi-Purpose Building (Research and Development) including Ground Improvement at Barangay Mauway, Mandaluyong City "
+    amounts:
+      "2023": 10000000
+  - key: 18-001|construction completion of multipurpose building sports center at national center for mental health barangay mauway mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose Building (Sports Center) at National Center for Mental Health, Barangay Mauway, Mandaluyong City
+    amounts:
+      "2025": 15000000
+  - key: 18-001|construction completion of multipurpose building stp at barangay plainview mandaluyong city
+    department: "18"
+    name: "Construction (Completion) of Multi-Purpose Building (STP) at Barangay Plainview, Mandaluyong City "
+    amounts:
+      "2023": 35000000
+  - key: 18-001|construction completion of multipurpose building warehouse dohncr at barangay addition hills mandaluyong city
+    department: "18"
+    name: "Construction (Completion) of Multi-Purpose Building (Warehouse), DOH-NCR at Barangay Addition Hills, Mandaluyong City "
+    amounts:
+      "2023": 20000000
+  - key: 18-001|construction completion of multipurpose including uprading of electrical facilities at sanctuary doh ncr phase 2 barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Multi-Purpose including uprading of Electrical Facilities at Sanctuary DOH NCR Phase 2, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2025": 15000000
+  - key: 18-001|construction completion of muti purpose building health center at barangay namayan city of mandaluyong 14580154 121019284
+    department: "18"
+    name: Construction (Completion) of Muti Purpose Building (Health Center) at Barangay Namayan, City of Mandaluyong, 14.580154, 121.019284
+    amounts:
+      "2026": 15000000
+  - key: 18-001|construction completion of national center for mental health at barangay mauway mandaluyong city
+    department: "18"
+    name: Construction (Completion) of National Center for Mental Health at Barangay Mauway, Mandaluyong City
+    amounts:
+      "2020": 5000000
+  - key: 18-001|construction completion of nayon ng kabataan male at barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Nayon ng Kabataan (Male) at Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2022": 12000000
+  - key: 18-001|construction completion of philippine national police building at barangay plainview mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Philippine National Police Building at Barangay Plainview, Mandaluyong City
+    amounts:
+      "2023": 50000000
+  - key: 18-001|construction completion of san jose multipurpose building covered court at barangay hulo city of mandaluyong 14569758 121033572
+    department: "18"
+    name: Construction (Completion) of San Jose Multi-Purpose Building (Covered Court) at Barangay Hulo, City of Mandaluyong, 14.569758, 121.033572
+    amounts:
+      "2026": 30000000
+  - key: 18-001|construction completion of senate president neptali gonzales general hospital at barangay mauway package 7 mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Senate President Neptali Gonzales General Hospital at Barangay Mauway Package 7, Mandaluyong City
+    amounts:
+      "2025": 100000000
+  - key: 18-001|construction completion of senate president neptali gonzales general hospital barangay mauway package 9 mandaluyong city nueve de pebrero st barangay mauway mandaluyong city 14345199093 n 1212394946 e
+    department: "18"
+    name: Construction (Completion) of Senate President Neptali Gonzales General Hospital, Barangay Mauway Package 9, Mandaluyong City, Nueve de Pebrero St., Barangay, Mauway, Mandaluyong City 14°34’51.99093” N, 121°2’39.4946” E
+    amounts:
+      "2026": 100000000
+  - key: 18-001|construction completion of seven 7 storey thirty five 35 classroom school building andres bonifacio integrated school sc id 500051 brgy addition hills mandaluyong city
+    department: "18"
+    name: "Construction (Completion) of Seven (7) Storey Thirty Five (35) Classroom School Building, Andres Bonifacio Integrated School, (SC ID: 500051), Brgy. Addition Hills, Mandaluyong City"
+    amounts:
+      "2026": 20000000
+  - key: 18-001|construction completion of seven 7 storey twenty eight 28 classroom school building ilaya barangka integrated school sc id 500335 brgy barangka ilaya mandaluyong city
+    department: "18"
+    name: "Construction (Completion) of Seven (7) Storey Twenty Eight (28) Classroom School Building, Ilaya Barangka Integrated School, (SC ID: 500335), Brgy. Barangka Ilaya, Mandaluyong City"
+    amounts:
+      "2026": 20000000
+  - key: 18-001|construction completion of sixstorey multipurpose building at mandaluyong high school mandaluyong city
+    department: "18"
+    name: Construction (Completion) of Six-storey Multipurpose Building at Mandaluyong High School, Mandaluyong City
+    amounts:
+      "2022": 25000000
+  - key: 18-001|construction extension of multi purpose building at barangay pagasa mandaluyong city
+    department: "18"
+    name: Construction (Extension) of Multi Purpose Building at Barangay Pag-asa, Mandaluyong City
+    amounts:
+      "2025": 10000000
+  - key: 18-001|construction of 4storey building manila liaison offices mandaluyong city
+    department: "18"
+    name: Construction of 4-Storey Building, Manila Liaison Offices, Mandaluyong City
+    amounts:
+      "2022": 120000000
+  - key: 18-001|construction of 7  storey multi  purpose building at andres bonifacio integrated school mandaluyong city package 1
+    department: "18"
+    name: Construction of 7 - storey Multi - Purpose Building at Andres Bonifacio Integrated School, Mandaluyong City, Package 1
+    amounts:
+      "2024": 100000000
+  - key: 18-001|construction of 7  storey multi  purpose building at ilaya barangka integrated school mandaluyong city package 1
+    department: "18"
+    name: Construction of 7 - storey Multi - Purpose Building at Ilaya Barangka Integrated School, Mandaluyong City, Package 1
+    amounts:
+      "2024": 90000000
+  - key: 18-001|construction of 7storey multipurpose building at ilaya barangka integrated school mandaluyong city package 2
+    department: "18"
+    name: Construction of 7-storey Multi-Purpose Building at Ilaya Barangka Integrated School, Mandaluyong City, Package 2
+    amounts:
+      "2025": 78328000
+  - key: 18-001|construction of 9classroom school building at senate president neptali a gonzales integrated school barangay mauway mandaluyong city metro manila
+    department: "18"
+    name: Construction of 9-classroom School Building at Senate President Neptali A. Gonzales Integrated School, Barangay Mauway, Mandaluyong City, Metro Manila
+    amounts:
+      "2020": 30000000
+      "2021": 24900000
+  - key: 18-001|construction of building at nueve de febrero elementary school barangay addition hills mandaluyong city phase 1
+    department: "18"
+    name: Construction of Building at Nueve De Febrero Elementary School, Barangay Addition Hills, Mandaluyong City (Phase 1)
+    amounts:
+      "2025": 100000000
+  - key: 18-001|construction of drainage of national center for mental health roads mandaluyong city
+    department: "18"
+    name: Construction of Drainage of National Center for Mental Health Roads, Mandaluyong City
+    amounts:
+      "2022": 30000000
+  - key: 18-001|construction of emergency room complex national center for mental health brgy mauway mandaluyong city
+    department: "18"
+    name: Construction of Emergency Room Complex, National Center for Mental Health, Brgy. Mauway, Mandaluyong City
+    amounts:
+      "2023": 50000000
+  - key: 18-001|construction of four 4 storey multipurpose building intended for mandaluyong city medical center mcmc located at martinez street c3 road barangay addittion hills mandaluyong city
+    department: "18"
+    name: Construction of Four (4) Storey Multi-Purpose Building intended for Mandaluyong City Medical Center (MCMC) located at Martinez Street, C3 Road, Barangay Addittion Hills, Mandaluyong City
+    amounts:
+      "2023": 40000000
+  - key: 18-001|construction of mandaluyong city college academic building mandaluyong city
+    department: "18"
+    name: Construction of Mandaluyong City College (Academic Building), Mandaluyong City
+    amounts:
+      "2020": 10000000
+      "2021": 8300000
+  - key: 18-001|construction of mandaluyong city college administrative building mandaluyong city
+    department: "18"
+    name: Construction of Mandaluyong City College (Administrative Building), Mandaluyong City
+    amounts:
+      "2020": 10000000
+      "2021": 8300000
+  - key: 18-001|construction of maytunas pumping station and improvement of maytunas creek and its vicinity phase 2 mandaluyong city
+    department: "18"
+    name: Construction of Maytunas Pumping Station and Improvement of Maytunas Creek and its vicinity (Phase 2), Mandaluyong City
+    amounts:
+      "2025": 10000000
+  - key: 18-001|construction of multi  purpose building  health facility center  at sanctuary center dswd at welfareville compound barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building  ( Health Facility Center )  at Sanctuary Center DSWD at Welfareville Compound, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building  mortuary  at block 34 at barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building  ( Mortuary )  at Block 34 at Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2024": 25000000
+  - key: 18-001|construction of multi  purpose building at barangay pag  asa mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building at Barangay Pag - asa, Mandaluyong City
+    amounts:
+      "2024": 40000000
+  - key: 18-001|construction of multi  purpose building at barangay poblacion mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building at Barangay Poblacion, Mandaluyong City
+    amounts:
+      "2024": 30000000
+  - key: 18-001|construction of multi  purpose building at national center for mental health hospital  package 1 mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building at National Center for Mental Health (Hospital) - Package 1, Mandaluyong City
+    amounts:
+      "2020": 100000000
+  - key: 18-001|construction of multi  purpose building at the national center for mental health  package 5  designated as the senate president neptali a gonzales general hospital mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building at the National Center for Mental Health  ( Package 5 )  designated as the Senate President Neptali A. Gonzales General Hospital, Mandaluyong City
+    amounts:
+      "2024": 100000000
+  - key: 18-001|construction of multi  purpose building at the national center for mental health  package 6  designated as the senate president neptali a gonzales general hospital mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building at the National Center for Mental Health  ( Package 6 )  designated as the Senate President Neptali A. Gonzales General Hospital, Mandaluyong City
+    amounts:
+      "2024": 100000000
+  - key: 18-001|construction of multi  purpose building dr jose fabella street barangay mauway mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building, Dr. Jose Fabella Street, Barangay Mauway, Mandaluyong City
+    amounts:
+      "2024": 15000000
+  - key: 18-001|construction of multi  purpose building including facilities at addition hills integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities at Addition Hills Integrated School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building including facilities at andres bonifacio integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities at Andres Bonifacio Integrated School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building including facilities at dona pilar gonzaga elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities at Dona Pilar Gonzaga Elementary School, Mandaluyong City
+    amounts:
+      "2024": 5760000
+  - key: 18-001|construction of multi  purpose building including facilities at highway hills integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities at Highway Hills Integrated School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building including facilities at ilaya barangka integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities at Ilaya Barangka Integrated School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building including facilities at isaac lopez integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities at Isaac Lopez Integrated School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building including facilities at jose fabella memorial high school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities at Jose Fabella Memorial High School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building including facilities at mandaluyong high school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities at Mandaluyong High School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building including facilities at mataas na paaralang neptali a gonzales mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities at Mataas na Paaralang Neptali A. Gonzales, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building including facilities at pedro p cruz elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities at Pedro P. Cruz Elementary School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building including facilities at senate president neptali gonzales integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities at Senate President Neptali Gonzales Integrated School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building including facilities e rodriguez integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities, E. Rodriguez Integrated School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building including facilities hulo integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities, Hulo Integrated School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building including facilities mandaluyong elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Building including Facilities, Mandaluyong Elementary School, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose building j rizal street barangay mabini j rizal mandaluyong city
+    department: "18"
+    name: "Construction of Multi - Purpose Building, J. Rizal Street, Barangay Mabini J. Rizal, Mandaluyong City "
+    amounts:
+      "2024": 55000000
+  - key: 18-001|construction of multi  purpose hall barangay namayan mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Hall, Barangay Namayan, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|construction of multi  purpose hall blk 34 welfareville compound barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi - Purpose Hall, Blk 34 Welfareville Compound, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2024": 5000000
+  - key: 18-001|construction of multi level purpose building barangay vergara mandaluyong city
+    department: "18"
+    name: Construction of Multi Level Purpose Building, Barangay Vergara, Mandaluyong City
+    amounts:
+      "2025": 75000000
+  - key: 18-001|construction of multi level purpose building package 2 barangay daang bakal mandaluyong city
+    department: "18"
+    name: Construction of Multi Level Purpose Building, Package 2, Barangay Daang Bakal, Mandaluyong City
+    amounts:
+      "2025": 20000000
+  - key: 18-001|construction of multi level purpose building package 2 barangay harapin ang bukas mandaluyong city
+    department: "18"
+    name: Construction of Multi Level Purpose Building, Package 2, Barangay Harapin ang Bukas, Mandaluyong City
+    amounts:
+      "2025": 20000000
+  - key: 18-001|construction of multi level purpose building plainview elementary school barangay plainview mandaluyong city
+    department: "18"
+    name: Construction of Multi Level Purpose Building, Plainview Elementary School, Barangay Plainview, Mandaluyong City
+    amounts:
+      "2025": 80000000
+  - key: 18-001|construction of multi purpose bldg covered court phase 2 nayon ng kabataan addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Bldg.( Covered Court)  Phase 2, Nayon ng Kabataan, Addition Hills, Mandaluyong City
+    amounts:
+      "2025": 50000000
+  - key: 18-001|construction of multi purpose building at barangay bagong silang mandaluyong city phase 1
+    department: "18"
+    name: Construction of Multi Purpose Building at Barangay Bagong Silang, Mandaluyong City, Phase 1
+    amounts:
+      "2023": 100000000
+  - key: 18-001|construction of multi purpose building at barangay plainview mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building at Barangay Plainview, Mandaluyong City
+    amounts:
+      "2023": 70000000
+  - key: 18-001|construction of multi purpose building at barangay vergara including completion of facilities  package 2 mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building at Barangay Vergara Including Completion of Facilities, - Package 2 Mandaluyong City
+    amounts:
+      "2020": 12370000
+  - key: 18-001|construction of multi purpose building at barangay wack wack phase 2 mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building at Barangay Wack Wack Phase 2, Mandaluyong City
+    amounts:
+      "2022": 70000000
+  - key: 18-001|construction of multi purpose building at central day care center barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building at Central Day Care Center, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2023": 40000000
+  - key: 18-001|construction of multi purpose building at jose fabella center barangay addition hills mandaluyong
+    department: "18"
+    name: Construction of Multi Purpose Building at Jose Fabella Center, Barangay Addition Hills, Mandaluyong
+    amounts:
+      "2020": 25000000
+  - key: 18-001|construction of multi purpose building at jose fabella center barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building at Jose Fabella Center Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2022": 12000000
+  - key: 18-001|construction of multi purpose building barangay hall annex barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building (Barangay Hall) Annex,  Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2025": 30000000
+  - key: 18-001|construction of multi purpose building cistern at addition hills integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building (Cistern) at Addition Hills Integrated School, Mandaluyong City
+    amounts:
+      "2023": 19280000
+  - key: 18-001|construction of multi purpose building cistern at ilaya barangka integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building (Cistern) at Ilaya Barangka Integrated School, Mandaluyong City
+    amounts:
+      "2023": 10000000
+  - key: 18-001|construction of multi purpose building cistern including site development at senate president neptali a gonzales integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building (Cistern) including site development at Senate President Neptali A. Gonzales Integrated School, Mandaluyong City
+    amounts:
+      "2023": 20000000
+  - key: 18-001|construction of multi purpose building covered court at barangay hulo package 1 mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building (Covered Court) at Barangay Hulo, Package 1, Mandaluyong City
+    amounts:
+      "2023": 85000000
+  - key: 18-001|construction of multi purpose building covered court at barangay hulo package 2 mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building (Covered Court) at Barangay Hulo, Package 2, Mandaluyong City
+    amounts:
+      "2023": 85000000
+  - key: 18-001|construction of multi purpose building covered court at sanctuary at barangay addition hills including facilities and site development mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building (Covered Court) at Sanctuary at Barangay Addition Hills, Including Facilities and Site Development, Mandaluyong City
+    amounts:
+      "2020": 20000000
+  - key: 18-001|construction of multi purpose building health center at barangay namayan mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building (Health Center) at Barangay Namayan, Mandaluyong City
+    amounts:
+      "2023": 35000000
+  - key: 18-001|construction of multi purpose building including ground improvement at mataas na paaralang neptali a gonzales mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building including Ground Improvement at Mataas na Paaralang Neptali A. Gonzales, Mandaluyong City
+    amounts:
+      "2023": 20000000
+  - key: 18-001|construction of multi purpose building including site development at mandaluyong city college barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building including site development at Mandaluyong City College Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 30000000
+  - key: 18-001|construction of multi purpose building including site development at national center for mental health brgy mauway mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building including site development at National Center for Mental Health, Brgy. Mauway, Mandaluyong City
+    amounts:
+      "2020": 30000000
+  - key: 18-001|construction of multi purpose building including site development at sen neptali gonzales integrated school barangay mauway mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building including site development at Sen. Neptali Gonzales Integrated School, Barangay Mauway, Mandaluyong City
+    amounts:
+      "2020": 30000000
+  - key: 18-001|construction of multi purpose building including site development at senate president neptali a gonzales integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building including site development at Senate President Neptali A. Gonzales Integrated School, Mandaluyong City
+    amounts:
+      "2023": 20000000
+  - key: 18-001|construction of multi purpose building including site development of mandaluyong city jail at barangay plainview mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building including site development of Mandaluyong City Jail at Barangay Plainview, Mandaluyong City
+    amounts:
+      "2020": 30000000
+  - key: 18-001|construction of multi purpose building near activity center national center for mental health mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Building (Near Activity Center), National Center for Mental Health, Mandaluyong City
+    amounts:
+      "2025": 20000000
+  - key: 18-001|construction of multi purpose facility covered courtsports center national center for mental health compound mandaluyong city
+    department: "18"
+    name: Construction of Multi Purpose Facility (Covered Court/Sports Center), National Center for Mental Health Compound, Mandaluyong City
+    amounts:
+      "2023": 50000000
+  - key: 18-001|construction of multi storey building at plainview elementary school package 1 mandaluyong city
+    department: "18"
+    name: Construction of Multi Storey Building at Plainview Elementary School Package 1, Mandaluyong City
+    amounts:
+      "2025": 100000000
+  - key: 18-001|construction of multipurpose bldg various offices in barangay mauway mandaluyong city phase 1
+    department: "18"
+    name: "Construction of Multi-Purpose Bldg. (Various Offices) in Barangay Mauway, Mandaluyong City (Phase 1) "
+    amounts:
+      "2023": 75000000
+  - key: 18-001|construction of multipurpose building at a t reyes elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at A. T. Reyes Elementary School, Mandaluyong City
+    amounts:
+      "2020": 10000000
+      "2021": 8300000
+  - key: 18-001|construction of multipurpose building at addition hills integrated school including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction of Multipurpose Building at Addition Hills Integrated School including Upgrading of Electrical Facilities, Mandaluyong City
+    amounts:
+      "2022": 20000000
+  - key: 18-001|construction of multipurpose building at andres bonifacio integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Andres Bonifacio Integrated School, Mandaluyong City
+    amounts:
+      "2020": 25000000
+      "2021": 20750000
+  - key: 18-001|construction of multipurpose building at barangay bagong silang mandaluyong city phase 2
+    department: "18"
+    name: Construction of Multi-Purpose Building at Barangay Bagong Silang, Mandaluyong City, Phase 2
+    amounts:
+      "2023": 100000000
+  - key: 18-001|construction of multipurpose building at bonifacio javier national high school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Bonifacio Javier National High School, Mandaluyong City
+    amounts:
+      "2020": 20000000
+      "2021": 16600000
+  - key: 18-001|construction of multipurpose building at commission on population popcom at barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multipurpose Building at Commission on Population (POPCOM) at Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2022": 40000000
+  - key: 18-001|construction of multipurpose building at coronado st barangay hulo city of mandaluyong 14569941 121031838
+    department: "18"
+    name: Construction of Multi-Purpose Building at Coronado St Barangay Hulo, City of Mandaluyong, 14.569941, 121.031838
+    amounts:
+      "2026": 22706000
+  - key: 18-001|construction of multipurpose building at dona basilisa yangco elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Dona Basilisa Yangco Elementary School, Mandaluyong City
+    amounts:
+      "2020": 15000000
+      "2021": 12450000
+  - key: 18-001|construction of multipurpose building at dona pilar gonzaga elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Dona Pilar Gonzaga Elementary School, Mandaluyong City
+    amounts:
+      "2020": 15000000
+      "2021": 12450000
+  - key: 18-001|construction of multipurpose building at e rodriguez integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at E. Rodriguez Integrated School, Mandaluyong City
+    amounts:
+      "2020": 25000000
+      "2021": 20750000
+  - key: 18-001|construction of multipurpose building at filemon javier elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Filemon Javier Elementary School, Mandaluyong City
+    amounts:
+      "2020": 10000000
+  - key: 18-001|construction of multipurpose building at hulo integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Hulo Integrated School, Mandaluyong City
+    amounts:
+      "2020": 20000000
+      "2021": 16600000
+  - key: 18-001|construction of multipurpose building at ilaya barangka integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Ilaya Barangka Integrated School, Mandaluyong City
+    amounts:
+      "2020": 20000000
+      "2021": 16600000
+  - key: 18-001|construction of multipurpose building at isaac lopez integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Isaac Lopez Integrated School, Mandaluyong City
+    amounts:
+      "2020": 20000000
+      "2021": 16600000
+  - key: 18-001|construction of multipurpose building at jose fabella memorial school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Jose Fabella Memorial School, Mandaluyong City
+    amounts:
+      "2020": 25000000
+      "2021": 20750000
+  - key: 18-001|construction of multipurpose building at mandaluyong elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Mandaluyong Elementary School, Mandaluyong City
+    amounts:
+      "2020": 25000000
+      "2021": 20750000
+  - key: 18-001|construction of multipurpose building at mandaluyong high school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Mandaluyong High School, Mandaluyong City
+    amounts:
+      "2020": 25000000
+      "2021": 20750000
+  - key: 18-001|construction of multipurpose building at national center for mental health barangay mauway mandaluyong city
+    department: "18"
+    name: Construction of Multipurpose Building at National Center for Mental Health Barangay Mauway, Mandaluyong City
+    amounts:
+      "2023": 8000000
+  - key: 18-001|construction of multipurpose building at national center for mental health mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at National Center for Mental Health, Mandaluyong City
+    amounts:
+      "2021": 14110000
+  - key: 18-001|construction of multipurpose building at national center for mental health package 2 brgy mauway mandaluyong city
+    department: "18"
+    name: Construction of Multi-purpose Building at National Center for Mental Health, Package 2, Brgy. Mauway, Mandaluyong City
+    amounts:
+      "2020": 100000000
+      "2021": 62000000
+  - key: 18-001|construction of multipurpose building at nayon ng kabataan female dormitory brgy addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Nayon ng Kabataan (Female Dormitory), Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 8000000
+      "2021": 6640000
+  - key: 18-001|construction of multipurpose building at nayon ng kabataan male dormitory brgy addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Nayon ng Kabataan (Male Dormitory), Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 10000000
+      "2021": 8300000
+  - key: 18-001|construction of multipurpose building at nueve de pebrero elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Nueve de Pebrero Elementary School, Mandaluyong City
+    amounts:
+      "2020": 15000000
+      "2021": 12450000
+  - key: 18-001|construction of multipurpose building at pedro p cruz elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Pedro P. Cruz Elementary School, Mandaluyong City
+    amounts:
+      "2020": 20000000
+      "2021": 16600000
+  - key: 18-001|construction of multipurpose building at plainview elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Plainview Elementary School, Mandaluyong City
+    amounts:
+      "2020": 15000000
+      "2021": 12450000
+  - key: 18-001|construction of multipurpose building at pleasant hills elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Pleasant Hills Elementary School, Mandaluyong City
+    amounts:
+      "2020": 10000000
+      "2021": 8300000
+  - key: 18-001|construction of multipurpose building at renato lopez elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Renato Lopez Elementary School, Mandaluyong City
+    amounts:
+      "2020": 10000000
+      "2021": 8300000
+  - key: 18-001|construction of multipurpose building at rizal technological university library barangay malamig mandaluyong city package 3
+    department: "18"
+    name: Construction of Multi-Purpose Building at Rizal Technological University Library, Barangay Malamig, Mandaluyong City (Package 3)
+    amounts:
+      "2025": 100000000
+  - key: 18-001|construction of multipurpose building at sanctuary center brgy addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-purpose Building at Sanctuary Center, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 29000000
+      "2021": 9280000
+  - key: 18-001|construction of multipurpose building at sanctuary center iacat brgy addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building at Sanctuary Center (IACAT), Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2022": 50000000
+  - key: 18-001|construction of multipurpose building at senate president neptali a gonzales integrated school brgy mauway including site development mandaluyong city
+    department: "18"
+    name: Construction of Multi-purpose Building at Senate President Neptali A. Gonzales Integrated School, Brgy. Mauway, including site development, Mandaluyong City
+    amounts:
+      "2020": 25000000
+      "2021": 8000000
+  - key: 18-001|construction of multipurpose building at the national center for mental health package 3 designated as the senate president neptali a gonzales general hospital mandaluyong city
+    department: "18"
+    name: "Construction of Multi-Purpose Building at the National Center for Mental Health (Package 3) designated as the Senate President Neptali A. Gonzales General Hospital, Mandaluyong City "
+    amounts:
+      "2023": 75000000
+  - key: 18-001|construction of multipurpose building at the national center for mental health package 4 designated as the senate president neptali a gonzales general hospital mandaluyong city
+    department: "18"
+    name: "Construction of Multi-Purpose Building at the National Center for Mental Health (Package 4) designated as the Senate President Neptali A. Gonzales General Hospital, Mandaluyong City "
+    amounts:
+      "2023": 75000000
+  - key: 18-001|construction of multipurpose building bahay pag asa kabataan package 3 barangay mauway mandaluyong city 14580419 121038252
+    department: "18"
+    name: Construction of Multi-Purpose Building, Bahay Pag asa (Kabataan), Package 3, Barangay Mauway, Mandaluyong City, 14.580419, 121.038252
+    amounts:
+      "2026": 10000000
+  - key: 18-001|construction of multipurpose building bahay pagasa phase 1 national center for mental health mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, Bahay Pag-asa, Phase 1, National Center for Mental Health, Mandaluyong City
+    amounts:
+      "2025": 50000000
+  - key: 18-001|construction of multipurpose building barangay addition hills city of mandaluyong 145833622 1210372658
+    department: "18"
+    name: Construction of Multi-Purpose Building, Barangay Addition Hills, City of Mandaluyong, 14.5833622, 121.0372658
+    amounts:
+      "2026": 5000000
+  - key: 18-001|construction of multipurpose building barangay barangka ilaya mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, Barangay Barangka Ilaya, Mandaluyong City
+    amounts:
+      "2020": 25000000
+  - key: 18-001|construction of multipurpose building barangay center brgy addition hills mandaluyong city metro manila 14585287 121034762
+    department: "18"
+    name: Construction of Multi-Purpose Building (Barangay Center) Brgy Addition Hills, Mandaluyong City, Metro Manila, 14.585287, 121.034762
+    amounts:
+      "2026": 5000000
+  - key: 18-001|construction of multipurpose building barangay harapin ang bukas mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, Barangay Harapin ang Bukas, Mandaluyong City
+    amounts:
+      "2025": 60000000
+  - key: 18-001|construction of multipurpose building barangay old zaniga mandaluyong city
+    department: "18"
+    name: Construction of Multi-purpose Building, Barangay Old Zaniga, Mandaluyong City
+    amounts:
+      "2020": 60000000
+      "2021": 51000000
+  - key: 18-001|construction of multipurpose building blk 12 barangay addition hills mandaluyong city metro manila
+    department: "18"
+    name: Construction of Multi-Purpose Building, Blk. 12, Barangay Addition Hills, Mandaluyong City, Metro Manila
+    amounts:
+      "2020": 10000000
+      "2021": 8300000
+  - key: 18-001|construction of multipurpose building brgy barangka drive mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, Brgy. Barangka Drive, Mandaluyong City
+    amounts:
+      "2020": 15000000
+      "2021": 12450000
+  - key: 18-001|construction of multipurpose building brgy mabinij rizal mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, Brgy. Mabini-J. Rizal, Mandaluyong City
+    amounts:
+      "2020": 20000000
+      "2021": 16600000
+  - key: 18-001|construction of multipurpose building brgy mauway mandaluyong city phase 2
+    department: "18"
+    name: Construction of  Multi-Purpose Building, Brgy. Mauway, Mandaluyong City (Phase 2)
+    amounts:
+      "2023": 75000000
+  - key: 18-001|construction of multipurpose building brgy old zaniga mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, Brgy. Old Zaniga, Mandaluyong City
+    amounts:
+      "2020": 40000000
+      "2021": 34000000
+  - key: 18-001|construction of multipurpose building brgy plainview including site development mandaluyong city
+    department: "18"
+    name: Construction of Multi-purpose Building, Brgy. Plainview, including site development, Mandaluyong City
+    amounts:
+      "2020": 20000000
+      "2021": 6400000
+  - key: 18-001|construction of multipurpose building brgy vergara mandaluyong city
+    department: "18"
+    name: Construction of Multi-purpose Building, Brgy. Vergara, Mandaluyong City
+    amounts:
+      "2020": 8000000
+      "2021": 2560000
+  - key: 18-001|construction of multipurpose building brgy wack wack mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, Brgy. Wack Wack, Mandaluyong City
+    amounts:
+      "2020": 100000000
+      "2021": 85000000
+      "2022": 100000000
+  - key: 18-001|construction of multipurpose building canopy at addition hills integrated school brgy addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Canopy) at Addition Hills Integrated School, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 3000000
+  - key: 18-001|construction of multipurpose building canopy at andres bonifacio integrated school annex brgy addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Canopy) at Andres Bonifacio Integrated School Annex, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 3000000
+  - key: 18-001|construction of multipurpose building cistern eulogio rodriguez integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Cistern), Eulogio Rodriguez Integrated School, Mandaluyong City
+    amounts:
+      "2023": 20000000
+  - key: 18-001|construction of multipurpose building cistern mandaluyong elementary school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Cistern), Mandaluyong Elementary School, Mandaluyong City
+    amounts:
+      "2023": 20000000
+  - key: 18-001|construction of multipurpose building cistern mandaluyong high school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Cistern), Mandaluyong High School, Mandaluyong City
+    amounts:
+      "2023": 20000000
+  - key: 18-001|construction of multipurpose building cistern mataas na paaralang neptali a gonzales mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Cistern), Mataas na Paaralang Neptali A. Gonzales, Mandaluyong City
+    amounts:
+      "2023": 16044000
+  - key: 18-001|construction of multipurpose building city of mandaluyong science high school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, City of Mandaluyong Science High School, Mandaluyong City
+    amounts:
+      "2020": 15000000
+      "2021": 12450000
+  - key: 18-001|construction of multipurpose building covered court  offices at nayon ng kabataan dswd at barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Covered Court & Offices) at Nayon ng Kabataan DSWD at Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2025": 50000000
+  - key: 18-001|construction of multipurpose building covered court at block 5 barangay mauway mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Covered Court) at Block 5, Barangay Mauway, Mandaluyong City
+    amounts:
+      "2023": 25000000
+  - key: 18-001|construction of multipurpose building covered court at doh ncr brgy addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Covered Court) at DOH NCR, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 30000000
+      "2021": 24900000
+  - key: 18-001|construction of multipurpose building covered court at saniboy barangay hulo city of mandaluyong 1457537 12102644
+    department: "18"
+    name: Construction of Multi-Purpose Building (Covered Court) at Saniboy Barangay Hulo, City of Mandaluyong, 14.57537, 121.02644
+    amounts:
+      "2026": 21000000
+  - key: 18-001|construction of multipurpose building covered court barangay daang bakal mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Covered Court), Barangay Daang Bakal, Mandaluyong City
+    amounts:
+      "2025": 40000000
+  - key: 18-001|construction of multipurpose building covered court block 38b welfareville compound barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Covered Court), Block 38-B Welfareville Compound, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2023": 10000000
+  - key: 18-001|construction of multipurpose building covered court block 39b welfareville compound barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Covered Court), Block 39-B Welfareville Compound, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2023": 10000000
+  - key: 18-001|construction of multipurpose building covered court national center for mental health city of mandaluyong 14579195 121039334
+    department: "18"
+    name: Construction of Multi-Purpose Building (Covered Court), National Center for Mental Health, City of Mandaluyong, 14.579195, 121.039334
+    amounts:
+      "2026": 30000000
+  - key: 18-001|construction of multipurpose building extension including rehabilitation of existing facilities at the fabella memorial high school brgy addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Extension), including Rehabilitation of Existing Facilities at the Fabella Memorial High School, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2023": 15000000
+  - key: 18-001|construction of multipurpose building female dormitory at nayon ng kabataan dswdncr at barangay addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multipurpose Building (Female Dormitory) at Nayon ng Kabataan DSWD-NCR at Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2022": 10000000
+  - key: 18-001|construction of multipurpose building fernando st barangay pleasant hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, Fernando St., Barangay Pleasant Hills, Mandaluyong City
+    amounts:
+      "2025": 30000000
+  - key: 18-001|construction of multipurpose building fire station at block 40 brgy addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Fire Station) at Block 40, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 10000000
+      "2021": 8300000
+  - key: 18-001|construction of multipurpose building hall a luna street corner pagasa street barangay burol city of mandaluyong 14589574 121028310
+    department: "18"
+    name: Construction of Multi-Purpose Building (Hall), A. Luna Street corner Pag-asa Street, Barangay Burol, City of Mandaluyong, 14.589574, 121.028310
+    amounts:
+      "2026": 40000000
+  - key: 18-001|construction of multipurpose building hall senator neptali gonzales street sitio 2 barangay san jose city of mandaluyong 14580363 121029444
+    department: "18"
+    name: Construction of Multi-Purpose Building (Hall), Senator Neptali Gonzales Street, Sitio 2, Barangay San Jose, City of Mandaluyong, 14.580363, 121.029444
+    amounts:
+      "2026": 40000000
+  - key: 18-001|construction of multipurpose building health worker cottage near als at national center for mental health mandaluyong city
+    department: "18"
+    name: Construction of Multipurpose Building (Health Worker Cottage) near ALS at National Center for Mental Health, Mandaluyong City
+    amounts:
+      "2022": 6000000
+  - key: 18-001|construction of multipurpose building highway hills integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, Highway Hills Integrated School, Mandaluyong City
+    amounts:
+      "2020": 25000000
+      "2021": 20750000
+  - key: 18-001|construction of multipurpose building including site development at mataas na paaralang neptali a gonzales barangay mauway mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building including site development at Mataas na Paaralang Neptali A. Gonzales, Barangay Mauway, Mandaluyong City
+    amounts:
+      "2020": 30000000
+  - key: 18-001|construction of multipurpose building mortuary at barangay mauway mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Mortuary) at Barangay Mauway, Mandaluyong City
+    amounts:
+      "2023": 25000000
+  - key: 18-001|construction of multipurpose building nueve de febrero street barangay mauway mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, Nueve de Febrero Street, Barangay Mauway, Mandaluyong City
+    amounts:
+      "2025": 50000000
+  - key: 18-001|construction of multipurpose building package 2 coronado st barangay hulo mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building Package 2, Coronado St., Barangay Hulo, Mandaluyong City
+    amounts:
+      "2025": 20000000
+  - key: 18-001|construction of multipurpose building pnp and soco at barangay mauway mandaluyong
+    department: "18"
+    name: Construction of Multi-Purpose Building (PNP and SOCO) at Barangay Mauway, Mandaluyong
+    amounts:
+      "2021": 40000000
+  - key: 18-001|construction of multipurpose building public order  safety facility at barangay namayan mandaluyong city
+    department: "18"
+    name: Construction of Multipurpose Building (Public Order & Safety Facility) at Barangay Namayan, Mandaluyong City
+    amounts:
+      "2022": 6000000
+  - key: 18-001|construction of multipurpose building public order  safety facility at jose fabella center dswdncr including upgrading of electrical facilities mandaluyong city
+    department: "18"
+    name: Construction of Multipurpose Building (Public Order & Safety Facility) at Jose Fabella Center (DSWD-NCR) including upgrading of electrical facilities, Mandaluyong City
+    amounts:
+      "2022": 16000000
+  - key: 18-001|construction of multipurpose building research and development at barangay mauway mandaluyong city
+    department: "18"
+    name: Construction of Multipurpose Building (Research and Development) at Barangay Mauway, Mandaluyong City
+    amounts:
+      "2022": 24706000
+  - key: 18-001|construction of multipurpose building saniboy st barangay hulo mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, Saniboy St., Barangay Hulo, Mandaluyong City
+    amounts:
+      "2025": 70000000
+  - key: 18-001|construction of multipurpose building senate president neptali a gonzales integrated school mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building, Senate President Neptali A. Gonzales Integrated School, Mandaluyong City
+    amounts:
+      "2023": 35000000
+  - key: 18-001|construction of multipurpose building stp mandaluyong city hall complex barangay plainview mandaluyong city
+    department: "18"
+    name: Construction of Multi-purpose Building (STP), Mandaluyong City Hall Complex, Barangay Plainview, Mandaluyong City
+    amounts:
+      "2020": 100000000
+      "2021": 85000000
+  - key: 18-001|construction of multipurpose building warehouse at doh ncr brgy addition hills mandaluyong city
+    department: "18"
+    name: Construction of Multi-Purpose Building (Warehouse) at DOH NCR, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 10000000
+      "2021": 8300000
+  - key: 18-001|construction of multistorey building at plainview elementary school package 3 mandaluyong city san ignacio st cor san joaquin st barangay plainview mandaluyong city 14577993 n 121029763 e
+    department: "18"
+    name: Construction of Multi-Storey Building at Plainview Elementary School, Package 3, Mandaluyong City  San Ignacio St., cor San Joaquin St., Barangay Plainview, Mandaluyong City 14.577993° N, 121.029763° E
+    amounts:
+      "2026": 100000000
+  - key: 18-001|construction of road with drainage system a luna street interior galang barangay pagasa chainage 000  chainage 085 mandaluyong city
+    department: "18"
+    name: Construction of Road with Drainage System, A. Luna Street, Interior Galang, Barangay Pag-Asa, (Chainage 000 - Chainage 085), Mandaluyong City
+    amounts:
+      "2026": 5000000
+  - key: 18-001|construction of road with drainage system pagasa street interior alley 2 barangay pagasa chainage 000  chainage 060 mandaluyong city
+    department: "18"
+    name: Construction of Road with Drainage System, Pag-Asa Street, Interior Alley 2, Barangay Pag-Asa (Chainage 000 - Chainage 060), Mandaluyong City
+    amounts:
+      "2026": 5000000
+  - key: 18-001|construction of seven 7 storey eighty four 84 classroom school building nueve de febrero elementary school sc id 136669 mandaluyong city
+    department: "18"
+    name: "Construction of Seven (7) Storey Eighty Four (84) Classroom School Building, Nueve de Febrero Elementary School, (SC ID: 136669), Mandaluyong City"
+    amounts:
+      "2026": 200000000
+  - key: 18-001|constructioncompletion of multi purpose building at barangay barangka ilaya mandaluyong city
+    department: "18"
+    name: Construction/Completion of Multi Purpose Building at Barangay Barangka Ilaya, Mandaluyong City
+    amounts:
+      "2023": 10000000
+  - key: 18-001|constructioncompletion of multi purpose building at highway hills integrated school mandaluyong city
+    department: "18"
+    name: Construction/Completion of Multi Purpose Building at Highway Hills Integrated School, Mandaluyong City
+    amounts:
+      "2023": 20000000
+  - key: 18-001|constructioncompletion of multi purpose building covered court mandaluyong high school barangay poblacion mandaluyong city
+    department: "18"
+    name: Construction/Completion of Multi Purpose Building (Covered Court), Mandaluyong High School, Barangay Poblacion, Mandaluyong City
+    amounts:
+      "2025": 10000000
+  - key: 18-001|constructioncompletion of multipurpose building at barangay barangka ilaya mandaluyong city
+    department: "18"
+    name: Construction/Completion of Multipurpose Building at Barangay Barangka Ilaya, Mandaluyong City
+    amounts:
+      "2021": 10000000
+  - key: 18-001|constructioncompletion of multipurpose building philippine national police and bureau of fire department phase 3 barangay plainview mandaluyong city
+    department: "18"
+    name: Construction/Completion of Multi-Purpose Building (Philippine National Police and Bureau of Fire Department) Phase 3, Barangay Plainview, Mandaluyong City
+    amounts:
+      "2023": 100000000
+  - key: 18-001|improvement of maytunas creek mandaluyong city phase 1
+    department: "18"
+    name: Improvement of Maytunas Creek, Mandaluyong City (Phase 1)
+    amounts:
+      "2022": 46000000
+  - key: 18-001|improvement of national center for mental health drainage system mandaluyong city
+    department: "18"
+    name: Improvement of National Center for Mental Health Drainage System, Mandaluyong City
+    amounts:
+      "2021": 10000000
+  - key: 18-001|improvement of national center for mental health water system mandaluyong city
+    department: "18"
+    name: Improvement of National Center for Mental Health Water System, Mandaluyong City
+    amounts:
+      "2022": 10000000
+  - key: 18-001|improvement of road of pantaleon street conorado street to edsa mandaluyong city
+    department: "18"
+    name: Improvement of Road of Pantaleon Street (Conorado Street to EDSA), Mandaluyong City
+    amounts:
+      "2023": 95470000
+  - key: 18-001|improvementwidening of pantaleon street conorado street to edsa mandaluyong city
+    department: "18"
+    name: Improvement/Widening of Pantaleon Street (Conorado Street to EDSA), Mandaluyong City
+    amounts:
+      "2020": 66498000
+  - key: 18-001|installation of solar street lights along new panaderos st from mandaluyongmanila boundary to f calderon st manila city
+    department: "18"
+    name: Installation of Solar Street Lights along New Panaderos St. from Mandaluyong/Manila Boundary to F. Calderon St., Manila City
+    amounts:
+      "2025": 100000000
+  - key: 18-001|makatimandaluyong br b04891lz along makatimandaluyong br
+    department: "18"
+    name: Makati-Mandaluyong Br. (B04891LZ) along Makati-Mandaluyong Br.
+    amounts:
+      "2025": 20000000
+  - key: 18-001|rehabilitation extension of multi purpose building at molave barangay addition hills mandaluyong city
+    department: "18"
+    name: Rehabilitation (Extension)  of Multi Purpose Building  at Molave Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2023": 6000000
+  - key: 18-001|rehabilitation of drainage at ncmh barangay mauway mandaluyong city
+    department: "18"
+    name: Rehabilitation of Drainage at NCMH Barangay Mauway, Mandaluyong City
+    amounts:
+      "2020": 3000000
+  - key: 18-001|rehabilitation of four 4 storey 24 classroom school building mandaluyong science high school sc id 305395 brgy hulo mandaluyong city
+    department: "18"
+    name: "Rehabilitation of Four (4) Storey (24) Classroom School Building, Mandaluyong Science High School, (SC ID: 305395), Brgy. Hulo, Mandaluyong City"
+    amounts:
+      "2026": 5000000
+  - key: 18-001|rehabilitation of four 4 storey twenty 20 classroom school building hulo integrated school sc id 500500 brgy hulo mandaluyong city
+    department: "18"
+    name: "Rehabilitation of Four (4) Storey Twenty (20) Classroom School Building, Hulo Integrated School, (SC ID: 500500), Brgy. Hulo, Mandaluyong City"
+    amounts:
+      "2026": 5000000
+  - key: 18-001|rehabilitation of infirmary at national center for mental health at barangay mauway mandaluyong city
+    department: "18"
+    name: Rehabilitation of Infirmary at National Center for Mental Health at Barangay Mauway, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of molave multipurpose building barangay addition hills city of mandaluyong 14585798 121036365
+    department: "18"
+    name: Rehabilitation of Molave Multi-Purpose Building, Barangay Addition Hills, City of Mandaluyong, 14.585798, 121.036365
+    amounts:
+      "2026": 5000000
+  - key: 18-001|rehabilitation of multi  purpose building  covered court  at mataas na paaralang neptali a gonzales mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi - Purpose Building  ( Covered Court )  at Mataas na Paaralang Neptali A. Gonzales, Mandaluyong City
+    amounts:
+      "2024": 5000000
+  - key: 18-001|rehabilitation of multi  purpose building  day care center  including upgrading of electrical facilities at barangay addition hills mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi - Purpose Building  ( Day Care Center )  including Upgrading of Electrical Facilities at Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 18-001|rehabilitation of multi  purpose building  health center  at barangay malamig mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi - Purpose Building  ( Health Center )  at Barangay Malamig, Mandaluyong City
+    amounts:
+      "2024": 5000000
+  - key: 18-001|rehabilitation of multi  purpose building  union of local authorities of the phils  ulap  s office  in shaw blvd mandaluyong
+    department: "18"
+    name: Rehabilitation of Multi - Purpose Building  ( Union of Local Authorities of the Phils.  ( ULAP ) 's Office )  in Shaw Blvd., Mandaluyong
+    amounts:
+      "2024": 5000000
+  - key: 18-001|rehabilitation of multi  purpose building including upgrading of electrical facilities at doh  ncr barangay addition hills mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi - Purpose Building, including Upgrading of Electrical Facilities at DOH - NCR, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2024": 18813000
+  - key: 18-001|rehabilitation of multi purpose building  mortuary and sub  station  at block 34 barangay addition hills mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building  ( Mortuary and Sub - station )  at Block 34, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2024": 5000000
+  - key: 18-001|rehabilitation of multi purpose building administrative at mandaluyong high school poblacion mandaluyong
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building (Administrative) at Mandaluyong High School, Poblacion, Mandaluyong
+    amounts:
+      "2022": 20000000
+  - key: 18-001|rehabilitation of multi purpose building at addition hills integrated school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building at Addition Hills Integrated School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multi purpose building at andres bonifacio integrated school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building at Andres Bonifacio Integrated School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multi purpose building at bonifacio javier integrated school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building at Bonifacio Javier Integrated School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multi purpose building at dona basilisa yangco elementary school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building at Dona Basilisa Yangco Elementary School, Mandaluyong City
+    amounts:
+      "2020": 1000000
+  - key: 18-001|rehabilitation of multi purpose building at dona pilar gonzaga elementary school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building at Dona Pilar Gonzaga Elementary School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multi purpose building at e rodriguez integrated school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building at E. Rodriguez Integrated School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multi purpose building at felimon javier elementary school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building at Felimon Javier Elementary School, Mandaluyong City
+    amounts:
+      "2020": 1000000
+  - key: 18-001|rehabilitation of multi purpose building at highway hills integrated school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building at Highway Hills Integrated School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multi purpose building at jose fabella memorial high school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building at Jose Fabella Memorial High School, Mandaluyong City
+    amounts:
+      "2025": 5000000
+  - key: 18-001|rehabilitation of multi purpose building at justice hall barangay plainview mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building   at Justice Hall Barangay Plainview, Mandaluyong City
+    amounts:
+      "2023": 5000000
+  - key: 18-001|rehabilitation of multi purpose building at mandaluyong city science high school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building at Mandaluyong City Science High School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multi purpose building at sanctuary dswd ncr barangay addition hills mandaluyong 14583288 121033246
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building at Sanctuary DSWD NCR, Barangay Addition Hills, Mandaluyong, 14.583288, 121.033246
+    amounts:
+      "2026": 5000000
+  - key: 18-001|rehabilitation of multi purpose building evacuation center at block 41 barangay addition hills mandaluyong
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building (Evacuation Center) at Block 41 Barangay Addition Hills, Mandaluyong
+    amounts:
+      "2022": 10000000
+  - key: 18-001|rehabilitation of multi purpose building evacuation centerat block 37 barangay addition hills mandaluyong
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building (Evacuation Center)at Block 37 Barangay Addition Hills, Mandaluyong
+    amounts:
+      "2022": 8000000
+  - key: 18-001|rehabilitation of multi purpose building mortuary at block 27 barangay addition hills mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi Purpose Building (Mortuary) at Block 27 Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2023": 10000000
+  - key: 18-001|rehabilitation of multipurpose building at block 39 brgy addition hills mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Block 39, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building at filemon javier elementary school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Filemon Javier Elementary School, Mandaluyong City
+    amounts:
+      "2020": 5000000
+  - key: 18-001|rehabilitation of multipurpose building at hulo integrated school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Hulo Integrated School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building at ilaya barangka integrated school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Ilaya Barangka Integrated School, Mandaluyong City
+    amounts:
+      "2020": 7000000
+      "2021": 5810000
+  - key: 18-001|rehabilitation of multipurpose building at isaac lopez integrated school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Isaac Lopez Integrated School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building at jose fabella memorial high school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Jose Fabella Memorial High School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building at kaban ng hiyas building at barangay plainview city of mandaluyong 14578028 121034173
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Kaban ng Hiyas Building at Barangay Plainview, City of Mandaluyong, 14.578028, 121.034173
+    amounts:
+      "2026": 15000000
+  - key: 18-001|rehabilitation of multipurpose building at mandaluyong college of science and technology barangay addition hills city of mandaluyong 14584454 121034931
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Mandaluyong College of Science and Technology, Barangay Addition Hills, City of Mandaluyong, 14.584454, 121.034931
+    amounts:
+      "2026": 10000000
+  - key: 18-001|rehabilitation of multipurpose building at mandaluyong elementary school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Mandaluyong Elementary School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+      "2025": 5000000
+  - key: 18-001|rehabilitation of multipurpose building at mandaluyong high school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Mandaluyong High School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building at mataas na paaralan neptali a gonzales mpnag at barangay mauway city of mandaluyong 14583160 121043774
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Mataas na Paaralan Neptali A. Gonzales (MPNAG) at Barangay Mauway, City of Mandaluyong, 14.583160, 121.043774
+    amounts:
+      "2026": 15000000
+  - key: 18-001|rehabilitation of multipurpose building at mataas na paaralang neptali a gonzales mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Mataas na Paaralang Neptali A. Gonzales, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building at nueve de pebrero elementary school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Nueve de Pebrero Elementary School, Mandaluyong City
+    amounts:
+      "2020": 1000000
+  - key: 18-001|rehabilitation of multipurpose building at pedro p cruz elementary school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Pedro P. Cruz Elementary School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building at plainview elementary school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Plainview Elementary School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building at pleasant hills elementary school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Pleasant Hills Elementary School, Mandaluyong City
+    amounts:
+      "2020": 1000000
+  - key: 18-001|rehabilitation of multipurpose building at renato lopez elementary school mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Renato Lopez Elementary School, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building at sanctuary barangay additional hills mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building at Sanctuary, Barangay Additional Hills, Mandaluyong City
+    amounts:
+      "2020": 5000000
+  - key: 18-001|rehabilitation of multipurpose building brgy barangka drive mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building, Brgy. Barangka Drive, Mandaluyong City
+    amounts:
+      "2020": 3000000
+  - key: 18-001|rehabilitation of multipurpose building brgy buayang bato mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building, Brgy. Buayang Bato, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building brgy hagdan bato libis mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-purpose Building, Brgy. Hagdan Bato Libis, Mandaluyong City
+    amounts:
+      "2020": 3502000
+  - key: 18-001|rehabilitation of multipurpose building brgy pagasa mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building, Brgy. Pag-asa, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building coronado street barangay hulo mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building, Coronado Street, Barangay Hulo, Mandaluyong City
+    amounts:
+      "2025": 5000000
+  - key: 18-001|rehabilitation of multipurpose building covered court at block 38 brgy addition hills mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Covered Court) at Block 38, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 3000000
+  - key: 18-001|rehabilitation of multipurpose building covered court at block 39 brgy addition hills mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Covered Court) at Block 39, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 3000000
+  - key: 18-001|rehabilitation of multipurpose building covered court at san jose brgy hulo mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Covered Court) at San Jose, Brgy. Hulo, Mandaluyong City
+    amounts:
+      "2020": 3000000
+  - key: 18-001|rehabilitation of multipurpose building covered court brgy bagong silang mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Covered Court), Brgy. Bagong Silang, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building covered court brgy buayang bato mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Covered Court), Brgy. Buayang Bato, Mandaluyong City
+    amounts:
+      "2020": 3000000
+  - key: 18-001|rehabilitation of multipurpose building covered court brgy daang bakal mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Covered Court), Brgy. Daang Bakal, Mandaluyong City
+    amounts:
+      "2020": 2000000
+  - key: 18-001|rehabilitation of multipurpose building covered court brgy ilaya mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Covered Court), Brgy. Ilaya, Mandaluyong City
+    amounts:
+      "2020": 3000000
+  - key: 18-001|rehabilitation of multipurpose building covered court mataas na paaralang neptali a gonzales at barangay mauway mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Covered Court) Mataas na Paaralang Neptali A. Gonzales at Barangay Mauway, Mandaluyong City
+    amounts:
+      "2025": 5000000
+  - key: 18-001|rehabilitation of multipurpose building evacuation center at barangay burol mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multipurpose Building (Evacuation Center) at Barangay Burol, Mandaluyong City
+    amounts:
+      "2022": 3000000
+  - key: 18-001|rehabilitation of multipurpose building fire substation at barangay mauway mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Fire substation) at Barangay Mauway, Mandaluyong City
+    amounts:
+      "2023": 5000000
+  - key: 18-001|rehabilitation of multipurpose building in highway hills elementary school phase i calbayog street barangay highway hills mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multipurpose Building in Highway Hills Elementary School Phase I, Calbayog Street, Barangay Highway Hills, Mandaluyong City
+    amounts:
+      "2023": 21500000
+  - key: 18-001|rehabilitation of multipurpose building justice hall building including post office and comelec offices at barangay plainview city of mandaluyong 14577822 121034607
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Justice Hall Building) including Post Office and Comelec Offices at Barangay Plainview, City of Mandaluyong, 14.577822, 121.034607
+    amounts:
+      "2026": 10000000
+  - key: 18-001|rehabilitation of multipurpose building mandaluyong justice hall barangay mandaluyong justice hall mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building, Mandaluyong Justice Hall, Barangay Mandaluyong Justice Hall, Mandaluyong City
+    amounts:
+      "2020": 5000000
+  - key: 18-001|rehabilitation of multipurpose building old building at rizal technological university mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building  (Old Building) at Rizal Technological University, Mandaluyong City
+    amounts:
+      "2020": 20000000
+      "2021": 16600000
+  - key: 18-001|rehabilitation of multipurpose building phase 1 block 34 brgy addition hills mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Phase 1), Block 34, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 3000000
+  - key: 18-001|rehabilitation of multipurpose building phase 2 block 34 brgy addition hills mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Phase 2), Block 34, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2020": 3000000
+  - key: 18-001|rehabilitation of multipurpose building sen gonzales academic hall at rizal technological university mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multipurpose Building (Sen. Gonzales Academic Hall) at Rizal Technological University, Mandaluyong City
+    amounts:
+      "2022": 30000000
+  - key: 18-001|rehabilitation of multipurpose building senior citizen center at barangay addition hills mandaluyong city
+    department: "18"
+    name: Rehabilitation of Multi-Purpose Building (Senior Citizen Center) at Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2023": 3000000
+  - key: 18-001|rehabilitation of three 3 storey twelve 12 classroom school building jose fabella memorial high school sc id 500334 brgy addition hills mandaluyong city
+    department: "18"
+    name: "Rehabilitation of Three (3) Storey Twelve (12) Classroom School Building, Jose Fabella Memorial High School, (SC ID: 500334), Brgy. Addition Hills, Mandaluyong City"
+    amounts:
+      "2026": 5000000
+  - key: 18-001|rehabilitationcompletion of multipurpose building  covered court  at barangay burol mandaluyong city
+    department: "18"
+    name: Rehabilitation/Completion of Multipurpose Building ( Covered Court ) at Barangay Burol, Mandaluyong City
+    amounts:
+      "2023": 3000000
+  - key: 18-001|rehabilitationcompletion of multipurpose building at justice hall building maysilo st barangay plainview mandaluyong city
+    department: "18"
+    name: Rehabilitation/Completion of Multi-Purpose Building at Justice Hall Building Maysilo St. Barangay Plainview, Mandaluyong City
+    amounts:
+      "2025": 4000000
+  - key: 18-001|rehabilitationcompletion of multipurpose building at prosecutors office building maysilo st barangay plainview mandaluyong city
+    department: "18"
+    name: Rehabilitation/Completion of Multi-Purpose Building at Prosecutor's Office Building Maysilo St. Barangay Plainview, Mandaluyong City
+    amounts:
+      "2025": 4000000
+  - key: 18-001|rehabilitationcompletion of multipurpose building titus compound at brgy barangka ibaba mandaluyong city
+    department: "18"
+    name: Rehabilitation/Completion  of Multipurpose Building (Titus compound) at Brgy. Barangka Ibaba, Mandaluyong City
+    amounts:
+      "2023": 3000000
+  - key: 18-001|repairrehabilitation of multipurpose building at mandaluyong science high school mandaluyong city
+    department: "18"
+    name: Repair/Rehabilitation of Multipurpose Building at Mandaluyong Science High School, Mandaluyong City
+    amounts:
+      "2023": 3000000
+  - key: 18-001|retrofitting of commission on population and development cpd motorpool barangay addition hills mandaluyong city
+    department: "18"
+    name: Retrofitting of Commission on Population and Development (CPD) Motorpool, Barangay Addition Hills, Mandaluyong City
+    amounts:
+      "2025": 30000000
+  - key: 36-001|desilting of buayang bato creek brgy buayang bato mandaluyong city
+    department: "36"
+    name: Desilting of Buayang Bato Creek, Brgy. Buayang Bato, Mandaluyong City
+    amounts:
+      "2026": 5000000
+  - key: 36-001|desilting of san francisco drainage main mandaluyong city
+    department: "36"
+    name: Desilting of San Francisco Drainage Main, Mandaluyong City
+    amounts:
+      "2023": 15000000
+  - key: 36-001|drainage improvement along f ortigas st brgy new zaniga mandaluyong city
+    department: "36"
+    name: Drainage Improvement along F. Ortigas St., Brgy. New Zaniga, Mandaluyong City
+    amounts:
+      "2026": 7000000
+  - key: 36-001|drainage improvement along star st interior and vicinity brgy poblacion mandaluyong city
+    department: "36"
+    name: Drainage Improvement along Star St. Interior and Vicinity, Brgy. Poblacion, Mandaluyong City
+    amounts:
+      "2026": 5493000
+  - key: 36-001|drainage improvement at brgy addition hills mandaluyong city
+    department: "36"
+    name: Drainage Improvement at Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2025": 5000000
+  - key: 36-001|drainage improvement at brgy malamig mandaluyong city
+    department: "36"
+    name: Drainage Improvement at Brgy. Malamig, Mandaluyong City
+    amounts:
+      "2023": 5000000
+  - key: 36-001|drainage improvement at brgy namayan mandaluyong city
+    department: "36"
+    name: Drainage Improvement at Brgy. Namayan, Mandaluyong City
+    amounts:
+      "2021": 3509000
+      "2024": 5000000
+  - key: 36-001|drainage improvement at brgy plainview mandaluyong city
+    department: "36"
+    name: Drainage Improvement at Brgy. Plainview, Mandaluyong City
+    amounts:
+      "2025": 15000000
+  - key: 36-001|drainage improvement at brgy poblacion mandaluyong city
+    department: "36"
+    name: Drainage Improvement at Brgy. Poblacion, Mandaluyong City
+    amounts:
+      "2024": 5000000
+  - key: 36-001|drainage improvement at brgy zaniga mandaluyong city
+    department: "36"
+    name: Drainage Improvement at Brgy. Zaniga, Mandaluyong City
+    amounts:
+      "2023": 3000000
+  - key: 36-001|drainage improvement brgy addition hills mandaluyong city
+    department: "36"
+    name: Drainage Improvement, Brgy. Addition Hills, Mandaluyong City
+    amounts:
+      "2022": 10000000
+  - key: 36-001|drainage improvement brgy mabini  j rizal mandaluyong city
+    department: "36"
+    name: Drainage Improvement, Brgy. Mabini - J. Rizal, Mandaluyong City
+    amounts:
+      "2022": 5000000
+  - key: 36-001|drainage improvement brgy poblacion mandaluyong city
+    department: "36"
+    name: Drainage Improvement, Brgy. Poblacion, Mandaluyong City
+    amounts:
+      "2022": 8510000
+  - key: 36-001|improvement of maytunas creek brgy daang bakal to brgy bagong silang mandaluyong city
+    department: "36"
+    name: Improvement of Maytunas Creek, Brgy. Daang Bakal to Brgy. Bagong Silang, Mandaluyong City
+    amounts:
+      "2026": 15000000
+  - key: 36-001|rehabilitation and improvement along san juan river from mouth of pasig river to sevilla bridge manila and mandaluyong city
+    department: "36"
+    name: Rehabilitation and Improvement along San Juan River from mouth of Pasig River to Sevilla Bridge, Manila and Mandaluyong City
+    amounts:
+      "2025": 162000000
+  - key: 36-001|rehabilitation of buhangin creek mandaluyong city
+    department: "36"
+    name: Rehabilitation of Buhangin Creek, Mandaluyong City
+    amounts:
+      "2020": 10000000
+  - key: 36-001|rehabilitation of buhangin creek phase ii mandaluyong city
+    department: "36"
+    name: Rehabilitation of Buhangin Creek (Phase II), Mandaluyong City
+    amounts:
+      "2024": 10000000
+  - key: 36-001|rehabilitation of buhangin creek phase iii mandaluyong city
+    department: "36"
+    name: Rehabilitation of Buhangin Creek (Phase III), Mandaluyong City
+    amounts:
+      "2025": 7000000
+  - key: 36-001|rehabilitation of maysilo creek mandaluyong city
+    department: "36"
+    name: Rehabilitation of Maysilo Creek, Mandaluyong City
+    amounts:
+      "2021": 15000000
+  - key: 36-001|rehabilitation of maytunas creek mandaluyong city
+    department: "36"
+    name: Rehabilitation of Maytunas Creek, Mandaluyong City
+    amounts:
+      "2020": 23509000
+      "2021": 15000000
+      "2022": 10000000
+      "2023": 10508000
+      "2024": 12493000
+  - key: 36-001|rehabilitation of maytunas creek phase ii mandaluyong city
+    department: "36"
+    name: Rehabilitation of Maytunas Creek (Phase II), Mandaluyong City
+    amounts:
+      "2025": 5493000

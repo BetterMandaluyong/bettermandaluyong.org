@@ -36,6 +36,7 @@ export const NAV: NavItem[] = [
   { label: "Barangays", href: "/barangays" },
   { label: "Districts", href: "/districts" },
   { label: "News", href: "/news" },
+  { label: "Budget", href: "/budget" },
 ];
 
 /**
@@ -384,6 +385,94 @@ export const NEWS = {
   facebookLink: "See all posts on Facebook",
   latestHeading: "News from the City Hall",
   latestLink: "All city news",
+} as const;
+
+/** Where the budget snapshot's change history lives: every refresh is a commit to `data/budget`. */
+export const BUDGET_HISTORY_URL = `${SITE.repoUrl}/commits/main/data/budget`;
+
+/**
+ * Copy for the national budget page. The figures come from the BetterGov.ph
+ * Budget API (snapshot in `data/budget/`). Keep its rules in the wording:
+ * amounts are as published, not spending; the NEP and the House bill are
+ * compared, never added; a line in one version only is a lead, not a finding.
+ */
+export const BUDGET = {
+  metaTitle: `National Budget — ${SITE.name}`,
+  metaDescription:
+    "The national budget money that names Mandaluyong: every 2027 project in the President's proposal and the House bill, and the enacted budgets of 2020 to 2026.",
+  heading: "The National Budget in Mandaluyong",
+  intro:
+    "What the national budget sets aside for projects in Mandaluyong: the 2027 projects in the President's proposal and in the House's version, and what was enacted from 2020 to 2026. This is national money, not the City Government's own budget.",
+  notSpending:
+    "Amounts are what the budget documents say, not money spent. A dash means a document has no such line.",
+  asOf: (date: string) => `Figures as of ${date}.`,
+  historyLink: "See every change on GitHub",
+
+  figuresHeading: "At a Glance",
+  figures: {
+    lines: "Project lines for 2027",
+    linesNote: (programs: number) =>
+      `In ${programs} national programs that list projects one by one.`,
+    nep: "2027 proposal (NEP)",
+    house: "2027 House bill",
+    versionNote: (lines: number) => `Over the ${lines} lines it has.`,
+    gaa: (year: number) => `Enacted for ${year}`,
+    gaaNote: (programs: number) =>
+      `${programs} programs and projects that name the city.`,
+  },
+  versionsNote:
+    "The NEP is the budget the President proposes; the House bill is the House of Representatives' version. They are two versions of the same budget: compare them, don't add them.",
+
+  projectsHeading: "Projects for 2027",
+  projectsIntro:
+    "Every 2027 line whose title names Mandaluyong, in the four national programs that list projects one by one: public works, farm-to-market roads, health facilities, and irrigation. A line found in only one version is a lead to check, not a finding.",
+  projectsMeta: (n: number) => `${n} lines`,
+  statusesLabel: "Lines by status",
+  nep: "NEP",
+  house: "House bill",
+  noLine: "no such line",
+  unconfirmed: "Unconfirmed match",
+  detailsLink: "See this line on budget.bettergov.ph",
+  nepPage: "NEP page",
+  housePage: "House bill page",
+  projectsEmpty: "No 2027 lines name Mandaluyong yet.",
+
+  officeHeading: "Who Builds Here",
+  officeIntro:
+    "Public works money is published by DPWH office, not by city. The office that serves Mandaluyong also serves other districts, so its figures are the whole office's: shared, never split.",
+  alsoServes: "Also serves",
+  office: {
+    gaa2026: "Enacted for 2026, whole office",
+    nep2027: "2027 NEP, whole office",
+    house2027: "2027 House bill, named projects",
+    change: "2027 change on the same named projects",
+  },
+  districtLink: "See the district on budget.bettergov.ph",
+  representative: "Represented in Congress by",
+
+  gaaHeading: "Enacted Budgets, 2020–2026",
+  gaaIntro:
+    "Programs and projects in the General Appropriations Act, in any department, whose name names Mandaluyong. These are appropriations, the authority to spend, not spending. A program counts in a year only if it has money that year.",
+  gaaYear: (programs: number) =>
+    programs === 1 ? "1 program" : `${programs} programs`,
+  gaaNone: "No programs name Mandaluyong this year.",
+
+  aboutHeading: "About These Figures",
+  about:
+    "We copy these figures from the BetterGov.ph Budget API and keep every change in public history. We search for lines that name Mandaluyong as a whole word; a line that doesn't spell out the city won't appear here, and the API doesn't yet place every project by city.",
+  excludedHeading: "Lines Left Out by Hand",
+  excludedNone: "No lines have been left out by hand.",
+  disclaimersTag: "From the data source",
+  credit:
+    "Data: BetterGov.ph Budget API, by People's Budget Coalition × BetterGov.PH, licensed",
+  licenseLink: "CC BY 4.0",
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+  changes:
+    "We kept only the lines that name Mandaluyong, dropped the map coordinates from project titles, and grouped the 2020–2026 programs by year. Figures, labels, and dates are unchanged.",
+  sourceLink: "budget.bettergov.ph",
+  sourceUrl: "https://budget.bettergov.ph/",
+  docsLink: "API documentation",
+  docsUrl: "https://budget.bettergov.ph/docs",
 } as const;
 
 /** Builds a `mailto:` href for an address. */

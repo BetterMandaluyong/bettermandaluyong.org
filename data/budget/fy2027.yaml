@@ -1,0 +1,525 @@
+# Written by scripts/budget_refresh.ts from the BetterGov.ph Budget API
+# (https://budget.bettergov.ph/docs). Don't edit by hand: change
+# data/budget/scope.yaml and run the script. See DEPLOYMENT.md.
+fetched_at: 2026-11-26
+source:
+  built_at: 2026-10-26T08:46:14.383Z
+  commit: a0caa778442cdae5583f5a006ea7401dab00e5ac
+  notice: "Independent and unofficial. This comparison is our own reading of the published documents, not an official record of the budget department, the agencies or the House. Figures are the amounts published in the documents, not spending. No allegations. An insertion, deletion, or amount-change candidate describes a provisional comparison between identified sources. That classification alone does not establish irregularity or wrongdoing by any office or official and should not be represented as such. Absence from an API snapshot likewise does not establish absence from the published NEP or concealment. Read the full notice: https://budget.bettergov.ph/hgab/2027/methodology#disclaimer."
+disclaimers:
+  - id: disclaimer-no-allegations
+    title: No allegations.
+    body: An insertion, deletion, or amount-change candidate describes a provisional comparison between identified sources. That classification alone does not establish irregularity or wrongdoing by any office or official and should not be represented as such. Absence from an API snapshot likewise does not establish absence from the published NEP or concealment.
+    url: https://budget.bettergov.ph/hgab/2027/methodology#disclaimer-no-allegations
+programs:
+  dpwh: DPWH national infrastructure
+  fmr: DA farm-to-market roads
+  hfep: DOH Health Facilities Enhancement Program
+  nia: NIA irrigation
+district:
+  id: leg:mandaluyong-city:lone
+  label: City of Mandaluyong, Lone District
+  url: https://budget.bettergov.ph/hgab/2027/districts/leg%3Amandaluyong-city%3Alone
+  attribution: B
+  attribution_label: Shared · the office total, not split
+  offices:
+    - name: Metro Manila 1st DEO
+      kind: District engineering office (DEO)
+      tier: B
+      tier_text: Shared with 6 other districts, not split
+      co_served:
+        - City of Marikina, 1st District
+        - City of Marikina, 2nd District
+        - Pasig City, Lone District
+        - San Juan City, Lone District
+        - Taguig City, Lone District
+        - Taguig City, 2nd District
+  headline:
+    gaa_2026: 3340472000
+    nep_2027: 1124696000
+    house_2027: 1656113000
+  vs_proposal:
+    nep: 1078537000
+    house: 1656113000
+    delta: 577576000
+projects:
+  - key: dpwh:house-reading:10614
+    program: dpwh
+    title: Construction (completion) at Nueve de Febrero Elementary School, Barangay Addition Hills, Mandaluyong, 14.58731333, 121.038835
+    line: Convergence and Special Support Program
+    office: Central Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 200000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10614
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=630
+    lat: 14.58731
+    lon: 121.03884
+  - key: dpwh:house-reading:10619
+    program: dpwh
+    title: Construction (completion) of Multi-Purpose Building (Multi-Level Parking) at Senate President Neptali A. Gonzales General Hospital at Barangay Mauway, Mandaluyong, 14.5806795, 121.04413
+    line: Convergence and Special Support Program
+    office: Central Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 200000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10619
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=630
+    lat: 14.58068
+    lon: 121.04413
+  - key: dpwh:house-reading:10622
+    program: dpwh
+    title: Construction (completion) of Senate President Neptali A. Gonzales General Hospital at Barangay Mauway, Mandaluyong, 14.58137917, 121.0440767
+    line: Convergence and Special Support Program
+    office: Central Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 200000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10622
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=630
+    lat: 14.58138
+    lon: 121.04408
+  - key: dpwh:house-reading:10631
+    program: dpwh
+    title: Construction of Multi-Purpose Building at Senior Citizen Center at Barangay Addition Hills, Mandaluyong, 121.0348, 14.585161
+    line: Convergence and Special Support Program
+    office: Central Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 70000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10631
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=630
+    lat: 14.58516
+    lon: 121.0348
+  - key: dpwh:house-reading:2954
+    program: dpwh
+    title: Makati-Mandaluyong Br. (B04891LZ) along Makati-Mandaluyong Br.
+    line: Bridge Program
+    office: Metro Manila 2nd District Engineering Office
+    status: Same amount in both
+    group: unchanged
+    held: false
+    nep: 42200000
+    house: 42200000
+    delta: 0
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A2954
+    nep_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/nep2027-vol-iib.pdf#page=326
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=273
+    lat: null
+    lon: null
+  - key: dpwh:house-reading:10664
+    program: dpwh
+    title: Construction (Completion) Multi-Purpose Building, Five Storey, beside the Mandaluyong City Medical Center Hall located at Martinez St., Barangay Addition Hills, Mandaluyong City
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: Same amount in both
+    group: unchanged
+    held: false
+    nep: 40000000
+    house: 40000000
+    delta: 0
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10664
+    nep_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/nep2027-vol-iib.pdf#page=572
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=656
+    lat: null
+    lon: null
+  - key: dpwh:house-reading:10683
+    program: dpwh
+    title: Construction of Multi-Purpose Building, Saniboy St., Barangay Hulo, Mandaluyong City
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: Same amount in both
+    group: unchanged
+    held: false
+    nep: 40000000
+    house: 40000000
+    delta: 0
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10683
+    nep_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/nep2027-vol-iib.pdf#page=573
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=658
+    lat: null
+    lon: null
+  - key: dpwh:house-reading:10669
+    program: dpwh
+    title: Construction (Completion) of Multi-Purpose Building (Motorpool) at Commission on Population and Development, Mandaluyong City
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: Same amount in both
+    group: unchanged
+    held: false
+    nep: 30000000
+    house: 30000000
+    delta: 0
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10669
+    nep_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/nep2027-vol-iib.pdf#page=572
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=657
+    lat: null
+    lon: null
+  - key: dpwh:house-reading:10674
+    program: dpwh
+    title: Construction of Multi Level Covered Court Building at Molave Barangay Addition Hills, Mandaluyong, 14.5855, 121.03675
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 30000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10674
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=657
+    lat: 14.5855
+    lon: 121.03675
+  - key: dpwh:house-reading:10676
+    program: dpwh
+    title: Construction of Multi-Purpose Building at Batibot Block 39 Barangay Addition Hills, Mandaluyong, 14.579401, 121.036513
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 30000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10676
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=657
+    lat: 14.5794
+    lon: 121.03651
+  - key: dpwh:house-reading:10679
+    program: dpwh
+    title: Construction of Multi-Purpose Building Covered Court at Jose Fabella Center DSWD NCR Barangay Addition Hills, Mandaluyong, 14.585594, 121.040829
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 30000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10679
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=657
+    lat: 14.58559
+    lon: 121.04083
+  - key: dpwh:house-reading:3649
+    program: dpwh
+    title: Construction of Maytunas Pumping Station and Improvement of Maytunas Creek and its Vicinity, Mandaluyong City (14.595093, 121.026348)
+    line: Flood Management Program
+    office: Metro Manila 1st District Engineering Office
+    status: Same amount in both
+    group: unchanged
+    held: false
+    nep: 26775000
+    house: 26775000
+    delta: 0
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A3649
+    nep_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/nep2027-vol-iib.pdf#page=365
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=321
+    lat: 14.59509
+    lon: 121.02635
+  - key: dpwh:house-reading:10663
+    program: dpwh
+    title: Construction (completion) at Mandaluyong College of Science and Technology, Barangay Addition Hills, Mandaluyong, 14.5846, 121.0349
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 25000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10663
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=656
+    lat: 14.5846
+    lon: 121.0349
+  - key: dpwh:house-reading:10666
+    program: dpwh
+    title: Construction (completion) of Multi-Pupose Building (Covered Court) at Nayon ng Kabataan, Barangay Addition Hills, Mandaluyong, 14.584445, 121.035212
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 25000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10666
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=656
+    lat: 14.58445
+    lon: 121.03521
+  - key: dpwh:house-reading:10665
+    program: dpwh
+    title: Construction (completion) of Multi-Purpose Building, along 9 de Febrero , Barangay Mauway, Mandaluyong, 14.569941, 121.03184
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 20000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10665
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=656
+    lat: 14.56994
+    lon: 121.03184
+  - key: dpwh:house-reading:10670
+    program: dpwh
+    title: Construction (Completion) of Multi-Purpose Building (STP) at Commission on Population and Development, Mandaluyong City
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: Same amount in both
+    group: unchanged
+    held: false
+    nep: 20000000
+    house: 20000000
+    delta: 0
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10670
+    nep_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/nep2027-vol-iib.pdf#page=572
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=657
+    lat: null
+    lon: null
+  - key: dpwh:house-reading:10672
+    program: dpwh
+    title: Construction (Completion) of Multi-Purpose Building, Three Storey, located at Castañeda St., Barangay Namayan, Mandaluyong City
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: Same amount in both
+    group: unchanged
+    held: false
+    nep: 20000000
+    house: 20000000
+    delta: 0
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10672
+    nep_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/nep2027-vol-iib.pdf#page=572
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=657
+    lat: null
+    lon: null
+  - key: dpwh:house-reading:10687
+    program: dpwh
+    title: Rehabilitation of Multi-Purpose Building at Rizal Technological University at Barangay Malamig, Mandaluyong, 14.583288, 121.03325
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 20000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10687
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=657
+    lat: 14.58329
+    lon: 121.03325
+  - key: dpwh:house-reading:10684
+    program: dpwh
+    title: Construction of the Multi-Purpose Building located at Welfareville Compound, Barangay Addition Hills, Mandaluyong City
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: Same amount in both
+    group: unchanged
+    held: false
+    nep: 15000000
+    house: 15000000
+    delta: 0
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10684
+    nep_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/nep2027-vol-iib.pdf#page=573
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=658
+    lat: null
+    lon: null
+  - key: dpwh:house-reading:10685
+    program: dpwh
+    title: Rehabilitation of Multi- Pirpose Building (Covered Court and Outpost) at Block 19, Barangay Addition Hills, Mandaluyong, 14.6298, 121.0996
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 5000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10685
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=656
+    lat: 14.6298
+    lon: 121.0996
+  - key: dpwh:house-reading:10688
+    program: dpwh
+    title: Rehabilitation of Multi-Purpose Building (Covered Court) at Addition Hills Integrated School, Barangay Addition Hills, Mandaluyong, 14.583288, 121.03325
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 5000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10688
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=656
+    lat: 14.58329
+    lon: 121.03325
+  - key: dpwh:house-reading:10689
+    program: dpwh
+    title: Rehabilitation of Multi-Purpose Building (Covered Court) at Barangay Barangka Ibaba, Mandaluyong, 14.583288, 121.03325
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 5000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10689
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=657
+    lat: 14.58329
+    lon: 121.03325
+  - key: dpwh:house-reading:10690
+    program: dpwh
+    title: Rehabilitation of Multi-Purpose Building (Covered Court) at Barangay Barangka Itaas, Mandaluyong, 14.583288, 121.03325
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 5000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10690
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=657
+    lat: 14.58329
+    lon: 121.03325
+  - key: dpwh:house-reading:10691
+    program: dpwh
+    title: Rehabilitation of Multi-Purpose Building (Covered Court) at Block 12 Barangay Addition Hills, Mandaluyong, 14.6298, 121.0996
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 5000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10691
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=657
+    lat: 14.6298
+    lon: 121.0996
+  - key: dpwh:house-reading:10692
+    program: dpwh
+    title: Rehabilitation of Multi-Purpose Building (Covered Court) at City of Mandaluyong Science High School at Barangay Hulo, Mandaluyong, 14.6298, 121.0996
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 5000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10692
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=656
+    lat: 14.6298
+    lon: 121.0996
+  - key: dpwh:house-reading:10693
+    program: dpwh
+    title: Rehabilitation of Multi-Purpose Building (Covered Court) at E. Rodriguez Integrated School at Barangay Hagdang Bato Itaas, Mandaluyong, 14.588011, 121.030687
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 5000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10693
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=656
+    lat: 14.58801
+    lon: 121.03069
+  - key: dpwh:house-reading:10694
+    program: dpwh
+    title: Rehabilitation of Multi-Purpose Building (Covered Court) at Hulo Integrated School at Barangay Hulo, Mandaluyong, 14.569004, 121.034764
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 5000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10694
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=656
+    lat: 14.569
+    lon: 121.03476
+  - key: dpwh:house-reading:10695
+    program: dpwh
+    title: Rehabilitation of Multi-Purpose Building (Covered Court) at Isaac Lopez Integrated School at Barangay Vergara, Mandaluyong, 14.583288, 121.03325
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 5000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10695
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=657
+    lat: 14.58329
+    lon: 121.03325
+  - key: dpwh:house-reading:10696
+    program: dpwh
+    title: Rehabilitation of Multi-Purpose Building (Covered Court) at Barangay Mabini J. Rizal, Mandaluyong, 14.585564, 121.021158
+    line: Convergence and Special Support Program
+    office: Metro Manila 1st District Engineering Office
+    status: House bill only
+    group: house_only
+    held: false
+    nep: null
+    house: 5000000
+    delta: null
+    url: https://budget.bettergov.ph/hgab/2027/dpwh/p/house-reading%3A10696
+    nep_pdf: null
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ic.pdf#page=656
+    lat: 14.58556
+    lon: 121.02116
+  - key: hfep:ib:p882:r66|medical_equipment
+    program: hfep
+    title: Mandaluyong City Medical Center
+    line: 2. LGU Hospitals
+    office: null
+    status: Higher in the House bill
+    group: increased
+    held: false
+    nep: 17500000
+    house: 20000000
+    delta: 2500000
+    url: https://budget.bettergov.ph/hgab/2027/hfep/p/ib%3Ap882%3Ar66%7Cmedical_equipment
+    nep_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/nep2027-hfep.pdf#page=5
+    house_pdf: https://budget-assets.bettergov.ph/hgab/2027/pdf/hb10858-3r-vol-ib.pdf#page=882
+    lat: null
+    lon: null

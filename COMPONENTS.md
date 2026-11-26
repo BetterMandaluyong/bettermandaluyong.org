@@ -241,6 +241,68 @@ nested lists inside a `<figure>`, so screen readers announce the levels.
 />
 ```
 
+### `Notice` (BetterGov)
+
+`components/Notice.tsx`: a calm notice panel, a navy left rule on `ed-paper-2`
+(never red): a navy `Eyebrow` `tag`, a display-face `title`, and `children` for
+the body and links. `role` is `note` (a standing notice, the default) or
+`status` (it replaces content that failed to load). The budget page prints the
+Budget API's disclaimers in it, word for word.
+
+```tsx
+<Notice tag="From the data source" title={d.title}>
+  <p className="type-body m-0 mt-3">{d.body}</p>
+</Notice>
+```
+
+### `StatList`
+
+`components/StatList.tsx`: headline figures as a `<dl>` grid of hairline cells:
+a mono label, the figure in the display face (tabular digits), and an optional
+note. Four across on wide screens, two on tablets, stacked on phones. Takes
+`items` (`Stat[]`: `label`, `value`, `note?`) and an accessible `label`. Format
+amounts first (`formatPesoShort` in `utils/budget/format.ts`).
+
+```tsx
+<StatList
+  label="At a Glance"
+  items={[{ label: "2027 House bill", value: "₱1.15 billion" }]}
+/>
+```
+
+### `BudgetProjectList`
+
+`components/BudgetProjectList.tsx`: the 2027 budget lines as a ruled `<ol>`.
+Each row: the API's status as a `Flag` (plus an outline "Unconfirmed match" flag
+when `held`), the title without appended map coordinates (`projectTitle`), the
+program, program line and office, a link to the line on budget.bettergov.ph, and
+the NEP and House bill amounts side by side, each with a link to its page in the
+budget document. A version with no such line shows a dash (read out as "no such
+line"), never ₱0; the two amounts are never added. Takes `projects` (already
+sorted: `sortProjects`), `programs` (key → label, from `BUDGET_2027.programs`)
+and a `label`. Copy is in `BUDGET` (`content.ts`).
+
+```tsx
+<BudgetProjectList
+  projects={sortProjects(BUDGET_2027.projects)}
+  programs={BUDGET_2027.programs}
+  label="Projects for 2027"
+/>
+```
+
+### `BudgetYearList`
+
+`components/BudgetYearList.tsx`: the enacted budgets (GAA) year by year, newest
+first, as native `<details>` (no JavaScript). The summary shows the year, how
+many programs it funds and their total; opened, the programs, largest first,
+with department and exact amount. A program counts in a year only where its
+amount is above zero. Takes `gaa` (`BUDGET_GAA` from `data/budget.ts`) and an
+optional `openYear`.
+
+```tsx
+<BudgetYearList gaa={BUDGET_GAA} />
+```
+
 ### `SourceNote`
 
 `components/SourceNote.tsx`: the small credit line under third-party data:
@@ -393,5 +455,9 @@ beside the barangay view.
   (`data/people.ts`): the `/people/<slug>` directory.
 - `formatSourceDate(isoDate)` (`utils/barangays/format.ts`): "February 20,
   2026".
+- `formatPeso`, `formatPesoShort`, `versionTotal`, `sortProjects`,
+  `statusCounts`, `gaaYearTotals`, `gaaProgramsFor`, `projectTitle`
+  (`utils/budget/format.ts`): budget display math. Totals are per version (NEP
+  or House bill), never added; a missing line is `null`, shown as a dash.
 - `COLOR_TOKENS`, `TYPE_UTILITIES` (`components/tokens.ts`): what `/storybook`
   shows; `tokens_test.ts` checks each exists in `globals.css`.
