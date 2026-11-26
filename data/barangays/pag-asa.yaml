@@ -9,25 +9,25 @@ hall:
     - 8551-0592
   email: null
 council:
-  captain: Conrado Uaje Angga, Jr.
+  captain: 01M8AYCW7PSA6X5QWP33DV67N7 # Conrado Uaje Angga, Jr.
   kagawads:
-    - Niño Q. Cunanan
-    - David G. Vasquez
-    - Abegail G. Estoque
-    - Mary Julyne M. Angga
-    - Chlarina L. Corpuz
-    - Emmanuel C. Averilla
-    - Victorino D. Tutanes
+    - 01M8AYCW7PSA6X5QWP33DV67N8 # Niño Q. Cunanan
+    - 01M8AYCW7PSA6X5QWP33DV67N9 # David G. Vasquez
+    - 01M8AYCW7PSA6X5QWP33DV67NA # Abegail G. Estoque
+    - 01M8AYCW7PSA6X5QWP33DV67NB # Mary Julyne M. Angga
+    - 01M8AYCW7QHH3M0V0E0JRHJBVM # Chlarina L. Corpuz
+    - 01M8AYCW7QHH3M0V0E0JRHJBVN # Emmanuel C. Averilla
+    - 01M8AYCW7QHH3M0V0E0JRHJBVP # Victorino D. Tutanes
 sk:
-  chair: Cherilyn Vicencio Mina
+  chair: 01M8AYCW7QHH3M0V0E0JRHJBVQ # Cherilyn Vicencio Mina
   kagawads:
-    - Joyce Ann L. De Leon
-    - Ace V. Fernandez
-    - Janella Isabel T. Peñafiel
-    - Alyana M. Gonzales
-    - Christopher B. Reyes
-    - Kristen Anika B. Reyes
-    - Jan Dee M. Camba
+    - 01M8AYCW7QHH3M0V0E0JRHJBVR # Joyce Ann L. De Leon
+    - 01M8AYCW7QHH3M0V0E0JRHJBVS # Ace V. Fernandez
+    - 01M8AYCW7QHH3M0V0E0JRHJBVT # Janella Isabel T. Peñafiel
+    - 01M8AYCW7QHH3M0V0E0JRHJBVV # Alyana M. Gonzales
+    - 01M8AYCW7QHH3M0V0E0JRHJBVW # Christopher B. Reyes
+    - 01M8AYCW7QHH3M0V0E0JRHJBVX # Kristen Anika B. Reyes
+    - 01M8AYCW7QHH3M0V0E0JRHJBVY # Jan Dee M. Camba
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-pag-asa/
   updated: 2026-02-20

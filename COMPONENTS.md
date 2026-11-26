@@ -179,6 +179,44 @@ optional `href` links the name to the person's `/people/…` page. Takes `items`
 />
 ```
 
+### `PersonCard` / `PersonCards`
+
+`components/PersonCard.tsx`: one officeholder as a square link tile, styled like
+`BarangayList`'s tiles: position as a mono label, the name in navy, and `Flag`s
+for their council district and barangay (both optional). The whole tile is one
+link to their `/people/<slug>` page. `PersonCards` lays out `PersonCardItem[]`
+as a grid that stacks to one column on phones, with an accessible `label`. Used
+for the category sections on `/people`.
+
+```tsx
+<PersonCards
+  label="Barangay Captains"
+  items={[
+    { name, role: "Barangay Captain", href, district: 2, barangay: "Hulo" },
+  ]}
+/>
+```
+
+### `OrgChart`
+
+`components/OrgChart.tsx`: an org chart in plain HTML and CSS, no JavaScript.
+Takes a `root` `OrgNode` and a `label`. On wide screens the root's children
+become columns under a shared bar; on phones, and at every deeper level, it's an
+indented tree with hairline connectors (`ed-rule-strong`). A node with `people`
+is an office: its title is a small label above the names, each with an optional
+`role` and `href`. A node without `people` is a group with a heading. A node
+with an `href` gets a linked heading (a place, like a barangay). `grid: true`
+lays a node's children out as compact boxes with no connectors. The structure is
+nested lists inside a `<figure>`, so screen readers announce the levels.
+`data/org-chart.ts` builds the city's tree for `/people`.
+
+```tsx
+<OrgChart
+  root={buildOrgChart()}
+  label="Chart of Mandaluyong's elected offices"
+/>
+```
+
 ### `SourceNote`
 
 `components/SourceNote.tsx`: the small credit line under third-party data:

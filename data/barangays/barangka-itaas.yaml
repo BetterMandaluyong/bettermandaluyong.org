@@ -10,25 +10,25 @@ hall:
     - 8522-3075
   email: null
 council:
-  captain: Ronaldo Camacho
+  captain: 01M8AYCW7PSA6X5QWP33DV67DT # Ronaldo Camacho
   kagawads:
-    - Ernesto P. Ortega
-    - Mariel V. Novales
-    - Regino C. Castillo Jr.
-    - Ramon R. Riñoza
-    - Virmina J. Caralipio
-    - Jose Romulo N. Nario
-    - Robert A. Tendencia
+    - 01M8AYCW7PSA6X5QWP33DV67DV # Ernesto P. Ortega
+    - 01M8AYCW7PSA6X5QWP33DV67DW # Mariel V. Novales
+    - 01M8AYCW7PSA6X5QWP33DV67DX # Regino C. Castillo Jr.
+    - 01M8AYCW7PSA6X5QWP33DV67DY # Ramon R. Riñoza
+    - 01M8AYCW7PSA6X5QWP33DV67DZ # Virmina J. Caralipio
+    - 01M8AYCW7PSA6X5QWP33DV67E0 # Jose Romulo N. Nario
+    - 01M8AYCW7PSA6X5QWP33DV67E1 # Robert A. Tendencia
 sk:
-  chair: Gerome A. Tuberlleha
+  chair: 01M8AYCW7PSA6X5QWP33DV67E2 # Gerome A. Tuberlleha
   kagawads:
-    - Ralzen U. Dela Cruz
-    - Rachelle Ann G. Fontanilla
-    - Sean Harvey G. Tobias
-    - Ronnica Mae A. Cantos
-    - Alli Zandra L. Bautista
-    - Sheila Marie T. Boncay
-    - Princess Ronella L. Quijano
+    - 01M8AYCW7PSA6X5QWP33DV67E3 # Ralzen U. Dela Cruz
+    - 01M8AYCW7PSA6X5QWP33DV67E4 # Rachelle Ann G. Fontanilla
+    - 01M8AYCW7PSA6X5QWP33DV67E5 # Sean Harvey G. Tobias
+    - 01M8AYCW7PSA6X5QWP33DV67E6 # Ronnica Mae A. Cantos
+    - 01M8AYCW7PSA6X5QWP33DV67E7 # Alli Zandra L. Bautista
+    - 01M8AYCW7PSA6X5QWP33DV67E8 # Sheila Marie T. Boncay
+    - 01M8AYCW7PSA6X5QWP33DV67E9 # Princess Ronella L. Quijano
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-barangka-itaas/
   updated: 2026-02-20

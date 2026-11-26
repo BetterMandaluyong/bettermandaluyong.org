@@ -10,25 +10,25 @@ hall:
     - "09055358191"
   email: null
 council:
-  captain: Joan S. Batan
+  captain: 01M8AYCW7QHH3M0V0E0JRHJBXF # Joan S. Batan
   kagawads:
-    - Harold C. Reyes
-    - Maria Teresa S. Camacho
-    - Joswa C. Cruz
-    - Ericson V. Banda
-    - Alexander M. Miranda
-    - Wilfredo R. Zapanta
-    - Juanito T. Raagas
+    - 01M8AYCW7QHH3M0V0E0JRHJBXG # Harold C. Reyes
+    - 01M8AYCW7QHH3M0V0E0JRHJBXH # Maria Teresa S. Camacho
+    - 01M8AYCW7QHH3M0V0E0JRHJBXJ # Joswa C. Cruz
+    - 01M8AYCW7QHH3M0V0E0JRHJBXK # Ericson V. Banda
+    - 01M8AYCW7QHH3M0V0E0JRHJBXM # Alexander M. Miranda
+    - 01M8AYCW7QHH3M0V0E0JRHJBXN # Wilfredo R. Zapanta
+    - 01M8AYCW7QHH3M0V0E0JRHJBXP # Juanito T. Raagas
 sk:
-  chair: Romark B. Orias
+  chair: 01M8AYCW7QHH3M0V0E0JRHJBXQ # Romark B. Orias
   kagawads:
-    - Naomi B. Sabado
-    - Bea Mae M. Inocencio
-    - Julia Faith F. Dela Cruz
-    - Heiczel C. Esguerra
-    - Jacinto M. Maure
-    - Marian Joy S. Porquez
-    - Mary Grace C. Bartolaba
+    - 01M8AYCW7QHH3M0V0E0JRHJBXR # Naomi B. Sabado
+    - 01M8AYCW7QHH3M0V0E0JRHJBXS # Bea Mae M. Inocencio
+    - 01M8AYCW7QHH3M0V0E0JRHJBXT # Julia Faith F. Dela Cruz
+    - 01M8AYCW7QHH3M0V0E0JRHJBXV # Heiczel C. Esguerra
+    - 01M8AYCW7QHH3M0V0E0JRHJBXW # Jacinto M. Maure
+    - 01M8AYCW7QHH3M0V0E0JRHJBXX # Marian Joy S. Porquez
+    - 01M8AYCW7QHH3M0V0E0JRHJBXY # Mary Grace C. Bartolaba
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-san-jose/
   updated: 2026-02-20

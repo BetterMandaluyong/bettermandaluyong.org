@@ -9,6 +9,8 @@ import { Eyebrow } from "../../components/Eyebrow.tsx";
 import { Flag } from "../../components/Flag.tsx";
 import { NewsList } from "../../components/NewsList.tsx";
 import { OfficialList } from "../../components/OfficialList.tsx";
+import { OrgChart, type OrgNode } from "../../components/OrgChart.tsx";
+import { PersonCards } from "../../components/PersonCard.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { DilgNote } from "../../components/DilgNote.tsx";
@@ -33,6 +35,58 @@ export const metadata: Metadata = {
   title: `Storybook — ${SITE.name}`,
   description: "Design tokens and components used on bettermandaluyong.org.",
   robots: { index: false, follow: false },
+};
+
+/** An obviously sample tree for the OrgChart specimen; never real people. */
+const SAMPLE_ORG: OrgNode = {
+  title: "Sample City",
+  children: [
+    {
+      title: "Sample branch",
+      children: [
+        {
+          title: "Sample office",
+          people: [{ name: "Sample Person One", href: "#" }],
+        },
+      ],
+    },
+    {
+      title: "Another branch",
+      children: [
+        {
+          title: "Sample council",
+          meta: "One line about the office",
+          people: [
+            { name: "Sample Person Two", role: "Presiding officer", href: "#" },
+          ],
+          children: [
+            {
+              title: "Sample members",
+              people: [
+                { name: "Sample Person Three", href: "#" },
+                { name: "Sample Person Four", href: "#" },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "A grid branch",
+      meta: "Children shown as a grid",
+      children: [
+        {
+          title: "Sample group",
+          grid: true,
+          children: ["One", "Two", "Three"].map((n) => ({
+            title: `Sample place ${n}`,
+            href: "#",
+            people: [{ name: `Sample Leader ${n}`, role: "Leader", href: "#" }],
+          })),
+        },
+      ],
+    },
+  ],
 };
 
 /** Obviously sample rows for the NewsList specimen; never real city posts. */
@@ -270,6 +324,30 @@ export default function StorybookPage() {
               },
             ]}
           />
+        </Specimen>
+        <Specimen name="PersonCards (with and without place flags; sample data only)">
+          <PersonCards
+            label="Sample people"
+            items={[
+              {
+                name: "Sample Person One",
+                role: "Councilor",
+                href: "#1",
+                district: 1,
+              },
+              {
+                name: "Sample Person Two",
+                role: "Barangay Captain",
+                href: "#2",
+                district: 2,
+                barangay: "Sample",
+              },
+              { name: "Sample Person Three", role: "SK Kagawad", href: "#3" },
+            ]}
+          />
+        </Specimen>
+        <Specimen name="OrgChart (columns on wide screens, a tree on phones; sample data only)">
+          <OrgChart root={SAMPLE_ORG} label="Sample org chart" />
         </Specimen>
         <Specimen name="SourceNote">
           <SourceNote

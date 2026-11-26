@@ -23,10 +23,16 @@ import {
   CITY_OFFICIALS_AS_OF,
 } from "../../../data/city-officials.ts";
 import { PEOPLE, getPerson } from "../../../data/people.ts";
+import { EXTERNAL_ID_KEYS, EXTERNAL_ID_KINDS } from "../../../data/schema.ts";
 import { BarangayMap } from "../../../islands/BarangayMap.tsx";
 import { formatSourceDate } from "../../../utils/barangays/format.ts";
 
 type Params = { params: Promise<{ slug: string }> };
+
+/** Every position someone holds, e.g. "Mayor" or "SK Kagawad". */
+function roles(person: { positions: { role: string }[] }): string {
+  return person.positions.map((p) => p.role).join(" · ");
+}
 
 /** One page per person, built ahead of time. */
 export function generateStaticParams() {
@@ -38,7 +44,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!person) return { title: PEOPLE_COPY.notFoundTitle };
   return {
     title: `${person.name} — ${SITE.name}`,
-    description: PEOPLE_COPY.metaFor(person.name, person.role),
+    description: PEOPLE_COPY.metaFor(person.name, roles(person)),
   };
 }
 
@@ -46,7 +52,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
  * One elected official: their position, the barangay or council district they
  * serve (with links), and how to reach them. City officials show the contacts
  * the city publishes for them; barangay and SK officials show the barangay
- * hall's contacts, labelled as the hall's. A map zooms to their barangay or
+ * hall's contacts, labelled as the hall's. Links to their records in other
+ * datasets (`ids:` in their person file) come next. A map zooms to their barangay or
  * council district, and a credit links the city page the data came from.
  * Unknown slugs 404.
  */
@@ -54,9 +61,21 @@ export default async function PersonPage({ params }: Params) {
   const person = getPerson((await params).slug);
   if (!person) notFound();
 
+  // Their first office (a city one, if any) sets the contacts and the map.
+  const position = person.positions[0]!;
   const official =
-    person.cityIndex !== undefined ? CITY_OFFICIALS[person.cityIndex] : null;
-  const barangay = person.barangay ? getBarangay(person.barangay) : undefined;
+    position.cityIndex !== undefined
+      ? CITY_OFFICIALS[position.cityIndex]
+      : null;
+  const barangay = position.barangay
+    ? getBarangay(position.barangay)
+    : undefined;
+  const external = EXTERNAL_ID_KEYS.flatMap((key) => {
+    const value = person.ids[key];
+    if (!value) return [];
+    const kind = EXTERNAL_ID_KINDS[key];
+    return [{ key, value, label: kind.label, url: kind.url?.(value) }];
+  });
 
   return (
     <PageShell>
@@ -64,20 +83,20 @@ export default async function PersonPage({ params }: Params) {
         <Container className="py-14 md:py-20">
           <div className="max-w-3xl">
             <ArrowLink href="/people">{PEOPLE_COPY.allPeople}</ArrowLink>
-            <p className="type-label m-0 mt-6 text-ed-ink-3">{person.role}</p>
+            <p className="type-label m-0 mt-6 text-ed-ink-3">{roles(person)}</p>
             <h1 className="type-display m-0 mt-2 text-balance">
               {person.name}
             </h1>
             <div className="mt-5 flex flex-wrap items-center gap-3">
-              {person.district && (
+              {position.district && (
                 <a
-                  href={`/districts#district-${person.district}`}
+                  href={`/districts#district-${position.district}`}
                   className="no-underline"
                 >
-                  <Flag variant="navy">{COPY.district(person.district)}</Flag>
+                  <Flag variant="navy">{COPY.district(position.district)}</Flag>
                 </a>
               )}
-              {!person.district && (
+              {!position.district && (
                 <Flag variant="navy">{PEOPLE_COPY.wholeCity}</Flag>
               )}
               {barangay && (
@@ -163,14 +182,46 @@ export default async function PersonPage({ params }: Params) {
         </Container>
       </section>
 
-      {(barangay || person.district) && (
+      {external.length > 0 && (
+        <section className="border-b border-ed-rule">
+          <Container className="py-12 md:py-16">
+            <SectionHeader label={PEOPLE_COPY.externalHeading} />
+            <p className="type-body m-0 mb-4 max-w-[65ch]">
+              {PEOPLE_COPY.externalIntro}
+            </p>
+            <ul className="m-0 flex list-none flex-col gap-3 p-0">
+              {external.map((e) => (
+                <li
+                  key={e.key}
+                  className="flex flex-wrap items-baseline gap-x-3 gap-y-1"
+                >
+                  {e.url ? (
+                    <ArrowLink href={e.url} external>
+                      {PEOPLE_COPY.externalLink(person.name, e.label)}
+                    </ArrowLink>
+                  ) : (
+                    <span className="type-body">
+                      {PEOPLE_COPY.externalLink(person.name, e.label)}
+                    </span>
+                  )}
+                  <span className="font-mono text-[13px] text-ed-ink-3">
+                    {e.value}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      )}
+
+      {(barangay || position.district) && (
         <section>
           <Container className="py-12 md:py-16">
             <BarangayMap
               geojsonUrl={BOUNDARIES_URL}
               barangays={MAP_BARANGAYS}
               focus={barangay?.slug}
-              focusDistrict={barangay ? undefined : person.district}
+              focusDistrict={barangay ? undefined : position.district}
               height="short"
             />
             <SourceNote>{COPY.mapCredit}</SourceNote>

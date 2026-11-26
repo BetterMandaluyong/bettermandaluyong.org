@@ -10,25 +10,25 @@ hall:
     - 7006-0086
   email: null
 council:
-  captain: Victor Emmanuel S. Francisco, Jr.
+  captain: 01M8AYCW7PSA6X5QWP33DV67KQ # Victor Emmanuel S. Francisco, Jr.
   kagawads:
-    - Victor Emmanuel De Ocampo Francisco III
-    - Christian C. Flores
-    - Wilfrido U. Acer
-    - Victor A. Nery Jr.
-    - Nathaniel Dela Vega Raymundo
-    - Christian R. Malabanan
-    - Vener A. De Luna
+    - 01M8AYCW7PSA6X5QWP33DV67KR # Victor Emmanuel De Ocampo Francisco III
+    - 01M8AYCW7PSA6X5QWP33DV67KS # Christian C. Flores
+    - 01M8AYCW7PSA6X5QWP33DV67KT # Wilfrido U. Acer
+    - 01M8AYCW7PSA6X5QWP33DV67KV # Victor A. Nery Jr.
+    - 01M8AYCW7PSA6X5QWP33DV67KW # Nathaniel Dela Vega Raymundo
+    - 01M8AYCW7PSA6X5QWP33DV67KX # Christian R. Malabanan
+    - 01M8AYCW7PSA6X5QWP33DV67KY # Vener A. De Luna
 sk:
-  chair: Maverick Ross A. Solano
+  chair: 01M8AYCW7PSA6X5QWP33DV67KZ # Maverick Ross A. Solano
   kagawads:
-    - Joshua Ortiz
-    - Charlene Kaye Haboc
-    - Daniele Giorgio C. Ramirez
-    - Lorenz Ray L. Pascual
-    - Luis C. Martinez
-    - Jorvin Brian C. Dometita
-    - Joven C. Camacho
+    - 01M8AYCW7PSA6X5QWP33DV67M0 # Joshua Ortiz
+    - 01M8AYCW7PSA6X5QWP33DV67M1 # Charlene Kaye Haboc
+    - 01M8AYCW7PSA6X5QWP33DV67M2 # Daniele Giorgio C. Ramirez
+    - 01M8AYCW7PSA6X5QWP33DV67M3 # Lorenz Ray L. Pascual
+    - 01M8AYCW7PSA6X5QWP33DV67M4 # Luis C. Martinez
+    - 01M8AYCW7PSA6X5QWP33DV67M5 # Jorvin Brian C. Dometita
+    - 01M8AYCW7PSA6X5QWP33DV67M6 # Joven C. Camacho
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-namayan/
   updated: 2026-02-20

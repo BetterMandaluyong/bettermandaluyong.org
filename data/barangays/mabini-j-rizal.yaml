@@ -10,25 +10,25 @@ hall:
     - 8531-0643
   email: null
 council:
-  captain: Antonio L. Castaneda
+  captain: 01M8AYCW7PSA6X5QWP33DV67J9 # Antonio L. Castaneda
   kagawads:
-    - Sheryl B. Bigonia
-    - Myra C. Abella
-    - Elizando A. Alcala
-    - Luis M. Bernardo II
-    - Mark Erick G. Perez
-    - Carmen L. Vergara
-    - Rafael D. Pelayo
+    - 01M8AYCW7PSA6X5QWP33DV67JA # Sheryl B. Bigonia
+    - 01M8AYCW7PSA6X5QWP33DV67JB # Myra C. Abella
+    - 01M8AYCW7PSA6X5QWP33DV67JC # Elizando A. Alcala
+    - 01M8AYCW7PSA6X5QWP33DV67JD # Luis M. Bernardo II
+    - 01M8AYCW7PSA6X5QWP33DV67JE # Mark Erick G. Perez
+    - 01M8AYCW7PSA6X5QWP33DV67JF # Carmen L. Vergara
+    - 01M8AYCW7PSA6X5QWP33DV67JG # Rafael D. Pelayo
 sk:
-  chair: Jhomar M. Alvarez
+  chair: 01M8AYCW7PSA6X5QWP33DV67JH # Jhomar M. Alvarez
   kagawads:
-    - Gabriel Rivera
-    - Lyod F. Aquino
-    - Paul John P. Urma
-    - Mycko Anghello A. Alticen
-    - Denver D. Baloloy
-    - Kent Stuart T. Pahayupan
-    - Mc Jhonlyd P. Roque
+    - 01M8AYCW7PSA6X5QWP33DV67JJ # Gabriel Rivera
+    - 01M8AYCW7PSA6X5QWP33DV67JK # Lyod F. Aquino
+    - 01M8AYCW7PSA6X5QWP33DV67JM # Paul John P. Urma
+    - 01M8AYCW7PSA6X5QWP33DV67JN # Mycko Anghello A. Alticen
+    - 01M8AYCW7PSA6X5QWP33DV67JP # Denver D. Baloloy
+    - 01M8AYCW7PSA6X5QWP33DV67JQ # Kent Stuart T. Pahayupan
+    - 01M8AYCW7PSA6X5QWP33DV67JR # Mc Jhonlyd P. Roque
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-mabini-j-rizal/
   updated: 2026-02-20

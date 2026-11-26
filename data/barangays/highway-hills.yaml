@@ -10,25 +10,25 @@ hall:
     - 8531-9432
   email: barangay.highwayhills@gmail.com
 council:
-  captain: Maria Corazon De Castro Abalos
+  captain: 01M8AYCW7PSA6X5QWP33DV67H9 # Maria Corazon De Castro Abalos
   kagawads:
-    - John Jeremy R. Delos Santos
-    - Antonio J. Aguilar Jr.
-    - Alvin G. Pacat
-    - Edrian A. Gonzaga
-    - Wilson T. Baser
-    - Clarize M. Lanza
-    - Ria Sherina B. Apuada
+    - 01M8AYCW7PSA6X5QWP33DV67HA # John Jeremy R. Delos Santos
+    - 01M8AYCW7PSA6X5QWP33DV67HB # Antonio J. Aguilar Jr.
+    - 01M8AYCW7PSA6X5QWP33DV67HC # Alvin G. Pacat
+    - 01M8AYCW7PSA6X5QWP33DV67HD # Edrian A. Gonzaga
+    - 01M8AYCW7PSA6X5QWP33DV67HE # Wilson T. Baser
+    - 01M8AYCW7PSA6X5QWP33DV67HF # Clarize M. Lanza
+    - 01M8AYCW7PSA6X5QWP33DV67HG # Ria Sherina B. Apuada
 sk:
-  chair: Sophia M. Brun
+  chair: 01M8AYCW7PSA6X5QWP33DV67HH # Sophia M. Brun
   kagawads:
-    - Marie Alyssa M. Claricia
-    - Kier Vincent Borja
-    - Maxene G. Remanes
-    - Bienne Julia V. Sy
-    - Jomar O. Glino
-    - Rasti Joshua D. Alviar
-    - Rovic O. Bilan
+    - 01M8AYCW7PSA6X5QWP33DV67HJ # Marie Alyssa M. Claricia
+    - 01M8AYCW7PSA6X5QWP33DV67HK # Kier Vincent Borja
+    - 01M8AYCW7PSA6X5QWP33DV67HM # Maxene G. Remanes
+    - 01M8AYCW7PSA6X5QWP33DV67HN # Bienne Julia V. Sy
+    - 01M8AYCW7PSA6X5QWP33DV67HP # Jomar O. Glino
+    - 01M8AYCW7PSA6X5QWP33DV67HQ # Rasti Joshua D. Alviar
+    - 01M8AYCW7PSA6X5QWP33DV67HR # Rovic O. Bilan
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-highway-hills/
   updated: 2026-02-26
