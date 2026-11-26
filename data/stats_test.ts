@@ -15,8 +15,16 @@ describe("data/stats", () => {
       [2024, 465902],
     ]);
   });
-  it("keeps PSA's 2018 estimate for the city", () => {
-    expect(POVERTY.areas.city.incidence).toBe(1.33);
+  it("keeps PSA's estimates for the city (Table 2a, 2023 publication)", () => {
+    const city = POVERTY.areas.city.years;
+    expect(POVERTY.years.map((y) => city[y]!.incidence)).toEqual([
+      1.3, 0.7, 0.5,
+    ]);
+    // PSA marks none of the city's changes as significant.
+    expect(POVERTY.areas.city.significant).toEqual([]);
+  });
+  it("has the 2024 census checked against PSA's own table", () => {
+    expect(POPULATION.censuses.every((c) => c.checked)).toBe(true);
   });
   it("keeps BLGF's 2024 totals", () => {
     expect(FINANCES.income.total).toBe(7942871526);

@@ -48,8 +48,14 @@ source of truth: edit it, never generated output.
   and update `checked:`; `data/pay_test.ts` pins one year's figures; update it
   too.
 - **City statistics keep their checks.** `stats/population.yaml` must add up to
-  each census's official total, and `checked: false` marks counts still awaiting
-  a comparison with PSA's own file (the page says so). When PSA's site lets you
-  download the 2024 barangay table, compare every row, then set `checked: true`
-  and point `source:` at PSA. Add newer poverty estimates (2021, 2023) the same
-  way, from PSA's tables.
+  each census's official total. A census whose counts come from a secondary
+  source gets `checked: false` (the page then says so) until someone compares
+  every row with PSA's own table. PSA's site blocks automated downloads, so its
+  files are downloaded by hand; record where and when in the file's comment.
+  Poverty figures come from PSA's full-year publication (the "a" tables have
+  highly urbanized cities); keep its CVs, intervals, and significance marks with
+  the estimates.
+- **Restart `pnpm dev` after changing a validator.** The YAML plugin imports
+  `schema.ts` when Vite loads its config, so a running dev server keeps the old
+  validator and fails on data written for the new one ("server restart failed").
+  `pnpm build` and `pnpm test` always use the current file.

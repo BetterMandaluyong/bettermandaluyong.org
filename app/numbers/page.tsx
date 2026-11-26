@@ -12,6 +12,7 @@ import { pageMetadata } from "../../components/metadata.ts";
 import { BARANGAYS } from "../../data/barangays.ts";
 import {
   INCOME_LINES,
+  POVERTY_AREAS,
   SPENDING_LINES,
   type Breakdown,
 } from "../../data/schema.ts";
@@ -66,7 +67,8 @@ export default function NumbersPage() {
   const cityChange = previous
     ? percentChange(previous.total, latest.total)
     : null;
-  const { city } = POVERTY.areas;
+  const povertyYear = POVERTY.years[POVERTY.years.length - 1]!;
+  const cityPoverty = POVERTY.areas.city.years[povertyYear]!;
   const f = FINANCES;
 
   return (
@@ -87,8 +89,8 @@ export default function NumbersPage() {
                   : undefined,
               },
               {
-                label: NUMBERS.poverty(POVERTY.year),
-                value: formatPercent(city.incidence),
+                label: NUMBERS.poverty(povertyYear),
+                value: formatPercent(cityPoverty.incidence),
                 note: NUMBERS.povertyGlanceNote,
               },
               {
@@ -207,21 +209,25 @@ export default function NumbersPage() {
         <Container className="py-8 md:py-12">
           <SectionHeader
             label={NUMBERS.povertyHeading}
-            meta={NUMBERS.povertyMeta(POVERTY.year)}
+            meta={NUMBERS.povertyMeta(povertyYear)}
           />
           <p className="type-body m-0 mb-6 max-w-[65ch]">
-            {NUMBERS.povertyIntro(formatPeso(POVERTY.threshold), POVERTY.year)}
+            {NUMBERS.povertyIntro(
+              formatPeso(POVERTY.threshold[povertyYear]!),
+              povertyYear,
+            )}
           </p>
           <StatList
             label={NUMBERS.povertyHeading}
-            items={(["city", "ncr", "philippines"] as const).map((key) => {
-              const e = POVERTY.areas[key];
+            items={POVERTY_AREAS.map((key) => {
+              const e = POVERTY.areas[key].years[povertyYear]!;
               return {
                 label: NUMBERS.areas[key],
                 value: formatPercent(e.incidence),
                 note: NUMBERS.povertyNote(
                   formatPercent(e.low),
                   formatPercent(e.high),
+                  POVERTY.confidence,
                   formatCount(e.poor),
                 ),
               };
@@ -230,21 +236,40 @@ export default function NumbersPage() {
           <p className="type-body m-0 mt-6 max-w-[65ch]">
             {NUMBERS.povertyCaution}
           </p>
-          <Notice
-            className="mt-6"
-            tag={NUMBERS.povertyOldTag}
-            title={NUMBERS.povertyOldTitle}
-          >
-            <p className="type-body m-0 mt-2 max-w-[65ch]">
-              {NUMBERS.povertyOld(POVERTY.year)}
-            </p>
-          </Notice>
+          <h3 className="type-subheading m-0 mt-10 mb-4">
+            {NUMBERS.povertyTrendHeading}
+          </h3>
+          <DataTable
+            caption={NUMBERS.povertyTrendCaption}
+            columns={[
+              { label: NUMBERS.areaColumn },
+              ...POVERTY.years.map((y) => ({
+                label: String(y),
+                numeric: true,
+              })),
+            ]}
+            rows={POVERTY_AREAS.map((key) => {
+              const area = POVERTY.areas[key];
+              return {
+                key,
+                cells: [
+                  NUMBERS.areas[key],
+                  ...POVERTY.years.map((y, i) => {
+                    const before = POVERTY.years[i - 1];
+                    const mark =
+                      before !== undefined &&
+                      area.significant.includes(`${before}-${y}`);
+                    return `${formatPercent(area.years[y]!.incidence)}${mark ? "*" : ""}`;
+                  }),
+                ],
+              };
+            })}
+          />
+          <p className="type-ui m-0 mt-3 text-ed-ink-3">
+            {NUMBERS.significantNote}
+          </p>
           <SourceNote href={POVERTY.release.url} label={POVERTY.release.title}>
-            {NUMBERS.povertyVia}{" "}
-            <a href={POVERTY.via.url} rel="noreferrer" className="text-ed-navy">
-              {POVERTY.via.title}
-            </a>
-            .
+            {NUMBERS.povertyTables}
           </SourceNote>
         </Container>
       </section>

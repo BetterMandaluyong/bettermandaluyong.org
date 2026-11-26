@@ -699,29 +699,61 @@ describe("parsePoverty", () => {
     high: incidence + 1,
     poor: 100,
   });
+  const series = (incidence: number, significant: string[] = []) => ({
+    2021: est(incidence + 1),
+    2023: est(incidence),
+    significant,
+  });
   const pov = () => ({
-    year: 2018,
+    years: [2021, 2023] as unknown[],
     release: cite,
-    via: cite,
-    threshold: 28682,
-    areas: { city: est(1.3), ncr: est(2.2), philippines: est(16.7) } as Record<
-      string,
-      Record<string, number>
-    >,
+    released: "2024-08-15",
+    confidence: 95,
+    threshold: { 2021: 32978, 2023: 37711 } as Record<string, number>,
+    areas: {
+      city: series(1.3),
+      ncr: series(2.2, ["2021-2023"]),
+      philippines: series(16.7),
+    } as Record<string, Record<string, unknown>>,
   });
 
   it("accepts a valid file", () => {
-    expect(parsePoverty(pov(), "poverty.yaml").areas.city.incidence).toBe(1.3);
+    const p = parsePoverty(pov(), "poverty.yaml");
+    expect(p.areas.city.years[2023]!.incidence).toBe(1.3);
+    expect(p.areas.ncr.significant).toEqual(["2021-2023"]);
+    expect(p.threshold[2023]).toBe(37711);
   });
-  it("needs each estimate inside its interval, and every area", () => {
-    const outside = pov();
-    outside.areas.city = { ...est(1.3), high: 1 };
-    expect(() => parsePoverty(outside, "poverty.yaml")).toThrow(
-      "areas.city.incidence",
-    );
+  it("needs every year for every area, each inside its interval", () => {
     const missing = pov();
-    delete missing.areas.ncr;
-    expect(() => parsePoverty(missing, "poverty.yaml")).toThrow("areas.ncr");
+    delete missing.areas.city![2021];
+    expect(() => parsePoverty(missing, "poverty.yaml")).toThrow(
+      "areas.city.2021",
+    );
+    const outside = pov();
+    outside.areas.city![2023] = { ...est(1.3), high: 1 };
+    expect(() => parsePoverty(outside, "poverty.yaml")).toThrow(
+      "areas.city.2023.incidence",
+    );
+    const noThreshold = pov();
+    delete noThreshold.threshold[2021];
+    expect(() => parsePoverty(noThreshold, "poverty.yaml")).toThrow(
+      "threshold.2021",
+    );
+  });
+  it("needs significant changes to name two of the years", () => {
+    const p = pov();
+    p.areas.ncr!.significant = ["2015-2023"];
+    expect(() => parsePoverty(p, "poverty.yaml")).toThrow(
+      "areas.ncr.significant[0]",
+    );
+  });
+  it("needs years in order and a known confidence level", () => {
+    const order = pov();
+    order.years = [2023, 2021];
+    expect(() => parsePoverty(order, "poverty.yaml")).toThrow("years[1]");
+    const level = pov();
+    level.confidence = 80;
+    expect(() => parsePoverty(level, "poverty.yaml")).toThrow("confidence");
   });
 });
 

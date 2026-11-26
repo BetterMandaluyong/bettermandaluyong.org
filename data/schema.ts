@@ -1645,27 +1645,45 @@ export function parsePopulation(raw: unknown, file: string): Population {
   return { censuses, barangays };
 }
 
-/** One area's poverty estimate. */
+/** One area's poverty estimate for one year. */
 export type PovertyEstimate = {
   /** Percent of people below the poverty threshold. */
   incidence: number;
-  /** Coefficient of variation, percent. Over 20 means "use with caution". */
+  /** Coefficient of variation, percent. Over 10 means "use with caution". */
   cv: number;
-  /** The 90% confidence interval, percent. */
+  /** The confidence interval (`Poverty.confidence`), percent. */
   low: number;
   high: number;
   /** Estimated number of poor people. */
   poor: number;
 };
 
+/** The areas `poverty.yaml` compares. */
+export const POVERTY_AREAS = ["city", "ncr", "philippines"] as const;
+
+/** One of `POVERTY_AREAS`. */
+export type PovertyArea = (typeof POVERTY_AREAS)[number];
+
+/** One area's estimates by year, and the changes PSA marks significant. */
+export type PovertySeries = {
+  /** Year → estimate. */
+  years: Record<number, PovertyEstimate>;
+  /** Pairs like "2021-2023" whose change PSA marks significant at 5%. */
+  significant: string[];
+};
+
 /** The whole `data/stats/poverty.yaml` file. */
 export type Poverty = {
-  year: number;
+  /** The years estimated, oldest first. */
+  years: number[];
   release: Citation;
-  via: Citation;
-  /** Pesos a person needs a year, in NCR. */
-  threshold: number;
-  areas: Record<"city" | "ncr" | "philippines", PovertyEstimate>;
+  /** When PSA released the publication (YYYY-MM-DD). */
+  released: string;
+  /** The confidence level of `low`–`high`, percent. */
+  confidence: number;
+  /** Year → pesos a person needs for the year, in NCR. */
+  threshold: Record<number, number>;
+  areas: Record<PovertyArea, PovertySeries>;
 };
 
 function percent(o: Obj, key: string, file: string, at: string): number {
@@ -1676,38 +1694,73 @@ function percent(o: Obj, key: string, file: string, at: string): number {
   return v;
 }
 
-/** Checks `data/stats/poverty.yaml`: each area's estimate sits inside its own interval. */
+/**
+ * Checks `data/stats/poverty.yaml`: every area has an estimate for every
+ * year, each inside its own interval, and significant changes name two of
+ * the years.
+ */
 export function parsePoverty(raw: unknown, file: string): Poverty {
   const o = obj(raw, file, "document");
-  const a = obj(o.areas, file, "areas");
-  const area = (key: "city" | "ncr" | "philippines"): PovertyEstimate => {
-    const at = `areas.${key}`;
-    const e = obj(a[key], file, at);
-    const est = {
-      incidence: percent(e, "incidence", file, at),
-      cv: percent(e, "cv", file, at),
-      low: percent(e, "low", file, at),
-      high: percent(e, "high", file, at),
-      poor: wholeCount(e.poor, file, `${at}.poor`),
-    };
-    if (est.low > est.incidence || est.incidence > est.high) {
-      fail(file, `${at}.incidence`, "must sit between low and high");
+  let last = 0;
+  const years = list(o, "years", file).map((y, i) => {
+    if (typeof y !== "number" || !Number.isInteger(y) || y <= last) {
+      fail(file, `years[${i}]`, "must be a year after the one before");
     }
-    return est;
-  };
-  const year = o.year;
-  if (typeof year !== "number" || !Number.isInteger(year) || year < 2000) {
-    fail(file, "year", "must be a year");
+    last = y;
+    return y;
+  });
+  if (years.length === 0) fail(file, "years", "must not be empty");
+  const t = obj(o.threshold, file, "threshold");
+  const threshold = Object.fromEntries(
+    years.map((y) => [y, wholeCount(t[y], file, `threshold.${y}`)]),
+  );
+  const confidence = o.confidence;
+  if (confidence !== 90 && confidence !== 95) {
+    fail(file, "confidence", "must be 90 or 95");
   }
+  const a = obj(o.areas, file, "areas");
+  const series = (key: PovertyArea): PovertySeries => {
+    const at = `areas.${key}`;
+    const r = obj(a[key], file, at);
+    const byYear: Record<number, PovertyEstimate> = {};
+    for (const y of years) {
+      const yat = `${at}.${y}`;
+      const e = obj(r[y], file, yat);
+      const est = {
+        incidence: percent(e, "incidence", file, yat),
+        cv: percent(e, "cv", file, yat),
+        low: percent(e, "low", file, yat),
+        high: percent(e, "high", file, yat),
+        poor: wholeCount(e.poor, file, `${yat}.poor`),
+      };
+      if (est.low > est.incidence || est.incidence > est.high) {
+        fail(file, `${yat}.incidence`, "must sit between low and high");
+      }
+      byYear[y] = est;
+    }
+    const significant = strList(r, "significant", file, `${at}.significant`);
+    significant.forEach((pair, i) => {
+      const m = pair.match(/^(\d{4})-(\d{4})$/);
+      if (!m || !years.includes(+m[1]!) || !years.includes(+m[2]!)) {
+        fail(
+          file,
+          `${at}.significant[${i}]`,
+          "must be two of the years, like 2021-2023",
+        );
+      }
+    });
+    return { years: byYear, significant };
+  };
   return {
-    year,
+    years,
     release: citation(o.release, file, "release"),
-    via: citation(o.via, file, "via"),
-    threshold: wholeCount(o.threshold, file, "threshold"),
+    released: isoDate(o, "released", file, "released"),
+    confidence,
+    threshold,
     areas: {
-      city: area("city"),
-      ncr: area("ncr"),
-      philippines: area("philippines"),
+      city: series("city"),
+      ncr: series("ncr"),
+      philippines: series("philippines"),
     },
   };
 }

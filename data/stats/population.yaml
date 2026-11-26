@@ -4,11 +4,11 @@
 #
 # 2020: PSA's barangay counts as republished by OCHA on HDX (CC BY), read
 # from the xlsx and matched by PSGC code.
-# 2024: PSA's site blocks automated downloads, so these come from City
-# Population (citypopulation.de), which compiles PSA's census tables. Its
-# 2020 column matches the OCHA file for all 27 barangays, and its city total
-# matches the DTI competitiveness index profile. `checked: false` until
-# someone compares them with PSA's own 2024 file.
+# 2024: PSA's own table, "Total Population by Province, City, Municipality,
+# and Barangay as of 01 July 2024" (NCR_2.xlsx, sheet "City of Mandaluyong"),
+# downloaded by hand from psa.gov.ph on 2026-11-26 (the site blocks automated
+# downloads). Every barangay and the city total were compared row by row.
+# City Population (citypopulation.de) carries the same figures.
 censuses:
   - year: 2020
     date: 2020-05-01
@@ -29,9 +29,10 @@ censuses:
       title: Proclamation No. 973, s. 2025
       url: https://lawphil.net/executive/proc/proc2025/proc_973_2025.html
     source:
-      title: "City Population: Mandaluyong (2024 census, from PSA)"
-      url: https://www.citypopulation.de/en/philippines/mandaluyong/
-    checked: false
+      title:
+        "PSA: 2024 Census of Population, NCR Table C: Population by Barangay"
+      url: https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president
+    checked: true
 # Barangay slug: people counted, by census year. Comments give the PSGC code.
 barangays:
   addition-hills: { 2020: 108896, 2024: 110493 } # 1380500001 Addition Hills
