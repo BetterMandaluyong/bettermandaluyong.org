@@ -2,8 +2,8 @@
 // and FooterColumn.tsx at commit 5ead8c0 (MIT, Copyright (c) 2025-2026
 // BetterGov.ph contributors); see NOTICE.md. Changed: our own columns and copy
 // from content.ts, the BetterGov logo shown as "part of" credit rather than as
-// our brand, the unofficial-site notice, plain <a> links in the same tab, white focus outlines, and the
-// commit hash read at build time and linked to GitHub.
+// our brand, the unofficial-site notice, plain <a> links in the same tab, white
+// focus outlines, and the commit hash read at build time and linked to GitHub.
 
 import { COMMIT_SHA, commitUrl, shortSha } from "./build.ts";
 import { Container } from "./Container.tsx";
@@ -11,10 +11,8 @@ import {
   BETTERGOV,
   FOOTER,
   SITE,
-  UNOFFICIAL,
   type FooterColumn as Column,
 } from "./content.ts";
-import { Flag } from "./Flag.tsx";
 
 /** Link style on the navy footer: white with a white focus outline. */
 const footerLink =
@@ -46,9 +44,9 @@ function FooterColumn({ heading, links }: Column) {
  * Bottom band on darkest navy: site name and description, the unofficial-site
  * notice with a link to the official site, "Part of the
  * BetterGov.ph initiative" with BetterGov's logo, link columns (contact,
- * GitHub, BetterGov), then a row with the copyright (year rendered on the
- * server), the content and code licenses, and the commit this build came
- * from. Rendered by `PageShell`.
+ * Facebook, and Discord; GitHub; BetterGov), then a row with the copyright
+ * (year rendered on the server), the content and code licenses, and the commit
+ * this build came from. Rendered by `PageShell`.
  */
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -71,14 +69,15 @@ export function SiteFooter() {
               {FOOTER.description}
             </p>
             <p className="m-0 mt-3 max-w-[340px] text-white/70">
-              {UNOFFICIAL.text}{" "}
+              {FOOTER.unofficial.text}{" "}
               <a
                 href={SITE.officialSiteUrl}
                 rel="noreferrer"
                 className={`inline-block py-3 ${footerLink} underline`}
               >
-                {UNOFFICIAL.linkLabel}
+                {FOOTER.unofficial.linkLabel}
               </a>
+              .
             </p>
 
             <p className="type-label m-0 mt-8 text-white/70">{FOOTER.partOf}</p>
@@ -97,12 +96,6 @@ export function SiteFooter() {
                 className="block h-10 w-auto"
               />
             </a>
-
-            <div className="mt-6">
-              <Flag variant="outline" className="border-white/25 text-white/70">
-                {FOOTER.openSourceFlag}
-              </Flag>
-            </div>
           </div>
 
           {FOOTER.columns.map((column) => (
@@ -112,14 +105,14 @@ export function SiteFooter() {
 
         <div className="type-label flex flex-wrap justify-between gap-x-6 gap-y-2 pt-6 text-white/70">
           <span>
-            &copy; {year} {SITE.name} &middot; {SITE.location}
+            &copy; {year} {FOOTER.copyright}
           </span>
           <ul className="m-0 flex list-none flex-wrap gap-x-2 p-0">
             {FOOTER.licenses.map((license, i) => (
-              <li key={license.name}>
+              <li key={license.href}>
                 {i > 0 && <span aria-hidden="true">&middot; </span>}
                 <a href={license.href} rel="noreferrer" className={footerLink}>
-                  {license.covers} {license.name}
+                  {license.label}
                 </a>
               </li>
             ))}

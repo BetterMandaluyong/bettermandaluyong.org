@@ -49,6 +49,9 @@ export const BETTERGOV = {
   aboutUrl: "https://about.bettergov.ph/",
   designUrl: "https://bettergov.ph/design",
   lguUrl: "https://lgu.bettergov.ph/",
+  /** Community links, as listed on about.bettergov.ph. */
+  discordUrl: "https://discord.gg/bettergovph",
+  facebookUrl: "https://www.facebook.com/bettergovph",
   /**
    * White horizontal logo for navy backgrounds (4:1). WebP, as the guide asks;
    * the SVG sets its wordmark as live text, which an <img> can't render.
@@ -58,24 +61,29 @@ export const BETTERGOV = {
 
 /** A license the site is published under, as named in the footer. */
 export type License = {
-  /** Short name shown in the footer, e.g. "MIT". */
-  name: string;
-  /** What it covers: "Code" or "Content". */
-  covers: string;
+  /** Link text shown in the footer, e.g. "MIT License". */
+  label: string;
   href: string;
 };
 
 /** Footer copy, links, and licenses. */
 export const FOOTER = {
   description: "A community effort for a more livable Mandaluyong.",
+  /** Footer version of the unofficial-site notice; ends with a link. */
+  unofficial: {
+    text: "This is an unofficial site, not run by the City Government. For official services, visit",
+    linkLabel: "mandaluyong.gov.ph",
+  },
   partOf: "Part of the BetterGov.ph initiative",
-  openSourceFlag: "Open source",
+  /** Shown after "© <year>" in the bottom row. */
+  copyright: "Better Mandaluyong City, Metro Manila, Philippines",
   columns: [
     {
       heading: "Get involved",
       links: [
         { label: "Email us", href: mailto(SITE.contactEmail) },
-        { label: "Follow Better Mandaluyong", href: SITE.followUrl },
+        { label: "Follow us on Facebook", href: SITE.followUrl },
+        { label: "Join the BetterGov.ph Discord", href: BETTERGOV.discordUrl },
       ],
     },
     {
@@ -90,6 +98,10 @@ export const FOOTER = {
       heading: "BetterGov.ph",
       links: [
         { label: "About BetterGov.ph", href: BETTERGOV.aboutUrl },
+        {
+          label: "Follow BetterGov.ph on Facebook",
+          href: BETTERGOV.facebookUrl,
+        },
         { label: "Design system", href: BETTERGOV.designUrl },
         { label: "Other BetterLGU sites", href: BETTERGOV.lguUrl },
       ],
@@ -97,13 +109,11 @@ export const FOOTER = {
   ] satisfies FooterColumn[],
   licenses: [
     {
-      name: "CC BY-NC-ND 4.0",
-      covers: "Content",
+      label: "Content CC BY-NC-ND 4.0",
       href: "https://creativecommons.org/licenses/by-nc-nd/4.0/",
     },
     {
-      name: "MIT",
-      covers: "Code",
+      label: "MIT License",
       href: `${SITE.repoUrl}/blob/main/LICENSE`,
     },
   ] satisfies License[],
