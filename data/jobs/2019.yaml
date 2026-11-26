@@ -1,0 +1,37 @@
+# City job posts (links only). Written by scripts/notices_refresh.ts; see DEPLOYMENT.md.
+- id: 4563
+  url: https://mandaluyong.gov.ph/download/december-9-2019-bulletin-of-vacancies/
+  title: December 9, 2019 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2019-12-09T10:35:41+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 4560
+  url: https://mandaluyong.gov.ph/download/september-18-2019-bulletin-of-vacancies/
+  title: September 18, 2019 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2019-09-18T10:34:32+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 4557
+  url: https://mandaluyong.gov.ph/download/september-17-2019-bulletin-of-vacancies/
+  title: September 17, 2019 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2019-09-17T10:33:24+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 4554
+  url: https://mandaluyong.gov.ph/download/august-5-2019-bulletin-of-vacancies/
+  title: August 5, 2019 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2019-08-05T10:31:30+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 4551
+  url: https://mandaluyong.gov.ph/download/may-28-2019-bulletin-of-vacancies/
+  title: May 28, 2019 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2019-05-28T10:28:16+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 4546
+  url: https://mandaluyong.gov.ph/download/vacancy-january2019/
+  title: January 10, 2019 Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2019-01-19T10:22:54+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00

@@ -72,6 +72,8 @@ change.
 | `data/people/CONTEXT.md`    | Person files: ULID ids, frozen slugs, external `ids:`     |
 | `data/barangays/CONTEXT.md` | Barangay files: person ids, the importer, sources         |
 | `data/news/CONTEXT.md`      | Bot-owned news files: don't edit by hand                  |
+| `data/bids/CONTEXT.md`      | Bot-owned bid notices: kinds, never merged by the bot     |
+| `data/jobs/CONTEXT.md`      | Bot-owned job posts: City Hall vacancies and PESO         |
 | `scripts/CONTEXT.md`        | Plain-Node scripts, importers that overwrite, no deploys  |
 | `utils/CONTEXT.md`          | Pure, tested logic importable by pages, islands, scripts  |
 
@@ -122,7 +124,9 @@ line on the page itself.
   `check` workflow has passed. Agents never merge that PR by hand, never push to
   `bot/news-data`, and never widen what the bot may change. That takes a
   human-reviewed PR to the workflow, to this paragraph, and to the
-  `data-only-guard` job in `check.yml`.
+  `data-only-guard` job in `check.yml`. The bids and jobs bot
+  (`notices-data.yml`, `bot/notices-data`) never merges its own PR: a person
+  does. Agents never push to that branch either.
 - **Linear history: rebase on `main`, never merge it in.** `main` requires a
   linear history, and PRs land only by "Rebase and merge": never "Squash and
   merge" or a merge commit, so each commit on the branch reaches `main` as
@@ -242,13 +246,17 @@ data/         Site data as YAML, parsed at build time: people/<ULID>.yaml
               poverty, and city finances), and
               news/YYYY-MM.yaml (city news
               links, one file per month, written by the news bot on the
-              bot/news-data branch; see DEPLOYMENT.md). Edit the YAML, never
+              bot/news-data branch; see DEPLOYMENT.md), and bids/YYYY.yaml +
+              jobs/YYYY.yaml (city bid notices, City Hall vacancies, PESO
+              jobs; links only, written by the notices bot on
+              bot/notices-data, merged by a person). Edit the YAML, never
               generated output (except by the bot's own scripts); schema.ts
               validates it and fails the build with the file and field.
               budget/ holds scope.yaml (hand-edited) and the national budget
               snapshot (fy2027.yaml, gaa.yaml) written by
               scripts/budget_refresh.ts from the BetterGov.ph Budget API.
               barangays.ts / people.ts / city-officials.ts / news.ts /
+              bids.ts / jobs.ts /
               org-chart.ts / budget.ts / pay.ts / stats.ts expose it.
               See DEVELOPMENT.md "People".
 vite-plugins/ yaml.ts: the Vite plugin that turns `.yaml` imports into data.
@@ -259,19 +267,23 @@ scripts/      setup.ts (pnpm run setup); import_barangays.ts (bulk refresh of
               data/barangays/*.yaml, overwrites); check_dynasties.ts (by hand);
               news_refresh.ts (run by the news-data workflow);
               budget_refresh.ts (by hand; see DEPLOYMENT.md);
-              import_news.ts (one-off backfill + D1 history merge).
+              import_news.ts (one-off backfill + D1 history merge);
+              notices_refresh.ts (run by the notices-data workflow).
 utils/people/ Person ids: ulid.ts, slugs and re-import matching (ids.ts),
               `# Name` comments (comments.ts), disk reader for scripts (files.ts).
 utils/site/   Builders for /news/feed.xml (RSS), /llms.txt, /humans.txt.
               app/robots.ts and app/sitemap.ts serve the other two.
 utils/news/   News logic: rss/wp/wayback parsers, jobs.ts (the three jobs),
               repo.ts (in-memory record + YAML output), query.ts (page reads).
+utils/notices/ Bids and jobs: category-page and API parsers, the bot's
+              run (jobs.ts), record and YAML output, page queries.
 utils/pay/    Salary tranche for a year and an office's rate.
 utils/stats/  Population rows, district totals, and number formatting.
 utils/budget/ Budget API client, whole-word place matching, YAML output,
               and the page's display math (never adds NEP and House bill).
 worker/       index.ts: the Worker entry; serves the app, nothing scheduled.
-.github/workflows/  check.yml (PR checks), news-data.yml (the news bot).
+.github/workflows/  check.yml (PR checks), news-data.yml (the news bot),
+              notices-data.yml (the bids and jobs bot).
 next.config.ts        Redirects.
 cloudflare.config.ts  Worker config (name, compat date, assets).
 vite.config.ts        vinext + Tailwind + Cloudflare plugins.

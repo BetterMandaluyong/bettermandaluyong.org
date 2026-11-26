@@ -7,8 +7,8 @@ running a script.
 - **They run with plain `node`** (Node strips the types), not through Vite. Use
   only erasable TypeScript (no `enum`, no parameter properties), and import with
   the `.ts` extension. Read YAML from disk with the `yaml` package, or through
-  `utils/people/files.ts` and `utils/news/files.ts`, never with
-  `import "./x.yaml"`.
+  `utils/people/files.ts`, `utils/news/files.ts`, and `utils/notices/files.ts`,
+  never with `import "./x.yaml"`.
 - **Validate before writing.** Scripts parse data with the same `data/schema.ts`
   functions the build uses.
 - **Importers overwrite files.** `import_barangays.ts` rewrites
@@ -20,6 +20,9 @@ running a script.
   script like `check_dynasties.ts` isn't part of `pnpm test`.
 - `news_refresh.ts` belongs to the news bot workflow. Change it with care, and
   with tests in `utils/news/`.
+- `notices_refresh.ts` belongs to the notices bot workflow: it rewrites
+  `data/bids/*.yaml` and `data/jobs/*.yaml`. Its logic and tests live in
+  `utils/notices/`. `--backfill` reads every category page.
 - `budget_refresh.ts` rewrites `data/budget/fy2027.yaml` and `gaa.yaml` from the
   Budget API. It fails rather than write totals that don't reconcile with the
   API's own; run it by hand (DEPLOYMENT.md) and review the diff.

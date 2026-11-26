@@ -1,0 +1,703 @@
+# City bid notices (links only). Written by scripts/notices_refresh.ts; see DEPLOYMENT.md.
+- id: 58965
+  url: https://mandaluyong.gov.ph/download/sbb-no-9-dated-11-25-2026/
+  title: SBB No. 9 dated 11.25.2026
+  kind: bulletin
+  published_at: 2026-11-26T17:28:02+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58778
+  url: https://mandaluyong.gov.ph/download/rei-for-the-ebpld-11-12-2026/
+  title: REI for the eBPLD
+  kind: itb
+  published_at: 2026-11-12T13:18:07+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58734
+  url: https://mandaluyong.gov.ph/download/itb-7500-pieces-of-plastic-storage-80l/
+  title: ITB – 7,500 PIECES OF PLASTIC STORAGE (80L)
+  kind: itb
+  published_at: 2026-11-09T16:32:02+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58732
+  url: https://mandaluyong.gov.ph/download/itb-medical-equipment-supplies-for-the-hiv/
+  title: ITB – MEDICAL EQUIPMENT & SUPPLIES FOR THE HIV
+  kind: itb
+  published_at: 2026-11-09T16:30:38+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58730
+  url: https://mandaluyong.gov.ph/download/itb-x-ray-flat-panel-detector-with-accessories/
+  title: ITB – X-RAY FLAT PANEL DETECTOR WITH ACCESSORIES
+  kind: itb
+  published_at: 2026-11-09T16:29:05+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58728
+  url: https://mandaluyong.gov.ph/download/itb-one-1-unit-of-customized-van-with-mobile-x-ray/
+  title: ITB- ONE (1) UNIT OF CUSTOMIZED VAN WITH MOBILE X-RAY
+  kind: itb
+  published_at: 2026-11-09T16:27:20+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58726
+  url: https://mandaluyong.gov.ph/download/itb-information-communication-tech_/
+  title: ITB – INFORMATION & COMMUNICATION TECH_
+  kind: itb
+  published_at: 2026-11-09T16:25:49+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58724
+  url: https://mandaluyong.gov.ph/download/itb-one-1-lot-f-various-info-communication-tech-equipment/
+  title: ITB – ONE (1) LOT F VARIOUS INFO & COMMUNICATION TECH EQUIPMENT
+  kind: itb
+  published_at: 2026-11-09T16:23:07+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58414
+  url: https://mandaluyong.gov.ph/download/sbb-no-8-health-maintenance-organization-hmo/
+  title: SBB No. 8 Health Maintenance Organization (HMO)
+  kind: bulletin
+  published_at: 2026-10-14T15:48:41+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58395
+  url: https://mandaluyong.gov.ph/download/itb-unmanned-aerial-system-uas/
+  title: ITB – Unmanned Aerial System (UAS)
+  kind: itb
+  published_at: 2026-10-13T10:42:18+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58393
+  url: https://mandaluyong.gov.ph/download/itb-footpath-and-walkway-at-acacia-lane/
+  title: ITB – Footpath and Walkway at Acacia Lane
+  kind: itb
+  published_at: 2026-10-13T10:39:23+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58282
+  url: https://mandaluyong.gov.ph/download/itb-landscaping-concreting-of-pavement-at-cdrrmo/
+  title: ITB – Landscaping, Concreting of Pavement at CDRRMO
+  kind: itb
+  published_at: 2026-10-08T11:04:26+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58280
+  url: https://mandaluyong.gov.ph/download/itb-construction-of-road-networks-at-block-32/
+  title: ITB – Construction of Road Networks at Block 32
+  kind: itb
+  published_at: 2026-10-08T11:01:21+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58278
+  url: https://mandaluyong.gov.ph/download/itb-construction-of-perimeter-fence-at-dr-jose-fabella/
+  title: ITB – Construction of Perimeter Fence at Dr. Jose Fabella
+  kind: itb
+  published_at: 2026-10-08T10:59:05+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58258
+  url: https://mandaluyong.gov.ph/download/itb-lot-2-one-1-rapid-quencher/
+  title: ITB – Lot-2 One (1) Rapid Quencher
+  kind: itb
+  published_at: 2026-10-07T11:49:42+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58256
+  url: https://mandaluyong.gov.ph/download/itb-lot-3-one-1-unit-of-waste-material-oxidizer/
+  title: ITB – Lot 3-One (1) Unit of Waste Material Oxidizer
+  kind: itb
+  published_at: 2026-10-07T11:47:06+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58254
+  url: https://mandaluyong.gov.ph/download/itb-lot-1-construction-of-mrf/
+  title: ITB – Lot 1-Construction of MRF
+  kind: itb
+  published_at: 2026-10-07T11:45:17+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 58098
+  url: https://mandaluyong.gov.ph/download/itb-for-the-engagement-of-the-services-of-hmo/
+  title: ITB For the Engagement of the Services of HMO
+  kind: itb
+  published_at: 2026-09-30T10:54:07+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57913
+  url: https://mandaluyong.gov.ph/download/notice-of-failure-of-improvement/
+  title: Notice of Failure of Improvement
+  kind: bulletin
+  published_at: 2026-09-23T11:27:59+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57875
+  url: https://mandaluyong.gov.ph/download/supplemental-bid-bulletin-no-7/
+  title: Supplemental Bid Bulletin No. 7
+  kind: bulletin
+  published_at: 2026-09-22T10:43:17+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57873
+  url: https://mandaluyong.gov.ph/download/itb-for-the-supply-delivery-installation-of-led-xmas-lights/
+  title: ITB For the Supply, Delivery & Installation of Led Xmas Lights
+  kind: itb
+  published_at: 2026-09-22T10:40:03+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57855
+  url: https://mandaluyong.gov.ph/download/rfq__lab_sup_lab_section_chd__posting/
+  title: RFQ__Lab_Sup_Lab_Section_CHD__Posting
+  kind: rfq
+  published_at: 2026-09-21T16:04:38+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57853
+  url: https://mandaluyong.gov.ph/download/rfq__lab_kits_for_pregnant_chd__posting/
+  title: RFQ__Lab_Kits_for_Pregnant_CHD__Posting
+  kind: rfq
+  published_at: 2026-09-21T16:02:52+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57851
+  url: https://mandaluyong.gov.ph/download/rfq__dental_supplies_for_chd__posting/
+  title: RFQ__Dental_Supplies_for_CHD__Posting
+  kind: rfq
+  published_at: 2026-09-21T16:01:37+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57849
+  url: https://mandaluyong.gov.ph/download/rfq__dental_childrens_month_chd__posting/
+  title: RFQ__Dental_Childrens_Month_CHD__Posting
+  kind: rfq
+  published_at: 2026-09-21T15:59:31+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57847
+  url: https://mandaluyong.gov.ph/download/rfq__medical_equipment_mcmc_vawc__posting/
+  title: RFQ__Medical_Equipment_MCMC_VAWC__Posting
+  kind: rfq
+  published_at: 2026-09-21T15:56:00+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57845
+  url: https://mandaluyong.gov.ph/download/itb-for-the-supply-and-delivery-of-medical-supplies-for-chd/
+  title: ITB For the Supply and Delivery of Medical Supplies for CHD
+  kind: itb
+  published_at: 2026-09-21T15:52:27+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57843
+  url: https://mandaluyong.gov.ph/download/itb-for-the-supply-delivery-of-one-1-unit-ct-scan-tube-assembly/
+  title: ITB For the Supply & Delivery of One (1) Unit CT-SCAN Tube Assembly
+  kind: itb
+  published_at: 2026-09-21T15:49:55+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57841
+  url: https://mandaluyong.gov.ph/download/itb-for-the-supply-delivery-of-dm-for-non-communicable-diseases/
+  title: ITB For the Supply & Delivery of DM for Non Communicable Diseases
+  kind: itb
+  published_at: 2026-09-21T15:47:58+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57839
+  url: https://mandaluyong.gov.ph/download/itb-for-the-supply-delivery-of-dm-for-communicable-diseases/
+  title: ITB For the Supply & Delivery of DM for Communicable Diseases
+  kind: itb
+  published_at: 2026-09-21T15:45:02+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57836
+  url: https://mandaluyong.gov.ph/download/itb-for-the-supply-delivery-installation-integration-flood-sensors/
+  title: ITB For the Supply, Delivery, Installation, Integration Flood Sensors
+  kind: itb
+  published_at: 2026-09-21T15:42:59+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57833
+  url: https://mandaluyong.gov.ph/download/itb-for-the-supply-and-delivery-of-one-1-lot-medical-equipment/
+  title: ITB For the Supply and Delivery of One (1) Lot Medical Equipment
+  kind: itb
+  published_at: 2026-09-21T15:40:48+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57830
+  url: https://mandaluyong.gov.ph/download/sbb-no-5-ev-3-infra-09-21-2026/
+  title: SBB No. 5 – EV & 3 Infra 09.21.2026
+  kind: bulletin
+  published_at: 2026-09-21T15:37:04+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57628
+  url: https://mandaluyong.gov.ph/download/itb-thermal-oxidation-process-system/
+  title: ITB (Thermal Oxidation Process System)
+  kind: itb
+  published_at: 2026-09-15T14:48:32+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57626
+  url: https://mandaluyong.gov.ph/download/itb-drainage-and-street-main-road-improvement/
+  title: ITB Drainage and Street (Main Road) Improvement
+  kind: itb
+  published_at: 2026-09-15T14:47:08+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57624
+  url: https://mandaluyong.gov.ph/download/itb-footpath-walkway-and-center-island/
+  title: ITB (Footpath, Walkway and Center Island)
+  kind: itb
+  published_at: 2026-09-15T14:43:58+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57507
+  url: https://mandaluyong.gov.ph/download/sbb-no-5-hybrid-electric-suv-09-10-2026/
+  title: SBB No. 5 – Hybrid Electric SUV 09.10.2026
+  kind: bulletin
+  published_at: 2026-09-11T09:51:31+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57505
+  url: https://mandaluyong.gov.ph/download/sbb-no-4-pamaskong-handog-09-10-2026/
+  title: SBB No. 4 – Pamaskong Handog 09.10.2026
+  kind: bulletin
+  published_at: 2026-09-11T09:48:34+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57348
+  url: https://mandaluyong.gov.ph/download/itb-supply-and-delivery-of-30-hybrid-electric-sports-utility-vehicles/
+  title: ITB. Supply and Delivery of 30 Hybrid Electric Sports Utility Vehicles
+  kind: itb
+  published_at: 2026-09-01T10:21:12+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57221
+  url: https://mandaluyong.gov.ph/download/rfq-request-for-quotation-of-1536-gallons-of-70-alcohol/
+  title: RFQ. Request for Quotation of 1536 Gallons of 70% Alcohol
+  kind: rfq
+  published_at: 2026-08-24T15:17:35+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57219
+  url: https://mandaluyong.gov.ph/download/rfq-request-fo-quotation-of-one-lot-of-various-medical/
+  title: RFQ. Request fo Quotation of One Lot of Various Medical
+  kind: rfq
+  published_at: 2026-08-24T15:13:50+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57217
+  url: https://mandaluyong.gov.ph/download/itb-13334-boxes-chicken-luncheon-meat-340/
+  title: ITB. 13,334 Boxes Chicken Luncheon Meat (340)
+  kind: itb
+  published_at: 2026-08-24T15:10:01+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57215
+  url: https://mandaluyong.gov.ph/download/itb-11966-boxes-of-customized-plastic-container-20l/
+  title: ITB. 11,966 Boxes of Customized Plastic Container (20L)
+  kind: itb
+  published_at: 2026-08-24T15:07:37+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57213
+  url: https://mandaluyong.gov.ph/download/itb-10667-sacks-of-bihon-noodles-450g/
+  title: ITB. 10,667 Sacks of Bihon Noodles (450g)
+  kind: itb
+  published_at: 2026-08-24T15:04:47+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57211
+  url: https://mandaluyong.gov.ph/download/itb-4000-sacks-of-sinandomeng-rice-50kg/
+  title: ITB. 4000 Sacks of Sinandomeng Rice (50kg)
+  kind: itb
+  published_at: 2026-08-24T15:02:56+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57209
+  url: https://mandaluyong.gov.ph/download/itb-26667-boxes-spaghetti-pasta-400g/
+  title: ITB. 26,667 Boxes Spaghetti Pasta (400g)
+  kind: itb
+  published_at: 2026-08-24T14:59:12+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57207
+  url: https://mandaluyong.gov.ph/download/itb-26667-boxes-of-spaghetti-sauce-500g/
+  title: ITB. 26,667 Boxes of Spaghetti Sauce (500g)
+  kind: itb
+  published_at: 2026-08-24T14:57:19+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57205
+  url: https://mandaluyong.gov.ph/download/itb-19200-sacks-of-rice-50g/
+  title: ITB. 19,200 Sacks of Rice (50g)
+  kind: itb
+  published_at: 2026-08-24T14:54:49+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57203
+  url: https://mandaluyong.gov.ph/download/itb-18182-boxes-3-in-1-instant-coffee-mix-20g/
+  title: ITB. 18,182 Boxes 3-in-1 Instant Coffee Mix 20g
+  kind: itb
+  published_at: 2026-08-24T14:52:40+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57201
+  url: https://mandaluyong.gov.ph/download/itb-6667-boxes-tuna-flakes-in-oil-180g/
+  title: ITB. 6,667 Boxes Tuna Flakes in Oil 180g
+  kind: itb
+  published_at: 2026-08-24T14:49:27+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57199
+  url: https://mandaluyong.gov.ph/download/itb-6667-boxes-pasteurized-processed-cheese-160g/
+  title: ITB. 6,667 Boxes Pasteurized Processed Cheese 160g
+  kind: itb
+  published_at: 2026-08-24T14:47:05+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57197
+  url: https://mandaluyong.gov.ph/download/itb-6667-boxes-corned-beef-260g/
+  title: ITB. 6,667 Boxes Corned Beef 260g
+  kind: itb
+  published_at: 2026-08-24T14:44:53+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 57195
+  url: https://mandaluyong.gov.ph/download/itb-3200-sacks-washed-sugar-500g/
+  title: ITB. 3,200 Sacks Washed Sugar 500g
+  kind: itb
+  published_at: 2026-08-24T14:40:56+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 56771
+  url: https://mandaluyong.gov.ph/download/updated-app-2026-1st-semester/
+  title: Updated APP 2026 1st Semester
+  kind: app
+  published_at: 2026-07-30T13:47:34+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55650
+  url: https://mandaluyong.gov.ph/download/ntp-supply-and-delivery-of-various-office-equipment-and-peripherals-for-city-legal-department/
+  title:
+    NTP – Supply and Delivery of various Office Equipment and Peripherals for
+    City Legal Department
+  kind: ntp
+  published_at: 2026-06-05T08:54:36+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55648
+  url: https://mandaluyong.gov.ph/download/noa-supply-and-delivery-of-various-office-equipment-and-peripherals-for-city-legal-department/
+  title:
+    NOA -Supply and Delivery of various Office Equipment and Peripherals for
+    City Legal Department
+  kind: noa
+  published_at: 2026-06-02T08:53:54+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55644
+  url: https://mandaluyong.gov.ph/download/ntp-supply-and-delivery-of-various-office-furnitures-for-the-office-of-bids-and-awards-committee/
+  title:
+    NTP -Supply and Delivery of various Office Furnitures for the Office of Bids
+    and Awards Committee
+  kind: ntp
+  published_at: 2026-05-25T08:50:48+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55638
+  url: https://mandaluyong.gov.ph/download/ntp-supply-and-delivery-of-various-office-equipment-for-the-office-of-bids-and-awards-committee/
+  title:
+    NTP -Supply and Delivery of various Office Equipment for the Office of Bids
+    and Awards Committee
+  kind: ntp
+  published_at: 2026-05-25T08:15:21+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55646
+  url: https://mandaluyong.gov.ph/download/rfq-supply-and-delivery-of-various-office-equipment-and-peripherals-for-city-legal-department/
+  title:
+    RFQ – Supply and Delivery of various Office Equipment and Peripherals for
+    City Legal Department
+  kind: rfq
+  published_at: 2026-05-25T07:52:42+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55642
+  url: https://mandaluyong.gov.ph/download/noa-supply-and-delivery-of-various-office-furnitures-for-the-office-of-bids-and-awards-committee/
+  title:
+    NOA – Supply and Delivery of various Office Furnitures for the Office of
+    Bids and Awards Committee
+  kind: noa
+  published_at: 2026-05-21T07:50:01+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55636
+  url: https://mandaluyong.gov.ph/download/noa-supply-and-delivery-of-various-office-equipment-for-the-office-of-bids-and-awards-committee/
+  title:
+    NOA – Supply and Delivery of various Office Equipment for the Office of Bids
+    and Awards Committee
+  kind: noa
+  published_at: 2026-05-21T07:44:19+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55634
+  url: https://mandaluyong.gov.ph/download/rfq-supply-and-delivery-of-various-office-equipment-for-the-office-of-bids-and-awards-committee/
+  title:
+    RFQ – Supply and Delivery of various Office Equipment for the Office of Bids
+    and Awards Committee
+  kind: rfq
+  published_at: 2026-05-15T08:42:53+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55640
+  url: https://mandaluyong.gov.ph/download/rfq-supply-and-delivery-of-various-office-furnitures-for-the-office-of-bids-and-awards-committee/
+  title:
+    RFQ – Supply and Delivery of various Office Furnitures for the Office of
+    Bids and Awards Committee
+  kind: rfq
+  published_at: 2026-05-15T07:49:01+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55546
+  url: https://mandaluyong.gov.ph/download/ntp-supply-and-delivery-of-dental-supplies-for-the-elderly-week-celebration-for-oral-health-care-services-of-city-health-department/
+  title:
+    NTP – Supply and Delivery of Dental Supplies for the Elderly Week
+    Celebration for Oral Health Care Services of City Health Department
+  kind: ntp
+  published_at: 2026-04-27T08:13:31+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55479
+  url: https://mandaluyong.gov.ph/download/ntp-supply-and-delivery-of-immunoassay-and-hba1c-test-kits-for-philhealth-yakap-service-of-city-health-department/
+  title:
+    NTP – Supply and Delivery of Immunoassay and HBA1C Test Kits for Philhealth
+    Yakap Service of City Health Department
+  kind: ntp
+  published_at: 2026-04-27T07:40:21+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55544
+  url: https://mandaluyong.gov.ph/download/noa-supply-and-delivery-of-dental-supplies-for-the-elderly-week-celebration-for-oral-health-care-services-of-city-health-department/
+  title:
+    NOA – Supply and Delivery of Dental Supplies for the Elderly Week
+    Celebration for Oral Health Care Services of City Health Department
+  kind: noa
+  published_at: 2026-04-23T09:12:58+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55539
+  url: https://mandaluyong.gov.ph/download/noa-supply-and-delivery-of-various-dental-supplies-for-the-celebration-of-womens-month-city-health-departmen/
+  title:
+    NOA – Supply and Delivery of various Dental Supplies for the Celebration of
+    Womens Month, City Health Departmen
+  kind: noa
+  published_at: 2026-04-23T09:04:32+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55477
+  url: https://mandaluyong.gov.ph/download/noa-supply-and-delivery-of-immunoassay-and-hba1c-test-kits-for-philhealth-yakap-service-of-city-health-department/
+  title:
+    NOA – Supply and Delivery of Immunoassay and HBA1C Test Kits for Philhealth
+    Yakap Service of City Health Department
+  kind: noa
+  published_at: 2026-04-23T08:39:08+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55481
+  url: https://mandaluyong.gov.ph/download/rfq-supply-and-delivery-of-immunoassay-and-hba1c-test-kits-for-philhealth-yakap-service-of-city-health-department/
+  title:
+    RFQ – Supply and Delivery of Immunoassay and HBA1C Test Kits for Philhealth
+    Yakap Service of City Health Department
+  kind: rfq
+  published_at: 2026-04-16T09:41:03+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55542
+  url: https://mandaluyong.gov.ph/download/rfq-supply-and-delivery-of-dental-supplies-for-the-elderly-week-celebration-for-oral-health-care-services-of-city-health-department/
+  title:
+    RFQ – Supply and Delivery of Dental Supplies for the Elderly Week
+    Celebration for Oral Health Care Services of City Health Department
+  kind: rfq
+  published_at: 2026-04-15T08:12:09+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55324
+  url: https://mandaluyong.gov.ph/download/ntp-supply-and-delivery-of-two-2-units-of-colored-laser-photocopying-machine-for-the-city-engineering-and-building-officials-department/
+  title:
+    NTP – Supply and Delivery of Two (2) units of Colored Laser Photocopying
+    Machine for the City Engineering and Building Officials Department
+  kind: ntp
+  published_at: 2026-03-09T09:15:06+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55322
+  url: https://mandaluyong.gov.ph/download/noa-supply-and-delivery-of-two-2-units-of-colored-laser-photocopying-machine-for-the-city-engineering-and-building-officials-department/
+  title:
+    NOA – Supply and Delivery of Two (2) units of Colored Laser Photocopying
+    Machine for the City Engineering and Building Officials Department
+  kind: noa
+  published_at: 2026-03-05T08:14:26+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54487
+  url: https://mandaluyong.gov.ph/download/supplemental-bid-bulletin-no-1-installation-of-solar-hybrid-led-streetlights-67-lamp-post-located-along-p-cruz-from-boni-ave-to-f-ortigas-st-mandaluyong-city-mandabac26-39i/
+  title:
+    Supplemental Bid Bulletin No. 1 – INSTALLATION OF SOLAR HYBRID LED
+    STREETLIGHTS (67 LAMP POST) LOCATED ALONG P. CRUZ (FROM BONI AVE. TO F.
+    ORTIGAS ST.) MANDALUYONG CITY – mandabac#26-39,I – 2024 – 15/PhilGEPS
+    Reference No. 11967
+  kind: bulletin
+  published_at: 2026-03-02T08:46:42+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54489
+  url: https://mandaluyong.gov.ph/download/supplemental-bid-bulleting-no-1-installation-of-hybrid-solar-streetlights-along-san-rafael-street-from-martinez-st-to-boni-ave-barangay-plainview-mandaluyong-city-mandabac26-34-phi/
+  title:
+    Supplemental Bid Bulleting No. 1 – INSTALLATION OF HYBRID SOLAR STREETLIGHTS
+    ALONG SAN RAFAEL STREET (FROM MARTINEZ ST., TO BONI AVE.) BARANGAY
+    PLAINVIEW, MANDALUYONG CITY – mandabac#26-34/PhilGEPS Reference No. 11968
+  kind: bulletin
+  published_at: 2026-03-02T08:18:27+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55320
+  url: https://mandaluyong.gov.ph/download/rfq-supply-and-delivery-of-two-2-units-of-colored-laser-photocopying-machine-for-the-city-engineering-and-building-officials-department/
+  title:
+    RFQ – Supply and Delivery of Two (2) units of Colored Laser Photocopying
+    Machine for the City Engineering and Building Officials Department
+  kind: rfq
+  published_at: 2026-02-27T10:13:05+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55537
+  url: https://mandaluyong.gov.ph/download/rfq-supply-and-delivery-of-various-dental-supplies-for-the-celebration-of-womens-month-city-health-departmen/
+  title:
+    RFQ – Supply and Delivery of various Dental Supplies for the Celebration of
+    Womens Month, City Health Departmen
+  kind: rfq
+  published_at: 2026-02-27T08:03:08+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54372
+  url: https://mandaluyong.gov.ph/download/ntp-procurement-of-technical-assistance-for-quality-management-system-qms-implementation-towards-iso-90012015-certification-of-the-mandaluyong-city-medical-center-mcmc/
+  title:
+    NTP – Procurement of Technical Assistance for Quality Management System
+    (QMS) Implementation towards ISO 9001:2015 Certification of the Mandaluyong
+    City Medical Center (MCMC)
+  kind: ntp
+  published_at: 2026-02-04T08:48:23+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54378
+  url: https://mandaluyong.gov.ph/download/ntp-procurement-of-the-services-of-a-certifying-body-to-conduct-audit-and-provide-iso-90012015-quality-management-system-certification-for-mandaluyong-city-medical-center-mcmc/
+  title:
+    NTP – Procurement of the Services of a Certifying Body to Conduct Audit and
+    Provide ISO 9001:2015 Quality Management System Certification for
+    Mandaluyong City Medical Center (MCMC)
+  kind: ntp
+  published_at: 2026-02-04T08:26:02+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54370
+  url: https://mandaluyong.gov.ph/download/noa-procurement-of-technical-assistance-for-quality-management-system-qms-implementation-towards-iso-90012015-certification-of-the-mandaluyong-city-medical-center-mcmc/
+  title:
+    NOA – Procurement of Technical Assistance for Quality Management System
+    (QMS) Implementation towards ISO 9001:2015 Certification of the Mandaluyong
+    City Medical Center (MCMC)
+  kind: noa
+  published_at: 2026-02-02T09:47:48+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54376
+  url: https://mandaluyong.gov.ph/download/noa-procurement-of-the-services-of-a-certifying-body-to-conduct-audit-and-provide-iso-90012015-quality-management-system-certification-for-mandaluyong-city-medical-center-mcmc/
+  title:
+    NOA – Procurement of the Services of a Certifying Body to Conduct Audit and
+    Provide ISO 9001:2015 Quality Management System Certification for
+    Mandaluyong City Medical Center (MCMC)
+  kind: noa
+  published_at: 2026-02-02T09:24:19+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 53696
+  url: https://mandaluyong.gov.ph/download/ntp-lease-of-venue-for-the-conduct-of-a-3-day-live-in-seminar-training-for-the-adolescent-and-peer-support-group-and-stake-holders-for-city-health-department/
+  title:
+    NTP – LEASE OF VENUE FOR THE CONDUCT OF A 3-DAY LIVE-IN SEMINAR TRAINING FOR
+    THE ADOLESCENT AND PEER SUPPORT GROUP AND STAKE HOLDERS FOR CITY HEALTH
+    DEPARTMENT
+  kind: ntp
+  published_at: 2026-02-02T08:32:29+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 53694
+  url: https://mandaluyong.gov.ph/download/noa-lease-of-venue-for-the-conduct-of-a-3-day-live-in-seminar-training-for-the-adolescent-and-peer-support-group-and-stake-holders-for-city-health-department/
+  title:
+    NOA – LEASE OF VENUE FOR THE CONDUCT OF A 3-DAY LIVE-IN SEMINAR TRAINING FOR
+    THE ADOLESCENT AND PEER SUPPORT GROUP AND STAKE HOLDERS FOR CITY HEALTH
+    DEPARTMENT
+  kind: noa
+  published_at: 2026-02-02T08:31:57+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 53661
+  url: https://mandaluyong.gov.ph/download/certificate-of-posting-of-app-fy-2026/
+  title: Certificate of Posting of APP FY 2026
+  kind: app
+  published_at: 2026-01-27T17:18:25+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 53659
+  url: https://mandaluyong.gov.ph/download/annual-procurement-plan-app-for-year-2026/
+  title: ANNUAL PROCUREMENT PLAN (APP) For Year 2026
+  kind: app
+  published_at: 2026-01-27T17:17:20+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 53657
+  url: https://mandaluyong.gov.ph/download/certificate-of-posting-of-supplemental-app-fy-2025-second-semester/
+  title: Certificate of Posting of Supplemental APP FY 2025 Second Semester
+  kind: app
+  published_at: 2026-01-27T17:05:56+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 53655
+  url: https://mandaluyong.gov.ph/download/supplemental-annual-procurement-plan-app-for-year-2025-second-semester/
+  title:
+    "SUPPLEMENTAL ANNUAL PROCUREMENT PLAN (APP) For Year: 2025 (Second Semester)"
+  kind: app
+  published_at: 2026-01-27T17:03:26+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 53599
+  url: https://mandaluyong.gov.ph/download/rfq-lease-of-venue-and-provision-of-food-for-iclinicsys-version-5-updates-and-claims-orientation-for-city-health-department/
+  title:
+    RFQ – LEASE OF VENUE AND PROVISION OF FOOD FOR ICLINICSYS VERSION 5 UPDATES
+    AND CLAIMS ORIENTATION FOR CITY HEALTH DEPARTMENT
+  kind: rfq
+  published_at: 2026-01-26T14:19:46+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 53597
+  url: https://mandaluyong.gov.ph/download/ntp-lease-of-venue-and-provision-of-food-for-iclinicsys-version-5-updates-and-claims-orientation-for-city-health-department/
+  title:
+    NTP – LEASE OF VENUE AND PROVISION OF FOOD FOR ICLINICSYS VERSION 5 UPDATES
+    AND CLAIMS ORIENTATION FOR CITY HEALTH DEPARTMENT
+  kind: ntp
+  published_at: 2026-01-26T14:14:52+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 53595
+  url: https://mandaluyong.gov.ph/download/noa-lease-of-venue-and-provision-of-food-for-iclinicsys-version-5-updates-and-claims-orientation-for-city-health-department/
+  title:
+    NOA – LEASE OF VENUE AND PROVISION OF FOOD FOR ICLINICSYS VERSION 5 UPDATES
+    AND CLAIMS ORIENTATION FOR CITY HEALTH DEPARTMENT
+  kind: noa
+  published_at: 2026-01-26T14:14:15+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54413
+  url: https://mandaluyong.gov.ph/download/ntp-supply-and-delivery-of-anti-pneumonia-vaccines-for-bantay-bayan-health-wellness-and-sportfest-activity-city-barangay-affairs-and-community-services-department-city-of-mandaluyong/
+  title:
+    NTP – Supply and Delivery of Anti-Pneumonia Vaccines for Bantay Bayan
+    Health, Wellness and Sportfest Activity, City Barangay Affairs and Community
+    Services Department, City of Mandaluyong
+  kind: ntp
+  published_at: 2026-01-26T08:57:13+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54407
+  url: https://mandaluyong.gov.ph/download/ntp-supply-and-delivery-of-various-medical-equipment-and-ancilliaries-for-bantay-bayan-health-wellness-and-sportfest-activity-city-barangay-affairs-and-community-services-department-city-of-manda/
+  title:
+    NTP – Supply and Delivery of various Medical Equipment and Ancilliaries for
+    Bantay Bayan Health, Wellness and Sportfest Activity, City Barangay Affairs
+    and Community Services Department, City of Mandaluyong
+  kind: ntp
+  published_at: 2026-01-26T08:24:40+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54368
+  url: https://mandaluyong.gov.ph/download/rfq-procurement-of-technical-assistance-for-quality-management-system-qms-implementation-towards-iso-90012015-certification-of-the-mandaluyong-city-medical-center-mcmc/
+  title:
+    RFQ – Procurement of Technical Assistance for Quality Management System
+    (QMS) Implementation towards ISO 9001:2015 Certification of the Mandaluyong
+    City Medical Center (MCMC)
+  kind: rfq
+  published_at: 2026-01-25T08:46:16+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54374
+  url: https://mandaluyong.gov.ph/download/rfq-procurement-of-the-services-of-a-certifying-body-to-conduct-audit-and-provide-iso-90012015-quality-management-system-certification-for-mandaluyong-city-medical-center-mcmc/
+  title:
+    RFQ – Procurement of the Services of a Certifying Body to Conduct Audit and
+    Provide ISO 9001:2015 Quality Management System Certification for
+    Mandaluyong City Medical Center (MCMC)
+  kind: rfq
+  published_at: 2026-01-25T08:22:54+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54411
+  url: https://mandaluyong.gov.ph/download/noa-supply-and-delivery-of-anti-pneumonia-vaccines-for-bantay-bayan-health-wellness-and-sportfest-activity-city-barangay-affairs-and-community-services-department-city-of-mandaluyong/
+  title:
+    NOA – Supply and Delivery of Anti-Pneumonia Vaccines for Bantay Bayan
+    Health, Wellness and Sportfest Activity, City Barangay Affairs and Community
+    Services Department, City of Mandaluyong
+  kind: noa
+  published_at: 2026-01-22T09:56:34+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54405
+  url: https://mandaluyong.gov.ph/download/noa-supply-and-delivery-of-various-medical-equipment-and-ancilliaries-for-bantay-bayan-health-wellness-and-sportfest-activity-city-barangay-affairs-and-community-services-department-city-of-manda/
+  title:
+    NOA – Supply and Delivery of various Medical Equipment and Ancilliaries for
+    Bantay Bayan Health, Wellness and Sportfest Activity, City Barangay Affairs
+    and Community Services Department, City of Mandaluyong
+  kind: noa
+  published_at: 2026-01-22T09:02:17+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54924
+  url: https://mandaluyong.gov.ph/download/ntp-supply-and-delivery-of-various-sports-supplies-for-the-school-division-office-city-of-mandaluyong/
+  title:
+    NTP – Supply and Delivery of various Sports Supplies for the School Division
+    Office, City of Mandaluyong
+  kind: ntp
+  published_at: 2026-01-20T09:50:58+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54922
+  url: https://mandaluyong.gov.ph/download/noa-supply-and-delivery-of-various-sports-supplies-for-the-school-division-office-city-of-mandaluyong/
+  title:
+    NOA – Supply and Delivery of various Sports Supplies for the School Division
+    Office, City of Mandaluyong
+  kind: noa
+  published_at: 2026-01-16T08:50:04+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54409
+  url: https://mandaluyong.gov.ph/download/rfq-supply-and-delivery-of-anti-pneumonia-vaccines-for-bantay-bayan-health-wellness-and-sportfest-activity-city-barangay-affairs-and-community-services-department-city-of-mandaluyong/
+  title:
+    RFQ – Supply and Delivery of Anti-Pneumonia Vaccines for Bantay Bayan
+    Health, Wellness and Sportfest Activity, City Barangay Affairs and Community
+    Services Department, City of Mandaluyong
+  kind: rfq
+  published_at: 2026-01-15T08:55:48+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54403
+  url: https://mandaluyong.gov.ph/download/rfq-supply-and-delivery-of-various-medical-equipment-and-ancilliaries-for-bantay-bayan-health-wellness-and-sportfest-activity-city-barangay-affairs-and-community-services-department-city-of-manda/
+  title:
+    RFQ – Supply and Delivery of various Medical Equipment and Ancilliaries for
+    Bantay Bayan Health, Wellness and Sportfest Activity, City Barangay Affairs
+    and Community Services Department, City of Mandaluyong
+  kind: rfq
+  published_at: 2026-01-15T08:01:06+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54920
+  url: https://mandaluyong.gov.ph/download/rfq-supply-and-delivery-of-various-sports-supplies-fpr-the-school-division-office-city-of-mandaluyong/
+  title:
+    RFQ – Supply and Delivery of various Sports Supplies fpr the School Division
+    Office, City of Mandaluyong
+  kind: rfq
+  published_at: 2026-01-10T08:45:13+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00

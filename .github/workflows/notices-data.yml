@@ -1,0 +1,157 @@
+# Keeps data/bids/*.yaml and data/jobs/*.yaml current: reads the city's bid
+# notices, bulletins of vacancies, and PESO job posts (links only). Changes go
+# to one rolling PR from the `bot/notices-data` branch, one commit per run, so
+# `git log data/bids data/jobs` is the audit trail. See DEPLOYMENT.md,
+# "Bids and jobs bot".
+#
+# Unlike the news bot, this one never merges its own PR: a person reviews and
+# merges it. Letting it merge needs a human-reviewed change to this workflow,
+# to AGENTS.md, and to the notices guard in check.yml.
+name: notices-data
+
+on:
+  schedule:
+    - cron: "37 22 * * *" # 06:37 Manila
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "Read every category page, not just the first ones"
+        type: boolean
+        default: false
+
+concurrency:
+  group: notices-data
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    if: github.repository == 'BetterMandaluyong/bettermandaluyong.org'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # The same GitHub App as the news bot; its credentials live in this
+    # environment, which is limited to main.
+    environment: news-bot
+    steps:
+      # A token from the GitHub App, not GITHUB_TOKEN: pushes and PRs made with
+      # GITHUB_TOKEN do not start the `check` workflow.
+      - name: App token
+        id: app
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.NEWS_BOT_APP_ID }}
+          private-key: ${{ secrets.NEWS_BOT_PRIVATE_KEY }}
+
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ steps.app.outputs.token }}
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Git identity
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          SLUG: ${{ steps.app.outputs.app-slug }}
+        run: |
+          id=$(gh api "/users/${SLUG}[bot]" --jq .id)
+          git config user.name "${SLUG}[bot]"
+          git config user.email "${id}+${SLUG}[bot]@users.noreply.github.com"
+
+      # Continue the rolling branch if it exists, on top of the current main.
+      - name: Prepare bot/notices-data
+        run: |
+          if git fetch origin bot/notices-data; then
+            git checkout -B bot/notices-data origin/bot/notices-data
+            git rebase origin/main || { git rebase --abort; git checkout -B bot/notices-data origin/main; }
+          else
+            git checkout -B bot/notices-data origin/main
+          fi
+
+      - name: Refresh data/bids and data/jobs
+        id: refresh
+        env:
+          BACKFILL: ${{ inputs.backfill }}
+        run: |
+          args=""
+          if [ "$BACKFILL" = true ]; then args="--backfill"; fi
+          node scripts/notices_refresh.ts $args --summary "$RUNNER_TEMP/summary.md"
+
+      - name: Commit and push
+        run: |
+          if [ -n "$(git status --porcelain data/bids data/jobs)" ]; then
+            git add data/bids data/jobs
+            title=$(head -n 1 "$RUNNER_TEMP/summary.md")
+            tail -n +3 "$RUNNER_TEMP/summary.md" > "$RUNNER_TEMP/body.md"
+            if [ -s "$RUNNER_TEMP/body.md" ]; then
+              git commit -m "chore(data): $title" -F "$RUNNER_TEMP/body.md"
+            else
+              git commit -m "chore(data): $title"
+            fi
+            git push --force-with-lease origin bot/notices-data
+          else
+            echo "No change to data/bids or data/jobs."
+          fi
+
+      - name: Open the PR
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: |
+          ahead=$(git rev-list --count origin/main..HEAD)
+          if [ "$ahead" -gt 0 ] && [ -z "$(gh pr list --head bot/notices-data --state open --json number --jq '.[0].number')" ]; then
+            gh pr create --base main --head bot/notices-data \
+              --title "chore(data): refresh city bids and jobs" \
+              --body "Automatic update of \`data/bids/\` and \`data/jobs/\` by the notices-data workflow. It touches only those folders and never merges itself: please review and rebase-merge. Each commit is one run; what it found is in the commit message."
+          fi
+
+      # The run saved what it could; now say so if the document list was unreadable.
+      - name: Fail if the city site could not be read
+        if: always() && steps.refresh.outputs.degraded == 'true'
+        run: |
+          echo "::error::The city's document list could not be read."
+          exit 1
+
+  # Opens one issue after two failed runs in a row; closes it on the next success.
+  report:
+    needs: refresh
+    if:
+      always() && needs.refresh.result != 'skipped' && needs.refresh.result !=
+      'cancelled'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      actions: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RESULT: ${{ needs.refresh.result }}
+      RUN_URL:
+        ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{
+        github.run_id }}
+    steps:
+      - name: Open or close the failure issue
+        run: |
+          open=$(gh issue list --state open --search '"notices-bot failing" in:title' --json number --jq '.[0].number')
+          if [ "$RESULT" = success ]; then
+            [ -z "$open" ] || gh issue close "$open" --comment "The notices-data workflow succeeded again: $RUN_URL"
+            exit 0
+          fi
+          previous=$(gh run list --workflow notices-data.yml --status completed --limit 1 --json conclusion --jq '.[0].conclusion')
+          [ "$previous" = failure ] || exit 0
+          if [ -n "$open" ]; then
+            gh issue comment "$open" --body "Failed again: $RUN_URL"
+          else
+            gh issue create --title "notices-bot failing" \
+              --body "The notices-data workflow failed twice in a row, so city bids and jobs on the site are going stale. Latest run: $RUN_URL. See DEPLOYMENT.md, \"Bids and jobs bot\"."
+          fi

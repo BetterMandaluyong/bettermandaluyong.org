@@ -35,6 +35,15 @@ describe("validateData", () => {
     ).toThrow(/data\/barangays\/hulo\.yaml/);
   });
 
+  it("rejects bad bid and job files, naming them", () => {
+    expect(() =>
+      validateData("/repo/data/bids/2026.yaml", [{ id: 1 }]),
+    ).toThrow(/data\/bids\/2026\.yaml/);
+    expect(() =>
+      validateData("/repo/data/jobs/2026.yaml", [{ id: 1 }]),
+    ).toThrow(/data\/jobs\/2026\.yaml/);
+  });
+
   it("runs the validator from yamlToModule", () => {
     expect(() =>
       yamlToModule("a: 1\n", "x.yaml", () => {

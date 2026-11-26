@@ -1,11 +1,13 @@
 import { parse } from "yaml";
 import {
   parseBarangay,
+  parseBidsFile,
   parseBudget2027,
   parseBudgetGaa,
   parseBudgetScope,
   parseCityOfficials,
   parseFinances,
+  parseJobsFile,
   parseNewsFile,
   parsePay,
   parsePerson,
@@ -67,6 +69,11 @@ export function validateData(path: string, data: unknown): void {
   } else {
     const news = path.match(/(?:^|\/)data\/news\/([^/]+)\.yaml$/);
     if (news) parseNewsFile(data, `data/news/${news[1]}.yaml`, news[1]);
+    const notice = path.match(/(?:^|\/)data\/(bids|jobs)\/([^/]+)\.yaml$/);
+    if (notice) {
+      const parse = notice[1] === "bids" ? parseBidsFile : parseJobsFile;
+      parse(data, `data/${notice[1]}/${notice[2]}.yaml`, notice[2]);
+    }
     const budget = path.match(/(?:^|\/)data\/budget\/([^/]+\.yaml)$/);
     if (budget && BUDGET_FILES[budget[1]]) {
       BUDGET_FILES[budget[1]](data, `data/budget/${budget[1]}`);

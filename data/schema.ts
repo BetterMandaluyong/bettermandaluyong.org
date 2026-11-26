@@ -997,6 +997,150 @@ export function parseNewsFile(
 }
 
 // ---------------------------------------------------------------------------
+// City notices (data/bids/, data/jobs/): link-only records of the documents
+// and job posts on mandaluyong.gov.ph. Written by scripts/notices_refresh.ts.
+
+/**
+ * What a bid notice is, from the city's Download Manager category:
+ * invitation to bid, request for quotation, bid bulletin, notice of award,
+ * notice to proceed, contract, procurement monitoring report, annual
+ * procurement plan, or another notice in the bids section.
+ */
+export type BidKind =
+  | "itb"
+  | "rfq"
+  | "bulletin"
+  | "noa"
+  | "ntp"
+  | "contract"
+  | "pmr"
+  | "app"
+  | "other";
+
+export const BID_KINDS: readonly BidKind[] = [
+  "itb",
+  "rfq",
+  "bulletin",
+  "noa",
+  "ntp",
+  "contract",
+  "pmr",
+  "app",
+  "other",
+];
+
+/**
+ * Where a job comes from: `vacancy` is a City Hall bulletin of vacancies (a
+ * document), `peso` is a private employer's opening posted by the city's
+ * Public Employment Service Office.
+ */
+export type JobKind = "vacancy" | "peso";
+
+export const JOB_KINDS: readonly JobKind[] = ["vacancy", "peso"];
+
+/**
+ * One bid document or job post on the city site. Link-only: title, date, and
+ * kind, never the document or the job text. Loaded from
+ * `data/bids/YYYY.yaml` or `data/jobs/YYYY.yaml`, where YYYY is the Manila
+ * year of `publishedAt`.
+ */
+export type CityNotice<K extends string = string> = {
+  /** The WordPress post id (a Download Manager package or an AWSM job). */
+  id: number;
+  url: string;
+  title: string;
+  kind: K;
+  /** ISO 8601 in Manila time (+08:00). */
+  publishedAt: string;
+  /** When this site first saw it (Manila time). */
+  firstSeenAt: string;
+  /** First run that didn't find it on the city site; null while it is there. */
+  missingSince: string | null;
+  /** Set by the second run in a row that didn't find it. */
+  removedAt: string | null;
+};
+
+/** A bid notice from `data/bids/`. */
+export type BidNotice = CityNotice<BidKind>;
+/** A job from `data/jobs/`. */
+export type JobNotice = CityNotice<JobKind>;
+
+function parseNoticeFile<K extends string>(
+  raw: unknown,
+  file: string,
+  year: string,
+  kinds: readonly K[],
+): CityNotice<K>[] {
+  if (!/^\d{4}$/.test(year)) fail(file, "file name", "must be YYYY.yaml");
+  if (!Array.isArray(raw)) fail(file, "document", "must be a list");
+  const seen = new Set<number>();
+  return raw.map((entry, i): CityNotice<K> => {
+    const at = `[${i}]`;
+    const o = obj(entry, file, at);
+    const id = o.id;
+    if (typeof id !== "number" || !Number.isInteger(id) || id < 1) {
+      fail(file, `${at}.id`, "must be a positive whole number");
+    }
+    if (seen.has(id)) fail(file, `${at}.id`, `${id} appears twice`);
+    seen.add(id);
+    const link = str(o, "url", file, `${at}.url`);
+    if (!CITY_URL.test(link)) {
+      fail(file, `${at}.url`, "must be a link on mandaluyong.gov.ph");
+    }
+    const kind = str(o, "kind", file, `${at}.kind`);
+    if (!(kinds as readonly string[]).includes(kind)) {
+      fail(file, `${at}.kind`, `must be one of ${kinds.join(", ")}`);
+    }
+    const publishedAt = manilaIso(
+      o,
+      "published_at",
+      file,
+      `${at}.published_at`,
+    );
+    if (!publishedAt.startsWith(year)) {
+      fail(file, `${at}.published_at`, `is not in ${year}`);
+    }
+    return {
+      id,
+      url: link,
+      title: str(o, "title", file, `${at}.title`),
+      kind: kind as K,
+      publishedAt,
+      firstSeenAt: manilaIso(o, "first_seen_at", file, `${at}.first_seen_at`),
+      missingSince: optManilaIso(
+        o,
+        "missing_since",
+        file,
+        `${at}.missing_since`,
+      ),
+      removedAt: optManilaIso(o, "removed_at", file, `${at}.removed_at`),
+    };
+  });
+}
+
+/**
+ * Checks one `data/bids/YYYY.yaml` document (a list of bid notices). `year`
+ * is the file's name without `.yaml`; every notice must be published in that
+ * Manila year, ids must be unique, and `kind` one of `BID_KINDS`.
+ */
+export function parseBidsFile(
+  raw: unknown,
+  file: string,
+  year: string,
+): BidNotice[] {
+  return parseNoticeFile(raw, file, year, BID_KINDS);
+}
+
+/** Checks one `data/jobs/YYYY.yaml` document, as `parseBidsFile` does, with `JOB_KINDS`. */
+export function parseJobsFile(
+  raw: unknown,
+  file: string,
+  year: string,
+): JobNotice[] {
+  return parseNoticeFile(raw, file, year, JOB_KINDS);
+}
+
+// ---------------------------------------------------------------------------
 // National budget (data/budget/). scope.yaml is hand-edited; fy2027.yaml and
 // gaa.yaml are written by scripts/budget_refresh.ts from the BetterGov.ph
 // Budget API (https://budget.bettergov.ph/docs). Amounts are whole pesos.

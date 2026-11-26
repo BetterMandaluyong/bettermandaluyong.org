@@ -1,0 +1,61 @@
+# City job posts (links only). Written by scripts/notices_refresh.ts; see DEPLOYMENT.md.
+- id: 55847
+  url: https://mandaluyong.gov.ph/jobs-peso/branch-inventory-green-pasture/
+  title: BRANCH INVENTORY – GREEN PASTURE
+  kind: peso
+  published_at: 2026-06-25T14:54:12+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55815
+  url: https://mandaluyong.gov.ph/download/june-9-to-june-24-2026-bulletin-of-vacancy/
+  title: June 9 to June 24, 2026 Bulletin of Vacancy
+  kind: vacancy
+  published_at: 2026-06-24T15:29:51+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55813
+  url: https://mandaluyong.gov.ph/download/june-3-to-june-18-2026-bulletin-of-vacancy-2/
+  title: June 3 to June 18, 2026 Bulletin of Vacancy
+  kind: vacancy
+  published_at: 2026-06-24T15:27:50+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55811
+  url: https://mandaluyong.gov.ph/download/june-3-to-june-18-2026-bulletin-of-vacancy/
+  title: June 3 to June 18, 2026 Bulletin of Vacancy
+  kind: vacancy
+  published_at: 2026-06-24T15:27:05+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55809
+  url: https://mandaluyong.gov.ph/download/may-28-to-june-28-2026-bulletin-of-vacancy/
+  title: May 28 to June 28, 2026 Bulletin of Vacancy
+  kind: vacancy
+  published_at: 2026-06-24T15:25:01+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 55807
+  url: https://mandaluyong.gov.ph/download/april-8-2026-bulletin-of-vacancy/
+  title: April 8, 2026 Bulletin of Vacancy
+  kind: vacancy
+  published_at: 2026-06-24T15:22:50+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54795
+  url: https://mandaluyong.gov.ph/download/march-16-2026-bulletin-of-vacancy/
+  title: March 16, 2026 Bulletin of Vacancy
+  kind: vacancy
+  published_at: 2026-04-07T10:21:17+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54793
+  url: https://mandaluyong.gov.ph/download/february-20-to-march-7-2026-bulletin-of-vacancy-2/
+  title: February 20 to March 7, 2026 Bulletin of Vacancy
+  kind: vacancy
+  published_at: 2026-04-07T10:20:16+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 54791
+  url: https://mandaluyong.gov.ph/download/february-20-to-march-7-2026-bulletin-of-vacancy/
+  title: February 20 to March 7, 2026 Bulletin of Vacancy
+  kind: vacancy
+  published_at: 2026-04-07T10:18:44+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00
+- id: 53464
+  url: https://mandaluyong.gov.ph/jobs-peso/cctv-operator-shaw-mall/
+  title: CCTV Operator (Shaw Mall)
+  kind: peso
+  published_at: 2026-01-16T10:52:53+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00

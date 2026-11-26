@@ -50,3 +50,22 @@ jobs:
             echo "$outside"
             exit 1
           fi
+
+  # The bids and jobs bot's PR may change data/bids/ and data/jobs/ only. It
+  # never merges itself, but a reviewer should only ever see data in it.
+  notices-data-guard:
+    if: github.head_ref == 'bot/notices-data'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Only data/bids/ and data/jobs/ may change
+        run: |
+          outside=$(git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" | grep -Ev '^data/(bids|jobs)/' || true)
+          if [ -n "$outside" ]; then
+            echo "::error::bot/notices-data may only change data/bids/ and data/jobs/. Also changed:"
+            echo "$outside"
+            exit 1
+          fi

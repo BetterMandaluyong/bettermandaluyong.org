@@ -1,0 +1,7 @@
+# City job posts (links only). Written by scripts/notices_refresh.ts; see DEPLOYMENT.md.
+- id: 4447
+  url: https://mandaluyong.gov.ph/download/25-april-2018-bulletin-of-vacancies/
+  title: 25 April 2018 – Bulletin of Vacancies
+  kind: vacancy
+  published_at: 2018-04-25T20:30:55+08:00
+  first_seen_at: 2026-11-26T20:55:31+08:00

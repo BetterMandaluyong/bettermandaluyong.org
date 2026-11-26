@@ -7,6 +7,7 @@ Pure logic shared by pages, islands, and scripts: no data loading, no React.
 | `budget/`    | Budget API client, whole-word place matching, YAML output, display math |
 | `barangays/` | Phone parsing, date formatting, search, the person-link key (`hrefKey`) |
 | `news/`      | Feed, WordPress, and Wayback parsers; the bot's jobs; record and YAML   |
+| `notices/`   | Bids and jobs: category and API parsers, the run, record, page queries  |
 | `people/`    | ULIDs, URL slugs and re-import matching, `# Name` comments, disk reader |
 | `site/`      | The RSS feed, llms.txt, and humans.txt builders                         |
 | `pay/`       | The salary schedule in force in a year, and an office's rate            |
@@ -16,7 +17,7 @@ Pure logic shared by pages, islands, and scripts: no data loading, no React.
   or changed logic needs passing tests in the same change.
 - **Keep it importable everywhere.** Islands (in the browser) and pages (in the
   Worker) import some of these modules, so only the files meant for scripts
-  (`news/files.ts`, `people/files.ts`, `budget/files.ts`) may use `node:fs`.
-  Their headers say so.
+  (`news/files.ts`, `notices/files.ts`, `people/files.ts`, `budget/files.ts`)
+  may use `node:fs`. Their headers say so.
 - Use `.ts` import extensions and erasable TypeScript, as in `scripts/`, because
   scripts load these modules under plain `node`.
