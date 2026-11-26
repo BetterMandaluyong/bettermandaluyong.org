@@ -19,42 +19,22 @@ function encodeTime(ms: number): string {
   return out;
 }
 
-/** The random part plus one, as base32 digits; throws if it would overflow. */
-function increment(digits: readonly number[]): number[] {
-  const next = [...digits];
-  for (let i = next.length - 1; i >= 0; i--) {
-    if (next[i] < 31) {
-      next[i]++;
-      return next;
-    }
-    next[i] = 0;
-  }
-  throw new Error("ULID random part overflowed within one millisecond");
-}
-
 /**
- * Returns a function that makes ULIDs. They are monotonic: each id sorts
- * after the one before it, even when made within the same millisecond (the
- * random part is incremented). `now` and `random` are for tests.
+ * A new ULID. The 16 random characters are drawn fresh every time, so ids
+ * made in the same millisecond share only their time prefix, never a run of
+ * random characters. (The spec's optional "monotonic" mode increments the
+ * last id instead, which makes a batch look like a counter; we don't use it.)
+ * Ids that share a millisecond don't sort among themselves. `now` and
+ * `random` are for tests.
  */
-export function ulidFactory(
-  now: () => number = Date.now,
+export function ulid(
+  now: number = Date.now(),
   random: (n: number) => Uint8Array = (n) =>
     crypto.getRandomValues(new Uint8Array(n)),
-): () => string {
-  let lastTime = -1;
-  let last: number[] = [];
-  return () => {
-    const t = now();
-    if (t > lastTime) {
-      lastTime = t;
-      // 256 is a multiple of 32, so each byte mod 32 is uniform.
-      last = Array.from(random(16), (b) => b % 32);
-    } else {
-      last = increment(last);
-    }
-    return encodeTime(lastTime) + last.map((d) => ALPHABET[d]).join("");
-  };
+): string {
+  // 256 is a multiple of 32, so each byte mod 32 is uniform.
+  const rand = Array.from(random(16), (b) => ALPHABET[b % 32]).join("");
+  return encodeTime(now) + rand;
 }
 
 /** The millisecond timestamp a ULID was made at. */

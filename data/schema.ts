@@ -2,6 +2,11 @@
 // file and the field, so a broken data file fails the build with a message a
 // person can act on. No runtime dependencies.
 
+import {
+  NAME_FIELDS,
+  displayName,
+  type PersonName,
+} from "../utils/people/names.ts";
 import { ULID } from "../utils/people/ulid.ts";
 
 type Obj = Record<string, unknown>;
@@ -163,14 +168,47 @@ export type PersonRecord = {
   id: string;
   /** The `/people/<slug>` URL; unique, frozen once set. */
   slug: string;
+  /** The name as the site shows it, written out from `nameParts`. */
   name: string;
+  /** The name in parts, as the file stores it under `name:`. */
+  nameParts: PersonName;
   ids: ExternalIds;
 };
+
+function parseName(raw: unknown, file: string): PersonName {
+  const o = obj(raw, file, "name");
+  for (const key of Object.keys(o)) {
+    if (!(NAME_FIELDS as readonly string[]).includes(key)) {
+      fail(
+        file,
+        `name.${key}`,
+        `is not a name part (${NAME_FIELDS.join(", ")})`,
+      );
+    }
+  }
+  const part = (key: (typeof NAME_FIELDS)[number]) =>
+    optStr(o, key, file, `name.${key}`);
+  const nickname = part("nickname");
+  if (nickname && /[“”"]/.test(nickname)) {
+    fail(file, "name.nickname", "must not include quotes; the site adds them");
+  }
+  const middle = part("middle_name");
+  const suffix = part("suffix");
+  return {
+    first_name: str(o, "first_name", file, "name.first_name"),
+    ...(middle ? { middle_name: middle } : {}),
+    last_name: str(o, "last_name", file, "name.last_name"),
+    ...(suffix ? { suffix } : {}),
+    ...(nickname ? { nickname } : {}),
+  };
+}
 
 /**
  * Checks one `data/people/<id>.yaml` document. `id` comes from the file
  * name, and the document's own `id:` must match it. `slug:` must be a URL
- * slug (uniqueness is checked across files by `duplicateSlugs`). `ids:` is optional;
+ * slug (uniqueness is checked across files by `duplicateSlugs`). `name:` is a
+ * mapping of parts (`first_name` and `last_name` required; `middle_name`,
+ * `suffix`, `nickname` optional). `ids:` is optional;
  * each key must be in `EXTERNAL_ID_KINDS` and each value must match.
  */
 export function parsePerson(
@@ -231,7 +269,15 @@ export function parsePerson(
       `must be lowercase words joined by hyphens, like "juan-dela-cruz"`,
     );
   }
-  return { id, slug, name: str(o, "name", file), ids };
+  if (typeof o.name === "string") {
+    fail(
+      file,
+      "name",
+      "must be a mapping: first_name, middle_name, last_name, suffix, nickname",
+    );
+  }
+  const nameParts = parseName(o.name, file);
+  return { id, slug, name: displayName(nameParts), nameParts, ids };
 }
 
 /**
