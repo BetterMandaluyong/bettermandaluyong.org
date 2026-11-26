@@ -1,0 +1,8 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8381
+  url: https://mandaluyong.gov.ph/mayoralty-bet-menchie-abalos-proclaimed-new-mayor/
+  title: MAYORALTY BET MENCHIE ABALOS PROCLAIMED NEW MAYOR
+  published_at: 2016-05-10T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

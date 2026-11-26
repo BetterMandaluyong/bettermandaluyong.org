@@ -1,0 +1,105 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 58089
+  url: https://mandaluyong.gov.ph/loyalty-service-award-iginawad-ng-mandaluyong-sa-mga-natatanging-kawani/
+  title: LOYALTY SERVICE AWARD, IGINAWAD NG MANDALUYONG SA MGA NATATANGING KAWANI
+  published_at: 2026-09-29T11:39:32+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58084
+  url: https://mandaluyong.gov.ph/mandaluyong-kinilala-ang-250-kawani-sa-matagal-na-taon-ng-paglilingkod-bayan/
+  title: MANDALUYONG, KINILALA ANG 250 KAWANI SA MATAGAL NA TAON NG PAGLILINGKOD-BAYAN
+  published_at: 2026-09-29T11:34:23+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58079
+  url: https://mandaluyong.gov.ph/atletang-mandaleno-wagi-sa-lokal-at-internasyunal-na-patimpalak-sa-isports/
+  title: ATLETANG MANDALEÑO, WAGI SA LOKAL AT INTERNASYUNAL NA PATIMPALAK SA ISPORTS
+  published_at: 2026-09-29T11:29:12+08:00
+  categories:
+    - News
+    - Sports
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58075
+  url: https://mandaluyong.gov.ph/natatanging-kawani-mula-sa-project-teach-pinarangalan-ng-mandaluyong/
+  title: NATATANGING KAWANI MULA SA PROJECT TEACH, PINARANGALAN NG MANDALUYONG
+  published_at: 2026-09-29T11:23:27+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57970
+  url: https://mandaluyong.gov.ph/mandaluyong-nakipagtulungan-sa-pldt-at-smart-communications-para-sa-integrasyon-ng-ai-in-a-box-sa-serbisyong-publiko/
+  title: MANDALUYONG, NAKIPAGTULUNGAN SA PLDT AT SMART COMMUNICATIONS PARA SA INTEGRASYON NG “AI IN A BOX” SA SERBISYONG PUBLIKO
+  published_at: 2026-09-24T12:35:37+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57966
+  url: https://mandaluyong.gov.ph/mandaluyong-hakot-parangal-sa-2026-regional-nutrition-awarding-ceremony-ng-nnc-ncr/
+  title: MANDALUYONG, HAKOT-PARANGAL SA 2026 REGIONAL NUTRITION AWARDING CEREMONY NG NNC-NCR
+  published_at: 2026-09-24T12:31:45+08:00
+  categories:
+    - Awards
+    - Health
+    - Nutrition
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57962
+  url: https://mandaluyong.gov.ph/mga-natatanging-chief-girl-scout-kinilala-ng-mandaluyong/
+  title: MGA NATATANGING CHIEF GIRL SCOUT, KINILALA NG MANDALUYONG
+  published_at: 2026-09-24T12:28:26+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57957
+  url: https://mandaluyong.gov.ph/panunumpa-ng-saver-jjg-at-scpb-sa-mandaluyong/
+  title: PANUNUMPA NG SAVER, JJG AT SCPB SA MANDALUYONG
+  published_at: 2026-09-24T12:24:56+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57953
+  url: https://mandaluyong.gov.ph/gsp-mandaluyong-isinagawa-ang-opisyal-na-investiture-at-world-pinning-ng-mga-bagong-associate-members-mula-sa-pdad-at-bnao/
+  title: GSP-MANDALUYONG, ISINAGAWA ANG OPISYAL NA INVESTITURE AT WORLD PINNING NG MGA BAGONG ASSOCIATE MEMBERS MULA SA PDAD AT BNAO
+  published_at: 2026-09-24T12:19:54+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57947
+  url: https://mandaluyong.gov.ph/mandaluyong-ginawaran-ng-mga-parangal-at-permit-pin-ang-mga-natatanging-girl-scouts-at-leaders/
+  title: MANDALUYONG, GINAWARAN NG MGA PARANGAL AT PERMIT PIN ANG MGA NATATANGING GIRL SCOUTS AT LEADERS
+  published_at: 2026-09-24T12:15:14+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57613
+  url: https://mandaluyong.gov.ph/lungsod-ng-mandaluyong-at-bayan-ng-corcuera-romblon-ganap-nang-magkapatid-pamahalaan/
+  title: LUNGSOD NG MANDALUYONG AT BAYAN NG CORCUERA, ROMBLON, GANAP NANG MAGKAPATID-PAMAHALAAN
+  published_at: 2026-09-15T13:01:19+08:00
+  categories:
+    - News
+    - Sisterhood
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57437
+  url: https://mandaluyong.gov.ph/pala-mondido-at-sales-naghatid-karangalan-sa-mandaluyong-sa-larangan-ng-pageantry/
+  title: PALA, MONDIDO AT SALES, NAGHATID-KARANGALAN SA MANDALUYONG SA LARANGAN NG PAGEANTRY
+  published_at: 2026-09-08T10:42:18+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57432
+  url: https://mandaluyong.gov.ph/kabataang-mandaleno-kikilalanin-ang-gampanin-ng-mga-konsehal-sa-mock-session/
+  title: KABATAANG MANDALEÑO, KIKILALANIN ANG GAMPANIN NG MGA KONSEHAL SA MOCK SESSION
+  published_at: 2026-09-08T10:36:04+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57428
+  url: https://mandaluyong.gov.ph/ika-13-konseho-ng-mandaluyong-binigyang-pagkilala-sa-councilors-week-2026/
+  title: IKA-13 KONSEHO NG MANDALUYONG, BINIGYANG-PAGKILALA SA COUNCILORS WEEK 2026
+  published_at: 2026-09-08T10:26:44+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

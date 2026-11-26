@@ -1,0 +1,64 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 20377
+  url: https://mandaluyong.gov.ph/vendors-association-sa-marketplace-1-muling-itinatag-ng-mandaluyong-lgu/
+  title: VENDORS ASSOCIATION SA MARKETPLACE 1 MULING ITINATAG NG MANDALUYONG LGU
+  published_at: 2024-05-20T11:28:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20371
+  url: https://mandaluyong.gov.ph/mandaluyong-lalahok-sa-mmda-cup-2024/
+  title: MANDALUYONG, LALAHOK SA MMDA CUP 2024
+  published_at: 2024-05-15T11:22:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20402
+  url: https://mandaluyong.gov.ph/mandaluyong-binigyang-parangal-ang-dalawang-traffic-enforcers/
+  title: MANDALUYONG, BINIGYANG PARANGAL ANG DALAWANG TRAFFIC ENFORCERS
+  published_at: 2024-05-14T11:33:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20374
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-nagbigay-ng-karagdagang-uniporme-ng-mga-traffic-enforcer-para-sa-tag-init/
+  title: MANDALUYONG LGU, NAGBIGAY NG KARAGDAGANG UNIPORME NG MGA TRAFFIC ENFORCER PARA SA TAG-INIT
+  published_at: 2024-05-13T11:25:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20355
+  url: https://mandaluyong.gov.ph/boksingerong-mandaleno-wagi-sa-engkwentro-13/
+  title: BOKSINGERONG MANDALEÑO, WAGI SA ENGKWENTRO 13
+  published_at: 2024-05-12T11:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20368
+  url: https://mandaluyong.gov.ph/mandaluyong-kinilala-ang-atletang-nagwagi-sa-uaap-season-85/
+  title: MANDALUYONG, KINILALA ANG ATLETANG NAGWAGI SA UAAP SEASON 85
+  published_at: 2024-05-11T11:17:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20358
+  url: https://mandaluyong.gov.ph/mandaleno-wagi-sa-philippine-open-international-dart-tournament-2024/
+  title: MANDALEÑO, WAGI SA PHILIPPINE OPEN INTERNATIONAL DART TOURNAMENT 2024
+  published_at: 2024-05-10T11:06:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20361
+  url: https://mandaluyong.gov.ph/mandaluyong-karatedo-team-inuwi-ang-kampeonato/
+  title: MANDALUYONG KARATEDO TEAM, INUWI ANG KAMPEONATO
+  published_at: 2024-05-09T11:09:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20365
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-sinimulan-ang-pagbigay-ng-tdap-vaccine-sa-mga-inang-buntis/
+  title: MANDALUYONG LGU, SINIMULAN ANG PAGBIGAY NG TDAP VACCINE SA MGA INANG BUNTIS
+  published_at: 2024-05-08T11:13:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

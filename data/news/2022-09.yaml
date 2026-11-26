@@ -1,0 +1,76 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 9039
+  url: https://mandaluyong.gov.ph/mandaluyong-govt-holds-vaccination-drive-for-transport-groups-at-starmall-edsa-shaw-terminal/
+  title: MANDALUYONG GOV’T HOLDS VACCINATION DRIVE FOR TRANSPORT GROUPS AT STARMALL EDSA SHAW TERMINAL
+  published_at: 2022-09-30T09:31:17+08:00
+  categories:
+    - COVID-19
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 9036
+  url: https://mandaluyong.gov.ph/vax-drive-for-transport-group-at-starmall/
+  title: VAX DRIVE FOR TRANSPORT GROUP AT STARMALL.
+  published_at: 2022-09-30T09:29:08+08:00
+  categories:
+    - COVID-19
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 9041
+  url: https://mandaluyong.gov.ph/mandaluyong-vaccination-drive-resumes-as-typhoon-karding-weakens/
+  title: MANDALUYONG VACCINATION DRIVE RESUMES AS TYPHOON KARDING WEAKENS
+  published_at: 2022-09-27T10:34:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8991
+  url: https://mandaluyong.gov.ph/mandaluyong-city-launches-1namayan-barangay-mobile-app/
+  title: MANDALUYONG CITY LAUNCHES  1NAMAYAN BARANGAY MOBILE APP
+  published_at: 2022-09-18T15:12:13+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8985
+  url: https://mandaluyong.gov.ph/first-barangay-mobile-app-launched-in-namayan-mandaluyong-city-digitization-of-basic-barangay-services-made-possible-through-namayan-mobile-app/
+  title: First barangay mobile app launched in Namayan, Mandaluyong City. Digitization of basic barangay services made possible through Namayan mobile app
+  published_at: 2022-09-17T14:48:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 9012
+  url: https://mandaluyong.gov.ph/mandaluyong-city-inks-sisterhood-agreement-with-municipality-of-san-andres-catanduanes/
+  title: MANDALUYONG CITY INKS SISTERHOOD AGREEMENT WITH MUNICIPALITY OF SAN ANDRES, CATANDUANES
+  published_at: 2022-09-13T15:35:53+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 9004
+  url: https://mandaluyong.gov.ph/signing-of-sisterhood-bet-mandaluyong-and-municipality-of-san-andres-catanduanes/
+  title: SIGNING OF SISTERHOOD BET MANDALUYONG AND MUNICIPALITY OF SAN ANDRES, CATANDUANES.
+  published_at: 2022-09-13T15:32:19+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 10654
+  url: https://mandaluyong.gov.ph/free-medical-care-at-the-chinese-general-hospital-for-pnp-personnel/
+  title: FREE MEDICAL CARE AT THE CHINESE GENERAL HOSPITAL FOR PNP PERSONNEL
+  published_at: 2022-09-13T10:14:38+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 10435
+  url: https://mandaluyong.gov.ph/mandaluyong-government-receives-dangal-ng-selyo-ng-kahusayan-sa-serbisyo-publiko/
+  title: MANDALUYONG GOVERNMENT RECEIVES DANGAL NG SELYO NG KAHUSAYAN SA SERBISYO PUBLIKO
+  published_at: 2022-09-02T16:38:00+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8887
+  url: https://mandaluyong.gov.ph/mandaluyong-bags-dangal-ng-selyo-ng-kahusayan-sa-serbisyo-publiko/
+  title: MANDALUYONG BAGS DANGAL NG SELYO NG KAHUSAYAN SA SERBISYO PUBLIKO.
+  published_at: 2022-09-02T15:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

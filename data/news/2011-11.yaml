@@ -1,0 +1,8 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8603
+  url: https://mandaluyong.gov.ph/best-child-friendly-city-in-the-philippines/
+  title: BEST CHILD FRIENDLY CITY IN THE PHILIPPINES
+  published_at: 2011-11-01T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,57 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8329
+  url: https://mandaluyong.gov.ph/city-scholarship-program/
+  title: CITY SCHOLARSHIP PROGRAM
+  published_at: 2016-07-25T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8365
+  url: https://mandaluyong.gov.ph/mandaluyong-hailed-by-manila-water-for-lingap-sapa-efforts/
+  title: MANDALUYONG HAILED BY MANILA WATER FOR LINGAP SAPA EFFORTS
+  published_at: 2016-07-23T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8319
+  url: https://mandaluyong.gov.ph/additional-emergency-equipment/
+  title: ADDITIONAL EMERGENCY EQUIPMENT
+  published_at: 2016-07-22T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8389
+  url: https://mandaluyong.gov.ph/young-mandaleno-entreps/
+  title: YOUNG MANDALEÑO ENTREPS
+  published_at: 2016-07-20T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8393
+  url: https://mandaluyong.gov.ph/mandaleno-world-class-champions/
+  title: MANDALEÑO WORLD-CLASS CHAMPIONS
+  published_at: 2016-07-18T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8397
+  url: https://mandaluyong.gov.ph/mcmc-tb-dots-excellence-awards/
+  title: MCMC TB DOTS EXCELLENCE AWARDS
+  published_at: 2016-07-16T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8307
+  url: https://mandaluyong.gov.ph/most-outstanding-barangay-nutrition-scholars/
+  title: MOST OUTSTANDING BARANGAY NUTRITION SCHOLARS
+  published_at: 2016-07-14T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8315
+  url: https://mandaluyong.gov.ph/moa-signing/
+  title: MOA SIGNING
+  published_at: 2016-07-12T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

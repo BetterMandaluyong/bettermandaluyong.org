@@ -1,0 +1,53 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 19050
+  url: https://mandaluyong.gov.ph/mayor-ben-abalos-city-officials-hold-first-meeting-for-the-year-2024/
+  title: MAYOR BEN ABALOS, CITY OFFICIALS HOLD FIRST MEETING FOR THE YEAR 2024
+  published_at: 2024-01-23T17:36:00+08:00
+  categories:
+    - Departments
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20087
+  url: https://mandaluyong.gov.ph/mandaluyong-city-bags-2nd-place-in-philippine-national-games-2023/
+  title: MANDALUYONG CITY BAGS 2ND PLACE IN PHILIPPINE NATIONAL GAMES 2023.
+  published_at: 2024-01-12T14:47:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20116
+  url: https://mandaluyong.gov.ph/mandaluyong-city-bags-2nd-place-in-philippine-national-games-2023-2/
+  title: MANDALUYONG CITY BAGS 2ND PLACE IN PHILIPPINE NATIONAL GAMES 2023.
+  published_at: 2024-01-12T13:53:00+08:00
+  categories:
+    - Uncategorized
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20075
+  url: https://mandaluyong.gov.ph/mandaluyong-contingent-wins-61-medals-in-batang-pinoy-2023-games/
+  title: MANDALUYONG CONTINGENT WINS 61 MEDALS IN BATANG PINOY 2023 GAMES.
+  published_at: 2024-01-10T10:40:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20092
+  url: https://mandaluyong.gov.ph/mandaluyong-contingent-wins-61-medals-in-batang-pinoy-2023-games-2/
+  title: MANDALUYONG CONTINGENT WINS 61 MEDALS IN BATANG PINOY 2023 GAMES.
+  published_at: 2024-01-10T10:10:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20090
+  url: https://mandaluyong.gov.ph/mandaluyong-city-recognizes-the-immaculate-conception-as-its-patroness-2/
+  title: MANDALUYONG CITY RECOGNIZES THE IMMACULATE CONCEPTION AS ITS PATRONESS.
+  published_at: 2024-01-08T10:57:00+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20066
+  url: https://mandaluyong.gov.ph/mandaluyong-city-recognizes-the-immaculate-conception-as-its-patroness/
+  title: MANDALUYONG CITY RECOGNIZES THE IMMACULATE CONCEPTION AS ITS PATRONESS.
+  published_at: 2024-01-08T00:03:00+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

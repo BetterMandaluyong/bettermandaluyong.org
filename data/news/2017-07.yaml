@@ -1,0 +1,15 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8238
+  url: https://mandaluyong.gov.ph/mandaluyong-gets-mobile-emergency-hospital/
+  title: MANDALUYONG GETS MOBILE EMERGENCY HOSPITAL
+  published_at: 2017-07-04T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8255
+  url: https://mandaluyong.gov.ph/food-beverage-and-bartending-classroom/
+  title: FOOD & BEVERAGE AND BARTENDING CLASSROOM
+  published_at: 2017-07-03T14:00:27+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

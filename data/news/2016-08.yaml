@@ -1,0 +1,15 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8323
+  url: https://mandaluyong.gov.ph/child-friendly-space-at-manpower/
+  title: CHILD-FRIENDLY SPACE AT MANPOWER
+  published_at: 2016-08-05T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8311
+  url: https://mandaluyong.gov.ph/breastfeeding-advocates/
+  title: BREASTFEEDING ADVOCATES
+  published_at: 2016-08-01T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,15 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 9010
+  url: https://mandaluyong.gov.ph/mandaluyong-no-to-illegal-drugs/
+  title: "MANDALUYONG: NO TO ILLEGAL DRUGS"
+  published_at: 2015-08-31T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 9005
+  url: https://mandaluyong.gov.ph/mandaluyong-participates-in-regional-dengue-clean-up-drive/
+  title: MANDALUYONG PARTICIPATES IN REGIONAL DENGUE CLEAN-UP DRIVE
+  published_at: 2015-08-21T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

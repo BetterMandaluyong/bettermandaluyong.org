@@ -1,0 +1,33 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 45744
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-muling-ginawaran-ng-seal-of-good-local-governance-gawad-kalasag-iso-certification/
+  title: MANDALUYONG LGU MULING GINAWARAN NG SEAL OF GOOD LOCAL GOVERNANCE, GAWAD KALASAG, ISO CERTIFICATION
+  published_at: 2025-01-10T09:00:00+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 45741
+  url: https://mandaluyong.gov.ph/lungsod-ng-mandaluyong-at-bayan-ng-gasan-marinduque-lumagda-sa-sisterhood-agreement/
+  title: LUNGSOD NG MANDALUYONG AT BAYAN NG GASAN, MARINDUQUE LUMAGDA SA SISTERHOOD AGREEMENT
+  published_at: 2025-01-09T13:06:09+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 45639
+  url: https://mandaluyong.gov.ph/mga-natatanging-educators-at-employees-pinarangalan-ng-mandaluyong/
+  title: MGA NATATANGING EDUCATORS AT EMPLOYEES, PINARANGALAN NG MANDALUYONG
+  published_at: 2025-01-07T10:28:00+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 45636
+  url: https://mandaluyong.gov.ph/82-medalya-inuwi-ng-mga-atletang-mandaleno/
+  title: 82 MEDALYA, INUWI NG MGA ATLETANG MANDALEÑO
+  published_at: 2025-01-06T13:27:39+08:00
+  categories:
+    - Awards
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

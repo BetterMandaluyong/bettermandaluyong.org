@@ -1,0 +1,65 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 54689
+  url: https://mandaluyong.gov.ph/pcg-nagpahayag-ng-pasasalamat-at-pakikiisa-sa-mandaluyong/
+  title: PCG, NAGPAHAYAG NG PASASALAMAT AT PAKIKIISA SA MANDALUYONG
+  published_at: 2026-03-23T17:15:34+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 54684
+  url: https://mandaluyong.gov.ph/kasunduan-ng-mandaluyong-at-sabtang-batanes-bilang-sister-lgu/
+  title: KASUNDUAN NG MANDALUYONG AT SABTANG, BATANES BILANG SISTER LGU
+  published_at: 2026-03-23T17:12:34+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 54620
+  url: https://mandaluyong.gov.ph/lokal-at-internasyunal-na-karangalan-inuwi-ng-mga-atletang-mandaleno/
+  title: LOKAL AT INTERNASYUNAL NA KARANGALAN, INUWI NG MGA ATLETANG MANDALEÑO
+  published_at: 2026-03-17T13:31:41+08:00
+  categories:
+    - Sports
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 54617
+  url: https://mandaluyong.gov.ph/mandaluyong-ginawaran-ng-pagkilala-ang-mga-kahanga-hangang-kababaihan-ng-lungsod/
+  title: MANDALUYONG, GINAWARAN NG PAGKILALA ANG MGA KAHANGA-HANGANG KABABAIHAN NG LUNGSOD
+  published_at: 2026-03-17T12:58:50+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 54613
+  url: https://mandaluyong.gov.ph/mandaluyong-city-at-bautista-pangasinan-opisyal-na-naging-sister-lgu/
+  title: MANDALUYONG CITY AT BAUTISTA, PANGASINAN OPISYAL NA NAGING SISTER LGU
+  published_at: 2026-03-17T10:51:44+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 54519
+  url: https://mandaluyong.gov.ph/mandaluyong-hakot-parangal-sa-2026-national-congress-ng-pcl/
+  title: MANDALUYONG, HAKOT-PARANGAL SA 2026 NATIONAL CONGRESS NG PCL
+  published_at: 2026-03-10T08:50:02+08:00
+  categories:
+    - Awards
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 54512
+  url: https://mandaluyong.gov.ph/mayor-abalos-at-vice-mayor-suva-tumanggap-ng-pagkilala-mula-sa-bfp-mandaluyong/
+  title: MAYOR ABALOS AT VICE MAYOR SUVA, TUMANGGAP NG PAGKILALA MULA SA BFP–MANDALUYONG
+  published_at: 2026-03-09T14:15:48+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 54509
+  url: https://mandaluyong.gov.ph/pagbibigay-pugay-ng-mandaluyong-sa-mga-fire-volunteers/
+  title: PAGBIBIGAY-PUGAY NG MANDALUYONG SA MGA FIRE VOLUNTEERS
+  published_at: 2026-03-09T13:05:22+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 54467
+  url: https://mandaluyong.gov.ph/kauna-unahang-gawad-galing-lokal-na-batas-award-ng-mandaluyong/
+  title: KAUNA-UNAHANG GAWAD GALING LOKAL NA BATAS AWARD NG MANDALUYONG
+  published_at: 2026-03-05T10:41:01+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

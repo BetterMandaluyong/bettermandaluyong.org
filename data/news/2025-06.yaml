@@ -1,0 +1,96 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 50450
+  url: https://mandaluyong.gov.ph/sangguniang-panlungsod-ng-mandaluyong-binigyan-ng-pagkilala-si-mayor-ben-abalos/
+  title: SANGGUNIANG PANLUNGSOD NG MANDALUYONG, BINIGYAN NG PAGKILALA SI MAYOR BEN ABALOS
+  published_at: 2025-06-26T09:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50447
+  url: https://mandaluyong.gov.ph/pagpupugay-ng-mandaluyong-kay-vice-mayor-at-mayor-elect-menchie-abalos/
+  title: PAGPUPUGAY NG MANDALUYONG KAY VICE MAYOR AT MAYOR-ELECT MENCHIE ABALOS
+  published_at: 2025-06-25T09:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50444
+  url: https://mandaluyong.gov.ph/councilors-suva-at-posadas-binigyang-pasasalamat-ng-mandaluyong/
+  title: COUNCILORS SUVA AT POSADAS, BINIGYANG-PASASALAMAT NG MANDALUYONG
+  published_at: 2025-06-24T16:15:37+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50436
+  url: https://mandaluyong.gov.ph/4ps-partylist-representatives-nanumpa-sa-lungsod-ng-mandaluyong/
+  title: 4PS PARTYLIST REPRESENTATIVES, NANUMPA SA LUNGSOD NG MANDALUYONG
+  published_at: 2025-06-23T17:05:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50333
+  url: https://mandaluyong.gov.ph/atletang-mandaleno-kade-kadenang-ginto-ang-iniuwi/
+  title: ATLETANG MANDALEÑO, KADE-KADENANG GINTO ANG INIUWI!
+  published_at: 2025-06-18T10:00:00+08:00
+  categories:
+    - News
+    - Sports
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50330
+  url: https://mandaluyong.gov.ph/natatanging-social-workers-pinarangalan-ng-mandaluyong/
+  title: NATATANGING SOCIAL WORKERS, PINARANGALAN NG MANDALUYONG
+  published_at: 2025-06-16T14:56:19+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50321
+  url: https://mandaluyong.gov.ph/mayor-elect-ng-dolores-eastern-samar-nanumpa-sa-mandaluyong-city/
+  title: MAYOR-ELECT NG DOLORES, EASTERN SAMAR, NANUMPA SA MANDALUYONG CITY
+  published_at: 2025-06-14T10:00:16+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50318
+  url: https://mandaluyong.gov.ph/mandaluyong-sdo-umani-ng-prime-hrm-bronze-award-maturity-level-ii-mula-sa-csc-ncr/
+  title: MANDALUYONG SDO UMANI NG PRIME HRM BRONZE AWARD MATURITY LEVEL II MULA SA CSC NCR
+  published_at: 2025-06-13T16:30:32+08:00
+  categories:
+    - Awards
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50295
+  url: https://mandaluyong.gov.ph/pma-graduate-kinilala-ng-mandaluyong-lgu/
+  title: PMA GRADUATE, KINILALA NG MANDALUYONG LGU
+  published_at: 2025-06-11T17:03:57+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50298
+  url: https://mandaluyong.gov.ph/kabataang-mandaleno-wagi-sa-palarong-pambansa-at-nspc-2025/
+  title: KABATAANG MANDALEÑO, WAGI SA PALARONG PAMBANSA AT NSPC 2025
+  published_at: 2025-06-10T17:04:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50150
+  url: https://mandaluyong.gov.ph/mga-aklat-bag-notebook-uniporme-go-bag-hygiene-kit-ibinahagi-ng-mandaluyong-lgu-sa-brigada-eskwela-2025/
+  title: MGA AKLAT, BAG, NOTEBOOK, UNIPORME, GO BAG, HYGIENE KIT IBINAHAGI NG MANDALUYONG LGU SA BRIGADA ESKWELA 2025
+  published_at: 2025-06-10T09:26:00+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50115
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-tesda-ncr-ipinagdiwang-ang-mmtvtc-day/
+  title: MANDALUYONG LGU, TESDA-NCR IPINAGDIWANG ANG MMTVTC DAY
+  published_at: 2025-06-05T17:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50112
+  url: https://mandaluyong.gov.ph/outstanding-students-at-student-leaders-mula-sa-mmtvtc-pinarangalan-ng-mandaluyong/
+  title: OUTSTANDING STUDENTS AT STUDENT LEADERS MULA SA MMTVTC, PINARANGALAN NG MANDALUYONG
+  published_at: 2025-06-05T13:06:26+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

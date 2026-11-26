@@ -1,0 +1,22 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8229
+  url: https://mandaluyong.gov.ph/new-uniforms-and-school-supplies-for-public-school-students/
+  title: NEW UNIFORMS AND SCHOOL SUPPLIES FOR PUBLIC SCHOOL STUDENTS
+  published_at: 2017-05-24T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8277
+  url: https://mandaluyong.gov.ph/wealth-center-award/
+  title: WEALTH CENTER AWARD
+  published_at: 2017-05-13T14:00:31+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8251
+  url: https://mandaluyong.gov.ph/mandaluyong-mayor-and-former-senate-president-at-the-high-level-forum-2017-leadership-enhancement-and-administrative-development-lead-asia-organized-by-japan-international-cooperation-agency-and-nat/
+  title: MANDALUYONG MAYOR AND FORMER SENATE PRESIDENT AT THE HIGH LEVEL FORUM 2017 LEADERSHIP ENHANCEMENT AND ADMINISTRATIVE DEVELOPMENT (LEAD) ASIA ORGANIZED BY JAPAN INTERNATIONAL COOPERATION AGENCY AND NATIONAL GRADUATE RESEARCH INSTITUTE FOR POLICY STUDIES (GRIPS).
+  published_at: 2017-05-05T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

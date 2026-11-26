@@ -1,0 +1,64 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 20399
+  url: https://mandaluyong.gov.ph/mandaluyong-tumanggap-ng-dalawang-sasakyan-mula-sa-dilg/
+  title: MANDALUYONG, TUMANGGAP NG DALAWANG SASAKYAN MULA SA DILG
+  published_at: 2024-04-23T11:30:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20396
+  url: https://mandaluyong.gov.ph/pagkilala-sa-1st-at-2nd-municipal-council-ng-mandaluyong-iginawad/
+  title: PAGKILALA SA 1ST AT 2ND MUNICIPAL COUNCIL NG MANDALUYONG IGINAWAD
+  published_at: 2024-04-23T11:24:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20346
+  url: https://mandaluyong.gov.ph/pagkilala-sa-mga-bantay-bayan-kaugnay-sa-programa-kontra-droga/
+  title: PAGKILALA SA MGA BANTAY BAYAN KAUGNAY SA PROGRAMA KONTRA DROGA
+  published_at: 2024-04-19T11:48:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20349
+  url: https://mandaluyong.gov.ph/piling-estudyante-sa-mandaluyong-nagpakitang-gilas-sa-buwan-ng-panitikan/
+  title: PILING ESTUDYANTE SA MANDALUYONG NAGPAKITANG GILAS SA BUWAN NG PANITIKAN
+  published_at: 2024-04-18T11:54:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20352
+  url: https://mandaluyong.gov.ph/la-salle-green-hills-basketball-team-lalahok-sa-ncr-meet-2024-bilang-kinatawan-ng-mandaluyong-city/
+  title: LA SALLE GREEN HILLS BASKETBALL TEAM LALAHOK SA NCR MEET 2024 BILANG KINATAWAN NG MANDALUYONG CITY
+  published_at: 2024-04-17T11:57:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20343
+  url: https://mandaluyong.gov.ph/mandaluyong-binigyang-parangal-ng-bir/
+  title: MANDALUYONG, BINIGYANG PARANGAL NG BIR
+  published_at: 2024-04-11T11:42:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20340
+  url: https://mandaluyong.gov.ph/mandaluyong-pinarangalan-ang-ilang-barangay-para-sa-epektibong-programa-kontra-droga/
+  title: MANDALUYONG, PINARANGALAN ANG ILANG BARANGAY PARA SA EPEKTIBONG PROGRAMA KONTRA DROGA
+  published_at: 2024-04-11T11:39:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20214
+  url: https://mandaluyong.gov.ph/pinalakas-pa-na-barangay-vaw-ash-at-main-desk-officers-sa-mandaluyong/
+  title: PINALAKAS PA NA BARANGAY VAW, ASH AT MAIN DESK OFFICERS SA MANDALUYONG
+  published_at: 2024-04-02T11:41:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20217
+  url: https://mandaluyong.gov.ph/samakaba-34-taon-na/
+  title: SAMAKABA, 34 TAON NA
+  published_at: 2024-04-01T11:47:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

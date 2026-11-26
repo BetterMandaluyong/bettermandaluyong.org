@@ -1,0 +1,29 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8957
+  url: https://mandaluyong.gov.ph/3rd-ninos-de-mandalenos-exhibit/
+  title: 3rd NIÑOS DE MANDALEÑOS EXHIBIT
+  published_at: 2015-01-27T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8949
+  url: https://mandaluyong.gov.ph/new-health-center-and-multi-purpose-hall-construction-at-buayang-bato/
+  title: NEW HEALTH CENTER AND MULTI-PURPOSE HALL CONSTRUCTION AT BUAYANG BATO
+  published_at: 2015-01-24T14:00:38+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8945
+  url: https://mandaluyong.gov.ph/new-barangay-hall-construction-at-old-zaniga/
+  title: NEW BARANGAY HALL CONSTRUCTION AT OLD ZANIGA
+  published_at: 2015-01-24T14:00:28+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8953
+  url: https://mandaluyong.gov.ph/new-multi-purpose-building-with-stage-at-hagdan-bato-itaas/
+  title: NEW MULTI-PURPOSE BUILDING WITH STAGE AT HAGDAN BATO ITAAS
+  published_at: 2015-01-24T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,80 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 30448
+  url: https://mandaluyong.gov.ph/senior-citizen-id-insentibo-ibinahagi-ng-pamahalaang-lungsod-ngayong-linggo-ng-katandaang-filipino/
+  title: SENIOR CITIZEN ID, INSENTIBO, IBINAHAGI NG PAMAHALAANG LUNGSOD NGAYONG LINGGO NG KATANDAANG FILIPINO
+  published_at: 2024-09-30T16:05:10+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30404
+  url: https://mandaluyong.gov.ph/kabataang-mandaleno-nag-uwi-ng-nasyonal-at-internasyonal-na-karangalan/
+  title: KABATAANG MANDALEÑO, NAG-UWI NG NASYONAL AT INTERNASYONAL NA KARANGALAN
+  published_at: 2024-09-27T14:18:36+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30390
+  url: https://mandaluyong.gov.ph/mga-opisyal-ng-lalawigan-ng-siquijor-dumalo-sa-mandaluyong/
+  title: MGA OPISYAL NG LALAWIGAN NG SIQUIJOR, DUMALO SA MANDALUYONG
+  published_at: 2024-09-26T12:56:08+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30365
+  url: https://mandaluyong.gov.ph/2nd-kasalan-sa-piitan/
+  title: 2ND ‘KASALAN SA PIITAN
+  published_at: 2024-09-25T17:49:09+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30363
+  url: https://mandaluyong.gov.ph/ikalawang-kasalan-sa-piitan-idinaos-ng-mandaluyong-lgu/
+  title: IKALAWANG ‘KASALAN SA PIITAN’ IDINAOS NG MANDALUYONG LGU
+  published_at: 2024-09-25T17:47:40+08:00
+  categories:
+    - Uncategorized
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30278
+  url: https://mandaluyong.gov.ph/girl-scouts-month-ipinagdiwang-sa-mandaluyong/
+  title: GIRL SCOUTS MONTH, IPINAGDIWANG SA MANDALUYONG
+  published_at: 2024-09-24T13:53:14+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30335
+  url: https://mandaluyong.gov.ph/mga-siklista-lumahok-sa-mayor-ben-abalos-cycling-race/
+  title: MGA SIKLISTA LUMAHOK SA MAYOR BEN ABALOS CYCLING RACE
+  published_at: 2024-09-23T16:33:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30244
+  url: https://mandaluyong.gov.ph/sdo-mandaluyong-bahagi-na-ng-cpdas-ng-prc/
+  title: SDO-MANDALUYONG, BAHAGI NA NG CPDAS NG PRC
+  published_at: 2024-09-18T16:14:18+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30033
+  url: https://mandaluyong.gov.ph/sisterhood-agreement-sa-pagitan-ng-mandaluyong-at-lubang-nilagdaan/
+  title: SISTERHOOD AGREEMENT SA PAGITAN NG MANDALUYONG AT LUBANG, NILAGDAAN
+  published_at: 2024-09-09T14:35:15+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30014
+  url: https://mandaluyong.gov.ph/mga-opisyal-ng-saya-at-wednesday-clan-nanumpa-sa-mandaluyong/
+  title: MGA OPISYAL NG SAYA AT WEDNESDAY CLAN, NANUMPA SA MANDALUYONG
+  published_at: 2024-09-06T18:56:01+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30003
+  url: https://mandaluyong.gov.ph/philippine-councilors-week/
+  title: PHILIPPINE COUNCILORS’ WEEK
+  published_at: 2024-09-05T16:22:06+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

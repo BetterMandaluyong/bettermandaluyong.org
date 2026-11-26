@@ -1,0 +1,8 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8475
+  url: https://mandaluyong.gov.ph/mandaluyong-pays-tribute-to-barangay-health-workers/
+  title: MANDALUYONG PAYS TRIBUTE TO BARANGAY HEALTH WORKERS
+  published_at: 2010-11-08T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

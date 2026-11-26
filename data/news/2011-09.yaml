@@ -1,0 +1,15 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8561
+  url: https://mandaluyong.gov.ph/mandaluyong-bags-another-award/
+  title: MANDALUYONG BAGS ANOTHER AWARD
+  published_at: 2011-09-19T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8546
+  url: https://mandaluyong.gov.ph/mandaluyong-is-now-ncrs-most-child-friendly-city/
+  title: MANDALUYONG IS NOW NCR’S MOST CHILD FRIENDLY CITY
+  published_at: 2011-09-12T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

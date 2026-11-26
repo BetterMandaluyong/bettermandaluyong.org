@@ -1,0 +1,43 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8273
+  url: https://mandaluyong.gov.ph/2017-ulirang-mandaleno-awards/
+  title: 2017 ULIRANG MANDALEÑO AWARDS
+  published_at: 2017-02-18T14:00:20+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8233
+  url: https://mandaluyong.gov.ph/plus-size-beauties-of-mandaluyong-city/
+  title: PLUS-SIZE BEAUTIES OF MANDALUYONG CITY.
+  published_at: 2017-02-15T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8269
+  url: https://mandaluyong.gov.ph/tiger-citys-top-10-taxpayers-2/
+  title: TIGER CITY’S TOP 10 TAXPAYERS
+  published_at: 2017-02-11T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8261
+  url: https://mandaluyong.gov.ph/mandaluyongs-most-beautiful-women/
+  title: MANDALUYONG’S MOST BEAUTIFUL WOMEN
+  published_at: 2017-02-08T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8246
+  url: https://mandaluyong.gov.ph/barangay-hagdan-bato-itaas-gets-new-multi-purpose-hall-and-chapel/
+  title: BARANGAY HAGDAN BATO ITAAS GETS NEW MULTI-PURPOSE HALL AND CHAPEL
+  published_at: 2017-02-04T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8265
+  url: https://mandaluyong.gov.ph/old-zanigas-new-barangay-hall/
+  title: OLD ZANIGA’S NEW BARANGAY HALL
+  published_at: 2017-02-02T14:00:54+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

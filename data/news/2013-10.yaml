@@ -1,0 +1,8 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8769
+  url: https://mandaluyong.gov.ph/soca-2013-abalos-reports-p111-45b-investments-35-giant-locators-presidential-award/
+  title: "SOCA 2013: Abalos reports P111.45B investments, 35 giant locators, Presidential Award"
+  published_at: 2013-10-04T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

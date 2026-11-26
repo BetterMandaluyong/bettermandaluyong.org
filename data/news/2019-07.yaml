@@ -1,0 +1,29 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 7961
+  url: https://mandaluyong.gov.ph/mandaluyong-honors-centenarian/
+  title: MANDALUYONG HONORS CENTENARIAN
+  published_at: 2019-07-26T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7957
+  url: https://mandaluyong.gov.ph/mandaluyong-honors-centenarians-2/
+  title: MANDALUYONG HONORS CENTENARIANS
+  published_at: 2019-07-26T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7993
+  url: https://mandaluyong.gov.ph/food-processing-training-graduates/
+  title: Food processing training graduates
+  published_at: 2019-07-25T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8001
+  url: https://mandaluyong.gov.ph/ndrm-launch-national-disaster-resilience-month/
+  title: NDRM launch National Disaster Resilience Month
+  published_at: 2019-07-15T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

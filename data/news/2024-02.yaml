@@ -1,0 +1,29 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 20193
+  url: https://mandaluyong.gov.ph/mandaluyong-table-tennis-team-winners/
+  title: MANDALUYONG TABLE TENNIS TEAM WINNERS.
+  published_at: 2024-02-28T11:08:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20190
+  url: https://mandaluyong.gov.ph/mandaluyong-karatedo-team-wins-okazaki-cup-2024/
+  title: MANDALUYONG KARATEDO TEAM WINS OKAZAKI CUP 2024.
+  published_at: 2024-02-27T11:02:21+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20126
+  url: https://mandaluyong.gov.ph/brgy-highway-hills-bantay-bayan-recognized-for-arrest-of-citys-most-wanted-individual/
+  title: BRGY. HIGHWAY HILLS BANTAY BAYAN RECOGNIZED FOR ARREST OF CITY’S MOST WANTED INDIVIDUAL.
+  published_at: 2024-02-26T11:07:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20123
+  url: https://mandaluyong.gov.ph/mandaluyong-alaminos-lumagda-sa-sisterhood-agreement/
+  title: MANDALUYONG, ALAMINOS LUMAGDA SA SISTERHOOD AGREEMENT
+  published_at: 2024-02-19T11:34:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,15 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8504
+  url: https://mandaluyong.gov.ph/mandaluyong-marks-65th-liberation-day-and-16th-cityhood-anniversary-on-feb-9/
+  title: Mandaluyong marks 65th Liberation Day and 16th Cityhood Anniversary on Feb. 9
+  published_at: 2010-01-30T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8525
+  url: https://mandaluyong.gov.ph/swimsuit-competition/
+  title: SWIMSUIT COMPETITION
+  published_at: 2010-01-28T14:00:32+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

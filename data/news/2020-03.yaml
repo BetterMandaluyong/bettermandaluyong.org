@@ -1,0 +1,22 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 2208
+  url: https://mandaluyong.gov.ph/mandaluyong-is-2019-national-outstanding-volunteer-awardee-lgu-category/
+  title: Mandaluyong Is 2019 National Outstanding Volunteer Awardee (LGU Category).
+  published_at: 2020-03-16T19:18:03+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 2204
+  url: https://mandaluyong.gov.ph/mandaluyong-receives-highest-rating-in-ncr-in-disability-inclusive-governance/
+  title: Mandaluyong Receives Highest Rating in NCR in Disability Inclusive Governance
+  published_at: 2020-03-16T19:10:35+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 2199
+  url: https://mandaluyong.gov.ph/retiring-city-hall-employee-honored/
+  title: Retiring City Hall Employee Honored.
+  published_at: 2020-03-16T19:02:23+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

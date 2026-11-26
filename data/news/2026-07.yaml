@@ -1,0 +1,265 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 56749
+  url: https://mandaluyong.gov.ph/102-bags-ng-dugo-naihatid-ng-mandaluyong/
+  title: 102 BAGS NG DUGO, NAIHATID NG MANDALUYONG
+  published_at: 2026-07-28T10:52:54+08:00
+  categories:
+    - Health
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56724
+  url: https://mandaluyong.gov.ph/san-miguel-iloilo-ganap-nang-kapatid-bayan-ng-mandaluyong/
+  title: SAN MIGUEL, ILOILO GANAP NANG KAPATID-BAYAN NG MANDALUYONG
+  published_at: 2026-07-27T15:17:03+08:00
+  categories:
+    - Sisterhood
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56494
+  url: https://mandaluyong.gov.ph/pta-ng-atres-nanumpa-sa-mandaluyong/
+  title: PTA NG ATRES, NANUMPA SA MANDALUYONG
+  published_at: 2026-07-21T13:13:55+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56490
+  url: https://mandaluyong.gov.ph/plaque-of-appreciation-iginawad-ng-barangay-buayang-bato-kay-dating-mayor-ben-abalos/
+  title: PLAQUE OF APPRECIATION, IGINAWAD NG BARANGAY BUAYANG BATO KAY DATING MAYOR BEN ABALOS
+  published_at: 2026-07-21T13:10:34+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56485
+  url: https://mandaluyong.gov.ph/natatanging-guro-at-mag-aaral-ng-atres-bida-sa-programa-ng-mandaluyong/
+  title: NATATANGING GURO AT MAG-AARAL NG ATRES, BIDA SA PROGRAMA NG MANDALUYONG
+  published_at: 2026-07-21T13:05:05+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56481
+  url: https://mandaluyong.gov.ph/mandaluyong-isinagawa-ang-groundbreaking-ceremony-ng-bagong-gusali-ng-atres/
+  title: MANDALUYONG, ISINAGAWA ANG GROUNDBREAKING CEREMONY NG BAGONG GUSALI NG ATRES
+  published_at: 2026-07-21T12:56:21+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56382
+  url: https://mandaluyong.gov.ph/2026-local-and-overseas-job-fair-ng-mandaluyong/
+  title: 2026 LOCAL AND OVERSEAS JOB FAIR NG MANDALUYONG
+  published_at: 2026-07-16T15:50:00+08:00
+  categories:
+    - Uncategorized
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56378
+  url: https://mandaluyong.gov.ph/pagsusulong-ng-mandaluyong-sa-mental-health-at-stress-management-ng-gad-scholars/
+  title: PAGSUSULONG NG MANDALUYONG SA MENTAL HEALTH AT STRESS MANAGEMENT NG GAD SCHOLARS
+  published_at: 2026-07-16T15:45:21+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56374
+  url: https://mandaluyong.gov.ph/ika-4-na-pfn-conference-idinaos-sa-mandaluyong/
+  title: IKA-4 NA PFN CONFERENCE, IDINAOS SA MANDALUYONG
+  published_at: 2026-07-16T15:41:43+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56370
+  url: https://mandaluyong.gov.ph/pagsasanay-worksyap-at-pagpaplano-ng-mga-tagapagtaguyod-ng-wikang-filipino-sa-mandaluyong/
+  title: PAGSASANAY-WORKSYAP AT PAGPAPLANO NG MGA TAGAPAGTAGUYOD NG WIKANG FILIPINO SA MANDALUYONG
+  published_at: 2026-07-16T15:33:09+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56363
+  url: https://mandaluyong.gov.ph/rokid-ai-glasses-malaking-tulong-sa-maykapansanan-sa-paningin/
+  title: ROKID AI GLASSES MALAKING TULONG SA MAYKAPANSANAN SA PANINGIN
+  published_at: 2026-07-16T15:29:05+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56358
+  url: https://mandaluyong.gov.ph/masusing-diskurso-patungkol-sa-kalusugang-pangkaisipan-ng-mandaluyong/
+  title: MASUSING DISKURSO PATUNGKOL SA KALUSUGANG PANGKAISIPAN NG MANDALUYONG
+  published_at: 2026-07-16T15:01:04+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56354
+  url: https://mandaluyong.gov.ph/zandro-sales-kinilala-at-binigyang-suporta-ng-mandaluyong/
+  title: ZANDRO SALES, KINILALA AT BINIGYANG SUPORTA NG MANDALUYONG
+  published_at: 2026-07-16T14:55:42+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56348
+  url: https://mandaluyong.gov.ph/barangay-plainview-ng-mandaluyong-regional-nominee-para-sa-2026-lupong-tagapamayapa-incentive-award/
+  title: BARANGAY PLAINVIEW NG MANDALUYONG, REGIONAL NOMINEE PARA SA 2026 LUPONG TAGAPAMAYAPA INCENTIVE AWARD
+  published_at: 2026-07-16T14:43:31+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56344
+  url: https://mandaluyong.gov.ph/imperfect-cast-nakiisa-sa-national-disability-rights-week-ng-mandaluyong/
+  title: “I’MPERFECT” CAST, NAKIISA SA NATIONAL DISABILITY RIGHTS WEEK NG MANDALUYONG
+  published_at: 2026-07-16T14:38:54+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56340
+  url: https://mandaluyong.gov.ph/rokid-ai-glasses-at-customized-wheelchair-ipinamahagi-ng-mandaluyong/
+  title: ROKID AI GLASSES AT CUSTOMIZED WHEELCHAIR, IPINAMAHAGI NG MANDALUYONG
+  published_at: 2026-07-16T14:34:44+08:00
+  categories:
+    - Health
+    - Nutrition
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56255
+  url: https://mandaluyong.gov.ph/17th-nutri-fun-run/
+  title: 17TH NUTRI FUN RUN
+  published_at: 2026-07-13T09:12:10+08:00
+  categories:
+    - News
+    - Nutrition
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56251
+  url: https://mandaluyong.gov.ph/mula-sa-puso-para-sa-pamilya-rice-subsidy-2nd-tranche/
+  title: MULA SA PUSO, PARA SA PAMILYA RICE SUBSIDY-2ND TRANCHE
+  published_at: 2026-07-13T09:07:31+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56247
+  url: https://mandaluyong.gov.ph/ikalawang-katarungang-pambarangay-pinaigting-sa-mandaluyong/
+  title: IKALAWANG KATARUNGANG PAMBARANGAY, PINAIGTING SA MANDALUYONG
+  published_at: 2026-07-13T08:57:30+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56243
+  url: https://mandaluyong.gov.ph/ballroom-dancing-hatid-saya-sa-mga-senior-citizen-ng-mandaluyong/
+  title: BALLROOM DANCING, HATID SAYA SA MGA SENIOR CITIZEN NG MANDALUYONG
+  published_at: 2026-07-13T08:52:48+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56238
+  url: https://mandaluyong.gov.ph/pickled-vegetable-cooking-demo-at-lecture-sa-entrepreneurship-product-packaging-branding-sa-mandaluyong/
+  title: PICKLED VEGETABLE COOKING DEMO AT LECTURE SA ENTREPRENEURSHIP, PRODUCT PACKAGING & BRANDING SA MANDALUYONG
+  published_at: 2026-07-13T08:48:09+08:00
+  categories:
+    - Health
+    - News
+    - Nutrition
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56234
+  url: https://mandaluyong.gov.ph/mandaluyong-nagsagawa-ng-barangay-ease-of-doing-business-roll-out-training/
+  title: MANDALUYONG, NAGSAGAWA NG BARANGAY EASE-OF-DOING BUSINESS ROLL OUT TRAINING
+  published_at: 2026-07-13T08:44:58+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56103
+  url: https://mandaluyong.gov.ph/katarungang-pambarangay-sa-lungsod-ng-mandaluyong/
+  title: KATARUNGANG PAMBARANGAY SA LUNGSOD NG MANDALUYONG
+  published_at: 2026-07-08T11:40:14+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56098
+  url: https://mandaluyong.gov.ph/slambook-ng-mcst-bida-sa-lingguhang-programa-ng-mandaluyong/
+  title: SLAMBOOK NG MCST, BIDA SA LINGGUHANG PROGRAMA NG MANDALUYONG
+  published_at: 2026-07-08T11:36:26+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56095
+  url: https://mandaluyong.gov.ph/gm-laylo-mula-mandaluyong-wagi-sa-battle-of-the-grandmasters/
+  title: GM LAYLO MULA MANDALUYONG, WAGI SA BATTLE OF THE GRANDMASTERS
+  published_at: 2026-07-08T11:33:00+08:00
+  categories:
+    - Sports
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56090
+  url: https://mandaluyong.gov.ph/pagbati-at-pagsuporta-para-kay-alyssa-villarina/
+  title: PAGBATI AT PAGSUPORTA, PARA KAY ALYSSA VILLARIÑA
+  published_at: 2026-07-08T11:29:19+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56085
+  url: https://mandaluyong.gov.ph/panunumpa-ng-mandaluyong-police-station-advisory-council/
+  title: PANUNUMPA NG MANDALUYONG POLICE STATION ADVISORY COUNCIL
+  published_at: 2026-07-08T11:26:41+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56081
+  url: https://mandaluyong.gov.ph/mandaluyong-kinilala-ang-mga-key-officers-at-sub-station-commanders-sa-lungsod/
+  title: MANDALUYONG, KINILALA ANG MGA KEY OFFICERS AT SUB-STATION COMMANDERS SA LUNGSOD
+  published_at: 2026-07-08T11:20:59+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56077
+  url: https://mandaluyong.gov.ph/blessing-at-turn-over-ng-6-units-ng-e-jeepney-love-bus-at-2-service-vehicles-ng-mandaluyong/
+  title: BLESSING AT TURN-OVER NG 6 UNITS NG E-JEEPNEY LOVE BUS AT 2 SERVICE VEHICLES NG MANDALUYONG
+  published_at: 2026-07-08T11:16:20+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56072
+  url: https://mandaluyong.gov.ph/inaugural-blessing-ng-residential-houses-para-sa-mga-naapektuhan-ng-sunog/
+  title: INAUGURAL BLESSING NG RESIDENTIAL HOUSES PARA SA MGA NAAPEKTUHAN NG SUNOG
+  published_at: 2026-07-08T11:11:29+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56068
+  url: https://mandaluyong.gov.ph/inaugural-blessing-ng-barangay-barangka-drive-multi-purpose-hall/
+  title: INAUGURAL BLESSING NG BARANGAY BARANGKA DRIVE MULTI-PURPOSE HALL
+  published_at: 2026-07-08T11:07:02+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56064
+  url: https://mandaluyong.gov.ph/bayanihan-sa-kalusugan-sa-mandaluyong/
+  title: BAYANIHAN SA KALUSUGAN SA MANDALUYONG
+  published_at: 2026-07-08T11:03:05+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56061
+  url: https://mandaluyong.gov.ph/mandaluyong-nakamit-ang-97-6-accomplishment-sa-mrsia/
+  title: MANDALUYONG, NAKAMIT ANG 97.6% ACCOMPLISHMENT SA MRSIA
+  published_at: 2026-07-08T11:00:10+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56057
+  url: https://mandaluyong.gov.ph/kauna-unahang-inter-trainee-skills-competition-ng-mandaluyong/
+  title: KAUNA-UNAHANG INTER-TRAINEE SKILLS COMPETITION NG MANDALUYONG
+  published_at: 2026-07-08T10:54:10+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56053
+  url: https://mandaluyong.gov.ph/ride-play-and-shine-ang-mga-batang-mandaleno-sa-2nd-push-bike-fun-day/
+  title: RIDE, PLAY AND SHINE ANG MGA BATANG MANDALEÑO SA 2ND PUSH BIKE FUN DAY
+  published_at: 2026-07-08T10:49:19+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55968
+  url: https://mandaluyong.gov.ph/laptops-at-uniforms-para-sa-mga-guro-at-non-teaching-personnel-sa-sdo-mandaluyong/
+  title: LAPTOPS AT UNIFORMS PARA SA MGA GURO AT NON-TEACHING PERSONNEL SA SDO- MANDALUYONG
+  published_at: 2026-07-01T16:21:35+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

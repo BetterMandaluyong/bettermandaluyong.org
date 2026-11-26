@@ -1,0 +1,53 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 52014
+  url: https://mandaluyong.gov.ph/mandaleno-sa-larangan-ng-palakasan/
+  title: MANDALEÑO SA LARANGAN NG PALAKASAN
+  published_at: 2025-09-20T09:09:00+08:00
+  categories:
+    - Awards
+    - News
+    - Sports
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 52011
+  url: https://mandaluyong.gov.ph/8-prestihiyosong-pagkilala-sa-nutrisyon-tinanggap-ng-mandaluyong/
+  title: 8 PRESTIHIYOSONG PAGKILALA SA NUTRISYON, TINANGGAP NG MANDALUYONG
+  published_at: 2025-09-19T09:00:00+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 52008
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-ibinida-ang-mga-nagsipagtapos-sa-project-teach/
+  title: MANDALUYONG LGU IBINIDA ANG MGA NAGSIPAGTAPOS SA PROJECT TEACH
+  published_at: 2025-09-18T09:29:14+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51986
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-naglabas-ng-bagong-pwd-id/
+  title: MANDALUYONG LGU NAGLABAS NG BAGONG PWD ID
+  published_at: 2025-09-17T09:48:18+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51977
+  url: https://mandaluyong.gov.ph/parangal-para-sa-mga-kawani-ng-project-teach/
+  title: PARANGAL PARA SA MGA KAWANI NG PROJECT TEACH
+  published_at: 2025-09-16T17:29:23+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51822
+  url: https://mandaluyong.gov.ph/11-barangay-ng-mandaluyong-pinarangalan-sa-sglgb-2024/
+  title: 11 BARANGAY NG MANDALUYONG, PINARANGALAN SA SGLGB 2024
+  published_at: 2025-09-10T09:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51819
+  url: https://mandaluyong.gov.ph/turnover-of-approved-ordinances/
+  title: TURNOVER OF APPROVED ORDINANCES
+  published_at: 2025-09-09T17:00:20+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

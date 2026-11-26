@@ -1,0 +1,106 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8024
+  url: https://mandaluyong.gov.ph/mandaleno-thats-my-boy-winner-honored/
+  title: MANDALEÑO ‘THAT’S MY BOY’ WINNER HONORED
+  published_at: 2019-09-20T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7997
+  url: https://mandaluyong.gov.ph/young-scout-achievers-honored-at-girl-scouts-week/
+  title: YOUNG SCOUT ACHIEVERS HONORED AT GIRL SCOUTS WEEK
+  published_at: 2019-09-18T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7949
+  url: https://mandaluyong.gov.ph/mandaluyong-aspiring-for-zero-criminality-for-the-city-mandaleno-displinado-gawa-hindi-salita/
+  title: MANDALUYONG ASPIRING FOR  ZERO CRIMINALITY FOR THE CITY “MANDALEÑO DISPLINADO…GAWA HINDI SALITA”
+  published_at: 2019-09-14T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8019
+  url: https://mandaluyong.gov.ph/mandaluyong-senior-citizens-get-livelihood-support/
+  title: MANDALUYONG SENIOR CITIZENS GET LIVELIHOOD SUPPORT
+  published_at: 2019-09-13T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8015
+  url: https://mandaluyong.gov.ph/barangay-kagawad-and-kagawad-organizations-oathtaking/
+  title: BARANGAY KAGAWAD AND KAGAWAD ORGANIZATIONS OATHTAKING
+  published_at: 2019-09-12T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7941
+  url: https://mandaluyong.gov.ph/batang-pinoy-medalists/
+  title: BATANG PINOY MEDALISTS
+  published_at: 2019-09-10T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8023
+  url: https://mandaluyong.gov.ph/fight-obesity-live-healthy/
+  title: FIGHT OBESITY, LIVE HEALTHY
+  published_at: 2019-09-09T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7977
+  url: https://mandaluyong.gov.ph/mandaleno-is-international-dart-champ/
+  title: MANDALEÑO IS INTERNATIONAL DART CHAMP
+  published_at: 2019-09-06T14:00:55+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8036
+  url: https://mandaluyong.gov.ph/mandaluyong-bet-to-compete-in-miss-philippines/
+  title: MANDALUYONG BET TO COMPETE IN MISS PHILIPPINES
+  published_at: 2019-09-06T14:00:43+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8011
+  url: https://mandaluyong.gov.ph/tesda-honors-mandaluyong-city-with-kabalikat-award/
+  title: TESDA HONORS MANDALUYONG CITY WITH KABALIKAT AWARD
+  published_at: 2019-09-05T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8007
+  url: https://mandaluyong.gov.ph/mandaluyong-bags-national-kabalikat-award-2019-from-tesda/
+  title: MANDALUYONG BAGS NATIONAL KABALIKAT AWARD 2019 FROM TESDA
+  published_at: 2019-09-05T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8028
+  url: https://mandaluyong.gov.ph/mandaluyongs-pride-first-female-police-general/
+  title: "MANDALUYONG’S PRIDE: FIRST FEMALE POLICE GENERAL"
+  published_at: 2019-09-04T14:00:16+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7969
+  url: https://mandaluyong.gov.ph/councilors-week-2019/
+  title: COUNCILORS’ WEEK 2019
+  published_at: 2019-09-03T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8060
+  url: https://mandaluyong.gov.ph/ikatlong-selyo-ng-kahusayan-iginawad-sa-mandaluyong/
+  title: IKATLONG SELYO NG KAHUSAYAN IGINAWAD SA MANDALUYONG
+  published_at: 2019-09-02T14:00:54+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8064
+  url: https://mandaluyong.gov.ph/kwf-seal-of-excellence-awarded-to-mandaluyong-city/
+  title: KWF SEAL OF EXCELLENCE AWARDED TO MANDALUYONG CITY
+  published_at: 2019-09-02T14:00:09+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

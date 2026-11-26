@@ -1,0 +1,22 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8860
+  url: https://mandaluyong.gov.ph/mayor-abalos-issues-order-banning-firecrackers-and-other-pyrotechnic-devices/
+  title: MAYOR ABALOS ISSUES ORDER BANNING FIRECRACKERS AND OTHER PYROTECHNIC DEVICES
+  published_at: 2020-12-29T16:29:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8878
+  url: https://mandaluyong.gov.ph/mandaluyongs-traditional-gift-giving-shifts-to-ayuda-style-of-distribution-this-year-annual-christmas-gifts-of-mandaluyong-lgu-to-be-sent-directly-to-households-due-to-ongoing-pandemic/
+  title: MANDALUYONG’S TRADITIONAL GIFT-GIVING SHIFTS TO “AYUDA-STYLE” OF DISTRIBUTION THIS YEAR  annual christmas gifts of mandaluyong LGU to be sent directly to households due to ongoing pandemic
+  published_at: 2020-12-12T10:08:15+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8875
+  url: https://mandaluyong.gov.ph/ayuda-ng-pasasalamat-2020/
+  title: AYUDA NG PASASALAMAT 2020.
+  published_at: 2020-12-12T10:00:16+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

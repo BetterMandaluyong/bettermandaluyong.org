@@ -1,0 +1,71 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 7985
+  url: https://mandaluyong.gov.ph/drainage-and-street-improvements/
+  title: DRAINAGE AND STREET IMPROVEMENTS
+  published_at: 2019-02-13T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8094
+  url: https://mandaluyong.gov.ph/ulirang-mandaleno-awardees/
+  title: ULIRANG MANDALEÑO AWARDEES
+  published_at: 2019-02-12T14:00:19+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7973
+  url: https://mandaluyong.gov.ph/school-covered-walkway/
+  title: SCHOOL COVERED WALKWAY
+  published_at: 2019-02-11T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8098
+  url: https://mandaluyong.gov.ph/2019-tiger-citys-top-ten-tax-payers/
+  title: 2019 TIGER CITY’S TOP TEN TAX PAYERS
+  published_at: 2019-02-10T14:00:38+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8005
+  url: https://mandaluyong.gov.ph/mandaluyong-tops-other-provinces-cities-and-municipalities-in-fiscal-transparency/
+  title: Mandaluyong tops other provinces, cities, and municipalities in fiscal transparency
+  published_at: 2019-02-09T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7925
+  url: https://mandaluyong.gov.ph/cityhood-initiators-honored/
+  title: CITYHOOD INITIATORS HONORED
+  published_at: 2019-02-08T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7937
+  url: https://mandaluyong.gov.ph/annual-bantay-bayan-night/
+  title: ANNUAL BANTAY BAYAN NIGHT
+  published_at: 2019-02-06T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7945
+  url: https://mandaluyong.gov.ph/bilbiling-mandaluyong-2019/
+  title: BILBILING MANDALUYONG 2019
+  published_at: 2019-02-05T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8032
+  url: https://mandaluyong.gov.ph/miss-mandaluyong-2019/
+  title: MISS MANDALUYONG 2019
+  published_at: 2019-02-04T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8077
+  url: https://mandaluyong.gov.ph/environment-friendly-transport-for-mandaluyong/
+  title: ENVIRONMENT-FRIENDLY TRANSPORT FOR MANDALUYONG
+  published_at: 2019-02-01T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

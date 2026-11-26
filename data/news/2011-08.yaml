@@ -1,0 +1,29 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8581
+  url: https://mandaluyong.gov.ph/mandaluyong-city-is-tesda-kabalikat-awardee-for-lgu/
+  title: MANDALUYONG CITY IS TESDA KABALIKAT AWARDEE FOR LGU
+  published_at: 2011-08-25T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8589
+  url: https://mandaluyong.gov.ph/mandaluyong-is-now-the-holder-of-the-green-banner-award/
+  title: MANDALUYONG IS NOW THE HOLDER OF THE GREEN BANNER AWARD
+  published_at: 2011-08-19T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8585
+  url: https://mandaluyong.gov.ph/mandaluyong-elementary-school-phase-3-building-inaugurated/
+  title: MANDALUYONG ELEMENTARY SCHOOL PHASE-3 BUILDING INAUGURATED
+  published_at: 2011-08-13T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8537
+  url: https://mandaluyong.gov.ph/mandaluyong-inter-department-bowling-tournament/
+  title: MANDALUYONG INTER-DEPARTMENT BOWLING TOURNAMENT
+  published_at: 2011-08-01T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

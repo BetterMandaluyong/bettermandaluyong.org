@@ -1,0 +1,51 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 20823
+  url: https://mandaluyong.gov.ph/lab-for-all-pride-edition-sa-mandaluyong/
+  title: LAB FOR ALL PRIDE EDITION SA MANDALUYONG
+  published_at: 2024-06-25T15:45:01+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20819
+  url: https://mandaluyong.gov.ph/lab-for-all-pride-edition-idinaos-sa-mandaluyong/
+  title: LAB FOR ALL PRIDE EDITION IDINAOS SA MANDALUYONG
+  published_at: 2024-06-25T13:14:01+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20387
+  url: https://mandaluyong.gov.ph/kalayaan-sa-malnutrisyon/
+  title: KALAYAAN SA MALNUTRISYON
+  published_at: 2024-06-11T16:30:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20385
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-namahagi-ng-micronutrient-fortified-cake-sa-mga-bata-at-inang-buntis/
+  title: Mandaluyong LGU namahagi ng micronutrient-fortified cake sa mga bata at inang buntis
+  published_at: 2024-06-11T16:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20187
+  url: https://mandaluyong.gov.ph/1000-mandalenong-estudyante-makikinabang-sa-spes-ng-mandaluyong-lgu/
+  title: 1,000 MANDALEÑONG ESTUDYANTE MAKIKINABANG SA SPES NG MANDALUYONG LGU
+  published_at: 2024-06-07T10:49:57+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20179
+  url: https://mandaluyong.gov.ph/mandaluyong-childrens-choir-wagi-sa-2024-magnificat/
+  title: MANDALUYONG CHILDREN’S CHOIR, WAGI SA 2024 MAGNIFICAT
+  published_at: 2024-06-06T16:38:31+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20121
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-nakiisa-sa-pagdiriwang-ng-no-smoking-month/
+  title: MANDALUYONG LGU NAKIISA SA PAGDIRIWANG NG NO SMOKING MONTH
+  published_at: 2024-06-06T09:39:11+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

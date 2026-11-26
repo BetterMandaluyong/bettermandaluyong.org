@@ -1,0 +1,22 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8725
+  url: https://mandaluyong.gov.ph/sapatos-sa-musmos/
+  title: Sapatos sa Musmos
+  published_at: 2012-06-18T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8648
+  url: https://mandaluyong.gov.ph/mandaluyong-dengue-warrior-brigades/
+  title: Mandaluyong Dengue Warrior Brigades
+  published_at: 2012-06-11T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8644
+  url: https://mandaluyong.gov.ph/mandaluyong-collegiate-scholarship-memorandum-of-agreement-renewed/
+  title: MANDALUYONG COLLEGIATE SCHOLARSHIP  MEMORANDUM OF AGREEMENT RENEWED.
+  published_at: 2012-06-04T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,23 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 10652
+  url: https://mandaluyong.gov.ph/mandaluyong-government-set-to-celebrate-undas/
+  title: MANDALUYONG GOVERNMENT SET TO CELEBRATE UNDAS
+  published_at: 2022-10-28T10:12:25+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 9023
+  url: https://mandaluyong.gov.ph/mandaluyong-day-care-kids-get-school-kits-from-qatar/
+  title: MANDALUYONG DAY CARE KIDS GET SCHOOL KITS FROM QATAR.
+  published_at: 2022-10-06T23:02:28+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 9026
+  url: https://mandaluyong.gov.ph/mandaluyong-day-care-kids-get-school-supplies-from-qatar/
+  title: MANDALUYONG DAY CARE KIDS GET SCHOOL SUPPLIES FROM QATAR
+  published_at: 2022-10-06T11:02:15+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

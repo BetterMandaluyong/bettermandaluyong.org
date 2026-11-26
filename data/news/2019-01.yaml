@@ -1,0 +1,50 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 7989
+  url: https://mandaluyong.gov.ph/drainage-and-street-improvements-2/
+  title: DRAINAGE AND STREET IMPROVEMENTS
+  published_at: 2019-01-30T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8052
+  url: https://mandaluyong.gov.ph/road-improvement/
+  title: ROAD IMPROVEMENT
+  published_at: 2019-01-29T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8056
+  url: https://mandaluyong.gov.ph/top-mandaluyong-scholars-recognized/
+  title: TOP MANDALUYONG SCHOLARS RECOGNIZED
+  published_at: 2019-01-25T14:00:10+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8072
+  url: https://mandaluyong.gov.ph/mandaluyong-city-one-with-2019-toda-summit/
+  title: MANDALUYONG CITY ONE WITH 2019 TODA SUMMIT
+  published_at: 2019-01-24T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7929
+  url: https://mandaluyong.gov.ph/one-of-pnp-mandaluyongs-finest/
+  title: ONE OF PNP-MANDALUYONG’S FINEST
+  published_at: 2019-01-22T14:00:07+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8081
+  url: https://mandaluyong.gov.ph/honoring-young-mandaleno-achievers/
+  title: HONORING YOUNG MANDALEÑO ACHIEVERS
+  published_at: 2019-01-18T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7981
+  url: https://mandaluyong.gov.ph/award-for-mandaluyong-anti-drug-abuse-council/
+  title: AWARD FOR MANDALUYONG ANTI-DRUG ABUSE COUNCIL
+  published_at: 2019-01-15T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

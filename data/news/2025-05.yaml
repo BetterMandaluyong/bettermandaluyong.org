@@ -1,0 +1,30 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 49890
+  url: https://mandaluyong.gov.ph/mga-batang-mandaleno-humakot-ng-medalya/
+  title: MGA BATANG MANDALEÑO HUMAKOT NG MEDALYA
+  published_at: 2025-05-20T14:38:00+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49675
+  url: https://mandaluyong.gov.ph/team-performance-wins-in-the-2025-elections/
+  title: TEAM PERFORMANCE IN MANDALUYONG WINS 2025 ELECTIONS
+  published_at: 2025-05-13T13:34:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49672
+  url: https://mandaluyong.gov.ph/abalos-wins-mandaluyong-race/
+  title: ABALOS WINS MANDALUYONG RACE.
+  published_at: 2025-05-13T13:32:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49420
+  url: https://mandaluyong.gov.ph/mandaluyong-suportado-ang-pambato-sa-binibining-pilipinas-2025/
+  title: MANDALUYONG, SUPORTADO ANG PAMBATO SA BINIBINING PILIPINAS 2025
+  published_at: 2025-05-02T10:01:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

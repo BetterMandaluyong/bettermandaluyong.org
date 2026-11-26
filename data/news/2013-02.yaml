@@ -1,0 +1,71 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8773
+  url: https://mandaluyong.gov.ph/tiger-citys-top-10-taxpayers-4/
+  title: TIGER CITY’S TOP 10 TAXPAYERS
+  published_at: 2013-02-28T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8765
+  url: https://mandaluyong.gov.ph/palarong-panrehiyon-in-full-swing-in-mandaluyong/
+  title: Palarong Panrehiyon in full swing in Mandaluyong
+  published_at: 2013-02-20T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8755
+  url: https://mandaluyong.gov.ph/newly-inaugurated-manpower/
+  title: NEWLY INAUGURATED MANPOWER
+  published_at: 2013-02-19T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8777
+  url: https://mandaluyong.gov.ph/ulirang-mandaleno-awardees-3/
+  title: ULIRANG MANDALEÑO AWARDEES
+  published_at: 2013-02-12T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8798
+  url: https://mandaluyong.gov.ph/newly-renovated-barangay-hall-inaugurated/
+  title: NEWLY RENOVATED BARANGAY HALL INAUGURATED
+  published_at: 2013-02-03T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8806
+  url: https://mandaluyong.gov.ph/youth-development-center-inaugurated/
+  title: YOUTH DEVELOPMENT CENTER INAUGURATED
+  published_at: 2013-02-02T14:00:43+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8802
+  url: https://mandaluyong.gov.ph/sports-complex-inaugurated/
+  title: SPORTS COMPLEX INAUGURATED
+  published_at: 2013-02-02T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8794
+  url: https://mandaluyong.gov.ph/multi-purpose-building-inaugurated/
+  title: MULTI-PURPOSE BUILDING INAUGURATED
+  published_at: 2013-02-02T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8789
+  url: https://mandaluyong.gov.ph/multi-purpose-building-with-basketball-court-inaugurated-2/
+  title: MULTI-PURPOSE BUILDING WITH BASKETBALL COURT INAUGURATED
+  published_at: 2013-02-01T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8761
+  url: https://mandaluyong.gov.ph/bilbiling-mandaluyong-2013/
+  title: BILBILING MANDALUYONG 2013
+  published_at: 2013-02-01T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

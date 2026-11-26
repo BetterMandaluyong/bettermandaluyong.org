@@ -1,0 +1,36 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8303
+  url: https://mandaluyong.gov.ph/mandaluyong-is-k-to-12-ready/
+  title: MANDALUYONG IS K TO 12 READY
+  published_at: 2016-09-12T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8352
+  url: https://mandaluyong.gov.ph/mayor-menchie-abalos-receives-the-seal-of-excellence-award-from-eastern-police-district/
+  title: Mayor Menchie Abalos receives the Seal of Excellence award from Eastern Police District
+  published_at: 2016-09-11T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8333
+  url: https://mandaluyong.gov.ph/mandaluyong-is-k-to-12-ready-2/
+  title: MANDALUYONG IS K TO 12 READY
+  published_at: 2016-09-09T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8345
+  url: https://mandaluyong.gov.ph/mandaluyong-is-k-to-12-ready-3/
+  title: MANDALUYONG IS K TO 12 READY
+  published_at: 2016-09-07T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8337
+  url: https://mandaluyong.gov.ph/mandaluyong-intensifies-campaign-against-illegal-drugs/
+  title: MANDALUYONG INTENSIFIES CAMPAIGN AGAINST ILLEGAL DRUGS
+  published_at: 2016-09-03T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

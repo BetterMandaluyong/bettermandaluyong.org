@@ -1,0 +1,30 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8865
+  url: https://mandaluyong.gov.ph/mandaluyong-govt-launches-gbest-online-service-for-property-developers/
+  title: MANDALUYONG GOV’T LAUNCHES GBEST ONLINE SERVICE FOR PROPERTY DEVELOPERS.
+  published_at: 2020-02-28T09:28:09+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8870
+  url: https://mandaluyong.gov.ph/mandaluyong-city-green-building-self-assessment-tool-gbest-launched/
+  title: Mandaluyong City Green Building Self-assessment Tool (GBEST) launched
+  published_at: 2020-02-24T09:47:35+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8880
+  url: https://mandaluyong.gov.ph/mayor-abalos-addresses-commercial-establishments-on-preventive-measures-against-coronavirus/
+  title: MAYOR ABALOS ADDRESSES COMMERCIAL ESTABLISHMENTS ON PREVENTIVE MEASURES AGAINST CORONAVIRUS
+  published_at: 2020-02-03T10:50:00+08:00
+  categories:
+    - COVID-19
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8872
+  url: https://mandaluyong.gov.ph/mandaluyong-govt-private-sector-address-2019-ncov/
+  title: MANDALUYONG GOV’T, PRIVATE SECTOR ADDRESS 2019 nCoV.
+  published_at: 2020-02-03T09:51:32+08:00
+  categories:
+    - COVID-19
+  first_seen_at: 2026-11-26T08:45:24+08:00

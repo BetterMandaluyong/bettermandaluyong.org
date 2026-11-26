@@ -1,0 +1,50 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8662
+  url: https://mandaluyong.gov.ph/global-development-debate/
+  title: GLOBAL DEVELOPMENT DEBATE
+  published_at: 2012-02-24T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8749
+  url: https://mandaluyong.gov.ph/ulirang-mandaleno-awardees-2/
+  title: ULIRANG MANDALEÑO AWARDEES
+  published_at: 2012-02-19T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8741
+  url: https://mandaluyong.gov.ph/mandaluyongs-top-ten-taxpayers-2012/
+  title: MANDALUYONG’S TOP TEN TAXPAYERS 2012
+  published_at: 2012-02-17T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8627
+  url: https://mandaluyong.gov.ph/2-storey-day-care-center-multi-purpose-hall-in-mandaluyong-inaugurated/
+  title: 2-STOREY DAY CARE CENTER & MULTI-PURPOSE HALL IN MANDALUYONG INAUGURATED
+  published_at: 2012-02-14T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8695
+  url: https://mandaluyong.gov.ph/new-road-opens-at-fabella/
+  title: NEW ROAD OPENS AT FABELLA
+  published_at: 2012-02-12T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8712
+  url: https://mandaluyong.gov.ph/mandaluyong-new-public-market-opens/
+  title: MANDALUYONG NEW PUBLIC MARKET OPENS
+  published_at: 2012-02-10T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8693
+  url: https://mandaluyong.gov.ph/34-bets-vie-for-miss-mandaluyong-2012-tilt-over-p-1m-prize-at-stake-for-winners/
+  title: 34 BETS VIE FOR MISS MANDALUYONG 2012 TILT; OVER P 1M PRIZE AT STAKE FOR WINNERS
+  published_at: 2012-02-04T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,8 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8361
+  url: https://mandaluyong.gov.ph/a-child-friendly-award-to-mandaluyong/
+  title: A CHILD-FRIENDLY AWARD TO MANDALUYONG
+  published_at: 2016-01-22T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,33 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 17769
+  url: https://mandaluyong.gov.ph/mandaluyong-city-bags-7th-sglg/
+  title: MANDALUYONG CITY BAGS 7th SGLG.
+  published_at: 2023-12-15T17:10:50+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 17767
+  url: https://mandaluyong.gov.ph/mandaluyong-city-bags-7th-seal-of-good-local-governance/
+  title: Mandaluyong City bags 7th Seal of Good Local Governance
+  published_at: 2023-12-15T17:07:46+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 17746
+  url: https://mandaluyong.gov.ph/mandaluyong-city-umani-ng-gawad-kalasag/
+  title: MANDALUYONG CITY UMANI NG GAWAD KALASAG.
+  published_at: 2023-12-12T18:06:00+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 17744
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-umani-ng-gawad-kalasag-seal-of-excellence/
+  title: Mandaluyong LGU umani ng Gawad Kalasag Seal of Excellence
+  published_at: 2023-12-12T17:44:00+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,9 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 7909
+  url: https://mandaluyong.gov.ph/2021-national-exemplar-people-program-of-the-year-ppy-in-public-sector-award/
+  title: 2021 NATIONAL EXEMPLAR-PEOPLE PROGRAM OF THE YEAR (PPY) IN PUBLIC SECTOR AWARD.
+  published_at: 2021-09-20T14:36:00+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

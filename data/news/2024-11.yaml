@@ -1,0 +1,117 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 42223
+  url: https://mandaluyong.gov.ph/mandaluyong-kinilala-ang-vawc-desk-officers/
+  title: MANDALUYONG, KINILALA ANG VAWC DESK OFFICERS
+  published_at: 2024-11-27T09:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42220
+  url: https://mandaluyong.gov.ph/mandaluyong-nakiisa-sa-kampanya-laban-sa-karahasan-sa-kababaihan/
+  title: MANDALUYONG, NAKIISA SA KAMPANYA LABAN SA KARAHASAN SA KABABAIHAN
+  published_at: 2024-11-26T09:21:26+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42152
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-ibinahagi-ang-mga-bagong-motorsiklo-sa-tpmd/
+  title: MANDALUYONG LGU IBINAHAGI ANG MGA BAGONG MOTORSIKLO SA TPMD
+  published_at: 2024-11-22T15:30:12+08:00
+  categories:
+    - News
+    - Trafic & Parking
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42148
+  url: https://mandaluyong.gov.ph/drug-cleared-barangay/
+  title: DRUG-CLEARED BARANGAY
+  published_at: 2024-11-22T09:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42145
+  url: https://mandaluyong.gov.ph/mga-opisyal-ng-lungsod-ng-mandaluyong-lumagda-ng-pledge-of-commitment-to-stay-drug-free/
+  title: MGA OPISYAL NG LUNGSOD NG MANDALUYONG, LUMAGDA NG PLEDGE OF COMMITMENT TO STAY DRUG-FREE
+  published_at: 2024-11-21T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42051
+  url: https://mandaluyong.gov.ph/mandaluyong-manpower-pinarangalan-ng-tesda/
+  title: MANDALUYONG MANPOWER PINARANGALAN NG TESDA
+  published_at: 2024-11-14T14:00:00+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42048
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-umani-ng-parangal-mula-sa-dswd/
+  title: MANDALUYONG LGU UMANI NG PARANGAL MULA SA DSWD
+  published_at: 2024-11-14T09:24:12+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42036
+  url: https://mandaluyong.gov.ph/11-barangay-sa-mandaluyong-ginawaran-ng-seal-of-good-local-governance-for-barangays/
+  title: 11 BARANGAY SA MANDALUYONG GINAWARAN NG SEAL OF  GOOD LOCAL GOVERNANCE FOR BARANGAYS
+  published_at: 2024-11-13T11:32:06+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42016
+  url: https://mandaluyong.gov.ph/ilang-barangay-sa-mandaluyong-ginawaran-ng-pagkilala-ng-dilg/
+  title: ILANG BARANGAY SA MANDALUYONG, GINAWARAN NG PAGKILALA NG DILG
+  published_at: 2024-11-12T20:00:00+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42013
+  url: https://mandaluyong.gov.ph/wack-wack-nanguna-sa-kalinisan-sa-mga-barangay-sa-mandaluyong/
+  title: WACK-WACK, NANGUNA SA KALINISAN SA MGA BARANGAY SA MANDALUYONG
+  published_at: 2024-11-12T17:00:00+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42010
+  url: https://mandaluyong.gov.ph/mga-barangay-sa-mandaluyong-kinilala-sa-pagtatanim-ng-prutas-at-gulay/
+  title: MGA BARANGAY SA MANDALUYONG KINILALA SA PAGTATANIM NG PRUTAS AT GULAY
+  published_at: 2024-11-12T15:15:23+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42007
+  url: https://mandaluyong.gov.ph/limang-barangay-sa-mandaluyong-pinarangalan-sa-mahusay-na-clearing-operations/
+  title: LIMANG BARANGAY SA MANDALUYONG PINARANGALAN SA MAHUSAY NA CLEARING OPERATIONS
+  published_at: 2024-11-12T12:41:12+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42004
+  url: https://mandaluyong.gov.ph/lokal-na-pamahalaan-ng-mandaluyong-at-larena-pumirma-sa-sisterhood-program/
+  title: LOKAL NA PAMAHALAAN NG MANDALUYONG AT LARENA, PUMIRMA SA SISTERHOOD PROGRAM
+  published_at: 2024-11-12T08:45:05+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 37003
+  url: https://mandaluyong.gov.ph/mandaluyong-nakiisa-sa-pagdiriwang-ng-midwifery-week/
+  title: MANDALUYONG, NAKIISA SA PAGDIRIWANG NG MIDWIFERY WEEK
+  published_at: 2024-11-06T09:00:00+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 37000
+  url: https://mandaluyong.gov.ph/mandaluyong-pinarangalan-ang-natatanging-nurses-ng-lungsod/
+  title: MANDALUYONG, PINARANGALAN ANG NATATANGING NURSES NG LUNGSOD
+  published_at: 2024-11-04T15:14:02+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

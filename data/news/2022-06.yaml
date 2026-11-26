@@ -1,0 +1,22 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8895
+  url: https://mandaluyong.gov.ph/mandaluyong-receives-highest-coa-audit-mark-for-year-2021/
+  title: MANDALUYONG RECEIVES HIGHEST COA AUDIT MARK FOR YEAR 2021
+  published_at: 2022-06-21T12:15:03+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8897
+  url: https://mandaluyong.gov.ph/booklet-for-solo-parents/
+  title: BOOKLET FOR SOLO PARENTS.
+  published_at: 2022-06-14T13:16:08+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8892
+  url: https://mandaluyong.gov.ph/functional-bags-from-election-tarps/
+  title: FUNCTIONAL BAGS FROM ELECTION TARPS
+  published_at: 2022-06-14T11:13:29+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

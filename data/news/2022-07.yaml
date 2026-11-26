@@ -1,0 +1,24 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 9015
+  url: https://mandaluyong.gov.ph/community-based-products-made-during-the-pandemic/
+  title: COMMUNITY-BASED PRODUCTS MADE DURING THE PANDEMIC.
+  published_at: 2022-07-18T11:44:51+08:00
+  categories:
+    - COVID-19
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 9021
+  url: https://mandaluyong.gov.ph/mandaluyong-government-showcases-community-based-products-developed-during-the-pandemic/
+  title: MANDALUYONG GOVERNMENT SHOWCASES COMMUNITY-BASED PRODUCTS DEVELOPED DURING THE PANDEMIC
+  published_at: 2022-07-18T11:44:24+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 9033
+  url: https://mandaluyong.gov.ph/motorcycles-for-tpmd-and-engineering-department/
+  title: MOTORCYCLES FOR TPMD AND ENGINEERING DEPARTMENT
+  published_at: 2022-07-05T09:18:38+08:00
+  categories:
+    - Departments
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

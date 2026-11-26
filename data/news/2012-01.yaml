@@ -1,0 +1,22 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8729
+  url: https://mandaluyong.gov.ph/mandaluyong-offices-receive-service-vehicles/
+  title: MANDALUYONG OFFICES RECEIVE SERVICE VEHICLES
+  published_at: 2012-01-30T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8673
+  url: https://mandaluyong.gov.ph/tiger-city-marks-67th-liberation-and-18th-cityhood-anniversary-on-feb-9/
+  title: “Tiger City” marks 67th Liberation and 18th Cityhood Anniversary on Feb. 9
+  published_at: 2012-01-28T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8745
+  url: https://mandaluyong.gov.ph/abalos-receives-topleap-awardee-in-public-governance/
+  title: ABALOS RECEIVES TOPLEAP AWARDEE IN PUBLIC GOVERNANCE
+  published_at: 2012-01-23T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

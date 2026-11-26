@@ -1,0 +1,8 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8068
+  url: https://mandaluyong.gov.ph/mandaluyong-achieves-sglg-hall-of-fame-award/
+  title: MANDALUYONG ACHIEVES SGLG HALL OF FAME AWARD
+  published_at: 2019-11-07T14:00:40+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
