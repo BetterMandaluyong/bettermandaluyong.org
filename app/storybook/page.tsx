@@ -11,6 +11,7 @@ import { Eyebrow } from "../../components/Eyebrow.tsx";
 import { Flag } from "../../components/Flag.tsx";
 import { FilterNav } from "../../components/FilterNav.tsx";
 import { NewsList } from "../../components/NewsList.tsx";
+import { NoticeFilters } from "../../components/NoticeFilters.tsx";
 import { NoticeList } from "../../components/NoticeList.tsx";
 import { Notice } from "../../components/Notice.tsx";
 import { OfficialList } from "../../components/OfficialList.tsx";
@@ -434,6 +435,23 @@ export default function StorybookPage() {
         </Specimen>
         <Specimen name="NoticeList (no labels)">
           <NoticeList items={SAMPLE_NOTICES} />
+        </Specimen>
+        <Specimen name="NoticeFilters (sample values; the form goes to #)">
+          <NoticeFilters
+            action="#"
+            values={{
+              q: "sample search",
+              kind: "two",
+              from: "2026-01-01",
+              to: "2026-03-31",
+              sort: "oldest",
+            }}
+            kinds={[
+              { value: "one", label: "Sample kind" },
+              { value: "two", label: "Another kind" },
+            ]}
+            active
+          />
         </Specimen>
         <Specimen name="FilterNav (second link current)">
           <FilterNav

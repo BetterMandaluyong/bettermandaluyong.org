@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { ArrowLink } from "../../components/ArrowLink.tsx";
 import { Button } from "../../components/Button.tsx";
 import { Container } from "../../components/Container.tsx";
-import { FilterNav } from "../../components/FilterNav.tsx";
+import { NoticeFilters } from "../../components/NoticeFilters.tsx";
 import { NoticeList } from "../../components/NoticeList.tsx";
 import { PageMasthead } from "../../components/PageMasthead.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
@@ -14,13 +15,15 @@ import {
   NOTICES,
 } from "../../components/content.ts";
 import { BID_NOTICES } from "../../data/bids.ts";
-import { BID_KINDS, type BidKind } from "../../data/schema.ts";
-import { parseListParams } from "../../utils/news/display.ts";
+import { BID_KINDS } from "../../data/schema.ts";
 import { CITY_BIDS_URL } from "../../utils/notices/sources.ts";
 import {
   NOTICES_PER_PAGE,
+  filterNotices,
+  hasNoticeFilters,
   kindsInUse,
-  listNotices,
+  noticesHref,
+  parseNoticeFilters,
 } from "../../utils/notices/query.ts";
 
 export const metadata: Metadata = pageMetadata({
@@ -29,14 +32,6 @@ export const metadata: Metadata = pageMetadata({
   path: "/bids",
 });
 
-/** Builds a /bids address, keeping the kind and skipping page 1. */
-function bidsHref(kind: BidKind | null, page: number): string {
-  const parts: string[] = [];
-  if (kind) parts.push(`kind=${kind}`);
-  if (page > 1) parts.push(`page=${page}`);
-  return parts.length ? `/bids?${parts.join("&")}` : "/bids";
-}
-
 const ROW_LABELS: Record<string, string> = Object.fromEntries(
   BID_KINDS.map((k) => [k, BID_KIND_LABELS[k].one]),
 );
@@ -44,9 +39,12 @@ const ROW_LABELS: Record<string, string> = Object.fromEntries(
 /**
  * The city bids page: a paged list of links to the documents the City
  * Government's Bids and Awards Committee posts (invitations to bid, requests
- * for quotation, bulletins, awards, notices to proceed, plans), filterable by
- * kind, read from `data/bids/*.yaml` at build time. Bad query strings fall
- * back to defaults; no notices yet shows the empty state.
+ * for quotation, bulletins, awards, notices to proceed, plans), read from
+ * `data/bids/*.yaml` at build time. A GET form searches titles and filters by
+ * kind and Manila date range, and sorts by date or title; the filters live in
+ * the address (`q`, `kind`, `from`, `to`, `sort`, `page`). An address that
+ * isn't in its tidy form (empty fields from the form, bad values) redirects
+ * to it; no notices yet shows the empty state.
  */
 export default async function BidsPage({
   searchParams,
@@ -55,18 +53,22 @@ export default async function BidsPage({
 }) {
   const sp = await searchParams;
   const kinds = kindsInUse(BID_NOTICES, BID_KINDS);
-  const { page, category } = parseListParams(
-    { page: sp.page, category: sp.kind },
-    kinds,
-  );
-  const kind = category as BidKind | null;
-  const { items, total } = listNotices(BID_NOTICES, {
-    page,
-    perPage: NOTICES_PER_PAGE,
-    kind,
-  });
-  const hasNewer = page > 1;
-  const hasOlder = page * NOTICES_PER_PAGE < total;
+  const filters = parseNoticeFilters(sp, kinds);
+  const here = noticesHref("/bids", filters, filters.page);
+  const asked = new URLSearchParams(
+    Object.entries(sp).flatMap(([k, v]) =>
+      (Array.isArray(v) ? v : [v ?? ""]).map((x) => [k, x]),
+    ),
+  ).toString();
+  if (here !== (asked ? `/bids?${asked}` : "/bids")) redirect(here);
+
+  const matching = filterNotices(BID_NOTICES, filters);
+  const total = matching.length;
+  const start = (filters.page - 1) * NOTICES_PER_PAGE;
+  const items = matching.slice(start, start + NOTICES_PER_PAGE);
+  const active = hasNoticeFilters(filters);
+  const hasNewer = filters.page > 1;
+  const hasOlder = start + NOTICES_PER_PAGE < total;
 
   return (
     <PageShell>
@@ -82,51 +84,63 @@ export default async function BidsPage({
 
       <section>
         <Container narrow className="py-8 md:py-12">
-          {kinds.length > 0 && (
-            <FilterNav
-              label={BIDS.filterLabel}
-              className="mb-8"
-              links={[
-                {
-                  label: NOTICES.allKinds,
-                  href: "/bids",
-                  current: kind === null,
-                },
-                ...kinds.map((k) => ({
-                  label: BID_KIND_LABELS[k].many,
-                  href: bidsHref(k, 1),
-                  current: k === kind,
-                })),
-              ]}
+          {BID_NOTICES.length > 0 && (
+            <NoticeFilters
+              action="/bids"
+              values={filters}
+              kinds={kinds.map((k) => ({
+                value: k,
+                label: BID_KIND_LABELS[k].many,
+              }))}
+              active={active}
+              className="mb-8 border-b border-ed-rule pb-8"
             />
           )}
 
           {items.length > 0 ? (
-            <NoticeList items={items} labels={ROW_LABELS} />
-          ) : total === 0 && kind === null ? (
+            <>
+              <p className="type-ui m-0 mb-4 text-ed-ink-3">
+                {NOTICES.showing(start + 1, start + items.length, total)}
+              </p>
+              <NoticeList items={items} labels={ROW_LABELS} />
+            </>
+          ) : BID_NOTICES.length === 0 ? (
             <p className="type-body m-0">{BIDS.empty}</p>
+          ) : total === 0 ? (
+            <div className="flex flex-col items-start gap-4">
+              <p className="type-body m-0">{NOTICES.noMatches}</p>
+              <Button href="/bids" variant="ghost">
+                {NOTICES.clear}
+              </Button>
+            </div>
           ) : (
             <div className="flex flex-col items-start gap-4">
               <p className="type-body m-0">{BIDS.noPage}</p>
-              <Button href="/bids" variant="ghost">
+              <Button href={noticesHref("/bids", filters, 1)} variant="ghost">
                 {BIDS.backToFirst}
               </Button>
             </div>
           )}
 
-          {(hasNewer || hasOlder) && (
+          {(hasNewer || hasOlder) && items.length > 0 && (
             <nav
               aria-label={BIDS.pagesLabel}
               className="mt-8 flex flex-wrap items-center gap-4"
             >
               {hasNewer && (
-                <Button href={bidsHref(kind, page - 1)} variant="ghost">
-                  {NOTICES.newer}
+                <Button
+                  href={noticesHref("/bids", filters, filters.page - 1)}
+                  variant="ghost"
+                >
+                  {filters.sort === "newest" ? NOTICES.newer : NOTICES.previous}
                 </Button>
               )}
               {hasOlder && (
-                <Button href={bidsHref(kind, page + 1)} variant="ghost">
-                  {NOTICES.older}
+                <Button
+                  href={noticesHref("/bids", filters, filters.page + 1)}
+                  variant="ghost"
+                >
+                  {filters.sort === "newest" ? NOTICES.older : NOTICES.next}
                 </Button>
               )}
             </nav>
