@@ -9,8 +9,8 @@ Claude Code sees them too.
 ## What this is
 
 The website for **Better Mandaluyong**, a community effort for a more livable
-Mandaluyong City, Metro Manila, and one of the BetterLGU sites. Right now it is
-a single launching-soon page. Built with **vinext (Cloudflare's Vite
+Mandaluyong City, Metro Manila, and one of the BetterLGU sites: barangays,
+officials, districts, and city news. Built with **vinext (Cloudflare's Vite
 reimplementation of the Next.js App Router) + React 19 + Tailwind CSS v4 +
 TypeScript**, on Node 24 + pnpm, deployed to Cloudflare Workers. The design
 follows the **[BetterGov.ph v2 design system](https://bettergov.ph/design)**,

@@ -1,3 +1,4 @@
+import { BARANGAYS as COPY } from "../components/content.ts";
 import { BARANGAYS } from "./barangays.ts";
 import { CITY_OFFICIALS } from "./city-officials.ts";
 import { hrefKey } from "../utils/barangays/keys.ts";
@@ -14,7 +15,7 @@ export type Person = {
   /** URL slug: the name lowercased with accents folded, e.g. "alex-c-sta-maria". */
   slug: string;
   name: string;
-  /** Position, e.g. "Mayor", "Punong Barangay", "SK Kagawad". */
+  /** Position, e.g. "Mayor", "Barangay Captain", "SK Kagawad". */
   role: string;
   kind: PersonKind;
   /** The barangay's slug, for barangay and SK officials. */
@@ -72,7 +73,7 @@ const drafts: Draft[] = [
   ...BARANGAYS.flatMap((b): Draft[] => {
     const base = { barangay: b.slug, district: b.district };
     return [
-      { ...base, name: b.captain, role: "Punong Barangay", kind: "barangay" },
+      { ...base, name: b.captain, role: COPY.captain, kind: "barangay" },
       ...b.kagawads.map((name): Draft => ({
         ...base,
         name,

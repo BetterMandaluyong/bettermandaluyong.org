@@ -73,7 +73,7 @@ describe("PEOPLE", () => {
   it("links every official on every barangay to a person", () => {
     for (const b of BARANGAYS) {
       expect(
-        personHref(b.captain, "Punong Barangay", b.slug),
+        personHref(b.captain, "Barangay Captain", b.slug),
         b.slug,
       ).toBeTruthy();
       for (const k of b.kagawads) {

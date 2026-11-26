@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ArrowLink } from "../components/ArrowLink.tsx";
 import { Button } from "../components/Button.tsx";
 import { Container } from "../components/Container.tsx";
-import { Flag } from "../components/Flag.tsx";
 import { NewsList } from "../components/NewsList.tsx";
 import { OfficialList, officialItem } from "../components/OfficialList.tsx";
 import { PageShell } from "../components/PageShell.tsx";
@@ -26,6 +25,7 @@ import { BARANGAY_PERSON_HREFS, personHref } from "../data/people.ts";
 import { BarangayExplorer } from "../islands/BarangayExplorer.tsx";
 import { formatSourceDate } from "../utils/barangays/format.ts";
 import { NEWS_ITEMS } from "../data/news.ts";
+import { MAP_PLACES } from "../data/places.ts";
 import { latestNews } from "../utils/news/query.ts";
 
 export const metadata: Metadata = {
@@ -33,8 +33,7 @@ export const metadata: Metadata = {
   description: HOME.metaDescription,
   openGraph: {
     title: SITE.name,
-    description:
-      "A community effort for a more livable Mandaluyong. Launching soon.",
+    description: HOME.shareDescription,
   },
 };
 
@@ -47,11 +46,11 @@ export default async function HomePage({
   // a shared link (`/?barangay=hulo`) open with that barangay selected.
   const sp = await searchParams;
   const chosen = typeof sp.barangay === "string" ? sp.barangay : undefined;
-  const news = latestNews(NEWS_ITEMS, 3);
+  const news = latestNews(NEWS_ITEMS, 5);
   const captains = BARANGAYS.map((b) => ({
     name: b.captain,
     role: b.name,
-    href: personHref(b.captain, "Punong Barangay", b.slug),
+    href: personHref(b.captain, COPY.captain, b.slug),
   }));
   const skChairs = BARANGAYS.map((b) => ({
     name: b.skChair,
@@ -64,10 +63,7 @@ export default async function HomePage({
         <Container className="py-8 md:py-10">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <Flag variant="navy">{HOME.eyebrow}</Flag>
-              <h1 className="type-display m-0 mt-4 text-balance">
-                {HOME.headline}
-              </h1>
+              <h1 className="type-display m-0 text-balance">{HOME.headline}</h1>
               <p className="type-lede m-0 mt-4 max-w-[65ch] text-pretty">
                 {HOME.lede}
               </p>
@@ -93,6 +89,7 @@ export default async function HomePage({
             hrefs={BARANGAY_PERSON_HREFS}
             geojsonUrl={BOUNDARIES_URL}
             initialSelected={chosen}
+            places={MAP_PLACES}
           />
           <SourceNote>{COPY.mapCredit}</SourceNote>
         </Container>

@@ -1,3 +1,4 @@
+import { BARANGAYS as COPY } from "../../components/content.ts";
 import type { Barangay } from "../../data/schema.ts";
 
 /** One barangay that matched a search, and the official who matched, if any. */
@@ -53,7 +54,7 @@ export function searchBarangays(
       continue;
     }
     const people = [
-      { name: barangay.captain, role: "Punong Barangay" },
+      { name: barangay.captain, role: COPY.captain },
       ...barangay.kagawads.map((name) => ({ name, role: "Barangay Kagawad" })),
       { name: barangay.skChair, role: "SK Chairperson" },
       ...barangay.skKagawads.map((name) => ({ name, role: "SK Kagawad" })),

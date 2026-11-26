@@ -1,8 +1,7 @@
 # Brand voice
 
 How Better Mandaluyong sounds. Read this before writing any copy that visitors
-will see. This is a starting draft based on the launching-soon page; the team
-will refine it as the site grows.
+will see. This is a starting draft; the team will refine it as the site grows.
 
 ## Who we're talking to
 
@@ -23,6 +22,11 @@ phone, in a hurry.
 
 ## Rules
 
+- **Two names, two jobs.** The site is **BetterMandaluyong.org**: the header and
+  footer wordmark, page titles, and link previews (`SITE.name`), written like
+  BetterGov.ph. The community group behind it is **Better Mandaluyong**
+  (`SITE.groupName`), used in sentences: "…, by Better Mandaluyong". The seal
+  keeps the group's name.
 - **Never invent facts.** No made-up people, quotes, numbers, events,
   partnerships, or endorsements. If a real fact isn't available yet, leave a
   clearly marked placeholder and say so in the PR.
@@ -31,4 +35,8 @@ phone, in a hurry.
   naturally to residents; keep each piece of copy consistent.
 - **Copy lives in `components/content.ts`**, not inside page markup, so wording
   changes are one-line edits.
+- **Section headings are in Title Case:** "City Officials", "Who Represents
+  You", "News from the City Hall". Short words (a, and, for, from, of, on, the,
+  to, …) stay lowercase unless they come first. Headlines, body text, buttons,
+  and links stay in sentence case. `content_test.ts` checks the headings.
 - **Calls to action are verbs:** "Get in touch", "Follow updates", "Join us".

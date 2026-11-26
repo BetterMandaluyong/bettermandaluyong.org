@@ -43,9 +43,10 @@ function FooterColumn({ heading, links }: Column) {
 /**
  * Bottom band on darkest navy: site name and description, the unofficial-site
  * notice with a link to the official site, "Part of the BetterGov.ph
- * initiative" with BetterGov's logo, two link columns (Better Mandaluyong:
+ * initiative" with BetterGov's logo, two link columns (Get in touch:
  * email, Facebook, GitHub, credits; BetterGov.ph: its sites, Facebook, and
- * Discord), then a row with the copyright (year rendered on the server), the
+ * Discord). On large screens that's a four-column grid where the site block
+ * spans two. Then a row with the copyright (year rendered on the server), the
  * content and code licenses, and the commit this build came from. Rendered by
  * `PageShell`.
  */
@@ -57,8 +58,8 @@ export function SiteFooter() {
   return (
     <footer className="bg-ed-navy-ink pt-12 pb-7 text-white/75 md:pt-15">
       <Container className="type-ui">
-        <div className="grid grid-cols-1 gap-8 border-b border-white/10 pb-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] lg:gap-10">
-          <div className="sm:col-span-2 lg:col-span-1">
+        <div className="grid grid-cols-1 gap-8 border-b border-white/10 pb-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+          <div className="sm:col-span-2">
             <a
               href="/"
               className="inline-flex items-center gap-3 font-display text-lg font-bold text-white no-underline focus-visible:outline-white"
@@ -66,15 +67,15 @@ export function SiteFooter() {
               <img src="/logo-seal.svg" alt="" width={40} height={40} />
               <span>{SITE.name}</span>
             </a>
-            <p className="m-0 mt-4 max-w-[340px] text-white/70">
+            <p className="m-0 mt-4 max-w-xl text-white/70">
               {FOOTER.description}
             </p>
-            <p className="m-0 mt-3 max-w-[340px] text-white/70">
+            <p className="m-0 mt-3 max-w-xl text-white/70">
               {FOOTER.unofficial.text}{" "}
               <a
                 href={SITE.officialSiteUrl}
                 rel="noreferrer"
-                className={`inline-block py-3 ${footerLink} underline`}
+                className={`${footerLink} underline`}
               >
                 {FOOTER.unofficial.linkLabel}
               </a>

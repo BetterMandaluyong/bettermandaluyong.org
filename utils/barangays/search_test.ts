@@ -51,7 +51,7 @@ describe("searchBarangays", () => {
     expect(hits.map((h) => h.barangay.slug)).toEqual(["hulo"]);
     expect(hits[0].official).toEqual({
       name: "Joseph Parong Jose",
-      role: "Punong Barangay",
+      role: "Barangay Captain",
     });
   });
 

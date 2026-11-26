@@ -25,6 +25,7 @@ export function UnofficialBar() {
           >
             {UNOFFICIAL.linkLabel}
           </a>
+          .
         </p>
       </Container>
     </div>

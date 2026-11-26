@@ -49,9 +49,10 @@ for reading pages; default 1504px. Every band's content goes in one.
 every page (rendered by `PageShell`), in the style of BetterGov's top banner.
 Says the site is not run by the City Government and links (external,
 `rel="noreferrer"`, white with `focus-visible:outline-white`) to the official
-site. Copy is `UNOFFICIAL` and `SITE.officialSiteUrl` in `content.ts`. Thin:
-notice and link flow inline (one line on desktop, wrapping in place on phones);
-the link's padding gives a 44px tap target without thickening the bar.
+site. Copy is `UNOFFICIAL` and `SITE.officialSiteUrl` in `content.ts`, the same
+wording the footer uses. Thin: notice and link flow inline (one line on desktop,
+wrapping in place on phones); the link's padding gives a 44px tap target without
+thickening the bar.
 
 ### `SiteHeader` / `SiteFooter` (BetterGov)
 
@@ -63,14 +64,15 @@ Rendered by `PageShell`; you don't use them directly.
 - **`SiteFooter`** (BetterGov's `Footer`): an `ed-navy-ink` band with the site
   name and description, the unofficial-site notice (`FOOTER.unofficial`) linking
   to the official site, "Part of the BetterGov.ph initiative" with BetterGov's
-  white logo (from its CDN, unmodified), link columns (`FOOTER.columns`: Better
-  Mandaluyong's email, Facebook, GitHub, and credits; BetterGov.ph's sites,
-  Facebook, and Discord), and a bottom row with `© <year> FOOTER.copyright`
-  (year rendered on the server), the content and code licenses
-  (`FOOTER.licenses`), and the short commit hash linking to that commit on
-  GitHub. The hash comes from `components/build.ts`, which `vite.config.ts`
-  fills at build time; it is hidden when unknown. On navy surfaces, links set
-  `focus-visible:outline-white` so the focus ring stays visible.
+  white logo (from its CDN, unmodified), link columns (`FOOTER.columns`: "Get in
+  touch" with email, Facebook, GitHub, and credits; BetterGov.ph's sites,
+  Facebook, and Discord; on large screens a four-column grid with the site block
+  spanning two), and a bottom row with `© <year> FOOTER.copyright` (year
+  rendered on the server), the content and code licenses (`FOOTER.licenses`),
+  and the short commit hash linking to that commit on GitHub. The hash comes
+  from `components/build.ts`, which `vite.config.ts` fills at build time; it is
+  hidden when unknown. On navy surfaces, links set `focus-visible:outline-white`
+  so the focus ring stays visible.
 
 ## Actions and links
 
@@ -117,7 +119,7 @@ destination.
 pills). `variant`: `default`, `navy`, `red` (urgency only), `outline`.
 
 ```tsx
-<Flag variant="navy">Launching soon</Flag>
+<Flag variant="navy">New</Flag>
 ```
 
 ### `SectionHeader` (BetterGov)
@@ -227,12 +229,26 @@ set cookies; only after the tap does it render the Facebook page-plugin
 
 `islands/BarangayMap.tsx`: an interactive map of the barangay boundaries, drawn
 with Leaflet over CARTO Voyager tiles when `VITE_CARTO_KEY` is set (see
-`.env.example`), else OpenStreetMap tiles muted and tinted blue. Each barangay
-is shaded by council district (solid for District 1, dashed for District 2, so
-color isn't the only cue) and names itself on hover. Props: `geojsonUrl`
-(`BOUNDARIES_URL`), `barangays` (`MapBarangay[]`, `MAP_BARANGAYS`), `height`
-(`"short"`, `"tall"`, or `"fill"`: fixed on phones, the parent's height on large
-screens).
+`.env.example`), else plain OpenStreetMap tiles. Each barangay is shaded by
+council district, with a dotted border for District 1 and dashed for District 2
+(so color isn't the only cue; only the city's edge is solid), and names itself
+on hover. Props: `geojsonUrl` (`BOUNDARIES_URL`), `barangays` (`MapBarangay[]`,
+`MAP_BARANGAYS`), `height` (`"short"`, `"tall"`, or `"fill"`: fixed on phones,
+the parent's height on large screens).
+
+- Focus on Mandaluyong: everything outside the city outline
+  (`public/data/mandaluyong-city.geojson`, prop `outlineUrl`) is washed gray,
+  the city's edge is drawn in ink, and the map can't be panned far past the edge
+  or zoomed out past the whole city.
+- `places` (`MapPlace[]`, `MAP_PLACES` from `data/places.ts`) adds government
+  places as square markers with a letter (B barangay hall, C city office, N
+  national office, P police, F fire station, T MRT/LRT station; the swatch
+  styles are `.map-marker-*` in `globals.css`). Each opens a popup: a hall shows
+  the city's address and links to its barangay page; other places link to
+  OpenStreetMap. Under the map, a "Show on map" row of 44px checkboxes (with
+  counts) turns each kind on or off. `defaultPlaceKinds` picks which start shown
+  (barangay halls only, by default). The home page and `/barangays` pass
+  `places`.
 
 - Without `onSelect`, a click opens a popup (captain, phone, link to its page).
   With `onSelect(slug)`, a click calls it and the parent shows the details.
@@ -267,8 +283,9 @@ names, and matching barangays stay bright on the map. The selection is kept in
 the address (`/?barangay=hulo`). Cards are ordinary links to
 `/barangays/<slug>`, so the list works without JavaScript; with it, a plain
 click selects. Props: `barangays`, `hrefs` (person links keyed by `hrefKey`; use
-`BARANGAY_PERSON_HREFS`), `geojsonUrl`, `initialSelected`. Built so future
-panels and map layers can be added beside the barangay view.
+`BARANGAY_PERSON_HREFS`), `geojsonUrl`, `initialSelected`, `places` (passed to
+the map, with its filters). Built so future panels and map layers can be added
+beside the barangay view.
 
 ```tsx
 <BarangayExplorer
@@ -276,6 +293,7 @@ panels and map layers can be added beside the barangay view.
   hrefs={BARANGAY_PERSON_HREFS}
   geojsonUrl={BOUNDARIES_URL}
   initialSelected="hulo"
+  places={MAP_PLACES}
 />
 ```
 

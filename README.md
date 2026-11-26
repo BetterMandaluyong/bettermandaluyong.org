@@ -3,9 +3,8 @@
 ![Better Mandaluyong logo](public/logo-seal.svg)
 
 The website for **Better Mandaluyong**, a community effort for a more livable
-Mandaluyong City: walkable streets, green spaces, and open governance. Right now
-it's a launching-soon page; the full site is being built here, in the open, by
-volunteers.
+Mandaluyong City: walkable streets, green spaces, and open governance. The site
+is being built here, in the open, by volunteers.
 
 Built with **vinext (Next.js App Router on Vite) · React 19 · Tailwind CSS v4 ·
 TypeScript**, on Node + pnpm, deployed to Cloudflare Workers. The design follows

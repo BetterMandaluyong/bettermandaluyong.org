@@ -88,7 +88,7 @@ export type Barangay = {
   /** Barangay hall phone numbers, as the city publishes them. */
   phones: string[];
   email?: string;
-  /** Punong Barangay (the barangay captain). */
+  /** The barangay captain (Punong Barangay). */
   captain: string;
   /** Barangay kagawads (councilors). */
   kagawads: string[];
@@ -220,6 +220,137 @@ export function parseCityOfficials(raw: unknown, file: string): CityOfficials {
     viceMayor: parseCityOfficial(o.vice_mayor, file, "vice_mayor"),
     councilors,
   };
+}
+
+/** What kind of government place a map marker is. */
+export type PlaceKind =
+  "barangay-hall" | "city" | "national" | "police" | "fire" | "rail";
+
+/** Every place kind, in the order the map's filters list them. */
+export const PLACE_KINDS: readonly PlaceKind[] = [
+  "barangay-hall",
+  "city",
+  "national",
+  "police",
+  "fire",
+  "rail",
+];
+
+/**
+ * One government place on the map, from `data/places.yaml`. Its location
+ * comes from OpenStreetMap (`osm`) or, where OpenStreetMap doesn't have it,
+ * from a Google Maps listing (`google`): exactly one of the two. A barangay
+ * hall names its barangay and takes its display name from it, so `name` is
+ * only set for the other kinds.
+ */
+export type Place = {
+  kind: PlaceKind;
+  /** Display name; absent for barangay halls. */
+  name?: string;
+  /** The barangay's slug, for barangay halls. */
+  barangay?: string;
+  lat: number;
+  lng: number;
+  /** The OpenStreetMap element it came from, e.g. "w112549085". */
+  osm?: string;
+  /** The Google Maps listing it came from: its CID, as a string of digits. */
+  google?: string;
+};
+
+/** Mandaluyong's bounding box, a little padded: every place must be inside. */
+const CITY_BOUNDS = { south: 14.56, north: 14.61, west: 121.01, east: 121.07 };
+
+function coord(
+  o: Obj,
+  key: string,
+  file: string,
+  path: string,
+  min: number,
+  max: number,
+): number {
+  const v = o[key];
+  if (typeof v !== "number" || !Number.isFinite(v)) {
+    fail(file, path, "must be a number");
+  }
+  if (v < min || v > max) fail(file, path, "is outside Mandaluyong");
+  return v;
+}
+
+/**
+ * Checks `data/places.yaml` (a list of places) and returns it. Every
+ * barangay hall must name a barangay in `barangaySlugs`, at most one hall per
+ * barangay; other kinds need a `name`; coordinates must fall in Mandaluyong;
+ * each place has exactly one source (`osm` or `google`), and no source id is
+ * used twice.
+ */
+export function parsePlaces(
+  raw: unknown,
+  file: string,
+  barangaySlugs: ReadonlySet<string>,
+): Place[] {
+  if (!Array.isArray(raw)) fail(file, "document", "must be a list of places");
+  const seenSource = new Set<string>();
+  const seenHall = new Set<string>();
+  return raw.map((entry, i): Place => {
+    const at = `[${i}]`;
+    const o = obj(entry, file, at);
+    const kind = str(o, "kind", file, `${at}.kind`) as PlaceKind;
+    if (!PLACE_KINDS.includes(kind)) {
+      fail(file, `${at}.kind`, `must be one of ${PLACE_KINDS.join(", ")}`);
+    }
+    const osm = optStr(o, "osm", file, `${at}.osm`);
+    const google = optStr(o, "google", file, `${at}.google`);
+    if ((osm === undefined) === (google === undefined)) {
+      fail(file, at, "needs exactly one of osm or google");
+    }
+    if (osm !== undefined && !/^[nwr]\d+$/.test(osm)) {
+      fail(file, `${at}.osm`, "must be n, w, or r followed by the id");
+    }
+    if (google !== undefined && !/^\d+$/.test(google)) {
+      fail(file, `${at}.google`, "must be a Google Maps CID (digits, quoted)");
+    }
+    const sourceKey = osm ?? `google:${google}`;
+    const sourcePath = osm ? `${at}.osm` : `${at}.google`;
+    if (seenSource.has(sourceKey)) {
+      fail(file, sourcePath, `${osm ?? google} appears twice`);
+    }
+    seenSource.add(sourceKey);
+    const source = osm ? { osm } : { google };
+    const lat = coord(
+      o,
+      "lat",
+      file,
+      `${at}.lat`,
+      CITY_BOUNDS.south,
+      CITY_BOUNDS.north,
+    );
+    const lng = coord(
+      o,
+      "lng",
+      file,
+      `${at}.lng`,
+      CITY_BOUNDS.west,
+      CITY_BOUNDS.east,
+    );
+    if (kind === "barangay-hall") {
+      const barangay = str(o, "barangay", file, `${at}.barangay`);
+      if (!barangaySlugs.has(barangay)) {
+        fail(file, `${at}.barangay`, `"${barangay}" is not a barangay`);
+      }
+      if (seenHall.has(barangay)) {
+        fail(file, `${at}.barangay`, `${barangay} already has a hall`);
+      }
+      seenHall.add(barangay);
+      return { kind, barangay, lat, lng, ...source };
+    }
+    return {
+      kind,
+      name: str(o, "name", file, `${at}.name`),
+      lat,
+      lng,
+      ...source,
+    };
+  });
 }
 
 /** Where a news post's archived copy stands. */

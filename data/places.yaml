@@ -1,0 +1,472 @@
+# Government places shown on the barangay maps: barangay halls, city
+# offices, national government offices, police, and fire stations. The map
+# reads every pin from this file.
+#
+# Each place has exactly one source:
+# - `osm`: the OpenStreetMap element it came from (n = node, w = way,
+#   r = relation), checkable on openstreetmap.org. © OpenStreetMap
+#   contributors, ODbL 1.0, fetched 2026-11-26; those entries are offered
+#   under the ODbL (see NOTICE.md).
+# - `google`: a Google Maps listing's CID (quoted digits; open it at
+#   https://maps.google.com/?cid=<digits>). Used only for the three barangay
+#   halls OpenStreetMap doesn't have: Buayang Bato, Mabini-J. Rizal, and
+#   Pag-asa, looked up 2026-11-26. These are not OpenStreetMap data and not
+#   covered by the ODbL; Google's terms limit storing its data, which the
+#   maintainers accepted. Replace each with an `osm` entry once the hall is on
+#   OpenStreetMap.
+#
+# Names are tidied (spelling, capitalization); a hall takes its name from its
+# barangay. Places with no name are left out. Notes on hall choices:
+# - Malamig and Harapin ang Bukas: OSM tags each hall as a multi-purpose hall;
+#   both match the city's address (Malamig: Cresta Street; Harapin ang Bukas:
+#   Sen. Neptali A. Gonzales Street, the former Daang Bakal Street), and
+#   Google Maps lists Harapin ang Bukas's as the barangay hall.
+# - Mabini-J. Rizal: Google lists several buildings nearby; this is "MJR
+#   Barangay Hall and Multi-Purpose Center" (70 A. Mabini). Confirm locally.
+# - Pag-asa: Google gives 60 Gen. Kalentong; the city says 658 Gen. Kalentong.
+# - Addition Hills: OSM has three halls; this one is tagged as run by the
+#   barangay.
+#
+# kind: barangay-hall (needs `barangay`, a file name in data/barangays/),
+# city, national, police, fire, or rail (MRT and LRT stations inside the city;
+# no LRT line runs through Mandaluyong). Edit by hand; data/schema.ts checks it.
+
+- kind: barangay-hall
+  barangay: addition-hills
+  lat: 14.58502
+  lng: 121.03481
+  osm: r17261080
+
+- kind: barangay-hall
+  barangay: bagong-silang
+  lat: 14.59113
+  lng: 121.03022
+  osm: w330878729
+
+- kind: barangay-hall
+  barangay: barangka-drive
+  lat: 14.56981
+  lng: 121.0366
+  osm: w338593227
+
+- kind: barangay-hall
+  barangay: barangka-ibaba
+  lat: 14.56844
+  lng: 121.04013
+  osm: w1205665088
+
+- kind: barangay-hall
+  barangay: barangka-ilaya
+  lat: 14.56922
+  lng: 121.04498
+  osm: w103380941
+
+- kind: barangay-hall
+  barangay: barangka-itaas
+  lat: 14.57155
+  lng: 121.0411
+  osm: w311083458
+
+- kind: barangay-hall
+  barangay: buayang-bato
+  lat: 14.56891
+  lng: 121.05111
+  google: "16409436066571434680"
+
+- kind: barangay-hall
+  barangay: burol
+  lat: 14.58931
+  lng: 121.02738
+  osm: n6525878408
+
+- kind: barangay-hall
+  barangay: daang-bakal
+  lat: 14.59377
+  lng: 121.02648
+  osm: w577781009
+
+- kind: barangay-hall
+  barangay: hagdang-bato-itaas
+  lat: 14.58813
+  lng: 121.03242
+  osm: w695526968
+
+- kind: barangay-hall
+  barangay: hagdang-bato-libis
+  lat: 14.58857
+  lng: 121.03297
+  osm: w332010912
+
+- kind: barangay-hall
+  barangay: harapin-ang-bukas
+  lat: 14.59213
+  lng: 121.02623
+  osm: w331165955
+
+- kind: barangay-hall
+  barangay: highway-hills
+  lat: 14.58112
+  lng: 121.04882
+  osm: w261636901
+
+- kind: barangay-hall
+  barangay: hulo
+  lat: 14.57011
+  lng: 121.03188
+  osm: n10913135788
+
+- kind: barangay-hall
+  barangay: mabini-j-rizal
+  lat: 14.58694
+  lng: 121.02283
+  google: "11075503737823760937"
+
+- kind: barangay-hall
+  barangay: malamig
+  lat: 14.57522
+  lng: 121.04669
+  osm: w279285219
+
+- kind: barangay-hall
+  barangay: mauway
+  lat: 14.58189
+  lng: 121.04371
+  osm: w610575377
+
+- kind: barangay-hall
+  barangay: namayan
+  lat: 14.57976
+  lng: 121.02067
+  osm: w687796560
+
+- kind: barangay-hall
+  barangay: new-zaniga
+  lat: 14.58294
+  lng: 121.02934
+  osm: w279292453
+
+- kind: barangay-hall
+  barangay: old-zaniga
+  lat: 14.58002
+  lng: 121.02637
+  osm: w331955682
+
+- kind: barangay-hall
+  barangay: pag-asa
+  lat: 14.58971
+  lng: 121.02442
+  google: "7501417893267530448"
+
+- kind: barangay-hall
+  barangay: plainview
+  lat: 14.57676
+  lng: 121.03777
+  osm: w264572643
+
+- kind: barangay-hall
+  barangay: pleasant-hills
+  lat: 14.5865
+  lng: 121.04156
+  osm: w635509448
+
+- kind: barangay-hall
+  barangay: poblacion
+  lat: 14.5868
+  lng: 121.02917
+  osm: w686429039
+
+- kind: barangay-hall
+  barangay: san-jose
+  lat: 14.58093
+  lng: 121.02958
+  osm: w772008790
+
+- kind: barangay-hall
+  barangay: vergara
+  lat: 14.57809
+  lng: 121.02545
+  osm: w264693966
+
+- kind: barangay-hall
+  barangay: wack-wack-greenhills
+  lat: 14.58542
+  lng: 121.05556
+  osm: n9776218417
+
+- kind: city
+  name: Mandaluyong City Hall
+  lat: 14.5777
+  lng: 121.03365
+  osm: w112549085
+
+- kind: city
+  name: Mandaluyong Legislative Building
+  lat: 14.57737
+  lng: 121.03336
+  osm: w1579258315
+
+- kind: city
+  name: Mandaluyong City Traffic Office
+  lat: 14.57765
+  lng: 121.03439
+  osm: n255060421
+
+- kind: city
+  name: City Disaster Risk Reduction and Management Department
+  lat: 14.57933
+  lng: 121.04422
+  osm: n11689969756
+
+- kind: city
+  name: City Environmental Management Department
+  lat: 14.57319
+  lng: 121.04537
+  osm: w1433766636
+
+- kind: national
+  name: Department of Transportation
+  lat: 14.59437
+  lng: 121.05628
+  osm: n255059184
+
+- kind: national
+  name: Department of Migrant Workers
+  lat: 14.59316
+  lng: 121.05778
+  osm: n12811339070
+
+- kind: national
+  name: Department of Foreign Affairs, Consular Office (North East)
+  lat: 14.58512
+  lng: 121.05645
+  osm: n5135393422
+
+- kind: national
+  name: DOH Metro Manila Center for Health Development
+  lat: 14.58555
+  lng: 121.03585
+  osm: n9121425222
+
+- kind: national
+  name: DepEd Schools Division Office of Mandaluyong City
+  lat: 14.58201
+  lng: 121.04944
+  osm: w278762329
+
+- kind: national
+  name: Office of the Vice President
+  lat: 14.57006
+  lng: 121.04702
+  osm: n4914012231
+
+- kind: national
+  name: Bureau of Internal Revenue, RDO 41
+  lat: 14.57442
+  lng: 121.04353
+  osm: w561267879
+
+- kind: national
+  name: Land Transportation Office
+  lat: 14.59247
+  lng: 121.02996
+  osm: n2711284641
+
+- kind: national
+  name: "LTO Driver's License Renewal Office"
+  lat: 14.58906
+  lng: 121.03699
+  osm: n11740617545
+
+- kind: national
+  name: Mandaluyong Registry of Deeds
+  lat: 14.57616
+  lng: 121.03719
+  osm: n2508319400
+
+- kind: national
+  name: Metropolitan Trial Court
+  lat: 14.57783
+  lng: 121.0334
+  osm: n4763826221
+
+- kind: national
+  name: Bureau of Jail Management and Penology
+  lat: 14.57745
+  lng: 121.03303
+  osm: n4763067523
+
+- kind: national
+  name: National Nutrition Council
+  lat: 14.58533
+  lng: 121.03524
+  osm: n11659135427
+
+- kind: national
+  name: Commission on Population
+  lat: 14.58424
+  lng: 121.03336
+  osm: r17261151
+
+- kind: national
+  name: Pag-IBIG Fund Head Office
+  lat: 14.58969
+  lng: 121.03874
+  osm: n3509432475
+
+- kind: national
+  name: Pag-IBIG Fund, Shaw Zentrum
+  lat: 14.58794
+  lng: 121.04413
+  osm: n13982043202
+
+- kind: national
+  name: PhilHealth Local Health Insurance Office
+  lat: 14.58799
+  lng: 121.04393
+  osm: n13982043203
+
+- kind: national
+  name: Social Security System, Shaw Branch
+  lat: 14.588
+  lng: 121.04403
+  osm: n13982043301
+
+- kind: national
+  name: Philippine Charity Sweepstakes Office Head Office
+  lat: 14.58509
+  lng: 121.0495
+  osm: w278761804
+
+- kind: national
+  name:
+    Philippine Coast Guard Weapons, Electronics and Information System Service
+    Command
+  lat: 14.58613
+  lng: 121.03293
+  osm: w103253146
+
+- kind: police
+  name: Mandaluyong City Police Station
+  lat: 14.57721
+  lng: 121.03309
+  osm: n14377182498
+
+- kind: police
+  name: Mandaluyong Station Patrol Unit
+  lat: 14.5826
+  lng: 121.05209
+  osm: n5142570722
+
+- kind: police
+  name: Police Community Precinct 1
+  lat: 14.58979
+  lng: 121.02684
+  osm: n255063581
+
+- kind: police
+  name: Police Community Precinct 2
+  lat: 14.58123
+  lng: 121.02983
+  osm: n255050240
+
+- kind: police
+  name: Police Community Precinct 5
+  lat: 14.57782
+  lng: 121.05353
+  osm: n4196499445
+
+- kind: police
+  name: Addition Hills Police Sub-station 2
+  lat: 14.58513
+  lng: 121.03654
+  osm: n9768685613
+
+- kind: police
+  name: Barangka Police Sub-station
+  lat: 14.57151
+  lng: 121.04109
+  osm: n11173244240
+
+- kind: police
+  name: Hulo Police Sub-station
+  lat: 14.57015
+  lng: 121.03185
+  osm: n10913135789
+
+- kind: police
+  name: Mabini-J. Rizal Police Sub-station
+  lat: 14.58552
+  lng: 121.02111
+  osm: n11743296258
+
+- kind: police
+  name: Mauway Police Sub-station
+  lat: 14.579
+  lng: 121.04399
+  osm: w279275151
+
+- kind: police
+  name: Pag-asa Police Sub-station
+  lat: 14.59139
+  lng: 121.02539
+  osm: n5142570622
+
+- kind: fire
+  name: Mandaluyong Central Fire Station
+  lat: 14.57704
+  lng: 121.03323
+  osm: n255066041
+
+- kind: fire
+  name: Kalentong Fire Sub-station
+  lat: 14.59125
+  lng: 121.02528
+  osm: n255062128
+
+- kind: fire
+  name: Hulo Fire Sub-station
+  lat: 14.5702
+  lng: 121.03178
+  osm: n10913135790
+
+- kind: fire
+  name: Mauway Fire Sub-station
+  lat: 14.58031
+  lng: 121.04411
+  osm: w371679706
+
+- kind: fire
+  name: Greenfield District Fire Sub-station
+  lat: 14.57777
+  lng: 121.05344
+  osm: w419618355
+
+- kind: fire
+  name: Addition Hills Block 34 Fire Sub-station
+  lat: 14.58584
+  lng: 121.03438
+  osm: w777179991
+
+- kind: fire
+  name: Barangka Itaas Barangay Fire Station
+  lat: 14.57157
+  lng: 121.04128
+  osm: n6544633980
+
+- kind: rail
+  name: Boni Station (MRT-3)
+  lat: 14.57383
+  lng: 121.04822
+  osm: w60198083
+
+- kind: rail
+  name: Shaw Boulevard Station (MRT-3)
+  lat: 14.58106
+  lng: 121.05348
+  osm: n11329697352
+
+- kind: rail
+  name: Ortigas Station (MRT-3)
+  lat: 14.58789
+  lng: 121.05673
+  osm: w60194145
