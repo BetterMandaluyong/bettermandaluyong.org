@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { BarangayList } from "../../components/BarangayList.tsx";
 import { Container } from "../../components/Container.tsx";
 import { OfficialList, officialItem } from "../../components/OfficialList.tsx";
+import { PageMasthead } from "../../components/PageMasthead.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { SourceNote } from "../../components/SourceNote.tsx";
@@ -36,19 +37,10 @@ export const metadata: Metadata = {
 export default function BarangaysPage() {
   return (
     <PageShell>
-      <section className="border-b border-ed-rule bg-ed-paper-2">
-        <Container className="py-14 md:py-20">
-          <div className="max-w-3xl">
-            <h1 className="type-display m-0 text-balance">{COPY.heading}</h1>
-            <p className="type-lede m-0 mt-6 max-w-[65ch] text-pretty">
-              {COPY.intro}
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageMasthead title={COPY.heading} lede={COPY.intro} />
 
       <section className="border-b border-ed-rule">
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <BarangayMap
             geojsonUrl={BOUNDARIES_URL}
             barangays={MAP_BARANGAYS}
@@ -59,7 +51,7 @@ export default function BarangaysPage() {
       </section>
 
       <section className="border-b border-ed-rule">
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <SectionHeader label={COPY.listHeading} meta={COPY.homeMeta} />
           <BarangayList
             barangays={BARANGAYS}
@@ -77,7 +69,7 @@ export default function BarangaysPage() {
       </section>
 
       <section>
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <SectionHeader label={COPY.repsHeading} />
           <p className="type-body m-0 mb-8 max-w-[65ch]">{COPY.districtNote}</p>
           <div className="flex flex-col gap-10">

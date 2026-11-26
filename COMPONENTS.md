@@ -29,13 +29,32 @@ target), `SiteFooter`.
 
 ```tsx
 <PageShell>
-  <section className="border-b border-ed-rule bg-ed-paper-2">
-    <Container className="py-14">{/* masthead */}</Container>
-  </section>
-  <section>
-    <Container className="py-12">{/* content */}</Container>
+  <PageMasthead title="Barangays" lede="…" />
+  <section className="border-b border-ed-rule">
+    <Container className="py-8 md:py-12">{/* content */}</Container>
   </section>
 </PageShell>
+```
+
+### `PageMasthead` (BetterGov)
+
+`components/PageMasthead.tsx`: the first band of every page. A flat `ed-paper-2`
+band with a dark `ed-ink` rule under it, padding 28px on phones and 64px from
+`md` up, and the page's one `type-display` title. Props: `title`, optional
+`lede` (`type-lede`), `before` (above everything, usually a back `ArrowLink`),
+`eyebrow` (a small label right above the title), and `children` (below the lede:
+flags, notes, a jump menu). `titleAs="h2"` for a demo inside another page.
+BetterGov's navy `hero` variant isn't ported; the home page keeps its own
+masthead with the call-to-action buttons.
+
+```tsx
+<PageMasthead
+  title={person.name}
+  before={<ArrowLink href="/people">All people</ArrowLink>}
+  eyebrow={<p className="type-label m-0 text-ed-ink-3">Councilor</p>}
+>
+  <Flag variant="navy">District 1</Flag>
+</PageMasthead>
 ```
 
 ### `Container` (BetterGov)
@@ -75,6 +94,11 @@ Rendered by `PageShell`; you don't use them directly.
   so the focus ring stays visible.
 
 ## Actions and links
+
+Plain `<a>` elements are navy and underlined (`globals.css`), which is right for
+a link inside a sentence. A standalone link (navigation, a list or card title, a
+contact row) adds `no-underline hover:underline`. `Button`, `ArrowLink`, and
+`Card` already handle this.
 
 ### `Button` (BetterGov)
 

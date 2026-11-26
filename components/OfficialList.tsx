@@ -33,7 +33,8 @@ export function officialItem(o: CityOfficial): OfficialItem {
   };
 }
 
-const CONTACT_LINK = "type-ui block py-1.5 text-ed-navy";
+const CONTACT_LINK =
+  "type-ui block py-1.5 text-ed-navy no-underline hover:underline";
 
 function Contacts({ item }: { item: OfficialItem }) {
   const phones = (item.phones ?? []).flatMap(parsePhones);
@@ -129,7 +130,10 @@ export function OfficialList({
             )}
           >
             {item.href ? (
-              <a href={item.href} className="type-body text-ed-navy">
+              <a
+                href={item.href}
+                className="type-body text-ed-navy no-underline hover:underline"
+              >
                 {item.name}
               </a>
             ) : (
@@ -154,7 +158,10 @@ export function OfficialList({
           <p className="type-label m-0 text-ed-ink-3">{item.role}</p>
           <h3 className="type-subheading m-0 mt-1">
             {item.href ? (
-              <a href={item.href} className="text-ed-navy">
+              <a
+                href={item.href}
+                className="text-ed-navy no-underline hover:underline"
+              >
                 {item.name}
               </a>
             ) : (

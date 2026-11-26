@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { BarangayList } from "../../components/BarangayList.tsx";
 import { Container } from "../../components/Container.tsx";
 import { OfficialList, officialItem } from "../../components/OfficialList.tsx";
+import { PageMasthead } from "../../components/PageMasthead.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { SourceNote } from "../../components/SourceNote.tsx";
@@ -35,21 +36,13 @@ export const metadata: Metadata = {
 export default function DistrictsPage() {
   return (
     <PageShell>
-      <section className="border-b border-ed-rule bg-ed-paper-2">
-        <Container className="py-14 md:py-20">
-          <div className="max-w-3xl">
-            <h1 className="type-display m-0 text-balance">
-              {DISTRICTS_COPY.heading}
-            </h1>
-            <p className="type-lede m-0 mt-6 max-w-[65ch] text-pretty">
-              {DISTRICTS_COPY.intro}
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageMasthead
+        title={DISTRICTS_COPY.heading}
+        lede={DISTRICTS_COPY.intro}
+      />
 
       <section className="border-b border-ed-rule">
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <SectionHeader label={DISTRICTS_COPY.houseHeading} />
           <OfficialList
             variant="card"
@@ -67,7 +60,7 @@ export default function DistrictsPage() {
             id={`district-${district}`}
             className="scroll-mt-4 border-b border-ed-rule"
           >
-            <Container className="py-12 md:py-16">
+            <Container className="py-8 md:py-12">
               <SectionHeader
                 label={COPY.district(district)}
                 meta={DISTRICTS_COPY.barangays(district, barangays.length)}

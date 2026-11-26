@@ -96,7 +96,7 @@ export default async function HomePage({
       </section>
 
       <section className="border-b border-ed-rule">
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <SectionHeader label={COPY.cityHeading} meta={COPY.cityMeta} />
           <OfficialList
             variant="card"
@@ -111,7 +111,7 @@ export default async function HomePage({
       </section>
 
       <section className="border-b border-ed-rule">
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <SectionHeader label={COPY.captainsHeading} meta="27 barangays" />
           <p className="type-body m-0 mb-6 max-w-[65ch]">
             {COPY.captainsIntro}
@@ -130,7 +130,7 @@ export default async function HomePage({
       </section>
 
       <section className="border-b border-ed-rule">
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <SectionHeader label={COPY.skChairsHeading} meta="27 barangays" />
           <p className="type-body m-0 mb-6 max-w-[65ch]">
             {COPY.skChairsIntro}
@@ -145,7 +145,7 @@ export default async function HomePage({
       </section>
 
       <section>
-        <Container className="py-12 md:py-16">
+        <Container className="py-8 md:py-12">
           <SectionHeader label={NEWS.latestHeading} />
           {news.length > 0 ? (
             <NewsList compact items={news} />

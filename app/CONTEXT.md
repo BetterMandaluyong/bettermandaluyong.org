@@ -9,8 +9,9 @@ page out with shared components.
 - **Dynamic routes are prebuilt.** `barangays/[slug]` and `people/[slug]` list
   every slug in `generateStaticParams` and call `notFound()` for anything else.
 - **Every page is `PageShell`, then full-width bands** (`<section>` with
-  `border-b border-ed-rule`), each with a `Container` inside. The first band is
-  the masthead (`bg-ed-paper-2`, one `type-display` `<h1>`).
+  `border-b border-ed-rule`), each with a `Container` (`py-8 md:py-12`) inside.
+  The first band is `PageMasthead`, which holds the page's one `<h1>`; don't
+  hand-roll a masthead.
 - **Third-party data needs a visible credit:** a `SourceNote` under it.
 - **`storybook/`** is the component catalog (noindex). New or changed UI gets a
   specimen there in the same change, with obviously sample data, never real
