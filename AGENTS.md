@@ -49,6 +49,33 @@ When a token changes, update **DESIGN.md** first, then `app/globals.css`. When a
 component changes, update **COMPONENTS.md** and its `/storybook` specimen in the
 same change.
 
+### Directory context: `CONTEXT.md`
+
+Some directories have a `CONTEXT.md` with the rules that apply only there:
+conventions, who writes the files, and what must change together. **Before
+reading or changing files in a directory, read the `CONTEXT.md` in it and in
+each parent directory up to the repo root.** For example, editing
+`data/people/*.yaml` means reading `data/CONTEXT.md` and
+`data/people/CONTEXT.md` first. A nearer file adds to this one and to the files
+above it; if they ever conflict, this file wins, so fix the conflict in the same
+change.
+
+| File                        | Covers                                                    |
+| --------------------------- | --------------------------------------------------------- |
+| `app/CONTEXT.md`            | Routes, page exports, page layout, `/storybook`           |
+| `components/CONTEXT.md`     | Server components, ported headers, `content.ts`, `cx`     |
+| `islands/CONTEXT.md`        | Client components: when, props, no-JS fallback, hydration |
+| `data/CONTEXT.md`           | The YAML data, validation, loaders, who writes what       |
+| `data/people/CONTEXT.md`    | Person files: ULID ids, frozen slugs, external `ids:`     |
+| `data/barangays/CONTEXT.md` | Barangay files: person ids, the importer, sources         |
+| `data/news/CONTEXT.md`      | Bot-owned news files: don't edit by hand                  |
+| `scripts/CONTEXT.md`        | Plain-Node scripts, importers that overwrite, no deploys  |
+| `utils/CONTEXT.md`          | Pure, tested logic importable by pages, islands, scripts  |
+
+When you learn a rule that applies to a single directory, write it in that
+directory's `CONTEXT.md` (create one if needed and add it to this table), not
+here. Never put a `CONTEXT.md` in `public/`: everything there is served as-is.
+
 ## Attribution — credit what we reuse
 
 Open source works because people credit each other. Before copying anything

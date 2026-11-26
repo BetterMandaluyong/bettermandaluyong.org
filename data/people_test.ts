@@ -104,7 +104,9 @@ describe("officeholders", () => {
 describe("office files", () => {
   const files = [
     "data/city-officials.yaml",
-    ...readdirSync("data/barangays").map((f) => `data/barangays/${f}`),
+    ...readdirSync("data/barangays")
+      .filter((f) => f.endsWith(".yaml"))
+      .map((f) => `data/barangays/${f}`),
   ];
   const nameOf = (id: string) => getPersonById(id)?.name;
 
