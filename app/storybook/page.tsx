@@ -3,11 +3,14 @@ import type { ReactNode } from "react";
 import { ArrowLink } from "../../components/ArrowLink.tsx";
 import { Button } from "../../components/Button.tsx";
 import { BarangayList } from "../../components/BarangayList.tsx";
+import { BudgetProjectList } from "../../components/BudgetProjectList.tsx";
+import { BudgetYearList } from "../../components/BudgetYearList.tsx";
 import { Card } from "../../components/Card.tsx";
 import { Container } from "../../components/Container.tsx";
 import { Eyebrow } from "../../components/Eyebrow.tsx";
 import { Flag } from "../../components/Flag.tsx";
 import { NewsList } from "../../components/NewsList.tsx";
+import { Notice } from "../../components/Notice.tsx";
 import { OfficialList } from "../../components/OfficialList.tsx";
 import { OrgChart, type OrgNode } from "../../components/OrgChart.tsx";
 import { PersonCards } from "../../components/PersonCard.tsx";
@@ -17,6 +20,7 @@ import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { DilgNote } from "../../components/DilgNote.tsx";
 import { SourceNote } from "../../components/SourceNote.tsx";
 import { SiteHeader } from "../../components/SiteHeader.tsx";
+import { StatList } from "../../components/StatList.tsx";
 import { UnofficialBar } from "../../components/UnofficialBar.tsx";
 import { HOME, SITE, mailto } from "../../components/content.ts";
 import {
@@ -29,7 +33,7 @@ import { MAP_PLACES, PLACE_KINDS } from "../../data/places.ts";
 import { BarangayExplorer } from "../../islands/BarangayExplorer.tsx";
 import { BarangayMap } from "../../islands/BarangayMap.tsx";
 import { FacebookFeed } from "../../islands/FacebookFeed.tsx";
-import type { NewsItem } from "../../data/schema.ts";
+import type { BudgetGaa, BudgetProject, NewsItem } from "../../data/schema.ts";
 import { COLOR_TOKENS, TYPE_UTILITIES } from "../../components/tokens.ts";
 
 export const metadata: Metadata = {
@@ -136,6 +140,74 @@ const SAMPLE_NEWS: NewsItem[] = [
     removedAt: "2026-01-20T10:00:00+08:00",
   },
 ];
+
+/** Obviously sample 2027 lines for the BudgetProjectList specimen; never real budget lines. */
+const SAMPLE_PROJECTS: BudgetProject[] = [
+  {
+    key: "dpwh:sample-1",
+    program: "dpwh",
+    title: "Sample: covered court in a sample barangay, 14.5873, 121.0388",
+    line: "Sample program line",
+    office: "Sample District Engineering Office",
+    status: "House bill only",
+    group: "house_only",
+    held: false,
+    nep: null,
+    house: 25000000,
+    delta: null,
+    url: "https://example.com/sample-line-1",
+    nepPdf: null,
+    housePdf: "https://example.com/sample.pdf#page=1",
+    lat: null,
+    lon: null,
+  },
+  {
+    key: "hfep:sample-2",
+    program: "hfep",
+    title: "Sample: medical equipment for a sample hospital",
+    line: null,
+    office: null,
+    status: "Higher in the House bill",
+    group: "increased",
+    held: true,
+    nep: 17500000,
+    house: 20000000,
+    delta: 2500000,
+    url: "https://example.com/sample-line-2",
+    nepPdf: "https://example.com/sample-nep.pdf#page=5",
+    housePdf: "https://example.com/sample-house.pdf#page=9",
+    lat: null,
+    lon: null,
+  },
+];
+
+const SAMPLE_PROGRAMS = {
+  dpwh: "Sample public works program",
+  fmr: "Sample roads program",
+  hfep: "Sample health facilities program",
+  nia: "Sample irrigation program",
+};
+
+/** Obviously sample enacted budgets for the BudgetYearList specimen. */
+const SAMPLE_GAA: BudgetGaa = {
+  fetchedAt: "2026-01-01",
+  years: [2024, 2025, 2026],
+  departments: { "00": "Sample Department" },
+  programs: [
+    {
+      key: "sample-a",
+      department: "00",
+      name: "Sample: drainage improvement",
+      amounts: { "2024": 15000000, "2026": 8000000 },
+    },
+    {
+      key: "sample-b",
+      department: "00",
+      name: "Sample: school building",
+      amounts: { "2026": 120000000 },
+    },
+  ],
+};
 
 /** A titled band, hairline-separated like every BetterGov page section. */
 function Band({ title, children }: { title: string; children: ReactNode }) {
@@ -374,6 +446,34 @@ export default function StorybookPage() {
         </Specimen>
         <Specimen name="OrgChart (columns on wide screens, a tree on phones; sample data only)">
           <OrgChart root={SAMPLE_ORG} label="Sample org chart" />
+        </Specimen>
+        <Specimen name="Notice (sample text)">
+          <Notice tag="Sample tag" title="Sample notice title.">
+            <p className="type-body m-0 mt-3">
+              Sample body text for a calm, standing notice.
+            </p>
+          </Notice>
+        </Specimen>
+        <Specimen name="StatList (sample figures)">
+          <StatList
+            label="Sample figures"
+            items={[
+              { label: "Sample count", value: "30", note: "A short note." },
+              { label: "Sample amount", value: "₱234 million" },
+              { label: "Another amount", value: "₱1.13 billion" },
+              { label: "No such line", value: "—", note: "A dash, never ₱0." },
+            ]}
+          />
+        </Specimen>
+        <Specimen name="BudgetProjectList (sample lines; one unconfirmed match)">
+          <BudgetProjectList
+            projects={SAMPLE_PROJECTS}
+            programs={SAMPLE_PROGRAMS}
+            label="Sample project lines"
+          />
+        </Specimen>
+        <Specimen name="BudgetYearList (sample years; 2026 open)">
+          <BudgetYearList gaa={SAMPLE_GAA} openYear={2026} />
         </Specimen>
         <Specimen name="SourceNote">
           <SourceNote

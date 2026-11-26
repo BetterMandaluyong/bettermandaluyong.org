@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   BARANGAYS,
   BETTERGOV,
+  BUDGET,
   DISTRICTS_COPY,
   FOOTER,
   NAV,
@@ -79,6 +80,13 @@ describe("content", () => {
       NEWS.heading,
       NEWS.facebookHeading,
       NEWS.latestHeading,
+      BUDGET.heading,
+      BUDGET.figuresHeading,
+      BUDGET.projectsHeading,
+      BUDGET.officeHeading,
+      BUDGET.gaaHeading,
+      BUDGET.aboutHeading,
+      BUDGET.excludedHeading,
     ];
     for (const heading of headings)
       expect(isTitleCase(heading), heading).toBe(true);
@@ -120,6 +128,12 @@ describe("content", () => {
   it("links the footer to this repo on GitHub", () => {
     const hrefs = FOOTER.columns.flatMap((c) => c.links.map((l) => l.href));
     expect(hrefs).toContain(SITE.repoUrl);
+  });
+
+  it("links the budget page's sources over https", () => {
+    expect(BUDGET.sourceUrl).toMatch(/^https:\/\//);
+    expect(BUDGET.docsUrl).toMatch(/^https:\/\//);
+    expect(BUDGET.licenseUrl).toMatch(/^https:\/\//);
   });
 
   it("uses absolute https links for the official city pages", () => {

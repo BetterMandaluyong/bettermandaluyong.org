@@ -10,3 +10,7 @@ design
 
 # Written by scripts/news_refresh.ts in its own fixed format.
 data/news/
+
+# Written by scripts/budget_refresh.ts in its own fixed format.
+data/budget/fy2027.yaml
+data/budget/gaa.yaml

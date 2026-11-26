@@ -3,6 +3,9 @@ import {
   duplicateSlugs,
   nameLookup,
   parseBarangay,
+  parseBudget2027,
+  parseBudgetGaa,
+  parseBudgetScope,
   parseCityOfficials,
   parseNewsFile,
   parsePerson,
@@ -462,5 +465,104 @@ describe("parseNewsFile", () => {
 
   it("rejects a bad file name", () => {
     expect(() => parse([], "2026-13")).toThrow(/YYYY-MM/);
+  });
+});
+
+describe("budget files", () => {
+  const scope = () => ({
+    place: "Mandaluyong",
+    region: "NCR",
+    district: "leg:mandaluyong-city:lone",
+    exclude: [{ id: "dpwh:x", reason: "A namesake elsewhere." }],
+  });
+
+  it("accepts a scope and needs a reason for every exclusion", () => {
+    expect(parseBudgetScope(scope(), "scope.yaml").exclude).toHaveLength(1);
+    const noReason = scope();
+    noReason.exclude = [{ id: "dpwh:x" } as never];
+    expect(() => parseBudgetScope(noReason, "scope.yaml")).toThrow(
+      "exclude[0].reason",
+    );
+    const badId = scope();
+    badId.exclude = [{ id: "x", reason: "r" }];
+    expect(() => parseBudgetScope(badId, "scope.yaml")).toThrow(
+      "exclude[0].id",
+    );
+  });
+
+  const fy = () => ({
+    fetched_at: "2026-11-26",
+    source: { built_at: "2026-10-26T00:00:00Z", commit: "abc", notice: "N." },
+    disclaimers: [
+      { id: "d", title: "T.", body: "B.", url: "https://example.com/d" },
+    ],
+    programs: { dpwh: "D", fmr: "F", hfep: "H", nia: "N" },
+    district: {
+      id: "leg:x",
+      label: "X",
+      url: "https://example.com/x",
+      attribution: "B",
+      attribution_label: "Shared",
+      offices: [],
+      headline: { gaa_2026: 3, nep_2027: 1, house_2027: 2 },
+      vs_proposal: { nep: 1, house: 2, delta: 1 },
+    },
+    projects: [
+      {
+        key: "dpwh:1",
+        program: "dpwh",
+        title: "T",
+        status: "House bill only",
+        group: "house_only",
+        nep: null,
+        house: 5,
+        url: "https://example.com/p",
+      },
+    ],
+  });
+
+  it("reads a 2027 snapshot, keeping a missing version as null", () => {
+    const b = parseBudget2027(fy(), "fy2027.yaml");
+    expect(b.projects[0]).toMatchObject({ nep: null, house: 5, held: false });
+  });
+
+  it("rejects a 2027 line with no amount in either version, or a fractional peso", () => {
+    const none = fy();
+    none.projects[0].house = null as never;
+    expect(() => parseBudget2027(none, "fy2027.yaml")).toThrow(
+      "at least one version",
+    );
+    const frac = fy();
+    frac.projects[0].house = 1.5;
+    expect(() => parseBudget2027(frac, "fy2027.yaml")).toThrow(
+      "projects[0].house",
+    );
+  });
+
+  it("rejects a 2027 snapshot without disclaimers", () => {
+    const d = fy();
+    d.disclaimers = [];
+    expect(() => parseBudget2027(d, "fy2027.yaml")).toThrow("disclaimers");
+  });
+
+  it("checks GAA programs against the departments and years", () => {
+    const gaa = (amounts: Record<string, number>, department = "18") => ({
+      fetched_at: "2026-11-26",
+      years: [2025, 2026],
+      departments: { "18": "Public Works" },
+      programs: [{ key: "k", department, name: "N", amounts }],
+    });
+    expect(
+      parseBudgetGaa(gaa({ "2026": 1 }), "gaa.yaml").programs[0].amounts,
+    ).toEqual({ "2026": 1 });
+    expect(() => parseBudgetGaa(gaa({ "2020": 1 }), "gaa.yaml")).toThrow(
+      "is not one of the years",
+    );
+    expect(() => parseBudgetGaa(gaa({ "2026": 0 }), "gaa.yaml")).toThrow(
+      "positive whole number",
+    );
+    expect(() => parseBudgetGaa(gaa({ "2026": 1 }, "99"), "gaa.yaml")).toThrow(
+      "not in departments",
+    );
   });
 });

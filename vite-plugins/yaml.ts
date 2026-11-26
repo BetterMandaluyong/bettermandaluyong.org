@@ -1,10 +1,20 @@
 import { parse } from "yaml";
 import {
   parseBarangay,
+  parseBudget2027,
+  parseBudgetGaa,
+  parseBudgetScope,
   parseCityOfficials,
   parseNewsFile,
   parsePerson,
 } from "../data/schema.ts";
+
+/** The budget files and their validators, by name under data/budget/. */
+const BUDGET_FILES: Record<string, (data: unknown, file: string) => unknown> = {
+  "scope.yaml": parseBudgetScope,
+  "fy2027.yaml": parseBudget2027,
+  "gaa.yaml": parseBudgetGaa,
+};
 
 /**
  * Converts the source of a `.yaml` file into an ES module whose default
@@ -44,6 +54,10 @@ export function validateData(path: string, data: unknown): void {
   } else {
     const news = path.match(/(?:^|\/)data\/news\/([^/]+)\.yaml$/);
     if (news) parseNewsFile(data, `data/news/${news[1]}.yaml`, news[1]);
+    const budget = path.match(/(?:^|\/)data\/budget\/([^/]+\.yaml)$/);
+    if (budget && BUDGET_FILES[budget[1]]) {
+      BUDGET_FILES[budget[1]](data, `data/budget/${budget[1]}`);
+    }
   }
 }
 

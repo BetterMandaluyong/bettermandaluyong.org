@@ -1,0 +1,14 @@
+# What scripts/budget_refresh.ts asks the BetterGov.ph Budget API for.
+# Hand-edited. After a change, run the script (see DEPLOYMENT.md).
+#
+# place:    searched in every 2027 project title and every 2020–2026 program
+#           name; a line is kept only where it appears as a whole word.
+# region:   API region key; 2027 lines in another region are left out.
+# district: the API's id for the city's legislative district card.
+# exclude:  lines left out by hand, each with a reason the page publishes.
+#           `<program>:<id>` for a 2027 line (dpwh, fmr, hfep, nia), or
+#           `gaa:<key>` for a 2020–2026 program (keys are in the data files).
+place: Mandaluyong
+region: NCR
+district: leg:mandaluyong-city:lone
+exclude: []

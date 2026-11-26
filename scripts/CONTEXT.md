@@ -20,5 +20,8 @@ running a script.
   script like `check_dynasties.ts` isn't part of `pnpm test`.
 - `news_refresh.ts` belongs to the news bot workflow. Change it with care, and
   with tests in `utils/news/`.
+- `budget_refresh.ts` rewrites `data/budget/fy2027.yaml` and `gaa.yaml` from the
+  Budget API. It fails rather than write totals that don't reconcile with the
+  API's own; run it by hand (DEPLOYMENT.md) and review the diff.
 - Never add a deploy or Cloudflare login step here: those are human steps
   (DEPLOYMENT.md).

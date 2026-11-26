@@ -995,3 +995,383 @@ export function parseNewsFile(
     };
   });
 }
+
+// ---------------------------------------------------------------------------
+// National budget (data/budget/). scope.yaml is hand-edited; fy2027.yaml and
+// gaa.yaml are written by scripts/budget_refresh.ts from the BetterGov.ph
+// Budget API (https://budget.bettergov.ph/docs). Amounts are whole pesos.
+
+/** The 2027 programs whose House bill lists projects one by one. */
+export type BudgetProgram = "dpwh" | "fmr" | "hfep" | "nia";
+
+export const BUDGET_PROGRAMS: readonly BudgetProgram[] = [
+  "dpwh",
+  "fmr",
+  "hfep",
+  "nia",
+];
+
+/** A line left out by hand, and why. Shown on the page. */
+export type BudgetExclusion = {
+  /** `<program>:<api id>` for a 2027 line, `gaa:<fam_key>` for a 2020–2026 program. */
+  id: string;
+  reason: string;
+};
+
+/** `data/budget/scope.yaml`: what the refresh script asks the API for. */
+export type BudgetScope = {
+  /** The place name searched in titles, kept only as a whole word. */
+  place: string;
+  /** API region key; 2027 lines in another region are dropped. */
+  region: string;
+  /** The API's legislative district id, e.g. "leg:mandaluyong-city:lone". */
+  district: string;
+  exclude: BudgetExclusion[];
+};
+
+/** One disclaimer, word for word as the API sends it. */
+export type BudgetDisclaimer = {
+  id: string;
+  title: string;
+  body: string;
+  url: string;
+};
+
+/** A DPWH office that serves the district, with its whole (unsplit) tier. */
+export type BudgetOffice = {
+  name: string;
+  kind: string;
+  tier: string;
+  tierText: string;
+  /** Labels of the other districts the office serves. */
+  coServed: string[];
+};
+
+/** The API's card for the city's legislative district. */
+export type BudgetDistrict = {
+  id: string;
+  label: string;
+  url: string;
+  /** "A", "B", "mixed" or "none": whose budget the figures are. */
+  attribution: string;
+  attributionLabel: string;
+  offices: BudgetOffice[];
+  /** Whole-office figures; shared and never split when the tier is B. */
+  headline: {
+    gaa2026: number | null;
+    nep2027: number | null;
+    house2027: number | null;
+  };
+  /** The like-for-like 2027 change on the same named projects. */
+  vsProposal: {
+    nep: number | null;
+    house: number | null;
+    delta: number | null;
+  };
+};
+
+/** One 2027 project line: the NEP against the House bill. */
+export type BudgetProject = {
+  /** `<program>:<api id>`; also the exclusion id. */
+  key: string;
+  program: BudgetProgram;
+  title: string;
+  /** The program line the documents file it under. */
+  line: string | null;
+  office: string | null;
+  /** The API's plain status label, e.g. "House bill only". */
+  status: string;
+  /** The API's group: house_only, nep_only, unchanged, increased, decreased, scope_review. */
+  group: string;
+  /** True for an unconfirmed (fuzzy or ambiguous) match. */
+  held: boolean;
+  /** null means the document has no such line, never zero. */
+  nep: number | null;
+  house: number | null;
+  delta: number | null;
+  /** The line's page on budget.bettergov.ph. */
+  url: string;
+  nepPdf: string | null;
+  housePdf: string | null;
+  lat: number | null;
+  lon: number | null;
+};
+
+/** `data/budget/fy2027.yaml`. */
+export type Budget2027 = {
+  /** When the snapshot was taken (YYYY-MM-DD). */
+  fetchedAt: string;
+  /** The API's build of the comparison. */
+  source: { builtAt: string; commit: string; notice: string };
+  disclaimers: BudgetDisclaimer[];
+  /** Program key → its label as the API publishes it. */
+  programs: Record<BudgetProgram, string>;
+  district: BudgetDistrict;
+  projects: BudgetProject[];
+};
+
+/** One 2020–2026 program family (one name in one agency) that names the place. */
+export type BudgetGaaProgram = {
+  /** The API's `fam_key`; also the exclusion id after `gaa:`. */
+  key: string;
+  department: string;
+  name: string;
+  /** Year → amount, only for years where the amount is above zero. */
+  amounts: Record<string, number>;
+};
+
+/** `data/budget/gaa.yaml`. */
+export type BudgetGaa = {
+  fetchedAt: string;
+  years: number[];
+  /** Department id → name. */
+  departments: Record<string, string>;
+  programs: BudgetGaaProgram[];
+};
+
+function peso(o: Obj, key: string, file: string, path = key): number | null {
+  const v = o[key];
+  if (v === undefined || v === null) return null;
+  if (typeof v !== "number" || !Number.isInteger(v)) {
+    fail(file, path, "must be a whole number of pesos or null");
+  }
+  return v;
+}
+
+function optNum(o: Obj, key: string, file: string, path = key): number | null {
+  const v = o[key];
+  if (v === undefined || v === null) return null;
+  if (typeof v !== "number" || !Number.isFinite(v)) {
+    fail(file, path, "must be a number or null");
+  }
+  return v;
+}
+
+function list(o: Obj, key: string, file: string, path = key): unknown[] {
+  const v = o[key] ?? [];
+  if (!Array.isArray(v)) fail(file, path, "must be a list");
+  return v;
+}
+
+function optUrl(o: Obj, key: string, file: string, path = key): string | null {
+  return o[key] === undefined || o[key] === null
+    ? null
+    : url(o, key, file, path);
+}
+
+/** Checks `data/budget/scope.yaml`. Exclusion ids must be unique and carry a reason. */
+export function parseBudgetScope(raw: unknown, file: string): BudgetScope {
+  const o = obj(raw, file, "document");
+  const district = str(o, "district", file);
+  if (!district.startsWith("leg:")) {
+    fail(file, "district", "must be an API district id like leg:…");
+  }
+  const seen = new Set<string>();
+  const exclude = list(o, "exclude", file).map((entry, i) => {
+    const at = `exclude[${i}]`;
+    const e = obj(entry, file, at);
+    const id = str(e, "id", file, `${at}.id`);
+    if (!/^(dpwh|fmr|hfep|nia|gaa):.+/.test(id)) {
+      fail(
+        file,
+        `${at}.id`,
+        "must start with dpwh:, fmr:, hfep:, nia: or gaa:",
+      );
+    }
+    if (seen.has(id)) fail(file, `${at}.id`, `${id} appears twice`);
+    seen.add(id);
+    return { id, reason: str(e, "reason", file, `${at}.reason`) };
+  });
+  return {
+    place: str(o, "place", file),
+    region: str(o, "region", file),
+    district,
+    exclude,
+  };
+}
+
+function parseDisclaimers(o: Obj, file: string): BudgetDisclaimer[] {
+  const out = list(o, "disclaimers", file).map((entry, i) => {
+    const at = `disclaimers[${i}]`;
+    const d = obj(entry, file, at);
+    return {
+      id: str(d, "id", file, `${at}.id`),
+      title: str(d, "title", file, `${at}.title`),
+      body: str(d, "body", file, `${at}.body`),
+      url: url(d, "url", file, `${at}.url`),
+    };
+  });
+  if (out.length === 0) fail(file, "disclaimers", "must not be empty");
+  return out;
+}
+
+/** Checks `data/budget/fy2027.yaml`. Keys are unique; amounts are whole pesos or null. */
+export function parseBudget2027(raw: unknown, file: string): Budget2027 {
+  const o = obj(raw, file, "document");
+  const s = obj(o.source, file, "source");
+  const p = obj(o.programs, file, "programs");
+  const programs = {} as Record<BudgetProgram, string>;
+  for (const key of BUDGET_PROGRAMS) {
+    programs[key] = str(p, key, file, `programs.${key}`);
+  }
+  const d = obj(o.district, file, "district");
+  const h = obj(d.headline, file, "district.headline");
+  const v = obj(d.vs_proposal, file, "district.vs_proposal");
+  const seen = new Set<string>();
+  const projects = list(o, "projects", file).map((entry, i): BudgetProject => {
+    const at = `projects[${i}]`;
+    const r = obj(entry, file, at);
+    const key = str(r, "key", file, `${at}.key`);
+    if (seen.has(key)) fail(file, `${at}.key`, `${key} appears twice`);
+    seen.add(key);
+    const program = str(r, "program", file, `${at}.program`);
+    if (!BUDGET_PROGRAMS.includes(program as BudgetProgram)) {
+      fail(
+        file,
+        `${at}.program`,
+        `must be one of ${BUDGET_PROGRAMS.join(", ")}`,
+      );
+    }
+    if (!key.startsWith(`${program}:`)) {
+      fail(file, `${at}.key`, `must start with ${program}:`);
+    }
+    const held = r.held ?? false;
+    if (typeof held !== "boolean")
+      fail(file, `${at}.held`, "must be true or false");
+    const nep = peso(r, "nep", file, `${at}.nep`);
+    const house = peso(r, "house", file, `${at}.house`);
+    if (nep === null && house === null) {
+      fail(file, at, "must have an amount in at least one version");
+    }
+    return {
+      key,
+      program: program as BudgetProgram,
+      title: str(r, "title", file, `${at}.title`),
+      line: optStr(r, "line", file, `${at}.line`) ?? null,
+      office: optStr(r, "office", file, `${at}.office`) ?? null,
+      status: str(r, "status", file, `${at}.status`),
+      group: str(r, "group", file, `${at}.group`),
+      held,
+      nep,
+      house,
+      delta: peso(r, "delta", file, `${at}.delta`),
+      url: url(r, "url", file, `${at}.url`),
+      nepPdf: optUrl(r, "nep_pdf", file, `${at}.nep_pdf`),
+      housePdf: optUrl(r, "house_pdf", file, `${at}.house_pdf`),
+      lat: optNum(r, "lat", file, `${at}.lat`),
+      lon: optNum(r, "lon", file, `${at}.lon`),
+    };
+  });
+  return {
+    fetchedAt: isoDate(o, "fetched_at", file, "fetched_at"),
+    source: {
+      builtAt: str(s, "built_at", file, "source.built_at"),
+      commit: str(s, "commit", file, "source.commit"),
+      notice: str(s, "notice", file, "source.notice"),
+    },
+    disclaimers: parseDisclaimers(o, file),
+    programs,
+    district: {
+      id: str(d, "id", file, "district.id"),
+      label: str(d, "label", file, "district.label"),
+      url: url(d, "url", file, "district.url"),
+      attribution: str(d, "attribution", file, "district.attribution"),
+      attributionLabel: str(
+        d,
+        "attribution_label",
+        file,
+        "district.attribution_label",
+      ),
+      offices: list(d, "offices", file, "district.offices").map((entry, i) => {
+        const at = `district.offices[${i}]`;
+        const f = obj(entry, file, at);
+        return {
+          name: str(f, "name", file, `${at}.name`),
+          kind: str(f, "kind", file, `${at}.kind`),
+          tier: str(f, "tier", file, `${at}.tier`),
+          tierText: str(f, "tier_text", file, `${at}.tier_text`),
+          coServed: strList(f, "co_served", file, `${at}.co_served`),
+        };
+      }),
+      headline: {
+        gaa2026: peso(h, "gaa_2026", file, "district.headline.gaa_2026"),
+        nep2027: peso(h, "nep_2027", file, "district.headline.nep_2027"),
+        house2027: peso(h, "house_2027", file, "district.headline.house_2027"),
+      },
+      vsProposal: {
+        nep: peso(v, "nep", file, "district.vs_proposal.nep"),
+        house: peso(v, "house", file, "district.vs_proposal.house"),
+        delta: peso(v, "delta", file, "district.vs_proposal.delta"),
+      },
+    },
+    projects,
+  };
+}
+
+/**
+ * Checks `data/budget/gaa.yaml`. Every program's department must be listed,
+ * every amount must be a positive whole number in one of `years`.
+ */
+export function parseBudgetGaa(raw: unknown, file: string): BudgetGaa {
+  const o = obj(raw, file, "document");
+  const years = list(o, "years", file).map((y, i) => {
+    if (typeof y !== "number" || !Number.isInteger(y) || y < 2000) {
+      fail(file, `years[${i}]`, "must be a year");
+    }
+    return y;
+  });
+  if (years.length === 0) fail(file, "years", "must not be empty");
+  const deps = obj(o.departments, file, "departments");
+  const departments: Record<string, string> = {};
+  for (const id of Object.keys(deps)) {
+    departments[id] = str(deps, id, file, `departments.${id}`);
+  }
+  const seen = new Set<string>();
+  const programs = list(o, "programs", file).map(
+    (entry, i): BudgetGaaProgram => {
+      const at = `programs[${i}]`;
+      const r = obj(entry, file, at);
+      const key = str(r, "key", file, `${at}.key`);
+      if (seen.has(key)) fail(file, `${at}.key`, `${key} appears twice`);
+      seen.add(key);
+      const department = str(r, "department", file, `${at}.department`);
+      if (!(department in departments)) {
+        fail(file, `${at}.department`, `${department} is not in departments`);
+      }
+      const a = obj(r.amounts, file, `${at}.amounts`);
+      const amounts: Record<string, number> = {};
+      for (const [year, amount] of Object.entries(a)) {
+        if (!years.includes(Number(year))) {
+          fail(file, `${at}.amounts.${year}`, "is not one of the years");
+        }
+        if (
+          typeof amount !== "number" ||
+          !Number.isInteger(amount) ||
+          amount <= 0
+        ) {
+          fail(
+            file,
+            `${at}.amounts.${year}`,
+            "must be a positive whole number",
+          );
+        }
+        amounts[year] = amount;
+      }
+      if (Object.keys(amounts).length === 0) {
+        fail(file, `${at}.amounts`, "must have at least one year");
+      }
+      return {
+        key,
+        department,
+        name: str(r, "name", file, `${at}.name`),
+        amounts,
+      };
+    },
+  );
+  return {
+    fetchedAt: isoDate(o, "fetched_at", file, "fetched_at"),
+    years,
+    departments,
+    programs,
+  };
+}
