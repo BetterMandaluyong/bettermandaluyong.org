@@ -18,6 +18,9 @@ vi.mock("next/navigation", () => ({
   notFound: () => {
     throw new Error("notFound");
   },
+  redirect: () => {
+    throw new Error("redirect");
+  },
 }));
 
 const APP = dirname(fileURLToPath(import.meta.url));

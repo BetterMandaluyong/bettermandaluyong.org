@@ -628,9 +628,32 @@ export const NOTICES = {
   removed: "Removed from the city site",
   newer: "Newer",
   older: "Older",
+  previous: "Previous",
+  next: "Next",
   allKinds: "All",
   source: "From",
   sourceLink: "mandaluyong.gov.ph",
+  filtersLabel: "Search and filter notices",
+  searchLabel: "Search titles",
+  searchPlaceholder: "e.g. medical, x-ray, road",
+  kindLabel: "Type",
+  dateLegend: "Date posted",
+  fromLabel: "From",
+  toLabel: "To",
+  sortLabel: "Sort by",
+  sorts: {
+    newest: "Newest first",
+    oldest: "Oldest first",
+    title: "Title (A to Z)",
+  },
+  apply: "Apply filters",
+  clear: "Clear filters",
+  showing: (first: number, last: number, total: number) =>
+    total === 1
+      ? "1 notice"
+      : `Showing ${first.toLocaleString("en-PH")}–${last.toLocaleString("en-PH")} of ${total.toLocaleString("en-PH")} notices`,
+  noMatches:
+    "No notices match these filters. Try fewer words or a wider date range.",
 } as const;
 
 /** What each kind of bid notice is called on `/bids` (plural, for the filters) and on each row. */
@@ -660,7 +683,6 @@ export const BIDS = {
     "We check the city's bids page every day. Every change we record, including documents the city later takes down, is kept in public history.",
   historyLink: "See the history on GitHub",
   cityLink: "The city's bids page",
-  filterLabel: "Notice types",
   pagesLabel: "Pages",
   empty: "No bid notices have been recorded yet.",
   noPage: "No notices here.",

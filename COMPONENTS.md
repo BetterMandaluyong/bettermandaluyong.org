@@ -147,7 +147,7 @@ destination.
 navy outline, the current one filled navy with `aria-current="page"`. Plain
 links, so filters work without JavaScript. Takes `label` (the `<nav>`'s
 accessible name) and `links: { label, href, current }[]`. Used for the
-categories on `/news` and the notice types on `/bids`.
+categories on `/news`.
 
 ```tsx
 <FilterNav
@@ -411,6 +411,27 @@ the kind as a `Flag` when `labels` (kind → text) has one, and a red `Flag`
 
 ```tsx
 <NoticeList items={items} labels={{ itb: "Invitation to bid" }} />
+```
+
+### `NoticeFilters`
+
+`components/NoticeFilters.tsx`: server component. The search and filter form
+above a notice list: a title search, a type dropdown ("All" plus `kinds`:
+`{ value, label }[]`), a "Date posted" from–to range, and the sort order
+(`NOTICE_SORTS`), then "Apply filters" and, when `active`, a "Clear filters"
+link back to `action`. A plain GET form to `action`, so it works without
+JavaScript and each filtered list has its own address; `values` (the parsed
+`NoticeFilters` from `utils/notices/query.ts`) fills it in. Controls are 44px
+tall. Used on `/bids`; pair it with `parseNoticeFilters`, `filterNotices`, and
+`noticesHref`.
+
+```tsx
+<NoticeFilters
+  action="/bids"
+  values={filters}
+  kinds={[{ value: "itb", label: "Invitations to bid" }]}
+  active={hasNoticeFilters(filters)}
+/>
 ```
 
 ## Islands
