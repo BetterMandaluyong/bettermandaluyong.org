@@ -42,11 +42,12 @@ function FooterColumn({ heading, links }: Column) {
 
 /**
  * Bottom band on darkest navy: site name and description, the unofficial-site
- * notice with a link to the official site, "Part of the
- * BetterGov.ph initiative" with BetterGov's logo, link columns (contact,
- * Facebook, and Discord; GitHub; BetterGov), then a row with the copyright
- * (year rendered on the server), the content and code licenses, and the commit
- * this build came from. Rendered by `PageShell`.
+ * notice with a link to the official site, "Part of the BetterGov.ph
+ * initiative" with BetterGov's logo, two link columns (Better Mandaluyong:
+ * email, Facebook, GitHub, credits; BetterGov.ph: its sites, Facebook, and
+ * Discord), then a row with the copyright (year rendered on the server), the
+ * content and code licenses, and the commit this build came from. Rendered by
+ * `PageShell`.
  */
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -56,7 +57,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-ed-navy-ink pt-12 pb-7 text-white/75 md:pt-15">
       <Container className="type-ui">
-        <div className="grid grid-cols-1 gap-8 border-b border-white/10 pb-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-10">
+        <div className="grid grid-cols-1 gap-8 border-b border-white/10 pb-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] lg:gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
             <a
               href="/"

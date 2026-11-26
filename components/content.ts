@@ -79,16 +79,10 @@ export const FOOTER = {
   copyright: "Better Mandaluyong City, Metro Manila, Philippines",
   columns: [
     {
-      heading: "Get involved",
+      heading: "Better Mandaluyong",
       links: [
         { label: "Email us", href: mailto(SITE.contactEmail) },
         { label: "Follow us on Facebook", href: SITE.followUrl },
-        { label: "Join the BetterGov.ph Discord", href: BETTERGOV.discordUrl },
-      ],
-    },
-    {
-      heading: "Open source",
-      links: [
         { label: "Source code on GitHub", href: SITE.repoUrl },
         { label: "Report a problem", href: `${SITE.repoUrl}/issues` },
         { label: "Credits", href: `${SITE.repoUrl}/blob/main/NOTICE.md` },
@@ -102,6 +96,7 @@ export const FOOTER = {
           label: "Follow BetterGov.ph on Facebook",
           href: BETTERGOV.facebookUrl,
         },
+        { label: "Join the BetterGov.ph Discord", href: BETTERGOV.discordUrl },
         { label: "Design system", href: BETTERGOV.designUrl },
         { label: "Other BetterLGU sites", href: BETTERGOV.lguUrl },
       ],
