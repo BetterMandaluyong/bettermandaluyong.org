@@ -1,0 +1,48 @@
+# Temporary: step 1 of the news-as-repo-data plan. Shows whether GitHub-hosted
+# runners can reach the city site and the Wayback Machine. Removed before merge.
+# It uses no secrets: the news-bot environment is limited to `main`, so the
+# App token and Internet Archive keys are first tested by the real news-data run.
+name: news-probe
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/news-probe.yml
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Runner address
+        run: curl -sS --max-time 20 https://api.ipify.org; echo
+
+      - name: City feed, WordPress API, and one post
+        run: |
+          probe() {
+            echo "== $1"
+            curl -sS -o /dev/null --max-time 30 -A "$2" \
+              -w 'status=%{http_code} time=%{time_total}s bytes=%{size_download}\n' "$1" || echo "curl failed ($?)"
+          }
+          UA_PLAIN="curl/8"
+          UA_BROWSER="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36"
+          for ua in "$UA_PLAIN" "$UA_BROWSER"; do
+            echo "---- user agent: $ua"
+            probe "https://mandaluyong.gov.ph/feed/" "$ua"
+            probe "https://mandaluyong.gov.ph/wp-json/wp/v2/posts?per_page=100&page=7&_fields=id" "$ua"
+            probe "https://mandaluyong.gov.ph/wp-json/wp/v2/categories?per_page=100" "$ua"
+          done
+          echo "== HEAD of the newest post"
+          LINK=$(curl -sS --max-time 30 "https://mandaluyong.gov.ph/wp-json/wp/v2/posts?per_page=1&_fields=link" | sed -n 's/.*"link":"\([^"]*\)".*/\1/p' | sed 's#\\/#/#g')
+          echo "post: $LINK"
+          [ -n "$LINK" ] && curl -sS -I -o /dev/null --max-time 30 -w 'status=%{http_code}\n' "$LINK"
+
+      - name: Wayback availability and one anonymous save
+        run: |
+          echo "== availability"
+          curl -sS --max-time 30 -w '\nstatus=%{http_code}\n' \
+            "https://archive.org/wayback/available?url=https%3A%2F%2Fmandaluyong.gov.ph%2F"
+          echo "== Save Page Now, anonymous GET (what archiving uses without keys)"
+          curl -sS -o /dev/null --max-time 90 -w 'status=%{http_code} time=%{time_total}s\n' \
+            "https://web.archive.org/save/https://mandaluyong.gov.ph/" || echo "curl failed ($?)"
