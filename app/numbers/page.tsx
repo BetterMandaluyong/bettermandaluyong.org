@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArrowLink } from "../../components/ArrowLink.tsx";
 import { Container } from "../../components/Container.tsx";
 import { DataTable } from "../../components/DataTable.tsx";
 import { Notice } from "../../components/Notice.tsx";
@@ -280,8 +281,13 @@ export default function NumbersPage() {
             label={NUMBERS.moneyHeading}
             meta={NUMBERS.moneyMeta(f.year, f.preliminary)}
           />
-          <p className="type-body m-0 mb-6 max-w-[65ch]">
+          <p className="type-body m-0 max-w-[65ch]">
             {NUMBERS.moneyIntro(f.year)}
+          </p>
+          <p className="type-ui m-0 mt-3 mb-6">
+            <ArrowLink href={NUMBERS.nationalUrl}>
+              {NUMBERS.nationalLink}
+            </ArrowLink>
           </p>
           <StatList
             label={NUMBERS.moneyHeading}
