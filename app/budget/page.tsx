@@ -55,6 +55,9 @@ export default function BudgetPage() {
           {BUDGET.notSpending} {BUDGET.asOf(asOf)}{" "}
           <ArrowLink href={BUDGET_HISTORY_URL}>{BUDGET.historyLink}</ArrowLink>
         </p>
+        <p className="type-ui m-0 mt-3">
+          <ArrowLink href={BUDGET.cityUrl}>{BUDGET.cityLink}</ArrowLink>
+        </p>
       </PageMasthead>
 
       <section>

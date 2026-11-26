@@ -36,7 +36,7 @@ export const NAV: NavItem[] = [
   { label: "Barangays", href: "/barangays" },
   { label: "Districts", href: "/districts" },
   { label: "News", href: "/news" },
-  { label: "Budget", href: "/budget" },
+  { label: "National Budget", href: "/budget" },
   { label: "Numbers", href: "/numbers" },
 ];
 
@@ -523,6 +523,8 @@ export const NUMBERS = {
     preliminary ? `${year}, preliminary` : String(year),
   moneyIntro: (year: number) =>
     `What the City Government took in and spent in ${year}, as the city's treasurer reported it to the Bureau of Local Government Finance. This is the city's own budget, not the national budget.`,
+  nationalLink: "See what the national budget sets aside for Mandaluyong",
+  nationalUrl: "/budget",
   capital: "Capital outlay",
   capitalNote: "Buildings, roads, and equipment.",
   cash: "Cash at year end",
@@ -633,6 +635,8 @@ export const BUDGET = {
     "Amounts are what the budget documents say, not money spent. A dash means a document has no such line.",
   asOf: (date: string) => `Figures as of ${date}.`,
   historyLink: "See every change on GitHub",
+  cityLink: "See the City Government's own income and spending",
+  cityUrl: "/numbers#money",
 
   figuresHeading: "At a Glance",
   figures: {
