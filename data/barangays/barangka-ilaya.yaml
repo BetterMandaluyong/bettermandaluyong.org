@@ -32,3 +32,15 @@ sk:
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-barangka-ilaya/
   updated: 2026-02-20
+dilg:
+  url: https://dilg.gov.ph/barangay-officials-directory
+  retrieved: 2026-11-26
+flags:
+  - field: council.kagawads
+    status: name-differs
+    city: Celso C. Panglinan
+    dilg: Celso Cabungcal Pangilinan
+  - field: sk.kagawads
+    status: name-differs
+    city: Christian Patricia O. Masilang
+    dilg: Christina Patricia Olandez Matilang

@@ -32,3 +32,11 @@ sk:
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-namayan/
   updated: 2026-02-20
+dilg:
+  url: https://dilg.gov.ph/barangay-officials-directory
+  retrieved: 2026-11-26
+flags:
+  - field: council.kagawads
+    status: name-differs
+    city: Wilfrido U. Acer
+    dilg: Wilfredo Uyseng Acer

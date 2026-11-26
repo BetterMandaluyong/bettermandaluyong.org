@@ -32,3 +32,15 @@ sk:
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-highway-hills/
   updated: 2026-02-26
+dilg:
+  url: https://dilg.gov.ph/barangay-officials-directory
+  retrieved: 2026-11-26
+flags:
+  - field: sk.kagawads
+    status: name-differs
+    city: Marie Alyssa M. Claricia
+    dilg: Mariel Alyssa Magno Claricia
+  - field: sk.kagawads
+    status: name-differs
+    city: Rovic O. Bilan
+    dilg: Rovic Bilan Ong

@@ -194,6 +194,27 @@ visible credit like this for third-party content.
 />
 ```
 
+### `DilgNote`
+
+`components/DilgNote.tsx`: credit text for a barangay checked against the DILG
+Barangay Officials Directory, placed inside a `SourceNote`: "Checked against the
+DILG Barangay Officials Directory on <date>." `dilg` is the barangay's `dilg`
+block (nothing renders without it); `changed` adds "Some names here come from
+it." when the page shows a DILG name instead of the city's (a `changed` flag).
+Used on barangay pages and barangay officials' people pages.
+
+```tsx
+<SourceNote
+  href={barangay.sourceUrl}
+  updated={formatSourceDate(barangay.sourceModified)}
+>
+  <DilgNote
+    dilg={barangay.dilg}
+    changed={barangay.flags.some((f) => f.status === "changed")}
+  />
+</SourceNote>
+```
+
 ### `NewsList`
 
 `components/NewsList.tsx`: server component listing city news, newest first, as

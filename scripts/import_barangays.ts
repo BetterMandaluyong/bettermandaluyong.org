@@ -15,10 +15,22 @@
 // small fixes. Rerunning this OVERWRITES them, so it is only for a bulk refresh
 // (new barangay officials: 2028, or a court ruling). It prints every Punong Barangay that differs between the
 // city's two pages so a person can settle it; it never guesses.
+//
+// Hand-kept sections survive a rerun: `dilg` (when the officials were checked
+// against the DILG Barangay Officials Directory) and `flags` (where the two
+// disagree) are copied over from the old file. A `changed` flag means a DILG
+// name replaced the city's; the rerun writes the city's name back, so the
+// script lists those flags for a person to re-apply or drop.
 
-import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  writeFileSync,
+} from "node:fs";
 import { join } from "node:path";
-import { stringify } from "yaml";
+import { parse, stringify } from "yaml";
 import { parsePhones } from "../utils/barangays/phone.ts";
 
 const [scrapedDir, geoPath] = process.argv.slice(2);
@@ -271,7 +283,20 @@ for (const f of features) {
 barangays.sort((x, y) => x.name.localeCompare(y.name));
 mkdirSync("data/barangays", { recursive: true });
 mkdirSync("public/data", { recursive: true });
+const changedFlags: string[] = [];
 for (const b of barangays) {
+  const path = `data/barangays/${b.slug}.yaml`;
+  const old = existsSync(path)
+    ? ((parse(readFileSync(path, "utf8")) ?? {}) as {
+        dilg?: unknown;
+        flags?: { status?: string; field?: string; dilg?: string }[];
+      })
+    : {};
+  for (const f of old.flags ?? []) {
+    if (f.status === "changed") {
+      changedFlags.push(`${b.slug}: ${f.field} → ${f.dilg}`);
+    }
+  }
   const doc = {
     name: b.name,
     psgc: b.code,
@@ -288,9 +313,11 @@ for (const b of barangays) {
     },
     sk: { chair: b.skChair, kagawads: b.skKagawads.map((m) => m.name) },
     source: { url: b.sourceUrl, updated: b.sourceModified },
+    ...(old.dilg ? { dilg: old.dilg } : {}),
+    ...(old.flags?.length ? { flags: old.flags } : {}),
   };
   writeFileSync(
-    `data/barangays/${b.slug}.yaml`,
+    path,
     `# Written by scripts/import_barangays.ts; edit by hand if needed.\n` +
       stringify(doc, { defaultStringType: "PLAIN", lineWidth: 0 }),
   );
@@ -309,4 +336,11 @@ if (mismatches.length) {
     "\nPunong Barangay differs between the city's pages (settle by hand):",
   );
   for (const m of mismatches) console.log(" - " + m);
+}
+if (changedFlags.length) {
+  console.log(
+    "\nDILG names were applied over the city's here; the city's are back now.",
+  );
+  console.log("Re-apply them or drop the flags (the build checks they match):");
+  for (const line of changedFlags) console.log(`  ${line}`);
 }

@@ -57,6 +57,74 @@ describe("parseBarangay", () => {
     );
     bad((d) => delete d.hall, /hall must be a mapping/);
   });
+
+  it("reads the DILG check and flags", () => {
+    const d: any = good();
+    d.dilg = { url: "https://dilg.gov.ph/x", retrieved: "2026-11-26" };
+    d.flags = [
+      {
+        field: "council.captain",
+        status: "name-differs",
+        city: "A B",
+        dilg: "A. Bee",
+      },
+      { field: "sk.kagawads", status: "only-in-dilg", dilg: "New Person" },
+    ];
+    const b = parseBarangay(d, "hulo.yaml", "hulo");
+    expect(b.dilg).toEqual({
+      url: "https://dilg.gov.ph/x",
+      retrieved: "2026-11-26",
+    });
+    expect(b.flags).toHaveLength(2);
+    expect(parseBarangay(good(), "hulo.yaml", "hulo").flags).toEqual([]);
+  });
+
+  it("rejects flags that don't match the officials shown", () => {
+    const flag = (f: object) => (d: any) => (d.flags = [f]);
+    bad(
+      flag({
+        field: "council.mayor",
+        status: "changed",
+        city: "X",
+        dilg: "A B",
+      }),
+      /flags\[0\]\.field must be one of/,
+    );
+    bad(
+      flag({
+        field: "council.captain",
+        status: "maybe",
+        city: "A B",
+        dilg: "X",
+      }),
+      /flags\[0\]\.status must be one of/,
+    );
+    bad(
+      flag({ field: "council.captain", status: "name-differs", dilg: "X" }),
+      /flags\[0\]\.city is needed/,
+    );
+    bad(
+      flag({ field: "council.captain", status: "not-in-dilg", city: "Nobody" }),
+      /flags\[0\] "Nobody" is not in council\.captain/,
+    );
+    bad(
+      flag({
+        field: "council.captain",
+        status: "changed",
+        city: "A B",
+        dilg: "A B",
+      }),
+      /flags\[0\] "A B" is still in council\.captain/,
+    );
+    bad(
+      flag({ field: "council.kagawads", status: "only-in-dilg", dilg: "1" }),
+      /flags\[0\] "1" is already in council\.kagawads/,
+    );
+    bad(
+      (d) => (d.dilg = { url: "https://dilg.gov.ph/x", retrieved: "today" }),
+      /dilg\.retrieved must be a YYYY-MM-DD date/,
+    );
+  });
 });
 
 describe("parseCityOfficials", () => {

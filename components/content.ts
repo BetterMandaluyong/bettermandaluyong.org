@@ -252,6 +252,11 @@ export const BARANGAYS = {
   source: "Source:",
   sourceLink: "City Government of Mandaluyong",
   lastUpdated: (date: string) => `Last updated by the city on ${date}.`,
+  /** The DILG check, around a link: "Checked against the <link> on <date>." */
+  dilgBefore: "Checked against the",
+  dilgLink: "DILG Barangay Officials Directory",
+  dilgAfter: (date: string) => `on ${date}.`,
+  dilgChanged: "Some names here come from it.",
   mapCredit:
     "Barangay boundaries, the city outline, and government places: © OpenStreetMap contributors (ODbL), except three barangay hall locations from Google Maps. Map tiles: © CARTO. Barangay codes: PSA.",
 } as const;

@@ -31,3 +31,26 @@ sk:
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-mauway/
   updated: 2026-02-20
+dilg:
+  url: https://dilg.gov.ph/barangay-officials-directory
+  retrieved: 2026-11-26
+flags:
+  - field: council.captain
+    status: name-differs
+    city: Froilo Achilles Evangelista
+    dilg: Froilan Achilles Labador Evangelista
+  - field: council.kagawads
+    status: not-in-dilg
+    city: Ma. Consuelo R. Rosal
+  - field: sk.kagawads
+    status: name-differs
+    city: Andrea Nichole F. Sorillano
+    dilg: Andrea Nichole Sorillano Cordova
+  - field: sk.kagawads
+    status: name-differs
+    city: Jhamilla R. Ramil
+    dilg: Jhanilla R Ramil
+  - field: sk.kagawads
+    status: name-differs
+    city: Carla Anne A. Felicidario
+    dilg: Carla Anne Feliciano

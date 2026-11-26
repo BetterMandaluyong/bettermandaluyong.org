@@ -9,14 +9,14 @@ hall:
     - 8534-0345
   email: null
 council:
-  captain: Merlyn Solano Espiritu
+  captain: J-IV Miguel Solano Espiritu
   kagawads:
-    - J-IV Miguel Solano Espiritu
+    - Adrian Robert Garcia Intiola
     - Geronimo Clemente Cudia Jr.
     - Henric Pulusan Esposo
     - Fernando Mansujeto Molina
     - Carmelita Delos Reyes Torres
-    - Ferdinand Reyes Fermin
+    - Gabriel Logronio Rafinan
     - Landrix Navarra San Juan
 sk:
   chair: John Matthew W. Yamzon
@@ -31,3 +31,24 @@ sk:
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-hagdang-bato-itaas/
   updated: 2025-10-08
+dilg:
+  url: https://dilg.gov.ph/barangay-officials-directory
+  retrieved: 2026-11-26
+flags:
+  - field: council.captain
+    status: changed
+    city: Merlyn Solano Espiritu
+    dilg: J-IV Miguel Solano Espiritu
+    note:
+      "DILG lists him as an appointive Punong Barangay; he was a kagawad in the
+      city's list."
+  - field: council.kagawads
+    status: changed
+    city: J-IV Miguel Solano Espiritu
+    dilg: Adrian Robert Garcia Intiola
+    note: Seat filled by appointment, per DILG.
+  - field: council.kagawads
+    status: changed
+    city: Ferdinand Reyes Fermin
+    dilg: Gabriel Logronio Rafinan
+    note: Seat filled by appointment, per DILG.
