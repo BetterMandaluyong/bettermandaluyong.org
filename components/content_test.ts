@@ -54,5 +54,19 @@ describe("content", () => {
   it("says plainly that the site is unofficial", () => {
     expect(UNOFFICIAL.text).toContain("Unofficial");
     expect(UNOFFICIAL.linkLabel.trim()).not.toBe("");
+    expect(FOOTER.unofficial.text).toContain("unofficial");
+    expect(FOOTER.unofficial.linkLabel.trim()).not.toBe("");
+  });
+
+  it("links the footer to the BetterGov.ph Discord and Facebook", () => {
+    const hrefs = FOOTER.columns.flatMap((c) => c.links.map((l) => l.href));
+    expect(hrefs).toContain(BETTERGOV.discordUrl);
+    expect(hrefs).toContain(BETTERGOV.facebookUrl);
+  });
+
+  it("labels every license link", () => {
+    for (const license of FOOTER.licenses) {
+      expect(license.label.trim()).not.toBe("");
+    }
   });
 });

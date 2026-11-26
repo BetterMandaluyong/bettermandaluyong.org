@@ -61,15 +61,16 @@ Rendered by `PageShell`; you don't use them directly.
   `<nav aria-label="Main">` listing `NAV` from `content.ts` (navy links, 44px
   tall). Add a nav item by adding to `NAV`.
 - **`SiteFooter`** (BetterGov's `Footer`): an `ed-navy-ink` band with the site
-  name and description, the `UNOFFICIAL` notice linking to the official site,
-  "Part of the BetterGov.ph initiative" with BetterGov's white logo (from its
-  CDN, unmodified), link columns (`FOOTER.columns`: contact and follow, GitHub,
-  BetterGov), and a bottom row with `© <year>` (rendered on the server), the
-  content and code licenses (`FOOTER.licenses`), and the short commit hash
-  linking to that commit on GitHub. The hash comes from `components/build.ts`,
-  which `vite.config.ts` fills at build time; it is hidden when unknown. On navy
-  surfaces, links set `focus-visible:outline-white` so the focus ring stays
-  visible.
+  name and description, the unofficial-site notice (`FOOTER.unofficial`) linking
+  to the official site, "Part of the BetterGov.ph initiative" with BetterGov's
+  white logo (from its CDN, unmodified), link columns (`FOOTER.columns`: email,
+  our Facebook, and the BetterGov.ph Discord; GitHub; BetterGov.ph, including
+  its Facebook), and a bottom row with `© <year> FOOTER.copyright` (year
+  rendered on the server), the content and code licenses (`FOOTER.licenses`),
+  and the short commit hash linking to that commit on GitHub. The hash comes
+  from `components/build.ts`, which `vite.config.ts` fills at build time; it is
+  hidden when unknown. On navy surfaces, links set `focus-visible:outline-white`
+  so the focus ring stays visible.
 
 ## Actions and links
 
