@@ -36,6 +36,8 @@ export const NAV: NavItem[] = [
   { label: "Barangays", href: "/barangays" },
   { label: "Districts", href: "/districts" },
   { label: "News", href: "/news" },
+  { label: "Bids", href: "/bids" },
+  { label: "Jobs", href: "/jobs" },
   { label: "National Budget", href: "/budget" },
   { label: "Numbers", href: "/numbers" },
 ];
@@ -613,6 +615,84 @@ export const NEWS = {
   facebookLink: "See all posts on Facebook",
   latestHeading: "News from the City Hall",
   latestLink: "All city news",
+} as const;
+
+/** Where the bids record's change history lives: every bot commit to `data/bids` is one run. */
+export const BIDS_HISTORY_URL = `${SITE.repoUrl}/commits/main/data/bids`;
+
+/** Where the jobs record's change history lives: every bot commit to `data/jobs` is one run. */
+export const JOBS_HISTORY_URL = `${SITE.repoUrl}/commits/main/data/jobs`;
+
+/** Copy shared by the bids and jobs lists. */
+export const NOTICES = {
+  removed: "Removed from the city site",
+  newer: "Newer",
+  older: "Older",
+  allKinds: "All",
+  source: "From",
+  sourceLink: "mandaluyong.gov.ph",
+} as const;
+
+/** What each kind of bid notice is called on `/bids` (plural, for the filters) and on each row. */
+export const BID_KIND_LABELS = {
+  itb: { one: "Invitation to bid", many: "Invitations to bid" },
+  rfq: { one: "Request for quotation", many: "Requests for quotation" },
+  bulletin: { one: "Bid bulletin", many: "Bid bulletins" },
+  noa: { one: "Notice of award", many: "Notices of award" },
+  ntp: { one: "Notice to proceed", many: "Notices to proceed" },
+  contract: { one: "Contract", many: "Contracts" },
+  pmr: { one: "Monitoring report", many: "Monitoring reports" },
+  app: { one: "Procurement plan", many: "Procurement plans" },
+  other: { one: "Other notice", many: "Other notices" },
+} as const;
+
+/** Copy for the city bids page. */
+export const BIDS = {
+  metaTitle: `City Bids and Awards — ${SITE.name}`,
+  metaDescription:
+    "Invitations to bid, requests for quotation, and contract awards from the City Government of Mandaluyong, linked from an unofficial community site.",
+  heading: "City Bids and Awards",
+  intro:
+    "What the City Government is buying, and who won the contracts. Each item links to the document on the city's site; we don't copy it.",
+  deadlineNote:
+    "Deadlines and amounts are inside each document. Open it on the city's site before you bid.",
+  historyNote:
+    "We check the city's bids page every day. Every change we record, including documents the city later takes down, is kept in public history.",
+  historyLink: "See the history on GitHub",
+  cityLink: "The city's bids page",
+  filterLabel: "Notice types",
+  pagesLabel: "Pages",
+  empty: "No bid notices have been recorded yet.",
+  noPage: "No notices here.",
+  backToFirst: "Back to the latest notices",
+} as const;
+
+/** Copy for the city jobs page. */
+export const JOBS = {
+  metaTitle: `City Jobs — ${SITE.name}`,
+  metaDescription:
+    "Job openings at Mandaluyong City Hall and private jobs posted by the city's Public Employment Service Office (PESO), linked from an unofficial community site.",
+  heading: "City Jobs",
+  intro:
+    "Openings at City Hall, and jobs that private employers list with the city's Public Employment Service Office (PESO). Each item links to the city's own post.",
+  cityHallHeading: "Jobs at City Hall",
+  cityHallIntro:
+    "The city posts its open positions as a bulletin of vacancies. Check the dates in each bulletin before you apply: older ones are likely closed.",
+  cityHallNone: (months: number, newest: string | null) =>
+    newest
+      ? `The city hasn't posted a bulletin of vacancies in the last ${months} months. The newest is from ${newest}.`
+      : "No bulletins of vacancies have been recorded yet.",
+  pesoHeading: "Jobs Posted by PESO",
+  pesoIntro: (months: number) =>
+    `Private employers' openings that PESO posted in the last ${months} months. The city doesn't say when a listing closes, so an older one may already be filled.`,
+  pesoNone: (months: number, newest: string | null) =>
+    newest
+      ? `PESO hasn't posted a job in the last ${months} months. The newest listing is from ${newest}.`
+      : "No PESO listings have been recorded yet.",
+  pesoCityLink: "All PESO listings on the city's site",
+  historyNote:
+    "We check the city's job pages every day. Every change we record is kept in public history.",
+  historyLink: "See the history on GitHub",
 } as const;
 
 /** Where the budget snapshot's change history lives: every refresh is a commit to `data/budget`. */

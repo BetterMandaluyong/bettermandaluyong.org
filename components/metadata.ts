@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import {
   BARANGAYS,
+  BIDS,
   BUDGET,
   DISTRICTS_COPY,
   FEED,
   HOME,
+  JOBS,
   LLMS,
   NEWS,
   NUMBERS,
@@ -43,6 +45,8 @@ export const MAIN_PAGES: MainPage[] = [
     description: PEOPLE_COPY.metaDescription,
   },
   { path: "/news", label: NEWS.heading, description: NEWS.metaDescription },
+  { path: "/bids", label: BIDS.heading, description: BIDS.metaDescription },
+  { path: "/jobs", label: JOBS.heading, description: JOBS.metaDescription },
   {
     path: "/budget",
     label: BUDGET.heading,

@@ -141,6 +141,21 @@ destination.
 </ArrowLink>
 ```
 
+### `FilterNav`
+
+`components/FilterNav.tsx`: a wrapping row of square filter links, 44px tall,
+navy outline, the current one filled navy with `aria-current="page"`. Plain
+links, so filters work without JavaScript. Takes `label` (the `<nav>`'s
+accessible name) and `links: { label, href, current }[]`. Used for the
+categories on `/news` and the notice types on `/bids`.
+
+```tsx
+<FilterNav
+  label="Categories"
+  links={[{ label: "All", href: "/news", current: true }]}
+/>
+```
+
 ## Labels
 
 ### `Eyebrow` (BetterGov)
@@ -383,6 +398,19 @@ categories (for the home page). Takes `items: NewsItem[]` (from
 
 ```tsx
 <NewsList items={items} compact />
+```
+
+### `NoticeList`
+
+`components/NoticeList.tsx`: server component listing city bid notices or job
+posts (`CityNotice` from `data/schema.ts`), newest first, as an `<ol>` of rows
+like `NewsList`: mono date, the title as an external link to the city's page,
+the kind as a `Flag` when `labels` (kind → text) has one, and a red `Flag`
+"Removed from the city site" when the city removed it. Used on `/bids` (with
+`BID_KIND_LABELS`) and `/jobs` (no labels; each section is one kind).
+
+```tsx
+<NoticeList items={items} labels={{ itb: "Invitation to bid" }} />
 ```
 
 ## Islands

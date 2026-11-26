@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { ArrowLink } from "../../components/ArrowLink.tsx";
 import { Button } from "../../components/Button.tsx";
 import { Container } from "../../components/Container.tsx";
+import { FilterNav } from "../../components/FilterNav.tsx";
 import { NewsList } from "../../components/NewsList.tsx";
 import { PageMasthead } from "../../components/PageMasthead.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import { pageMetadata } from "../../components/metadata.ts";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { NEWS, NEWS_HISTORY_URL, SITE } from "../../components/content.ts";
-import { cx } from "../../components/cx.ts";
 import { FacebookFeed } from "../../islands/FacebookFeed.tsx";
 import { NEWS_ITEMS } from "../../data/news.ts";
 import { NEWS_PER_PAGE, parseListParams } from "../../utils/news/display.ts";
@@ -50,14 +50,6 @@ export default async function NewsPage({
   const hasNewer = page > 1;
   const hasOlder = page * NEWS_PER_PAGE < total;
 
-  const chip = (active: boolean) =>
-    cx(
-      "type-ui inline-flex min-h-11 items-center border px-4 no-underline transition-colors",
-      active
-        ? "border-ed-navy bg-ed-navy text-white"
-        : "border-ed-navy text-ed-navy hover:bg-ed-navy hover:text-white",
-    );
-
   return (
     <PageShell>
       <PageMasthead title={NEWS.heading} lede={NEWS.intro}>
@@ -70,30 +62,22 @@ export default async function NewsPage({
       <section>
         <Container narrow className="py-8 md:py-12">
           {categories.length > 0 && (
-            <nav aria-label="Categories" className="mb-8">
-              <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
-                <li>
-                  <a
-                    href="/news"
-                    aria-current={category === null ? "page" : undefined}
-                    className={chip(category === null)}
-                  >
-                    {NEWS.allCategories}
-                  </a>
-                </li>
-                {categories.map((c) => (
-                  <li key={c}>
-                    <a
-                      href={`/news?category=${encodeURIComponent(c)}`}
-                      aria-current={c === category ? "page" : undefined}
-                      className={chip(c === category)}
-                    >
-                      {c}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+            <FilterNav
+              label="Categories"
+              className="mb-8"
+              links={[
+                {
+                  label: NEWS.allCategories,
+                  href: "/news",
+                  current: category === null,
+                },
+                ...categories.map((c) => ({
+                  label: c,
+                  href: `/news?category=${encodeURIComponent(c)}`,
+                  current: c === category,
+                })),
+              ]}
+            />
           )}
 
           {items.length > 0 ? (

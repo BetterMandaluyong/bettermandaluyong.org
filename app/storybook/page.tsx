@@ -9,7 +9,9 @@ import { Card } from "../../components/Card.tsx";
 import { Container } from "../../components/Container.tsx";
 import { Eyebrow } from "../../components/Eyebrow.tsx";
 import { Flag } from "../../components/Flag.tsx";
+import { FilterNav } from "../../components/FilterNav.tsx";
 import { NewsList } from "../../components/NewsList.tsx";
+import { NoticeList } from "../../components/NoticeList.tsx";
 import { Notice } from "../../components/Notice.tsx";
 import { OfficialList } from "../../components/OfficialList.tsx";
 import { OrgChart, type OrgNode } from "../../components/OrgChart.tsx";
@@ -35,7 +37,12 @@ import { MAP_PLACES, PLACE_KINDS } from "../../data/places.ts";
 import { BarangayExplorer } from "../../islands/BarangayExplorer.tsx";
 import { BarangayMap } from "../../islands/BarangayMap.tsx";
 import { FacebookFeed } from "../../islands/FacebookFeed.tsx";
-import type { BudgetGaa, BudgetProject, NewsItem } from "../../data/schema.ts";
+import type {
+  BudgetGaa,
+  BudgetProject,
+  CityNotice,
+  NewsItem,
+} from "../../data/schema.ts";
 import { COLOR_TOKENS, TYPE_UTILITIES } from "../../components/tokens.ts";
 
 export const metadata: Metadata = {
@@ -95,6 +102,30 @@ const SAMPLE_ORG: OrgNode = {
     },
   ],
 };
+
+/** Obviously sample rows for the NoticeList specimen; never real city documents. */
+const SAMPLE_NOTICES: CityNotice[] = [
+  {
+    id: 1,
+    url: "https://example.com/sample-bid-1",
+    title: "Sample: invitation to bid title",
+    kind: "itb",
+    publishedAt: "2026-01-15T10:00:00+08:00",
+    firstSeenAt: "2026-01-15T11:00:00+08:00",
+    missingSince: null,
+    removedAt: null,
+  },
+  {
+    id: 2,
+    url: "https://example.com/sample-bid-2",
+    title: "Sample: notice of award title (removed by the city)",
+    kind: "noa",
+    publishedAt: "2026-01-10T10:00:00+08:00",
+    firstSeenAt: "2026-01-10T11:00:00+08:00",
+    missingSince: "2026-01-20T06:00:00+08:00",
+    removedAt: "2026-01-21T06:00:00+08:00",
+  },
+];
 
 /** Obviously sample rows for the NewsList specimen; never real city posts. */
 const SAMPLE_NEWS: NewsItem[] = [
@@ -394,6 +425,25 @@ export default function StorybookPage() {
         </Specimen>
         <Specimen name="NewsList (compact)">
           <NewsList items={SAMPLE_NEWS} compact />
+        </Specimen>
+        <Specimen name="NoticeList (with kind labels)">
+          <NoticeList
+            items={SAMPLE_NOTICES}
+            labels={{ itb: "Sample kind", noa: "Another kind" }}
+          />
+        </Specimen>
+        <Specimen name="NoticeList (no labels)">
+          <NoticeList items={SAMPLE_NOTICES} />
+        </Specimen>
+        <Specimen name="FilterNav (second link current)">
+          <FilterNav
+            label="Sample filters"
+            links={[
+              { label: "All", href: "#all", current: false },
+              { label: "Sample filter", href: "#one", current: true },
+              { label: "Another filter", href: "#two", current: false },
+            ]}
+          />
         </Specimen>
         <Specimen name="FacebookFeed (island; loads nothing until tapped)">
           <FacebookFeed pageUrl={SITE.cityPioFacebookUrl} />
