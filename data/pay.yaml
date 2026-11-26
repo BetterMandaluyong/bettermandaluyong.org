@@ -1,0 +1,115 @@
+# What the law sets as pay for the offices Mandaluyong's officials hold.
+# Hand-kept, from DBM's budget circulars and the laws they cite: every amount
+# was read from the circular's own salary schedule (Step 1, the 100% schedule
+# for special and 1st-class cities). These are national rates, not the city's
+# payroll: the city adopts each year's rates by ordinance, and its payroll
+# isn't published. Allowances (PERA, RATA) and bonuses are not included.
+# See data/CONTEXT.md. Amounts are whole pesos a month.
+checked: 2026-11-26
+law:
+  title: Executive Order No. 64, s. 2024
+  url: https://lawphil.net/executive/execord/eo2024/eo_64_2024.html
+tranches:
+  - year: 2024
+    national:
+      title: National Budget Circular No. 594
+      url: https://www.dbm.gov.ph/wp-content/uploads/Issuances/2024/National-Budget-Circular/NATIONAL-BUDGET-CIRCULAR-NO-594.pdf
+    local:
+      title: Local Budget Circular No. 160
+      url: https://www.dbm.gov.ph/wp-content/uploads/Issuances/2024/Local-Budget-Circular/LOCAL-BUDGET-CIRCULAR-NO-160.pdf
+    step1:
+      9: 22219
+      10: 24381
+      14: 35434
+      27: 136893
+      28: 154320
+      30: 196199
+      31: 285813
+  - year: 2025
+    national:
+      title: National Budget Circular No. 597
+      url: https://www.dbm.gov.ph/wp-content/uploads/Issuances/2025/National-Budget-Circular/NBC-No.-597.pdf
+    local:
+      title: Local Budget Circular No. 165
+      url: https://www.dbm.gov.ph/wp-content/uploads/Issuances/2025/Local-Budget-Circular/LOCAL-BUDGET-CIRCULAR-NO-165.pdf
+    step1:
+      9: 23226
+      10: 25586
+      14: 37024
+      27: 142663
+      28: 160469
+      30: 203200
+      31: 293191
+  - year: 2026
+    national:
+      title: National Budget Circular No. 601
+      url: https://www.dbm.gov.ph/wp-content/uploads/Issuances/2026/National-Budget-Circular/NATIONAL-BUDGET-CIRCULAR-NO.-601_NEW.pdf
+    local:
+      title: Local Budget Circular No. 172
+      url: https://www.dbm.gov.ph/wp-content/uploads/Issuances/2026/Local-Budget-Circular/LOCAL-BUDGET-CIRCULAR-NO-172-DATED-JULY-16-2026.pdf
+    step1:
+      9: 24329
+      10: 26917
+      14: 38764
+      27: 148940
+      28: 167129
+      30: 210718
+      31: 300961
+# Each office's salary grade. `cap: true` means the law sets a ceiling (an
+# honorarium "not to exceed" that grade), not a fixed salary. `schedule` says
+# which circular's table applies: national for the House, local for the city.
+offices:
+  representative:
+    grade: 31
+    schedule: national
+    basis: Republic Act No. 6758, Sec. 8
+    url: https://lawphil.net/statutes/repacts/ra1989/ra_6758_1989.html
+  mayor:
+    grade: 30
+    schedule: local
+    basis: Republic Act No. 7675 (city charter), Sec. 8
+    url: https://lawphil.net/statutes/repacts/ra1994/ra_7675_1994.html
+  vice-mayor:
+    grade: 28
+    schedule: local
+    basis: Republic Act No. 7675 (city charter), Sec. 9
+    url: https://lawphil.net/statutes/repacts/ra1994/ra_7675_1994.html
+  # DBM's index lists "Sangguniang Panlungsod Member I" (SG 25) and "Member II"
+  # (SG 27) without saying which cities get which. SG 27 pairs with the
+  # charter's SG 28 vice mayor ("City Vice Mayor II" in the same index), but
+  # no document we found says so for Mandaluyong. Confirm, then drop `note`.
+  councilor:
+    grade: 27
+    schedule: local
+    basis:
+      DBM Index of Occupational Services, Position Titles and Salary Grades in
+      the Local Government (2021)
+    url: https://www.dbm.gov.ph/wp-content/uploads/OPCCB/LBC/PART1-IOS-LGU-2021.pdf
+    note: unconfirmed
+  captain:
+    grade: 14
+    cap: true
+    schedule: local
+    basis: Local Budget Circular No. 172, Sec. 8
+    url: https://www.dbm.gov.ph/wp-content/uploads/Issuances/2026/Local-Budget-Circular/LOCAL-BUDGET-CIRCULAR-NO-172-DATED-JULY-16-2026.pdf
+  kagawad:
+    grade: 10
+    cap: true
+    schedule: local
+    basis: Local Budget Circular No. 172, Sec. 8
+    url: https://www.dbm.gov.ph/wp-content/uploads/Issuances/2026/Local-Budget-Circular/LOCAL-BUDGET-CIRCULAR-NO-172-DATED-JULY-16-2026.pdf
+  # The SK chair sits on the barangay council with a kagawad's privileges.
+  sk-chair:
+    grade: 10
+    cap: true
+    schedule: local
+    basis: Republic Act No. 10742, Sec. 12
+    url: https://lawphil.net/statutes/repacts/ra2016/ra_10742_2016.html
+  sk-kagawad:
+    grade: 9
+    cap: true
+    schedule: local
+    # The SG 9 ceiling is in Local Budget Circular No. 148 (2022), Sec. 3.1.5,
+    # which implements this law; we couldn't find a stable link to its PDF.
+    basis: Republic Act No. 11768; Local Budget Circular No. 148, Sec. 3.1.5
+    url: https://lawphil.net/statutes/repacts/ra2022/ra_11768_2022.html

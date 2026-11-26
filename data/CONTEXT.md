@@ -12,8 +12,8 @@ source of truth: edit it, never generated output.
   an office lists has a file in `people/`, no two people share a slug, and every
   person holds an office.
 - The modules pages import (`barangays.ts`, `city-officials.ts`, `people.ts`,
-  `places.ts`, `news.ts`, `org-chart.ts`, `budget.ts`) expose typed data. Pages
-  never import YAML directly.
+  `places.ts`, `news.ts`, `org-chart.ts`, `budget.ts`, `pay.ts`) expose typed
+  data. Pages never import YAML directly.
 
 | Path                                    | What                                                      | Written by                        |
 | --------------------------------------- | --------------------------------------------------------- | --------------------------------- |
@@ -21,6 +21,7 @@ source of truth: edit it, never generated output.
 | `barangays/<slug>.yaml`                 | The 27 barangays: hall, council and SK as person ids      | `import_barangays.ts`; hand fixes |
 | `city-officials.yaml`                   | Representative, mayor, vice mayor, councilors             | People, from the city's pages     |
 | `places.yaml`                           | Government places on the map (OSM or Google CID source)   | People                            |
+| `pay.yaml`                              | Salary schedule and each office's grade, from DBM         | People, from the circulars        |
 | `news/YYYY-MM.yaml`                     | City news links                                           | The news bot only                 |
 | `budget/scope.yaml`                     | Place, region, district, and lines left out by hand       | People                            |
 | `budget/fy2027.yaml`, `budget/gaa.yaml` | National budget snapshot from the BetterGov.ph Budget API | `budget_refresh.ts` only          |
@@ -37,3 +38,9 @@ source of truth: edit it, never generated output.
   after any data edit.
 - **Only `*.yaml` is data.** Loaders and tests filter by extension, so notes
   like this file are safe here. Keep it that way when you add a reader.
+- **Pay is the law's rate, not the payroll.** `pay.yaml` holds DBM's Step 1
+  rates and each office's grade, read from the circulars themselves (never a
+  news report or a third-party table). Pages must keep the caveats with every
+  figure (`PAY_COPY`). Each January, add the new tranche from DBM's NBC and LBC
+  and update `checked:`; `data/pay_test.ts` pins one year's figures; update it
+  too.

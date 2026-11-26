@@ -8,10 +8,12 @@ import { PageShell } from "../components/PageShell.tsx";
 import { pageMetadata } from "../components/metadata.ts";
 import { SectionHeader } from "../components/SectionHeader.tsx";
 import { SourceNote } from "../components/SourceNote.tsx";
+import { StatList } from "../components/StatList.tsx";
 import {
   BARANGAYS as COPY,
   HOME,
   NEWS,
+  PAY_COPY,
   PEOPLE_COPY,
   SITE,
   mailto,
@@ -22,12 +24,15 @@ import {
   CITY_OFFICIALS,
   CITY_OFFICIALS_AS_OF,
 } from "../data/city-officials.ts";
+import { PAY, currentRate } from "../data/pay.ts";
 import { BARANGAY_PERSON_HREFS, personHref } from "../data/people.ts";
+import { OFFICES } from "../data/schema.ts";
 import { BarangayExplorer } from "../islands/BarangayExplorer.tsx";
 import { formatSourceDate } from "../utils/barangays/format.ts";
 import { NEWS_ITEMS } from "../data/news.ts";
 import { MAP_PLACES } from "../data/places.ts";
 import { latestNews } from "../utils/news/query.ts";
+import { formatPeso } from "../utils/budget/format.ts";
 
 export const metadata: Metadata = pageMetadata({
   title: HOME.metaTitle,
@@ -57,6 +62,9 @@ export default async function HomePage({
     role: b.name,
     href: personHref(b.skChair, "SK Chairperson", b.slug),
   }));
+  const rates = OFFICES.flatMap((office) => currentRate(office) ?? []);
+  const local = rates.find((r) => r.office === "mayor")?.circular;
+  const national = rates.find((r) => r.office === "representative")?.circular;
   return (
     <PageShell>
       <section className="border-b border-ed-rule bg-ed-paper-2">
@@ -109,6 +117,49 @@ export default async function HomePage({
           />
         </Container>
       </section>
+
+      {rates.length > 0 && (
+        <section className="border-b border-ed-rule">
+          <Container className="py-8 md:py-12">
+            <SectionHeader
+              label={PAY_COPY.homeHeading}
+              meta={PAY_COPY.homeMeta(rates[0]!.year)}
+            />
+            <p className="type-body m-0 mb-6 max-w-[65ch]">
+              {PAY_COPY.homeIntro}
+            </p>
+            <StatList
+              label={PAY_COPY.homeHeading}
+              items={rates.map((r) => ({
+                label: PAY_COPY.offices[r.office],
+                value: formatPeso(r.monthly),
+                note: PAY_COPY.homeNote(r.grade, r.cap),
+              }))}
+            />
+            <p className="type-body m-0 mt-6 max-w-[65ch] text-ed-ink-2">
+              {PAY_COPY.caveat}
+            </p>
+            {local && (
+              <SourceNote href={local.url} label={local.title}>
+                {national && (
+                  <>
+                    {PAY_COPY.houseFrom}{" "}
+                    <a
+                      href={national.url}
+                      rel="noreferrer"
+                      className="text-ed-navy"
+                    >
+                      {national.title}
+                    </a>
+                    .{" "}
+                  </>
+                )}
+                {PAY_COPY.checked(formatSourceDate(PAY.checked))}
+              </SourceNote>
+            )}
+          </Container>
+        </section>
+      )}
 
       <section className="border-b border-ed-rule">
         <Container className="py-8 md:py-12">

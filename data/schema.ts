@@ -1375,3 +1375,175 @@ export function parseBudgetGaa(raw: unknown, file: string): BudgetGaa {
     programs,
   };
 }
+
+// ── Pay (data/pay.yaml) ─────────────────────────────────────────────────────
+
+/** Every elected office the site lists, city and barangay. */
+export type Office =
+  CitySeat | "captain" | "kagawad" | "sk-chair" | "sk-kagawad";
+
+/** Every office, from the House down to the SK. `data/pay.yaml` must cover each. */
+export const OFFICES: readonly Office[] = [
+  "representative",
+  "mayor",
+  "vice-mayor",
+  "councilor",
+  "captain",
+  "kagawad",
+  "sk-chair",
+  "sk-kagawad",
+];
+
+/** A document cited as a source: its title and link. */
+export type Citation = { title: string; url: string };
+
+/** One year's salary schedule: the DBM circulars and the Step 1 rate per grade. */
+export type PayTranche = {
+  year: number;
+  /** The National Budget Circular (national government pay). */
+  national: Citation;
+  /** The Local Budget Circular (special and 1st-class cities, 100%). */
+  local: Citation;
+  /** Monthly pesos at Step 1, by salary grade. */
+  step1: Record<number, number>;
+};
+
+/** How the law sets one office's pay. */
+export type OfficePay = {
+  grade: number;
+  /** True for an honorarium "not to exceed" the grade, not a fixed salary. */
+  cap: boolean;
+  /** Which circular's table applies: `national` for the House. */
+  schedule: "national" | "local";
+  /** The law or circular that sets the grade, e.g. "Republic Act No. 7675, Sec. 8". */
+  basis: string;
+  url: string;
+  /** Set when no document we found states the grade for this city. */
+  unconfirmed: boolean;
+};
+
+/** The whole `data/pay.yaml` file. */
+export type Pay = {
+  /** When the figures were last checked against the circulars (YYYY-MM-DD). */
+  checked: string;
+  law: Citation;
+  /** Oldest first, one per year. */
+  tranches: PayTranche[];
+  offices: Record<Office, OfficePay>;
+};
+
+function citation(raw: unknown, file: string, at: string): Citation {
+  const c = obj(raw, file, at);
+  return {
+    title: str(c, "title", file, `${at}.title`),
+    url: url(c, "url", file, `${at}.url`),
+  };
+}
+
+function salaryGrade(v: unknown, file: string, at: string): number {
+  if (typeof v !== "number" || !Number.isInteger(v) || v < 1 || v > 33) {
+    fail(file, at, "must be a salary grade from 1 to 33");
+  }
+  return v;
+}
+
+/**
+ * Checks `data/pay.yaml`: tranches oldest first with whole-peso rates that
+ * rise with the grade, and every office in `OFFICES` with a grade that each
+ * tranche lists.
+ */
+export function parsePay(raw: unknown, file: string): Pay {
+  const o = obj(raw, file, "document");
+  let lastYear = 0;
+  const tranches = list(o, "tranches", file).map((entry, i): PayTranche => {
+    const at = `tranches[${i}]`;
+    const t = obj(entry, file, at);
+    const year = t.year;
+    if (typeof year !== "number" || !Number.isInteger(year) || year < 2000) {
+      fail(file, `${at}.year`, "must be a year");
+    }
+    if (year <= lastYear)
+      fail(file, `${at}.year`, "must come after the one before");
+    lastYear = year;
+    const rates = obj(t.step1, file, `${at}.step1`);
+    const step1: Record<number, number> = {};
+    let lastRate = 0;
+    const grades = Object.keys(rates)
+      .map((g) => salaryGrade(Number(g), file, `${at}.step1.${g}`))
+      .sort((a, b) => a - b);
+    for (const grade of grades) {
+      const rate = rates[grade];
+      if (typeof rate !== "number" || !Number.isInteger(rate) || rate <= 0) {
+        fail(
+          file,
+          `${at}.step1.${grade}`,
+          "must be a positive whole number of pesos",
+        );
+      }
+      if (rate <= lastRate) {
+        fail(
+          file,
+          `${at}.step1.${grade}`,
+          "must be more than the grade below it",
+        );
+      }
+      lastRate = rate;
+      step1[grade] = rate;
+    }
+    return {
+      year,
+      national: citation(t.national, file, `${at}.national`),
+      local: citation(t.local, file, `${at}.local`),
+      step1,
+    };
+  });
+  if (tranches.length === 0) fail(file, "tranches", "must not be empty");
+  const raws = obj(o.offices, file, "offices");
+  for (const key of Object.keys(raws)) {
+    if (!OFFICES.includes(key as Office)) {
+      fail(file, `offices.${key}`, `is not one of ${OFFICES.join(", ")}`);
+    }
+  }
+  const offices = Object.fromEntries(
+    OFFICES.map((office): [Office, OfficePay] => {
+      const at = `offices.${office}`;
+      const p = obj(raws[office], file, at);
+      const grade = salaryGrade(p.grade, file, `${at}.grade`);
+      for (const [i, t] of tranches.entries()) {
+        if (!(grade in t.step1)) {
+          fail(
+            file,
+            `${at}.grade`,
+            `SG ${grade} is missing from tranches[${i}].step1`,
+          );
+        }
+      }
+      if (p.cap !== undefined && typeof p.cap !== "boolean") {
+        fail(file, `${at}.cap`, "must be true or false");
+      }
+      if (p.schedule !== "national" && p.schedule !== "local") {
+        fail(file, `${at}.schedule`, "must be national or local");
+      }
+      if (p.note !== undefined && p.note !== "unconfirmed") {
+        fail(file, `${at}.note`, "must be unconfirmed, or left out");
+      }
+      return [
+        office,
+        {
+          grade,
+          cap: p.cap === true,
+          schedule: p.schedule,
+          basis: str(p, "basis", file, `${at}.basis`),
+          url: url(p, "url", file, `${at}.url`),
+          unconfirmed: p.note === "unconfirmed",
+        },
+      ];
+    }),
+  ) as Record<Office, OfficePay>;
+  return {
+    checked: isoDate(o, "checked", file, "checked"),
+    law: citation(o.law, file, "law"),
+    tranches,
+    offices,
+  };
+}
