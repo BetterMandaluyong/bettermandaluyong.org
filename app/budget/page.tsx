@@ -11,6 +11,7 @@ import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { SourceNote } from "../../components/SourceNote.tsx";
 import { StatList } from "../../components/StatList.tsx";
 import { BUDGET, BUDGET_HISTORY_URL } from "../../components/content.ts";
+import { pageMetadata } from "../../components/metadata.ts";
 import { BUDGET_2027, BUDGET_GAA, BUDGET_SCOPE } from "../../data/budget.ts";
 import { REPRESENTATIVE } from "../../data/city-officials.ts";
 import { personHref } from "../../data/people.ts";
@@ -24,10 +25,11 @@ import {
   versionTotal,
 } from "../../utils/budget/format.ts";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: BUDGET.metaTitle,
   description: BUDGET.metaDescription,
-};
+  path: "/budget",
+});
 
 /**
  * The national budget page: the 2027 project lines that name Mandaluyong (the
