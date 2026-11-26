@@ -1,4 +1,4 @@
-import type { NewsRow } from "./store.ts";
+import type { NewsItem } from "../../data/schema.ts";
 
 /** How many news items one list page shows. */
 export const NEWS_PER_PAGE = 20;
@@ -41,34 +41,16 @@ export function formatNewsDate(iso: string): string {
   return Number.isNaN(date.getTime()) ? "" : dateFormat.format(date);
 }
 
-const dateTimeFormat = new Intl.DateTimeFormat("en-PH", {
-  timeZone: "Asia/Manila",
-  dateStyle: "long",
-  timeStyle: "short",
-});
-
-/** Formats an ISO timestamp as date and time in Manila time, e.g. "November 25, 2026, 8:07 PM". Returns "" for an invalid date. */
-export function formatManilaDateTime(iso: string): string {
-  const date = new Date(iso);
-  if (Number.isNaN(date.getTime())) return "";
-  return dateTimeFormat
-    .format(date)
-    .replace(" at ", ", ")
-    .replace(/\s/g, " ")
-    .replace(/\bam\b/i, "AM")
-    .replace(/\bpm\b/i, "PM");
-}
-
 /** The archived copy of an item, or null when there is none. */
-export function archiveLink(row: NewsRow): string | null {
-  if (row.waybackUrl) return row.waybackUrl;
-  return row.waybackStatus === "ok"
+export function archiveLink(row: NewsItem): string | null {
+  if (row.archive?.url) return row.archive.url;
+  return row.archive?.status === "ok"
     ? `https://web.archive.org/web/${row.url}`
     : null;
 }
 
 /** Where an item should link: the archive once it is removed, else the original. */
-export function itemLink(row: NewsRow): string {
+export function itemLink(row: NewsItem): string {
   if (row.removedAt) return archiveLink(row) ?? row.url;
   return row.url;
 }

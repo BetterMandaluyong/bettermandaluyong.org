@@ -3,7 +3,7 @@ import {
   archiveLink,
   itemLink,
 } from "../utils/news/display.ts";
-import type { NewsRow } from "../utils/news/store.ts";
+import type { NewsItem } from "../data/schema.ts";
 import { Flag } from "./Flag.tsx";
 import { NEWS } from "./content.ts";
 import { cx } from "./cx.ts";
@@ -19,7 +19,7 @@ export function NewsList({
   items,
   compact,
 }: {
-  items: NewsRow[];
+  items: NewsItem[];
   compact?: boolean;
 }) {
   return (

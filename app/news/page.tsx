@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
-import { env } from "cloudflare:workers";
+import { ArrowLink } from "../../components/ArrowLink.tsx";
 import { Button } from "../../components/Button.tsx";
 import { Container } from "../../components/Container.tsx";
 import { NewsList } from "../../components/NewsList.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
-import { NEWS, SITE } from "../../components/content.ts";
+import { NEWS, NEWS_HISTORY_URL, SITE } from "../../components/content.ts";
 import { cx } from "../../components/cx.ts";
 import { FacebookFeed } from "../../islands/FacebookFeed.tsx";
+import { NEWS_ITEMS } from "../../data/news.ts";
 import { NEWS_PER_PAGE, parseListParams } from "../../utils/news/display.ts";
-import {
-  listCategories,
-  listNews,
-  readOrDefault,
-} from "../../utils/news/store.ts";
+import { listCategories, listNews } from "../../utils/news/query.ts";
 
 export const metadata: Metadata = {
   title: NEWS.metaTitle,
@@ -30,10 +27,9 @@ function newsHref(category: string | null, page: number): string {
 
 /**
  * The official city news page: a paged, category-filterable list of links to
- * the City Government's posts, read from D1, plus a tap-to-load Facebook
- * feed. Bad query strings fall back to defaults. An empty database, or any
- * failed read (missing table, unbound or unavailable D1), shows the empty
- * state instead of an error page; the failure is logged.
+ * the City Government's posts, read from `data/news/*.yaml` at build time,
+ * plus a tap-to-load Facebook feed. Bad query strings fall back to defaults.
+ * No posts yet shows the empty state.
  */
 export default async function NewsPage({
   searchParams,
@@ -41,12 +37,13 @@ export default async function NewsPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const sp = await searchParams;
-  const categories = await readOrDefault(() => listCategories(env.DB), []);
+  const categories = listCategories(NEWS_ITEMS);
   const { page, category } = parseListParams(sp, categories);
-  const { items, total } = await readOrDefault(
-    () => listNews(env.DB, { page, perPage: NEWS_PER_PAGE, category }),
-    { items: [], total: 0 },
-  );
+  const { items, total } = listNews(NEWS_ITEMS, {
+    page,
+    perPage: NEWS_PER_PAGE,
+    category,
+  });
   const hasNewer = page > 1;
   const hasOlder = page * NEWS_PER_PAGE < total;
 
@@ -66,6 +63,10 @@ export default async function NewsPage({
             <h1 className="type-display m-0 text-balance">{NEWS.heading}</h1>
             <p className="type-lede m-0 mt-6 max-w-[65ch] text-pretty">
               {NEWS.intro}
+            </p>
+            <p className="type-body m-0 mt-4 max-w-[65ch] text-pretty">
+              {NEWS.historyNote}{" "}
+              <ArrowLink href={NEWS_HISTORY_URL}>{NEWS.historyLink}</ArrowLink>
             </p>
           </div>
         </Container>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { env } from "cloudflare:workers";
 import { ArrowLink } from "../components/ArrowLink.tsx";
 import { Button } from "../components/Button.tsx";
 import { Container } from "../components/Container.tsx";
@@ -26,7 +25,8 @@ import {
 import { BARANGAY_PERSON_HREFS, personHref } from "../data/people.ts";
 import { BarangayExplorer } from "../islands/BarangayExplorer.tsx";
 import { formatSourceDate } from "../utils/barangays/format.ts";
-import { latestNews, readOrDefault } from "../utils/news/store.ts";
+import { NEWS_ITEMS } from "../data/news.ts";
+import { latestNews } from "../utils/news/query.ts";
 
 export const metadata: Metadata = {
   title: HOME.metaTitle,
@@ -47,8 +47,7 @@ export default async function HomePage({
   // a shared link (`/?barangay=hulo`) open with that barangay selected.
   const sp = await searchParams;
   const chosen = typeof sp.barangay === "string" ? sp.barangay : undefined;
-  // Secondary block: any D1 failure shows the empty state instead of failing the home page.
-  const news = await readOrDefault(() => latestNews(env.DB, 3), []);
+  const news = latestNews(NEWS_ITEMS, 3);
   const captains = BARANGAYS.map((b) => ({
     name: b.captain,
     role: b.name,

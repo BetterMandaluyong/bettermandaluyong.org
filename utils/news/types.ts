@@ -8,20 +8,3 @@ export type FeedItem = {
   publishedAt: string;
   categories: string[];
 };
-
-/** The scheduled jobs that make up the news pipeline. */
-export type JobName = "feed" | "archive" | "removal";
-
-/** The slice of a prepared SQL statement the news store uses. D1 satisfies it structurally. */
-export interface SqlStatement {
-  bind(...values: unknown[]): SqlStatement;
-  run(): Promise<unknown>;
-  all<T>(): Promise<{ results: T[] }>;
-  first<T>(): Promise<T | null>;
-}
-
-/** The slice of a SQL database the news store uses. D1 satisfies it structurally. */
-export interface SqlDb {
-  prepare(sql: string): SqlStatement;
-  batch(statements: SqlStatement[]): Promise<unknown[]>;
-}
