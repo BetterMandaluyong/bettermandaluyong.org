@@ -23,6 +23,7 @@ source of truth: edit it, never generated output.
 | `places.yaml`                           | Government places on the map (OSM or Google CID source)   | People                            |
 | `pay.yaml`                              | Salary schedule and each office's grade, from DBM         | People, from the circulars        |
 | `stats/population.yaml`                 | People in each barangay, by census (PSA)                  | People                            |
+| `stats/land-area.yaml`                  | Hectares in each barangay (City Government Table 4.01)    | People                            |
 | `stats/poverty.yaml`                    | PSA poverty estimates: city, NCR, Philippines             | People                            |
 | `stats/finances.yaml`                   | The city's own income and spending for a year (BLGF)      | People                            |
 | `news/YYYY-MM.yaml`                     | City news links                                           | The news bot only                 |
@@ -57,6 +58,11 @@ source of truth: edit it, never generated output.
   Poverty figures come from PSA's full-year publication (the "a" tables have
   highly urbanized cities); keep its CVs, intervals, and significance marks with
   the estimates.
+- **Land area is the city's own table.** `stats/land-area.yaml` is Table 4.01
+  from the City Government's site, which has no date: record when it was read
+  (`read`) and keep the file's comment on how its rows, its stated total, and
+  the city's older figures disagree. The rows may be within 0.5 ha of `total`;
+  `/numbers` says so when they differ.
 - **Restart `pnpm dev` after changing a validator.** The YAML plugin imports
   `schema.ts` when Vite loads its config, so a running dev server keeps the old
   validator and fails on data written for the new one ("server restart failed").

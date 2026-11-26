@@ -17,9 +17,16 @@ import {
   SPENDING_LINES,
   type Breakdown,
 } from "../../data/schema.ts";
-import { FINANCES, POPULATION, POVERTY } from "../../data/stats.ts";
+import { FINANCES, LAND_AREA, POPULATION, POVERTY } from "../../data/stats.ts";
 import { formatSourceDate } from "../../utils/barangays/format.ts";
 import { formatPeso, formatPesoShort } from "../../utils/budget/format.ts";
+import {
+  density,
+  formatHectares,
+  formatSquareKm,
+  landDistrictTotals,
+  landRows,
+} from "../../utils/stats/land.ts";
 import {
   districtTotals,
   formatChange,
@@ -57,7 +64,8 @@ function breakdownRows<K extends string>(
 /**
  * "Mandaluyong in Numbers": headline figures, then the population of every
  * barangay (latest census against the one before, with district and city
- * totals), PSA's poverty estimate against Metro Manila and the country, and
+ * totals), each barangay's land area and people per hectare from the City
+ * Government's table, PSA's poverty estimate against Metro Manila and the country, and
  * the City Government's income and spending for one year from BLGF. Every
  * band credits its source, and flags figures still awaiting a check.
  */
@@ -68,6 +76,10 @@ export default function NumbersPage() {
   const cityChange = previous
     ? percentChange(previous.total, latest.total)
     : null;
+  const land = landRows(LAND_AREA, POPULATION, BARANGAYS);
+  const landDistricts = landDistrictTotals(land);
+  const landSum = land.reduce((sum, r) => sum + r.hectares, 0);
+  const landSumDiffers = Math.abs(landSum - LAND_AREA.total) >= 0.005;
   const povertyYear = POVERTY.years[POVERTY.years.length - 1]!;
   const cityPoverty = POVERTY.areas.city.years[povertyYear]!;
   const f = FINANCES;
@@ -203,6 +215,80 @@ export default function NumbersPage() {
               .
             </SourceNote>
           ))}
+        </Container>
+      </section>
+
+      <section id="land" className="border-b border-ed-rule">
+        <Container className="py-8 md:py-12">
+          <SectionHeader
+            label={NUMBERS.landHeading}
+            meta={NUMBERS.landMeta(formatSquareKm(LAND_AREA.total))}
+          />
+          <p className="type-body m-0 mb-6 max-w-[65ch]">
+            {NUMBERS.landIntro(latest.year)}
+          </p>
+          <DataTable
+            caption={NUMBERS.landCaption}
+            columns={[
+              { label: NUMBERS.columns.barangay },
+              { label: NUMBERS.columns.district },
+              { label: NUMBERS.landColumns.area, numeric: true },
+              { label: NUMBERS.columns.share, numeric: true },
+              {
+                label: NUMBERS.landColumns.density(latest.year),
+                numeric: true,
+              },
+            ]}
+            rows={land.map((r) => ({
+              key: r.slug,
+              cells: [
+                <a
+                  key="name"
+                  href={`/barangays/${r.slug}`}
+                  className="text-ed-navy"
+                >
+                  {r.name}
+                </a>,
+                r.district,
+                formatHectares(r.hectares),
+                formatPercent(r.share),
+                formatCount(r.density),
+              ],
+            }))}
+            footer={[
+              ...landDistricts.map((d) => ({
+                key: `district-${d.district}`,
+                cells: [
+                  NUMBERS.districtRow(d.district),
+                  "",
+                  formatHectares(d.hectares),
+                  formatPercent((d.hectares / LAND_AREA.total) * 100),
+                  formatCount(d.density),
+                ],
+              })),
+              {
+                key: "city",
+                cells: [
+                  NUMBERS.cityRow,
+                  "",
+                  formatHectares(LAND_AREA.total),
+                  formatPercent(100),
+                  formatCount(density(latest.total, LAND_AREA.total)),
+                ],
+              },
+            ]}
+          />
+          <SourceNote
+            href={LAND_AREA.source.url}
+            label={LAND_AREA.source.title}
+          >
+            {landSumDiffers &&
+              NUMBERS.landTotalNote(
+                formatHectares(landSum),
+                formatHectares(LAND_AREA.total),
+              ) + " "}
+            {NUMBERS.landRead(formatSourceDate(LAND_AREA.read))}
+          </SourceNote>
         </Container>
       </section>
 

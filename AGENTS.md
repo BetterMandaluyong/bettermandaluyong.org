@@ -243,7 +243,7 @@ data/         Site data as YAML, parsed at build time: people/<ULID>.yaml
               checked against DILG, with `flags` where they differ),
               city-officials.yaml, places.yaml (map pins), pay.yaml (DBM salary
               schedule and each office's grade), stats/ (population,
-              poverty, and city finances), and
+              land area, poverty, and city finances), and
               news/YYYY-MM.yaml (city news
               links, one file per month, written by the news bot on the
               bot/news-data branch; see DEPLOYMENT.md), and bids/YYYY.yaml +
@@ -278,7 +278,8 @@ utils/news/   News logic: rss/wp/wayback parsers, jobs.ts (the three jobs),
 utils/notices/ Bids and jobs: category-page and API parsers, the bot's
               run (jobs.ts), record and YAML output, page queries.
 utils/pay/    Salary tranche for a year and an office's rate.
-utils/stats/  Population rows, district totals, and number formatting.
+utils/stats/  Population and land rows, district totals, density, and
+              number formatting.
 utils/budget/ Budget API client, whole-word place matching, YAML output,
               and the page's display math (never adds NEP and House bill).
 worker/       index.ts: the Worker entry; serves the app, nothing scheduled.

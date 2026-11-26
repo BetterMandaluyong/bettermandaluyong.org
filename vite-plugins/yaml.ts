@@ -8,6 +8,7 @@ import {
   parseCityOfficials,
   parseFinances,
   parseJobsFile,
+  parseLandArea,
   parseNewsFile,
   parsePay,
   parsePerson,
@@ -25,6 +26,7 @@ const BUDGET_FILES: Record<string, (data: unknown, file: string) => unknown> = {
 /** The city statistics files and their validators, by name under data/stats/. */
 const STATS_FILES: Record<string, (data: unknown, file: string) => unknown> = {
   "population.yaml": parsePopulation,
+  "land-area.yaml": parseLandArea,
   "poverty.yaml": parsePoverty,
   "finances.yaml": parseFinances,
 };
