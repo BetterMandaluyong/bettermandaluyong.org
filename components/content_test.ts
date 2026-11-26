@@ -1,10 +1,12 @@
 import { describe, expect, it } from "vitest";
 import {
   BARANGAYS,
+  BIDS,
   BETTERGOV,
   BUDGET,
   DISTRICTS_COPY,
   FOOTER,
+  JOBS,
   NAV,
   NEWS,
   NUMBERS,
@@ -81,6 +83,10 @@ describe("content", () => {
       DISTRICTS_COPY.houseHeading,
       DISTRICTS_COPY.barangays(1, 14),
       NEWS.heading,
+      BIDS.heading,
+      JOBS.heading,
+      JOBS.cityHallHeading,
+      JOBS.pesoHeading,
       VOLUNTEER.heading,
       NEWS.facebookHeading,
       NEWS.latestHeading,
