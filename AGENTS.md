@@ -123,6 +123,16 @@ line on the page itself.
   `bot/news-data`, and never widen what the bot may change. That takes a
   human-reviewed PR to the workflow, to this paragraph, and to the
   `data-only-guard` job in `check.yml`.
+- **Linear history: rebase on `main`, never merge it in.** `main` requires a
+  linear history, and PRs land only by "Rebase and merge": never "Squash and
+  merge" or a merge commit, so each commit on the branch reaches `main` as
+  written. To bring a branch up to date or fix a merge conflict, run
+  `git fetch origin main` and `git rebase origin/main`, fix each conflict in the
+  commit that caused it, run `pnpm check` and `pnpm test` again, then
+  `git push --force-with-lease`. Never `git merge main` (or `origin/main`) into
+  a branch. A merge commit makes GitHub refuse "Rebase and merge" ("This branch
+  can't be rebased") and has to be rebased away later. Force-push only your own
+  PR branch, never `main` or `bot/news-data`.
 - **Never run deploys or log in to Cloudflare.** `pnpm run deploy`,
   `pnpm deploy:preview`, `cf auth login`, and dashboard changes are human steps
   (see [DEPLOYMENT.md](DEPLOYMENT.md)).
