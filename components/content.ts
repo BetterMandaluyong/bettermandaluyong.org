@@ -343,6 +343,56 @@ export const PEOPLE_COPY = {
   externalLink: (name: string, source: string) => `${name} on ${source}`,
 } as const;
 
+/**
+ * Copy for officials' pay, on the home page and each person's page. The
+ * amounts come from `data/pay.yaml`: the national salary schedule, not the
+ * city's payroll. Keep that in the wording, and keep the caveats with every
+ * figure: no allowances or bonuses, and actual pay can be lower.
+ */
+export const PAY_COPY = {
+  homeHeading: "What Officials Are Paid",
+  homeMeta: (year: number) => `${year} salary schedule`,
+  homeIntro:
+    "The monthly basic pay the law sets for each elected office in Mandaluyong, from the national government's salary schedule. Barangay and SK officials receive an honorarium instead, and the law sets only the most they can get.",
+  personHeading: "Pay",
+  /** One label per office, as the home page lists them. */
+  offices: {
+    representative: "House representative",
+    mayor: "Mayor",
+    "vice-mayor": "Vice mayor",
+    councilor: "City councilor",
+    captain: "Barangay captain",
+    kagawad: "Barangay kagawad",
+    "sk-chair": "SK chairperson",
+    "sk-kagawad": "SK kagawad",
+  },
+  /** The note under a figure on the home page. */
+  homeNote: (grade: number, cap: boolean) =>
+    cap
+      ? `At most, a month (salary grade ${grade}, Step 1)`
+      : `A month (salary grade ${grade}, Step 1)`,
+  monthly: "Monthly basic pay",
+  monthlyCap: "Most it can be, a month",
+  monthlyNote: (year: number) => `From the ${year} salary schedule.`,
+  yearly: "A year, before bonuses",
+  yearlyNote: "Twelve months of basic pay.",
+  grade: "Salary grade",
+  gradeValue: (grade: number) => `SG ${grade}`,
+  gradeNote: (cap: boolean) =>
+    cap ? "Step 1. The honorarium can't go above it." : "Step 1.",
+  setBy: "The salary grade is set by",
+  caveat:
+    "This is the rate the national salary schedule sets for the office, not the city's payroll, which isn't published. It leaves out allowances and bonuses. The city adopts each year's rates by ordinance, and the law delays raises for elected officials until the terms of those who approved them end, so actual pay can be lower.",
+  capCaveat:
+    "Barangay and SK officials receive an honorarium, not a salary. The barangay sets it, up to this amount, depending on its funds.",
+  unconfirmedTag: "To be confirmed",
+  unconfirmedTitle: "Which councilor grade applies",
+  unconfirmed:
+    "The national government's list of local positions gives city councilors two grades, 25 and 27, without saying which cities get which. We show grade 27, the one that matches the vice mayor's grade 28 in the city charter, until we can confirm it.",
+  houseFrom: "The House representative's is from",
+  checked: (date: string) => `Checked against the circulars on ${date}.`,
+} as const;
+
 /** Copy for the districts page. */
 export const DISTRICTS_COPY = {
   metaTitle: `Districts — ${SITE.name}`,

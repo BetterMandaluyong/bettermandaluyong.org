@@ -9,9 +9,12 @@ import { PageShell } from "../../../components/PageShell.tsx";
 import { pageMetadata } from "../../../components/metadata.ts";
 import { SectionHeader } from "../../../components/SectionHeader.tsx";
 import { DilgNote } from "../../../components/DilgNote.tsx";
+import { Notice } from "../../../components/Notice.tsx";
 import { SourceNote } from "../../../components/SourceNote.tsx";
+import { StatList } from "../../../components/StatList.tsx";
 import {
   BARANGAYS as COPY,
+  PAY_COPY,
   PEOPLE_COPY,
   SITE,
 } from "../../../components/content.ts";
@@ -24,10 +27,12 @@ import {
   CITY_OFFICIALS,
   CITY_OFFICIALS_AS_OF,
 } from "../../../data/city-officials.ts";
+import { PAY, currentRate } from "../../../data/pay.ts";
 import { PEOPLE, getPerson, personPath } from "../../../data/people.ts";
 import { EXTERNAL_ID_KEYS, EXTERNAL_ID_KINDS } from "../../../data/schema.ts";
 import { BarangayMap } from "../../../islands/BarangayMap.tsx";
 import { formatSourceDate } from "../../../utils/barangays/format.ts";
+import { formatPeso } from "../../../utils/budget/format.ts";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -56,7 +61,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
  * serve (with links), and how to reach them. City officials show the contacts
  * the city publishes for them; barangay and SK officials show the barangay
  * hall's contacts, labelled as the hall's. Links to their records in other
- * datasets (`ids:` in their person file) come next. A map zooms to their barangay or
+ * datasets (`ids:` in their person file) come next. A pay band shows what the
+ * national salary schedule sets for their first office (`data/pay.yaml`),
+ * with its legal basis and caveats. A map zooms to their barangay or
  * council district, and a credit links the city page the data came from.
  * Unknown slugs 404.
  */
@@ -79,6 +86,7 @@ export default async function PersonPage({ params }: Params) {
     const kind = EXTERNAL_ID_KINDS[key];
     return [{ key, value, label: kind.label, url: kind.url?.(value) }];
   });
+  const pay = currentRate(position.office);
 
   return (
     <PageShell>
@@ -178,6 +186,66 @@ export default async function PersonPage({ params }: Params) {
           )}
         </Container>
       </section>
+
+      {pay && (
+        <section className="border-b border-ed-rule">
+          <Container className="py-8 md:py-12">
+            <SectionHeader
+              label={PAY_COPY.personHeading}
+              meta={PAY_COPY.offices[pay.office]}
+            />
+            <StatList
+              label={`${PAY_COPY.personHeading}: ${person.name}`}
+              items={[
+                {
+                  label: pay.cap ? PAY_COPY.monthlyCap : PAY_COPY.monthly,
+                  value: formatPeso(pay.monthly),
+                  note: PAY_COPY.monthlyNote(pay.year),
+                },
+                {
+                  label: PAY_COPY.yearly,
+                  value: formatPeso(pay.yearly),
+                  note: PAY_COPY.yearlyNote,
+                },
+                {
+                  label: PAY_COPY.grade,
+                  value: PAY_COPY.gradeValue(pay.grade),
+                  note: PAY_COPY.gradeNote(pay.cap),
+                },
+              ]}
+            />
+            <div className="mt-6 flex max-w-[65ch] flex-col gap-3">
+              {pay.cap && <p className="type-body m-0">{PAY_COPY.capCaveat}</p>}
+              <p className="type-body m-0">{PAY_COPY.caveat}</p>
+              <p className="type-body m-0">
+                {PAY_COPY.setBy}{" "}
+                <a
+                  href={pay.basis.url}
+                  rel="noreferrer"
+                  className="text-ed-navy"
+                >
+                  {pay.basis.title}
+                </a>
+                .
+              </p>
+            </div>
+            {pay.unconfirmed && (
+              <Notice
+                className="mt-6"
+                tag={PAY_COPY.unconfirmedTag}
+                title={PAY_COPY.unconfirmedTitle}
+              >
+                <p className="type-body m-0 mt-2 max-w-[65ch]">
+                  {PAY_COPY.unconfirmed}
+                </p>
+              </Notice>
+            )}
+            <SourceNote href={pay.circular.url} label={pay.circular.title}>
+              {PAY_COPY.checked(formatSourceDate(PAY.checked))}
+            </SourceNote>
+          </Container>
+        </section>
+      )}
 
       {external.length > 0 && (
         <section className="border-b border-ed-rule">

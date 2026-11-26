@@ -3,7 +3,7 @@ import { BARANGAYS } from "./barangays.ts";
 import { CITY_OFFICIALS } from "./city-officials.ts";
 import { LOADED_PEOPLE } from "./load.ts";
 import { hrefKey } from "../utils/barangays/keys.ts";
-import type { CitySeat, District, ExternalIds } from "./schema.ts";
+import type { CitySeat, District, ExternalIds, Office } from "./schema.ts";
 
 /** What kind of office a person holds. */
 export type PersonKind = "city" | "barangay" | "sk";
@@ -40,6 +40,8 @@ const CITY_CATEGORY: Record<CitySeat, PositionCategory> = {
 export type Position = {
   /** Position, e.g. "Mayor", "Barangay Captain", "SK Kagawad". */
   role: string;
+  /** The office itself, e.g. "vice-mayor" (its pay is in `data/pay.yaml`). */
+  office: Office;
   category: PositionCategory;
   kind: PersonKind;
   /** The barangay's slug, for barangay and SK officials. */
@@ -77,6 +79,7 @@ const holdings: Holding[] = [
     id: o.personId,
     position: {
       role: o.role,
+      office: o.seat,
       category: CITY_CATEGORY[o.seat],
       kind: "city",
       ...(o.district ? { district: o.district } : {}),
@@ -86,12 +89,16 @@ const holdings: Holding[] = [
   ...BARANGAYS.flatMap((b): Holding[] => {
     const at = { barangay: b.slug, district: b.district };
     const ids = b.officialIds;
+    // Barangay offices share their name with their `/people` category.
     const hold = (
       id: string,
       role: string,
-      category: PositionCategory,
+      office: "captain" | "kagawad" | "sk-chair" | "sk-kagawad",
       kind: PersonKind,
-    ): Holding => ({ id, position: { ...at, role, category, kind } });
+    ): Holding => ({
+      id,
+      position: { ...at, role, office, category: office, kind },
+    });
     return [
       hold(ids.captain, COPY.captain, "captain", "barangay"),
       ...ids.kagawads.map((id) =>

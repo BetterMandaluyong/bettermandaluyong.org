@@ -8,6 +8,7 @@ import {
   parseBudgetScope,
   parseCityOfficials,
   parseNewsFile,
+  parsePay,
   parsePerson,
   resolveBarangay,
   resolveCityOfficials,
@@ -564,5 +565,70 @@ describe("budget files", () => {
     expect(() => parseBudgetGaa(gaa({ "2026": 1 }, "99"), "gaa.yaml")).toThrow(
       "not in departments",
     );
+  });
+});
+
+describe("parsePay", () => {
+  const cite = { title: "Circular", url: "https://example.com/c.pdf" };
+  const office = (grade: number) => ({
+    grade,
+    schedule: "local",
+    basis: "Sample Act",
+    url: "https://example.com/act",
+  });
+  const pay = () => ({
+    checked: "2026-11-26",
+    law: cite,
+    tranches: [
+      { year: 2025, national: cite, local: cite, step1: { 10: 100, 30: 300 } },
+      { year: 2026, national: cite, local: cite, step1: { 10: 110, 30: 330 } },
+    ] as Record<string, unknown>[],
+    offices: {
+      representative: { ...office(30), schedule: "national" },
+      mayor: office(30),
+      "vice-mayor": office(30),
+      councilor: { ...office(30), note: "unconfirmed" },
+      captain: { ...office(10), cap: true },
+      kagawad: { ...office(10), cap: true },
+      "sk-chair": { ...office(10), cap: true },
+      "sk-kagawad": { ...office(10), cap: true },
+    } as Record<string, Record<string, unknown>>,
+  });
+
+  it("accepts a valid file", () => {
+    const p = parsePay(pay(), "pay.yaml");
+    expect(p.tranches[1]!.step1[30]).toBe(330);
+    expect(p.offices.captain).toMatchObject({ grade: 10, cap: true });
+    expect(p.offices.mayor).toMatchObject({ cap: false, unconfirmed: false });
+    expect(p.offices.councilor.unconfirmed).toBe(true);
+  });
+  it("needs every office, and no unknown ones", () => {
+    const missing = pay();
+    delete missing.offices["sk-kagawad"];
+    expect(() => parsePay(missing, "pay.yaml")).toThrow("offices.sk-kagawad");
+    const extra = pay();
+    extra.offices.governor = office(30);
+    expect(() => parsePay(extra, "pay.yaml")).toThrow("offices.governor");
+  });
+  it("needs each office's grade in every tranche", () => {
+    const p = pay();
+    p.offices.mayor = office(28);
+    expect(() => parsePay(p, "pay.yaml")).toThrow("SG 28 is missing");
+  });
+  it("needs tranches in order and rates that rise with the grade", () => {
+    const order = pay();
+    order.tranches.reverse();
+    expect(() => parsePay(order, "pay.yaml")).toThrow("tranches[1].year");
+    const rates = pay();
+    rates.tranches[0]!.step1 = { 10: 300, 30: 100 };
+    expect(() => parsePay(rates, "pay.yaml")).toThrow("tranches[0].step1.30");
+  });
+  it("rejects a bad schedule or note", () => {
+    const sched = pay();
+    sched.offices.mayor = { ...office(30), schedule: "city" };
+    expect(() => parsePay(sched, "pay.yaml")).toThrow("offices.mayor.schedule");
+    const note = pay();
+    note.offices.mayor = { ...office(30), note: "maybe" };
+    expect(() => parsePay(note, "pay.yaml")).toThrow("offices.mayor.note");
   });
 });

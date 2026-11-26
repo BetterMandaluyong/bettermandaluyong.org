@@ -6,6 +6,7 @@ import {
   parseBudgetScope,
   parseCityOfficials,
   parseNewsFile,
+  parsePay,
   parsePerson,
 } from "../data/schema.ts";
 
@@ -51,6 +52,8 @@ export function validateData(path: string, data: unknown): void {
     parsePerson(data, `data/people/${person[1]}.yaml`, person[1]);
   } else if (/(?:^|\/)data\/city-officials\.yaml$/.test(path)) {
     parseCityOfficials(data, "data/city-officials.yaml");
+  } else if (/(?:^|\/)data\/pay\.yaml$/.test(path)) {
+    parsePay(data, "data/pay.yaml");
   } else {
     const news = path.match(/(?:^|\/)data\/news\/([^/]+)\.yaml$/);
     if (news) parseNewsFile(data, `data/news/${news[1]}.yaml`, news[1]);

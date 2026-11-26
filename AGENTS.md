@@ -227,7 +227,8 @@ data/         Site data as YAML, parsed at build time: people/<ULID>.yaml
               (one per official: id, URL slug, name, external ids; offices
               point at them by id), barangays/<slug>.yaml (27; officials
               checked against DILG, with `flags` where they differ),
-              city-officials.yaml, places.yaml (map pins), and
+              city-officials.yaml, places.yaml (map pins), pay.yaml (DBM salary
+              schedule and each office's grade), and
               news/YYYY-MM.yaml (city news
               links, one file per month, written by the news bot on the
               bot/news-data branch; see DEPLOYMENT.md). Edit the YAML, never
@@ -237,7 +238,7 @@ data/         Site data as YAML, parsed at build time: people/<ULID>.yaml
               snapshot (fy2027.yaml, gaa.yaml) written by
               scripts/budget_refresh.ts from the BetterGov.ph Budget API.
               barangays.ts / people.ts / city-officials.ts / news.ts /
-              org-chart.ts / budget.ts expose it. See DEVELOPMENT.md
+              org-chart.ts / budget.ts / pay.ts expose it. See DEVELOPMENT.md
               "People".
 vite-plugins/ yaml.ts: the Vite plugin that turns `.yaml` imports into data.
 public/       Assets served as-is: logo-seal.svg (logo + favicon),
@@ -254,6 +255,7 @@ utils/site/   Builders for /news/feed.xml (RSS), /llms.txt, /humans.txt.
               app/robots.ts and app/sitemap.ts serve the other two.
 utils/news/   News logic: rss/wp/wayback parsers, jobs.ts (the three jobs),
               repo.ts (in-memory record + YAML output), query.ts (page reads).
+utils/pay/    Salary tranche for a year and an office's rate.
 utils/budget/ Budget API client, whole-word place matching, YAML output,
               and the page's display math (never adds NEP and House bill).
 worker/       index.ts: the Worker entry; serves the app, nothing scheduled.

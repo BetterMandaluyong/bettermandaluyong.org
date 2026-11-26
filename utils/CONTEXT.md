@@ -9,6 +9,7 @@ Pure logic shared by pages, islands, and scripts: no data loading, no React.
 | `news/`      | Feed, WordPress, and Wayback parsers; the bot's jobs; record and YAML   |
 | `people/`    | ULIDs, URL slugs and re-import matching, `# Name` comments, disk reader |
 | `site/`      | The RSS feed, llms.txt, and humans.txt builders                         |
+| `pay/`       | The salary schedule in force in a year, and an office's rate            |
 
 - **Every module ships with tests** next to it (`foo.ts` → `foo_test.ts`). New
   or changed logic needs passing tests in the same change.

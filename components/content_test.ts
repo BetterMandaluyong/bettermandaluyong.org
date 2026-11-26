@@ -7,6 +7,7 @@ import {
   FOOTER,
   NAV,
   NEWS,
+  PAY_COPY,
   PEOPLE_COPY,
   SITE,
   UNOFFICIAL,
@@ -87,6 +88,8 @@ describe("content", () => {
       BUDGET.gaaHeading,
       BUDGET.aboutHeading,
       BUDGET.excludedHeading,
+      PAY_COPY.homeHeading,
+      PAY_COPY.personHeading,
     ];
     for (const heading of headings)
       expect(isTitleCase(heading), heading).toBe(true);
