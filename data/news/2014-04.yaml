@@ -1,0 +1,15 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8849
+  url: https://mandaluyong.gov.ph/new-school-gymnasium/
+  title: New School Gymnasium
+  published_at: 2014-04-14T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8853
+  url: https://mandaluyong.gov.ph/mayor-abalos-to-attend-world-urban-forum-of-the-un-in-colombia/
+  title: Mayor Abalos to attend World Urban Forum of the UN in Colombia
+  published_at: 2014-04-06T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

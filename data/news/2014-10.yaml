@@ -1,0 +1,43 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8916
+  url: https://mandaluyong.gov.ph/championing-childrens-rights-and-welfare-by-philippine-red-cross-rizal-chapter-to-mayor-abalos/
+  title: CHAMPIONING CHILDREN’S RIGHTS AND WELFARE  BY PHILIPPINE RED CROSS – RIZAL CHAPTER TO MAYOR ABALOS
+  published_at: 2014-10-25T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8833
+  url: https://mandaluyong.gov.ph/mandaluyong-is-nnc-crown-maintenance-awardee-1st-year/
+  title: MANDALUYONG IS NNC CROWN MAINTENANCE AWARDEE (1ST YEAR)
+  published_at: 2014-10-22T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8940
+  url: https://mandaluyong.gov.ph/outstanding-programs-for-children-given-by-unicef-to-mayor-abalos/
+  title: OUTSTANDING PROGRAMS FOR CHILDREN GIVEN BY UNICEF TO MAYOR ABALOS
+  published_at: 2014-10-21T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8912
+  url: https://mandaluyong.gov.ph/the-celebration-of-the-24th-anniversary-of-the-philippine-local-government-code-and-the-launching-of-the-local-government-leadership-awards-lgla/
+  title: the celebration of the 24th Anniversary of the Philippine Local Government Code and the launching of the Local Government Leadership Awards (LGLA)
+  published_at: 2014-10-10T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8926
+  url: https://mandaluyong.gov.ph/motorcycle-riding-in-tandem-ordinance/
+  title: Motorcycle Riding-in-Tandem Ordinance
+  published_at: 2014-10-09T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8841
+  url: https://mandaluyong.gov.ph/mandaluyong-city-carrot-and-stick-for-green-building/
+  title: "Mandaluyong City:  Carrot and Stick for Green Building"
+  published_at: 2014-10-08T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

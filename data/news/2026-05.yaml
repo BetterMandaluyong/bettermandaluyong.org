@@ -1,0 +1,63 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 55204
+  url: https://mandaluyong.gov.ph/mcst-kampeonato-sa-pasiklaban-2026/
+  title: MCST, KAMPEONATO SA PASIKLABAN 2026
+  published_at: 2026-05-12T11:14:04+08:00
+  categories:
+    - Awards
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55201
+  url: https://mandaluyong.gov.ph/mcst-nasungkit-ang-ika-anim-na-pwesto-sa-poliquest-2026/
+  title: MCST, NASUNGKIT ANG IKA-ANIM NA PWESTO SA POLIQUEST 2026
+  published_at: 2026-05-12T11:08:59+08:00
+  categories:
+    - Awards
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55182
+  url: https://mandaluyong.gov.ph/plt-ona-binigyang-saludo-ng-mandaluyong/
+  title: PLT. ONA, BINIGYANG SALUDO NG MANDALUYONG
+  published_at: 2026-05-11T15:17:48+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55178
+  url: https://mandaluyong.gov.ph/6-market-young-entrepreneurs-bida-sa-programa-ng-mandaluyong/
+  title: 6 MARKET YOUNG ENTREPRENEURS, BIDA SA PROGRAMA NG MANDALUYONG
+  published_at: 2026-05-11T15:14:39+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55170
+  url: https://mandaluyong.gov.ph/mga-pioneer-vendors-sa-palengke-kinilala-ng-mandaluyong/
+  title: MGA PIONEER VENDORS SA PALENGKE, KINILALA NG MANDALUYONG
+  published_at: 2026-05-11T13:58:20+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55138
+  url: https://mandaluyong.gov.ph/atletang-mandaleno-muling-nagpakitang-gilas-sa-larangan-ng-wushu/
+  title: ATLETANG MANDALEÑO, MULING NAGPAKITANG GILAS SA LARANGAN NG WUSHU
+  published_at: 2026-05-04T16:37:01+08:00
+  categories:
+    - News
+    - Sports
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55132
+  url: https://mandaluyong.gov.ph/mandaluyong-nagbigay-pasasalamat-sa-pbsp/
+  title: MANDALUYONG, NAGBIGAY PASASALAMAT SA PBSP
+  published_at: 2026-05-04T16:33:38+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55128
+  url: https://mandaluyong.gov.ph/panunumpa-ni-pb-espiritu-sa-mandaluyong/
+  title: PANUNUMPA NI PB ESPIRITU SA MANDALUYONG
+  published_at: 2026-05-04T16:29:55+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,22 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8357
+  url: https://mandaluyong.gov.ph/mandaluyong-city-columbarium-phase-2-now-open/
+  title: MANDALUYONG CITY COLUMBARIUM PHASE 2 NOW OPEN
+  published_at: 2016-10-31T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8385
+  url: https://mandaluyong.gov.ph/mandaluyong-sglg-awardee/
+  title: MANDALUYONG, SGLG AWARDEE
+  published_at: 2016-10-29T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8349
+  url: https://mandaluyong.gov.ph/abalos-leads-seminar-on-drug-surrenderers/
+  title: Abalos leads seminar on drug surrenderers
+  published_at: 2016-10-17T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

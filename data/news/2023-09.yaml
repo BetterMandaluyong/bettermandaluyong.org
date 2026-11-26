@@ -1,0 +1,99 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 15670
+  url: https://mandaluyong.gov.ph/mega-jobs-fair/
+  title: MEGA JOBS FAIR
+  published_at: 2023-09-27T17:02:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 13907
+  url: https://mandaluyong.gov.ph/mandaluyong-city-at-municipality-of-luisiana-lumagda-sa-isang-sisterhood-agreement/
+  title: MANDALUYONG CITY AT MUNICIPALITY OF LUISIANA, LUMAGDA SA ISANG SISTERHOOD AGREEMENT
+  published_at: 2023-09-26T12:16:16+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 13641
+  url: https://mandaluyong.gov.ph/unang-kasalan-sa-piitan-idinaos-sa-mandaluyong/
+  title: UNANG ‘KASALAN SA PIITAN’ IDINAOS SA MANDALUYONG.
+  published_at: 2023-09-20T20:39:52+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 13639
+  url: https://mandaluyong.gov.ph/mandaluyong-city-government-idinaos-ang-kauna-unahang-mass-civil-wedding-sa-city-jail/
+  title: Mandaluyong City Government idinaos ang kauna-unahang mass civil wedding sa city jail
+  published_at: 2023-09-20T20:35:39+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 13460
+  url: https://mandaluyong.gov.ph/libreng-serbisyo-medikal/
+  title: LIBRENG SERBISYO MEDIKAL
+  published_at: 2023-09-18T14:30:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 13454
+  url: https://mandaluyong.gov.ph/operation-tanggal-bukol-luslos-goiter-cleft-lip-at-iba-pa/
+  title: OPERATION TANGGAL BUKOL, LUSLOS, GOITER, CLEFT LIP, AT IBA PA
+  published_at: 2023-09-18T10:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 12645
+  url: https://mandaluyong.gov.ph/barkada-2023/
+  title: BarKaDa 2023
+  published_at: 2023-09-16T10:28:27+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 12626
+  url: https://mandaluyong.gov.ph/barangay-sa-mandaluyong-umani-ng-selyo-ng-kahusayan-sa-serbisyo-publiko/
+  title: BARANGAY SA MANDALUYONG, UMANI NG SELYO NG KAHUSAYAN SA SERBISYO PUBLIKO
+  published_at: 2023-09-14T13:34:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 12050
+  url: https://mandaluyong.gov.ph/p15k-ayuda-for-rice-retailers/
+  title: P15K AYUDA FOR RICE RETAILERS
+  published_at: 2023-09-13T14:04:28+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 12482
+  url: https://mandaluyong.gov.ph/bagong-chief-of-police-at-jail-warden-ng-mandaluyong-city/
+  title: BAGONG CHIEF OF POLICE AT JAIL WARDEN NG MANDALUYONG CITY
+  published_at: 2023-09-12T09:11:51+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 12433
+  url: https://mandaluyong.gov.ph/gsp-mandaluyong-nakuha-ang-2023-national-outstanding-pilar-hidalgo-lim-award/
+  title: GSP-MANDALUYONG NAKUHA ANG 2023 NATIONAL OUTSTANDING PILAR HIDALGO LIM AWARD
+  published_at: 2023-09-11T12:34:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 10644
+  url: https://mandaluyong.gov.ph/batang-mandalenos-win-tournament/
+  title: BATANG MANDALEÑOS WIN TOURNAMENT
+  published_at: 2023-09-08T09:43:26+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 10641
+  url: https://mandaluyong.gov.ph/mandaluyong-historical-heritage/
+  title: MANDALUYONG HISTORICAL HERITAGE
+  published_at: 2023-09-06T09:39:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 10638
+  url: https://mandaluyong.gov.ph/mandaluyong-city-council-turns-over-book-of-ordinances/
+  title: MANDALUYONG CITY COUNCIL TURNS OVER BOOK OF ORDINANCES
+  published_at: 2023-09-04T10:30:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

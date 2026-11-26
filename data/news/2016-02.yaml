@@ -1,0 +1,22 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8423
+  url: https://mandaluyong.gov.ph/mandaluyong-starts-bid-for-second-national-most-child-friendly-award/
+  title: Mandaluyong starts bid for Second National Most Child Friendly Award
+  published_at: 2016-02-12T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8405
+  url: https://mandaluyong.gov.ph/tiger-citys-top-10-taxpayers-3/
+  title: TIGER CITY’S TOP 10 TAXPAYERS
+  published_at: 2016-02-10T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8420
+  url: https://mandaluyong.gov.ph/ulirang-mandaleno-awards/
+  title: ULIRANG MANDALEÑO AWARDS
+  published_at: 2016-02-08T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

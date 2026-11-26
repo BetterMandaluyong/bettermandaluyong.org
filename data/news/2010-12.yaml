@@ -1,0 +1,22 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8508
+  url: https://mandaluyong.gov.ph/pwds-in-mandaluyong-receives-assisted-devices/
+  title: PWD’s IN MANDALUYONG RECEIVES ASSISTED DEVICES
+  published_at: 2010-12-06T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8497
+  url: https://mandaluyong.gov.ph/mandaluyong-security-summit/
+  title: MANDALUYONG SECURITY SUMMIT
+  published_at: 2010-12-02T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8479
+  url: https://mandaluyong.gov.ph/mandaluyong-city-barangay-officials-took-oath-of-office/
+  title: MANDALUYONG CITY BARANGAY OFFICIALS TOOK OATH OF OFFICE
+  published_at: 2010-12-02T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

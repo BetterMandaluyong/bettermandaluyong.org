@@ -1,0 +1,67 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 29640
+  url: https://mandaluyong.gov.ph/mandaluyong-pinarangalan-ang-mga-estudyanteng-4ps-na-nagtapos-ng-may-latin-honors/
+  title: MANDALUYONG, PINARANGALAN ANG MGA ESTUDYANTENG 4PS NA NAGTAPOS NG MAY LATIN HONORS
+  published_at: 2024-08-22T16:17:39+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 29619
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-humakot-ng-parangal-sa-rnac-2024/
+  title: MANDALUYONG LGU HUMAKOT NG PARANGAL SA RNAC 2024
+  published_at: 2024-08-22T13:42:33+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 29577
+  url: https://mandaluyong.gov.ph/makulay-na-fun-run-idinaos-ng-mandaluyong-lgu/
+  title: MAKULAY NA FUN RUN IDINAOS NG MANDALUYONG LGU
+  published_at: 2024-08-21T12:37:10+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 29372
+  url: https://mandaluyong.gov.ph/mandaluyong-binigyang-pugay-si-peso-head-emma-javier/
+  title: MANDALUYONG, BINIGYANG PUGAY SI PESO HEAD EMMA JAVIER
+  published_at: 2024-08-16T09:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 29369
+  url: https://mandaluyong.gov.ph/panunumpa-ng-apsa-m-tampok-sa-lingguhang-programa-ng-lungsod/
+  title: PANUNUMPA NG APSA-M TAMPOK SA LINGGUHANG PROGRAMA NG LUNGSOD
+  published_at: 2024-08-15T15:15:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 29352
+  url: https://mandaluyong.gov.ph/paggunita-ng-mandaluyong-sa-buwan-ng-wika-kasama-ang-stwf/
+  title: PAGGUNITA NG MANDALUYONG SA BUWAN NG WIKA KASAMA ANG STWF
+  published_at: 2024-08-15T09:53:31+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 29284
+  url: https://mandaluyong.gov.ph/mandaluyong-donsol-lumagda-sa-sisterhood-agreement/
+  title: Mandaluyong-Donsol lumagda sa sisterhood agreement
+  published_at: 2024-08-13T22:14:34+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 29132
+  url: https://mandaluyong.gov.ph/mandaluyong-tinanggap-ang-tulong-mula-sa-shopee/
+  title: MANDALUYONG, TINANGGAP ANG TULONG MULA SA SHOPEE
+  published_at: 2024-08-08T16:50:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 29035
+  url: https://mandaluyong.gov.ph/national-hospital-week-ipinagdiriwang-ng-mandaluyong-lgu/
+  title: NATIONAL HOSPITAL WEEK IPINAGDIRIWANG NG MANDALUYONG LGU
+  published_at: 2024-08-05T16:30:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

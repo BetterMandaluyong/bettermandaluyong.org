@@ -1,0 +1,22 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8936
+  url: https://mandaluyong.gov.ph/ulirang-mandaleno-awardees-4/
+  title: ULIRANG MANDALEÑO AWARDEES
+  published_at: 2014-02-20T14:00:06+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8932
+  url: https://mandaluyong.gov.ph/tiger-citys-top-10-taxpayers-5/
+  title: TIGER CITY’S TOP 10 TAXPAYERS
+  published_at: 2014-02-18T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8855
+  url: https://mandaluyong.gov.ph/coronation-night-for-miss-mandaluyong-and-bilbiling-beautiesslated-in-mandaluyong-on-feb-1-2/
+  title: Coronation Night for Miss Mandaluyong and Bilbiling Beautiesslated in Mandaluyong on Feb. 1 & 2
+  published_at: 2014-02-01T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

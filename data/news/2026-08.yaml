@@ -1,0 +1,64 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 57267
+  url: https://mandaluyong.gov.ph/mga-sulo-ng-paglilingkod-sa-alma-mater-ng-mhs-pinahalagahan-ng-mandaluyong/
+  title: MGA SULO NG PAGLILINGKOD SA ALMA MATER NG MHS, PINAHALAGAHAN NG MANDALUYONG
+  published_at: 2026-08-25T16:22:56+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57264
+  url: https://mandaluyong.gov.ph/mula-sa-pagkatuto-tungo-sa-paglilingkod-mhs-alumni-kinilala/
+  title: "MULA SA PAGKATUTO TUNGO SA PAGLILINGKOD: MHS ALUMNI, KINILALA"
+  published_at: 2026-08-25T16:21:25+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57261
+  url: https://mandaluyong.gov.ph/dating-guro-ng-mhs-tampok-sa-programa-ng-mandaluyong/
+  title: DATING GURO NG MHS, TAMPOK SA PROGRAMA NG MANDALUYONG
+  published_at: 2026-08-25T16:19:38+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57256
+  url: https://mandaluyong.gov.ph/mandaluyong-kinilala-at-pinasalamatan-ang-mga-naging-punongguro-ng-mhs/
+  title: MANDALUYONG, KINILALA AT PINASALAMATAN ANG MGA NAGING PUNONGGURO NG MHS
+  published_at: 2026-08-25T16:18:11+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 57253
+  url: https://mandaluyong.gov.ph/natatanging-estudyante-at-guro-ng-mhs-kinilala-ng-mandaluyong/
+  title: NATATANGING ESTUDYANTE AT GURO NG MHS, KINILALA NG MANDALUYONG
+  published_at: 2026-08-25T16:15:52+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56846
+  url: https://mandaluyong.gov.ph/mga-estudyante-ng-project-teach-bida-sa-programa-ng-mandaluyong/
+  title: MGA ESTUDYANTE NG PROJECT TEACH, BIDA SA PROGRAMA NG MANDALUYONG
+  published_at: 2026-08-05T11:52:54+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56841
+  url: https://mandaluyong.gov.ph/mga-atletang-mandaleno-muling-namayagpag-sa-ibat-ibang-larangan-ng-palakasan/
+  title: MGA ATLETANG MANDALEÑO, MULING NAMAYAGPAG SA IBA’T IBANG LARANGAN NG PALAKASAN
+  published_at: 2026-08-05T11:45:37+08:00
+  categories:
+    - News
+    - Sports
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 56836
+  url: https://mandaluyong.gov.ph/mandaluyong-at-catanduanes-opisyal-na-nilagdaan-ang-sisterhood-agreement/
+  title: MANDALUYONG AT CATANDUANES, OPISYAL NA NILAGDAAN ANG SISTERHOOD AGREEMENT
+  published_at: 2026-08-05T11:41:40+08:00
+  categories:
+    - Sisterhood
+  first_seen_at: 2026-11-26T08:45:24+08:00

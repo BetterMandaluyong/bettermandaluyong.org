@@ -1,0 +1,50 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8619
+  url: https://mandaluyong.gov.ph/mandaluyong-bags-the-first-runner-up-in-young-writers-conference/
+  title: MANDALUYONG BAGS THE FIRST RUNNER-UP IN YOUNG WRITERS’ CONFERENCE
+  published_at: 2011-10-23T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8569
+  url: https://mandaluyong.gov.ph/e-customer-service-training-program-of-mandaluyong-city/
+  title: E-CUSTOMER SERVICE TRAINING PROGRAM OF MANDALUYONG CITY
+  published_at: 2011-10-23T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8529
+  url: https://mandaluyong.gov.ph/mandaluyong-city-honors-its-barangay-health-workers/
+  title: MANDALUYONG CITY HONORS ITS BARANGAY HEALTH WORKERS
+  published_at: 2011-10-19T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8577
+  url: https://mandaluyong.gov.ph/first-gen-miguel-malvar-special-award/
+  title: FIRST GEN. MIGUEL MALVAR SPECIAL AWARD
+  published_at: 2011-10-17T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8597
+  url: https://mandaluyong.gov.ph/mandaluyong-city-observes-national-childrens-month/
+  title: MANDALUYONG CITY OBSERVES NATIONAL CHILDREN’S MONTH
+  published_at: 2011-10-11T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8573
+  url: https://mandaluyong.gov.ph/2011-franchise-excellence-awards/
+  title: 2011 FRANCHISE EXCELLENCE AWARDS
+  published_at: 2011-10-07T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8611
+  url: https://mandaluyong.gov.ph/mandaluyong-cited-54-outstanding-teachers/
+  title: MANDALUYONG CITED 54 OUTSTANDING TEACHERS
+  published_at: 2011-10-03T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,43 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8114
+  url: https://mandaluyong.gov.ph/gabi-ng-pasasalamat-bantay-bayan-night/
+  title: GABI NG PASASALAMAT-BANTAY BAYAN NIGHT
+  published_at: 2018-01-31T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8102
+  url: https://mandaluyong.gov.ph/ninos-de-mandalenos/
+  title: NIÑOS DE MANDALEÑOS
+  published_at: 2018-01-30T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8148
+  url: https://mandaluyong.gov.ph/liberation-fun-run/
+  title: LIBERATION FUN RUN
+  published_at: 2018-01-28T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8164
+  url: https://mandaluyong.gov.ph/mega-job-fair/
+  title: MEGA JOB FAIR
+  published_at: 2018-01-27T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8130
+  url: https://mandaluyong.gov.ph/dugong-mandaleno-award/
+  title: DUGONG MANDALEÑO AWARD
+  published_at: 2018-01-26T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8152
+  url: https://mandaluyong.gov.ph/liberation-day-trade-fair/
+  title: LIBERATION DAY TRADE FAIR
+  published_at: 2018-01-24T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

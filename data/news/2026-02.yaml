@@ -1,0 +1,45 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 54325
+  url: https://mandaluyong.gov.ph/panukalang-schedule-of-market-values-sa-lungsod-mandaluyong/
+  title: PANUKALANG SCHEDULE OF MARKET VALUES SA LUNGSOD MANDALUYONG
+  published_at: 2026-02-26T14:42:24+08:00
+  categories:
+    - Announcement
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 54295
+  url: https://mandaluyong.gov.ph/pagkilala-at-paghanga-ng-jru-sa-ina-ng-lungsod-ng-mandaluyong/
+  title: PAGKILALA AT PAGHANGA NG JRU SA INA NG LUNGSOD NG MANDALUYONG
+  published_at: 2026-02-25T09:19:03+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 54279
+  url: https://mandaluyong.gov.ph/alumni-guro-non-teaching-personnel-at-mga-estudyante-ng-jru-kinilala-ng-mandaluyong/
+  title: ALUMNI, GURO, NON-TEACHING PERSONNEL AT MGA ESTUDYANTE NG JRU, KINILALA NG MANDALUYONG
+  published_at: 2026-02-23T17:24:34+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53784
+  url: https://mandaluyong.gov.ph/abot-kayang-pabahay-para-sa-pamilyang-mandaleno/
+  title: ABOT-KAYANG PABAHAY PARA SA PAMILYANG MANDALEÑO
+  published_at: 2026-02-06T13:59:43+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53712
+  url: https://mandaluyong.gov.ph/mga-kandidato-ng-ms-mandaluyong-2026-tampok-sa-monday-morning-program/
+  title: MGA KANDIDATO NG MS. MANDALUYONG 2026, TAMPOK SA MONDAY MORNING PROGRAM
+  published_at: 2026-02-02T15:05:28+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53705
+  url: https://mandaluyong.gov.ph/selyo-ng-pagiging-magkapatid-ng-mandaluyong-at-padre-garcia/
+  title: SELYO NG PAGIGING MAGKAPATID NG MANDALUYONG AT PADRE GARCIA
+  published_at: 2026-02-02T13:53:21+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

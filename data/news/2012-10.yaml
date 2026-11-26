@@ -1,0 +1,43 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8739
+  url: https://mandaluyong.gov.ph/mandaluyongs-project-teach-now-includes-day-care-centers/
+  title: "Mandaluyong’s Project: Teach now includes day care centers"
+  published_at: 2012-10-31T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8704
+  url: https://mandaluyong.gov.ph/mandaluyong-honors-its-deaf-mute-achievers/
+  title: MANDALUYONG HONORS ITS DEAF MUTE ACHIEVERS
+  published_at: 2012-10-31T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8652
+  url: https://mandaluyong.gov.ph/e-customer-training-program/
+  title: E-CUSTOMER TRAINING PROGRAM
+  published_at: 2012-10-31T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8660
+  url: https://mandaluyong.gov.ph/mandaluyong-first-lgu-to-implement-foster-parenting-program/
+  title: Mandaluyong first LGU to implement foster parenting program
+  published_at: 2012-10-25T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8640
+  url: https://mandaluyong.gov.ph/mandaluyong-is-ncrs-most-child-friendly-city-for-two-straight-years/
+  title: MANDALUYONG IS NCR’S MOST CHILD-FRIENDLY CITY FOR TWO STRAIGHT YEARS
+  published_at: 2012-10-16T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8671
+  url: https://mandaluyong.gov.ph/garden-of-life/
+  title: Garden of Life
+  published_at: 2012-10-02T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

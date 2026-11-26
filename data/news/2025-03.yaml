@@ -1,0 +1,110 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 48940
+  url: https://mandaluyong.gov.ph/mandaluyong-at-bombon-camarines-sur-lumagda-sa-sisterhood-agreement/
+  title: MANDALUYONG AT BOMBON, CAMARINES SUR LUMAGDA SA SISTERHOOD AGREEMENT
+  published_at: 2025-03-29T10:00:56+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 48932
+  url: https://mandaluyong.gov.ph/mandaluyong-at-mabitac-laguna-lumagda-sa-isang-sisterhood-agreement/
+  title: MANDALUYONG AT MABITAC, LAGUNA LUMAGDA SA ISANG SISTERHOOD AGREEMENT
+  published_at: 2025-03-28T15:00:00+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 48891
+  url: https://mandaluyong.gov.ph/mandalenong-boksingero-kampyeon-sa-blow-by-blow/
+  title: MANDALEÑONG BOKSINGERO, KAMPYEON SA BLOW BY BLOW
+  published_at: 2025-03-28T09:09:57+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 48894
+  url: https://mandaluyong.gov.ph/barangay-san-roque-mercedes-camarines-norte-gad-benchmarking/
+  title: BARANGAY SAN ROQUE, MERCEDES, CAMARINES NORTE GAD BENCHMARKING
+  published_at: 2025-03-27T14:21:47+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 48888
+  url: https://mandaluyong.gov.ph/hepe-ng-pulisya-guro-sa-mandaluyong-nominado-sa-outstanding-filipino/
+  title: HEPE NG PULISYA, GURO SA MANDALUYONG NOMINADO SA OUTSTANDING FILIPINO
+  published_at: 2025-03-27T09:08:41+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 48832
+  url: https://mandaluyong.gov.ph/mandaluyong-at-allacapan-lumagda-sa-sisterhood-agreement/
+  title: MANDALUYONG AT ALLACAPAN, LUMAGDA SA SISTERHOOD AGREEMENT
+  published_at: 2025-03-26T14:00:22+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 48569
+  url: https://mandaluyong.gov.ph/2-mandalenong-paddler-kampeon/
+  title: 2 MANDALEÑONG PADDLER, KAMPEON!
+  published_at: 2025-03-21T08:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 47677
+  url: https://mandaluyong.gov.ph/20-medalya-inuwi-ng-atletang-mandaleno/
+  title: 20 MEDALYA INUWI NG ATLETANG MANDALEÑO
+  published_at: 2025-03-19T08:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46629
+  url: https://mandaluyong.gov.ph/mandaluyong-nakibahagi-sa-fire-prevention-month/
+  title: MANDALUYONG, NAKIBAHAGI SA FIRE PREVENTION MONTH
+  published_at: 2025-03-17T16:06:41+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46627
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-nakiisa-sa-2025-fire-prevention-month/
+  title: MANDALUYONG LGU, NAKIISA SA 2025 FIRE PREVENTION MONTH
+  published_at: 2025-03-17T15:51:20+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46551
+  url: https://mandaluyong.gov.ph/capt-pilot-zaplan-cleared-for-takeoff/
+  title: “CAPT. PILOT ZAPLAN, CLEARED FOR TAKEOFF!”
+  published_at: 2025-03-14T10:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46548
+  url: https://mandaluyong.gov.ph/atletang-mandaleno-muling-namayagpag-sa-karatedo/
+  title: ATLETANG MANDALEÑO, MULING NAMAYAGPAG SA KARATEDO!
+  published_at: 2025-03-12T10:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46545
+  url: https://mandaluyong.gov.ph/mandaluyong-nagdiwang-ng-grandparents-week/
+  title: MANDALUYONG, NAGDIWANG NG GRANDPARENTS’ WEEK
+  published_at: 2025-03-10T13:44:07+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46466
+  url: https://mandaluyong.gov.ph/dbyes-kampeon-sa-field-demonstration/
+  title: DBYES, KAMPEON SA FIELD DEMONSTRATION
+  published_at: 2025-03-05T11:16:43+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46439
+  url: https://mandaluyong.gov.ph/kahanga-hangang-kababaihan-ng-2025-pinarangalan-sa-mandaluyong/
+  title: “KAHANGA-HANGANG KABABAIHAN NG 2025” PINARANGALAN SA MANDALUYONG
+  published_at: 2025-03-03T17:45:37+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

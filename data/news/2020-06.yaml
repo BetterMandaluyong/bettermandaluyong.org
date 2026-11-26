@@ -1,0 +1,36 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 3779
+  url: https://mandaluyong.gov.ph/pagpulong-sa-mga-mall-administration-representatives-ukol-sa-paghahanda-sa-darating-na-pagbubukas-ng-mga-malls/
+  title: PAGPULONG SA MGA MALL ADMINISTRATION REPRESENTATIVES UKOL SA PAGHAHANDA SA DARATING NA PAGBUBUKAS NG MGA MALLS
+  published_at: 2020-06-03T15:35:21+08:00
+  categories:
+    - COVID-19
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 3776
+  url: https://mandaluyong.gov.ph/bagong-isolation-facilities-para-sa-mga-suspected-at-positive-covid-19-patients-ng-lungsod/
+  title: BAGONG ISOLATION FACILITIES PARA SA MGA SUSPECTED AT POSITIVE COVID-19 PATIENTS NG LUNGSOD
+  published_at: 2020-06-03T15:34:35+08:00
+  categories:
+    - COVID-19
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 3773
+  url: https://mandaluyong.gov.ph/pag-spray-ng-disinfectant-sa-mga-lugar-sa-barangay-addition-hills-na-isinailalim-sa-lockdown/
+  title: PAG-SPRAY NG DISINFECTANT SA MGA LUGAR SA BARANGAY ADDITION HILLS NA ISINAILALIM SA LOCKDOWN
+  published_at: 2020-06-03T15:33:48+08:00
+  categories:
+    - COVID-19
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 3769
+  url: https://mandaluyong.gov.ph/mayora-menchie-abalos-nagpasalamat-sa-donations-mula-sa-abs-cbn/
+  title: MAYORA MENCHIE ABALOS NAGPASALAMAT SA DONATIONS MULA SA ABS-CBN
+  published_at: 2020-06-03T15:32:44+08:00
+  categories:
+    - COVID-19
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 3764
+  url: https://mandaluyong.gov.ph/total-lockdown-sa-welfareville-barangay-addition-hills/
+  title: TOTAL LOCKDOWN SA WELFAREVILLE, BARANGAY ADDITION HILLS
+  published_at: 2020-06-03T15:30:46+08:00
+  categories:
+    - COVID-19
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,119 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 55955
+  url: https://mandaluyong.gov.ph/epektibong-programang-pangnutrisyon-ng-mandaluyong/
+  title: EPEKTIBONG PROGRAMANG PANGNUTRISYON NG MANDALUYONG
+  published_at: 2026-06-30T11:21:17+08:00
+  categories:
+    - News
+    - Nutrition
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55951
+  url: https://mandaluyong.gov.ph/mga-bagong-kagamitang-pangmedikal-handog-ng-mandaluyong/
+  title: MGA BAGONG KAGAMITANG PANGMEDIKAL, HANDOG NG MANDALUYONG
+  published_at: 2026-06-30T11:17:18+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55947
+  url: https://mandaluyong.gov.ph/barangay-nutrition-scholar-officers-nanumpa-sa-mandaluyong/
+  title: BARANGAY NUTRITION SCHOLAR OFFICERS, NANUMPA SA MANDALUYONG
+  published_at: 2026-06-30T11:12:45+08:00
+  categories:
+    - News
+    - Nutrition
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55942
+  url: https://mandaluyong.gov.ph/pananim-at-halamang-handog-ng-mandaluyong/
+  title: PANANIM AT HALAMANG HANDOG NG MANDALUYONG
+  published_at: 2026-06-30T11:08:21+08:00
+  categories:
+    - Environmental
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55919
+  url: https://mandaluyong.gov.ph/panunumpa-ng-mga-opisyal-ng-rainbow-tigers/
+  title: PANUNUMPA NG MGA OPISYAL NG RAINBOW TIGERS
+  published_at: 2026-06-29T13:16:22+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55914
+  url: https://mandaluyong.gov.ph/opisyal-na-paglulunsad-at-turn-over-ng-mandaluyong-sa-right-to-care-rtc-card/
+  title: OPISYAL NA PAGLULUNSAD AT TURN-OVER NG MANDALUYONG SA RIGHT TO CARE (RTC) CARD
+  published_at: 2026-06-29T13:12:48+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55579
+  url: https://mandaluyong.gov.ph/cobcobo-sa-pandaigdigang-patimpalak-sa-sining/
+  title: COBCOBO, SA PANDAIGDIGANG PATIMPALAK SA SINING
+  published_at: 2026-06-09T10:52:28+08:00
+  categories:
+    - Awards
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55576
+  url: https://mandaluyong.gov.ph/sdo-mandaluyong-bida-sa-programa-ng-lungsod/
+  title: SDO-MANDALUYONG, BIDA SA PROGRAMA NG LUNGSOD
+  published_at: 2026-06-09T10:48:20+08:00
+  categories:
+    - Education
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55572
+  url: https://mandaluyong.gov.ph/severino-kakatawan-sa-darating-na-world-skills-competition-sa-vietnam/
+  title: SEVERINO, KAKATAWAN SA DARATING NA WORLD SKILLS COMPETITION SA VIETNAM
+  published_at: 2026-06-09T10:42:24+08:00
+  categories:
+    - Awards
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55568
+  url: https://mandaluyong.gov.ph/mandaluyong-kabilang-sa-top-performing-cities-sa-palarong-pambansa/
+  title: MANDALUYONG, KABILANG SA TOP PERFORMING CITIES SA PALARONG PAMBANSA
+  published_at: 2026-06-09T10:35:19+08:00
+  categories:
+    - Awards
+    - News
+    - Sports
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55564
+  url: https://mandaluyong.gov.ph/mandaluyong-namayagpag-sa-nstf-at-nspc-2026/
+  title: MANDALUYONG, NAMAYAGPAG SA NSTF AT NSPC 2026
+  published_at: 2026-06-09T10:26:59+08:00
+  categories:
+    - Awards
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55559
+  url: https://mandaluyong.gov.ph/taunang-symbolic-turn-over-ng-mga-kagamitang-pang-eskwela-sa-mandaluyong/
+  title: TAUNANG SYMBOLIC TURN-OVER NG MGA KAGAMITANG PANG-ESKWELA SA MANDALUYONG
+  published_at: 2026-06-09T10:21:15+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55445
+  url: https://mandaluyong.gov.ph/panunumpa-ng-mandaluyong-local-peoples-council/
+  title: PANUNUMPA NG MANDALUYONG LOCAL PEOPLE’S COUNCIL
+  published_at: 2026-06-01T17:02:08+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55440
+  url: https://mandaluyong.gov.ph/pagbati-sa-mga-kawani-na-pumasa-sa-cse/
+  title: PAGBATI SA MGA KAWANI NA PUMASA SA CSE
+  published_at: 2026-06-01T16:52:29+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 55433
+  url: https://mandaluyong.gov.ph/mandaluyong-karatedo-fencing-wrestling-judo-at-jiu-jitsu-team-bida-sa-programa-ng-mandaluyong/
+  title: MANDALUYONG KARATEDO, FENCING, WRESTLING, JUDO AT JIU-JITSU TEAM, BIDA SA PROGRAMA NG MANDALUYONG
+  published_at: 2026-06-01T16:44:57+08:00
+  categories:
+    - Sports
+  first_seen_at: 2026-11-26T08:45:24+08:00

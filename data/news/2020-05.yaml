@@ -1,0 +1,9 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8882
+  url: https://mandaluyong.gov.ph/mandaluyong-government-continues-to-prioritize-safety-of-tricycle-drivers-and-passengers/
+  title: Mandaluyong Government continues to prioritize safety of tricycle drivers and passengers.
+  published_at: 2020-05-29T10:53:54+08:00
+  categories:
+    - COVID-19
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

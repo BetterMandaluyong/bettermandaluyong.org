@@ -1,0 +1,15 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8689
+  url: https://mandaluyong.gov.ph/memorandum-of-agreement/
+  title: MEMORANDUM OF AGREEMENT
+  published_at: 2012-09-28T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8667
+  url: https://mandaluyong.gov.ph/mandaluyongs-two-timer-awardee-of-green-banner/
+  title: MANDALUYONG’S TWO-TIMER AWARDEE OF GREEN BANNER
+  published_at: 2012-09-08T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

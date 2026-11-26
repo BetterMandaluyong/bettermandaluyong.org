@@ -1,0 +1,141 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 53635
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-kinilala-ang-alumni-ng-bjshs/
+  title: MANDALUYONG LGU, KINILALA ANG ALUMNI NG BJSHS
+  published_at: 2026-01-27T11:47:07+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53631
+  url: https://mandaluyong.gov.ph/laptops-allowance-increase-para-sa-mga-public-school-teachers/
+  title: LAPTOPS, ALLOWANCE INCREASE PARA SA MGA PUBLIC SCHOOL TEACHERS
+  published_at: 2026-01-27T11:43:26+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53627
+  url: https://mandaluyong.gov.ph/outstanding-teachers-ng-bjshs-kinilala-ng-mandaluyong-lgu/
+  title: OUTSTANDING TEACHERS NG BJSHS KINILALA NG MANDALUYONG LGU
+  published_at: 2026-01-27T11:39:45+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53550
+  url: https://mandaluyong.gov.ph/mandaluyong-kinilala-ang-mga-natatanging-guro-at-estudyante-ng-eris/
+  title: MANDALUYONG, KINILALA ANG MGA NATATANGING GURO AT ESTUDYANTE NG ERIS
+  published_at: 2026-01-20T14:38:01+08:00
+  categories:
+    - Awards
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53538
+  url: https://mandaluyong.gov.ph/autism-consciousness-week-celebration-ng-mandaluyong/
+  title: AUTISM CONSCIOUSNESS WEEK CELEBRATION NG MANDALUYONG
+  published_at: 2026-01-20T12:24:17+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53534
+  url: https://mandaluyong.gov.ph/panunumpa-ng-mga-opisyales-ng-mandaluyong-federation-of-public-school-teachers-association-inc/
+  title: PANUNUMPA NG MGA OPISYALES NG MANDALUYONG FEDERATION OF PUBLIC SCHOOL TEACHERS ASSOCIATION, INC.
+  published_at: 2026-01-20T12:18:23+08:00
+  categories:
+    - Uncategorized
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53531
+  url: https://mandaluyong.gov.ph/mga-alumni-ng-eris-binigyan-ng-pagkilala-ng-mandaluyong-lgu/
+  title: MGA ALUMNI NG ERIS, BINIGYAN NG PAGKILALA NG MANDALUYONG LGU
+  published_at: 2026-01-20T12:13:41+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53528
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-namahagi-ng-2000-laptops-para-sa-mga-public-school-ict-lab/
+  title: MANDALUYONG LGU, NAMAHAGI NG 2,000 LAPTOPS PARA SA MGA PUBLIC SCHOOL ICT LAB
+  published_at: 2026-01-20T12:09:10+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53433
+  url: https://mandaluyong.gov.ph/mayor-menchie-abalos-binigyang-pagpapahalaga-ng-ilis/
+  title: MAYOR MENCHIE ABALOS, BINIGYANG PAGPAPAHALAGA NG ILIS
+  published_at: 2026-01-14T12:59:04+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53430
+  url: https://mandaluyong.gov.ph/pag-alaala-ng-mandaluyong-sa-yumaong-dating-alkalde-isaac-lopez/
+  title: PAG-ALAALA NG MANDALUYONG SA YUMAONG DATING ALKALDE ISAAC LOPEZ
+  published_at: 2026-01-14T12:56:55+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53427
+  url: https://mandaluyong.gov.ph/mandaluyong-ginawaran-ng-pagkilala-ang-mga-ilis-alumni-in-public-service/
+  title: MANDALUYONG, GINAWARAN NG PAGKILALA ANG MGA ILIS ALUMNI IN PUBLIC SERVICE
+  published_at: 2026-01-14T12:54:59+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53424
+  url: https://mandaluyong.gov.ph/pagkilala-sa-mga-estudyante-mula-sa-ilis/
+  title: PAGKILALA SA MGA ESTUDYANTE MULA SA ILIS
+  published_at: 2026-01-14T12:52:20+08:00
+  categories:
+    - Education
+    - News
+    - Sports
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53381
+  url: https://mandaluyong.gov.ph/mga-guro-ng-ilis-binigyang-pagkilala-ng-mandaluyong-lgu/
+  title: MGA GURO NG ILIS, BINIGYANG PAGKILALA NG MANDALUYONG LGU
+  published_at: 2026-01-12T13:19:46+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53285
+  url: https://mandaluyong.gov.ph/barangay-daang-bakal-umani-ng-galing-pook-award-highway-hills-captain-ginawaran-ng-lingkod-bayan-award/
+  title: BARANGAY DAANG BAKAL UMANI NG GALING POOK AWARD; HIGHWAY HILLS CAPTAIN GINAWARAN NG LINGKOD BAYAN AWARD
+  published_at: 2026-01-06T02:16:12+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53282
+  url: https://mandaluyong.gov.ph/kabataang-mandaleno-wagi-sa-larangan-ng-balagtasan-at-palakasan/
+  title: KABATAANG MANDALEÑO, WAGI SA LARANGAN NG BALAGTASAN AT PALAKASAN
+  published_at: 2026-01-06T02:10:19+08:00
+  categories:
+    - News
+    - Sports
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53279
+  url: https://mandaluyong.gov.ph/mandaluyong-kinilala-ang-mga-nagwagi-sa-student-entrepreneurs-cup-2025/
+  title: MANDALUYONG, KINILALA ANG MGA NAGWAGI SA STUDENT ENTREPRENEUR’S CUP 2025
+  published_at: 2026-01-06T02:02:54+08:00
+  categories:
+    - Education
+    - Health
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53276
+  url: https://mandaluyong.gov.ph/ika-limang-iso-certification-ng-pamahalaang-lungsod/
+  title: IKA-LIMANG ISO CERTIFICATION NG PAMAHALAANG LUNGSOD
+  published_at: 2026-01-06T01:58:02+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 53273
+  url: https://mandaluyong.gov.ph/natatanging-guro-at-non-teaching-personnel-pinarangalan-ng-mandaluyong/
+  title: NATATANGING GURO AT NON-TEACHING PERSONNEL, PINARANGALAN NG MANDALUYONG
+  published_at: 2026-01-06T01:54:47+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

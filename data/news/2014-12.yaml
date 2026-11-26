@@ -1,0 +1,15 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8857
+  url: https://mandaluyong.gov.ph/biggest-gift-giving-event-in-metro-65000-families-receive-christmas-goodies-in-mandaluyong/
+  title: Biggest gift-giving event in Metro.                                   65,000 families receive Christmas goodies in Mandaluyong
+  published_at: 2014-12-13T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8817
+  url: https://mandaluyong.gov.ph/mandaluyong-launches-mural-painting-of-10-kumainments-and-ngf-to-promote-good-nutrition/
+  title: MANDALUYONG LAUNCHES MURAL PAINTING OF 10 KUMAINMENTS AND NGF TO PROMOTE GOOD NUTRITION
+  published_at: 2014-12-05T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,15 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8785
+  url: https://mandaluyong.gov.ph/multi-purpose-building-with-playground-inaugurated/
+  title: MULTI-PURPOSE BUILDING WITH PLAYGROUND INAUGURATED
+  published_at: 2013-01-30T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8759
+  url: https://mandaluyong.gov.ph/mandaluyong-lines-up-16-day-activities-for-liberation-and-cityhood-celebration/
+  title: Mandaluyong lines-up 16-day activities for Liberation and Cityhood celebration
+  published_at: 2013-01-26T14:00:19+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

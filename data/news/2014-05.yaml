@@ -1,0 +1,15 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8825
+  url: https://mandaluyong.gov.ph/mandaluyong-ready-for-school-opening-2/
+  title: MANDALUYONG READY FOR SCHOOL OPENING
+  published_at: 2014-05-26T14:00:37+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8928
+  url: https://mandaluyong.gov.ph/mandaluyong-hires-250-students-thru-spes/
+  title: MANDALUYONG HIRES 250 STUDENTS THRU SPES
+  published_at: 2014-05-10T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

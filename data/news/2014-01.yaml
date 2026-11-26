@@ -1,0 +1,8 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8821
+  url: https://mandaluyong.gov.ph/mandaluyong-adopt-a-dog-program/
+  title: MANDALUYONG ADOPT-A-DOG PROGRAM
+  published_at: 2014-01-21T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,8 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8631
+  url: https://mandaluyong.gov.ph/inaugural-blessing/
+  title: INAUGURAL BLESSING
+  published_at: 2012-08-23T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,85 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 46492
+  url: https://mandaluyong.gov.ph/unveiling-of-the-mandaluyong-historical-wall-mural/
+  title: UNVEILING OF THE MANDALUYONG HISTORICAL WALL MURAL
+  published_at: 2025-02-28T15:55:00+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46386
+  url: https://mandaluyong.gov.ph/mandaluyong-batan-lumagda-sa-sisterhood-agreement/
+  title: MANDALUYONG, BATAN LUMAGDA SA SISTERHOOD AGREEMENT.
+  published_at: 2025-02-27T09:58:38+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46382
+  url: https://mandaluyong.gov.ph/balik-ngiti-at-nguya-sa-mandaluyong/
+  title: BALIK NGITI AT NGUYA SA MANDALUYONG!
+  published_at: 2025-02-26T10:00:00+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46344
+  url: https://mandaluyong.gov.ph/mandaluyong-pinarangalan-ang-nagwaging-best-in-float/
+  title: MANDALUYONG, PINARANGALAN ANG NAGWAGING “BEST IN FLOAT”
+  published_at: 2025-02-23T10:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46341
+  url: https://mandaluyong.gov.ph/mandaluyong-at-tabontabon-lumagda-sa-sisterhood-agreement/
+  title: MANDALUYONG AT TABONTABON,  LUMAGDA SA SISTERHOOD AGREEMENT
+  published_at: 2025-02-23T10:00:00+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46337
+  url: https://mandaluyong.gov.ph/28-medalya-inuwi-ng-kabataang-mandaleno/
+  title: 28 MEDALYA, INUWI NG KABATAANG MANDALEÑO
+  published_at: 2025-02-21T15:34:09+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46489
+  url: https://mandaluyong.gov.ph/miss-mandaluyong-2025/
+  title: MISS MANDALUYONG 2025
+  published_at: 2025-02-08T15:08:00+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46479
+  url: https://mandaluyong.gov.ph/bagong-k-9-dogs-ng-barangay-wack-wack/
+  title: BAGONG K-9 DOGS NG BARANGAY WACK WACK
+  published_at: 2025-02-05T17:13:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46482
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-pormal-na-binuksan-ang-senate-president-neptali-a-gonzales-integrated-school-spnagis/
+  title: MANDALUYONG LGU PORMAL NA BINUKSAN ANG SENATE PRESIDENT NEPTALI A. GONZALES INTEGRATED SCHOOL (SPNAGIS)
+  published_at: 2025-02-05T13:05:00+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46474
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-namahagi-ng-2000-laptops-para-sa-mga-pampublikong-paaralan/
+  title: MANDALUYONG LGU NAMAHAGI NG 2,000 LAPTOPS PARA SA MGA PAMPUBLIKONG PAARALAN
+  published_at: 2025-02-05T10:03:00+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 46271
+  url: https://mandaluyong.gov.ph/mga-kandidato-sa-miss-mandaluyong-2025/
+  title: MGA KANDIDATO SA MISS MANDALUYONG 2025
+  published_at: 2025-02-04T09:27:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

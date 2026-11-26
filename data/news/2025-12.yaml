@@ -1,0 +1,54 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 52998
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-nakamit-ang-ika-5-iso-certification/
+  title: MANDALUYONG LGU, NAKAMIT ANG IKA-5 ISO CERTIFICATION
+  published_at: 2025-12-10T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 52924
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-nanguna-sa-2025-local-legislative-award/
+  title: MANDALUYONG LGU NANGUNA SA 2025 LOCAL LEGISLATIVE AWARD
+  published_at: 2025-12-03T11:52:00+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 52902
+  url: https://mandaluyong.gov.ph/world-aids-day-celebration-sa-mandaluyong-city-hall/
+  title: WORLD AIDS DAY CELEBRATION SA MANDALUYONG CITY HALL
+  published_at: 2025-12-02T12:15:00+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 52896
+  url: https://mandaluyong.gov.ph/atletang-mandaleno-nagpaulan-ng-sunod-sunod-na-medalya-sa-mandaluyong/
+  title: ATLETANG MANDALEÑO, NAGPAULAN NG SUNOD-SUNOD NA MEDALYA SA MANDALUYONG
+  published_at: 2025-12-02T12:00:00+08:00
+  categories:
+    - News
+    - Sports
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 52893
+  url: https://mandaluyong.gov.ph/mandaluyong-sa-dswd-5th-parangal-para-sa-pusong-magiting/
+  title: MANDALUYONG SA DSWD 5TH PARANGAL PARA SA PUSONG MAGITING
+  published_at: 2025-12-02T11:50:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 52890
+  url: https://mandaluyong.gov.ph/mahes-at-mhs-nag-uwi-ng-parangal-sa-mandaluyong/
+  title: MAHES AT MHS, NAG-UWI NG PARANGAL SA MANDALUYONG
+  published_at: 2025-12-02T11:40:00+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 52899
+  url: https://mandaluyong.gov.ph/mmt-vtc-tagumpay-na-tinanggap-ang-national-kabalikat-award/
+  title: MMT-VTC, TAGUMPAY NA TINANGGAP ANG NATIONAL KABALIKAT AWARD
+  published_at: 2025-12-02T00:05:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

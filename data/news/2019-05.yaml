@@ -1,0 +1,36 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 7953
+  url: https://mandaluyong.gov.ph/mandaluyong-honors-centenarians/
+  title: MANDALUYONG HONORS CENTENARIANS
+  published_at: 2019-05-31T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7965
+  url: https://mandaluyong.gov.ph/city-scholarship-program-produces-4-more-engineers/
+  title: CITY SCHOLARSHIP PROGRAM PRODUCES 4 MORE ENGINEERS
+  published_at: 2019-05-28T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8040
+  url: https://mandaluyong.gov.ph/batang-mandaleno-sports-medalists/
+  title: BATANG MANDALEÑO SPORTS MEDALISTS
+  published_at: 2019-05-24T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 7933
+  url: https://mandaluyong.gov.ph/early-balik-eskwela-treat/
+  title: EARLY BALIK ESKWELA TREAT
+  published_at: 2019-05-21T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8090
+  url: https://mandaluyong.gov.ph/mandaluyong-still-for-mayor-menchie/
+  title: MANDALUYONG STILL FOR MAYOR MENCHIE
+  published_at: 2019-05-14T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

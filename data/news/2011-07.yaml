@@ -1,0 +1,50 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8555
+  url: https://mandaluyong.gov.ph/civility-star-award/
+  title: CIVILITY STAR AWARD
+  published_at: 2011-07-25T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8615
+  url: https://mandaluyong.gov.ph/mandaluyong-tiger-command-and-control-center-inaugurated/
+  title: MANDALUYONG TIGER COMMAND AND CONTROL CENTER INAUGURATED
+  published_at: 2011-07-22T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8550
+  url: https://mandaluyong.gov.ph/mandaluyong-city-funeral-service-building-inaugurated/
+  title: MANDALUYONG CITY FUNERAL SERVICE BUILDING INAUGURATED
+  published_at: 2011-07-19T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8533
+  url: https://mandaluyong.gov.ph/mandaluyong-anti-drug-billiard-tournament-open/
+  title: MANDALUYONG ANTI-DRUG BILLIARD TOURNAMENT OPEN
+  published_at: 2011-07-15T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8607
+  url: https://mandaluyong.gov.ph/mandaluyong-collegiate-scholarship-memorandum-of-agreement/
+  title: MANDALUYONG COLLEGIATE SCHOLARSHIP MEMORANDUM OF AGREEMENT
+  published_at: 2011-07-12T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8593
+  url: https://mandaluyong.gov.ph/mandaluyong-celebrates-nutrition-month/
+  title: MANDALUYONG CELEBRATES NUTRITION MONTH
+  published_at: 2011-07-09T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8542
+  url: https://mandaluyong.gov.ph/intensified-campaign-on-breastfeeding/
+  title: INTENSIFIED CAMPAIGN ON BREASTFEEDING
+  published_at: 2011-07-05T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

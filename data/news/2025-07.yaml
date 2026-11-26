@@ -1,0 +1,88 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 51145
+  url: https://mandaluyong.gov.ph/mcst-nagpahayag-ng-pasasalamat/
+  title: MCST, NAGPAHAYAG NG PASASALAMAT
+  published_at: 2025-07-31T12:24:00+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51001
+  url: https://mandaluyong.gov.ph/bs-nursing-kabilang-sa-mga-bagong-kurso-ng-lokal-na-kolehiyo-ng-mandaluyong/
+  title: BS NURSING, KABILANG SA MGA BAGONG KURSO NG LOKAL NA KOLEHIYO NG MANDALUYONG
+  published_at: 2025-07-30T15:07:14+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50862
+  url: https://mandaluyong.gov.ph/atletang-mandaleno-kampeonato/
+  title: ATLETANG MANDALEÑO, KAMPEONATO!
+  published_at: 2025-07-17T14:31:31+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50794
+  url: https://mandaluyong.gov.ph/listo-si-kap-inilunsad-ng-mandaluyong-lgu/
+  title: LISTO SI KAP INILUNSAD NG MANDALUYONG LGU
+  published_at: 2025-07-16T12:47:29+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50788
+  url: https://mandaluyong.gov.ph/little-miss-nutrition-2025/
+  title: LITTLE MISS NUTRITION 2025
+  published_at: 2025-07-12T13:40:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50614
+  url: https://mandaluyong.gov.ph/bagong-gusali-ng-pdad-binuksan-na/
+  title: BAGONG GUSALI NG PDAD, BINUKSAN NA!
+  published_at: 2025-07-11T12:45:48+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50607
+  url: https://mandaluyong.gov.ph/karagdagang-apartment-niches-cremation-equipment-sa-garden-of-life-park/
+  title: KARAGDAGANG APARTMENT NICHES, CREMATION EQUIPMENT SA GARDEN OF LIFE PARK
+  published_at: 2025-07-10T17:16:27+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50604
+  url: https://mandaluyong.gov.ph/bagong-neuroscience-center-binuksan-sa-mandaluyong-city-medical-center/
+  title: BAGONG NEUROSCIENCE CENTER BINUKSAN SA MANDALUYONG CITY MEDICAL CENTER
+  published_at: 2025-07-09T18:39:00+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50555
+  url: https://mandaluyong.gov.ph/panunumpa-ng-ika-13-konseho-ng-mandaluyong/
+  title: PANUNUMPA NG IKA-13 KONSEHO NG MANDALUYONG
+  published_at: 2025-07-03T08:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50552
+  url: https://mandaluyong.gov.ph/congresswoman-elect-queenie-gonzales-bagong-kinatawan-ng-mandaluyong-sa-kongreso/
+  title: CONGRESSWOMAN-ELECT QUEENIE GONZALES, BAGONG KINATAWAN NG MANDALUYONG SA KONGRESO
+  published_at: 2025-07-02T17:56:52+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50542
+  url: https://mandaluyong.gov.ph/vice-mayor-elect-anthony-suva-nanumpa-sa-tungkulin/
+  title: VICE MAYOR-ELECT ANTHONY SUVA NANUMPA SA TUNGKULIN
+  published_at: 2025-07-02T10:56:03+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 50530
+  url: https://mandaluyong.gov.ph/mayor-elect-menchie-abalos-pormal-nang-nanumpa-sa-tungkulin-bilang-mayor-ng-mandaluyong/
+  title: MAYOR-ELECT MENCHIE ABALOS PORMAL NANG NANUMPA SA TUNGKULIN BILANG MAYOR NG MANDALUYONG
+  published_at: 2025-07-01T20:16:25+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,78 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8144
+  url: https://mandaluyong.gov.ph/first-batch-of-k-12-graduates/
+  title: FIRST BATCH OF K-12 GRADUATES
+  published_at: 2018-03-27T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8139
+  url: https://mandaluyong.gov.ph/future-journalists/
+  title: FUTURE JOURNALISTS
+  published_at: 2018-03-23T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8134
+  url: https://mandaluyong.gov.ph/inter-barangay-fire-olympics-champ/
+  title: INTER-BARANGAY FIRE OLYMPICS CHAMP
+  published_at: 2018-03-20T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8156
+  url: https://mandaluyong.gov.ph/mandaleno-photographers/
+  title: MANDALEÑO PHOTOGRAPHERS
+  published_at: 2018-03-19T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8206
+  url: https://mandaluyong.gov.ph/young-writers-artists-support-fire-prevention/
+  title: YOUNG WRITERS, ARTISTS SUPPORT FIRE-PREVENTION
+  published_at: 2018-03-16T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8122
+  url: https://mandaluyong.gov.ph/bilbiling-mandaluyong-2018-winners/
+  title: BILBILING MANDALUYONG 2018 WINNERS
+  published_at: 2018-03-14T14:00:23+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8202
+  url: https://mandaluyong.gov.ph/mandaluyongs-women-firefighters/
+  title: MANDALUYONG’S WOMEN FIREFIGHTERS
+  published_at: 2018-03-12T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8186
+  url: https://mandaluyong.gov.ph/uliran-mandaleno-2018/
+  title: ULIRAN MANDALEÑO 2018
+  published_at: 2018-03-09T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8173
+  url: https://mandaluyong.gov.ph/accounting-for-non-accountants/
+  title: ACCOUNTING FOR NON-ACCOUNTANTS
+  published_at: 2018-03-07T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8198
+  url: https://mandaluyong.gov.ph/women-of-mandaluyong/
+  title: WOMEN OF MANDALUYONG
+  published_at: 2018-03-05T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8183
+  url: https://mandaluyong.gov.ph/tiger-citys-top-10-taxpayers/
+  title: TIGER CITY’S TOP 10 TAXPAYERS
+  published_at: 2018-03-02T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

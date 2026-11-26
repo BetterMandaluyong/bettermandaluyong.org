@@ -1,0 +1,22 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8623
+  url: https://mandaluyong.gov.ph/mandaluyong-ready-for-school-opening/
+  title: MANDALUYONG READY FOR SCHOOL OPENING
+  published_at: 2012-05-29T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8685
+  url: https://mandaluyong.gov.ph/mandaluyong-city-employees-receive-midyear-bonus/
+  title: MANDALUYONG CITY EMPLOYEES RECEIVE MIDYEAR BONUS
+  published_at: 2012-05-16T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8733
+  url: https://mandaluyong.gov.ph/mandaluyong-city-supports-ptta/
+  title: MANDALUYONG CITY SUPPORTS PTTA
+  published_at: 2012-05-09T14:00:23+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

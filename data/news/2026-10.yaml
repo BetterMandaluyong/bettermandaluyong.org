@@ -1,0 +1,136 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 58584
+  url: https://mandaluyong.gov.ph/mandaluyong-hinirang-bilang-most-outstanding-accounting-office-ng-agap-sa-ikaapat-na-magkakasunod-na-taon/
+  title: MANDALUYONG, HINIRANG BILANG MOST OUTSTANDING ACCOUNTING OFFICE NG AGAP SA IKAAPAT NA MAGKAKASUNOD NA TAON
+  published_at: 2026-10-27T11:08:46+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58580
+  url: https://mandaluyong.gov.ph/mandaluyong-tumanggap-ng-mga-karangalan-sa-atop-pearl-awards-2026/
+  title: MANDALUYONG, TUMANGGAP NG MGA KARANGALAN SA ATOP PEARL AWARDS 2026
+  published_at: 2026-10-27T11:06:07+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58575
+  url: https://mandaluyong.gov.ph/national-awards-ng-bsp-city-of-mandaluyong-council-tampok-sa-lingguhang-programa-ng-lungsod/
+  title: NATIONAL AWARDS NG BSP–CITY OF MANDALUYONG COUNCIL, TAMPOK SA LINGGUHANG PROGRAMA NG LUNGSOD
+  published_at: 2026-10-27T11:01:47+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58482
+  url: https://mandaluyong.gov.ph/pagkilala-ng-mandaluyong-sa-mga-pangulo-ng-ascim-sa-bawat-barangay/
+  title: PAGKILALA NG MANDALUYONG SA MGA PANGULO NG ASCIM SA BAWAT BARANGAY
+  published_at: 2026-10-20T10:55:26+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58478
+  url: https://mandaluyong.gov.ph/bagong-hepe-ng-pnp-mandaluyong-seguridad-at-kaayusan-sa-lungsod-paiigtingin/
+  title: BAGONG HEPE NG PNP-MANDALUYONG, SEGURIDAD AT KAAYUSAN SA LUNGSOD PAIIGTINGIN
+  published_at: 2026-10-20T10:50:15+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58474
+  url: https://mandaluyong.gov.ph/suot-na-dangal-serbisyong-may-puso-bjmp-uniform-showcase-sa-mandaluyong-city-hall/
+  title: "SUOT NA DANGAL, SERBISYONG MAY PUSO: BJMP UNIFORM SHOWCASE SA MANDALUYONG CITY HALL"
+  published_at: 2026-10-20T10:46:56+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58469
+  url: https://mandaluyong.gov.ph/wish-lists-mula-sa-mga-pdl-tinupad-ng-mandaluyong/
+  title: WISH LISTS MULA SA MGA PDL, TINUPAD NG MANDALUYONG
+  published_at: 2026-10-20T10:40:38+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58387
+  url: https://mandaluyong.gov.ph/5-natatanging-pulis-ng-mandaluyong-ginawaran-ng-medalya-ng-papuri-ng-pnp/
+  title: 5 NATATANGING PULIS NG MANDALUYONG, GINAWARAN NG MEDALYA NG PAPURI NG PNP
+  published_at: 2026-10-13T10:20:38+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58383
+  url: https://mandaluyong.gov.ph/kurso-ng-local-guiding-services-nc-ii-bukas-na-sa-mmtvtc-para-sa-mga-mandaleno/
+  title: KURSO NG LOCAL GUIDING SERVICES NC II, BUKAS NA SA MMTVTC PARA SA MGA MANDALEÑO
+  published_at: 2026-10-13T10:18:00+08:00
+  categories:
+    - Culture
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58379
+  url: https://mandaluyong.gov.ph/mandaluyong-malugod-na-tinanggap-ang-bayan-ng-romblon-para-sa-benchmarking-activity/
+  title: MANDALUYONG, MALUGOD NA TINANGGAP ANG BAYAN NG ROMBLON PARA SA BENCHMARKING ACTIVITY
+  published_at: 2026-10-13T10:13:59+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58375
+  url: https://mandaluyong.gov.ph/mandaluyong-at-dilg-kinilala-ang-mahalagang-tungkulin-ng-mga-punong-barangay-tungo-sa-good-local-governance/
+  title: MANDALUYONG AT DILG, KINILALA ANG MAHALAGANG TUNGKULIN NG MGA PUNONG BARANGAY TUNGO SA GOOD LOCAL GOVERNANCE
+  published_at: 2026-10-13T10:09:18+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58370
+  url: https://mandaluyong.gov.ph/dilg-pinarangalan-ang-mandaluyong-sa-patuloy-na-paghahatid-ng-mataas-na-antas-ng-serbisyo-publiko-para-sa-mga-mandaleno/
+  title: DILG, PINARANGALAN ANG MANDALUYONG SA PATULOY NA PAGHAHATID NG MATAAS NA ANTAS NG SERBISYO PUBLIKO PARA SA MGA MANDALEÑO
+  published_at: 2026-10-13T10:06:21+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58232
+  url: https://mandaluyong.gov.ph/pre-dagyaw-town-hall-meeting-isinagawa-sa-lungsod-ng-mandaluyong/
+  title: PRE-DAGYAW TOWN HALL MEETING, ISINAGAWA SA LUNGSOD NG MANDALUYONG
+  published_at: 2026-10-06T15:04:47+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58226
+  url: https://mandaluyong.gov.ph/mes-tinanggap-ang-panandang-pangkasaysayan-mula-sa-mandaluyong/
+  title: MES, TINANGGAP ANG PANANDANG PANGKASAYSAYAN MULA SA MANDALUYONG
+  published_at: 2026-10-06T14:48:51+08:00
+  categories:
+    - Uncategorized
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58222
+  url: https://mandaluyong.gov.ph/mga-natatanging-alumnus-ng-mes-binigyang-pagkilala/
+  title: MGA NATATANGING ALUMNUS NG MES, BINIGYANG-PAGKILALA
+  published_at: 2026-10-06T14:09:49+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58218
+  url: https://mandaluyong.gov.ph/mandaluyong-at-mes-iginawad-ang-tanglaw-ng-dambana-award-sa-mga-dating-guro-ng-mes/
+  title: MANDALUYONG AT MES, IGINAWAD ANG TANGLAW NG DAMBANA AWARD SA MGA DATING GURO NG MES
+  published_at: 2026-10-06T14:05:42+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58212
+  url: https://mandaluyong.gov.ph/gawad-dambana-ng-kahusayan-para-sa-mga-natatanging-guro-ng-mes/
+  title: GAWAD DAMBANA NG KAHUSAYAN PARA SA MGA NATATANGING GURO NG MES
+  published_at: 2026-10-06T13:35:34+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 58208
+  url: https://mandaluyong.gov.ph/mandaluyong-at-mes-iginawad-ang-batang-kampeon-award-sa-mga-natatanging-mag-aaral/
+  title: MANDALUYONG AT MES, IGINAWAD ANG BATANG KAMPEON AWARD SA MGA NATATANGING MAG-AARAL
+  published_at: 2026-10-06T13:32:25+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

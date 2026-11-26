@@ -1,0 +1,80 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 51451
+  url: https://mandaluyong.gov.ph/selebrasyon-ng-buwan-ng-wikang-pambansa-sa-mandaluyong/
+  title: SELEBRASYON NG BUWAN NG WIKANG PAMBANSA SA MANDALUYONG
+  published_at: 2025-08-21T09:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51448
+  url: https://mandaluyong.gov.ph/philippine-councilors-league-mandaluyong-chapter-2025-2028/
+  title: PHILIPPINE COUNCILOR’S LEAGUE MANDALUYONG CHAPTER 2025-2028
+  published_at: 2025-08-20T09:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51445
+  url: https://mandaluyong.gov.ph/tuberculin-skin-test-readers-pinarangalan-ng-mandaluyong-lgu/
+  title: TUBERCULIN SKIN TEST READERS PINARANGALAN NG MANDALUYONG LGU
+  published_at: 2025-08-19T10:40:20+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51328
+  url: https://mandaluyong.gov.ph/kabataang-mandaleno-muling-nag-uwi-ng-karangalan-sa-isports/
+  title: KABATAANG MANDALEÑO, MULING NAG-UWI NG KARANGALAN SA ISPORTS
+  published_at: 2025-08-15T09:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51325
+  url: https://mandaluyong.gov.ph/mayor-menchie-abalos-pinangunahan-ang-panunumpa-ng-dalawang-youth-club/
+  title: MAYOR MENCHIE ABALOS, PINANGUNAHAN ANG PANUNUMPA NG DALAWANG YOUTH CLUB
+  published_at: 2025-08-14T09:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51319
+  url: https://mandaluyong.gov.ph/mga-sk-chairman-at-kagawad-kinilala-ng-mandaluyong-lgu/
+  title: MGA SK CHAIRMAN AT KAGAWAD, KINILALA NG MANDALUYONG LGU
+  published_at: 2025-08-13T14:45:17+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51167
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-pinarangalan-ang-mga-barangay-risk-reduction-management-committee/
+  title: MANDALUYONG LGU PINARANGALAN ANG MGA BARANGAY RISK REDUCTION MANAGEMENT COMMITTEE
+  published_at: 2025-08-07T10:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51164
+  url: https://mandaluyong.gov.ph/mga-volunteer-at-national-agencies-kinilala-ng-mandaluyong-lgu/
+  title: MGA VOLUNTEER AT NATIONAL AGENCIES KINILALA NG MANDALUYONG LGU
+  published_at: 2025-08-06T10:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51157
+  url: https://mandaluyong.gov.ph/west-sector-team-wagi-sa-2nd-ocd-rescuelympics/
+  title: WEST SECTOR TEAM WAGI SA 2ND OCD RESCUELYMPICS
+  published_at: 2025-08-05T15:26:42+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51152
+  url: https://mandaluyong.gov.ph/in-photos-paglilinis-sa-buhangin-creek/
+  title: IN PHOTOS | PAGLILINIS SA BUHANGIN CREEK
+  published_at: 2025-08-03T20:32:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 51148
+  url: https://mandaluyong.gov.ph/appreciation-night-for-nutrition-partners/
+  title: APPRECIATION NIGHT FOR NUTRITION PARTNERS
+  published_at: 2025-08-03T19:27:00+08:00
+  categories:
+    - Health
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

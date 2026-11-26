@@ -1,0 +1,15 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8369
+  url: https://mandaluyong.gov.ph/mandaluyong-commits-to-dilgs-masa-masid/
+  title: MANDALUYONG COMMITS TO DILG’S MASA MASID
+  published_at: 2016-11-24T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8373
+  url: https://mandaluyong.gov.ph/mandaluyong-milk-letting-program/
+  title: Mandaluyong Milk-letting Program
+  published_at: 2016-11-09T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

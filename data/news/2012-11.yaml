@@ -1,0 +1,29 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8675
+  url: https://mandaluyong.gov.ph/manda-mayor-eyes-rtu-as-home-of-planned-college-for-deaf-mutes/
+  title: Manda Mayor eyes RTU as home of planned college for deaf mutes
+  published_at: 2012-11-29T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8708
+  url: https://mandaluyong.gov.ph/mandaluyong-philippine-table-tennis-academy-medalists/
+  title: MANDALUYONG-PHILIPPINE TABLE TENNIS ACADEMY MEDALISTS
+  published_at: 2012-11-17T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8679
+  url: https://mandaluyong.gov.ph/mandaluyong-city-employees-to-get-their-13th-month-pay-on-friday/
+  title: Mandaluyong City employees to get their 13th month pay on Friday
+  published_at: 2012-11-13T14:00:43+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8700
+  url: https://mandaluyong.gov.ph/media-invitation/
+  title: MEDIA INVITATION
+  published_at: 2012-11-08T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

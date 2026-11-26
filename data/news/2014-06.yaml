@@ -1,0 +1,29 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8837
+  url: https://mandaluyong.gov.ph/effective-and-ethical-good-governance-e2g2-moa-signing/
+  title: EFFECTIVE AND ETHICAL GOOD GOVERNANCE (E2G2) MOA SIGNING
+  published_at: 2014-06-28T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8859
+  url: https://mandaluyong.gov.ph/mandaluyong-mayor-abalos-speak-before-un-public-service-forum-on-innovating-governance/
+  title: Mandaluyong Mayor Abalos speak before UN Public Service Forum on Innovating Governance
+  published_at: 2014-06-26T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8845
+  url: https://mandaluyong.gov.ph/mandaluyong-launches-green-building-ordinance/
+  title: MANDALUYONG LAUNCHES GREEN BUILDING ORDINANCE
+  published_at: 2014-06-24T14:00:14+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8829
+  url: https://mandaluyong.gov.ph/mandaluyong-collegiate-scholarship-memorandum-of-agreement-renewed-2/
+  title: MANDALUYONG COLLEGIATE SCHOLARSHIP MEMORANDUM OF AGREEMENT RENEWED
+  published_at: 2014-06-16T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

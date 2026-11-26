@@ -1,0 +1,29 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 45400
+  url: https://mandaluyong.gov.ph/mandaluyong-kinilala-ang-mga-nagwagi-sa-advocacy-video-making-contest/
+  title: MANDALUYONG, KINILALA ANG MGA NAGWAGI SA ADVOCACY VIDEO MAKING CONTEST
+  published_at: 2024-12-06T07:34:21+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 45375
+  url: https://mandaluyong.gov.ph/lcpc-children-representatives-nanumpa-sa-mandaluyong/
+  title: LCPC CHILDREN REPRESENTATIVES, NANUMPA SA MANDALUYONG
+  published_at: 2024-12-05T11:59:47+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 45350
+  url: https://mandaluyong.gov.ph/nagwagi-sa-eco-fashionista-at-baile-kinilala-ng-mandaluyong/
+  title: NAGWAGI SA ECO FASHIONISTA AT BAILE, KINILALA NG MANDALUYONG
+  published_at: 2024-12-04T10:26:55+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 42469
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-nakamit-ang-100-rating-sa-child-friendly-local-governance-audit/
+  title: MANDALUYONG LGU NAKAMIT ANG 100% RATING SA CHILD FRIENDLY LOCAL GOVERNANCE AUDIT
+  published_at: 2024-12-03T11:29:03+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

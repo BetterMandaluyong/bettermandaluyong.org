@@ -1,0 +1,71 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 20129
+  url: https://mandaluyong.gov.ph/2-mandaleno-nagkamit-ng-ani-ng-dangal-national-award/
+  title: 2 Mandaleño, Nagkamit ng Ani ng Dangal National Award
+  published_at: 2024-03-22T11:13:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20205
+  url: https://mandaluyong.gov.ph/batang-mandaleno-wagi-sa-singapore-gymnastics-invitational-2024/
+  title: BATANG MANDALEÑO WAGI SA SINGAPORE GYMNASTICS INVITATIONAL 2024
+  published_at: 2024-03-20T11:34:51+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20211
+  url: https://mandaluyong.gov.ph/karagdagang-mga-smart-led-tv-para-sa-mga-silid-aralan-sa-mandaluyong-mula-sa-pamahalaang-lungsod/
+  title: KARAGDAGANG MGA SMART LED TV PARA SA MGA SILID ARALAN SA MANDALUYONG MULA SA PAMAHALAANG LUNGSOD
+  published_at: 2024-03-18T11:48:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20196
+  url: https://mandaluyong.gov.ph/programa-para-sa-senior-citizens-nilagdaan-ng-mandaluyong-govt-at-united-bayanihan-foundation/
+  title: PROGRAMA PARA SA SENIOR CITIZENS NILAGDAAN NG MANDALUYONG GOV’T AT UNITED BAYANIHAN FOUNDATION
+  published_at: 2024-03-14T11:14:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20202
+  url: https://mandaluyong.gov.ph/mandaluyong-tumanggap-ng-mga-body-camera-mula-sa-mmda-para-sa-single-ticketing-system/
+  title: MANDALUYONG TUMANGGAP NG MGA BODY CAMERA MULA SA MMDA PARA SA SINGLE TICKETING SYSTEM.
+  published_at: 2024-03-13T11:29:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20199
+  url: https://mandaluyong.gov.ph/single-ticketing-system-sa-ncr-inilunsad-sa-mandaluyong-city/
+  title: SINGLE TICKETING SYSTEM SA NCR INILUNSAD SA MANDALUYONG CITY
+  published_at: 2024-03-12T11:19:34+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20148
+  url: https://mandaluyong.gov.ph/mandalenong-lolo-at-lola-kahanga-hanga/
+  title: MANDALEÑONG LOLO AT LOLA, KAHANGA-HANGA!
+  published_at: 2024-03-11T11:41:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20141
+  url: https://mandaluyong.gov.ph/293-jo-employees-ng-mandaluyong-govt-promoted-na/
+  title: 293 JO EMPLOYEES NG MANDALUYONG GOV’T PROMOTED NA
+  published_at: 2024-03-11T11:34:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20138
+  url: https://mandaluyong.gov.ph/atletang-mandaleno-inuwi-ang-kampeonato/
+  title: ATLETANG MANDALEÑO, INUWI ANG KAMPEONATO
+  published_at: 2024-03-11T11:28:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 20134
+  url: https://mandaluyong.gov.ph/donasyon-na-30000-pares-ng-salamin-tinanggap-ng-mandaluyong/
+  title: DONASYON NA 30,000 PARES NG SALAMIN, TINANGGAP NG MANDALUYONG
+  published_at: 2024-03-11T11:23:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

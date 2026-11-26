@@ -1,0 +1,36 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8225
+  url: https://mandaluyong.gov.ph/gathering-of-sto-nino-images/
+  title: GATHERING OF STO. NINO IMAGES
+  published_at: 2017-01-31T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8221
+  url: https://mandaluyong.gov.ph/trade-expo-and-food-fair/
+  title: TRADE EXPO AND FOOD FAIR
+  published_at: 2017-01-31T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8217
+  url: https://mandaluyong.gov.ph/running-for-nutrition/
+  title: RUNNING FOR NUTRITION
+  published_at: 2017-01-29T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8213
+  url: https://mandaluyong.gov.ph/bantay-bayans-finest/
+  title: BANTAY BAYAN’S FINEST
+  published_at: 2017-01-27T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8259
+  url: https://mandaluyong.gov.ph/two-week-celebration-of-mandaluyong-citys-72nd-liberation-and-23rd-cityhood-anniversary/
+  title: Two-week celebration of Mandaluyong City’s 72nd Liberation and 23rd Cityhood Anniversary
+  published_at: 2017-01-25T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

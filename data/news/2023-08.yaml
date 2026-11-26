@@ -1,0 +1,16 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 10628
+  url: https://mandaluyong.gov.ph/mandaluyong-city-government-begins-distribution-of-school-supplies-and-uniforms-for-incoming-school-year/
+  title: Mandaluyong City Government begins distribution of school supplies and uniforms for incoming school year
+  published_at: 2023-08-14T10:30:43+08:00
+  categories:
+    - Education
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 10610
+  url: https://mandaluyong.gov.ph/free-school-supplies-and-uniforms/
+  title: FREE SCHOOL SUPPLIES AND UNIFORMS
+  published_at: 2023-08-14T10:00:00+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

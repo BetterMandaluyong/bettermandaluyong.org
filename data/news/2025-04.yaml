@@ -1,0 +1,86 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 49417
+  url: https://mandaluyong.gov.ph/6-day-care-graduates-kinilala-ng-mandaluyong/
+  title: 6 DAY CARE GRADUATES, KINILALA NG MANDALUYONG
+  published_at: 2025-04-30T15:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49414
+  url: https://mandaluyong.gov.ph/mandaluyong-pinarangalan-ang-mga-natatanging-day-care-workers/
+  title: MANDALUYONG, PINARANGALAN ANG MGA NATATANGING DAY CARE WORKERS
+  published_at: 2025-04-30T10:39:19+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49340
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-nagbigay-pugay-sa-mga-pamilyang-sumailalim-sa-4ps/
+  title: MANDALUYONG LGU NAGBIGAY PUGAY SA MGA PAMILYANG SUMAILALIM SA 4Ps
+  published_at: 2025-04-23T09:36:45+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49294
+  url: https://mandaluyong.gov.ph/mga-senakulista-mandaluyong-lgu-nagkaisa-sa-paggunita-ng-semana-santa/
+  title: MGA SENAKULISTA, MANDALUYONG LGU, NAGKAISA SA PAGGUNITA NG SEMANA SANTA.
+  published_at: 2025-04-14T15:42:14+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49235
+  url: https://mandaluyong.gov.ph/mandaluyong-nakiisa-sa-bhw-week/
+  title: MANDALUYONG, NAKIISA SA BHW WEEK
+  published_at: 2025-04-09T09:00:20+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49232
+  url: https://mandaluyong.gov.ph/foundever-kinilala-ng-mandaluyong/
+  title: FOUNDEVER, KINILALA NG MANDALUYONG
+  published_at: 2025-04-08T10:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49229
+  url: https://mandaluyong.gov.ph/10-refrigerated-water-fountain-tinanggap-ng-mandaluyong/
+  title: 10 REFRIGERATED WATER FOUNTAIN, TINANGGAP NG MANDALUYONG
+  published_at: 2025-04-07T14:57:08+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49185
+  url: https://mandaluyong.gov.ph/barangay-new-zaniga-kampyeon-sa-bfp-fire-olympics-2025/
+  title: BARANGAY NEW ZANIGA, KAMPYEON SA BFP FIRE OLYMPICS 2025
+  published_at: 2025-04-06T10:12:22+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49182
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-kinilala-ang-mga-estudyanteng-nagwagi-sa-2025-national-schools-press-conference/
+  title: MANDALUYONG LGU, KINILALA ANG MGA ESTUDYANTENG NAGWAGI SA 2025 NATIONAL SCHOOLS PRESS CONFERENCE
+  published_at: 2025-04-05T14:09:54+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49179
+  url: https://mandaluyong.gov.ph/mga-estudyanteng-mandaleno-panalo-sa-regional-festival-of-talents/
+  title: MGA ESTUDYANTENG MANDALEÑO, PANALO SA REGIONAL FESTIVAL OF TALENTS
+  published_at: 2025-04-05T08:05:55+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49176
+  url: https://mandaluyong.gov.ph/mandaluyong-fencing-team-humakot-ng-medalya/
+  title: MANDALUYONG FENCING TEAM HUMAKOT NG MEDALYA
+  published_at: 2025-04-04T14:02:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 49173
+  url: https://mandaluyong.gov.ph/mga-estudyanteng-atleta-humakot-ng-medalya-sa-ncr-palaro-2025/
+  title: MGA ESTUDYANTENG ATLETA, HUMAKOT NG MEDALYA SA NCR PALARO 2025
+  published_at: 2025-04-04T09:01:23+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

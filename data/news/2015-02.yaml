@@ -1,0 +1,36 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8977
+  url: https://mandaluyong.gov.ph/miss-mandaluyong-2015/
+  title: MISS MANDALUYONG 2015
+  published_at: 2015-02-21T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8973
+  url: https://mandaluyong.gov.ph/hulo-jeepney-tricycle-terminal-with-park-inaugurated/
+  title: HULO JEEPNEY & TRICYCLE TERMINAL WITH PARK INAUGURATED
+  published_at: 2015-02-17T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8969
+  url: https://mandaluyong.gov.ph/tiger-citys-top-10-taxpayers-6/
+  title: TIGER CITY’S TOP 10 TAXPAYERS
+  published_at: 2015-02-13T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8965
+  url: https://mandaluyong.gov.ph/ulirang-mandaleno-2015/
+  title: ULIRANG MANDALEÑO 2015
+  published_at: 2015-02-13T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8961
+  url: https://mandaluyong.gov.ph/new-playground-for-children/
+  title: NEW PLAYGROUND FOR CHILDREN
+  published_at: 2015-02-03T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

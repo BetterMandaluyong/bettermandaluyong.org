@@ -1,0 +1,36 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8106
+  url: https://mandaluyong.gov.ph/new-computer-animation-lab-at-addition-hills-integrated-school/
+  title: NEW COMPUTER ANIMATION LAB AT ADDITION HILLS INTEGRATED SCHOOL
+  published_at: 2018-02-22T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8118
+  url: https://mandaluyong.gov.ph/mandaluyongs-b-e-s-t/
+  title: MANDALUYONG’S B.E.S.T
+  published_at: 2018-02-19T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8126
+  url: https://mandaluyong.gov.ph/bonifacio-javier-natl-high-schools-new-computer-system-servicing-lab/
+  title: BONIFACIO JAVIER NAT’L HIGH SCHOOL’S NEW COMPUTER SYSTEM SERVICING LAB
+  published_at: 2018-02-15T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8168
+  url: https://mandaluyong.gov.ph/mandalena-beauties/
+  title: MANDALEÑA BEAUTIES
+  published_at: 2018-02-09T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8110
+  url: https://mandaluyong.gov.ph/new-computer-system-servicing-lab-at-addition-hills-integrated-school/
+  title: NEW COMPUTER SYSTEM SERVICING LAB AT ADDITION HILLS INTEGRATED SCHOOL
+  published_at: 2018-02-05T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

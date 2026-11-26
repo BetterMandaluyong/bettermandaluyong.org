@@ -1,0 +1,30 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 9043
+  url: https://mandaluyong.gov.ph/mandaluyong-government-sets-up-vax-sites-in-schools/
+  title: MANDALUYONG GOVERNMENT SETS UP VAX SITES IN SCHOOLS
+  published_at: 2022-08-22T11:35:18+08:00
+  categories:
+    - COVID-19
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 9001
+  url: https://mandaluyong.gov.ph/mandaluyong-city-government-raises-salaries-of-job-order-employees-2/
+  title: MANDALUYONG CITY GOVERNMENT RAISES SALARIES OF JOB ORDER EMPLOYEES
+  published_at: 2022-08-08T10:30:23+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8996
+  url: https://mandaluyong.gov.ph/job-order-employees-to-get-10k-salary/
+  title: JOB ORDER EMPLOYEES TO GET 10K SALARY.
+  published_at: 2022-08-08T10:19:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8890
+  url: https://mandaluyong.gov.ph/mandaluyong-city-government-raises-salaries-of-job-order-employees/
+  title: MANDALUYONG CITY GOVERNMENT RAISES SALARIES OF JOB ORDER EMPLOYEES
+  published_at: 2022-08-08T10:11:28+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

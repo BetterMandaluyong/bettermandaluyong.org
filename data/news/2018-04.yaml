@@ -1,0 +1,29 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8190
+  url: https://mandaluyong.gov.ph/honoring-veterans/
+  title: HONORING VETERANS
+  published_at: 2018-04-12T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8194
+  url: https://mandaluyong.gov.ph/honoring-veterans-2/
+  title: HONORING VETERANS
+  published_at: 2018-04-09T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8177
+  url: https://mandaluyong.gov.ph/visitor-from-taiwan/
+  title: VISITOR FROM TAIWAN
+  published_at: 2018-04-07T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8160
+  url: https://mandaluyong.gov.ph/math-achievers/
+  title: MATH ACHIEVERS
+  published_at: 2018-04-04T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

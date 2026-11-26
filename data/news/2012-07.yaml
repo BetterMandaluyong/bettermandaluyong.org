@@ -1,0 +1,29 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 8720
+  url: https://mandaluyong.gov.ph/mandaluyong-city-new-road-connection/
+  title: MANDALUYONG CITY NEW ROAD CONNECTION
+  published_at: 2012-07-28T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8681
+  url: https://mandaluyong.gov.ph/new-barangay-hall-in-mauway/
+  title: NEW BARANGAY HALL IN MAUWAY
+  published_at: 2012-07-22T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8716
+  url: https://mandaluyong.gov.ph/new-road-and-streetlights-opens/
+  title: NEW ROAD AND STREETLIGHTS OPENS
+  published_at: 2012-07-19T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 8753
+  url: https://mandaluyong.gov.ph/various-activities-mark-mayors-golden-celebration/
+  title: Various activities mark Mayor’s golden celebration
+  published_at: 2012-07-12T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

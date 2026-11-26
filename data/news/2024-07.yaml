@@ -1,0 +1,129 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 27813
+  url: https://mandaluyong.gov.ph/kabataang-mandaleno-wagi-sa-palarong-pambansa-2024/
+  title: KABATAANG MANDALEÑO WAGI SA PALARONG PAMBANSA 2024
+  published_at: 2024-07-27T10:10:00+08:00
+  categories:
+    - Awards
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 27810
+  url: https://mandaluyong.gov.ph/mandaluyong-binigyang-pagkilala-ang-mga-estudyante-at-guro-na-nagwagi-sa-2024-nspc/
+  title: MANDALUYONG BINIGYANG PAGKILALA ANG MGA ESTUDYANTE AT GURO NA NAGWAGI SA 2024 NSPC
+  published_at: 2024-07-26T17:01:51+08:00
+  categories:
+    - Awards
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 27783
+  url: https://mandaluyong.gov.ph/brigada-eskwela-2024-sa-mandaluyong/
+  title: BRIGADA ESKWELA 2024 SA MANDALUYONG
+  published_at: 2024-07-23T17:26:16+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 27781
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-nakiisa-sa-brigada-eskwela-2024-ng-deped/
+  title: MANDALUYONG LGU NAKIISA SA BRIGADA ESKWELA 2024 NG DEPED
+  published_at: 2024-07-23T17:24:21+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 27778
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-namahagi-ng-mga-gamit-rubber-shoes-at-uniporme-para-sa-balik-eskwela-2024-2025/
+  title: MANDALUYONG LGU NAMAHAGI NG MGA GAMIT, RUBBER SHOES, AT UNIPORME PARA SA BALIK ESKWELA 2024-2025
+  published_at: 2024-07-22T16:15:07+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 27776
+  url: https://mandaluyong.gov.ph/rubber-shoes-school-supplies-mga-uniporme-ibinahagi-ng-mandaluyong-lgu-para-sa-balik-eskwela-2024-2025/
+  title: RUBBER SHOES, SCHOOL SUPPLIES, MGA UNIPORME IBINAHAGI NG MANDALUYONG LGU PARA SA BALIK ESKWELA 2024-2025
+  published_at: 2024-07-22T16:09:00+08:00
+  categories:
+    - Education
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 21626
+  url: https://mandaluyong.gov.ph/mandaluyong-at-bacuag-lgus-lumagda-sa-sisterhood-agreement-2/
+  title: MANDALUYONG AT BACUAG LGUs LUMAGDA SA SISTERHOOD AGREEMENT.
+  published_at: 2024-07-11T11:30:15+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 21624
+  url: https://mandaluyong.gov.ph/mandaluyong-at-bacuag-lgus-lumagda-sa-sisterhood-agreement/
+  title: MANDALUYONG AT BACUAG LGUS LUMAGDA SA SISTERHOOD AGREEMENT
+  published_at: 2024-07-11T11:28:20+08:00
+  categories:
+    - Uncategorized
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 21603
+  url: https://mandaluyong.gov.ph/ala-stress-habit-itinanghal-sa-city-hall/
+  title: ALA-STRESS HABIT ITINANGHAL SA CITY HALL
+  published_at: 2024-07-10T13:14:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 21597
+  url: https://mandaluyong.gov.ph/pnp-napcos-fto-nakatalaga-sa-mandaluyong/
+  title: PNP NAPCOS, FTO NAKATALAGA SA MANDALUYONG
+  published_at: 2024-07-09T14:00:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 21392
+  url: https://mandaluyong.gov.ph/protection-center-para-sa-mga-kababaihan-kabataan-at-lgbtqia-binuksan-ng-mandaluyong-lgu/
+  title: PROTECTION CENTER PARA SA MGA KABABAIHAN, KABATAAN, AT LGBTQIA+ BINUKSAN NG MANDALUYONG LGU.
+  published_at: 2024-07-05T16:08:45+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 21390
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-nagbukas-ng-bagong-pasilidad-para-sa-mga-kababaihan-kabataan-at-lgbtqia/
+  title: MANDALUYONG LGU NAGBUKAS NG BAGONG PASILIDAD PARA SA MGA KABABAIHAN, KABATAAN, AT LGBTQIA+
+  published_at: 2024-07-05T16:05:52+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 21337
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-evacuation-center/
+  title: MANDALUYONG LGU EVACUATION CENTER
+  published_at: 2024-07-04T16:25:15+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 21335
+  url: https://mandaluyong.gov.ph/bagong-evacuation-center-binuksan-ng-mandaluyong-lgu/
+  title: BAGONG EVACUATION CENTER BINUKSAN NG MANDALUYONG LGU
+  published_at: 2024-07-04T16:23:30+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 21221
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-at-sultan-kudarat-lumagda-sa-isang-sisterhood-agreement/
+  title: MANDALUYONG LGU AT SULTAN KUDARAT LUMAGDA SA ISANG SISTERHOOD AGREEMENT
+  published_at: 2024-07-03T17:27:37+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 21211
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-at-sultan-kudarat-province-lumagda-sa-isang-sisterhood-agreement/
+  title: MANDALUYONG LGU AT SULTAN KUDARAT PROVINCE LUMAGDA SA ISANG SISTERHOOD AGREEMENT
+  published_at: 2024-07-03T16:55:07+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 21151
+  url: https://mandaluyong.gov.ph/mandaluyong-nagbigay-ng-goodies-at-food-supplementation-sa-mga-piling-mandaleno/
+  title: MANDALUYONG, NAGBIGAY NG GOODIES AT FOOD SUPPLEMENTATION SA MGA PILING MANDALEÑO
+  published_at: 2024-07-03T11:32:29+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

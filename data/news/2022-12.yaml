@@ -1,0 +1,24 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 10453
+  url: https://mandaluyong.gov.ph/mandaluyong-city-bags-6th-sglg-award-from-dilg-2/
+  title: MANDALUYONG CITY BAGS 6TH SGLG AWARD FROM DILG.
+  published_at: 2022-12-15T12:00:25+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 10437
+  url: https://mandaluyong.gov.ph/mandaluyong-city-bags-6th-sglg-award-from-dilg/
+  title: MANDALUYONG CITY BAGS 6TH SGLG AWARD FROM DILG
+  published_at: 2022-12-15T11:00:40+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 10649
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-continues-house-to-house-distribution-of-pamaskong-handog-this-year/
+  title: MANDALUYONG LGU CONTINUES HOUSE-TO-HOUSE DISTRIBUTION OF PAMASKONG HANDOG THIS YEAR
+  published_at: 2022-12-10T09:59:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

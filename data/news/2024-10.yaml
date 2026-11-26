@@ -1,0 +1,66 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 36796
+  url: https://mandaluyong.gov.ph/sdo-mandaluyong-at-ahis-wagi-bilang-outstanding-sbfp-implementers/
+  title: SDO-MANDALUYONG AT AHIS, WAGI BILANG OUTSTANDING SBFP IMPLEMENTERS
+  published_at: 2024-10-24T09:00:43+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 36793
+  url: https://mandaluyong.gov.ph/bsp-city-of-mandaluyong-council-chairman-binigyang-pagkilala-ng-bsp-ncr/
+  title: BSP-CITY OF MANDALUYONG COUNCIL CHAIRMAN, BINIGYANG PAGKILALA NG BSP-NCR
+  published_at: 2024-10-23T09:00:01+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 36790
+  url: https://mandaluyong.gov.ph/natatanging-bsp-scouters-pinarangalan-ng-mandaluyong/
+  title: NATATANGING BSP SCOUTERS, PINARANGALAN NG MANDALUYONG
+  published_at: 2024-10-22T16:30:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 36730
+  url: https://mandaluyong.gov.ph/iuws-groundbreaking-ceremony/
+  title: IUWS GROUNDBREAKING CEREMONY
+  published_at: 2024-10-18T10:25:54+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 36661
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-nakikiisa-sa-mental-health-awareness-month/
+  title: MANDALUYONG LGU NAKIKIISA SA MENTAL HEALTH AWARENESS MONTH
+  published_at: 2024-10-14T14:43:28+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 36648
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-pinarangalan-ng-blgf-sa-kahusayan-sa-pananalapi/
+  title: MANDALUYONG LGU PINARANGALAN NG BLGF SA KAHUSAYAN SA PANANALAPI
+  published_at: 2024-10-14T11:20:32+08:00
+  categories:
+    - Awards
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30526
+  url: https://mandaluyong.gov.ph/mobile-legends-tournament-matagumpay-na-isinagawa-sa-mandaluyong/
+  title: MOBILE LEGENDS TOURNAMENT, MATAGUMPAY NA ISINAGAWA SA MANDALUYONG
+  published_at: 2024-10-03T09:47:45+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30503
+  url: https://mandaluyong.gov.ph/mandaluyong-lgu-tinanggap-ang-listahanan-database-mula-sa-dswd-ncr/
+  title: MANDALUYONG LGU TINANGGAP ANG LISTAHANAN DATABASE MULA SA DSWD-NCR
+  published_at: 2024-10-02T08:55:04+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 30465
+  url: https://mandaluyong.gov.ph/service-vehicles-ipinamahagi-sa-ilang-tanggapan-ng-mandaluyong-lgu/
+  title: SERVICE VEHICLES, IPINAMAHAGI SA ILANG TANGGAPAN NG MANDALUYONG LGU
+  published_at: 2024-10-01T13:42:24+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00

@@ -1,0 +1,44 @@
+# City news links. Written by scripts/news_refresh.ts; see DEPLOYMENT.md.
+- id: 16010
+  url: https://mandaluyong.gov.ph/mga-nurse-binigyang-papuri-at-pasasalamat-ng-mandaluyong-city/
+  title: MGA NURSE, BINIGYANG PAPURI AT PASASALAMAT NG MANDALUYONG CITY
+  published_at: 2023-10-26T12:33:30+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 15934
+  url: https://mandaluyong.gov.ph/mandaluyong-city-at-municipality-of-quezon-lumagda-sa-sisterhood-agreement/
+  title: MANDALUYONG CITY AT MUNICIPALITY OF QUEZON LUMAGDA SA SISTERHOOD AGREEMENT
+  published_at: 2023-10-24T13:06:13+08:00
+  categories:
+    - Culture
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 15700
+  url: https://mandaluyong.gov.ph/mandaluyong-city-government-to-implement-underground-wiring-and-cabling-sysytem/
+  title: MANDALUYONG CITY GOVERNMENT TO IMPLEMENT UNDERGROUND WIRING AND CABLING SYSYTEM
+  published_at: 2023-10-17T14:24:00+08:00
+  categories:
+    - Uncategorized
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 15697
+  url: https://mandaluyong.gov.ph/public-hearing-hinggil-sa-underground-wiring-at-cabling-system/
+  title: PUBLIC HEARING HINGGIL SA UNDERGROUND WIRING AT CABLING SYSTEM
+  published_at: 2023-10-17T14:05:30+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 15630
+  url: https://mandaluyong.gov.ph/six-barangays-in-mandaluyong-get-sglgb-from-dilg/
+  title: SIX BARANGAYS IN MANDALUYONG GET SGLGB FROM DILG
+  published_at: 2023-10-17T10:25:56+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
+- id: 15666
+  url: https://mandaluyong.gov.ph/local-chief-executives-ng-barmm-para-sa-fellowship-program-on-social-cohesion-and-resilience-sa-mandaluyong/
+  title: LOCAL CHIEF EXECUTIVES NG BARMM PARA SA FELLOWSHIP PROGRAM ON SOCIAL COHESION AND RESILIENCE SA MANDALUYONG
+  published_at: 2023-10-06T18:51:00+08:00
+  categories:
+    - News
+  first_seen_at: 2026-11-26T08:45:24+08:00
