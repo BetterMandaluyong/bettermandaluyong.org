@@ -80,13 +80,13 @@ line on the page itself.
   or other state-changing git commands unless explicitly asked. Read-only
   inspection (`git status`, `git diff`, `git log`) is fine.
 - **Feature branches only — never land on main yourself.** Every change is made
-  on a branch other than `main` (`feat/…`, `fix/…`, `docs/…`, …): create the
-  branch first, then stage and commit the work there. Never stage, commit, or
-  push anything directly on `main`, and never merge a PR — not even small docs
-  changes, and not because a plan said "commit"; plan approval covers the
-  change's content, not the merge. `main` deploys, so the only way work reaches
-  it is a branch pushed and opened as a PR for a human to review and merge.
-  **One exception: the news data bot.** The scheduled `news-data` workflow
+  on a branch other than `main` (any name works): create the branch first, then
+  stage and commit the work there. Never stage, commit, or push anything
+  directly on `main`, and never merge a PR — not even small docs changes, and
+  not because a plan said "commit"; plan approval covers the change's content,
+  not the merge. `main` deploys, so the only way work reaches it is a branch
+  pushed and opened as a PR for a human to review and merge. **One exception:
+  the news data bot.** The scheduled `news-data` workflow
   (`.github/workflows/news-data.yml`) may merge its own PR from `bot/news-data`
   into `main`, and only when every changed file is under `data/news/` and the
   `check` workflow has passed. Agents never merge that PR by hand, never push to

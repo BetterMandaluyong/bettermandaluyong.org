@@ -48,8 +48,7 @@ content — not the merge, and not unrelated edits.
 
 ## 4. Implement
 
-- Work on a `feat/…` / `fix/…` / `docs/…` branch. Never commit to `main`; never
-  merge a PR.
+- Work on a branch (any name). Never commit to `main`; never merge a PR.
 - Small, conventional commits: `type(scope): summary`, body ending with a
   `Verified: …` line. No AI attribution trailers — the commit-msg hook installed
   by `pnpm run setup` enforces this.

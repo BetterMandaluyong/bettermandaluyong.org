@@ -131,9 +131,8 @@ New to code, or working through an AI agent?
 **[GETTING-STARTED.md](GETTING-STARTED.md)** walks the whole loop on this repo:
 machine setup, your first agent edit, your first pull request.
 
-1. **Branch, never `main`.** Work on a short-lived branch (`feat/…`, `fix/…`,
-   `docs/…`) and open a PR. A merge to `main` deploys, so nothing is ever pushed
-   to `main` directly.
+1. **Branch, never `main`.** Work on a short-lived branch (any name) and open a
+   PR. A merge to `main` deploys, so nothing is ever pushed to `main` directly.
 2. **Check before you push.** Run `pnpm check` and `pnpm test`; CI runs both
    plus `pnpm build` on every PR (`.github/workflows/check.yml`).
 3. **Conventional commits.** `pnpm run setup` installs the commit template and
