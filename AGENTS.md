@@ -129,8 +129,9 @@ line on the page itself.
 - **App Router file conventions.** `app/layout.tsx` is the root layout (fonts,
   skip link), `app/page.tsx` is the home page, `app/<slug>/page.tsx` adds a
   route. Per-page `<title>`/meta go through `export const metadata` /
-  `generateMetadata` — there is no `<Head>`. Redirects live in `next.config.ts`;
-  404s use `notFound()` + `app/not-found.tsx`.
+  `generateMetadata`, built with `pageMetadata()` from `components/metadata.ts`
+  — there is no `<Head>`. Redirects live in `next.config.ts`; 404s use
+  `notFound()` + `app/not-found.tsx`.
 - **React, not Preact.** Import from `react`; use `className` (also as the
   component prop name), `htmlFor`, camelCase SVG attributes.
 - **Server Components by default; `"use client"` = island.** Only files in
@@ -217,6 +218,8 @@ app/          Pages (App Router). layout.tsx = root layout; page.tsx = home;
 components/   Reusable server components — see COMPONENTS.md for the catalog.
               Ported BetterGov files say so in their header.
 components/content.ts  All user-facing copy and links (SITE, HOME, FOOTER, …).
+components/metadata.ts pageMetadata(): titles, canonicals, Open Graph/X cards;
+              MAIN_PAGES for the sitemap and /llms.txt.
 components/build.ts    Build commit SHA for the footer (set in vite.config.ts).
 components/tokens.ts   Token list for /storybook (and its test).
 islands/      Client-hydrated components ("use client"): FacebookFeed, BarangayMap.
@@ -247,6 +250,8 @@ scripts/      setup.ts (pnpm run setup); import_barangays.ts (bulk refresh of
               import_news.ts (one-off backfill + D1 history merge).
 utils/people/ Person ids: ulid.ts, slugs and re-import matching (ids.ts),
               `# Name` comments (comments.ts), disk reader for scripts (files.ts).
+utils/site/   Builders for /news/feed.xml (RSS), /llms.txt, /humans.txt.
+              app/robots.ts and app/sitemap.ts serve the other two.
 utils/news/   News logic: rss/wp/wayback parsers, jobs.ts (the three jobs),
               repo.ts (in-memory record + YAML output), query.ts (page reads).
 utils/budget/ Budget API client, whole-word place matching, YAML output,

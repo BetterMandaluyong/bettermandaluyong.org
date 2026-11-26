@@ -3,6 +3,7 @@ import { Container } from "../../components/Container.tsx";
 import { OrgChart } from "../../components/OrgChart.tsx";
 import { PageMasthead } from "../../components/PageMasthead.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
+import { pageMetadata } from "../../components/metadata.ts";
 import {
   PersonCards,
   type PersonCardItem,
@@ -25,10 +26,11 @@ import {
 } from "../../data/people.ts";
 import { formatSourceDate } from "../../utils/barangays/format.ts";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: PEOPLE_COPY.metaTitle,
   description: PEOPLE_COPY.metaDescription,
-};
+  path: "/people",
+});
 
 /** Categories whose cards are grouped under each barangay's name. */
 const BY_BARANGAY: ReadonlySet<PositionCategory> = new Set([

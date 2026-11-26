@@ -20,5 +20,8 @@ read it before building UI, and update it in the same change.
   doesn't merge conflicting Tailwind classes, so don't rely on a `className`
   prop to override padding or similar. Write class names out in full: Tailwind
   can't see names built at runtime.
+- **`metadata.ts`** builds every page's `<head>` metadata (`pageMetadata`,
+  `rootMetadata`) and lists the main sections (`MAIN_PAGES`) for the sitemap and
+  `/llms.txt`. Pages never write `openGraph` by hand.
 - `tokens.ts` lists the tokens `/storybook` shows. `tokens_test.ts` fails if one
   disappears from `app/globals.css`.

@@ -4,6 +4,7 @@ import { Container } from "../../components/Container.tsx";
 import { OfficialList, officialItem } from "../../components/OfficialList.tsx";
 import { PageMasthead } from "../../components/PageMasthead.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
+import { pageMetadata } from "../../components/metadata.ts";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { SourceNote } from "../../components/SourceNote.tsx";
 import { BARANGAYS as COPY, DISTRICTS_COPY } from "../../components/content.ts";
@@ -21,10 +22,11 @@ import {
 import { BarangayMap } from "../../islands/BarangayMap.tsx";
 import { formatSourceDate } from "../../utils/barangays/format.ts";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: DISTRICTS_COPY.metaTitle,
   description: DISTRICTS_COPY.metaDescription,
-};
+  path: "/districts",
+});
 
 /**
  * The city's two council districts. The House representative is shown once,

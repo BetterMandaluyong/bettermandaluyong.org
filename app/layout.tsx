@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { SITE } from "../components/content.ts";
+import { rootMetadata } from "../components/metadata.ts";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: SITE.name,
-  description: SITE.description,
-  icons: { icon: { url: "/logo-seal.svg", type: "image/svg+xml" } },
-  openGraph: { siteName: SITE.name, type: "website", url: SITE.url },
-};
+export const metadata: Metadata = rootMetadata();
 
 // Root shell: fonts and the skip link. Pages wrap their content in
 // <PageShell> (components/PageShell.tsx).
@@ -18,6 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         {/* ed-navy-2; a <meta> can't read CSS variables. */}
         <meta name="theme-color" content="#0a44bd" />
+        <link rel="author" href="/humans.txt" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

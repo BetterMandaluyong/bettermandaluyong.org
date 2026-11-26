@@ -5,6 +5,7 @@ import { Container } from "../components/Container.tsx";
 import { NewsList } from "../components/NewsList.tsx";
 import { OfficialList, officialItem } from "../components/OfficialList.tsx";
 import { PageShell } from "../components/PageShell.tsx";
+import { pageMetadata } from "../components/metadata.ts";
 import { SectionHeader } from "../components/SectionHeader.tsx";
 import { SourceNote } from "../components/SourceNote.tsx";
 import {
@@ -28,14 +29,13 @@ import { NEWS_ITEMS } from "../data/news.ts";
 import { MAP_PLACES } from "../data/places.ts";
 import { latestNews } from "../utils/news/query.ts";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: HOME.metaTitle,
   description: HOME.metaDescription,
-  openGraph: {
-    title: SITE.name,
-    description: HOME.shareDescription,
-  },
-};
+  path: "/",
+  shareTitle: SITE.name,
+  shareDescription: HOME.shareDescription,
+});
 
 export default async function HomePage({
   searchParams,

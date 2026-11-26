@@ -5,6 +5,7 @@ import { Container } from "../../components/Container.tsx";
 import { NewsList } from "../../components/NewsList.tsx";
 import { PageMasthead } from "../../components/PageMasthead.tsx";
 import { PageShell } from "../../components/PageShell.tsx";
+import { pageMetadata } from "../../components/metadata.ts";
 import { SectionHeader } from "../../components/SectionHeader.tsx";
 import { NEWS, NEWS_HISTORY_URL, SITE } from "../../components/content.ts";
 import { cx } from "../../components/cx.ts";
@@ -13,10 +14,11 @@ import { NEWS_ITEMS } from "../../data/news.ts";
 import { NEWS_PER_PAGE, parseListParams } from "../../utils/news/display.ts";
 import { listCategories, listNews } from "../../utils/news/query.ts";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: NEWS.metaTitle,
   description: NEWS.metaDescription,
-};
+  path: "/news",
+});
 
 /** Builds a /news address, keeping the category and skipping page 1. */
 function newsHref(category: string | null, page: number): string {
