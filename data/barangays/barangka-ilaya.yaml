@@ -10,25 +10,25 @@ hall:
     - "09621571317"
   email: null
 council:
-  captain: Joselito C. Pangilinan
+  captain: 01M8AYCW7PSA6X5QWP33DV67DA # Joselito C. Pangilinan
   kagawads:
-    - Ronaldo Y. Intalan
-    - Celso C. Panglinan
-    - Rowena A. Costelo
-    - Armando S. Gonzaga
-    - Emelita San Jose Masilang
-    - Arnold S. Teodoro
-    - Alex Z. Santiago
+    - 01M8AYCW7PSA6X5QWP33DV67DB # Ronaldo Y. Intalan
+    - 01M8AYCW7PSA6X5QWP33DV67DC # Celso C. Panglinan
+    - 01M8AYCW7PSA6X5QWP33DV67DD # Rowena A. Costelo
+    - 01M8AYCW7PSA6X5QWP33DV67DE # Armando S. Gonzaga
+    - 01M8AYCW7PSA6X5QWP33DV67DF # Emelita San Jose Masilang
+    - 01M8AYCW7PSA6X5QWP33DV67DG # Arnold S. Teodoro
+    - 01M8AYCW7PSA6X5QWP33DV67DH # Alex Z. Santiago
 sk:
-  chair: Rizelyn L. Arrabis
+  chair: 01M8AYCW7PSA6X5QWP33DV67DJ # Rizelyn L. Arrabis
   kagawads:
-    - Jhana G. Coronado
-    - Nakeesha Abby Reyes
-    - Mark Gilbert Dublon
-    - Franco Lauren D. San Jose
-    - Christian Patricia O. Masilang
-    - Jayvie F. Agapito
-    - Justin Cedrick V. Garcia
+    - 01M8AYCW7PSA6X5QWP33DV67DK # Jhana G. Coronado
+    - 01M8AYCW7PSA6X5QWP33DV67DM # Nakeesha Abby Reyes
+    - 01M8AYCW7PSA6X5QWP33DV67DN # Mark Gilbert Dublon
+    - 01M8AYCW7PSA6X5QWP33DV67DP # Franco Lauren D. San Jose
+    - 01M8AYCW7PSA6X5QWP33DV67DQ # Christian Patricia O. Masilang
+    - 01M8AYCW7PSA6X5QWP33DV67DR # Jayvie F. Agapito
+    - 01M8AYCW7PSA6X5QWP33DV67DS # Justin Cedrick V. Garcia
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-barangka-ilaya/
   updated: 2026-02-20

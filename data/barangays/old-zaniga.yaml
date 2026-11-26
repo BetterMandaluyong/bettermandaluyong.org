@@ -10,25 +10,25 @@ hall:
     - 8713-7582
   email: null
 council:
-  captain: Alex Adrias Lacson
+  captain: 01M8AYCW7PSA6X5QWP33DV67MQ # Alex Adrias Lacson
   kagawads:
-    - Erika L. Javier
-    - Jerome N. Ecal
-    - Carmencita B. Pamilaran
-    - Samuel H. Caravana
-    - George Weeland E. Molina
-    - Edgardo M. Galvez
-    - Justine Y. Avila
+    - 01M8AYCW7PSA6X5QWP33DV67MR # Erika L. Javier
+    - 01M8AYCW7PSA6X5QWP33DV67MS # Jerome N. Ecal
+    - 01M8AYCW7PSA6X5QWP33DV67MT # Carmencita B. Pamilaran
+    - 01M8AYCW7PSA6X5QWP33DV67MV # Samuel H. Caravana
+    - 01M8AYCW7PSA6X5QWP33DV67MW # George Weeland E. Molina
+    - 01M8AYCW7PSA6X5QWP33DV67MX # Edgardo M. Galvez
+    - 01M8AYCW7PSA6X5QWP33DV67MY # Justine Y. Avila
 sk:
-  chair: Lea Ksandra A. Paradero
+  chair: 01M8AYCW7PSA6X5QWP33DV67MZ # Lea Ksandra A. Paradero
   kagawads:
-    - Kathlynne E. Veriña
-    - Joshua O. Dalisay
-    - Issabel Jane C. Pateño
-    - Ma. Niña A. Ruidera
-    - Roldan Kenji Corcuera
-    - Paolo V. Bernardo
-    - Jean Mitchell Montes
+    - 01M8AYCW7PSA6X5QWP33DV67N0 # Kathlynne E. Veriña
+    - 01M8AYCW7PSA6X5QWP33DV67N1 # Joshua O. Dalisay
+    - 01M8AYCW7PSA6X5QWP33DV67N2 # Issabel Jane C. Pateño
+    - 01M8AYCW7PSA6X5QWP33DV67N3 # Ma. Niña A. Ruidera
+    - 01M8AYCW7PSA6X5QWP33DV67N4 # Roldan Kenji Corcuera
+    - 01M8AYCW7PSA6X5QWP33DV67N5 # Paolo V. Bernardo
+    - 01M8AYCW7PSA6X5QWP33DV67N6 # Jean Mitchell Montes
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-old-zaniga/
   updated: 2026-02-20

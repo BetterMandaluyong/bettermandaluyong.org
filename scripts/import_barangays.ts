@@ -16,6 +16,13 @@
 // (new barangay officials: 2028, or a court ruling). It prints every Punong Barangay that differs between the
 // city's two pages so a person can settle it; it never guesses.
 //
+// Officials are written as person ids (ULIDs, from data/people/). Someone with
+// exactly the same name who already holds an office in the same barangay keeps
+// their id and URL; everyone else gets a new data/people/<ULID>.yaml. It prints
+// every new person and everyone who no longer holds an office, so a person can
+// merge renamed people by hand (the build fails until each person file is
+// listed by an office).
+//
 // Hand-kept sections survive a rerun: `dilg` (when the officials were checked
 // against the DILG Barangay Officials Directory) and `flags` (where the two
 // disagree) are copied over from the old file. A `changed` flag means a DILG
@@ -31,7 +38,16 @@ import {
 } from "node:fs";
 import { join } from "node:path";
 import { parse, stringify } from "yaml";
+import {
+  barangayOfficialIds,
+  parseBarangay,
+  type BarangayRecord,
+} from "../data/schema.ts";
 import { parsePhones } from "../utils/barangays/phone.ts";
+import { withNameComments } from "../utils/people/comments.ts";
+import { readCityOfficials, readPeople } from "../utils/people/files.ts";
+import { findPerson, newSlug, type KnownPerson } from "../utils/people/ids.ts";
+import { ulidFactory } from "../utils/people/ulid.ts";
 
 const [scrapedDir, geoPath] = process.argv.slice(2);
 if (!scrapedDir || !geoPath) {
@@ -281,10 +297,75 @@ for (const f of features) {
 }
 
 barangays.sort((x, y) => x.name.localeCompare(y.name));
+
+// Who is on file, and where each person holds office now (read before the
+// barangay files are overwritten).
+mkdirSync("data/people", { recursive: true });
+const peopleOnFile = readPeople();
+const city = readCityOfficials(peopleOnFile);
+const cityIds = new Set(
+  [city.representative, city.mayor, city.viceMayor, ...city.councilors].map(
+    (o) => o.personId,
+  ),
+);
+const oldBarangays: BarangayRecord[] = existsSync("data/barangays")
+  ? readdirSync("data/barangays")
+      .filter((f) => f.endsWith(".yaml"))
+      .map((f) =>
+        parseBarangay(
+          parse(readFileSync(`data/barangays/${f}`, "utf8")),
+          `data/barangays/${f}`,
+          f.slice(0, -".yaml".length),
+        ),
+      )
+  : [];
+const known: KnownPerson[] = peopleOnFile.map((p) => ({
+  id: p.id,
+  name: p.name,
+  scopes: [
+    ...(cityIds.has(p.id) ? ["city"] : []),
+    ...oldBarangays
+      .filter((b) => barangayOfficialIds(b.officialIds).includes(p.id))
+      .map((b) => b.slug),
+  ],
+}));
+const names = new Map(peopleOnFile.map((p) => [p.id, p.name]));
+const slugsTaken = new Set(peopleOnFile.map((p) => p.slug));
+const newUlid = ulidFactory();
+const created: string[] = [];
+const listed = new Set(cityIds);
+
+/** The person id for an official of barangay `scope`, creating one if new. */
+function personFor(name: string, scope: string, usedHere: Set<string>): string {
+  const match = findPerson(
+    name,
+    scope,
+    known.filter((p) => !usedHere.has(p.id)),
+  );
+  let id = match?.id;
+  if (!id) {
+    id = newUlid();
+    const slug = newSlug(name, scope, slugsTaken);
+    slugsTaken.add(slug);
+    names.set(id, name);
+    writeFileSync(
+      `data/people/${id}.yaml`,
+      stringify({ id, slug, name }, { lineWidth: 0 }),
+    );
+    created.push(
+      `${scope}: ${name} -> /people/${slug} (data/people/${id}.yaml)`,
+    );
+  }
+  usedHere.add(id);
+  listed.add(id);
+  return id;
+}
+
 mkdirSync("data/barangays", { recursive: true });
 mkdirSync("public/data", { recursive: true });
 const changedFlags: string[] = [];
 for (const b of barangays) {
+  const usedHere = new Set<string>();
   const path = `data/barangays/${b.slug}.yaml`;
   const old = existsSync(path)
     ? ((parse(readFileSync(path, "utf8")) ?? {}) as {
@@ -308,18 +389,24 @@ for (const b of barangays) {
       email: (b as { email?: string }).email ?? null,
     },
     council: {
-      captain: b.captain,
-      kagawads: b.kagawads.map((m) => m.name),
+      captain: personFor(b.captain, b.slug, usedHere),
+      kagawads: b.kagawads.map((m) => personFor(m.name, b.slug, usedHere)),
     },
-    sk: { chair: b.skChair, kagawads: b.skKagawads.map((m) => m.name) },
+    sk: {
+      chair: personFor(b.skChair, b.slug, usedHere),
+      kagawads: b.skKagawads.map((m) => personFor(m.name, b.slug, usedHere)),
+    },
     source: { url: b.sourceUrl, updated: b.sourceModified },
     ...(old.dilg ? { dilg: old.dilg } : {}),
     ...(old.flags?.length ? { flags: old.flags } : {}),
   };
   writeFileSync(
     path,
-    `# Written by scripts/import_barangays.ts; edit by hand if needed.\n` +
-      stringify(doc, { defaultStringType: "PLAIN", lineWidth: 0 }),
+    withNameComments(
+      `# Written by scripts/import_barangays.ts; edit by hand if needed.\n` +
+        stringify(doc, { defaultStringType: "PLAIN", lineWidth: 0 }),
+      (id) => names.get(id),
+    ),
   );
 }
 writeFileSync(
@@ -331,6 +418,19 @@ console.log(
   `wrote ${barangays.length} barangay YAML files and ${outFeatures.length} polygons`,
 );
 for (const d of duplicates) console.log(" - " + d);
+if (created.length) {
+  console.log(`\nNew people (${created.length}); merge any who were renamed:`);
+  for (const c of created) console.log(" - " + c);
+}
+const unlisted = peopleOnFile.filter((p) => !listed.has(p.id));
+if (unlisted.length) {
+  console.log(
+    "\nNo longer hold an office (delete the file, or move its ids: to the new person):",
+  );
+  for (const p of unlisted) {
+    console.log(` - ${p.name}: data/people/${p.id}.yaml`);
+  }
+}
 if (mismatches.length) {
   console.log(
     "\nPunong Barangay differs between the city's pages (settle by hand):",

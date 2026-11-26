@@ -10,25 +10,25 @@ hall:
     - "09052533125"
   email: null
 council:
-  captain: Kristofer Dominguez
+  captain: 01M8AYCW7PSA6X5QWP33DV67BT # Kristofer Dominguez
   kagawads:
-    - John Christopher R. Magalong
-    - Dennis L. Laygo
-    - John Mark Sta. Maria Guzman
-    - Joel J. Quieta
-    - Lito P. Bautista
-    - Elvis Sta. Maria Salvo
-    - Matranelio T. Aloyon
+    - 01M8AYCW7PSA6X5QWP33DV67BV # John Christopher R. Magalong
+    - 01M8AYCW7PSA6X5QWP33DV67BW # Dennis L. Laygo
+    - 01M8AYCW7PSA6X5QWP33DV67BX # John Mark Sta. Maria Guzman
+    - 01M8AYCW7PSA6X5QWP33DV67BY # Joel J. Quieta
+    - 01M8AYCW7PSA6X5QWP33DV67BZ # Lito P. Bautista
+    - 01M8AYCW7PSA6X5QWP33DV67C0 # Elvis Sta. Maria Salvo
+    - 01M8AYCW7PSA6X5QWP33DV67C1 # Matranelio T. Aloyon
 sk:
-  chair: Mark Junard P. Belerma
+  chair: 01M8AYCW7PSA6X5QWP33DV67C2 # Mark Junard P. Belerma
   kagawads:
-    - Dennis R. Bautista
-    - Jerome G. Andot
-    - Francheska Mavielle Castillo
-    - Myr Jezreel D. Gaza
-    - Zan Arshel Marie C. Laygo
-    - Serg Bryan Padillo
-    - Khylene Gail Meniable
+    - 01M8AYCW7PSA6X5QWP33DV67C3 # Dennis R. Bautista
+    - 01M8AYCW7PSA6X5QWP33DV67C4 # Jerome G. Andot
+    - 01M8AYCW7PSA6X5QWP33DV67C5 # Francheska Mavielle Castillo
+    - 01M8AYCW7PSA6X5QWP33DV67C6 # Myr Jezreel D. Gaza
+    - 01M8AYCW7PSA6X5QWP33DV67C7 # Zan Arshel Marie C. Laygo
+    - 01M8AYCW7PSA6X5QWP33DV67C8 # Serg Bryan Padillo
+    - 01M8AYCW7PSA6X5QWP33DV67C9 # Khylene Gail Meniable
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-bagong-silang/
   updated: 2026-02-19

@@ -3,6 +3,7 @@ import {
   parseBarangay,
   parseCityOfficials,
   parseNewsFile,
+  parsePerson,
 } from "../data/schema.ts";
 
 /**
@@ -33,8 +34,11 @@ export function yamlToModule(
  */
 export function validateData(path: string, data: unknown): void {
   const barangay = path.match(/(?:^|\/)data\/barangays\/([^/]+)\.yaml$/);
+  const person = path.match(/(?:^|\/)data\/people\/([^/]+)\.yaml$/);
   if (barangay) {
     parseBarangay(data, `data/barangays/${barangay[1]}.yaml`, barangay[1]);
+  } else if (person) {
+    parsePerson(data, `data/people/${person[1]}.yaml`, person[1]);
   } else if (/(?:^|\/)data\/city-officials\.yaml$/.test(path)) {
     parseCityOfficials(data, "data/city-officials.yaml");
   } else {

@@ -9,25 +9,25 @@ hall:
     - 8534-0345
   email: null
 council:
-  captain: J-IV Miguel Solano Espiritu
+  captain: 01M8AYCW7PSA6X5QWP33DV67FT # J-IV Miguel Solano Espiritu
   kagawads:
-    - Adrian Robert Garcia Intiola
-    - Geronimo Clemente Cudia Jr.
-    - Henric Pulusan Esposo
-    - Fernando Mansujeto Molina
-    - Carmelita Delos Reyes Torres
-    - Gabriel Logronio Rafinan
-    - Landrix Navarra San Juan
+    - 01M8AZ8KBYXC456P2DYXFWSGWN # Adrian Robert Garcia Intiola
+    - 01M8AYCW7PSA6X5QWP33DV67FV # Geronimo Clemente Cudia Jr.
+    - 01M8AYCW7PSA6X5QWP33DV67FW # Henric Pulusan Esposo
+    - 01M8AYCW7PSA6X5QWP33DV67FX # Fernando Mansujeto Molina
+    - 01M8AYCW7PSA6X5QWP33DV67FY # Carmelita Delos Reyes Torres
+    - 01M8AZ8KC0JEJB433HJPZ0YPYJ # Gabriel Logronio Rafinan
+    - 01M8AYCW7PSA6X5QWP33DV67G0 # Landrix Navarra San Juan
 sk:
-  chair: John Matthew W. Yamzon
+  chair: 01M8AYCW7PSA6X5QWP33DV67G1 # John Matthew W. Yamzon
   kagawads:
-    - Luz Clarisse Anne V. Molina
-    - Sahrin Lea B. Bendicio
-    - Jasmine Gwen D. Cudia
-    - Kathleen M. Mangilin
-    - John Paolo N. Guerrero
-    - Paul Martin M. Gildore
-    - John Paul C. Samson
+    - 01M8AYCW7PSA6X5QWP33DV67G2 # Luz Clarisse Anne V. Molina
+    - 01M8AYCW7PSA6X5QWP33DV67G3 # Sahrin Lea B. Bendicio
+    - 01M8AYCW7PSA6X5QWP33DV67G4 # Jasmine Gwen D. Cudia
+    - 01M8AYCW7PSA6X5QWP33DV67G5 # Kathleen M. Mangilin
+    - 01M8AYCW7PSA6X5QWP33DV67G6 # John Paolo N. Guerrero
+    - 01M8AYCW7PSA6X5QWP33DV67G7 # Paul Martin M. Gildore
+    - 01M8AYCW7PSA6X5QWP33DV67G8 # John Paul C. Samson
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-hagdang-bato-itaas/
   updated: 2025-10-08

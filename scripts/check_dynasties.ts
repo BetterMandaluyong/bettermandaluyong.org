@@ -10,12 +10,9 @@
 // NOTICE.md ("Studied, not copied"). Run by hand: it needs the network, so
 // it isn't part of `pnpm test`.
 
-import { readFileSync } from "node:fs";
-import { parse } from "yaml";
-import { parseCityOfficials } from "../data/schema.ts";
+import { readCityOfficials } from "../utils/people/files.ts";
 
-const file = "data/city-officials.yaml";
-const city = parseCityOfficials(parse(readFileSync(file, "utf8")), file);
+const city = readCityOfficials();
 const CITY_OFFICIALS = [
   city.representative,
   city.mayor,

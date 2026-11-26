@@ -10,25 +10,25 @@ hall:
     - 8801-1437
   email: null
 council:
-  captain: Dan Carl De Guzman
+  captain: 01M8AYCW7PSA6X5QWP33DV67ES # Dan Carl De Guzman
   kagawads:
-    - Glen Alvarez Moreno
-    - Ronaldo Calpatura Calderon
-    - Adrian Santos Martinez
-    - Alexis Jarlego Dela Paz
-    - Charlie Ocampo De Guzman
-    - Jericho Encina Peralta
-    - Renato Martinez Cristobal
+    - 01M8AYCW7PSA6X5QWP33DV67ET # Glen Alvarez Moreno
+    - 01M8AYCW7PSA6X5QWP33DV67EV # Ronaldo Calpatura Calderon
+    - 01M8AYCW7PSA6X5QWP33DV67EW # Adrian Santos Martinez
+    - 01M8AYCW7PSA6X5QWP33DV67EX # Alexis Jarlego Dela Paz
+    - 01M8AYCW7PSA6X5QWP33DV67EY # Charlie Ocampo De Guzman
+    - 01M8AYCW7PSA6X5QWP33DV67EZ # Jericho Encina Peralta
+    - 01M8AYCW7PSA6X5QWP33DV67F0 # Renato Martinez Cristobal
 sk:
-  chair: Gabriel A. Caleon
+  chair: 01M8AYCW7PSA6X5QWP33DV67F1 # Gabriel A. Caleon
   kagawads:
-    - Jham Byrell Go
-    - Eunice J. Ignacio
-    - Khryzhel Kei T. Bayola
-    - Charisse Nycole Philip A. Santos
-    - Marcuz John R. Trinidad
-    - Camille Joy L. Lunas
-    - Lourissa Sabina P. Ely
+    - 01M8AYCW7PSA6X5QWP33DV67F2 # Jham Byrell Go
+    - 01M8AYCW7PSA6X5QWP33DV67F3 # Eunice J. Ignacio
+    - 01M8AYCW7PSA6X5QWP33DV67F4 # Khryzhel Kei T. Bayola
+    - 01M8AYCW7PSA6X5QWP33DV67F5 # Charisse Nycole Philip A. Santos
+    - 01M8AYCW7PSA6X5QWP33DV67F6 # Marcuz John R. Trinidad
+    - 01M8AYCW7PSA6X5QWP33DV67F7 # Camille Joy L. Lunas
+    - 01M8AYCW7PSA6X5QWP33DV67F8 # Lourissa Sabina P. Ely
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-burol/
   updated: 2026-02-20

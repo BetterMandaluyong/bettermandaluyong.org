@@ -171,10 +171,10 @@ Barangay and city-official data live in YAML under `data/`
 (`data/barangays/<slug>.yaml`, `data/city-officials.yaml`). Edit the file, then
 run `pnpm test`: `data/schema.ts` checks every field and the build fails with
 the file and field name if something is wrong. Phone numbers are lists, one
-entry per number, written as the city publishes them. Every person gets a
-`/people/<name>` page automatically (`data/people.ts`). To refresh all barangays
+entry per number, written as the city publishes them. To refresh all barangays
 from a new snapshot of mandaluyong.gov.ph, see `scripts/import_barangays.ts` (it
-overwrites the YAML files, except their `dilg` and `flags` sections).
+overwrites the barangay files, except their `dilg` and `flags` sections, and
+adds person files for new people).
 
 Each barangay file also records when its officials were checked against the
 [DILG Barangay Officials Directory](https://dilg.gov.ph/barangay-officials-directory)
@@ -188,6 +188,41 @@ and the `city` and/or `dilg` spelling:
 - `name-differs`: probably the same person, spelled differently.
 - `not-in-dilg` / `only-in-dilg`: a name only one list has.
 
-Except for `changed`, the site keeps the city's name. To settle a flag, fix the
-name if needed and delete the flag; `data/schema.ts` checks that each flag still
-matches the names shown.
+Except for `changed`, the site keeps the city's name. Flags hold names, not
+person ids. To settle a flag, fix the name if needed (in the person's file in
+`data/people/`, and the `# Name` comments) and delete the flag; `data/schema.ts`
+checks that each flag still matches the names shown.
+
+### People
+
+Every elected official has one file, `data/people/<id>.yaml`, named by a
+[ULID](https://github.com/ulid/spec), the same convention as
+[bettergovph/open-congress-data](https://github.com/bettergovph/open-congress-data):
+
+```yaml
+id: 01M8AYCW7MHBKQ7069DPW4M70W # must match the file name; never changes
+slug: alexandria-queenie-pahati-gonzales # the /people/<slug> URL; never changes
+name: Alexandria “Queenie” Pahati-Gonzales
+ids: # optional: the same person in other datasets
+  open_congress: 01K5ST47FR57HGGQ3D5QR4HP2N
+  wikidata: Q66827038
+```
+
+Offices point at people by id: a barangay file lists `captain: <id>`, and
+`city-officials.yaml` has `person: <id>`. Each id carries the person's name as a
+`# Name` comment so diffs stay readable; `data/people_test.ts` fails if a
+comment is missing or stale. The build fails if an office lists an id with no
+file, if two people share a slug, or if a person file is listed by no office.
+
+- **Add a person:** make a ULID
+  (`node -e "import('./utils/people/ulid.ts').then(m => console.log(m.ulidFactory()()))"`),
+  create `data/people/<ULID>.yaml` with a new slug (lowercase words joined by
+  hyphens), and list the id in their office with a `# Name` comment.
+- **Fix a name:** edit `name:` in the person file and the `# Name` comments.
+  Leave `slug:` alone so the URL keeps working.
+- **Add an external id:** keys under `ids:` must be listed in
+  `EXTERNAL_ID_KINDS` (`data/schema.ts`), which checks each value's format and
+  builds the link shown under "Records Elsewhere" on the person's page. To
+  support a new kind of record, add an entry there with a test in
+  `data/schema_test.ts`. Only add an id after checking the record really is this
+  person, and credit the dataset in [NOTICE.md](NOTICE.md).

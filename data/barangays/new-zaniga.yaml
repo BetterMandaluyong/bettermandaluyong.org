@@ -9,25 +9,25 @@ hall:
     - 7276-2363
   email: null
 council:
-  captain: Elizabeth Paler Cruz
+  captain: 01M8AYCW7PSA6X5QWP33DV67M7 # Elizabeth Paler Cruz
   kagawads:
-    - Chico Luis P. Cruz
-    - Ma. Gerlyn A. Lagleva
-    - Benjamin A. Orge
-    - Efren P. Reyes
-    - Doroteo S. Froilan
-    - Ronald V. Francisco
-    - Maria Socorro Q. De Castro
+    - 01M8AYCW7PSA6X5QWP33DV67M8 # Chico Luis P. Cruz
+    - 01M8AYCW7PSA6X5QWP33DV67M9 # Ma. Gerlyn A. Lagleva
+    - 01M8AYCW7PSA6X5QWP33DV67MA # Benjamin A. Orge
+    - 01M8AYCW7PSA6X5QWP33DV67MB # Efren P. Reyes
+    - 01M8AYCW7PSA6X5QWP33DV67MC # Doroteo S. Froilan
+    - 01M8AYCW7PSA6X5QWP33DV67MD # Ronald V. Francisco
+    - 01M8AYCW7PSA6X5QWP33DV67ME # Maria Socorro Q. De Castro
 sk:
-  chair: John Michael S. Refareal
+  chair: 01M8AYCW7PSA6X5QWP33DV67MF # John Michael S. Refareal
   kagawads:
-    - Patricia Angela D. Bernardo
-    - Fevee O. Rojas
-    - Renzo Luis Y. Duro
-    - Laurence Paul C. Bernardo
-    - Ryca Anais V. Gahol
-    - Giormacio A. Herrera
-    - Shiela L. Orge
+    - 01M8AYCW7PSA6X5QWP33DV67MG # Patricia Angela D. Bernardo
+    - 01M8AYCW7PSA6X5QWP33DV67MH # Fevee O. Rojas
+    - 01M8AYCW7PSA6X5QWP33DV67MJ # Renzo Luis Y. Duro
+    - 01M8AYCW7PSA6X5QWP33DV67MK # Laurence Paul C. Bernardo
+    - 01M8AYCW7PSA6X5QWP33DV67MM # Ryca Anais V. Gahol
+    - 01M8AYCW7PSA6X5QWP33DV67MN # Giormacio A. Herrera
+    - 01M8AYCW7PSA6X5QWP33DV67MP # Shiela L. Orge
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-new-zaniga/
   updated: 2026-02-20

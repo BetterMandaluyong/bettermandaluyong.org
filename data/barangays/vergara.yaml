@@ -10,25 +10,25 @@ hall:
     - "09761796945"
   email: null
 council:
-  captain: Ernesto C. Mendiola
+  captain: 01M8AYCW7QHH3M0V0E0JRHJBXZ # Ernesto C. Mendiola
   kagawads:
-    - Allan E. Segovia
-    - Alberto E. Macalanda
-    - Jonas R. Anchuelo
-    - Reynaldo A. Wigan
-    - Ma. Cecilia T. Castro
-    - Osias M. Panganiban
-    - Maria Nica Y. Magcaleng
+    - 01M8AYCW7QHH3M0V0E0JRHJBY0 # Allan E. Segovia
+    - 01M8AYCW7QHH3M0V0E0JRHJBY1 # Alberto E. Macalanda
+    - 01M8AYCW7QHH3M0V0E0JRHJBY2 # Jonas R. Anchuelo
+    - 01M8AYCW7QHH3M0V0E0JRHJBY3 # Reynaldo A. Wigan
+    - 01M8AYCW7QHH3M0V0E0JRHJBY4 # Ma. Cecilia T. Castro
+    - 01M8AYCW7QHH3M0V0E0JRHJBY5 # Osias M. Panganiban
+    - 01M8AYCW7QHH3M0V0E0JRHJBY6 # Maria Nica Y. Magcaleng
 sk:
-  chair: Vetina S. Tarantan
+  chair: 01M8AYCW7QHH3M0V0E0JRHJBY7 # Vetina S. Tarantan
   kagawads:
-    - Jude Michael D. Cruz
-    - Marcos Jay O. Reyes
-    - Amiel Chester S. Magcaleng
-    - Justine M. Javier
-    - Nathaniel A. Cantos
-    - Franz Melexi Pascua
-    - Ryza Mae R. Clar
+    - 01M8AYCW7QHH3M0V0E0JRHJBY8 # Jude Michael D. Cruz
+    - 01M8AYCW7QHH3M0V0E0JRHJBY9 # Marcos Jay O. Reyes
+    - 01M8AYCW7QHH3M0V0E0JRHJBYA # Amiel Chester S. Magcaleng
+    - 01M8AYCW7QHH3M0V0E0JRHJBYB # Justine M. Javier
+    - 01M8AYCW7QHH3M0V0E0JRHJBYC # Nathaniel A. Cantos
+    - 01M8AYCW7QHH3M0V0E0JRHJBYD # Franz Melexi Pascua
+    - 01M8AYCW7QHH3M0V0E0JRHJBYE # Ryza Mae R. Clar
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-vergara/
   updated: 2026-02-20

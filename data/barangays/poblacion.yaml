@@ -9,25 +9,25 @@ hall:
     - 8535-0917
   email: null
 council:
-  captain: Elmer Jose M. Malabanan
+  captain: 01M8AYCW7QHH3M0V0E0JRHJBWZ # Elmer Jose M. Malabanan
   kagawads:
-    - Arturo P. Cruz
-    - Filemon S. Dankin
-    - Ben Hur J. Benedicto
-    - Bernabe L. Perez
-    - Carla Micaela G. Alvaran
-    - Angelito N. Laciste
-    - Gilbert B. Tolentino
+    - 01M8AYCW7QHH3M0V0E0JRHJBX0 # Arturo P. Cruz
+    - 01M8AYCW7QHH3M0V0E0JRHJBX1 # Filemon S. Dankin
+    - 01M8AYCW7QHH3M0V0E0JRHJBX2 # Ben Hur J. Benedicto
+    - 01M8AYCW7QHH3M0V0E0JRHJBX3 # Bernabe L. Perez
+    - 01M8AYCW7QHH3M0V0E0JRHJBX4 # Carla Micaela G. Alvaran
+    - 01M8AYCW7QHH3M0V0E0JRHJBX5 # Angelito N. Laciste
+    - 01M8AYCW7QHH3M0V0E0JRHJBX6 # Gilbert B. Tolentino
 sk:
-  chair: Jia Louise M. Sayan
+  chair: 01M8AYCW7QHH3M0V0E0JRHJBX7 # Jia Louise M. Sayan
   kagawads:
-    - Kyla Alyssa G. Bautista
-    - Arianna S. Cambe
-    - Roffi Angelo M. Cruz
-    - Angelika C. Lara
-    - Justin Ignacio
-    - Aaliyah Ashley Francesca G. Regis
-    - Gabriel R. Peras
+    - 01M8AYCW7QHH3M0V0E0JRHJBX8 # Kyla Alyssa G. Bautista
+    - 01M8AYCW7QHH3M0V0E0JRHJBX9 # Arianna S. Cambe
+    - 01M8AYCW7QHH3M0V0E0JRHJBXA # Roffi Angelo M. Cruz
+    - 01M8AYCW7QHH3M0V0E0JRHJBXB # Angelika C. Lara
+    - 01M8AYCW7QHH3M0V0E0JRHJBXC # Justin Ignacio
+    - 01M8AYCW7QHH3M0V0E0JRHJBXD # Aaliyah Ashley Francesca G. Regis
+    - 01M8AYCW7QHH3M0V0E0JRHJBXE # Gabriel R. Peras
 source:
   url: https://mandaluyong.gov.ph/government/barangays/barangay-poblacion/
   updated: 2026-02-20

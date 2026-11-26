@@ -284,6 +284,62 @@ export const PEOPLE_COPY = {
   hallHeading: "Barangay Hall",
   seeBarangay: (name: string) => `See all of Barangay ${name}`,
   allPeople: "All people",
+  jumpLabel: "Groups on this page",
+  count: (n: number) => (n === 1 ? "1 person" : `${n} people`),
+  orgHeading: "How the Offices Fit Together",
+  orgIntro:
+    "Mandaluyong is one district in the House of Representatives. At City Hall, the mayor heads the City Government and the vice mayor presides over the city council, the Sangguniang Panlungsod. Each barangay has its own council and Sangguniang Kabataan. The chart shows where each office sits, not who reports to whom.",
+  orgLabel: "Chart of Mandaluyong's elected offices",
+  orgRoot: "Mandaluyong City",
+  orgCongress: "Congress",
+  orgHouse: "House of Representatives",
+  orgHouseMeta: "One district: the whole city",
+  orgCityHall: "City Hall",
+  orgCouncil: "Sangguniang Panlungsod",
+  orgCouncilMeta: "The city council. The vice mayor presides.",
+  orgCouncilors: (n: number) => `District ${n} Councilors`,
+  orgBarangays: "Barangays",
+  orgBarangaysMeta: (count: number) =>
+    `${count} barangays, each with its own council and SK`,
+  orgDistrict: (n: number, count: number) =>
+    `District ${n} · ${count} Barangays`,
+  /** One card section per position category, in `POSITION_CATEGORIES` order. */
+  categories: {
+    house: {
+      heading: "House of Representatives",
+      intro:
+        "Mandaluyong is a single congressional district, so one representative serves the whole city.",
+    },
+    executive: {
+      heading: "City Executive",
+      intro: "The mayor heads the City Government.",
+    },
+    council: {
+      heading: "Sangguniang Panlungsod",
+      intro:
+        "The city council: the vice mayor, who presides, and the councilors elected from each district.",
+    },
+    captain: {
+      heading: "Barangay Captains",
+      intro: "The Punong Barangay of each barangay.",
+    },
+    kagawad: {
+      heading: "Barangay Kagawads",
+      intro: "Each barangay council has seven kagawads.",
+    },
+    "sk-chair": {
+      heading: "SK Chairpersons",
+      intro:
+        "Each barangay's Sangguniang Kabataan, its youth council, is led by an SK chairperson.",
+    },
+    "sk-kagawad": {
+      heading: "SK Kagawads",
+      intro: "The city lists fewer SK kagawads where seats are vacant.",
+    },
+  },
+  externalHeading: "Records Elsewhere",
+  externalIntro: "Where this person appears in other public datasets.",
+  externalLink: (name: string, source: string) => `${name} on ${source}`,
 } as const;
 
 /** Copy for the districts page. */
