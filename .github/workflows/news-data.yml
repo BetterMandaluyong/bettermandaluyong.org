@@ -108,13 +108,14 @@ jobs:
         run: |
           if [ -n "$(git status --porcelain data/news)" ]; then
             git add data/news
-            title=$(head -n 1 "$RUNNER_TEMP/summary.md")
-            tail -n +3 "$RUNNER_TEMP/summary.md" > "$RUNNER_TEMP/body.md"
-            if [ -s "$RUNNER_TEMP/body.md" ]; then
-              git commit -m "chore(data): $title" -F "$RUNNER_TEMP/body.md"
-            else
-              git commit -m "chore(data): $title"
-            fi
+            # git refuses -m together with -F, so the subject and the body go
+            # into one message file. Commit strips trailing blank lines.
+            msg="$RUNNER_TEMP/commit-msg.txt"
+            {
+              printf 'chore(data): %s\n\n' "$(head -n 1 "$RUNNER_TEMP/summary.md")"
+              tail -n +3 "$RUNNER_TEMP/summary.md"
+            } > "$msg"
+            git commit -F "$msg"
             git push --force-with-lease origin bot/news-data
           else
             echo "No change to data/news."
