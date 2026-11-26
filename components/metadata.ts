@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   BARANGAYS,
+  BUDGET,
   DISTRICTS_COPY,
   FEED,
   HOME,
@@ -41,6 +42,11 @@ export const MAIN_PAGES: MainPage[] = [
     description: PEOPLE_COPY.metaDescription,
   },
   { path: "/news", label: NEWS.heading, description: NEWS.metaDescription },
+  {
+    path: "/budget",
+    label: BUDGET.heading,
+    description: BUDGET.metaDescription,
+  },
 ];
 
 /** The share image, as Open Graph and X/Twitter cards take it. */
