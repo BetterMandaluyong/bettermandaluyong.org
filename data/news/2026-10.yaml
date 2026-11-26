@@ -7,6 +7,11 @@
     - Awards
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    url: https://web.archive.org/web/20261125153727/https://mandaluyong.gov.ph/mandaluyong-hinirang-bilang-most-outstanding-accounting-office-ng-agap-sa-ikaapat-na-magkakasunod-na-taon/
+    requested_at: 2026-11-27T07:39:58+08:00
+    attempts: 0
 - id: 58580
   url: https://mandaluyong.gov.ph/mandaluyong-tumanggap-ng-mga-karangalan-sa-atop-pearl-awards-2026/
   title: MANDALUYONG, TUMANGGAP NG MGA KARANGALAN SA ATOP PEARL AWARDS 2026
@@ -14,6 +19,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-27T07:39:58+08:00
+    attempts: 0
 - id: 58575
   url: https://mandaluyong.gov.ph/national-awards-ng-bsp-city-of-mandaluyong-council-tampok-sa-lingguhang-programa-ng-lungsod/
   title: NATIONAL AWARDS NG BSP–CITY OF MANDALUYONG COUNCIL, TAMPOK SA LINGGUHANG PROGRAMA NG LUNGSOD
@@ -21,6 +30,11 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    url: https://web.archive.org/web/20261125153858/https://mandaluyong.gov.ph/national-awards-ng-bsp-city-of-mandaluyong-council-tampok-sa-lingguhang-programa-ng-lungsod/
+    requested_at: 2026-11-27T07:39:58+08:00
+    attempts: 0
 - id: 58482
   url: https://mandaluyong.gov.ph/pagkilala-ng-mandaluyong-sa-mga-pangulo-ng-ascim-sa-bawat-barangay/
   title: PAGKILALA NG MANDALUYONG SA MGA PANGULO NG ASCIM SA BAWAT BARANGAY
@@ -28,6 +42,11 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    url: https://web.archive.org/web/20261125154034/https://mandaluyong.gov.ph/pagkilala-ng-mandaluyong-sa-mga-pangulo-ng-ascim-sa-bawat-barangay/
+    requested_at: 2026-11-27T07:39:58+08:00
+    attempts: 0
 - id: 58478
   url: https://mandaluyong.gov.ph/bagong-hepe-ng-pnp-mandaluyong-seguridad-at-kaayusan-sa-lungsod-paiigtingin/
   title: BAGONG HEPE NG PNP-MANDALUYONG, SEGURIDAD AT KAAYUSAN SA LUNGSOD PAIIGTINGIN
@@ -35,6 +54,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-27T07:39:58+08:00
+    attempts: 0
 - id: 58474
   url: https://mandaluyong.gov.ph/suot-na-dangal-serbisyong-may-puso-bjmp-uniform-showcase-sa-mandaluyong-city-hall/
   title: "SUOT NA DANGAL, SERBISYONG MAY PUSO: BJMP UNIFORM SHOWCASE SA MANDALUYONG CITY HALL"
@@ -42,6 +65,11 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    url: https://web.archive.org/web/20261125183924/https://mandaluyong.gov.ph/suot-na-dangal-serbisyong-may-puso-bjmp-uniform-showcase-sa-mandaluyong-city-hall/
+    requested_at: 2026-11-27T07:39:58+08:00
+    attempts: 0
 - id: 58469
   url: https://mandaluyong.gov.ph/wish-lists-mula-sa-mga-pdl-tinupad-ng-mandaluyong/
   title: WISH LISTS MULA SA MGA PDL, TINUPAD NG MANDALUYONG
@@ -49,6 +77,11 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    url: https://web.archive.org/web/20261126004912/https://mandaluyong.gov.ph/wish-lists-mula-sa-mga-pdl-tinupad-ng-mandaluyong/
+    requested_at: 2026-11-27T07:39:58+08:00
+    attempts: 0
 - id: 58387
   url: https://mandaluyong.gov.ph/5-natatanging-pulis-ng-mandaluyong-ginawaran-ng-medalya-ng-papuri-ng-pnp/
   title: 5 NATATANGING PULIS NG MANDALUYONG, GINAWARAN NG MEDALYA NG PAPURI NG PNP
@@ -56,6 +89,11 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    url: https://web.archive.org/web/20261126004907/https://mandaluyong.gov.ph/5-natatanging-pulis-ng-mandaluyong-ginawaran-ng-medalya-ng-papuri-ng-pnp/
+    requested_at: 2026-11-27T07:39:58+08:00
+    attempts: 0
 - id: 58383
   url: https://mandaluyong.gov.ph/kurso-ng-local-guiding-services-nc-ii-bukas-na-sa-mmtvtc-para-sa-mga-mandaleno/
   title: KURSO NG LOCAL GUIDING SERVICES NC II, BUKAS NA SA MMTVTC PARA SA MGA MANDALEÑO
@@ -65,6 +103,11 @@
     - Education
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    url: https://web.archive.org/web/20261126132852/https://mandaluyong.gov.ph/kurso-ng-local-guiding-services-nc-ii-bukas-na-sa-mmtvtc-para-sa-mga-mandaleno/
+    requested_at: 2026-11-27T07:39:58+08:00
+    attempts: 0
 - id: 58379
   url: https://mandaluyong.gov.ph/mandaluyong-malugod-na-tinanggap-ang-bayan-ng-romblon-para-sa-benchmarking-activity/
   title: MANDALUYONG, MALUGOD NA TINANGGAP ANG BAYAN NG ROMBLON PARA SA BENCHMARKING ACTIVITY
@@ -72,6 +115,11 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    url: https://web.archive.org/web/20261126132857/https://mandaluyong.gov.ph/mandaluyong-malugod-na-tinanggap-ang-bayan-ng-romblon-para-sa-benchmarking-activity/
+    requested_at: 2026-11-27T07:39:58+08:00
+    attempts: 0
 - id: 58375
   url: https://mandaluyong.gov.ph/mandaluyong-at-dilg-kinilala-ang-mahalagang-tungkulin-ng-mga-punong-barangay-tungo-sa-good-local-governance/
   title: MANDALUYONG AT DILG, KINILALA ANG MAHALAGANG TUNGKULIN NG MGA PUNONG BARANGAY TUNGO SA GOOD LOCAL GOVERNANCE
@@ -80,6 +128,11 @@
     - Awards
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    url: https://web.archive.org/web/20261126132901/https://mandaluyong.gov.ph/mandaluyong-at-dilg-kinilala-ang-mahalagang-tungkulin-ng-mga-punong-barangay-tungo-sa-good-local-governance/
+    requested_at: 2026-11-27T07:39:58+08:00
+    attempts: 0
 - id: 58370
   url: https://mandaluyong.gov.ph/dilg-pinarangalan-ang-mandaluyong-sa-patuloy-na-paghahatid-ng-mataas-na-antas-ng-serbisyo-publiko-para-sa-mga-mandaleno/
   title: DILG, PINARANGALAN ANG MANDALUYONG SA PATULOY NA PAGHAHATID NG MATAAS NA ANTAS NG SERBISYO PUBLIKO PARA SA MGA MANDALEÑO
@@ -88,6 +141,10 @@
     - Awards
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-27T07:39:58+08:00
+    attempts: 0
 - id: 58232
   url: https://mandaluyong.gov.ph/pre-dagyaw-town-hall-meeting-isinagawa-sa-lungsod-ng-mandaluyong/
   title: PRE-DAGYAW TOWN HALL MEETING, ISINAGAWA SA LUNGSOD NG MANDALUYONG
