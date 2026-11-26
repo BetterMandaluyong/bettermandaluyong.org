@@ -102,11 +102,13 @@ describe("content", () => {
       NUMBERS.heading,
       NUMBERS.glanceHeading,
       NUMBERS.populationHeading,
+      NUMBERS.landHeading,
       NUMBERS.povertyHeading,
       NUMBERS.moneyHeading,
       NUMBERS.incomeHeading,
       NUMBERS.spendingHeading,
       NUMBERS.barangayHeading,
+      NUMBERS.barangayLandHeading,
     ];
     for (const heading of headings)
       expect(isTitleCase(heading), heading).toBe(true);

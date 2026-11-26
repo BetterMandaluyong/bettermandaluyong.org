@@ -463,10 +463,10 @@ export const PAY_COPY = {
 export const NUMBERS = {
   metaTitle: `Mandaluyong in Numbers — ${SITE.name}`,
   metaDescription:
-    "How many people live in each of Mandaluyong's 27 barangays, how many live below the poverty line, and what the City Government took in and spent, from the PSA and the Bureau of Local Government Finance.",
+    "How many people live in each of Mandaluyong's 27 barangays and how much land each covers, how many live below the poverty line, and what the City Government took in and spent, from the PSA, the City Government, and the Bureau of Local Government Finance.",
   heading: "Mandaluyong in Numbers",
   intro:
-    "Public figures about our city in one place: how many of us live in each barangay, how many live below the poverty line, and where the City Government's money comes from and goes. Every figure links to where it came from.",
+    "Public figures about our city in one place: how many of us live in each barangay, how much land each covers, how many live below the poverty line, and where the City Government's money comes from and goes. Every figure links to where it came from.",
 
   glanceHeading: "At a Glance",
   people: (year: number) => `People, ${year} census`,
@@ -499,6 +499,19 @@ export const NUMBERS = {
   unchecked: (year: number) =>
     `PSA's website blocks automated downloads, so the ${year} counts come from City Population, a site that compiles PSA's census tables. Its earlier counts match PSA's for every barangay, and its city total matches the official one. We'll compare each barangay with PSA's own file.`,
   madeOfficial: "Made official by",
+
+  landHeading: "Land in Each Barangay",
+  landMeta: (area: string) => `${area} in all`,
+  landIntro: (year: number) =>
+    `How much land each barangay covers, largest first, as the City Government measured it, and how many people lived on each hectare in the ${year} census. A hectare is 100 by 100 metres.`,
+  landColumns: {
+    area: "Land",
+    density: (year: number) => `People per hectare, ${year}`,
+  },
+  landCaption: "Land area of each Mandaluyong barangay",
+  landTotalNote: (sum: string, total: string) =>
+    `The barangays in the city's table add up to ${sum}, but it gives the city's total as ${total}; shares use ${total}.`,
+  landRead: (date: string) => `Read on ${date}.`,
 
   povertyHeading: "Poverty",
   povertyMeta: (year: number) => `${year} estimates`,
@@ -571,6 +584,13 @@ export const NUMBERS = {
   rankNote: "By number of people.",
   previousCount: (count: string, year: number) => `${count} in ${year}.`,
   seeAll: "See every barangay's population",
+  barangayLandHeading: "Land",
+  barangayLand: "Land area",
+  landShareNote: (share: string) => `${share} of the city.`,
+  barangayDensity: (year: number) => `People per hectare, ${year}`,
+  densityNote: (city: string) => `${city} for the whole city.`,
+  landRankNote: "By land area.",
+  seeAllLand: "See every barangay's land area",
 } as const;
 
 /** Copy for the districts page. */

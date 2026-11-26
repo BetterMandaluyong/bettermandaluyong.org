@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { BARANGAYS } from "./barangays.ts";
-import { FINANCES, POPULATION, POVERTY } from "./stats.ts";
+import { FINANCES, LAND_AREA, POPULATION, POVERTY } from "./stats.ts";
 
 describe("data/stats", () => {
   it("counts every barangay, and only those", () => {
@@ -25,6 +25,15 @@ describe("data/stats", () => {
   });
   it("has the 2024 census checked against PSA's own table", () => {
     expect(POPULATION.censuses.every((c) => c.checked)).toBe(true);
+  });
+  it("gives every barangay, and only those, a land area", () => {
+    expect(Object.keys(LAND_AREA.barangays).sort()).toEqual(
+      BARANGAYS.map((b) => b.slug).sort(),
+    );
+  });
+  it("keeps the city's Table 4.01 total and largest barangay", () => {
+    expect(LAND_AREA.total).toBe(1126);
+    expect(LAND_AREA.barangays["wack-wack-greenhills"]).toBe(288.5);
   });
   it("keeps BLGF's 2024 totals", () => {
     expect(FINANCES.income.total).toBe(7942871526);

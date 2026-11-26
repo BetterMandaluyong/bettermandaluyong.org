@@ -35,12 +35,18 @@ import {
   councilorsFor,
 } from "../../../data/city-officials.ts";
 import { personHref } from "../../../data/people.ts";
-import { POPULATION } from "../../../data/stats.ts";
+import { LAND_AREA, POPULATION } from "../../../data/stats.ts";
 import { BarangayMap } from "../../../islands/BarangayMap.tsx";
 import { formatSourceDate } from "../../../utils/barangays/format.ts";
 import {
+  density,
+  formatHectares,
+  landRows,
+} from "../../../utils/stats/land.ts";
+import {
   formatChange,
   formatCount,
+  formatPercent,
   latestCensuses,
   populationRows,
 } from "../../../utils/stats/population.ts";
@@ -68,7 +74,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
  * who represent it citywide (House representative, mayor, vice mayor, and its
  * district's councilors), with a credit and date for the city page the data
  * came from. A band gives its population in the latest census, the change
- * since the one before, and its rank in the city. Unknown slugs 404.
+ * since the one before, and its rank in the city; another gives its land area
+ * (City Government), its share of the city, and people per hectare. Unknown
+ * slugs 404.
  */
 export default async function BarangayPage({ params }: Params) {
   const barangay = getBarangay((await params).slug);
@@ -87,6 +95,10 @@ export default async function BarangayPage({ params }: Params) {
   const ranked = populationRows(POPULATION, BARANGAYS);
   const rank = ranked.findIndex((r) => r.slug === barangay.slug);
   const people = ranked[rank]!;
+  const landRanked = landRows(LAND_AREA, POPULATION, BARANGAYS);
+  const landRank = landRanked.findIndex((r) => r.slug === barangay.slug);
+  const land = landRanked[landRank]!;
+  const cityDensity = density(censuses.latest.total, LAND_AREA.total);
   const sk = [
     person(barangay.skChair, COPY.skChair),
     ...barangay.skKagawads.map((m) => person(m, COPY.skKagawad)),
@@ -166,6 +178,41 @@ export default async function BarangayPage({ params }: Params) {
           >
             {!censuses.latest.checked &&
               NUMBERS.uncheckedTitle(censuses.latest.year) + "."}
+          </SourceNote>
+        </Container>
+      </section>
+
+      <section className="border-b border-ed-rule">
+        <Container className="py-8 md:py-12">
+          <SectionHeader label={NUMBERS.barangayLandHeading} />
+          <StatList
+            label={NUMBERS.barangayLandHeading}
+            items={[
+              {
+                label: NUMBERS.barangayLand,
+                value: formatHectares(land.hectares),
+                note: NUMBERS.landShareNote(formatPercent(land.share)),
+              },
+              {
+                label: NUMBERS.barangayDensity(censuses.latest.year),
+                value: formatCount(land.density),
+                note: NUMBERS.densityNote(formatCount(cityDensity)),
+              },
+              {
+                label: NUMBERS.barangayRank,
+                value: NUMBERS.rankValue(landRank + 1, landRanked.length),
+                note: NUMBERS.landRankNote,
+              },
+            ]}
+          />
+          <div className="mt-6">
+            <ArrowLink href="/numbers#land">{NUMBERS.seeAllLand}</ArrowLink>
+          </div>
+          <SourceNote
+            href={LAND_AREA.source.url}
+            label={LAND_AREA.source.title}
+          >
+            {NUMBERS.landRead(formatSourceDate(LAND_AREA.read))}
           </SourceNote>
         </Container>
       </section>

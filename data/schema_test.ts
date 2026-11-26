@@ -14,6 +14,7 @@ import {
   parseNewsFile,
   parsePay,
   parsePerson,
+  parseLandArea,
   parsePopulation,
   parsePoverty,
   resolveBarangay,
@@ -709,6 +710,47 @@ describe("parsePopulation", () => {
     expect(() => parsePopulation(checked, "population.yaml")).toThrow(
       "censuses[0].checked",
     );
+  });
+});
+
+describe("parseLandArea", () => {
+  const land = () => ({
+    source: { title: "Source", url: "https://example.com/s" },
+    read: "2026-11-26",
+    total: 40,
+    barangays: { hulo: 30.31, burol: 9.6 } as Record<string, unknown>,
+  });
+
+  it("accepts a valid file", () => {
+    const l = parseLandArea(land(), "land-area.yaml");
+    expect(l.barangays.hulo).toBe(30.31);
+    expect(l.total).toBe(40);
+    expect(l.read).toBe("2026-11-26");
+  });
+  it("allows the city's rounding, but not more", () => {
+    const close = land();
+    close.total = 40.4;
+    expect(parseLandArea(close, "land-area.yaml").total).toBe(40.4);
+    const far = land();
+    far.total = 41;
+    expect(() => parseLandArea(far, "land-area.yaml")).toThrow(
+      "add up to 39.91",
+    );
+  });
+  it("needs hectares above 0 with at most 2 decimals", () => {
+    for (const bad of [0, -1, 1.234, "12"]) {
+      const l = land();
+      l.barangays.burol = bad;
+      expect(() => parseLandArea(l, "land-area.yaml")).toThrow(
+        "barangays.burol",
+      );
+    }
+  });
+  it("needs a source and the date it was read", () => {
+    const { read: _, ...noDate } = land();
+    expect(() => parseLandArea(noDate, "land-area.yaml")).toThrow("read");
+    const { source: __, ...noSource } = land();
+    expect(() => parseLandArea(noSource, "land-area.yaml")).toThrow("source");
   });
 });
 

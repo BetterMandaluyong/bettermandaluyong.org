@@ -1789,6 +1789,67 @@ export function parsePopulation(raw: unknown, file: string): Population {
   return { censuses, barangays };
 }
 
+/** How far the barangays' hectares may be from the stated total (rounding in the city's table). */
+export const LAND_AREA_TOLERANCE = 0.5;
+
+/** The whole `data/stats/land-area.yaml` file. */
+export type LandArea = {
+  /** The city's table. */
+  source: Citation;
+  /** When we copied the table (YYYY-MM-DD); the table itself has no date. */
+  read: string;
+  /** The city's stated total, in hectares. */
+  total: number;
+  /** Barangay slug → hectares. */
+  barangays: Record<string, number>;
+};
+
+function hectares(v: unknown, file: string, at: string): number {
+  if (
+    typeof v !== "number" ||
+    !(v > 0) ||
+    Math.abs(Math.round(v * 100) - v * 100) > 1e-6
+  ) {
+    fail(file, at, "must be hectares above 0, with at most 2 decimals");
+  }
+  return v;
+}
+
+/**
+ * Checks `data/stats/land-area.yaml`: a cited source and read date, every
+ * barangay's hectares above 0, and the barangays adding up to the stated
+ * total within `LAND_AREA_TOLERANCE`.
+ */
+export function parseLandArea(raw: unknown, file: string): LandArea {
+  const o = obj(raw, file, "document");
+  const total = hectares(o.total, file, "total");
+  const raws = obj(o.barangays, file, "barangays");
+  const barangays: Record<string, number> = {};
+  let sum = 0;
+  for (const [slug, v] of Object.entries(raws)) {
+    const at = `barangays.${slug}`;
+    if (!PERSON_SLUG.test(slug)) fail(file, at, "must be a barangay slug");
+    barangays[slug] = hectares(v, file, at);
+    sum += barangays[slug];
+  }
+  if (Object.keys(barangays).length === 0) {
+    fail(file, "barangays", "must not be empty");
+  }
+  if (Math.abs(sum - total) > LAND_AREA_TOLERANCE) {
+    fail(
+      file,
+      "total",
+      `is ${total}, but the barangays add up to ${Math.round(sum * 100) / 100}`,
+    );
+  }
+  return {
+    source: citation(o.source, file, "source"),
+    read: isoDate(o, "read", file, "read"),
+    total,
+    barangays,
+  };
+}
+
 /** One area's poverty estimate for one year. */
 export type PovertyEstimate = {
   /** Percent of people below the poverty threshold. */

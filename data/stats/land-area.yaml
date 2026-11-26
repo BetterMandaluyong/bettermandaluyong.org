@@ -1,0 +1,47 @@
+# Land area of each barangay, in hectares, from the City Government's "Table
+# 4.01. Land Area Distribution by Barangay" on its Physical and Spatial
+# Characteristics page. Hand-kept; see data/CONTEXT.md. The table has no date;
+# `read` is when we copied it.
+#
+# The city states a total of 1,126 hectares (11.26 sq. km). Its 27 rows add up
+# to 1,125.86 ha; schema.ts allows the rows to be within 0.5 ha of `total`.
+# A footnote says the earlier 1,124.97 ha differs "due to AUTOCADD application
+# in computing land area by barangay". The city's older Land Area page
+# (mandaluyong.gov.ph/profile/land-area/) still gives 1,124.97 ha and older
+# figures (Wack-Wack 294.48, Addition Hills 162, Plainview 115.92, Highway
+# Hills 105.12). We use Table 4.01, which the city's Facts and Figures page
+# also quotes. PSA lists a different city area (9.29 sq. km); not used here.
+source:
+  title: "City of Mandaluyong: Table 4.01, Land Area Distribution by Barangay"
+  url: https://mandaluyong.gov.ph/physical-and-spatial-characteristics/
+read: 2026-11-26
+total: 1126
+# Barangay slug: hectares. Comments give the PSGC code and the table's name.
+barangays:
+  addition-hills: 120.36 # 1380500001 Addition Hills
+  bagong-silang: 13.84 # 1380500002 Bagong Silang
+  barangka-drive: 21.96 # 1380500003 Barangka Drive
+  barangka-ibaba: 15.43 # 1380500004 Barangka Ibaba
+  barangka-ilaya: 44.00 # 1380500005 Barangka Ilaya
+  barangka-itaas: 17.42 # 1380500006 Barangka Itaas
+  buayang-bato: 9.69 # 1380500008 Buayang Bato
+  burol: 2.16 # 1380500007 Burol
+  daang-bakal: 16.74 # 1380500009 Daang Bakal
+  hagdang-bato-itaas: 17.12 # 1380500010 Hagdang Bato Itaas
+  hagdang-bato-libis: 13.83 # 1380500011 Hagdang Bato Libis
+  harapin-ang-bukas: 4.89 # 1380500012 Harapin Ang Bukas
+  highway-hills: 116.12 # 1380500013 Highway Hills
+  hulo: 30.31 # 1380500014 Hulo
+  mabini-j-rizal: 18.03 # 1380500015 Mabini J. Rizal
+  malamig: 31.65 # 1380500016 Malamig
+  mauway: 70.41 # 1380500017 Mauway
+  namayan: 28.85 # 1380500018 Namayan
+  new-zaniga: 20.45 # 1380500019 New Zaniga
+  old-zaniga: 38.53 # 1380500020 Old Zaniga
+  pag-asa: 12.95 # 1380500021 Pag-asa
+  plainview: 108.88 # 1380500022 Plainview
+  pleasant-hills: 21.03 # 1380500023 Pleasant Hills
+  poblacion: 21.78 # 1380500024 Poblacion
+  san-jose: 4.19 # 1380500025 San Jose
+  vergara: 16.74 # 1380500026 Vergara
+  wack-wack-greenhills: 288.50 # 1380500027 Wack-Wack
