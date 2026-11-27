@@ -6,6 +6,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T02:48:44+08:00
+    attempts: 0
 - id: 58084
   url: https://mandaluyong.gov.ph/mandaluyong-kinilala-ang-250-kawani-sa-matagal-na-taon-ng-paglilingkod-bayan/
   title: MANDALUYONG, KINILALA ANG 250 KAWANI SA MATAGAL NA TAON NG PAGLILINGKOD-BAYAN
@@ -13,6 +17,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T02:48:44+08:00
+    attempts: 0
 - id: 58079
   url: https://mandaluyong.gov.ph/atletang-mandaleno-wagi-sa-lokal-at-internasyunal-na-patimpalak-sa-isports/
   title: ATLETANG MANDALEÑO, WAGI SA LOKAL AT INTERNASYUNAL NA PATIMPALAK SA ISPORTS
@@ -21,6 +29,10 @@
     - News
     - Sports
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T02:48:44+08:00
+    attempts: 0
 - id: 58075
   url: https://mandaluyong.gov.ph/natatanging-kawani-mula-sa-project-teach-pinarangalan-ng-mandaluyong/
   title: NATATANGING KAWANI MULA SA PROJECT TEACH, PINARANGALAN NG MANDALUYONG
