@@ -152,6 +152,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-27T12:06:31+08:00
+    attempts: 0
 - id: 58226
   url: https://mandaluyong.gov.ph/mes-tinanggap-ang-panandang-pangkasaysayan-mula-sa-mandaluyong/
   title: MES, TINANGGAP ANG PANANDANG PANGKASAYSAYAN MULA SA MANDALUYONG
@@ -159,6 +163,10 @@
   categories:
     - Uncategorized
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-27T12:06:31+08:00
+    attempts: 0
 - id: 58222
   url: https://mandaluyong.gov.ph/mga-natatanging-alumnus-ng-mes-binigyang-pagkilala/
   title: MGA NATATANGING ALUMNUS NG MES, BINIGYANG-PAGKILALA
@@ -167,6 +175,10 @@
     - Education
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-27T12:06:31+08:00
+    attempts: 0
 - id: 58218
   url: https://mandaluyong.gov.ph/mandaluyong-at-mes-iginawad-ang-tanglaw-ng-dambana-award-sa-mga-dating-guro-ng-mes/
   title: MANDALUYONG AT MES, IGINAWAD ANG TANGLAW NG DAMBANA AWARD SA MGA DATING GURO NG MES
