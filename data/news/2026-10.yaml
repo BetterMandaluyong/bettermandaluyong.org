@@ -187,6 +187,10 @@
     - Education
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-27T15:55:05+08:00
+    attempts: 0
 - id: 58212
   url: https://mandaluyong.gov.ph/gawad-dambana-ng-kahusayan-para-sa-mga-natatanging-guro-ng-mes/
   title: GAWAD DAMBANA NG KAHUSAYAN PARA SA MGA NATATANGING GURO NG MES
@@ -195,6 +199,10 @@
     - Education
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-27T15:55:05+08:00
+    attempts: 0
 - id: 58208
   url: https://mandaluyong.gov.ph/mandaluyong-at-mes-iginawad-ang-batang-kampeon-award-sa-mga-natatanging-mag-aaral/
   title: MANDALUYONG AT MES, IGINAWAD ANG BATANG KAMPEON AWARD SA MGA NATATANGING MAG-AARAL
@@ -203,3 +211,7 @@
     - Education
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-27T15:55:05+08:00
+    attempts: 0
