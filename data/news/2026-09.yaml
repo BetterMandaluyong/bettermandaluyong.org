@@ -6,6 +6,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T02:48:44+08:00
+    attempts: 0
 - id: 58084
   url: https://mandaluyong.gov.ph/mandaluyong-kinilala-ang-250-kawani-sa-matagal-na-taon-ng-paglilingkod-bayan/
   title: MANDALUYONG, KINILALA ANG 250 KAWANI SA MATAGAL NA TAON NG PAGLILINGKOD-BAYAN
@@ -13,6 +17,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T02:48:44+08:00
+    attempts: 0
 - id: 58079
   url: https://mandaluyong.gov.ph/atletang-mandaleno-wagi-sa-lokal-at-internasyunal-na-patimpalak-sa-isports/
   title: ATLETANG MANDALEÑO, WAGI SA LOKAL AT INTERNASYUNAL NA PATIMPALAK SA ISPORTS
@@ -21,6 +29,10 @@
     - News
     - Sports
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T02:48:44+08:00
+    attempts: 0
 - id: 58075
   url: https://mandaluyong.gov.ph/natatanging-kawani-mula-sa-project-teach-pinarangalan-ng-mandaluyong/
   title: NATATANGING KAWANI MULA SA PROJECT TEACH, PINARANGALAN NG MANDALUYONG
@@ -28,6 +40,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T11:12:24+08:00
+    attempts: 0
 - id: 57970
   url: https://mandaluyong.gov.ph/mandaluyong-nakipagtulungan-sa-pldt-at-smart-communications-para-sa-integrasyon-ng-ai-in-a-box-sa-serbisyong-publiko/
   title: MANDALUYONG, NAKIPAGTULUNGAN SA PLDT AT SMART COMMUNICATIONS PARA SA INTEGRASYON NG “AI IN A BOX” SA SERBISYONG PUBLIKO
@@ -35,6 +51,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T11:12:24+08:00
+    attempts: 0
 - id: 57966
   url: https://mandaluyong.gov.ph/mandaluyong-hakot-parangal-sa-2026-regional-nutrition-awarding-ceremony-ng-nnc-ncr/
   title: MANDALUYONG, HAKOT-PARANGAL SA 2026 REGIONAL NUTRITION AWARDING CEREMONY NG NNC-NCR
@@ -44,6 +64,10 @@
     - Health
     - Nutrition
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T11:12:24+08:00
+    attempts: 0
 - id: 57962
   url: https://mandaluyong.gov.ph/mga-natatanging-chief-girl-scout-kinilala-ng-mandaluyong/
   title: MGA NATATANGING CHIEF GIRL SCOUT, KINILALA NG MANDALUYONG
@@ -51,6 +75,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T11:50:02+08:00
+    attempts: 0
 - id: 57957
   url: https://mandaluyong.gov.ph/panunumpa-ng-saver-jjg-at-scpb-sa-mandaluyong/
   title: PANUNUMPA NG SAVER, JJG AT SCPB SA MANDALUYONG
@@ -58,6 +86,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T11:50:02+08:00
+    attempts: 0
 - id: 57953
   url: https://mandaluyong.gov.ph/gsp-mandaluyong-isinagawa-ang-opisyal-na-investiture-at-world-pinning-ng-mga-bagong-associate-members-mula-sa-pdad-at-bnao/
   title: GSP-MANDALUYONG, ISINAGAWA ANG OPISYAL NA INVESTITURE AT WORLD PINNING NG MGA BAGONG ASSOCIATE MEMBERS MULA SA PDAD AT BNAO
@@ -65,6 +97,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T11:50:02+08:00
+    attempts: 0
 - id: 57947
   url: https://mandaluyong.gov.ph/mandaluyong-ginawaran-ng-mga-parangal-at-permit-pin-ang-mga-natatanging-girl-scouts-at-leaders/
   title: MANDALUYONG, GINAWARAN NG MGA PARANGAL AT PERMIT PIN ANG MGA NATATANGING GIRL SCOUTS AT LEADERS
@@ -73,6 +109,10 @@
     - Awards
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T23:22:31+08:00
+    attempts: 0
 - id: 57613
   url: https://mandaluyong.gov.ph/lungsod-ng-mandaluyong-at-bayan-ng-corcuera-romblon-ganap-nang-magkapatid-pamahalaan/
   title: LUNGSOD NG MANDALUYONG AT BAYAN NG CORCUERA, ROMBLON, GANAP NANG MAGKAPATID-PAMAHALAAN
@@ -81,6 +121,10 @@
     - News
     - Sisterhood
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T23:22:31+08:00
+    attempts: 0
 - id: 57437
   url: https://mandaluyong.gov.ph/pala-mondido-at-sales-naghatid-karangalan-sa-mandaluyong-sa-larangan-ng-pageantry/
   title: PALA, MONDIDO AT SALES, NAGHATID-KARANGALAN SA MANDALUYONG SA LARANGAN NG PAGEANTRY
@@ -89,6 +133,10 @@
     - Awards
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T23:22:31+08:00
+    attempts: 0
 - id: 57432
   url: https://mandaluyong.gov.ph/kabataang-mandaleno-kikilalanin-ang-gampanin-ng-mga-konsehal-sa-mock-session/
   title: KABATAANG MANDALEÑO, KIKILALANIN ANG GAMPANIN NG MGA KONSEHAL SA MOCK SESSION
