@@ -40,6 +40,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T11:12:24+08:00
+    attempts: 0
 - id: 57970
   url: https://mandaluyong.gov.ph/mandaluyong-nakipagtulungan-sa-pldt-at-smart-communications-para-sa-integrasyon-ng-ai-in-a-box-sa-serbisyong-publiko/
   title: MANDALUYONG, NAKIPAGTULUNGAN SA PLDT AT SMART COMMUNICATIONS PARA SA INTEGRASYON NG “AI IN A BOX” SA SERBISYONG PUBLIKO
@@ -47,6 +51,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T11:12:24+08:00
+    attempts: 0
 - id: 57966
   url: https://mandaluyong.gov.ph/mandaluyong-hakot-parangal-sa-2026-regional-nutrition-awarding-ceremony-ng-nnc-ncr/
   title: MANDALUYONG, HAKOT-PARANGAL SA 2026 REGIONAL NUTRITION AWARDING CEREMONY NG NNC-NCR
@@ -56,6 +64,10 @@
     - Health
     - Nutrition
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T11:12:24+08:00
+    attempts: 0
 - id: 57962
   url: https://mandaluyong.gov.ph/mga-natatanging-chief-girl-scout-kinilala-ng-mandaluyong/
   title: MGA NATATANGING CHIEF GIRL SCOUT, KINILALA NG MANDALUYONG
