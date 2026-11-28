@@ -109,6 +109,10 @@
     - Awards
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T23:22:31+08:00
+    attempts: 0
 - id: 57613
   url: https://mandaluyong.gov.ph/lungsod-ng-mandaluyong-at-bayan-ng-corcuera-romblon-ganap-nang-magkapatid-pamahalaan/
   title: LUNGSOD NG MANDALUYONG AT BAYAN NG CORCUERA, ROMBLON, GANAP NANG MAGKAPATID-PAMAHALAAN
@@ -117,6 +121,10 @@
     - News
     - Sisterhood
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T23:22:31+08:00
+    attempts: 0
 - id: 57437
   url: https://mandaluyong.gov.ph/pala-mondido-at-sales-naghatid-karangalan-sa-mandaluyong-sa-larangan-ng-pageantry/
   title: PALA, MONDIDO AT SALES, NAGHATID-KARANGALAN SA MANDALUYONG SA LARANGAN NG PAGEANTRY
@@ -125,6 +133,10 @@
     - Awards
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T23:22:31+08:00
+    attempts: 0
 - id: 57432
   url: https://mandaluyong.gov.ph/kabataang-mandaleno-kikilalanin-ang-gampanin-ng-mga-konsehal-sa-mock-session/
   title: KABATAANG MANDALEÑO, KIKILALANIN ANG GAMPANIN NG MGA KONSEHAL SA MOCK SESSION
