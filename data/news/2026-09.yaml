@@ -75,6 +75,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T11:50:02+08:00
+    attempts: 0
 - id: 57957
   url: https://mandaluyong.gov.ph/panunumpa-ng-saver-jjg-at-scpb-sa-mandaluyong/
   title: PANUNUMPA NG SAVER, JJG AT SCPB SA MANDALUYONG
@@ -82,6 +86,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T11:50:02+08:00
+    attempts: 0
 - id: 57953
   url: https://mandaluyong.gov.ph/gsp-mandaluyong-isinagawa-ang-opisyal-na-investiture-at-world-pinning-ng-mga-bagong-associate-members-mula-sa-pdad-at-bnao/
   title: GSP-MANDALUYONG, ISINAGAWA ANG OPISYAL NA INVESTITURE AT WORLD PINNING NG MGA BAGONG ASSOCIATE MEMBERS MULA SA PDAD AT BNAO
@@ -89,6 +97,10 @@
   categories:
     - News
   first_seen_at: 2026-11-26T08:45:24+08:00
+  archive:
+    status: ok
+    requested_at: 2026-11-28T11:50:02+08:00
+    attempts: 0
 - id: 57947
   url: https://mandaluyong.gov.ph/mandaluyong-ginawaran-ng-mga-parangal-at-permit-pin-ang-mga-natatanging-girl-scouts-at-leaders/
   title: MANDALUYONG, GINAWARAN NG MGA PARANGAL AT PERMIT PIN ANG MGA NATATANGING GIRL SCOUTS AT LEADERS
